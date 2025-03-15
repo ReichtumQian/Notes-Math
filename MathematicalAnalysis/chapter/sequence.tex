@@ -1,5 +1,7 @@
 
-\section{Concepts and Properties of Sequences Limits}
+\section{Concepts and Properties of Sequence Limits}
+
+\subsection{Definition of Sequence Limits}
 
 \begin{definition}{Limits of Sequences}{}
   Consider a sequence of real numbers $a_n$, and a real number $A$.
@@ -24,10 +26,87 @@
 \begin{theorem}{Cauchy Criterion for Convergence}{}
   A sequence $\{a_n\}$ converges if and only if
   \begin{equation}
-    \forall \epsilon > 0, \exists N \in \mathbb{N}^+, ~ \mathrm{s.t.}~ \forall m,n > N, |a_n - a_m| < \epsilon.
+    \forall \epsilon > 0, \exists N \in \mathbb{Z}^+, \forall m,n > N, |a_n - a_m| < \epsilon.
   \end{equation}
 \end{theorem}
 
-\begin{exercise}{}{}
-  
-\end{exercise}
+\begin{corollary}{Contrapositive of Cauchy Criterion for Convergence}{}
+  A sequence $\{a_n\}$ diverges if and only if
+  \begin{equation}
+    \exists \epsilon > 0, \forall N \in \mathbb{Z}^+, \exists m, n \geq N, |a_n - a_m| \geq \epsilon.
+  \end{equation}
+\end{corollary}
+
+\begin{example}{Apply the Cauchy Criterion to Prove Divergence}{}
+  \begin{enumerate}
+  \item Prove that the sequence $\sin n$ diverges.
+  \item Prove that the sequence $a_n = 1 + \frac{1}{2} + \cdots + \frac{1}{n}$ diverges.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Notice that the interval $[2k\pi + \frac{\pi}{4}, 2k\pi + \frac{3\pi}{4}]$
+  has a length greater than $1$, so it contains an integer.
+  Let $n$ be an integer in this interval
+  and $m$ be an integer in $[2k\pi + \pi, 2k\pi + 2\pi]$.
+  As $k$ increases, both $n$ and $m$ can go to infinity.
+  And we know that $|\sin n - \sin m| \geq \frac{\sqrt{2}}{2}$.
+  By the Cauchy convergence criterion, the sequence $\sin n$ diverges.
+
+  (2) For any given $N$, set $n = N$ and $m = 2N$.
+  Then $|a_n - a_m| = \sum\limits_{i = N + 1}^{2N} \frac{1}{i} \geq \frac{N}{2N}
+  = \frac{1}{2}$.
+  Using the contrapositive of the Cauchy criterion criterion,
+  we can conclude that the sequence $a_n$ diverges.
+\end{proof}
+
+\subsection{Properties of Convergent Sequences}
+
+\begin{proposition}{Properties of Convergent Sequences}{}
+  If a sequence $\{a_n\}$ converges to $A$, i.e.,
+  $\lim \limits _{n \rightarrow \infty} a_n = A$, then
+  \begin{enumerate}
+  \item The sequence $a_n$ is bounded;
+  \item If $A > a$, then as $n$ approaches infinity, $a_n > a$;
+  \item Every sub-sequence of $\{a_n\}$ converges to $A$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{theorem}{Even and Odd Sub-sequence Convergence}{}
+  A sequence $\{a_n\}$ converges to $A$ if and only if both its sub-sequences
+  $\{a_{2k}\}$ and $\{a_{2k+1}\}$ converge to $A$.
+\end{theorem}
+
+\begin{proof}
+  Forward direction is obvious due to the Cauchy criterion for convergence,
+  so we only prove the reverse direction.
+  Since $\lim \limits _{k \rightarrow \infty} a_{2k} = A$, we have
+  \begin{equation}
+    \forall \epsilon > 0, \exists K \in \mathbb{Z}^+, \forall k > \frac{K}{2}, |a_{2k} - A| < \epsilon.
+  \end{equation}
+  For this $\epsilon$, there exists $K^{\prime}$ such that for all $k >
+  K^{\prime}$ satisfies $|a_{2k + 1} - A| < \epsilon$.
+  Then we choose $N = \max \{K, K^{\prime}\}$, and for all $n > N$ satisfies
+  $|a_n - A| < \epsilon$.
+\end{proof}
+
+\section{Some Important Sequence Limit Conclusions}
+
+\subsection{Several Basic Limits}
+
+\begin{proposition}{Common Basic Limits}{}
+  If $a > 0, b > 1$, the relationships of basic limits are
+  $\log n < n^a < b^n < n! < n^n$. Specifically:
+  \begin{itemize}
+  \item Power-form: $\lim \limits _{n \rightarrow \infty} \sqrt[n]{a} = 1$,
+    $\lim \limits _{n \rightarrow \infty} \sqrt[n]{n} = 1$,
+    $\lim \limits _{n \rightarrow \infty} \sqrt[n]{n!} = +\infty$.
+  \item Ratio-form:
+  \item Logarithmic-form:
+  \item Exponential-form:
+  \end{itemize}
+\end{proposition}
+
+\subsection{Stirling's Formula and Wallis' Formula}
+
+
