@@ -84,6 +84,9 @@
 \definecolor{myexamplebg}{HTML}{F2FBF8}
 \definecolor{myexamplefr}{HTML}{88D6D1}
 \definecolor{myexampleti}{HTML}{2A7F7F}
+\definecolor{myexercisebg}{HTML}{FFF5F0}  % 浅橙色背景
+\definecolor{myexercisefr}{HTML}{FFC280}  % 中等橙色边框
+\definecolor{myexerciseti}{HTML}{B35C00}  % 深橙色标题
 \definecolor{mydefinitbg}{HTML}{E5E5FF}
 \definecolor{mydefinitfr}{HTML}{3F3FA3}
 \definecolor{notesgreen}{RGB}{0,162,0}
@@ -361,6 +364,44 @@
 	,breakable
 	,colframe = myexamplefr
 	,coltitle = myexampleti
+	,boxrule = 1pt
+	,sharp corners
+	,detach title
+	,before upper=\tcbtitle\par\smallskip
+	,fonttitle = \bfseries
+	,description font = \mdseries
+	,separator sign none
+	,description delimiters parenthesis
+}
+{ex}
+
+%================================
+% EXERCISE BOX
+%================================
+
+\newtcbtheorem[number within=chapter]{Exercise}{Exercise}
+{%
+	colback = myexercisebg
+	,breakable
+	,colframe = myexercisefr
+	,coltitle = myexerciseti
+	,boxrule = 1pt
+	,sharp corners
+	,detach title
+	,before upper=\tcbtitle\par\smallskip
+	,fonttitle = \bfseries
+	,description font = \mdseries
+	,separator sign none
+	,description delimiters parenthesis
+}
+{ex}
+
+\newtcbtheorem[number within=chapter]{exercise}{Exercise}
+{%
+	colback = myexercisebg
+	,breakable
+	,colframe = myexercisefr
+	,coltitle = myexerciseti
 	,boxrule = 1pt
 	,sharp corners
 	,detach title

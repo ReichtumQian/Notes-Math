@@ -1,5 +1,5 @@
 
-\section{Concepts and Definitions of Sequences Limits}
+\section{Concepts and Properties of Sequences Limits}
 
 \begin{definition}{Limits of Sequences}{}
   Consider a sequence of real numbers $a_n$, and a real number $A$.
@@ -7,25 +7,27 @@
   \begin{equation}
     \forall \epsilon > 0, \exists N \in \mathbb{Z}^+, \forall n > N, |a_n - A| < \epsilon,
   \end{equation}
-  and denoted as $\lim \limits _{n \rightarrow \infty}a_n = A$.
+  denoting as $\lim \limits _{n \rightarrow \infty}a_n = A$.
 \end{definition}
 
 \begin{proposition}{Four Arithmetic Operations of Limits}{}
-  Suppose 
+  If the limits $\lim \limits _{n \rightarrow \infty} a_n$ and $\lim \limits _{n \rightarrow \infty} b_n$
+  both exist, then
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} (a_n \ast b_n) = \lim \limits _{n \rightarrow \infty} a_n \ast \lim \limits _{n \rightarrow \infty} b_n,
+  \end{equation}
+  where $\ast$ represents any of four arithmetic operations
+  (when it is division, an additional requirement is $\lim \limits _{n
+    \rightarrow \infty} b_n \neq 0$).
 \end{proposition}
 
-
-\begin{theorem}{Four Arithmetic Operations of Limits}{}
-  Suppose 
+\begin{theorem}{Cauchy Criterion for Convergence}{}
+  A sequence $\{a_n\}$ converges if and only if
+  \begin{equation}
+    \forall \epsilon > 0, \exists N \in \mathbb{N}^+, ~ \mathrm{s.t.}~ \forall m,n > N, |a_n - a_m| < \epsilon.
+  \end{equation}
 \end{theorem}
 
-\begin{corollary}{Four Arithmetic Operations of Limits}{}
-  Suppose 
-\end{corollary}
-
-\begin{lemma}{Four Arithmetic Operations of Limits}{}
-  Suppose 
-\end{lemma}
-
-
-
+\begin{exercise}{}{}
+  
+\end{exercise}
