@@ -31,6 +31,6 @@ clean:
 purge:
 	$(LATEXMK) -C $(NAME)
 	$(RM_CMD) -r *.bbl *.thm *.xml *.out.ps *.dvi *.rel *.spl *.pdf
-	rm -rf ./tikz/*.aux ./tikz/*.log ./tikz/*.pdf ./tikz/*.gz
+	$(RM_CMD) ./tikz/*.aux ./tikz/*.log ./tikz/*.pdf ./tikz/*.gz
 
 .PHONY: all clean purge
