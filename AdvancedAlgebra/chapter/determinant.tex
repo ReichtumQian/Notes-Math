@@ -1,0 +1,82 @@
+
+\section{Basic Concepts and Properties of Determinants}
+
+\begin{definition}{Determinants}{}
+  Let $A = (a_{ij})$ be an $n \times n$ square matrix,
+  its \emph{determinant} is defined by
+  \begin{equation}
+    |A| := \sum\limits_{\sigma \in S_n} \mathrm{sgn}(\sigma) \prod\limits_{i = 1}^n a_{i, \sigma(i)},
+  \end{equation}
+  where $S_n$ is the set of all permutations of $\{1, 2, \cdots, n\}$,
+  $\sigma$ is a permutation in $S_n$,
+  $\mathrm{sgn}(\sigma)$ is the sign of $\sigma$,
+  which is $+1$ if $\sigma$ is an even permutation,
+  and $-1$ if $\sigma$ is an odd permutation,
+  $a_{i, \sigma(i)}$ is the entry of $A$ in the $i$-th row and $\sigma(i)$-th column.
+\end{definition}
+
+\begin{proposition}{Elementary Transformation of Determinants}{}
+  When performing elementary rwo-operations on a matrix,
+  the corresponding changes to the determinant are as follows:
+  \begin{enumerate}
+  \item \textbf{Interchange}: Swapping two rows (or columns) changes the sign of
+    the determinant.
+  \item \textbf{Multiplication}: Multiplying a row (or column) by a scalar $k$
+    multiplies the determinant by $k$.
+  \item \textbf{Addition}: Adding a multiple of one row (or column) to another
+    row (or column) does not change the value of the determinant.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  Hint: use the definition of determinants.
+\end{proof}
+
+\begin{definition}{Minor and Cofactor}{}
+  Consider an $n \times n$ matrix $A = (a_{ij})$.
+  Given two positive integers $i,j$,
+  the \emph{minor of $a_{ij}$}, denoted as $M_{ij}$,
+  is the determinant obtained by deleting the $i$-th row
+  and $j$-th column of $A$.
+  The \emph{cofactor of $a_{ij}$} is then defined as $A_{ij} = (-1)^{i+j}M_{ij}$.
+\end{definition}
+
+\begin{proposition}{Expansion of Determinants}{}
+  Fix column $j$, the determinant $|A|$ can be expanded as
+  \begin{equation}
+    |A| = \sum\limits_{i = 1}^n a_{ij} A_{ij},
+  \end{equation}
+  where $A_{ij}$ is the cofactor of $a_{ij}$.
+  Similarly, fix row $i$, the determinant $|A|$ can be expanded as
+  \begin{equation}
+    |A| = \sum\limits_{j = 1}^n a_{ij} A_{ij}.
+  \end{equation}
+\end{proposition}
+
+\section{Cramer's Rule}
+
+\begin{theorem}{Cramer's Rule}{}
+  Consider a system of $n$ linear equations in $n$ unknowns $Ax = b$.
+  If the determinant of the coefficient matrix $|A| \neq 0$,
+  then the system has a unique solution given by
+  \begin{equation}
+    x = \left( \frac{|B_1|}{|A|}, \frac{|B_2|}{|A|}, \cdots, \frac{|B_n|}{|A|} \right).
+  \end{equation}
+  Here, $B_i$ is the matrix obtained by replacing the $i$-th column of $A$
+  with the column vector $b$.
+\end{theorem}
+
+\begin{proof}
+  Hint: unique + $x$ is the solution.
+\end{proof}
+
+
+\section{Special Determinants}
+
+\subsection{Claw-shaped Determinants}
+
+
+
+
+
+
