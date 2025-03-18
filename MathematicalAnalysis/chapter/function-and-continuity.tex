@@ -207,7 +207,7 @@
 \end{example}
 
 \begin{proof}
-  
+  Hint: Use the definition of uniform continuity.
 \end{proof}
 
 \subsection{Cantor Theorem and Its Generalization}
@@ -216,10 +216,6 @@
   If $f(x)$ is continuous on the closed interval $[a, b]$,
   then it is uniformly continuous on $[a, b]$.
 \end{theorem}
-
-\begin{proof}
-  
-\end{proof}
 
 \begin{theorem}{Cantor Theorem on an Infinite Interval}{}
   If $f(x)$ is continuous on $[a, +\infty)$,
@@ -232,10 +228,10 @@
 \begin{definition}{Lipschitz Continuity}{}
   If a function $f(x): I \rightarrow \mathbb{R}$
   satisfies the Lipschitz condition, i.e.,
-  there exists a positive real number $K$ such that
+  there exists a positive real number $L$ such that
   for any $x_1, x_2 \in I$,
   \begin{equation}
-    |f(x_1) - f(x_2)| \leq K |x_1 - x_2|.
+    |f(x_1) - f(x_2)| \leq L |x_1 - x_2|.
   \end{equation}
   Then it is \emph{Lipschitz continuous} on $I$.
 \end{definition}
@@ -244,6 +240,20 @@
   If $f(x)$ is Lipschitz continuous on the interval $I$,
   then it is uniformly continuous on $I$.
 \end{proposition}
+
+\begin{proof}
+  Based on the Lipschitz continuity, for all $\epsilon > 0$,
+  take $\delta = \frac{\epsilon}{L}$, then we have
+  \begin{equation}
+    |f(x) - f(y)| \leq L \cdot \frac{\epsilon}{L} = \epsilon.
+  \end{equation}
+  Thus $f(x)$ is uniformly continuous.
+\end{proof}
+
+\begin{corollary}{Bounded Derivative Implies Uniform Continuity}{}
+  If $f^{\prime}(x)$ is bounded on $I$, then $f(x)$ is Lipschitz continuous and
+  uniformly continuous.
+\end{corollary}
 
 \begin{example}{Use Lipschitz Continuity to Prove Uniform Continuity}{}
   Determine the uniform continuity of
@@ -254,6 +264,6 @@
 \end{example}
 
 \begin{solution}
-  
+  (1) $\sin x$ is uniformly continuous since its derivative is bounded.
 \end{solution}
 
