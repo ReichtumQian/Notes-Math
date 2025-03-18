@@ -1,0 +1,88 @@
+
+\section{Matrix Basics}
+
+\subsection{Inverse of Matrices}
+
+\begin{definition}{Inverse of a Matrix}{}
+  If two matrices $A, B$ satisfy $AB = BA = I$,
+  then $B$ is called the \emph{inverse} of $A$, denoted as $A^{-1}$.
+\end{definition}
+
+\begin{proposition}{Basic Properties of Matrix Inverses}{}
+  Consider two matrices $A, B$ and a real number $k$, then
+  \begin{enumerate}
+  \item $(kA)^{-1} = k^{-1}A^{-1}$;
+  \item $(AB)^{-1} = B^{-1} A^{-1}$;
+  \item $(A^T)^{-1} = (A^{-1})^T$;
+  \item $|A^{-1}| = |A|^{-1}$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  (1) is obvious.
+  (2) by $(AB)^{-1}AB = I$ then $(AB)^{-1} = B^{-1}A^{-1}$.
+\end{proof}
+
+\begin{proposition}{Necessary and Sufficient Condition for Invertibility}{}
+  A square matrix $A$ is invertible if and only if:
+  (1) $|A| \neq 0$;
+  (2) or $A$ can be expressed as a product of elementary matrices.
+\end{proposition}
+
+\begin{proposition}{Finding the Inverse Using Elementary Row Operations}{}
+  If a matrix $A$ is invertible, then we can apply a sequence of
+  elementary row operations such that
+  \begin{equation}
+    (A, I) \rightarrow (I, A^{-1}).
+  \end{equation}
+  Similarly, for any matrix $B$ with compatible dimensions,
+  we can apply elementary row operations such that $(A, B)
+  \rightarrow (I, A^{-1}B)$.
+\end{proposition}
+
+\subsection{Adjugate Matrix}
+
+\begin{definition}{Minor and Cofactor}{}
+  Consider an $n \times n$ matrix $A = (a_{ij})$.
+  Given two positive integers $i,j$,
+  the \emph{minor of $a_{ij}$}, denoted as $M_{ij}$,
+  is the determinant obtained by deleting the $i$-th row
+  and $j$-th column of $A$.
+  The \emph{cofactor of $a_{ij}$} is then defined as $(-1)^{i+j}M_{ij}$.
+\end{definition}
+
+\begin{definition}{Adjugate Matrix}{}
+  Let $A = (a_{ij})$ be an $n \times n$ matrix, and let $A_{ij}$ denote
+  the cofactor of the entry $a_{ij}$.
+  The \emph{adjugate matrix} of $A$, denoted as $A^{\ast}$,
+  is defined as the transpose of the cofactor matrix of $A$, i.e.,
+  \begin{equation}
+    A^*=\begin{bmatrix}A_{11}&A_{21}&\cdots&A_{n1}\\A_{12}&A_{22}&\cdots&A_{n2}\\\vdots&\vdots&\ddots&\vdots\\A_{1n}&A_{2n}&\cdots&A_{nn}\end{bmatrix}
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Finding the Inverse Using the Adjugate Matrix}{}
+  Let $A$ be an $n \times n$ matrix, and let $A^{\ast}$ denote its adjugate matrix.
+  Then
+  \begin{equation}
+    AA^{\ast} = |A| I.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Define $B = AA^{\ast}$.
+  The $(i,j)$-entry of $B$, denoted as $b_{ij}$, is given by 
+  \begin{equation}
+    b_{ij} = \sum\limits_{k = 1}^n a_{ik} A_{kj} =
+    \begin{cases}
+      |A|, & i = j;\\
+      0, & i \neq j.
+    \end{cases}
+  \end{equation}
+  This result follows directly from the expansion of the determinant along the
+  $j$-th column.
+  Therefore, $AA^{\ast} = |A|I$.
+\end{proof}
+
+
+
