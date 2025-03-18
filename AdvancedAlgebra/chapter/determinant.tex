@@ -41,6 +41,13 @@
   The \emph{cofactor of $a_{ij}$} is then defined as $A_{ij} = (-1)^{i+j}M_{ij}$.
 \end{definition}
 
+\begin{note}
+  The concept of a minor can be generalized beyond the deletion of a single row
+  and column.
+  Specifically, a \emph{minor} can refer to the determinant of any square submatrix
+  obtained by deleting multiple rows and multiple columns from $A$.
+\end{note}
+
 \begin{proposition}{Expansion of Determinants}{}
   Fix column $j$, the determinant $|A|$ can be expanded as
   \begin{equation}
@@ -52,6 +59,24 @@
     |A| = \sum\limits_{j = 1}^n a_{ij} A_{ij}.
   \end{equation}
 \end{proposition}
+
+\begin{proposition}{Expansion by Two Distinct Rows}{}
+  Let $A = (a_{ij})$ be an $n \times n$ square matrix,
+  and let $i, j$ be two distinct positive integers.
+  Then
+  \begin{equation}
+    \sum\limits_{k = 1}^n a_{ik} A_{jk} = 0,
+  \end{equation}
+  where $A_{jk}$ is the cofactor of $a_{jk}$.
+\end{proposition}
+
+\begin{proof}
+  Define a new matrix $B$ by replacing the $j$-th row of $A$ with the
+  $i$-th row of $A$.
+  Since the $i$-th and $j$-th rows of $B$ are identical, then $|B| = 0$.
+  The determinant of $B$ can be computed using cofactor expansion along the
+  $j$-th row, and we find that the above equation is equivalent to $|B|$,
+\end{proof}
 
 \section{Cramer's Rule}
 
@@ -71,9 +96,9 @@
 \end{proof}
 
 
-\section{Special Determinants}
+% \section{Special Determinants}
 
-\subsection{Claw-shaped Determinants}
+% \subsection{Claw-shaped Determinants}
 
 
 
