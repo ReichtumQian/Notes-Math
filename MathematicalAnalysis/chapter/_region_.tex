@@ -1,7 +1,6 @@
-
-\section{Derivatives and Differentials}
-
-\subsection{The Concept of Derivatives and Differential}
+\message{ !name(univariate-differential-calculus.tex)}
+\message{ !name(univariate-differential-calculus.tex) !offset(1) }
+ential}
 
 \begin{definition}{Differentiability}{}
   Let $f(x)$ be a function defined on a neighborhood of $x_0 \in \mathbb{R}$,
@@ -110,83 +109,7 @@
 \end{proposition}
 
 \begin{proposition}{Derivative of Inverse Functions}{}
-  Suppose the inverse function of the function $y = y(x)$ is $x = x(y)$,
+  Suppose the inverse function of a function $y = y(x)$ is $x = x(y)$,
   then we have
-  \begin{equation}
-    y^{\prime}(x) = \frac{1}{x^{\prime}(y)}.
-  \end{equation}
-\end{proposition}
-
-\begin{example}{Finding Derivatives of Inverse Functions}{}
-  Find the derivatives of
-  (1) $\arcsin x$ (2) $\arccos x$ (3) $\arctan x$.
-\end{example}
-
-\begin{solution}
-  (1) Define $y(x) = \arcsin x$, and the inverse function of $y(x)$ is
-  $x(y) = \sin y$. So $x^{\prime}(y) = \cos y$, and according to the derivative
-  of inverse functions we have
-  \begin{equation}
-    y^{\prime}(x) = \frac{1}{x^{\prime}(y)} = \frac{1}{\cos y} = \frac{1}{\sqrt{1 - x^2}}.
-  \end{equation}
-  (2) (3) are similar to (1).
-\end{solution}
-
-\begin{proposition}{Derivative of Power-Exponential Functions}{}
-  For functions of the form $y(x) = u(x)^{v(x)}$,
-  taking the natural logarithm gives $\ln y = v(x) \ln u(x)$,
-  and differentiating both sides yields
-  \begin{equation}
-    y^{\prime}=u(x)^{v(x)}\left[v^{\prime}(x)\ln u(x)+v(x)\frac{u^{\prime}(x)}{u(x)}\right]
-  \end{equation}
-\end{proposition}
-
-\begin{example}{Derivative of Power-Exponential Functions}{}
-  Find the derivatives of (1) $x^{\frac{1}{x}}$
-  (2) $x^x$.
-\end{example}
-
-\begin{solution}
-  (1) Define $f(x) = x^{\frac{1}{x}}$, and
-  taking the natural logarithm on both sides yields
-  \begin{equation}
-    \ln f(x) = \frac{\ln x}{x}.
-  \end{equation}
-  Differentiating both sides, we get
-  \begin{equation}
-    f^{\prime}(x) = x^{\frac{1}{x}} \frac{1 - \ln x}{x^2}.
-  \end{equation}
-  (2) is similar to (1).
-\end{solution}
-
-\subsection{Higher-Order Derivatives}
-
-\begin{proposition}{Leibniz Formula}{}
-  If $f(x)$ and $g(x)$ are $n$-th order differentiable functions,
-  then $f(x)g(x)$ is also $n$-th order differentiable, and
-  \begin{equation}
-    \left[ f(x)g(x) \right]^{(n)} = \sum\limits_{k = 0}^n \binom{n}{k} f^{(n-k)}(x) g^{(k)}(x).
-  \end{equation}
-\end{proposition}
-
-\section{Differential Mean-Value Theorems}
-
-\begin{theorem}{Fermat's Theorem}{}
-  If $x_0$ is an extreme point of $f(x)$ and $f^{\prime}(x_0)$ exists,
-  then
-  \begin{equation}
-    f^{\prime}(x_0) = 0.
-  \end{equation}
-\end{theorem}
-
-\begin{theorem}{Rolle's Mean-Value Theorem}{}
-  If $f(x)$ is continuous on $[a, b]$,
-  differentiable on $(a, b)$,
-  and $f(a) = f(b)$,
-  then there exists $\xi \in (a, b)$ such that
-  \begin{equation}
-    f^{\prime}(\xi) = 0.
-  \end{equation}
-\end{theorem}
-
-
+  
+\message{ !name(univariate-differential-calculus.tex) !offset(-115) }
