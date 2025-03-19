@@ -1,0 +1,93 @@
+
+\section{Linear Spaces}
+
+\subsection{Concepts of Linear Spaces}
+
+\begin{definition}{Linear Space}{}
+  Let $\mathbb{P}$ be a number field, $V$ be a non-empty set.
+  If two binary operations(addition and scalar multiplication),
+  are defined on $V$, and these two operations satisfy the following axioms
+  \begin{enumerate}
+  \item Binary Operations: (1) Commutativity
+    (2) Associativity (3) Existence of zero element (4) Existence of negative element
+  \item Scalar Multiplication: (1) Distributivity over vector addition
+    (2) Distributivity over scalar addition
+    (3) Associativity of scalar multiplication
+    (4) Identity scalar multiplication
+  \end{enumerate}
+  Then $V$ is a \emph{linear space over $\mathbb{P}$}.
+\end{definition}
+
+\begin{definition}{Linear Dependence and Linear Independence}{}
+  Let $\alpha_1, \cdots, \alpha_n$ be a sequence of vectors,
+  if there exist $n$ numbers $k_1, \cdots, k_n$ in $\mathbb{P}$, not all zero, such that
+  \begin{equation}
+    k_1 \alpha_1 + \cdots + k_n \alpha_n = 0.
+  \end{equation}
+  Then they are said to be \emph{linearly dependent}.
+  If this equation holds if and only if $k_1 = k_2 = \cdots = k_n = 0$,
+  then they are \emph{linearly independent}.
+\end{definition}
+
+\begin{example}{Linear Independence of Nilpotent Basis}{}
+  Let $\mathcal{A}$ be a linear transformation on $V$,
+  and let $\xi$ be a vector in $V$.
+  Prove that if $\mathcal{A}^{k - 1}\xi \neq 0, \mathcal{A}^k \xi = 0$ ($k > 1$),
+  then
+  \begin{equation}
+    \xi, \mathcal{A} \xi, \cdots, \mathcal{A}^{k-1}\xi
+  \end{equation}
+  are linearly independent.
+\end{example}
+
+\begin{proof}
+  Assume that $k_0 \xi + k_1 \mathcal{A} \xi + \cdots +
+  k_{k-1}\mathcal{A}^{k-1}\xi = 0$.
+  Apply $\mathcal{A}^{k-1}$ to both sides to get $k_0 \mathcal{A}^{k-1}\xi = 0$.
+  Since $\mathcal{A}^{k-1}\xi \neq 0$,
+  we get $k_0 = 0$.
+  And by repeating this process, we can deduce that $k_0, k_1, \cdots, k_{k-1}$
+  are all zeroes.
+\end{proof}
+
+\begin{proposition}{Finding the Maximal Linearly Independent Subsets}{}
+  Given a set of vectors $\alpha_1, \cdots, \alpha_n$,
+  form a matrix with these vectors as column vectors,
+  and perform elementary row operations on the matrix to transform it into a
+  row-echelon form.
+  The vectors corresponding to the columns where the leading $1$s (pivots or
+  leading entries) located form a maximal linearly independent subset.
+\end{proposition}
+
+\begin{example}{Finding the Maximal Linearly Independent Sub-sets}{}
+  Calculate the maximal linearly independent subsets of the following vector set:
+  \begin{equation}
+    \alpha_1 = (1, -1, 2, 4), \alpha_2 = (0, 3, 1, 2), \alpha_3 = (3, 0, 7, 14), \alpha_4 = (1, -1, 2, 0), \alpha_5 = (2, 1, 5, 6).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Forming a new matrix and performing elementary row operations yield
+  \begin{equation}
+    \begin{bmatrix}1&0&3&1&2\\-1&3&0&-1&1\\2&1&7&2&5\\4&2&14&0&6\end{bmatrix}\to\begin{bmatrix}1&0&3&1&-2\\0&1&1&0&1\\0&0&0&1&1\\0&0&0&0&0\end{bmatrix},
+  \end{equation}
+  so the maximal linearly independent subset is $\alpha_1, \alpha_2, \alpha_4$.
+\end{solution}
+
+\begin{definition}{Rank of Vector Set}{}
+  Let $\alpha_1, \cdots, \alpha_n$ be a vector set,
+  the number of vectors in its maximal linearly independent subset is called
+  their \emph{rank}.
+\end{definition}
+
+
+\section{Linear Mappings}
+
+\section{Linear Transformations}
+
+\section{Eigenvalues and Similarity Diagonalization}
+
+\section{Minimal Polynomials}
+
+
+
