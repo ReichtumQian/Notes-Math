@@ -179,6 +179,17 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  Without loss of generality, let $x_0$ be a minimum-value point.
+  First, consider the right-hand derivative $f_+^{\prime}(x_0) = f^{\prime}(x_0)
+  \geq 0$.
+  Similarly, consider the left-hand derivative $f_-^{\prime}(x_0) =
+  f^{\prime}(x_0) \leq 0$.
+  Since the derivative of $f(x)$ at $x_0$ exists,
+  so the left-hand and right-hand derivatives are equal.
+  So the derivative $f^{\prime}(x_0)$ is zero.
+\end{proof}
+
 \begin{theorem}{Rolle's Mean-Value Theorem}{}
   If $f(x)$ is continuous on $[a, b]$,
   differentiable on $(a, b)$,
@@ -188,5 +199,57 @@
     f^{\prime}(\xi) = 0.
   \end{equation}
 \end{theorem}
+
+
+\begin{theorem}{Lagrange's Mean-Value Theorem}{}
+  If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$,
+  then there exists $\xi \in (a, b)$ such that
+  \begin{equation}
+    f^{\prime}(\xi) = \frac{f(b) - f(a)}{b - a}.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}{Cauchy's Mean-Value Theorem}{}
+  If $f$ and $g$ are continuous on $[a, b]$,
+  differentiable on $(a, b)$,
+  $f^{\prime}(x), g^{\prime}(x)$ are not both $0$ at the same time,
+  and $g(a) \neq g(b)$, then there exists $\xi \in (a, b)$ such that
+  \begin{equation}
+    \frac{f^{\prime}(\xi)}{g^{\prime}(\xi)} = \frac{f(b) - f(a)}{g(b) - g(a)}.
+  \end{equation}
+\end{theorem}
+
+\section{L'Hopital's Rule and Taylor's Formulas}
+
+\subsection{L'Hopital's Rule}
+
+\begin{theorem}{L'Hopital's Rule}{}
+  If two functions $f(x), g(x)$ satisfy
+  (1)$\lim \limits _{x \rightarrow x_0} f(x) = \lim \limits _{x \rightarrow x_0}
+  g(x) = 0$ or
+  $\lim \limits _{x \rightarrow x_0} g(x) = \infty$;
+  (2) $f^{\prime}(x), g^{\prime}(x)$ are defined in the punctured neighborhood
+  of $x_0$, then
+  \begin{equation}
+    \lim \limits _{x \rightarrow x_0} \frac{f(x)}{g(x)}
+    = \lim \limits _{x \rightarrow x_0} \frac{f^{\prime}(x)}{g^{\prime}(x)}.
+  \end{equation}
+\end{theorem}
+
+
+\subsection{Taylor's Formulas}
+
+\begin{theorem}{Taylor's Formula with Peano Remainder}{}
+  
+\end{theorem}
+
+\begin{theorem}{Taylor's Formula with Lagrange Remainder}{}
+  
+\end{theorem}
+
+\section{Convex and Concave Functions}
+
+
+
 
 
