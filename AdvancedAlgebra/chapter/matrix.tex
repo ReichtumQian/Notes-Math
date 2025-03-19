@@ -1,6 +1,8 @@
 
 \section{Rank of Matrices}
 
+\subsection{The Concept and Properties of Matrix Rank}
+
 \begin{definition}{Rank of a Matrix}{}
   The \emph{rank} of a matrix is equal to:
   (1) The rank of row-vector group of the matrix;
@@ -43,6 +45,137 @@
     \right]Q.
   \end{equation}
 \end{corollary}
+
+\begin{lemma}{Matrix Decomposition}{}
+  An $s \times n$ matrix $E = \mathrm{diag}(I_r, O)$ can be decomposed as:
+  \begin{equation}
+      \begin{bmatrix}I_r&O\\O&O\end{bmatrix}=\begin{bmatrix}I_r\\O\end{bmatrix}\begin{bmatrix}I_r&O\end{bmatrix}.
+  \end{equation}
+  Furthermore, when it is a square matrix, it can be decomposed as:
+  \begin{equation}
+      \begin{bmatrix}I_r&O\\O&O\end{bmatrix}=\begin{bmatrix}I_r&O\\O&O\end{bmatrix}\begin{bmatrix}I_r&O\\O&O\end{bmatrix}.
+  \end{equation}
+\end{lemma}
+
+\begin{example}{Matrix Decomposition}{}
+  (1) Prove that any non-zero matrix can be decomposed into the product of
+  a column-full-rank matrix and a row-full-rank matrix.
+
+  (2) Prove that any square matrix can be decomposed into the product of
+  an invertible matrix and an idempotent matrix.
+\end{example}
+
+\begin{proof}
+  (1) Let $A$ be a non-zero matrix with a rank of $r$, then we have
+  \begin{equation}
+    A=P\begin{bmatrix}I_r&O\\O&O\end{bmatrix}Q=P\begin{bmatrix}I_r\\O\end{bmatrix}\begin{bmatrix}I_r&O\end{bmatrix}Q
+    = A_1 A_2,
+  \end{equation}
+  where $I_r$ is the identity matrix of order $r$,
+  and $A_1 = P [I_r, O]^T, A_2 = [I_r, O]Q$.
+
+  (2) Let $A$ be a $n \times n$ matrix with a rank of $r$,
+  then we can get
+  \begin{equation}
+    A=P\begin{pmatrix}I_r&O\\O&O\end{pmatrix}Q=PQQ^{-1}\begin{pmatrix}I_r&O\\O&O\end{pmatrix}Q,
+  \end{equation}
+  where $PQ$ is an invertible matrix, and the remaining is a idempotent matrix.
+\end{proof}
+
+\subsection{Rank Inequalities}
+
+\begin{lemma}{Invertible Matrices Do Not Change Rank}{}
+  Let $A$ be an arbitrary matrix,
+  and let $P, Q$ be invertible matrices,
+  then
+  \begin{equation}
+    r(A) = r(PAQ).
+  \end{equation}
+\end{lemma}
+
+\begin{example}{}{}
+  Let $A$ and $B$ be $m \times n$ and $n \times s$ matrices respectively,
+  prove (1) if $r(A) = n$, then $r(AB) = r(B)$;
+  (2) if $r(B) = n$, then $r(AB) = r(A)$.
+\end{example}
+
+\begin{proof}
+  (1) Since $r(A) = n$, there exists an invertible matrix $P$ such that $PA =
+  [A_1, O]^T$, where $A_1$ is an invertible matrix.
+  Then
+  \begin{equation}
+    r(AB) = r \left(
+      \begin{bmatrix}
+        A_1\\
+        O
+      \end{bmatrix}B
+    \right)
+    = r\left(
+      \begin{bmatrix}
+        A_1 B\\
+        O
+      \end{bmatrix}
+    \right) = r(A_1B) = r(B).
+  \end{equation}
+\end{proof}
+
+\begin{lemma}{Rank of Block Matrices}{}
+  Let $A$ be a matrix with a rank of $r_1$,
+  and let $B$ be a matrix with a rank of $r_2$,
+  $C$ be an arbitrary matrix,
+  then we have
+  \begin{equation}
+   r\begin{pmatrix}A&O\\O&B\end{pmatrix}=r(A)+r(B), \quad
+   r\begin{pmatrix}A&O\\C&B\end{pmatrix}\geq r(A)+r(B), \quad
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  (1) Hint:
+  \begin{equation}
+    \begin{pmatrix}P_1&O\\O&P_2\end{pmatrix}
+    \begin{pmatrix}A&O\\O&B\end{pmatrix}
+    \begin{pmatrix}Q_1&O\\O&Q_2\end{pmatrix}
+    =\begin{pmatrix}I_{r_1}&O&O&O\\O&O&O&O\\O&O&I_{r_2}&O\\O&O&O&O\end{pmatrix}
+  \end{equation}
+
+  (2)Hint: 
+  \begin{equation}
+    \begin{pmatrix}P_1&O\\O&P_2\end{pmatrix}
+    \begin{pmatrix}A&O\\C&B\end{pmatrix}
+    \begin{pmatrix}Q_1&O\\O&Q_2\end{pmatrix}
+    =\begin{pmatrix}I_{r_1}&O&O&O\\O&O&O&O\\C_{11}&C_{12}&I_{r_2}&O\\C_{21}&C_{22}&O&O\end{pmatrix}\to\begin{pmatrix}I_{r_1}&O&O&O\\O&O&O&O\\O&O&I_{r_2}&O\\O&C_{22}&O&O\end{pmatrix}
+  \end{equation}
+\end{proof}
+
+\begin{theorem}{Inequalities of Matrix Rank}{}
+  Let $A$ and $B$ be arbitrary matrices, we have
+  \begin{enumerate}
+  \item $r(AB) \leq \min\{r(A), r(B)\}$;
+  \item $r(A + B) \leq r(A) + r(B)$;
+  \item Sylvester's inequality: $A, B$ are $n$-order square matrices, then $r(A)
+    + r(B) \leq r(AB) + n$;
+  \item Frobenius inequality: $A, B, C$ are $n$-order square matrices,
+    then $r(ABC) \geq r(AB) + r(BC) - r(B)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  (1) Hint: Write $B$ in row-vector form, and by the multiplication between
+  matrices we know that each row-vector of $AB$ can be linearly represented by
+  the row-vector of $B$, thus $r(AB) \leq r(B)$.
+  Similarly, $r(AB) \leq r(A)$.
+
+  (2) Hint: From the column-vector perspective,
+  the column-vectors of $A + B$ can be linearly represented by
+  the column-vectors of $A$ and $B$, so the conclusion holds.
+
+  (3)(4) Hint: Prove that $r(ABC) + r(B) \geq r(AB) + r(BC)$,
+  \begin{equation}
+    \begin{bmatrix}ABC&\\&B\end{bmatrix}\to\begin{bmatrix}ABC&O\\BC&B\end{bmatrix}\to\begin{bmatrix}O&-AB\\BC&B\end{bmatrix},
+  \end{equation}
+  and according the rank inequality of block matrices, the conclusion holds.
+\end{proof}
 
 
 \section{Inverse and Adjugate Matrices}
