@@ -80,6 +80,172 @@
   their \emph{rank}.
 \end{definition}
 
+\subsection{Basis and Coordinates}
+
+\begin{definition}{Basis}{}
+  Let $V$ be a finite-dimensional linear space,
+  and $\epsilon_1, \cdots, \epsilon_n$ be linearly independent in $V$.
+  If any $\alpha \in V$ can be linearly represented by this set of vectors,
+  then this set of vectors are called the \emph{basis} of $V$.
+\end{definition}
+
+\begin{example}{Proving a Basis}{}
+  Given $\alpha_1 = (1, 1, \cdots, 1)$,
+  $\alpha_2 = (1, 1, \cdots, 1, 0)$,
+  $\cdots$,
+  $\alpha_n = (1, 0, \cdots, 0)$.
+  Prove that $\alpha_1, \cdots, \alpha_n$ is a basis of $\mathbb{R}^n$.
+\end{example}
+
+\begin{proof}
+  Hint: Just arrange them into a matrix and check its full-rank property.
+\end{proof}
+
+\begin{definition}{Coordinates}{}
+  Let $V$ be a finite-dimensional linear space,
+  and $\epsilon_1, \cdots, \epsilon_n$ be a basis of $V$.
+  If a vector $\alpha \in V$ can be represented as
+  \begin{equation}
+    \alpha = (\epsilon_1, \cdots, \epsilon_n)X,
+  \end{equation}
+  where $X \in \mathbb{P}^n$ is called the \emph{coordinate} of $\alpha$
+  under the basis $\epsilon_1,\cdots, \epsilon_n$.
+\end{definition}
+
+\begin{example}{Calculating Coordinates}{}
+  Given that $\epsilon_{1}, \epsilon_2, \epsilon_3$ is a basis of
+  $\mathbb{R}^3$,
+  calculate the coordinate of $\alpha = (1, 2, 1)^T$ under this basis, where
+  \begin{equation}
+    \epsilon_1=(1,1,1)^T,\epsilon_2=(1,1,-1)^T,\epsilon_3=(1,-1,-1)^T.
+    \end{equation}
+\end{example}
+
+\begin{definition}{Transition Matrix}{}
+  Given two bases $(\epsilon_1, \cdots, \epsilon_n)$
+  and $(\eta_1, \cdots, \eta_n)$, if there exists a matrix $T$ such that
+  \begin{equation}
+    (\epsilon_1, \cdots, \epsilon_n) = (\eta_1, \cdots, \eta_n)T,
+  \end{equation}
+  then $T$ is called the \emph{transition matrix} from $\eta_1, \cdots, \eta_n$
+  to $\epsilon_1, \cdots, \epsilon_n$.
+\end{definition}
+
+\begin{note}{}
+  Calculation of Transition Matrix:
+  By elementary row operations find $(\eta_1, \cdots, \eta_n)^{-1} (\epsilon_1,
+  \cdots, \epsilon_n)$.
+\end{note}
+
+\begin{example}{Calculation of Transition Matrix}{}
+  Given the following two bases, (1) find the transition matrix between them
+  (2) find the coordinate of $\xi = (1, 0, 0, -1)^T$ under $\alpha_1, \alpha_2,
+  \alpha_3, \alpha_4$.
+  \begin{equation}
+    \alpha_1=(1,1,1,1),\alpha_2=(1,1,-1,-1),\alpha_3=(1,-1,1,-1),\alpha_4=(1,-1,-1,1)
+  \end{equation}
+  \begin{equation}
+    \beta_1=(1,1,0,1),\beta_2=(2,1,3,1),\beta_3=(1,1,0,0),\beta_4=(0,1,-1,-1)
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Hint: Construct matrix $A, B$ and calculate the transition matrix by
+  $(A|B) \leftarrow (I|A^{-1}B)$. The answer is
+  \begin{equation}
+    A^{-1}B=\frac{1}{4}\left[\begin{array}{cccc}3&7&2&-1\\1&-1&2&3\\-1&3&0&-1\\1&-1&0&-1\end{array}\right]
+  \end{equation}
+
+  (2) Hint: Solve a system of linear equations, and the final answer is $[0,
+  0.5, 0.5, 0]^T$.
+\end{solution}
+
+\begin{definition}{Isomorphism}{}
+  If there exists a bijection between two algebraic systems,
+  and this bijection preserves the operations of the algebraic systems,
+  then the two algebraic systems are \emph{isomorphic}.
+\end{definition}
+
+\begin{theorem}{Isomorphism Mapping of Finite-Dimensional Linears Spaces}{}
+  Let $V$ be a finite-dimensional linear space over $\mathbb{P}$,
+  then it is isomorphic with $\mathbb{P}^n$.
+\end{theorem}
+
+\begin{proof}
+  Suppose that $\alpha_1, \cdots, \alpha_n$ is a basis of the space $V$,
+  we can construct a linear mapping $f$ that maps $\alpha \in V$ to
+  its coordinate over $\alpha_1, \cdots, \alpha_n$.
+  Then $f$ is an isomorphism mapping from $V$ to $\mathbb{P}^n$,
+  thus $V$ is isomorphic with $\mathbb{P}^n$.
+\end{proof}
+
+\begin{example}{Applications of Isomorphism}{}
+  \begin{itemize}
+  \item Let $\beta_1 = \alpha_1 + \alpha_2, \beta_2 = \alpha_1 + \alpha_2,
+    \beta_3 = \alpha_2 + \alpha_3$. Prove that $\alpha_1, \alpha_2, \alpha_3$
+    and $\beta_1, \beta_2, \beta_3$ are equivalent.
+  \item Let $\beta_1 = \alpha_2 + \cdots + \alpha_n,
+    \beta_2 = \alpha_1 + \alpha_3 + \cdots + \alpha_n,
+    \beta_n = \alpha_1 + \cdots + \alpha_{n-1}$.
+    Prove that $\alpha_1, \cdots, \alpha_n$ and $\beta_1, \cdots, \beta_n$ have
+    the same rank.
+  \end{itemize}
+\end{example}
+
+\begin{proof}
+  Hint: Represent the matrix $[\beta_1, \beta_2, \beta_3]$ by $\alpha_1, \alpha_2, \alpha_3$.
+\end{proof}
+
+\subsection{Sum and Intersection of Subspaces, Dimension Theorem}
+
+\subsection{Direct-Sum Theory}
+
+\begin{definition}{Direct Sum}{}
+  Let $V_1$ and $V_2$ be subspaces of the linear space $V$.
+  If $V_1 \cap V_2 = \{0\}$,
+  then we call the sum of $V_1, V_2$ the \emph{direct sum},
+  denoted as
+  \begin{equation}
+    V_1 \oplus V_2 := V_1 + V_2.
+  \end{equation}
+\end{definition}
+
+\begin{definition}{Complementary Space}{}
+  If $V = V_1 \oplus V_2$,
+  then $V_2$ is called the \emph{complementary space of $V_1$}.
+\end{definition}
+
+\begin{proposition}{Equivalent Conditions for Direct Sum}{}
+  The equation $V = V_1 \oplus V_2$ holds if and only if:
+  \begin{itemize}
+  \item Any vector $\alpha$ in $V$ has a unique representation $\alpha =
+    \alpha_1 + \alpha_2$, where $\alpha_1 \in V_1$ and $\alpha_2 \in V_2$.
+  \item The zero element in $V$ is uniquely represented as the sum of
+    the zero elements in $V_1$ and $V_2$.
+  \item $\operatorname{dim} V = \operatorname{dim} V_1 + \operatorname{dim} V_2$.
+  \end{itemize}
+\end{proposition}
+
+\begin{proposition}{Direct-Sum Combination Theorem}{}
+  If we have $V = V_1 \oplus V_2$,
+  where $V_1 = V_{11} \oplus V_{12} \oplus \cdots \oplus V_{1s}$,
+  and $V_2 = V_{21} \oplus \cdots \oplus V_{2t}$,
+  then
+  \begin{equation}
+    V = V_{11} \oplus \cdots \oplus V_{1s} \oplus V_{21} \oplus \cdots \oplus V_{2t}.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  We only prove the case when $V = V_1 \oplus V_2$ and $V_1 = V_{11} \oplus
+  V_{12}$,
+  that is, $V = V_{11} \oplus V_{12} \oplus V_2$.
+  First, it is obvious that $V = V_{11} + V_{12} + V_2$.
+  Let $0 = \alpha_{11} + \alpha_{12} + \alpha_2 = (\alpha_{11} + \alpha_{12}) + \alpha_2$.
+  Since $V = V_1 \oplus V_2$,
+  we get $\alpha_{11} + \alpha_{12} = \alpha_2 = 0$.
+\end{proof}
+
 
 \section{Linear Mappings}
 
