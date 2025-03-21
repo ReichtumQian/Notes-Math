@@ -99,9 +99,6 @@
   where $\mathrm{d} x = \Delta x = x - x_0$.
 \end{definition}
 
-\subsection{Commonly Used Derivatives Formulas}
-
-
 \subsection{Derivatives of Implicit Functions and Inverse Functions}
 
 \begin{proposition}{Derivative of Implicit Functions}{}
@@ -168,6 +165,54 @@
     \left[ f(x)g(x) \right]^{(n)} = \sum\limits_{k = 0}^n \binom{n}{k} f^{(n-k)}(x) g^{(k)}(x).
   \end{equation}
 \end{proposition}
+
+\subsection{Commonly Used Derivatives Formulas}
+
+\begin{proposition}{Derivatives of Trigonometric Functions}{}
+  \begin{equation}
+    \begin{array}{ll}
+      (\tan x)^{\prime} = \sec^2 x & (\cot x)^{\prime} = - \csc^2 x\\
+      (\sec x)^{\prime} = \sec x \tan x&  (\csc x)^{\prime} = - \csc x \cot x\\
+      (\sin x)^{(n)} = \sin \left( x + \frac{n\pi}{2} \right)&(\cos x)^{(n)} = \cos \left( x + \frac{n\pi}{2}\right)
+    \end{array}
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  (1) (2) Hint: $\tan x = \frac{\sin x}{\cos x}$, $(\tan x)^{\prime} =
+  \frac{\cos^2 x + \sin^2 x}{\cos^2 x} = \sec^2 x$.
+  (3) (4) Hint: $\sec x = \frac{1}{\cos x}$,
+  $(\sec x)^{\prime} = \frac{\sin x}{\cos^2 x} = \sec x \tan x$.
+\end{proof}
+
+\begin{proposition}{Derivatives of Inverse-Trigonometric Functions}{}
+  \begin{equation}
+    \begin{array}{ll}
+      (\arcsin x)^{\prime} = \frac{1}{\sqrt{1 - x^2}} & (\arccos x)^{\prime} = - \frac{1}{\sqrt{1 - x^2}} \\
+      (\arctan x)^{\prime} = \frac{1}{1 + x^2} & (\operatorname{arccot} x)^{\prime} = - \frac{1}{1 + x^2} \\
+    \end{array}
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Higher-Order Derivatives of Inverse-Trigonometric Functions}{}
+  Consider $f(x) = \arctan x, g(x) = \arcsin x$,
+  find $f^{(n)}(0)$ and $g^{(n)}(0)$.
+\end{example}
+
+\begin{solution}
+  (1) We know that $f^{\prime}(x) = \frac{1}{1 + x^2}$,
+  and according to Taylor expansion, we have
+  \begin{equation}
+    f^{\prime}(x) = \frac{1}{1 + x^2} = 1 - x^2 + x^4 - \cdots + (-1)^m x^{2m} + \cdots,
+  \end{equation}
+  thus $f(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots + \frac{(-1)^m}{2m +
+    1}x^{2m+1} + \cdots$.
+  According to the coefficients, we know that $f^{(2m)}(0) = 0, f^{(2m+1)}(0) = (-1)^m
+  (2m)!$.
+\end{solution}
+
+
+
 
 \section{Differential Mean-Value Theorems}
 
@@ -240,16 +285,55 @@
 \subsection{Taylor's Formulas}
 
 \begin{theorem}{Taylor's Formula with Peano Remainder}{}
-  
+  If $f$ has up to $n$-th order derivatives at $x_0$ (only single-point
+  derivatives are required), then
+  \begin{equation}
+    f(x)=f(x_0)+f^{\prime}(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+o((x-x_0)^n)
+  \end{equation}
 \end{theorem}
 
 \begin{theorem}{Taylor's Formula with Lagrange Remainder}{}
-  
+  If $f$ has up to $n + 1$-th order derivatives on $[a, b]$,
+  and is $n$-th order continuously differentiable on $(a, b)$,
+  then
+  \begin{equation}
+    f(x)=f(x_0)+f^{\prime}(x_0)(x-x_0)+\cdots+\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1},
+  \end{equation}
+  where $\xi \in (a, b)$.
 \end{theorem}
 
 \section{Convex and Concave Functions}
 
+\subsection{The Convexity of Functions}
 
+\begin{definition}{Convex Function}{}
+  Let $f$ be a function on the interval $I$.
+  If for any $x_1, x_2 \in I$ and any $\lambda \in (0, 1)$,
+  $f$ satisfies
+  \begin{equation}
+    f \left( \lambda x_1 + (1-\lambda)x_2 \right) \leq \lambda f(x_1) + (1-\lambda)f(x_2).
+  \end{equation}
+  Then $f$ is called a \emph{convex function}.
+\end{definition}
 
+\begin{lemma}{Ratio-Dividing Point Formula}{}
+  For a point $x \in [x_1, x_2]$, then $x$ can be expressed by
+  its distances from $x_1$ and $x_2$:
+  \begin{equation}
+    x = \frac{x_2 - x}{x_2 - x_1}x_1 + \frac{x - x_1}{x_2 - x_1}x_2.
+  \end{equation}
+\end{lemma}
+
+\begin{proposition}{Equivalent Conditions of Convex Functions}{}
+  The fact that $f$ is a convex function on $I$ is equivalent to
+  the following conditions:
+  \begin{itemize}
+  \item Not differentiable: $f(x) \geq f(x_0) + k(x - x_0)$;
+  \item First-order derivative form: For any $x_0 \in I$,
+    there is $f(x) \geq f(x_0) + f^{\prime}(x_0) (x - x_0)$;
+  \item Differentiable: $f^{\prime}(x)$ being monotonically increasing;
+  \item Second-oder derivative form: $f^{\prime\prime}(x) \geq 0$.
+  \end{itemize}
+\end{proposition}
 
 
