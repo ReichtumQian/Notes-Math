@@ -131,6 +131,17 @@
   to $\epsilon_1, \cdots, \epsilon_n$.
 \end{definition}
 
+\begin{proposition}{Coordinate Transformation}{}
+  Let $V$ be an $n$-dimensional linear space, $\eta_1,\cdots,\eta_n$ and
+  $\epsilon_1,\cdots, \epsilon_n$ be two sets of bases in the space.
+  Suppose $T$ is the transition matrix from $\eta_i$ to $\epsilon_i$,
+  then for any $\alpha \in V$, if its coordinates under the bases $\epsilon_i$
+  and $\eta_i$ are $X$ and $Y$ respectively, then
+  \begin{equation}
+    X = TY.
+  \end{equation}
+\end{proposition}
+
 \begin{note}{}
   Calculation of Transition Matrix:
   By elementary row operations find $(\eta_1, \cdots, \eta_n)^{-1} (\epsilon_1,
@@ -151,7 +162,7 @@
 
 \begin{solution}
   (1) Hint: Construct matrix $A, B$ and calculate the transition matrix by
-  $(A|B) \leftarrow (I|A^{-1}B)$. The answer is
+  $(A|B) \rightarrow (I|A^{-1}B)$. The answer is
   \begin{equation}
     A^{-1}B=\frac{1}{4}\left[\begin{array}{cccc}3&7&2&-1\\1&-1&2&3\\-1&3&0&-1\\1&-1&0&-1\end{array}\right]
   \end{equation}
@@ -196,7 +207,92 @@
   Hint: Represent the matrix $[\beta_1, \beta_2, \beta_3]$ by $\alpha_1, \alpha_2, \alpha_3$.
 \end{proof}
 
-\subsection{Sum and Intersection of Subspaces, Dimension Theorem}
+\subsection{Sum and Dimension Theorem}
+
+\begin{definition}{Sum of Linear spaces}{}
+  Let $V_1$ and $V_2$ be two linear spaces, then their \emph{sum} is
+  \begin{equation}
+    V_1 + V_2 := \{\alpha = \alpha_1 + \alpha_2: \alpha_1 \in V_1, \alpha_2 \in V_2\}.
+  \end{equation}
+\end{definition}
+
+\begin{example}{Basic Calculations of Intersection and Sum}{}
+  Given $V_1 = \operatorname{span}(\alpha_1, \alpha_2, \alpha_3)$,
+  and $V_2 = \operatorname{span}(\beta_1, \beta_2)$,
+  where
+  \begin{equation}
+    \alpha_1=\begin{pmatrix}1\\2\\1\\0\end{pmatrix},\alpha_2=\begin{pmatrix}-1\\1\\1\\1\end{pmatrix},\alpha_3=\begin{pmatrix}0\\3\\2\\1\end{pmatrix},\beta_1=\begin{pmatrix}2\\-1\\0\\1\end{pmatrix},\beta_2=\begin{pmatrix}1\\-1\\3\\7\end{pmatrix}.
+  \end{equation}
+  Find the basis and dimension of $V_1 + V_2$, $V_1 \cap V_2$.
+\end{example}
+
+\begin{solution}
+  (1) Hint: $V_1 + V_2 = \operatorname(\alpha_1, \alpha_2, \alpha_3, \beta_1,
+  \beta_2)$,
+  arrange them in a matrix and perform elementary row-operations.
+
+  (2) Hint: for any $\alpha \in V_1 \cap V_2$,
+  assume
+  \begin{equation}
+    \alpha = x_1 \alpha_1 + x_2 \alpha_2 + x_3 \alpha_3 = y_1 \beta_1 + y_2 \beta_2,
+  \end{equation}
+  then the coefficients need to satisfy the system of equations:
+  \begin{equation}
+    x_1 \alpha_1 + x_2 \alpha_2 + x_3 \alpha_3 - y_1 \beta_1 - y_2 \beta_2 = 0.
+  \end{equation}
+  Let $x_4 = -y_1, x_5 = y_2$, that is, solve $AX = 0$.
+  And the fundamental solution system is
+  \begin{equation}
+    \left.\eta_1=\left(\begin{array}{c}-1\\-1\\1\\0\\0\end{array}\right.\right),\eta_2=\left( \begin{array}{c}1\\-4\\0\\-3\\1\end{array} \right).
+  \end{equation}
+\end{solution}
+
+\begin{example}{The Differences between Sum and Union}{}
+  \begin{enumerate}
+  \item Let $V_1$ and $V_2$ be two non-trivial subspaces of the linear space $V$ over
+  the number field $\mathbb{P}$. Prove that there exists $\alpha \in V$ such that
+  $\alpha \not\in V_1, \alpha \not \in V_2$.
+  \item 
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1)
+\end{proof}
+
+\begin{theorem}{Dimension Theorem}{}
+  Let $V_1$ and $V_2$ be two subspaces of the finite-dimensional linear space
+  $V$. Then
+  \begin{equation}
+    \dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  We start from a small space and expand the basis.
+  Let the basis of $V_1 \cap V_2$ be $\alpha_1,\cdots,\alpha_s$,
+  and the bases of $V_1, V_2$ be respectively:
+  \begin{equation}
+    \alpha_1,\cdots,\alpha_s,\beta_{s+1},\cdots,\beta_m; \quad 
+    \alpha_1,\cdots,\alpha_s,\gamma_{s+1},\cdots,\gamma_n,
+  \end{equation}
+  Then $V_1 + V_2 = \operatorname{span}(\alpha_1,\cdots,\alpha_s,\beta_{s+1},\cdots,\beta_m,\gamma_{s+1},\cdots,\gamma_n)$.
+  Next, we prove that the above-mentioned vectors are linearly independent.
+  Without loss of generality, assume
+  \begin{equation}
+    k_1\alpha_1+\cdots+k_s\alpha_s+k_{s+1}\beta_{s+1}+\cdots+k_n\beta_n+l_{s+1}\gamma_{s+1}+\cdots+l_n\gamma_n=0.
+  \end{equation}
+  Move the part with $l_i \gamma_i$ to the right-hand side.
+  At this time, the left-hand side linear combination belongs to $V_1$,
+  and the right-hand side belongs to $V_2$,
+  so it belongs to $V_1 \cap V_2$.
+  So it is not hard to find that $k_{s+1} = k_{s+2} = \cdots = k_n = 0$,
+  and $l_{s+1} = \cdots = l_n = 0$.
+  Since the vector set $\alpha_1, \cdots, \alpha_s$ is a basis,
+  $\alpha_1,\cdots,\alpha_s$ are linearly independent. Thus all the coefficients are zero,
+  which implies the linear independence.
+\end{proof}
+
 
 \subsection{Direct-Sum Theory}
 
