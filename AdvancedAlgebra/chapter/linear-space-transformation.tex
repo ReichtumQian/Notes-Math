@@ -8,15 +8,28 @@
   If two binary operations(addition and scalar multiplication),
   are defined on $V$, and these two operations satisfy the following axioms
   \begin{enumerate}
-  \item Binary Operations: (1) Commutativity
-    (2) Associativity (3) Existence of zero element (4) Existence of negative element
-  \item Scalar Multiplication: (1) Distributivity over vector addition
-    (2) Distributivity over scalar addition
-    (3) Associativity of scalar multiplication
-    (4) Identity scalar multiplication
+  \item Binary Operations:
+    (1) Commutativity: $\alpha + \beta = \beta + \alpha$;
+    (2) Associativity: $(\alpha + \beta) + \gamma = \alpha + (\beta + \gamma)$;
+    (3) Existence of zero element: $\exists \theta$ such that for all $\alpha
+    \in V$, $\alpha + \theta = \alpha$;
+    (4) Existence of negative element: For all $\alpha$, there exists $\beta$ such that $\alpha + \beta
+    = \theta$.
+  \item Scalar Multiplication:
+    (1) Distributivity over vector addition: $c(\alpha + \beta) = c\alpha + c\beta$;
+    (2) Distributivity over scalar addition: $(c_1 + c_2)\alpha = c_1 \alpha +
+    c_2 \alpha$;
+    (3) Associativity of scalar multiplication: $(c_1c_2)\alpha = c_1(c_2\alpha)$;
+    (4) Identity scalar multiplication: $1 \cdot \alpha = \alpha$.
   \end{enumerate}
   Then $V$ is a \emph{linear space over $\mathbb{P}$}.
 \end{definition}
+
+\begin{example}{Prove a Space is Linear Space}{}
+  Prove that the set of all real-coefficient polynomials of degree equal to $n
+  (n \geq 1)$, with respect to the addition of polynomial and the scalar multiplication
+  by real numbers is a linear space.
+\end{example}
 
 \begin{definition}{Linear Dependence and Linear Independence}{}
   Let $\alpha_1, \cdots, \alpha_n$ be a sequence of vectors,
@@ -138,7 +151,7 @@
   then for any $\alpha \in V$, if its coordinates under the bases $\epsilon_i$
   and $\eta_i$ are $X$ and $Y$ respectively, then
   \begin{equation}
-    X = TY.
+    Y = TX.
   \end{equation}
 \end{proposition}
 
@@ -209,12 +222,52 @@
 
 \subsection{Sum and Dimension Theorem}
 
+\begin{definition}{Subspace}{}
+  Let $V$ be a linear space over $\mathbb{P}$,
+  and $W$ be a non-empty subset of $V$.
+  If $W$ also forms a linear space over $\mathbb{P}$ with respect to
+  the addition operation and scalar multiplication operation of $V$,
+  then $W$ is called a \emph{subspace of $V$}.
+\end{definition}
+
+\begin{proposition}{Sufficient and Necessary Condition for Subspaces}{}
+  Let $V$ be a linear space over $\mathbb{P}$,
+  and $W$ be a non-empty subset of $V$.
+  Then $W$ is a subspace of $V$ if and only if
+  it is closed under the addition and scalar multiplication of $V$.
+\end{proposition}
+
+\begin{proof}
+  The left-to-right direction is proved directly from the difinition of subspace.
+  So we only prove the reverse direction.
+\end{proof}
+
 \begin{definition}{Sum of Linear spaces}{}
   Let $V_1$ and $V_2$ be two linear spaces, then their \emph{sum} is
   \begin{equation}
     V_1 + V_2 := \{\alpha = \alpha_1 + \alpha_2: \alpha_1 \in V_1, \alpha_2 \in V_2\}.
   \end{equation}
 \end{definition}
+
+\begin{proposition}{Sum and Intersection of Linear Spaces Are Linear Spaces}{}
+  Let $V_1$ and $V_2$ be two linear spaces,
+  then $V_1 \cap V_2$ and $V_1 + V_2$ are linear spaces.
+\end{proposition}
+
+\begin{proof}
+  We first prove $V_1 \cap V_2$ is a linear space.
+  Choose $u, v \in V$ and $c \in \mathbb{P}$, then $u, v \in V_1$ and $u, v \in V_2$,
+  \begin{enumerate}
+  \item Closure under addition: Since $u + v \in V_1, V_2$, we have $u + v \in
+    V$, $V$ is closed under addition.
+  \item Closure under scalar multiplication: $c v \in V_1, c v \in V_2$,
+    thus $c v \in V$.
+  \item Existence of the zero vector: The zero vector $0$ belongs to both $V_1$
+    and $V_2$.
+  \item Other axioms are inherited automatrically from $V_1$ and $V_2$.
+  \end{enumerate}
+  Therefore, we have $V_1 \cap V_2$ is a linear space.
+\end{proof}
 
 \begin{example}{Basic Calculations of Intersection and Sum}{}
   Given $V_1 = \operatorname{span}(\alpha_1, \alpha_2, \alpha_3)$,
