@@ -70,6 +70,105 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{definition}
 
+\begin{proposition}{Boundedness of Integrable Functions}{}
+  If $f(x)$ is integrable on $[a, b]$, then it is bounded on $[a, b]$.
+\end{proposition}
+
+\begin{note}
+  Note that bounded functions are not necessarily integrable, such as the
+  Dirichlet function.
+\end{note}
+
+\begin{definition}{Darboux Upper and Lower Sum}{}
+  On each sub-interval, take $M_i = \sup \limits_{x \in \Delta_i} f(x)$,
+  and $m_i = \inf \limits_{x \in \Delta_i} f(x)$.
+  Denote the oscillation $\omega_i = M_i - m_i$,
+  then we define the \emph{Darboux upper sum} and \emph{Darboux lower sum} as:
+  \begin{equation}
+    S(T) := \sum\limits_{i = 1}^n M_i \Delta x_i, \quad
+    s(T) := \sum\limits_{i = 1}^n m_i \Delta x_i.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Necessary and Sufficient Conditions for Integrability}{}
+  A function $f(x)$ is integrable on $[a, b]$ if and only if
+  for any $\epsilon > 0$, there exists a partition such that
+  \begin{equation}
+    S(T) - s(T) = \sum\limits_{i = 1}^n \omega_i \Delta x_i < \epsilon.
+  \end{equation}
+\end{proposition}
+
+\begin{note}
+  According to real analysis, we know that a function $f(x)$ is
+  Riemann-integrable if and only if it is continuous almost everywhere.
+\end{note}
+
+\begin{example}{Non-integrability of the Dirichlet Function}{}
+  Prove that Dirichlet function is not integrable on the interval $[a, b]$
+  \begin{equation}
+    D(x) =
+    \begin{cases}
+      1, & x \text{ is rational};\\
+      0, & x \text{ is irrational}.
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  For any partition $T$,
+  the oscillation $\omega = 1$.
+  So $S(T) - s(T) = \sum\limits_{i = 1}^n \Delta x_i = b - a$,
+  which means that $f(x)$ is not integrable.
+\end{proof}
+
+\begin{example}{Integrability of the Riemann Function}{}
+  Prove that the Riemann function $R(x)$ is integrable on $[0, 1]$,
+  and satisfies
+  \begin{equation}
+    \int_0^1 R(x) \mathrm{d} x = 0.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  For any $\epsilon > 0$, there are only finitely many $x = \frac{p}{q}$ satisfying
+  $\frac{1}{q} > \frac{\epsilon}{2}$,
+  and their function values are less than or equal to $\frac{1}{2}$.
+  List these finite points as $x_1,\cdots,x_k$.
+  Each point can at most fall into two sub-intervals (when it is endpoint),
+  so we take $\|T\| \leq \frac{\epsilon}{2k}$,
+  then we have
+  \begin{equation}
+    \sum _T \omega_i \Delta x_i < \epsilon.
+  \end{equation}
+\end{proof}
+
+\subsection{Newton-Leibniz Formula}
+
+\begin{theorem}{Newton-Leibniz Formula}{}
+  Let $f(x)$ be an integrable function on $[a, b]$,
+  and $F(x)$ be a continuous function on $[a, b]$.
+  If except for finite number of points,
+  $F^{\prime}(x) = f(x)$, then
+  \begin{equation}
+    \int_a^b f(x) \mathrm{d} x = F(b) - F(a).
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}{Fundamental Theorem of Calculus}{}
+  Let $f(x)$ be an integrable function on $[a, b]$.
+  Define $F(x) = \int_a^x f(t)\mathrm{d} t$,
+  where $x \in [a, b]$. Then
+  \begin{itemize}
+  \item $F(x)$ is a continuous function on $[a, b]$;
+  \item If $x_0 \in [a, b]$ is a continuous point of $f(x)$,
+    then $F(x)$ is differentiable at $x_0$,
+    and $F^{\prime}(x_0) = f(x_0)$.
+  \item If $f(x)$ is a continuous function on $[a, b]$,
+    then $F(x)$ is a continuously-differentiable function on $[a, b]$,
+    and $F^{\prime}(x) = f(x)$.
+  \end{itemize}
+\end{theorem}
+
 
 
 \section{Improper Integrals}
