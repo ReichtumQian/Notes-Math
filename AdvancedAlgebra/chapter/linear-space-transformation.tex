@@ -419,9 +419,9 @@
 \end{proof}
 
 
-\section{Linear Mappings}
+\section{Linear Mappings and Linear Transformations}
 
-\subsection{The Concept of Linear Mappings}
+\subsection{The Concept of Linear Mappings and Linear Transformations}
 
 \begin{definition}{Linear Mapping}{}
   Let $V$ and $W$ be linear spaces over $\mathbb{P}$.
@@ -440,7 +440,13 @@
   The set of all linear mappings from $V$ to $W$ is denoted as $\operatorname{Hom}_P(V, W)$.
 \end{note}
 
-\subsection{Kernel and Image}
+\begin{definition}{Linear Transformation}{}
+  Let $V$ be a linear space over $\mathbb{P}$.
+  $\mathcal{A}$ is a linear mapping from $V$ to itself,
+  then $\mathcal{A}$ is called a \emph{linear transformation on $V$}.
+\end{definition}
+
+\subsection{Kernel and Image of Linear Mappings}
 
 The kernel and the image are the most common invariant subspaces,
 thus we need to investigate these two special sets.
@@ -454,6 +460,43 @@ thus we need to investigate these two special sets.
     \operatorname{Im} (\varphi) = \{\varphi (\alpha) : \alpha \in U\}.
   \end{equation}
 \end{definition}
+
+\begin{example}{Calculate Kernel and Image}{}
+  Consider a linear mapping $\mathcal{A}: \mathbb{P}^4 \rightarrow
+  \mathbb{P}^3$,
+  find $\operatorname{Ker} \mathcal{A}$ and $\operatorname{Im} \mathcal{A}$, where
+  \begin{equation}
+    \mathcal{A}\begin{pmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    x_1 - 3x_2 + x_3 - 2x_4 \\
+    -x_1 - 11x_2 + 2x_3 - 5x_4 \\
+    3x_1 + 5x_2 + x_4
+    \end{pmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  $\operatorname{Ker} \mathcal{A}$ is the solution space of $AX = 0$,
+  while $\operatorname{Im} \mathcal{A}$ is the column space of $A$.
+  And the reason for why the image of $\mathcal{A}$ is the column space of $A$ is
+  \begin{equation}
+    A \left(
+      \begin{array}{c}
+        x_1\\
+        x_2\\
+        x_3\\
+        x_4
+      \end{array}
+    \right) = \mathbf{a}_1x_1 + \mathbf{a}_2x_2 + \mathbf{a}_3x_3 + \mathbf{a}_4x_4,
+  \end{equation}
+  where $\mathbf{a}_i$ is the $i$-th column vector of $A$.
+\end{solution}
 
 \begin{theorem}{Dimension Theorem for the Kernel and Image}{}
   For any $\varphi \in \operatorname{Hom}(U, V)$,
@@ -484,10 +527,211 @@ thus we need to investigate these two special sets.
   we have $k_{r+1} = \cdots = k_n = 0$.
 \end{proof}
 
-\subsection{Kernel and Image of Idempotent Linear Mappings}
+\begin{example}{Generalization of the Dimension Theorem}{}
+  Suppose $\mathcal{A}$ is a linear transformation on a finite-dimensional
+  linear space $V$,
+  and $W$ is a subspace of $V$, prove that
+  \begin{equation}
+    \dim \mathcal{A} W + \dim (\operatorname{Ker} \mathcal{A} \cap W) = \dim W
+  \end{equation}
+\end{example}
 
+\begin{proof}
+  Let $\alpha_1,\cdots,\alpha_r$ be a basis of the space $\operatorname{Ker}
+  \mathcal{A} \cap W$,
+  and $\alpha_1,\cdots,\alpha_n$ be a basis of $W$.
+  Then we have $\mathcal{A}W = \operatorname{span} (\mathcal{A}\alpha_{r+1},\cdots,\mathcal{A}\alpha_n)$.
+  Next, we prove that $\mathcal{A}\alpha_{r+1},\cdots,\mathcal{A}\alpha_n$ are
+  linearly independent, assume
+  \begin{equation}
+    k_{r+1}\alpha_{r+1} + \cdots + k_n \alpha_n = 0.
+  \end{equation}
+  By the linear property of $\mathcal{A}$,
+  we have $k_{r+1}\alpha_{r+1} + \cdots + k_n\alpha_n \in
+  \operatorname{Ker}\mathcal{A} \cap W$,
+  thus $k_{r+1} = \cdots = k_n = 0$.
+\end{proof}
 
-\section{Linear Transformations}
+\subsection{Kernel and Image of Idempotent Linear Transformations}
+
+Generally speaking, although there is a dimensional relationship between the
+kernel and image, they do not have a linearly independent relationship
+(they may intersect, or their sum may not be the entire space).
+However, idempotent transformations are an exception.
+
+\begin{definition}{Idempotent Transformation}{}
+  If a linear transformation $\mathcal{A}$ satisfies $\mathcal{A}^2 =
+  \mathcal{A}$,
+  then it is called a \emph{idempotent transformation}.
+\end{definition}
+
+\begin{theorem}{Decomposition of the Kernel and Image Spaces of Idempotent Transformations}{}
+  Suppose $\mathcal{A}$ is an idempotent transformation on the linear space $V$,
+  then $V$ can be decomposted into the direct sum of the kernel and image of
+  $\mathcal{A}$,
+  that is,
+  \begin{equation}
+    V = \operatorname{Ker} \mathcal{A} \oplus \operatorname{Im} \mathcal{A}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  We first prove that $V$ is the sum of the kernel and image of $\mathcal{A}$.
+  For any $\alpha \in V$, we have
+  \begin{equation}
+  \alpha = \alpha - \mathcal{A} \alpha + \mathcal{A} \alpha,
+  \end{equation}
+  where $\mathcal{A} \alpha \in \operatorname{Im}(\mathcal{A})$,
+  and $\alpha - \mathcal{A}\alpha \in \operatorname{Ker}\mathcal{A}$ since
+  \begin{equation}
+    \mathcal{A}(\alpha - \mathcal{A} \alpha) = \mathcal{A} \alpha - \mathcal{A} \alpha = 0.
+  \end{equation}
+
+  Next, we prove the sum is direct sum.
+  For any $\alpha \in \operatorname{Ker} \mathcal{A} \cap \operatorname{Im}
+  \mathcal{A}$,
+  we have $\mathcal{A} \alpha = 0$ and there exists $\beta \in V$ such that
+  $\mathcal{A} \beta = \alpha$.
+  Applying $\mathcal{A}$ to both sides yields
+  \begin{equation}
+    \mathcal{A}^2 \beta = \mathcal{A} \alpha \Rightarrow
+    \mathcal{A}^2 \beta = \mathcal{A} \beta = \alpha = \mathcal{A} \alpha.
+  \end{equation}
+  Since $\mathcal{A} \alpha = 0$, we know that $\alpha = 0$.
+\end{proof}
+
+\begin{theorem}{Decomposition of the Kernel and Image Spaces of General Linear Transformations}{}
+  Suppose $\mathcal{A}$ is linear transformation on $V$,
+  and $\dim V = n$. Then we have
+  \begin{equation}
+    V = \operatorname{Ker} \mathcal{A}^n \oplus \operatorname{Im} \mathcal{A}^n.
+  \end{equation}
+\end{theorem}
+
+\subsection{The Matrices of Linear Transformations}
+
+\begin{definition}{The Matrix of a Linear Transformation}{}
+  Let $\mathcal{A}$ be a linear transformation in $V$,
+  and $V = \operatorname{span} (\epsilon_1,\cdots,\epsilon_n)$.
+  If
+  \begin{equation}
+    (\mathcal{A}(\epsilon_1),\cdots,\mathcal{A}(\epsilon_n)) = (\epsilon_1,\cdots,\epsilon_n)A,
+  \end{equation}
+  then we call $A$ \emph{the matrix of $\mathcal{A}$ with respect to the basis $\epsilon_1,\cdots,\epsilon_n$}.
+\end{definition}
+
+\begin{note}
+  How to find the matrix of a linear transformation with respect to a basis:
+  \begin{equation}
+    A = (\epsilon_1,\cdots,\epsilon_n)^{-1}(\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n).
+  \end{equation}
+  We can calculate it via row elementary operations.
+\end{note}
+
+\begin{example}{Find the Matrix of Linear Transformations}{}
+  Given that $A = (a_{ij}), i,j = 1,2,3$ is the matrix of $\mathcal{A}$
+  with respect to the basis $\epsilon_1,\epsilon_2,\epsilon_3$. Calculate
+  \begin{enumerate}
+  \item The matrix of $A$ with respect to the basis $\epsilon_3, \epsilon_2, \epsilon_1$;
+  \item The matrix of $A$ with respect to the basis $\epsilon_1 + \epsilon_2, \epsilon_2, \epsilon_3$;
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) Switch the first column and the third column of the matrix.
+  (2) By the definition of linear transformation, we get
+  \begin{equation}
+    \begin{cases}
+      \mathcal{A}\epsilon_1 = a_{11}\epsilon_1 + a_{21}\epsilon_2 + a_{31}\epsilon_3 \\
+      \mathcal{A}\epsilon_2 = a_{12}\epsilon_1 + a_{22}\epsilon_2 + a_{32}\epsilon_3 \\
+      \mathcal{A}\epsilon_3 = a_{13}\epsilon_1 + a_{23}\epsilon_2 + a_{33}\epsilon_3
+    \end{cases}
+  \end{equation}
+  and
+  \begin{equation}
+    \begin{cases}
+      \mathcal{A}(\epsilon_1 + \epsilon_2)= (a_{11} + a_{12})\epsilon_1 + (a_{21} + a_{22})\epsilon_2 + (a_{31} + a_{32})\epsilon_3 \\
+      \mathcal{A}\epsilon_2 = a_{12}\epsilon_1 + a_{22}\epsilon_2 + a_{32}\epsilon_3 \\
+      \mathcal{A}\epsilon_3 = a_{13}\epsilon_1 + a_{23}\epsilon_2 + a_{33}\epsilon_3
+    \end{cases}
+  \end{equation}
+\end{solution}
+
+\begin{proposition}{Coordinates After Linear Transformation}{}
+  If the coordinate of $\alpha$ with respect to the basis
+  $(\epsilon_1,\cdots,\epsilon_n)$ is $X$,
+  then the coordinates $\mathcal{A}\alpha$ with respect to this basis is $AX$,
+  that is,
+  \begin{equation}
+    \mathcal{A}\alpha = (\epsilon_1,\cdots,\epsilon_n)AX
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  By the difinition of coordinates, we have $\alpha =
+  (\epsilon_1,\cdots,\epsilon_n)X$,
+  and
+  \begin{equation}
+    \mathcal{A}\alpha = (\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n)X = (\epsilon_1,\cdots,\epsilon_n)AX.
+  \end{equation}
+  That is, the coordinate of $\mathcal{A}\alpha$ with respect to
+  $\epsilon_1,\cdots,\epsilon_n$ is $AX$.
+\end{proof}
+
+\subsection{Similarity: Matrices of Linear Transformation under Different Bases}
+
+\begin{theorem}{Matrices of a Linear Transformation with Respect to Different Bases}{}
+  Let $(\epsilon_1,\cdots,\epsilon_n)$ and $(\eta_1,\cdots,\eta_n)$ be two bases
+  of the linear space $V$,
+  and the transition matrix from $\eta_i$ to $\epsilon_i$ is $T$.
+  If the matrices of the linear transformation $\mathcal{A}$ with respect to the
+  bases $\epsilon_i$ and $\eta_i$ are $A$ and $B$ respectively, then
+  \begin{equation}
+    A = T^{-1}BT.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  By the definition of the transition matrix, we have
+  \begin{equation}
+    (\epsilon_1,\cdots,\epsilon_n) = (\eta_1,\cdots,\eta_n)T.
+  \end{equation}
+  And by the definition of matrix of a linear transformation, we have
+  \begin{equation}
+    \mathcal{A}(\epsilon_1,\cdots,\epsilon_n) = (\epsilon_1,\cdots,\epsilon_n) A, \quad
+    \mathcal{A}(\eta_1,\cdots,\eta_n) = (\eta_1,\cdots,\eta_n)B.
+  \end{equation}
+  Combine the above three equations we get
+  \begin{equation}
+    \mathcal{A}(\epsilon_1,\cdots,\epsilon_n) = \mathcal{A}(\eta_1,\cdots,\eta_n)T = (\eta_1,\cdots,\eta_n)BT
+    = (\epsilon_1,\cdots,\epsilon_n)T^{-1}BT,
+  \end{equation}
+  thus $A = T^{-1}BT$.
+\end{proof}
+
+\begin{definition}{Similarity}{}
+  Two square matrices $A$ and $B$ of the same size $n \times n$ are said to be
+  \emph{similar} if there exists an invertible matrix $T$ such that
+  \begin{equation}
+    A = T^{-1}BT.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Properties of Similarity}{}
+  If matrices $A$ and $B$ are similar, that is $A = T^{-1}BT$,
+  then:
+  \begin{itemize}
+  \item $r(A) = r(B)$;
+  \item $A^m$ is similar to $B^{m}$;
+  \item If $f(x)$ is a polynomial, then $f(A)$ is similar to $B$;
+  \end{itemize}
+\end{proposition}
+
+\begin{note}
+  Note that if $A_1, B_1$ are similar, $A_2, B_2$ are similar,
+  it is not always the case that $A_1 + A_2$ is similar to $B_1 + B_2$.
+\end{note}
+
 
 \section{Eigenvalues and Similarity Diagonalization}
 
