@@ -142,6 +142,34 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{proof}
 
+\begin{proposition}{Integrability of the Function after Elementary Operations}{}
+  Suppose $f(x), g(x)$ are two integrable functions on $[a, b]$,
+  then 
+  \begin{equation}
+    kf(x), \quad f(x) \pm g(x), \quad f(x)g(x)
+  \end{equation}
+  are integrable on $[a, b]$.
+\end{proposition}
+
+\begin{note}
+  Note that even when $g(x) \neq 0$, the function
+  \begin{equation}
+    \varphi(x) = \frac{f(x)}{g(x)}
+  \end{equation}
+  is not necessarily integrable.
+\end{note}
+
+\begin{proposition}{Integrability of Composition Functions}{}
+  If $f(x)$ is continuous on the interval $[a, b]$,
+  and $g(t)$ is integrable on the interval $[\alpha, \beta]$,
+  satisfying $a \leq g(t) \leq b, t \in [\alpha, \beta]$,
+  then
+  \begin{equation}
+    \varphi(t) = f(g(t))
+  \end{equation}
+  is integrable on $[\alpha, \beta]$.
+\end{proposition}
+
 \subsection{Newton-Leibniz Formula}
 
 \begin{theorem}{Newton-Leibniz Formula}{}
@@ -169,9 +197,121 @@ The specific operation can be carried out in the following table:
   \end{itemize}
 \end{theorem}
 
+\begin{example}{Application of Fundamental Theorem of Calculus}{}
+  Suppose a function $f(x)$ is integrable on the interval $[A, B]$,
+  and $a, b \in (A, B)$ be two points at which $f(x)$ is continuous, prove that
+  \begin{equation}
+    \lim \limits _{h \rightarrow 0} \int_a^b \frac{f(x+h) - f(x)}{h}\mathrm{d} x = f(b) - f(a).
+  \end{equation}
+\end{example}
 
+\begin{proof}
+  
+\end{proof}
+
+\subsection{The Mean Value Theorems for Integrals}
+
+\begin{theorem}{The First Mean Value Theorem for Integrals}{}
+  If $f(x), g(x)$ are continuous on $[a, b]$,
+  and $g(x)$ does not change sign on $[a, b]$,
+  then there exists $\xi \in (a, b)$ such that
+  \begin{equation}
+    \int_a^b f(x) g(x) \mathrm{d} x = f(\xi) \int_a^b g(x) \mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Without loss of generality,
+  assume $g(x) \geq 0$. Since $f(x)$ is continuous on $[a, b]$,
+  we denote $M$ and $m$ the maximum and minimum values of $f(x)$ respectively.
+  And we have
+  \begin{equation}
+    m g(x) \leq f(x)g(x) \leq Mg(x) \Rightarrow
+    m \int_a^b g(x)\mathrm{d} x \leq \int_a^b f(x)g(x)\mathrm{d} x \leq M \int_a^b g(x)\mathrm{d} x.
+  \end{equation}
+  According to the intermediate-value property we can get the conclusion.
+\end{proof}
+
+\begin{theorem}{The Second Mean Value Theorem for Integrals}{}
+  Suppose $f(x)$ is integrable on $[a, b]$ and $g(x)$ is monotonic on $[a, b]$.
+  Then 
+  \begin{itemize}
+  \item If $g(x)$ is non-decreasing and non-negative: There exists $\xi \in (a,
+    b)$ such that
+    \begin{equation}
+      \int_a^b f(x) g(x) \mathrm{d} x = g(b) \int_{\xi}^b f(x) \mathrm{d} x.
+    \end{equation}
+  \item If $g(x)$ is non-increasing and non-negative: There exists $\xi \in (a,
+    b)$ such that
+    \begin{equation}
+      \int_a^b f(x) g(x) \mathrm{d} x = g(a) \int_{a}^{\xi} f(x) \mathrm{d} x.
+    \end{equation}
+  \end{itemize}
+\end{theorem}
 
 \section{Improper Integrals}
+
+\subsection{The Concepts of Improper Integrals}
+
+\begin{definition}{Improper Integrals over Infinite Intervals}{}
+  Let $f$ be defined on $[a, +\infty)$.
+  If the limit $\lim \limits _{b \rightarrow +\infty} \int_a^b f(x)\mathrm{d} x$
+  exists,
+  then we define
+  \begin{equation}
+    \int_a^{+\infty} f(x) \mathrm{d} x := \lim \limits _{b \rightarrow +\infty} \int_a^b f(x)\mathrm{d} x,
+  \end{equation}
+  and call it \emph{an improper integral over an infinite interval}.
+\end{definition}
+
+\begin{definition}{Improper Integrals with Singular Points}{}
+  Let $f(x)$ be defined $(a, b]$,
+  and $\lim \limits _{x \rightarrow a^+}f(x) = \infty$.
+  If the limit $\lim \limits _{\epsilon \rightarrow 0^+} \int_{a+\epsilon}^b
+  f(x) \mathrm{d} x$ exists,
+  then we define
+  \begin{equation}
+    \int_a^b f(x) \mathrm{d} x := \lim \limits _{\epsilon \rightarrow 0^+} \int_{a+\epsilon}^b
+  f(x) \mathrm{d} x
+  \end{equation}
+  and call it \emph{an improper integral with a singular point $a$}.
+\end{definition}
+
+\begin{theorem}{Leibniz Formula for Improper Integrals}{}
+  Suppose the limits exist, and $f$ has an antiderivative $F$.
+  Then we have
+  \begin{equation}
+    \int_a^{+\infty} f(x) \mathrm{d} x = F(+\infty) - F(a), \quad
+    \int_a^b f(x) \mathrm{d} x = F(b) - F(a+0).
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Improper Integrals of $\frac{1}{x^p}$}{}
+  Prove that (1) $\int_0^1 \frac{\mathrm{d} x}{x^p}$ converges when $p < 1$,
+  and diverges when $p \geq 1$.
+  (2) $\int_1^{+\infty} \frac{\mathrm{d}x}{x^p}$ converges when $p > 1$
+  and diverges when $p \leq 1$.
+\end{example}
+
+\begin{proof}
+  (1) We first find the antiderivative of $x^{-p}$:
+  \begin{equation}
+    F(x) = \int x^{-p}\mathrm{d} x =
+    \begin{cases}
+      \frac{1}{1-p} x^{1-p}, & p \neq 1;\\
+      \ln x, & p =1.
+    \end{cases}
+  \end{equation}
+  We observe that when $p < 1$, $F(1) = \frac{1}{1-p}$, and $F(\epsilon) =
+  \frac{1}{1-p} \epsilon^{1-p}$. Therefore
+  \begin{equation}
+    \lim \limits _{\epsilon \rightarrow 0^+} F(1) - F(\epsilon) = \frac{1}{1-p},
+  \end{equation}
+  the limit exists. Similarly, it is not hard to prove that when $p \geq 1$, the
+  limit does not exist.
+\end{proof}
+
+
 
 
 
