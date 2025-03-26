@@ -93,7 +93,7 @@
   their \emph{rank}.
 \end{definition}
 
-\subsection{Basis and Coordinates}
+\subsection{Bases and Coordinates}
 
 \begin{definition}{Basis}{}
   Let $V$ be a finite-dimensional linear space,
@@ -220,7 +220,7 @@
   Hint: Represent the matrix $[\beta_1, \beta_2, \beta_3]$ by $\alpha_1, \alpha_2, \alpha_3$.
 \end{proof}
 
-\subsection{Sum and Dimension Theorem}
+\subsection{Sum Operations and Dimension Theorem}
 
 \begin{definition}{Subspace}{}
   Let $V$ be a linear space over $\mathbb{P}$,
@@ -880,8 +880,83 @@ However, idempotent transformations are an exception.
   \end{itemize}
 \end{proposition}
 
-
 \section{Minimal Polynomials}
+
+\subsection{Annihilating Polynomials and Minimal Polynomials}
+
+\begin{definition}{Annihilating Polynomial}{}
+  Let $A$ be a $n\times n$ square matrix over the number field $\mathbb{P}$,
+  and $g(x)$ be a polynomial over $\mathbb{P}$.
+  If $g(A) = 0$, then $g(x)$ is called an \emph{annihilating polynomial of $A$}.
+\end{definition}
+
+\begin{definition}{Minimal Polynomial}{}
+  The monic polynomial of the lowest degree among all annihilating polynomials
+  of $A$ is called the \emph{minimal polynomial of $A$}.
+\end{definition}
+
+\begin{proposition}{Uniqueness of Minimal Polynomial}{}
+  The minimal polynomial of $A$ is unique.
+\end{proposition}
+
+\begin{proof}
+  Suppose there are two different minimal polynomials $m_1(\lambda),
+  m_2(\lambda)$.
+  Define $h(\lambda) = m_1(\lambda) - m_2(\lambda)$,
+  then we have
+  \begin{equation}
+    h(A) = m_1(A) - m_2(A) = 0,
+  \end{equation}
+  if $m_1, m_2$ are different polynomials, that means $h(\lambda)$ is the
+  minimal polynomial of $A$, which contradicts the given condition.
+\end{proof}
+
+\begin{proposition}{Divisibility of Minimal Polynomial}{}
+  The minimal polynomial of $A$ divides any annihilating polynomial of $A$.
+\end{proposition}
+
+\begin{proof}
+  For any annihilating polynomial $f(x)$, it can be expressed as
+  \begin{equation}
+    f(x) = q(x) m(x) + r(x).
+  \end{equation}
+  Substituting $x = A$ gives $r(A) = 0$.
+  If $r(x)$ is not the zero polynomial, that means $r(x)$ is the minimal
+  polynomial of $A$, which contradicts the condition.
+\end{proof}
+
+\begin{proposition}{Minimal Polynomial of Block-Diagonal Matrix}{}
+  If matrix $A = \operatorname{diag}(A_1,\cdots,A_s)$,
+  then the minimal polynomial of $A$ is the least common multiple
+  of the minimal polynomials of $A_1,\cdots,A_s$, i.e.,
+  \begin{equation}
+    m_A(\lambda) = [m_1(\lambda),\cdots,m_s(\lambda)],
+  \end{equation}
+  where $m_i(\lambda)$ is the minimal polynomial of $A_i$.
+\end{proposition}
+
+\begin{proposition}{Minimal Polynomials of Similar Matrices}{}
+  Similar matrices have the same minimal polynomial.
+\end{proposition}
+
+\begin{proof}
+  Hint: Suppose $B = P^{-1}AP$,
+  then $m(B) = m(P^{-1}AP) = P^{-1}m(A)P$.
+\end{proof}
+
+\subsection{Hamilton-Cayley Theorem}
+
+\begin{theorem}{Hamilton-Cayley Theorem}{}
+  Let $A$ be a $n$-order square matrix over $\mathbb{P}$,
+  and $f(x) = |\lambda I - A|$ be the characteristic polynomial of $A$.
+  Then $f(x)$ is an annihilating polynomial of $A$.
+\end{theorem}
+
+\begin{corollary}{}{}
+  The minimal polynomial and the characteristic polynomial of $A$ have the same roots.
+\end{corollary}
+
+
 
 
 
