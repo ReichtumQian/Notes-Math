@@ -1,0 +1,251 @@
+
+\section{Concepts of Numerical Series}
+
+\begin{definition}{Partial-Sum and Convergence of Numerical Series}{}
+  Given a numerical series $\sum\limits_{n = 1}^{\infty}u_n$,
+  define $S_n = \sum\limits_{k = 1}^n u_k$ as the \emph{partial-sum function}.
+  If the limit $\lim \limits _{n \rightarrow \infty} S_n$ exists,
+  then the numerical series is said to \emph{converge};
+  otherwise, the numerical series is said to \emph{diverge}.
+\end{definition}
+
+\begin{proposition}{Necessary Condition for Convergent Numerical Series}{}
+  If a numerical series $\sum\limits_{n = 1}^{\infty}u_n$ converges,
+  then
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} u_n = 0.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Since the numerical series is convergent, the partial-sum sequence $S_n$ satisifies
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} S_n = L.
+  \end{equation}
+  Since $u_n = S_n - S_{n-1}$, taking limit at both sides yields
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} u_n = \lim \limits _{n \rightarrow \infty} S_n - \lim \limits _{n \rightarrow \infty} S_{n-1}
+    = L - L = 0.
+  \end{equation}
+\end{proof}
+
+\begin{proposition}{Cauchy Criterion for Numerical Series}{}
+  A numerical series $\sum\limits_{n = 1}^{\infty} u_n$ converges if and only if
+  for any $\epsilon > 0$, there exists $N > 0$, such that for all $m, m+p > N$,
+  \begin{equation}
+    |u_{m+1} + \cdots + u_{m+p}| < \epsilon.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Hint: Using the Cauchy criterion of $S_n$.
+\end{proof}
+
+\begin{example}{Application of Cauchy Criterion}{}
+  Use Cauchy criterion to prove
+  (1) $\sum\limits_{n = 1}^{\infty}\frac{1}{n}$ diverges;
+  (2) $\sum\limits_{n = 1}^{\infty} \frac{1}{n^2}$ converges.
+\end{example}
+
+\begin{proof}
+  (1) Take $\epsilon = \frac{1}{2}$, $m = N, p = N$.
+  By the contrapositive of Cauchy criterion.
+
+  (2) $\frac{1}{n^2} < \frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}$,
+  which yields
+  \begin{equation}
+    \sum\limits_{n = 1}^{\infty} \frac{1}{n^2}
+    \leq 1 + 1 - \frac{1}{2} + \cdots - \frac{1}{n} = 2 - \frac{1}{n} \rightarrow 2.
+  \end{equation}
+  By monotonic convergence theorem, we know that the sequence is convergent.
+\end{proof}
+
+\section{Positive-Term Series}
+
+\subsection{The Integral Test}
+
+\begin{theorem}{The Integral Test for Positive-Term Series}{}
+  Let $\sum\limits_{n = 1}^{\infty}u_n$ be a positive-term numerical series,
+  $f(x)$ be a non-decreasing function on $[0, +\infty)$,
+  then $\sum\limits_{n = 1}^{\infty} f(x)$ has the same convergence behavior with
+  \begin{equation}
+    \int_1^{+\infty} f(x) \mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Convergence of Power Series}{}
+  Prove that $\sum\limits_{n = 1}^{\infty} \frac{1}{n^p}$ converges when $p >
+  1$,
+  and diverges when $p \leq 1$.
+\end{example}
+
+\begin{proof}
+  Hint: by integral test.
+\end{proof}
+
+\subsection{The Comparison Test}
+
+\begin{theorem}{Non-limit form of Comparison Test}{}
+  Let $\sum\limits_{n = 1}^{\infty} u_n$ and $\sum\limits_{n = 1}^{\infty}v_n$
+  be two positive-term numerical series,
+  if there exists $N > 0$, such that for all $n > N$,
+  \begin{equation}
+    u_n \leq v_n.
+  \end{equation}
+  then if $\sum\limits_{n = 1}^{\infty} v_n$ converges,
+  it can be deduced that $\sum\limits_{n = 1}^{\infty}u_n$ converges.
+  If $\sum\limits_{n = 1}^{\infty}u_n$ diverges,
+  then $\sum\limits_{n = 1}^{\infty}v_n$ also diverges.
+\end{theorem}
+
+\begin{theorem}{limit form of Comparison Test}{}
+  Let $\sum\limits_{n = 1}^{\infty} u_n$ and $\sum\limits_{n = 1}^{\infty}v_n$
+  be two positive-term series.
+  Suppose that
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{u_n}{v_n} = \lambda.
+  \end{equation}
+  If $0 < \lambda < \infty$,
+  then $\sum u_n, \sum v_n$ have the same convergence behavior.
+  When $\lambda = 0$, if $\sum v_n$ converges,
+  then $\sum u_n$ converges.
+  When $\lambda = \infty$, if $\sum v_n$ diverges,
+  then $\sum u_n$ diverges.
+\end{theorem}
+
+\begin{example}{Determine Convergence or Divergence}{}
+  Using equivalent infinitesimals to determine convergence or divergence:
+  \begin{equation}
+    (1) \sum\limits_{n = 1}^{\infty} \frac{1}{\sqrt{n^2 + 1}}; \quad
+    (2) \sum\limits_{n = 1}^{\infty} 2^n \sin \frac{\pi}{3^n}; \quad
+    (3) \sum\limits_{n = 1}^{\infty} \sqrt[n]{2} - 1; \quad
+    (4) \sum\limits_{n = 1}^{\infty} (a^{\frac{1}{n}} + a^{- \frac{1}{n}} - 2), a > 1
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) equivalent to $\sum \frac{1}{n}$, thus diverges.
+  (2) equivalent to $\sum \frac{2^n}{3^n}\pi$, thus converges to $2\pi$.
+  (3) equivalent to $\ln 2 \frac{1}{n}$, thus diverges (using Taylor expansion).
+  (4) equivalent to $\ln^2 a \frac{1}{n^2}$, thus converges (using Taylor expansion).
+\end{solution}
+
+\begin{example}{Series Involving Logarithms and Exponents}{}
+  Determine convergence or divergence:
+  \begin{equation}
+    \sum\limits_{n = 1}^{\infty} \frac{1}{3^{\ln n}}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Using the identity $a^{\ln b} = b^{\ln a}$ (which can be proved by taking
+  logarithms on both sides).
+  Then it is equivalent to $\sum \frac{1}{n^{\ln 3}}$, and it is convergent.
+\end{solution}
+
+\subsection{The Ratio Test and The Root Test}
+
+\begin{theorem}{Ratio Test for Positive-Term Series}{}
+  Let $\sum\limits_{n = 1}^{\infty}u_n$ be a positive-term series.
+  If
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{u_{n+1}}{u_n} = q < 1,
+  \end{equation}
+  then $\sum u_n$ converges. If $q > 1$, then $\sum u_n$ diverges.
+\end{theorem}
+
+\begin{theorem}{Root Test for Positive-Term Series}{}
+  Let $\sum\limits_{n = 1}^{\infty}u_n$ be a positive-term series.
+  If
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \sqrt[n]{u_n} = q < 1,
+  \end{equation}
+  then $\sum u_n$ converges. If $q > 1$, then $\sum u_n$ diverges.
+\end{theorem}
+
+\begin{note}
+  By Stirling's formula, i.e.,
+  \begin{equation}
+    \sqrt[n]{n!} \approx \frac{n}{e},
+  \end{equation}
+  we can cover most of the cases using the root test.
+\end{note}
+
+\begin{example}{Using the Root Test}{}
+  Determine the convergence or divergence
+  \begin{equation}
+    (1) \sum\limits_{n = 1}^{\infty} \frac{n!}{n^n}; \quad
+    (2) \sum\limits_{n = 1}^{\infty} \frac{(n!)^2}{(2n)!}; \quad
+    (3) \sum\limits_{n = 1}^{\infty} \frac{1}{2^{n + (-1)^n}}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) The limit is $\frac{1}{e}$, thus converges.
+  (2) The limit is $\frac{1}{4}$, thus converges.
+  (3) The limit is $\frac{1}{2}$, thus converges.
+\end{solution}
+
+\section{Arbitrary-Term Series}
+
+\subsection{Absolute Convergent and Conditional Convergent}
+
+\begin{definition}{Absolute Convergent}{}
+  A series $\sum\limits_{n = 1}^{\infty}a_n$ is said to \emph{converge absolutely}
+  if the series of absolute values
+  \begin{equation}
+    \sum\limits_{n = 1}^{\infty} |a_n|
+  \end{equation}
+  converges.
+\end{definition}
+
+\begin{definition}{Conditional Convergent}{}
+  A series $\sum\limits_{n = 1}^{\infty}a_n$ is said to \emph{converge conditionally}
+  if it converges, but not absolutely converges.
+\end{definition}
+
+\begin{proposition}{Absolute Convergence Implies Convergence}{}
+  If a series $\sum\limits_{n = 1}^{\infty} a_n$ is absolutely convergent,
+  then it is convergent.
+\end{proposition}
+
+\subsection{Alternating Series}
+
+\begin{theorem}{Leibniz's Test}{}
+  If the sequence $\{a_n\}$ is monotonically decreasing and converges to $0$,
+  then the alternating series
+  \begin{equation}
+    \sum\limits_{n = 1}^{\infty}(-1)^{n-1}a_n
+  \end{equation}
+  converges.
+\end{theorem}
+
+\begin{example}{Determine Absolute Convergence and Conditional Convergence}{}
+  Determine the absolute convergence and conditional convergence of the
+  following series
+  \begin{equation}
+    (1) \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n^{p+\frac{1}{n}}}; \quad
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) When $p > 1$, it is absolutely convergent.
+  When $1 \geq p > 0$, define $f(x) = x^{p + \frac{1}{x}}$,
+  find its derivative
+  \begin{equation}
+    f^{\prime}(x) = x^{p-1}x^{\frac{1}{x}} \left( p + \frac{1 - ln x}{x} \right).
+  \end{equation}
+  When $x$ is sufficiently large, we have $f^{\prime}(x) > 0$,
+  and thus when $n$ is large enough, it satisifies Leibniz's Test.
+  When $p \leq 0$,
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{(-1)^n}{n^{p + \frac{1}{n}}} \neq 0,
+  \end{equation}
+  thus diverges.
+\end{solution}
+
+\subsection{Dirichlet's and Abel's Test}
+
+
+
+
