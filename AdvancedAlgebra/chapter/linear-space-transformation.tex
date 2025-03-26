@@ -732,8 +732,154 @@ However, idempotent transformations are an exception.
   it is not always the case that $A_1 + A_2$ is similar to $B_1 + B_2$.
 \end{note}
 
-
 \section{Eigenvalues and Similarity Diagonalization}
+
+\subsection{Eigenvalues and Eigenvectors}
+
+\begin{definition}{Eigenvalue and Eigenvector}{}
+  Let $\mathcal{A}$ be a linear transformation on the linear space $V$ over the number
+  field $\mathbb{P}$.
+  If for $\lambda \in \mathbb{P}$, there exists $\xi \neq 0$,
+  such that
+  \begin{equation}
+    \mathcal{A} \xi = \lambda \xi.
+  \end{equation}
+  Then we call $\lambda$ an \emph{eigenvalue of $\mathcal{A}$},
+  and $\xi$ an \emph{eigenvector of $\mathcal{A}$ belonging to $\lambda$}.
+\end{definition}
+
+\begin{definition}{Eigenspace}{}
+  Given $\lambda \in \mathbb{P}$,
+  its \emph{eigenspace} is defined as the set $V_{\lambda}$
+  composed of all eigenvectors $\xi$ satisfying
+  \begin{equation}
+    \mathcal{A} \xi = \lambda \xi.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Eigenspace is a Subspace}{}
+  The eigenspace $V_{\lambda}$ is a subspace of $V$.
+\end{proposition}
+
+\begin{proof}
+  It is only needs to prove that $V_{\lambda}$ is closed under the addition and
+  scalar multiplication in $V$.
+  Consider $\xi, \eta \in V_{\lambda}$, they satisfying $\mathcal{A}\xi =
+  \lambda \xi$ and $\mathcal{A}\eta = \lambda \eta$,
+  then we get
+  \begin{equation}
+    \mathcal{A}(\xi + \eta) = \lambda (\xi + \eta),
+  \end{equation}
+  which means $\xi + \eta$ is in the space $V_{\lambda}$.
+  Similar reasoning can be used to prove the closure of scalar multiplication.
+\end{proof}
+
+\begin{proposition}{The Necessary and Sufficient Condition for Non-zero Eigenspace}{}
+  For $\lambda \in \mathbb{P}$, its eigenspace $V_{\lambda} \neq \{0\}$ if and
+  only if
+  \begin{equation}
+    |\lambda I - A| = 0,
+  \end{equation}
+  here $A$ is the matrix of $\mathcal{A}$ under an arbitrary basis of $V$.
+\end{proposition}
+
+\begin{proof}
+  Take an arbitrary basis of the space $V$,
+  and assume the coordinates of $\alpha$ under this basis is $X$,
+  the matrix of $\mathcal{A}$ under this basis is $A$.
+  Then the condition $\lambda \alpha = \mathcal{A}\alpha$ is equivalent to
+  \begin{equation}
+    \lambda X = A X \Leftrightarrow (\lambda I - A)X = 0.
+  \end{equation}
+  The above system of linear equations have non-zero solutions if and only if $|\lambda I
+  - A| = 0$.
+\end{proof}
+
+\begin{definition}{Characteristic Polynomial}{}
+  For a matrix $A$ over $\mathbb{P}$,
+  the \emph{characteristic polynomial of $A$} is defined as
+  \begin{equation}
+    f(\lambda) = |\lambda I - A|.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{}{}
+  Similar matrices have the same characteristic polynomial.
+\end{proposition}
+
+\begin{proposition}{Basic Properties of Eigenvalues}{}
+  If $\lambda_1,\cdots,\lambda_n$ are the eigenvalues of matrix $A$,
+  then we have
+  \begin{equation}
+    \sum \lambda_i = \operatorname{tr}(A),\quad
+    \prod \lambda_i = |A|.
+  \end{equation}
+\end{proposition}
+
+\subsection{Similarity Diagonalization}
+
+\begin{definition}{Similarity Diagonalization}{}
+  Let $\mathcal{A}$ be a linear transformation in $V$.
+  If there exists a basis of $V$ such that the matrix of $\mathcal{A}$
+  under this basis is a diagonal matrix,
+  then $\mathcal{A}$ is said to be \emph{diagonalizable}.
+\end{definition}
+
+\begin{definition}{Algebraic Multiplicity and Geometric Multiplicity}{}
+  Let $f(\lambda)$ be the characteristic polynomial of $\mathcal{A}$,
+  and $\lambda_i$ be an eigenvalue of $\mathcal{A}$.
+  Then we call the multiplicity of $\lambda_i$ in $f(\lambda)$ its
+  \emph{algebraic multiplicity},
+  and the dimension of its corresponding eigenspace its \emph{geometric multiplicity}.
+\end{definition}
+
+\begin{lemma}{Relationship between Algebraic and Geometric Multiplicity}{}
+  For each eigenvalue $\lambda_i$,
+  its algebraic multiplicity is greater than or equal to its geometric multiplicity.
+\end{lemma}
+
+\begin{proposition}{Linear Independence of Eigenvectors Corresponding to
+    Different Eigenvalues}{}
+  Eigenvectors belonging to different eigenvalues are linearly independent.
+\end{proposition}
+
+\begin{proof}
+  Let $\lambda_1,\cdots,\lambda_k$ be $k$ different eigenvalues of
+  $\mathcal{A}$,
+  with corresponding eigenvectors $\xi_1,\cdots,\xi_k$.
+  By mathematical induction, assume that $\xi_1,\cdots,\xi_{k-1}$ are linearly
+  independent,
+  and suppose
+  \begin{equation}
+    c_1\xi_1 + \cdots + c_k\xi_k = 0.
+  \end{equation}
+  Apply $\mathcal{A}$ to both sides, we get $c_1\lambda_1\xi_1 + \cdots +
+  c_k\lambda_k\xi_k = 0$.
+  Substract $\lambda_k$ times the above equation from this new equation yields
+  \begin{equation}
+    c_1(\lambda_1 - \lambda_k)\xi_1 + \cdots + c_{k-1}(\lambda_{k-1} - \lambda_k)\xi_{k-1} = 0.
+  \end{equation}
+  Since $\lambda_i$ are pairwise distinct,
+  we have $c_1 = \cdots = c_{k-1} = 0$,
+  and $c_k = 0$.
+\end{proof}
+
+\begin{proposition}{Sufficient Condition for Diagonalization}{}
+  If $\mathcal{A}$ has $n$ different eigenvalues,
+  then $\mathcal{A}$ is diagonalizable.
+\end{proposition}
+
+\begin{proposition}{Necessary and Sufficient Conditions for Diagonalization}{}
+  Suppose $V$ is a $n$-dimension linear space,
+  then the following are equivalent conditions for $\mathcal{A}$ to be diagonalizable:
+  \begin{itemize}
+  \item $\mathcal{A}$ has $n$ different eigenvectors.
+  \item $V = \oplus_i V_i$, where $V_i$ is the eigenspace of $\lambda_i$.
+  \item The geometric multiplicity of each eigenvalue equals its algebraic multiplicity.
+  \item The minimal polynomial of $\mathcal{A}$ is a product of first-degree polynomial.
+  \end{itemize}
+\end{proposition}
+
 
 \section{Minimal Polynomials}
 
