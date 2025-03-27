@@ -1,0 +1,156 @@
+
+\section{Uniform Convergence of Function Sequences}
+
+\subsection{Concept of Uniform Convergence}
+
+\begin{definition}{Uniform Convergence}{}
+  Let $\{f_n\}$ be a sequence of functions on the interval $I$.
+  If for any $\epsilon > 0$, there exists a positive-integer $N$
+  such that for all $x \in I, n > N$,
+  \begin{equation}
+    |f_n(x) - f(x)| < \epsilon,
+  \end{equation}
+  then we say that $\{f_n\}$ \emph{converges uniformly to $f$ on $I$}.
+\end{definition}
+
+\begin{theorem}{Cauchy's Criterion for Uniform Convergence}{}
+  Let $\{f_n\}$ be a sequence of functions on the interval $I$.
+  $\{f_n\}$ is uniformly convergent on $I$ if and only if
+  for any $\epsilon > 0$, there exists a positive integer $N$ such that
+  \begin{equation}
+    \forall m,n > N, \sup \limits_{x \in I} |f_m(x) - f_n(x)| < \epsilon.
+  \end{equation}
+\end{theorem}
+
+\subsection{Criteria for Uniform Convergence}
+
+\begin{theorem}{Weierstrass M-test}{}
+  If there exists a positive-term sequence $\{a_n\}$
+  with $\lim \limits _{n \rightarrow \infty} a_n = 0$ such that
+  \begin{equation}
+    |f(x) - f_n(x)| \leq a_n, \forall x \in I,
+  \end{equation}
+  then the sequence of functions $\{f_n(x)\}$ converges uniformly to $f(x)$ on $I$.
+\end{theorem}
+
+\begin{example}{Application of M-test}{}
+  Prove that
+  (1) $f_n(x) = \sqrt{x^2 + \frac{1}{n^2}}$ converges uniformly on any interval $I$;
+\end{example}
+
+\begin{theorem}{Supremum Criterion}{}
+  Let $\{f_n\}$ be a sequence of functions on the interval $I$, then
+  $\{f_n(x)\}$ converges uniformly to $f(x)$ if and only if
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \sup \limits_{x \in I} |f_n(x) - f(x)| = 0.
+  \end{equation}
+\end{theorem}
+
+\begin{corollary}{}{}
+  Let $\{f_n\}$ be a sequence of functions on the interval $I$, then
+  $\{f_n(x)\}$ does not converge uniformly to $f(x)$ if and only if
+  there exists a sequence $\{x_n\}$ such that
+  \begin{equation}
+    b_n = f_n(x_n) - f(x_n)
+  \end{equation}
+  does not converge to $0$.
+\end{corollary}
+
+\subsection{Uniform Convergence in Arithmetic Operations and Composite Limits}
+
+\begin{definition}{Uniform Boundedness}{}
+  Let $\{f_n\}$ be a sequence of functions on $I$.
+  If there exists a positive real-number $M$ such that for all $n \in \mathbb{Z}^+$ and $x \in I$,
+  \begin{equation}
+    |f_n(x)| \leq M,
+  \end{equation}
+  then it is said to be \emph{uniformly bounded on $I$}.
+\end{definition}
+
+\section{Properties of Uniformly Convergent Function Sequences}
+
+\subsection{Continuity of the Limit Function}
+
+\begin{theorem}{Interchange of Limit Orders}{}
+  If the sequence of functions $\{f_n(x)\}$ converges uniformly to $f(x)$
+  on $(a, x_0) \cup (x_0, b)$,
+  and for each $n$, the limit $\lim \limits _{x \rightarrow x_0} f_n(x) = a_n$
+  exists,
+  then
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \lim \limits _{x \rightarrow x_0} f_n(x) = 
+    \lim \limits _{x \rightarrow x_0} \lim \limits _{n \rightarrow \infty} f_n(x).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{theorem}{Local Continuity of the Limit Function}{}
+  If $\{f_n(x)\}$ converges uniformly in the neighborhood of $x_0$,
+  and $f_n(x)$ is continuous at $x_0$, then the limit function $f(x)$
+  is also continuous at $x_0$.
+\end{theorem}
+
+\begin{theorem}{Uniform Continuity of the Limit Function}{}
+  If $\{f_n(x)\}$ converges uniformly to $f(x)$ on the interval $I$,
+  and each $f_n(x)$ is uniformly continuous,
+  then the limit function $f(x)$ is also uniformly continuous on $I$.
+\end{theorem}
+
+\subsection{Integrability of the Limit Function}
+
+\begin{theorem}{Integrability of the Limit Function}{}
+  If $\{f_n(x)\}$ converges uniformly to $f(x)$ on $[a, b]$,
+  and each $f_n(x)$ is integrable on $[a, b]$,
+  then $f(x)$ is integrable on $[a, b]$, and
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \int_a^b f_n(x) \mathrm{d} x 
+    = \int_a^b f(x)\mathrm{d} x = \int_a^b \lim \limits _{n \rightarrow \infty} f_n(x) \mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+
+
+\subsection{Differentiability of the Limit Function}
+
+\begin{theorem}{Differentiability of the Limit Function}{}
+  If $\{f_n\}$ converges uniformly to $f(x)$ on $[a, b]$,
+  and each $f_n(x)$ has a continuous derivative on $[a, b]$,
+  with $f_n^{\prime}(x)$ converging uniformly to $g(x)$.
+  If there exists $x_0 \in [a, b]$ such that $f_n(x_0)$ converges,
+  then $f_n(x)$ converges uniformly to a continuously differentiable function $f(x)$
+  on $[a, b]$, and $f^{\prime}(x) = g(x)$, that is
+  \begin{equation}
+    (\lim \limits _{n \rightarrow \infty} f_n(x))^{\prime}
+    = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x).
+  \end{equation}
+\end{theorem}
+
+
+
+\section{Function Series}
+
+\section{Power Series}
+
+\subsection{Convergence Interval and Radius of Convergence}
+
+\begin{theorem}{Abel's Theorem}{}
+  If the power series $\sum\limits_{n = 1}^{\infty} a_nx^n$
+  converges at $x_0 \neq 0$,
+  then for all $x$ with $|x| < |x_0|$,
+  $\sum\limits_{n = 1}^{\infty} a_nx^n$ converges absolutely.
+  If it diverges at $x_0$,
+  then for all $x$ with $|x| > |x_0|$, it diverges.
+\end{theorem}
+
+
+
+
+
+
+
+
+
+
