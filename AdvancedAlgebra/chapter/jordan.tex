@@ -2,11 +2,142 @@
 
 \section{From a Space Decomposition Perspective}
 
+\subsection{Cyclic Invariant Subspace Decomposition}
+
+\begin{lemma}{Nilpotent Basis}{}
+  If $\mathcal{A}$ is a nilpotent transformation,
+  for any vector $\alpha$,
+  if $\mathcal{A}^{k-1} \alpha \neq 0$,
+  then
+  \begin{equation}
+    \alpha, \mathcal{A}\alpha,\cdots,\mathcal{A}^{k-1}\alpha
+  \end{equation}
+  are linearly independent.
+\end{lemma}
+
+\begin{definition}{Cyclic Invariant Subspace}{}
+  Let $\mathcal{A}$ be a nilpotent transformation on linear space $V$,
+  for any vector $\alpha \in V$ satisfying $\mathcal{A}^k \alpha = 0,
+  \mathcal{A}^{k-1}\alpha \neq 0$,
+  then we call
+  \begin{equation}
+    I(\alpha) := \operatorname{span}(\alpha, \mathcal{A}\alpha, \cdots, \mathcal{A}^{k-1}\alpha)
+  \end{equation}
+  the \emph{cyclic invariant subspace}.
+\end{definition}
+
+\begin{theorem}{Cyclic Invariant Subspace Decomposition}{}
+  For a nilpotent transformation $\mathcal{A}$ in $V$,
+  there exist vectors $v_1,\cdots,v_n \in V$ and positive integers
+  $m_1,\cdots,m_n$ such that
+  \begin{equation}
+    V = I(v_1) \oplus I(v_2) \oplus \cdots \oplus I(v_n).
+  \end{equation}
+  Here, $I(v_i) = \operatorname{span}(v_i, \mathcal{A} v_i, \cdots,
+  \mathcal{A}^{m_i - 1}v_i)$ and $\mathcal{A}^{m_i}v_i = 0$.
+\end{theorem}
+
+\subsection{Generalized Eigenspace Decomposition}
+
+\begin{definition}{Generalized Eigenvector and Generalized Eigenspace}{}
+  Let $\mathcal{A}$ be a linear transformation in $V$,
+  and let $\lambda$ be an eigenvalue of $\mathcal{A}$.
+  For a vector $v \in V$, if there exists a positive integer $j$ such that
+  \begin{equation}
+    (\mathcal{A} - \lambda \mathcal{I})^j v = 0,
+  \end{equation}
+  then $v$ is called a \emph{generalized eigenvector of $\mathcal{A}$}.
+  All generalized eigenvector of $\lambda$ togather with the zero vector $0$ form
+  the \emph{generalized eigenspace}, denoted as $G_{\lambda}$.
+\end{definition}
+
+\begin{lemma}{Another Representation of Generalized Eigenspace}{}
+  Let $\mathcal{A}$ be a linear transformation in $n$-dimensional linear space
+  $V$, then the generalized eigenspace can be expressed as
+  \begin{equation}
+    G_{\lambda} = \operatorname{Ker} (\mathcal{A} - \lambda \mathcal{I})^{n}.
+  \end{equation}
+\end{lemma}
+
+\begin{theorem}{Generalized Eigenspace Decomposition}{}
+  Let $\mathcal{A}$ be a linear transformation in $n$-dimensional linear space
+  $V$ over $\mathbb{C}$,
+  and $\lambda_1,\cdots,\lambda_m$ be eigenvalues of $\mathcal{A}$.
+  Then we have
+  \begin{equation}
+    V = G_{\lambda_1} \oplus G_{\lambda_2} \oplus \cdots \oplus G_{\lambda_m}.
+  \end{equation}
+\end{theorem}
+
+\subsection{Jordan Canonical Form: Space Decomposition Perspective}
+
+\begin{theorem}{Jordan Canonical Form: Space Decomposition Perspective}{}
+  Let $\mathcal{A}$ be a linear transformation in an $n$-dimensional linear
+  space $V$ over $\mathbb{C}$.
+  Then there exists a basis such that the matrix of $\mathcal{A}$ under this
+  basis has the form of
+  \begin{equation}
+    J=\left[\begin{matrix}
+      J_1 && & 0 \\
+      & J_2 && \\
+      && \vdots & \\
+      0 && & J_s
+    \end{matrix}\right],\quad
+      J_i=\begin{bmatrix}
+      \lambda_i & 1 && 0 \\
+      & \lambda_i & \ddots & \\
+      && \ddots & 1 \\
+      0 && & \lambda_i
+    \end{bmatrix}_{n_i\times n_i}
+  \end{equation}
+\end{theorem}
 
 \section{From a Minimal Polynomial Perspective}
 
 
+\begin{theorem}{Kernel Space Decomposition}{}
+  Let $\mathcal{A}$ be a linear transformation,
+  and $f(x) = f_1(x) f_2(x)$ be a polynomial,
+  where $(f_1(x), f_2(x)) = 1$.
+  Then we have
+  \begin{equation}
+    \operatorname{Ker}(f(\mathcal{A}))
+    = \operatorname{Ker}(f_1(\mathcal{A})) \oplus \operatorname{Ker}(f_2(\mathcal{A})).
+  \end{equation}
+\end{theorem}
+
+\begin{lemma}{Kernel Space of the Zero Transformation}{}
+  Let $V$ be a linear space over $\mathbb{P}$,
+  and $\mathcal{O}$ be the zero transformation.
+  Then its kernel space is the entire space
+  \begin{equation}
+    \operatorname{Ker}(\mathcal{O}) = V.
+  \end{equation}
+\end{lemma}
+
+\begin{theorem}{Generalized Eigenspace Decomposition: Polynomial Perspective}{}
+  Let $\mathcal{A}$ be a linear transformation in $V$ over $\mathbb{C}$,
+  with its characteristic polynomial and minimal polynomial be
+  \begin{equation}
+    f(\lambda) = (\lambda - \lambda_1)^{k_1} \cdots (\lambda - \lambda_s)^{k_s}, \quad
+    m(\lambda) = (\lambda - \lambda_1)^{\ell_1} \cdots (\lambda - \lambda_s)^{\ell_s},
+  \end{equation}
+  respectively. Then we have the following space decomposition
+  \begin{equation}
+    V = \operatorname{Ker} (\mathcal{A} - \lambda_1 \mathcal{I})^{k_1} \oplus
+    \cdots \oplus \operatorname{Ker}(\mathcal{A} - \lambda_s \mathcal{I})^{k_s}
+    = \operatorname{Ker}(\mathcal{A} - \lambda_1 \mathcal{I})^{\ell_1} \oplus
+    \cdots \oplus \operatorname{Ker}(\mathcal{A} - \lambda_s \mathcal{I})^{\ell_s}
+  \end{equation}
+\end{theorem}
+
 \section{$\lambda$ Matrices}
+
+\subsection{Concept of $\lambda$ Matrices}
+
+\subsection{Determinant Divisors and Invariant Factors}
+
+\subsection{Elementary Divisors and Jordan Canonical Form}
 
 
 
