@@ -1,0 +1,81 @@
+
+\section{Line Integrals}
+
+\subsection{Line Integral with Respect to Arc Length}
+
+\begin{definition}{Line Integrals with Respect to Arc Length}{}
+  Let $\Gamma$ be a rectifiable curve in $\mathbb{R}^3$,
+  and $f: \Gamma \rightarrow \mathbb{R}$ be a function.
+  Divide $\Gamma$ into segments $s_1,\cdots,s_n$, with the arc-length of each
+  segment being $\Delta s_i$, and $(x_i, y_i, z_i) \in s_i$.
+  Then the \emph{line integral with respect to arc length} is defined as
+  \begin{equation}
+    \int_{\Gamma} f(x,y,z)\mathrm{d} s = \lim \limits _{\Delta s_i \rightarrow 0}
+    \sum\limits_{i = 1}^n f(x_i, y_i, z_i) \Delta s_i.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Calculation of Line Integrals with Respect to Arc Length}{}
+  Suppose $\Gamma$ is a smooth curve in $\mathbb{R}^3$ and can be expressed as
+  $\mathbf{r} = x(t)\mathbf{i} + y(t)\mathbf{j} + z(t)\mathbf{k}$ where $t \in
+  [a, b]$, then the line integral is
+  \begin{equation}
+    \int_{\Gamma} f(x,y,z) \mathrm{d} s = \int_a^b f(x(t), y(t), z(t))
+    \sqrt{x^{\prime 2}(t) + y^{\prime 2}(t) + z^{\prime 2}(t)}\mathrm{d} t.
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Calculation of Line Integrals with Respect to Arc Length}{}
+  
+\end{example}
+
+
+\begin{theorem}{Mean-Value Theorem for Line Integrals}{}
+  Let $f(x, y)$ be a continuous function on the smooth curve
+  $L: (x(t), y(t)), t \in [a, b]$.
+  Denote $\Delta L$ as the arc-length of $L$.
+  Then there exists $(x_0, y_0) \in L$ such that
+  \begin{equation}
+    \int_L f(x, y)\mathrm{d} s = f(x_0, y_0)\Delta L.
+  \end{equation}
+\end{theorem}
+
+\subsection{Line Integral of a Vector Field}
+
+\begin{proposition}{Calculation of Line Integrals of a Vector Field}{}
+  If the curve $\Gamma$ is given by $\mathbf{r}(t) = x(t)\mathbf{i} +
+  y(t)\mathbf{j} + z(t)\mathbf{k}, t \in [a, b]$,
+  then
+  \begin{equation}
+    \int_{\Gamma}P \mathrm{d} x + Q\mathrm{d} y + R\mathrm{d} z
+    = \int_a^b \left[ Px^{\prime}(t) + Qy^{\prime}(t) + Rz^{\prime}(t) \right]\mathrm{d} t.
+  \end{equation}
+\end{proposition}
+
+\subsection{Green's Theorem}
+
+\begin{theorem}{Green's Theorem}{}
+  Let $\Omega \subset \mathbb{R}^2$ be a closed region bounded by a piece-wise
+  smooth simple closed curve.
+  $P(x,y)$ and $Q(x,y)$ are continuous in $\Omega$ and have continuous partial derivatives.
+  Along the positive direction of $\Omega$ (with $\Omega$ always on the
+  left-hand side), then
+  \begin{equation}
+    \oint_{\partial \Omega} P \mathrm{d} x + Q \mathrm{d} y
+    = \iint_{\Omega} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathrm{d} x \mathrm{d}y.
+  \end{equation}
+\end{theorem}
+
+
+
+
+
+
+\section{Surface Integrals}
+
+\subsection{Surface Integral with Respect to Area}
+
+\subsection{Surface Integral of a Vector Field}
+
+
+
