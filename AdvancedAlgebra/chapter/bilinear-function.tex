@@ -1,0 +1,292 @@
+
+\section{Bilinear Functions}
+
+\subsection{Concept of Bilinear Functions}
+
+\begin{definition}{Bilinear Functions}{}
+  Let $V$ be a linear space over $\mathbb{P}$.
+  A function $f: V\times V \rightarrow \mathbb{P}$ that satisfies
+  \begin{equation}
+    f(k_1\alpha_1 + k_2\alpha_2, \beta) = k_1 f(\alpha_1, \beta) + k_2f(\alpha_2, \beta), \quad
+    f(\alpha, k_1\beta_1 + k_2\beta_2) = k_1 f(\alpha, \beta_1) + k_2f(\alpha, \beta_2)
+  \end{equation}
+  is called a \emph{bilinear function on $V$}.
+\end{definition}
+
+\begin{definition}{Metric Matrix}{}
+  Let $V$ be a $n$-dimensional linear space over $\mathbb{P}$,
+  and $\epsilon_1,\cdots,\epsilon_n$ be a basis of $V$.
+  For a bilinear function $f$ on $V$, 
+  it \emph{metric matrix $G$} is defined as follows:
+  \begin{equation}
+    G=\left[\begin{matrix}
+    f(\epsilon_1,\epsilon_1) & f(\epsilon_1,\epsilon_2) & \cdots & f(\epsilon_1,\epsilon_n)\\
+    f(\epsilon_2,\epsilon_1) & f(\epsilon_2,\epsilon_2) & \cdots & f(\epsilon_2,\epsilon_n)\\
+    \vdots & \vdots & \ddots & \vdots\\
+    f(\epsilon_n,\epsilon_1) & f(\epsilon_n,\epsilon_2) & \cdots & f(\epsilon_n,\epsilon_n)
+    \end{matrix}\right]
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Representation of Bilinear Functions}{}
+  Let $\alpha, \beta \in V$ be two arbitrary vectors,
+  with their coordinates under $\epsilon_1,\cdots,\epsilon_n$ be $X, Y$ respectively.
+  Then we have
+  \begin{equation}
+    f(\alpha, \beta) = X^T GY.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Let $f(\alpha, \beta) = f(x_1\epsilon_1 + \cdots + x_n\epsilon_n,
+  y_1\epsilon_1 + \cdots + y_n\epsilon_n)$, use the definition of bilinear
+  functions and write the equation into matrix form:
+  \begin{equation}
+    f(\alpha, \beta) =
+    \left[
+      \begin{array}{cccc}
+        x_1&x_2&\cdots&x_n
+      \end{array}
+    \right] \left[
+      \begin{array}{c}
+        f(\epsilon_1, y_1 \epsilon_1 + \cdots y_n\epsilon_n)\\
+        f(\epsilon_2, y_1 \epsilon_1 + \cdots y_n\epsilon_n)\\
+        \vdots\\
+        f(\epsilon_n, y_1 \epsilon_1 + \cdots y_n\epsilon_n)
+      \end{array}
+    \right] = X^T Z,
+  \end{equation}
+  where $Z$ can be also decomposed into
+  \begin{equation}
+    Z = \left[
+      \begin{array}{c}
+        y_1f(\epsilon_1,\epsilon_1) + \cdots + y_n(\epsilon_1, \epsilon_n)\\
+        y_1f(\epsilon_2,\epsilon_1) + \cdots + y_n(\epsilon_2, \epsilon_n)\\
+        \vdots\\
+        y_1f(\epsilon_n,\epsilon_1) + \cdots + y_n(\epsilon_n, \epsilon_n)
+      \end{array}
+    \right] = \left[
+      \begin{array}{cccc}
+        f(\epsilon_1,\epsilon_1)&f(\epsilon_1,\epsilon_2)&\cdots&f(\epsilon_1, \epsilon_n)\\
+        f(\epsilon_2,\epsilon_1)&f(\epsilon_2,\epsilon_2)&\cdots&f(\epsilon_2, \epsilon_n)\\
+        \vdots\\
+        f(\epsilon_n,\epsilon_1)&f(\epsilon_n,\epsilon_2)&\cdots&f(\epsilon_n, \epsilon_n)
+      \end{array}
+    \right] \left[
+      \begin{array}{c}
+        y_1\\
+        y_2\\
+        \vdots\\
+        y_n
+      \end{array}
+    \right] = GY.
+  \end{equation}
+  Combining the above two equations yields $f(\alpha, \beta) = X^T GY$.
+\end{proof}
+
+\subsection{Congruence: Matrices of Bilinear Functions under Different Bases}
+
+\begin{definition}{Congruence}{}
+  Let $A$ and $B$ be $n$-order square matrices over $\mathbb{P}$.
+  If there exists an invertible $n$-order matrix $P$ over $\mathbb{P}$ such that
+  \begin{equation}
+    B = P^T A P,
+  \end{equation}
+  then $A$ and $B$ are said to be \emph{congruent}.
+\end{definition}
+
+\begin{proposition}{Congruence and Bilinear Functions}{}
+  Matrices $A$ and $B$ are congruent if and only if they are the matrices of
+  a bilinear function under two different bases.
+\end{proposition}
+
+\begin{proof}
+  Let $\epsilon_1,\cdots,\epsilon_n$ and $\eta_1,\cdots,\eta_n$ be two bases satisfying
+  \begin{equation}
+    (\epsilon_1,\cdots,\epsilon_n) = (\eta_1, \cdots, \eta_n) P.
+  \end{equation}
+  Then we explore the relation between $f(\epsilon_i, \epsilon_j)$ and
+  $f(\eta_i, \eta_j)$.
+  By the definition of bilinear functions
+  \begin{equation}
+    f(\epsilon_i, \epsilon_j) = f(\sum_k p_{ki}\eta_k, \sum_k p_{kj}\eta_k)
+    = P_i^T G_{\eta} P_j,
+  \end{equation}
+  where $G_{\eta}$ is the matrix of $f$ under the basis $\eta_1,\cdots,\eta_n$,
+  and $P_i, P_j$ are the $i$-th and $j$-th column of $P$, respectively.
+  Then
+  \begin{equation}
+    G_{\epsilon} = \left[
+      \begin{array}{cccc}
+        P_1^T G_{\eta}P_1&P_1^T G_{\eta}P_2&\cdots&P_1^T G_{\eta}P_n\\
+        P_2^T G_{\eta}P_1&P_2^T G_{\eta}P_2&\cdots&P_3^T G_{\eta}P_n\\
+        \vdots\\
+        P_n^T G_{\eta}P_1&P_n^T G_{\eta}P_2&\cdots&P_n^T G_{\eta}P_n
+      \end{array}
+    \right] = 
+    \left[
+      \begin{array}{c}
+        P_1^T\\
+        P_2^T\\
+        \vdots\\
+        P_n^T
+      \end{array}
+    \right] \left[
+      \begin{array}{cccc}
+        G_{\eta}P_1&G_{\eta}P_2&\cdots&G_{\eta}P_n
+      \end{array}
+    \right] = P^TG_{\eta}P.
+  \end{equation}
+  Then we get the conclusion that $G_{\epsilon} = P^TG_{\eta}P$.
+\end{proof}
+
+\begin{proposition}{Properties of Congruence}{}
+  Let $A$ and $B$ be two congruent matrices,
+  then (1) $r(A) = r(B)$; (2) The congruent matrix $P$ is not necessarily unique.
+\end{proposition}
+
+\section{Quadratic Forms}
+
+\subsection{Concept of Quadratic Forms and Their Matrices}
+
+\begin{definition}{Quadratic Forms}{}
+  A multivariate quadratic polynomial of the form
+  \begin{equation}
+    f(x_1,x_2,\cdots,x_n) = \sum\limits_{i = 1}^n a_{ii}x_i^2 + \sum\limits_{1 \leq i < j \leq n} 2a_{ij}x_ix_j
+  \end{equation}
+  is called a \emph{quadratic form}.
+\end{definition}
+
+\begin{definition}{Matrix of a Quadratic Form}{}
+  For any quadratic form $f(x_1,\cdots,x_n)$,
+  it can be represented in the form
+  \begin{equation}
+    f(x_1,\cdots,x_n) = x^TAx,
+  \end{equation}
+  where $x = [x_1,\cdots,x_n]^T$,
+  and $A$ is a symmetric matrix is called \emph{the matrix of the quadratic
+    form}.
+\end{definition}
+
+\begin{example}{Find the Matrix of Quadratic Forms}{}
+  Find the matrices of the following quadratic forms:
+  \begin{equation}
+    (1) f(x_1, x_2, x_3) = 2x_1x_2 + 2x_1x_3 - 6x_2x_3, \quad
+    (2) f(x_1,\cdots,x_n) = \sum\limits_{i = 1}^m (a_{i1}x_1 + \cdots + a_{in}x_n)^2.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Direct from the definition, we know $a_{12} = 1$, $a_{13} = 1$, $a_{23} = -3$.
+  That is, the matrix is
+  \begin{equation}
+    A = \left[
+      \begin{array}{ccc}
+        0&1&1\\
+        1&0&-3\\
+        1&-3&0
+      \end{array}
+    \right].
+  \end{equation}
+\end{solution}
+
+\begin{definition}{Equivalence of Quadratic Forms}{}
+  Given quadratic forms $f(x) = x^TAx$ and $g(x) = x^TBx$,
+  if there exists an invertible matrix $P$ such that
+  \begin{equation}
+    A = P^T B P,
+  \end{equation}
+  then we say $f(x)$ and $g(x)$ are \emph{equivalent}.
+\end{definition}
+
+\subsection{Canonical Form of Quadratic Forms}
+
+\begin{definition}{Canonical Form of Quadratic Forms}{}
+  For a quadratic form $f(x) = x^TAx$,
+  if $A$ is congruent to a diagonal matrix $D$,
+  then the quadratic form
+  \begin{equation}
+    g(x) = x^T Dx
+  \end{equation}
+  is called the \emph{canonical form of $f$}.
+\end{definition}
+
+\begin{theorem}{Existence of the Canonical Form of Quadratic Forms}{}
+  For any symmetric matrix $A$ over the number field $\mathbb{P}$,
+  it is congruent to a diagonal matrix,
+  and the diagonal matrix is not unique.
+\end{theorem}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{proposition}{Completing-the-Square Method for Canonical Form of Quadratic
+  Forms}{}
+  The completing-the-square method for connonical form of quadratic forms
+  proceeds as follows:
+  \begin{enumerate}
+  \item If there is no square term of $x_1$, but there is cross-term $x_1x_2$,
+    then use the substitution $x_1 = y_1 + y_2$, $x_2 = y_1 - y_2$;
+  \item Group all terms containing $x_1$ together and complete the square;
+  \item Take the compeleted-square term as a new variable.
+  \end{enumerate}
+\end{proposition}
+
+\begin{note}
+  It is not very convenient to calculate the transition matrix using the
+  completing-the-square method.
+\end{note}
+
+\begin{example}{Using the Completing-the-Square Method}{}
+  Use the completing-the-square method to find the canonical form of
+  \begin{equation}
+    f(x_1, x_2, x_3) = 2x_1x_2 + 2x_1x_3 - 6x_2x_3.
+  \end{equation}
+\end{example}
+
+\begin{proposition}{Elementary Transformation Method for Canonical Form of
+    Quadratic Forms}{}
+  Let $A$ be a symmetric matrix, we can find the transition matrix and its
+  canonical form by performing elementary row transformation and
+  corresponding column transformation on the matrix
+  \begin{equation}
+    \begin{pmatrix}A\\I\end{pmatrix}\to\begin{pmatrix}P^TAP\\P\end{pmatrix}.
+  \end{equation}
+  After the process, $P^TAP$ is the canonical form of $A$, and $P$ is the
+  transition matrix.
+\end{proposition}
+
+\begin{note}
+  If the leading diagonal of $A$ is zero, then find a non-zero diagonal element
+  and swap their position.
+  If all diagonal elements are zero, then find a non-zero element in the same
+  column, and add it to the current row.
+\end{note}
+
+\begin{example}{Using the Elementary Transformation Method}{}
+  Use the elementary transformation method to find the canonical form
+  and corresponding transition matrix of
+  \begin{equation}
+    f(x_1, x_2, x_3) = 2x_1x_2 + 2x_1x_3 - 6x_2x_3.
+  \end{equation}
+\end{example}
+
+\subsection{Orthogonal Transformation Method for Quadratic Forms}
+
+\begin{proposition}{Feasibility of Orthogonal Diagonalization}{}
+  Any real symmetric matrix $A$ is orthogonally similar to a diagonal matrix.
+\end{proposition}
+
+\begin{proof}
+  
+\end{proof}
+
+\subsection{Canonical Form of Quadratic Forms over $\mathbb{R}$ and $\mathbb{C}$}
+
+
+\section{Definite Quadratic Forms}
+
+
+
+
