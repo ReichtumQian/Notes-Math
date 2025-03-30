@@ -72,7 +72,7 @@
   \end{equation}
 \end{solution}
 
-\subsection{Orthogonality}
+\subsection{Orthogonality and Orthogonal Bases}
 
 \begin{definition}{Orthogonality}{}
   Let $\alpha, \beta$ be two vectors in an Euclidean space $V$,
@@ -138,6 +138,78 @@
 
 \subsection{Orthogonal Sum and Orthogonal Complement}
 
+\begin{definition}{Orthogonal Sum}{}
+  Let $V_1, \cdots, V_s$ be a sequence of subspace of an Euclidean space $V$,
+  if they are pairwise orthogonal, then we call
+  \begin{equation}
+    V_1 + \cdots + V_s
+  \end{equation}
+  an \emph{orthogonal sum}.
+\end{definition}
+
+\begin{proposition}{Orthogonal Sums are Direct Sums}{}
+  If $V_1 + \cdots +V_s$ is an orthogonal sum,
+  then it is a direct sum.
+\end{proposition}
+
+\begin{proof}
+  Assume $\alpha_1 + \cdots + \alpha_s = 0$,
+  by taking the inner product with $\alpha_i$ on both sides, we have $\alpha_i = 0$.
+\end{proof}
+
+\begin{definition}{Orthogonal Complement}{}
+  Let $V_1, V_2$ be two subspace of $V$.
+  If $V_1$ and $V_2$ be orthogonal and
+  \begin{equation}
+    V = V_1 + V_2,
+  \end{equation}
+  then $V_1$ and $V_2$ are said to be the \emph{orthogonal complement} of each
+  other,
+  denoted as $V_1 = V_2^{\perp}$.
+\end{definition}
+
+\begin{proposition}{Uniqueness and Representation of Orthogonal Complement}{}
+  For any subspace $W$ of an Euclidean space $V$,
+  it has a unique orthogonal complement $W^{\perp}$.
+  To be more specific,
+  \begin{equation}
+    W^{\perp} = \{\alpha \in V: \alpha \perp W\}.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Uniqueness: Assume that $W$ has orthogonal complement $W_1, W_2$,
+  then for all $\alpha \in W_1$,
+  there exist $\beta \in W$ and $\gamma \in W_2$ such that
+  \begin{equation}
+    \alpha = \beta + \gamma.
+  \end{equation}
+  However $\alpha \perp \beta$ and $\alpha \perp \gamma$,
+  thus
+  \begin{equation}
+    0 = \langle \alpha, \beta \rangle = \langle \alpha, \beta \rangle
+    + \langle \alpha, \gamma\rangle = \langle \alpha, \alpha \rangle,
+  \end{equation}
+  which means $\alpha = 0$ and $V_2 = V_3$.
+
+  Representation: If $V = \operatorname{span}(\epsilon_1,\cdots,\epsilon_n)$ and
+  $W = \operatorname{span}(\epsilon_1,\cdots,\epsilon_s)$,
+  then $W^{\perp} = \operatorname{span}(\epsilon_{s+1},\cdots,\epsilon_n)$.
+\end{proof}
+
+
+\begin{example}{Properties of Orthogonal Complement}{}
+  Prove that the following equations hold
+  \begin{equation}
+    (1) (U^{\perp})^{\perp}, \quad
+    (2) (U_1 + U_2)^{\perp} = U_1^{\perp} \cap U_2^{\perp}, \quad
+    (3) (U_1 \cap U_2)^{\perp} = U_1^{\perp} + U_2^{\perp}.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  
+\end{proof}
 
 \section{Unitary Space}
 
