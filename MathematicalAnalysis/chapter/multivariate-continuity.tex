@@ -1,0 +1,124 @@
+
+
+\section{Simultaneous Limits and Iterated Limits}
+
+\begin{definition}{Simultaneous Limits}{}
+  Let $a$ be a point in $\mathbb{R}^n$,
+  $A$ be a real number,
+  and $f: \mathbb{R}^n \rightarrow \mathbb{R}$ be a function defined in
+  a deleted neighborhood of $a$.
+  If for any $\epsilon > 0$, there exists $\delta > 0$ such that
+  when $x \in \mathbb{R}^n$ satisfies $\|x - a\| < \delta$,
+  we have
+  \begin{equation}
+   |f(x) - A| < \epsilon,
+  \end{equation}
+  then we said \emph{the simultaneous limit of $f(x)$ at $a$} is $A$,
+  denoted as $\lim \limits _{x \rightarrow a} f(x) = A$.
+\end{definition}
+
+\begin{note}
+  When $n = 2$, we also call the simultaneous limit \emph{double limit}.
+  There are two commonly used methods to calculate the simultaneous limit of a function:
+  \begin{enumerate}
+  \item Squeeze + Convergence: for example $\left|(x+y)\sin\frac{1}{x}\sin\frac{1}{y}\right|\leq|x+y|=0$
+  \item Polar Coordinate Transformation: for example
+    $\left|{\frac{x^{3}+y^{3}}{x^{2}+y^{2}}}\right|=\left|{\frac{r^{3}\cos^{3}\theta+r^{3}\sin^{3}\theta}{r^{2}}}\right|=r|\cos^{3}\theta+\sin^{3}\theta|\leq2r\rightarrow
+    0$
+  \end{enumerate}
+\end{note}
+
+\begin{example}{Calculation of Double Limits}{}
+  Given $f(x, y)$ as follows, calculate $\lim \limits _{(x,y) \rightarrow (0,
+    0)} f(x,y)$
+  \begin{equation}
+    f(x,y)=
+    \begin{cases}
+      xy\frac{x^2-y^2}{x^2+y^2},&(x,y)\neq 0\\
+      0,&(x,y)=0
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Let $x = r \cos \theta, y = r \sin \theta$,
+  then when $(x, y) \neq (0, 0)$, we have
+  \begin{equation}
+    |f(x,y)|=\left|\frac{r^2\sin\theta\cos\theta(r^2\cos^2\theta-r^2\sin^2\theta)}{r^2}\right|=\frac{1}{4}r^2|\sin4\theta|\leq\frac{1}{4}r^2\to 0.
+  \end{equation}
+  Therefore the limit is $0$.
+\end{solution}
+
+\begin{definition}{Iterated Limits}{}
+  Let $f(x, y)$ be defined in a deleted neighborhood of $(x_0, y_0)$.
+  Then the limits
+  \begin{equation}
+    \lim \limits _{y \rightarrow y_0} \lim \limits _{x \rightarrow x_0} f(x,y), \quad
+    \lim \limits _{x \rightarrow x_0} \lim \limits _{y\rightarrow y_0} f(x,y)
+  \end{equation}
+  are called \emph{iterated limits of $f(x,y)$ at $(x_0, y_0)$}.
+\end{definition}
+
+\begin{proposition}{Relation between Simultaneous Limits and Iterated Limits}{}
+  If the simultaneous limits exists,
+  and the iterated lmits exist (the iterated limits may not exist),
+  then their value are the same.
+\end{proposition}
+
+\begin{example}{Classical Counter-Examples}{}
+  Discuss double limits and iterated limits of the following functions at $(0, 0)$:
+  \begin{equation}
+    \frac{x - y}{x + y}, \quad
+    \frac{xy}{x^2 + y^2}, \quad
+    x \sin \frac{1}{y} + y \sin \frac{1}{x}, \quad
+    \frac{1}{x} + \frac{1}{y}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) The iterated limits are $\pm 1$.
+  Consider $y = kx$, then the function is
+  \begin{equation}
+    \frac{x - kx}{x + kx} = \frac{1 - k}{1 + k},
+  \end{equation}
+  thus the double limit does not exist.
+
+  (2) The iterated limits are all $0$.
+  Consider $y = kx$, the double limit does not exist.
+
+  (3) The iterated limits do not exist.
+  Consider the double limit
+  \begin{equation}
+    |f(x, y)| \leq |x| + |y| \rightarrow 0,
+  \end{equation}
+  then the double limit is zero.
+
+  (4) Both the iterated limits and the double limit do not exist.
+\end{solution}
+
+\section{Continuity of Multivariate Functions}
+
+\begin{definition}{Continuity of Multivariate Functions}{}
+  If $f(x, y)$ satisfies $\lim \limits _{(x,y)\rightarrow (x_0, y_0)} f(x,y) =
+  f(x_0, y_0)$,
+  then we say $f(x,y)$ is \emph{continuous at $(x_0, y_0)$}.
+\end{definition}
+
+\begin{example}{Single-Variable Continuous and Multivariable Continuous}{}
+  Prove that the following function is continuous with respect to both $x$ and
+  $y$,
+  but not continuous as a multivariate function.
+  \begin{equation}
+    f(x,y)=\begin{cases}
+      \frac{xy}{x^2+y^2},&(x,y)\neq(0,0)\\
+      0,&(x,y)=(0,0)
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  Hint: Prove that $\lim \limits _{x \rightarrow 0} f(x,y) = 0$ and $\lim
+  \limits _{y \rightarrow 0} f(x,y) = 0$,
+  but the simultaneous limit does not exist.
+\end{proof}
+
