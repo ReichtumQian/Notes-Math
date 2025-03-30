@@ -1,7 +1,7 @@
 
 \section{Euclidean Space}
 
-\subsection{Euclidean Space}
+\subsection{Concept of Euclidean Space}
 
 \begin{definition}{Euclidean Space}{}
   Let $V$ be a linear space over $\mathbb{R}$.
@@ -66,7 +66,10 @@
 \end{example}
 
 \begin{solution}
-  (1)
+  Answer:
+  \begin{equation}
+    G=\begin{bmatrix}2&1&-1&0\\1&2&-1&0\\-1&-1&2&0\\0&0&0&4\end{bmatrix},\langle \alpha,\beta \rangle=5
+  \end{equation}
 \end{solution}
 
 \subsection{Orthogonality}
@@ -95,7 +98,45 @@
   Therefore for any $i = 1,\cdots,n$, we have $k_i = 0$.
 \end{proof}
 
+\begin{definition}{Standard Orthogonal Basis}{}
+  Let $\epsilon_1,\cdots,\epsilon_n$ be $n$ pairwise-orthogonal unit vectors
+  in an $n$-th dimensional Euclidean space $V$.
+  They are called the \emph{standard orthogonal basis of $V$}.
+\end{definition}
 
+\begin{proposition}{Transition Matrix between two Orthogonal Bases}{}
+  Let $\epsilon_1,\cdots,\epsilon_n$ be an orthogonal basis of $V$,
+  and let $\eta_1,\cdots,\eta_n$ be basis satisfying
+  \begin{equation}
+    (\eta_1,\cdots,\eta_n) = (\epsilon_1,\cdots,\epsilon_n)T,
+  \end{equation}
+  then $\eta_1,\cdots,\eta_n$ is an orthogonal basis if and only if $T$ is an
+  orthogonal matrix.
+\end{proposition}
+
+\begin{theorem}{Schmidt Orthogonalization}{}
+  Given a set of linearly independent vectors $\alpha_1,\cdots,\alpha_n$,
+  then the following process yields a set of pairwise-orthogonal vectors (but
+  not unit)
+  \begin{align*}
+    &\epsilon_1 = \alpha_1,\\
+    &\epsilon_2 = \alpha_2 - \frac{\langle \alpha_2, \epsilon_1 \rangle}{\langle \epsilon_1, \epsilon_1\rangle} \epsilon_1,\\
+    &~~~~~~~\vdots\\
+    &\epsilon_s = \alpha_s - \sum\limits_{i = 1}^{s - 1} \frac{\langle \alpha_s, \epsilon_i \rangle}{\langle\epsilon_i, \epsilon_i \rangle}\epsilon_i.
+  \end{align*}
+\end{theorem}
+
+\begin{example}{Schmidt Orthogonalization}{}
+  Given $\epsilon_1 = (1, 2, -1)^T, \epsilon_2 = (-1,3,1)^T, \epsilon_3 =
+  (4,-1,0)^T$,
+  use Schmidt orthogonalization to transform them into a standard orthogonal basis.
+\end{example}
+
+\begin{solution}
+  The final results are $\eta_{1}=\frac{1}{\sqrt{6}}(1,2,-1)^{T},\eta_{2}=\frac{1}{\sqrt{3}}(-1,1,1)^{T},\eta_{3}=\frac{1}{\sqrt{2}}(1,0,1)^{T}$.
+\end{solution}
+
+\subsection{Orthogonal Sum and Orthogonal Complement}
 
 
 \section{Unitary Space}
