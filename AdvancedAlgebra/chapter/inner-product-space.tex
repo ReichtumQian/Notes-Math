@@ -1,5 +1,101 @@
 
-\section{Euclid Space}
+\section{Euclidean Space}
+
+\subsection{Euclidean Space}
+
+\begin{definition}{Euclidean Space}{}
+  Let $V$ be a linear space over $\mathbb{R}$.
+  If a bilinear function $\langle \alpha, \beta \rangle$ in $V$ satisfies
+  \begin{enumerate}
+  \item Linearity: $\langle k_1\alpha_1 + k_2\alpha_2, \beta \rangle = k_1
+    \langle \alpha_1, \beta\rangle + k_2 \langle \alpha_2, \beta \rangle$;
+  \item Symmetry: $\langle \alpha, \beta \rangle = \langle \beta, \alpha \rangle$;
+  \item Positive-definiteness: $\langle \alpha, \alpha \rangle \geq 0$;
+    and $\langle \alpha, \alpha \rangle = 0$ if and only
+    if $\alpha = 0$,
+  \end{enumerate}
+  then it is said the \emph{inner product in $V$}.
+\end{definition}
+
+\begin{example}{}{}
+  Let $C_{[a,b]}$ denote the set containing all the continuous functions on $[a,
+  b]$, prove that it is an Euclidean space with the inner product 
+  \begin{equation}
+    \langle f(x), g(x) \rangle := \int_a^b f(x)g(x)\mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{definition}{Metric/Gram Matrix}
+  Let $\epsilon_1,\cdots,\epsilon_n$ be a basis of an Euclidean space $V$,
+  define a $n$-order square matrix
+  \begin{equation}
+    G = \begin{pmatrix}
+      \langle\epsilon_1,\epsilon_1\rangle & \langle\epsilon_1,\epsilon_2\rangle & \cdots & \langle\epsilon_1,\epsilon_n\rangle \\
+      \langle\epsilon_2,\epsilon_1\rangle & \langle\epsilon_2,\epsilon_2\rangle & \cdots & \langle\epsilon_2,\epsilon_n\rangle \\
+      \vdots & \vdots & \ddots & \vdots \\
+      \langle\epsilon_n,\epsilon_1\rangle & \langle\epsilon_n,\epsilon_2\rangle & \cdots & \langle\epsilon_n,\epsilon_n\rangle
+    \end{pmatrix}
+  \end{equation}
+  as its \emph{metric matrix}.
+\end{definition}
+
+\begin{proposition}{Representation of Inner Product}{}
+  If the coordinate vectors of vectors $\alpha, \beta$ with respect to the basis
+  $(\epsilon_1,\cdots,\epsilon_n)$ are $X, Y$ respectively.
+  Then 
+  \begin{equation}
+    \langle \alpha, \beta \rangle = X^TGY,
+  \end{equation}
+  where $G$ is the metric matrix of $(\epsilon_1,\cdots,\epsilon_n)$.
+\end{proposition}
+
+\begin{proof}
+  See bilinear functions.
+\end{proof}
+
+\begin{example}{Find the Metric Matrix and Inner Product}{}
+  Given a basis of Euclidean space $V$:
+  \begin{equation}
+    \epsilon_1=e_1+e_2,\epsilon_2=e_1+e_3,\epsilon_3=e_4-e_1,\epsilon_4=e_1-e_2-e_3+e_4,
+  \end{equation}
+  where $\{e_i\}$ are standard basis vectors.
+  The coordinates of two vectors $\alpha, \beta$ under
+  $(\epsilon_1,\cdots,\epsilon_4)$ are $(1,2,3,4)^T$ and $(2,0,1,0)^T$ respectively.
+  Find (1) The metric matrix under $(\epsilon_1,\cdots,\epsilon_4)$
+  (2) $\langle \alpha, \beta \rangle$.
+\end{example}
+
+\begin{solution}
+  (1)
+\end{solution}
+
+\subsection{Orthogonality}
+
+\begin{definition}{Orthogonality}{}
+  Let $\alpha, \beta$ be two vectors in an Euclidean space $V$,
+  if
+  \begin{equation}
+    \langle \alpha, \beta \rangle = 0,
+  \end{equation}
+  then we say that $\alpha, \beta$ are \emph{orthogonal}.
+\end{definition}
+
+\begin{proposition}{Orthogonality Implies Linearly Independent}{}
+  Let $\alpha_1,\cdots,\alpha_n$ be a set of vectors in an Euclidean space $V$,
+  if they are pairwise orthogonal, then they are linearly independent.
+\end{proposition}
+
+\begin{proof}
+  Without loss of generality,
+  assume that $k_1 \alpha_1 + \cdots + k_n\alpha_n = 0$.
+  Then taking the inner product of both sides with $\alpha_i$ yields
+  \begin{equation}
+    k_i \langle \alpha_i, \alpha_i \rangle = 0.
+  \end{equation}
+  Therefore for any $i = 1,\cdots,n$, we have $k_i = 0$.
+\end{proof}
+
+
 
 
 \section{Unitary Space}
