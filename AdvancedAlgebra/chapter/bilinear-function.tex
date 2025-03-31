@@ -279,16 +279,144 @@
 \end{proposition}
 
 \begin{proof}
-  
+  We prove the proposition by mathematical induction.
+  When $n = 1$, it is obvious.
+  Assume that it holds for $n - 1$, take an eigenvalue $\lambda$ arbitrarily,
+  and the corresponding unit-eigenvector $\alpha_1$.
+  Expand $\alpha_1$ to an orthogonal basis $\alpha_1,\cdots,\alpha_n$ of
+  $\mathbb{R}^n$.
+  Let $P = (\alpha_1,\cdots,\alpha_n)$, then
+  \begin{equation}
+    AP = P \begin{pmatrix}
+        \lambda&\beta^T\\
+        0&A_{n-1}
+      \end{pmatrix}
+    \Rightarrow
+    P^TAP=
+    \begin{pmatrix}
+      \lambda&\beta^T\\
+      0&A_{n-1}
+    \end{pmatrix}.
+  \end{equation}
+  Since $P^TAP$ is symmetric, we get $\beta = 0$.
+  Then according to the induction hypothesis, there exists an orthogonal matrix $Q_1$
+  such that $Q_1^T A_{n-1}Q_1$ is a diagonal matrix.
+  Now let $Q = \operatorname{diag}(1, Q_1)$, then
+  \begin{equation}
+    Q^TP^TAPQ =
+    \begin{pmatrix}
+      \lambda & 0\\
+      0 & Q_1^TA_{n-1}Q_1
+    \end{pmatrix}
+  \end{equation}
+  And the matrix $PQ$ is an orthogonal matrix, which completes the proof.
 \end{proof}
 
-\subsection{Canonical Form of Quadratic Forms over $\mathbb{R}$ and $\mathbb{C}$}
+\begin{proposition}{Calculation of Canonical Form: Orthogonal Transformation}{}
+  The process of calculating the canonical form by orthogonal transformation is
+  as follows:
+  \begin{enumerate}
+  \item Calculate the eigenvalues $\lambda_1,\cdots,\lambda_n$ of A;
+  \item Calculate the eigenvector $v_i$ corresponding to $\lambda_i$.
+    For eigenvectors corresponding to the same eigenvalue need to be orthogonalized;
+  \item Normalize the eigenvectors and form $P = [v_1,\cdots,v_n]$.
+  \end{enumerate}
+\end{proposition}
+
+\subsection{Positive Definite Quadratic Forms over $\mathbb{R}$}
+
+A positive definite quadratic form is a special equivalent class of
+quadratic forms in $\mathbb{R}^n$, and its representative is $x^TIx$.
+
+\begin{definition}{Positive Definite Quadratic Form}{}
+  Given a quadratic form $f(x_1,\cdots,x_n)$ over the real number field,
+  if for any non-zero $x_1,\cdots,x_n$, we have
+  \begin{equation}
+    f(x_1,\cdots,x_n) > 0,
+  \end{equation}
+  then $f(x_1,\cdots,x_n)$ is called a \emph{positive definite quadratic form},
+  and its matrix is called a \emph{positive definite matrix}.
+\end{definition}
+
+\begin{example}{Basic Properties of Positive Definite Quadratic Forms}{}
+  Let $A = (a_{ij})$ be an $n$-order positive definite matrix, prove that
+  \begin{enumerate}
+  \item $a_{ii} > 0$, for $i = 1,\cdots,n$;
+  \item $2|a_{ij}| < a_{ii} + a_{ij}$, for $i \neq j$;
+  \item Among all the elements of $A$, the element with the largest absolute value
+    must be on the main diagonal, and it must be a positive number.
+  \end{enumerate}
+\end{example}
+
+\begin{proposition}{Sufficient and Necessary Conditions for Positive Definiteness}{}
+  The quadratic form $f(x) = x^TAx$ is a positive definite quadratic form
+  if and only if $A$ is congruent to the identity matrix $I$.
+\end{proposition}
+
+\begin{proof}
+  Since quadratic forms over $\mathbb{R}$ is equivalent to 
+  \begin{equation}
+    g = u_1^2 + \cdots + u_p^2 - u_{p+1}^2 - \cdots - u_r^2.
+  \end{equation}
+  The given condition $f(x) > 0$ is satisfied if and only if
+  all the coefficients of $g$ are $1$.
+\end{proof}
+
+\begin{corollary}{From a Matrix Decomposition Perspective}{}
+  The quadratic form $f = x^TAx$ is a positive definite quadratic form if and only if there exists
+  an invertible matrix $P$ such that
+  \begin{equation}
+    A = P^TP.
+  \end{equation}
+\end{corollary}
+
+\begin{proof}
+  Since $A$ is congruent to the identity matrix $I$,
+  so there exists an invertible matrix $P$ such that $PAP^T = I$, which means
+  \begin{equation}
+    A = P^TP.
+  \end{equation}
+  Thus the conclusion is proved.
+\end{proof}
+
+\begin{proposition}{From a Eigenvalue Perspective}{}
+  The quadratic form $f = x^TAx$ is a positive definite quadratic form if and
+  only if all eigenvalues of $A$ are greater than $0$.
+\end{proposition}
+
+\begin{proof}
+  Since $A$ is a symmetric real matrix, then there exists an orthogonal matrix
+  $P$ such that
+  \begin{equation}
+    P^TAP = \Lambda.
+  \end{equation}
+  Then $x^T\Lambda x$ is also a positive definite quadratic form, which means
+  all the diagonal elements of $\Lambda$ are positive.
+\end{proof}
+
+\begin{corollary}{From a Leading Principal Minors Perspective}{}
+  The quadratic form $f = x^TAx$ is a positive definite quadratic form if and
+  only if all the leading principal minors (or all the principal minors) of $A$
+  are greater than $0$.
+\end{corollary}
+
+\begin{proof}
+  The eigenvalue perspective directly yields the conclusion.
+\end{proof}
+
+\begin{example}{Determine Positive Definite Quadratic Forms}{}
+  When $t$ takes what value, is the quadratic form $f$ positive definite, where
+  \begin{equation}
+    f = x_1^2 + x_2^2 + 5x_3^2 + 2tx_1x_2 - 2x_1x_3 + 4x_2x_3.
+  \end{equation}
+\end{example}
 
 
-\section{Definite Quadratic Forms}
 
-\subsection{Positive Definite Quadratic Forms}
 
-\subsection{Positive Semidefinite Quadratic Forms}
+
+
+
+
 
 
