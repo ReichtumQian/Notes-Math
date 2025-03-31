@@ -1,12 +1,142 @@
 
 \section{Derivatives and Differentials of Multivariable Functions}
 
+\subsection{Total Differential and Partial Derivatives}
+
+\begin{definition}{Partial Derivative}{}
+  Let $f$ be a multivariable function, then the \emph{partial derivative of $f$
+  at $x_0$ with respect to $x_i$} is
+  \begin{equation}
+    \frac{\partial f}{\partial x_i} := \lim \limits _{t \rightarrow 0} \frac{f(\mathbf{x}_0 + t\mathbf{e}_i) - f(\mathbf{x}_0)}{t}.
+  \end{equation}
+\end{definition}
+
+\begin{example}{Find the Partial Derivative}{}
+  Find the partial derivative of $u = xe^{yz} + e^{-z} + y$ at the origin.
+\end{example}
+
+\begin{definition}{Total Differential}{}
+  Let $f(x, y)$ be a multivariable function,
+  and it is differentiable with respect to $x, y$ at $(x_0, y_0)$.
+  If
+  \begin{equation}
+    f(x, y) - f(x_0, y_0) = f^{\prime}_x(x_0, y_0)(x - x_0)
+    + f^{\prime}_y (x_0, y_0)(y - y_0) + o(\sqrt{(x - x_0)^2 + (y - y_0)^2}),
+  \end{equation}
+  then we say $f(x,y)$ is \emph{differentiable at $(x_0, y_0)$},
+  and its \emph{total differential at $(x_0, y_0)$} be
+  \begin{equation}
+    \mathrm{d} f = f_x^{\prime}(x_0, y_0) \mathrm{d} x + f_y^{\prime}(x_0, y_0) \mathrm{d} y.
+  \end{equation}
+\end{definition}
+
+\begin{example}{Find the Total Differential}{}
+  Determine the differentiability of the following function at the origin.
+  \begin{equation}
+    f(x,y)=\begin{cases}\frac{xy}{\sqrt{x^2+y^2}},&(x,y)\neq(0,0)\\0,&(x,y)=(0,0)\end{cases} \quad
+  \end{equation}
+\end{example}
+
+\subsection{Gradient and Directional Derivatives}
+
+\begin{definition}{Gradient}{}
+  For a multivariable function $f: \mathbb{R}^n \rightarrow \mathbb{R}$,
+  its \emph{gradient} is defined as
+  \begin{equation}
+    \nabla f := \left[ \frac{\partial f}{\partial x_1},\cdots,\frac{\partial f}{\partial x_n} \right]^T.
+  \end{equation}
+\end{definition}
+
+\begin{example}{Find the Gradient}{}
+  Given $u(x,y,z) = xy^2z^3$, find the direction in which the function value of
+  $u(x, y, z)$ grows fastest at $(1,1,1)$.
+\end{example}
+
+\begin{solution}
+  $(1,2,3)$.
+\end{solution}
+
+\begin{definition}{Directional Derivatives}{}
+  Given $f: \mathbb{R}^n \rightarrow \mathbb{R}$ and an unit vector $\mathbf{u}
+  \in \mathbb{R}^n$, then \emph{directional derivative of $f$ at $\mathbf{x}_0$ with respect to $\mathbf{u}$}
+  is
+  \begin{equation}
+    \frac{\partial f}{\partial \mathbf{u}} := \lim \limits _{t \rightarrow 0} \frac{f(\mathbf{x}_0 + t\mathbf{u}) - f(\mathbf{x}_0)}{t}.
+  \end{equation}
+\end{definition}
+
+\begin{example}{}{}
+  Prove that $f(x,y) = \sqrt[3]{x^2 + y^2}$ has no directional derivatives in
+  any direction.
+\end{example}
+
+\begin{proposition}{Represent Directional Derivatives in Gradient}{}
+  If $f(x, y)$ is differentiable at $(x_0, y_0)$,
+  then we have
+  \begin{equation}
+    f_{\mathbf{u}}(x_0, y_0) = f_x(x_0, y_0) \cos \alpha + f_y(x_0, y_0) \cos \beta = \nabla f \cdot \mathbf{u},
+  \end{equation}
+  where $\mathbf{u}$ is an unit vector, and $\alpha, \beta$ are the angle
+  between the vector $\mathbf{u}$ and the $x$-axis and $y$-axis respectively.
+\end{proposition}
+
+\begin{example}{}{}
+  Calculate the directional derivative of $u = xyz$
+  at $A(5,1,2)$ in the direction towards $B(9,4,14)$.
+\end{example}
+
+\begin{solution}
+  $\frac{98}{13}$.
+\end{solution}
+
+\subsection{Relationship between Differentiability and Continuity}
+
+\begin{example}{Properties of Differentiability}{}
+  Let $f$ be a multivariable function that is differentiable at $\mathbf{x}_0$,
+  Prove that (1) $f$ is continuous at $\mathbf{x}_0$
+  (2) $f$ has partial derivatives and directional derivatives in any direction
+  at $\mathbf{x}_0$.
+\end{example}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{example}{Continuous Derivatives Means Differentiability}{}
+  If the partial derivatives $f_x, f_y$ are continous at $(x_0, y_0)$,
+  prove that $f(x,y)$ is differentiable at $(x_0, y_0)$.
+\end{example}
+
+\begin{proof}
+  
+\end{proof}
+
+\subsection{Composite Differentiation: Chain Rule}
+
+\begin{theorem}{Chain Rule}{}
+  Let $x(s,t), y(s,t)$ be differentiable at $(s_0, t_0)$,
+  and let $z(x, y)$ be differentiable at $(x(s_0, t_0), y(s_0,t_0))$.
+  Then $f(s,t) = z(x(s,t), y(s,t))$ is differentiable at $(s_0,t_0)$, and
+  \begin{equation}
+    \frac{\partial f}{\partial s} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial s} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial s},
+  \end{equation}
+  \begin{equation}
+    \frac{\partial f}{\partial t} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial t} + \frac{\partial z}{\partial y} \cdot \frac{\partial y}{\partial t}.
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Use Chain Rule to Find Derivatives}{}
+  Let $z = f \left( x, \frac{x}{y} \right)$, find $\frac{\partial^2 z}{\partial
+    x^2}$ and $\frac{\partial^2 z}{\partial x\partial y}$.
+\end{example}
 
 
 
 \section{Mean-Value Theorem and Taylor Expansion of Multivariable Functions}
 
+\subsection{Mean-Value Theorem of Multivariable Functions}
 
+\subsection{Taylor Expansion of Multivariable Functions}
 
 
 
