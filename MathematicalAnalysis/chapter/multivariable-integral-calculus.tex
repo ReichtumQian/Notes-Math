@@ -1,0 +1,76 @@
+
+\section{Parameterized Integrals}
+
+
+\section{Double Integrals}
+
+\subsection{Concept and Computation of Double Integrals}
+
+\begin{definition}{Double Integrals}{}
+  Let $D$ be a bounded area in $\mathbb{R}^2$,
+  and $T = \{\sigma_1,\cdots,\sigma_n\}$ is a partition of $D$,
+  then the \emph{double integral} is defined as
+  \begin{equation}
+    \iint_D f(x,y)\mathrm{d}x \mathrm{d}y = \lim \limits _{\|T\|\rightarrow 0} \sum\limits_{i = 1}^n f(\xi_i, \eta_i) s(\sigma_i),
+  \end{equation}
+  where $(\xi_i, \eta_i) \in \sigma_i$ and $s(\sigma_i)$ is the area of $\sigma_i$.
+\end{definition}
+
+\begin{example}{Determine the Integrability}{}
+  Let $D = [0, 1]\times [0,1]$, 
+\end{example}
+
+\begin{proposition}{Double Integrals and Iterated Integrals}{}
+  For $D = [a, b] \times [c, d]$ or $D = [a, b] \times [f_1(x), f_2(x)]$,
+  we have
+  \begin{equation}
+    \iint_Df(x,y)\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_c^df(x,y)\mathrm{d}y,\quad
+    \iint_Df(x,y)\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_{f_1(x)}^{f_2(x)}f(x,y)\mathrm{d}y
+  \end{equation}
+\end{proposition}
+
+\subsection{Change of Variables in Double Integrals}
+
+\begin{proposition}{Change of Variables in Double Integrals}{}
+  Suppose the original double-integral coordinate axes $x, y$ defined on the
+  area $R$.
+  By the substitution $x = x(u, v), y = y(u, v)$, the region becomes $(u, v) \in
+  \Omega$, then we have
+  \begin{equation}
+    \iint_Rf(x,y)\mathrm{d}x\mathrm{d}y=\iint_\Omega f(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm{d}u\mathrm{d}v,
+  \end{equation}
+  where the $|\cdot|$ indicates the absolute value, and
+  \begin{equation}
+    J(u,v) = \frac{\partial (x, y)}{\partial (u, v)} := \left|
+      \begin{array}{cc}
+        x_u&y_u\\
+        x_v&y_v
+      \end{array}
+    \right|.
+  \end{equation}
+\end{proposition}
+
+\begin{proposition}{Polar Coordinate Transformation for Double Integrals}{}
+  Making the polar coordinate transformation $x = r\cos\theta, y = r \sin
+  \theta$,
+  we have
+  \begin{equation}
+    \iint_R f(x, y)\mathrm{d} x \mathrm{d} y = \iint_{\Omega}f(r \cos \theta, r \sin \theta) r \mathrm{d} r \mathrm{d} \theta.
+  \end{equation}
+\end{proposition}
+
+\begin{note}
+  When integrating, we usually integrate with respect to $\mathrm{d} r$ first,
+  and then $\mathrm{d} \theta$.
+\end{note}
+
+
+\section{Triple Integrals}
+
+
+
+
+
+
+
+
