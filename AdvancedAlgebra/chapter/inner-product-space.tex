@@ -68,7 +68,8 @@
 \begin{solution}
   Answer:
   \begin{equation}
-    G=\begin{bmatrix}2&1&-1&0\\1&2&-1&0\\-1&-1&2&0\\0&0&0&4\end{bmatrix},\langle \alpha,\beta \rangle=5
+    G=\begin{bmatrix}2&1&-1&0\\1&2&-1&0\\-1&-1&2&0\\0&0&0&4\end{bmatrix}, \quad
+    \langle \alpha,\beta \rangle=5
   \end{equation}
 \end{solution}
 
@@ -172,8 +173,11 @@
   For any subspace $W$ of an Euclidean space $V$,
   it has a unique orthogonal complement $W^{\perp}$.
   To be more specific,
+  let $\epsilon_1,\cdots,\epsilon_s$ be an orthogonal basis of $W$,
+  $\epsilon_1,\cdots,\epsilon_n$ be an orthogonal basis of $V$,
+  then
   \begin{equation}
-    W^{\perp} = \{\alpha \in V: \alpha \perp W\}.
+    W^{\perp} = \{\alpha \in V: \alpha \perp W\} = \operatorname{span}(\epsilon_{s+1},\cdots,\epsilon_n).
   \end{equation}
 \end{proposition}
 
@@ -201,14 +205,35 @@
 \begin{example}{Properties of Orthogonal Complement}{}
   Prove that the following equations hold
   \begin{equation}
-    (1) (U^{\perp})^{\perp}, \quad
+    (1) U = (U^{\perp})^{\perp}, \quad
     (2) (U_1 + U_2)^{\perp} = U_1^{\perp} \cap U_2^{\perp}, \quad
     (3) (U_1 \cap U_2)^{\perp} = U_1^{\perp} + U_2^{\perp}.
   \end{equation}
 \end{example}
 
 \begin{proof}
-  
+  Assume that $V = \operatorname{span}(\epsilon_1,\cdots,\epsilon_n)$,
+  where $\epsilon_1,\cdots,\epsilon_n$ is a standard orthogonal basis.
+  Denote $A = \{\epsilon_i: i = 1,\cdots,n\}$.
+
+  (1) Let $U = \operatorname{span}(\epsilon_{i_1},\cdots,\epsilon_{i_s})$,
+  and $B = \{\epsilon_i: i = i_1,\cdots,i_n\}$.
+  \begin{equation}
+    (U^{\perp})^{\perp} = (\operatorname{span}(A - B))^{\perp}
+    = \operatorname{span}(A - (A - B))
+    = \operatorname{span}(B) = U.
+  \end{equation}
+
+  (2) Let $U_1 = \operatorname{span}(\epsilon_{i_1},\cdots,\epsilon_{i_s})$
+  and $U_2 = \operatorname{span}(\epsilon_{j_1},\cdots,\epsilon_{j_t})$.
+  Denote $B = \{\epsilon_i: i = i_1,\cdots,i_s\}$ and $C = \{\epsilon_i: i = j_1,\cdots,j_t\}$.
+  Then $U_1+U_2 = \operatorname{span}(B \cup C)$, and
+  \begin{equation}
+    (U_1 + U_2)^{\perp} = \operatorname{span}(A - (B \cup C))
+    = \operatorname{span}((A - B) \cap (A - C))
+    = \operatorname{span}(A - B) \cap \operatorname{span}(A - C)
+    = U_1^{\perp} \cap U_2^{\perp}.
+  \end{equation}
 \end{proof}
 
 \section{Unitary Space}
