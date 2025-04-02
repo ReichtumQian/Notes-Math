@@ -1,7 +1,4 @@
 
-\section{Parameterized Integrals}
-
-
 \section{Double Integrals}
 
 \subsection{Concept and Computation of Double Integrals}
@@ -17,8 +14,48 @@
 \end{definition}
 
 \begin{example}{Determine the Integrability}{}
-  Let $D = [0, 1]\times [0,1]$, 
+  Let $D = [0, 1]\times [0,1]$. For $x \in \mathbb{R}$,
+  let $q_x$ denote the denominator of $x$ when expressed as a reduced fraction.
+  Define the function $f(x,y)$ on $D$ as follows
+  \begin{equation}
+    f(x,y)=\begin{cases}
+      \frac{1}{q_x}+\frac{1}{q_y},&\mathrm{if}\left(x,y\right)\text{is a rational point},\\
+      0,&\mathrm{if}\left(x,y\right)\text{is not a rational point}.
+    \end{cases}
+  \end{equation}
+  \begin{equation}
+    g(x,y)=\begin{cases}
+      1,&\mathrm{if}(x,y)\text{is a rational point and }q_x=q_y,\\
+      0,&\text{otherwise.}
+    \end{cases}
+  \end{equation}
+  Prove that (1) the double integral of $f(x,y)$ over $D$ exists, but the two
+  iterated integrals do not exist.
+  (2) the double integral of $g(x,y)$ does not exist, but the two iterated
+  integrals exist.
 \end{example}
+
+\begin{proof}
+  (1) For any $\epsilon > 0$, there exist a finite number of $(x, y)$
+  such that $f(x,y) > \epsilon$.
+  Let $s_1,\cdots,s_m$ be these subregions,
+  and let $T$ be a partition such that $\Delta s_i < \frac{\epsilon}{2m}$.
+  The difference between Darboux upper sum and lower sum is
+  \begin{equation}
+    S(T) - s(T) = \sum\limits_{i = 1}^n \omega_i \Delta s_i
+    \leq \sum\limits_{i = 1}^m 2 \cdot \frac{\epsilon}{2m} +  \epsilon \sum\limits_{i = m+1}^n \Delta s_i
+    \leq \epsilon + 1 \cdot \epsilon
+    \leq 2 \epsilon.
+  \end{equation}
+  thus the limit $\lim \limits _{\|T\| \rightarrow 0} \sum\limits_{i = 1}^n
+  \omega_i \Delta s_i$ exists, and is $0$. Therefore the double integral exists.
+
+  Now we prove that the iterated integrals do not exist.
+  Fix $y$, when $x$ takes irrational points then $f(x,y) = 0$,
+  while $x$ takes rational points then $f(x,y)=\frac{1}{q_y}$.
+  The oscillation of $f(x,y)$ over any subregion is always larger or equal to $\frac{1}{q_y}$.
+  Then the iterated integrals do not exist.
+\end{proof}
 
 \begin{proposition}{Double Integrals and Iterated Integrals}{}
   For $D = [a, b] \times [c, d]$ or $D = [a, b] \times [f_1(x), f_2(x)]$,
