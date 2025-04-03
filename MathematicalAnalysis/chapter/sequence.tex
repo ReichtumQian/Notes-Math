@@ -23,6 +23,23 @@
     \rightarrow \infty} b_n \neq 0$).
 \end{proposition}
 
+\begin{proof}
+  Take the division as an example. Let $\lim \limits _{n \rightarrow \infty} a_n
+  = A$ and $\lim \limits _{n \rightarrow \infty} b_n = B \neq 0$, then we
+  want to prove that $\frac{a_n}{b_n} \rightarrow \frac{A}{B}$.
+  Calculate the difference
+  \begin{equation}
+    \left|  \frac{a_n}{b_n} - \frac{A}{B}\right| = \frac{|a_nB - Ab_n|}{|b_n B|}.
+  \end{equation}
+  Since $B \neq 0$, we suppose $|b_n B| > C$,
+  then the difference is smaller than $\frac{1}{C} |a_n B - Ab_n|$.
+  We add an additional term $AB$
+  \begin{equation}
+    |a_n B - Ab_n| = |a_n B - AB + AB - Ab_n| \leq |a_n - A|B + A|B - b_n|,
+  \end{equation}
+  using the definition of sequence limit yields the conclusion.
+\end{proof}
+
 \begin{theorem}{Cauchy Criterion for Convergence}{}
   A sequence $\{a_n\}$ converges if and only if
   \begin{equation}
@@ -111,6 +128,11 @@
   \end{itemize}
 \end{proposition}
 
+\begin{proof}
+  (1) $\sqrt[n]{n!} \rightarrow +\infty$ due to $n! \sim \left( \frac{n}{e}
+  \right)^n$ by Stirling's formula.
+\end{proof}
+
 \begin{proposition}{Limits Involving the Number $e$}{}
   $\lim \limits _{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n = e$,
   $\lim \limits _{n \rightarrow \infty} (1 + \frac{1}{n})^n = e - \frac{e}{2n} +
@@ -152,10 +174,6 @@
   \end{equation}
 \end{theorem}
 
-\begin{proof}
-  
-\end{proof}
-
 \subsection{Euler's Constant}
 
 \begin{lemma}{}{}
@@ -166,6 +184,17 @@
   \end{equation}
   exists and is finite.
 \end{lemma}
+
+\begin{proof}
+  Denote $a_n = \sum\limits_{k = 1}^n \frac{1}{k} - \ln n$,
+  then we have
+  \begin{equation}
+    a_n - a_{n-1} = \frac{1}{n} - \ln n + \ln (n-1) = \frac{1}{n} + \ln \frac{n-1}{n} = \frac{1}{n} + \ln (1 - \frac{1}{n}).
+  \end{equation}
+  By Taylor expansion, we know $\ln (1 - \frac{1}{n}) = - \frac{1}{n} -
+  \frac{1}{2n^2} + o(\frac{1}{n^2})$,
+  and $a_n - a_{n-1} < 0$ is monotonically decreasing.
+\end{proof}
 
 \begin{definition}{Euler's Constant}{}
   The constant obtained from the above limit is called \emph{Euler's Constant},
