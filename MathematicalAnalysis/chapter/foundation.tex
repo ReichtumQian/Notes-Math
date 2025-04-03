@@ -1,0 +1,121 @@
+
+\section{Trigonometric Functions}
+
+\begin{proposition}{Sum-Difference Formulas for $\sin x$ and $\cos x$}{}
+  The functions $\sin x$ and $\cos x$ satisfy
+  \begin{align}
+    \sin(\alpha+\beta) &= \sin\alpha\cos\beta + \cos\alpha\sin\beta \\
+    \sin(\alpha-\beta) &= \sin\alpha\cos\beta - \cos\alpha\sin\beta \\
+    \cos(\alpha+\beta) &= \cos\alpha\cos\beta - \sin\alpha\sin\beta \\
+    \cos(\alpha-\beta) &= \cos\alpha\cos\beta + \sin\alpha\sin\beta
+  \end{align}
+\end{proposition}
+
+\begin{proposition}{Sum-Difference Formulas for $\tan x$ and $\cot x$}{}
+  The functions $\tan x$ and $\cot x$ satisfy
+  \begin{align}
+    \tan (\alpha+\beta)=\frac{\tan \alpha+\tan \beta}{1-\tan \alpha \tan \beta} \\
+    \tan (\alpha-\beta)=\frac{\tan \alpha-\tan \beta}{1+\tan \alpha \tan \beta} \\
+    \cot (\alpha+\beta)=\frac{\cot \alpha \cot \beta-1}{\cot \beta+\cot \alpha} \\
+    \cot (\alpha-\beta)=\frac{\cot \alpha \cot \beta+1}{\cot \beta-\cot \alpha}
+  \end{align}
+\end{proposition}
+
+\begin{proposition}{Universal Formulas}{}
+  The functions $\sin x, \cos x, \tan x$ satisfy
+  \begin{align}
+    &\sin \alpha=\frac{2 \tan \frac{\alpha}{2}}{1+\tan ^{2} \frac{\alpha}{2}} \\
+    &\cos \alpha=\frac{1-\tan ^{2} \frac{\alpha}{2}}{1+\tan ^{2} \frac{\alpha}{2}} \\
+    &\tan \alpha=\frac{2 \tan \frac{\alpha}{2}}{1-\tan ^{2} \frac{\alpha}{2}}
+  \end{align}
+\end{proposition}
+
+\begin{proposition}{Double Angle Formulas}{}
+  The functions $\sin x, \cos x, \tan x$ satisfy
+  \begin{gather}
+    \sin 2\alpha = 2 \sin \alpha \cos \alpha\\
+    \cos 2\alpha = \cos^2 \alpha - \sin^2 \alpha = 2 \cos ^2\alpha - 1 = 1 - 2\sin^2 \alpha\\
+    \tan 2\alpha = \frac{2 \tan \alpha}{1 - \tan^2 \alpha}
+  \end{gather}
+\end{proposition}
+
+\begin{proposition}{Half Angle Formulas}{}
+  The functions $\sin x, \cos x, \tan x, \cot x$ satisfy
+  \begin{align}
+    \sin \frac{\alpha}{2} &=\pm \sqrt{\frac{1-\cos \alpha}{2}} \\
+    \cos \frac{\alpha}{2} &=\pm \sqrt{\frac{1+\cos \alpha}{2}} \\
+    \tan \frac{\alpha}{2} &=\frac{\sin \alpha}{1+\cos \alpha}=\frac{1-\cos \alpha}{\sin \alpha}=\pm \sqrt{\frac{1-\cos \alpha}{1+\cos \alpha}} \\
+    \cot \frac{\alpha}{2} &=\frac{1+\cos \alpha}{\sin \alpha}=\frac{\sin \alpha}{1-\cos \alpha}=\pm \sqrt{\frac{1+\cos \alpha}{1-\cos \alpha}}
+  \end{align}
+\end{proposition}
+
+\begin{proposition}{Product-to-Sum Formulas}{}
+  The functions $\sin x, \cos x, \tan x$ satisfy
+  \begin{align}
+    &\cos \alpha+\cos \beta=2 \cos \frac{\alpha+\beta}{2} \cos \frac{\alpha-\beta}{2} \\
+    &\cos \alpha-\cos \beta=-2 \sin \frac{\alpha+\beta}{2} \sin \frac{\alpha-\beta}{2} \\
+    &\sin \alpha+\sin \beta=2 \sin \frac{\alpha+\beta}{2} \cos \frac{\alpha-\beta}{2} \\
+    &\sin \alpha-\sin \beta=2 \cos \frac{\alpha+\beta}{2} \sin \frac{\alpha-\beta}{2} \\
+    &\tan \alpha+\tan \beta=\frac{\sin (\alpha+\beta)}{\cos \alpha \cos \beta}
+  \end{align}
+\end{proposition}
+
+\begin{proposition}{Sum-to-Product Formulas}{}
+  The functions $\sin x, \cos x, \tan x$ satisfy
+  \begin{align}
+    &\cos \alpha \cos \beta=\frac{1}{2}[\cos (\alpha+\beta)+\cos (\alpha-\beta)] \\
+    &\sin \alpha \sin \beta=-\frac{1}{2}[\cos (\alpha+\beta)-\cos (\alpha-\beta)]\\
+    &\sin \alpha \cos \beta=\frac{1}{2}[\sin (\alpha+\beta)+\sin (\alpha-\beta)] \\
+    &\cos \alpha \sin \beta=\frac{1}{2}[\sin (\alpha+\beta)-\sin (\alpha-\beta)] 
+  \end{align}
+\end{proposition}
+
+\begin{example}{Important Trigonometric Identities}{}
+  Prove the following trigonometric identities
+ \begin{enumerate}
+  \item $\cos \frac{x}{2^n} \cdot \cos \frac{x}{2^{n-1}} \cdots \cos \frac{x}{2}    = \frac{\sin x}{2^n \sin \frac{x}{2^n}}$
+  \item $\sin x + \sin 2x + \cdots + \sin nx = \frac{\cos \frac{x}{2} - \cos(n + \frac{1}{2})x}{2 \sin \frac{x}{2}}$
+  \item $\cos x + \cos 2x + \cdots + \cos nx = \frac{\sin (n+\frac{1}{2})x - \sin \frac{x}{2}}{2\sin \frac{x}{2}} = \frac{\sin(n+\frac{1}{2})x}{2 \sin \frac{x}{2}} - \frac{1}{2}$
+  \end{enumerate}
+\end{example}
+
+\section{Inverse Trigonometric Functions}
+
+\begin{proposition}{Reciprocal Relations of Inverse Trigonometric Functions}{}
+  The functions $\arctan x$ and $\operatorname{arccot} x$ satisfy
+  \begin{gather}
+    \arctan x + \arctan \frac{1}{x} = \frac{\pi}{2}\\
+    \operatorname{arccot}x + \operatorname{arccot}\frac{1}{x} = \frac{\pi}{2}
+  \end{gather}
+\end{proposition}
+
+\begin{proof}
+  Draw a right-angled triangle. Let angle $\alpha$ face the side of length $1$,
+  and angle $\beta$ face the side of length $x$.
+  Then we have
+  \begin{equation}
+    \tan \alpha = x, \tan \beta = \frac{1}{x} \Rightarrow
+    \arctan x + \arctan \frac{1}{x} = \frac{\pi}{2}.
+  \end{equation}
+\end{proof}
+
+\begin{example}{Trigonometric Inequalities}{}
+  Prove the following inequalities
+  \begin{equation}
+    \frac{2x}{\pi} < \sin x < x < \tan x, \quad x \in (0, \frac{\pi}{2});
+  \end{equation}
+  \begin{equation}
+    \arcsin x > x > \arctan x, \quad x \text{ is small positive number}.
+  \end{equation}
+\end{example}
+
+
+\section{Identities}
+
+\section{Inequalities}
+
+
+
+
+
+
