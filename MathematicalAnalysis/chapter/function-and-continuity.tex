@@ -14,6 +14,29 @@
   then it is called the \emph{limit} of $f(x)$ at $x = x_0$.
 \end{definition}
 
+\begin{example}{Limits of Riemann Function}{}
+  Prove that for the Riemann function, for all $x_0 \in [0, 1]$,
+  it satisfies $\lim \limits _{x \rightarrow x_0} R(x) = 0$:
+  \begin{equation}
+    R(x)= \begin{cases}
+    \frac{1}{q}, & x = \frac{p}{q} \text{ ($\frac{p}{q}$ is a reduced proper fraction)}; \\
+    0, & x \text{ is an irrational number in } (0,1) \text{ or } 0,1 \text{ itself}.
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  For all $\epsilon > 0$, there are finite number of $x = \frac{p}{q} \in [0,
+  1]$ such that $\frac{1}{q} > \epsilon$,
+  denote them as $x_1,\cdots,x_n$.
+  Given $x_0 \in [0, 1]$, let $\delta = \min_i |x_0 - x_i|$,
+  then
+  \begin{equation}
+    \forall x \in (x_0 - \delta, x_0 + \delta) - \{x_0\},
+    R(x) < \epsilon.
+  \end{equation}
+  That means $\lim \limits _{x \rightarrow x_0} R(x) = 0$.
+\end{proof}
 
 \begin{proposition}{Uniqueness of Function Limits}{}
   If the limit of a function $f(x)$ at $x = x_0$ exists, then it is unique.
@@ -35,7 +58,11 @@
   and the limits are the corresponding arithmetic operations of the limits.
 \end{proposition}
 
-\begin{theorem}{Heine Theorem}{}
+\begin{proof}
+  Omitted since it is similar to that of sequence limit.
+\end{proof}
+
+\begin{theorem}{Heine-Cantor Theorem}{}
   The limit of function $f(x)$ at $x = x_0$ is $A$ if and only if
   for any sequence $\{x_n\}$ that converges to $x_0$ satisfying
   \begin{equation}
@@ -43,7 +70,57 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  Left-to-right is direct, so we only prove the right-to-left direction.
+  Assume that $\lim \limits _{x \rightarrow x_0}f(x) \neq A$,
+  that is
+  \begin{equation}
+    \exists \epsilon > 0, \forall \delta \in \mathbb{R}^+,
+    \exists x \in (x_0 - \delta, x_0 + \delta) - \{x_0\},
+    |f(x) - A| > \epsilon.
+  \end{equation}
+  Given $\delta_1 \in \mathbb{R}^+$,
+  and let $\delta_n = \frac{\delta_{n-1}}{2}$,
+  choose $x_n \in (x_0 - \delta_n, x_0 + \delta_n) - \{x_0\}$.
+  By the definition of sequence limit, we know that there exists a $\delta > 0$
+  such that $|A - f(x_n)| < \epsilon$, which contradicts the assumption.
+\end{proof}
+
+\begin{example}{Application of Heine-Cantor Theorem}{}
+  Prove that $\lim \limits _{x \rightarrow 0}
+  \sin \frac{1}{x}$ does not exist.
+\end{example}
+
+\begin{proof}
+  Hint: Let $a_n = \frac{1}{2n\pi}$ and $b_n = \frac{1}{2n\pi + \frac{\pi}{2}}$.
+\end{proof}
+
 \subsection{Calculation of Function Limits}
+
+\begin{proposition}{Commonly Used Equivalent Infinitesimals}{}
+  When $x$ is sufficiently close to $0$, we have
+  \begin{equation}
+    \begin{array}{lll}
+      \sin x \sim x &1 - \cos x \sim \frac{1}{2}x^2 &\tan x \sim x\\
+      \arcsin x \sim x & \arctan x \sim x&\\
+      \ln(1 + x)\sim x & e^x - 1 \sim x& a^x - 1 \sim x \ln a\\
+      (1 + x)^{\alpha} - 1 \sim \alpha x&&
+    \end{array}
+  \end{equation}
+\end{proposition}
+
+\begin{proposition}{Commonly Used Taylor Expansion}{}
+  When $x$ is sufficiently close to $0$, we have
+  \begin{equation}
+    \begin{array}{ll}
+    e^x = \sum\limits_{n = 0 }^{\infty}\frac{x^n}{n!}& \ln(1 + x) = \sum\limits_{n = 1}^{\infty}(-1)^{n-1}\frac{x^n}{n} \\
+    \sin x = \sum\limits_{n = 0}^{\infty}(-1)^n \frac{x^{2n+1}}{(2n+1)!}& \cos x = \sum\limits_{n = 0}^{\infty}(-1)^n \frac{x^{2n}}{(2n)!} \\
+    \arcsin x =\sum\limits_{n = 0}^{\infty}\left( \frac{(2n)!}{2^{2n}(n!)^2} \right)\frac{x^{2n+1}}{2n+1} =  x + \frac{1}{6}x^3 + o(x^3) &\arctan x = \sum\limits_{n = 0}^{\infty} \frac{(-1)^nx^{2n+1}}{2n+1} = x - \frac{1}{3}x^3 + o(x^3) \\
+    \frac{1}{1+x} = \sum\limits_{n = 0}^{\infty}(-1)^n x^n&\frac{1}{1 - x} = \sum\limits_{n = 0}^{\infty}x^n \\
+    (1+x)^{\alpha} = 1 + \alpha x + \frac{\alpha(\alpha - 1)}{2}x^2 + o(x^2)&(1 + x)^{\alpha} = \sum\limits_{n = 0}^{\infty}{\alpha \choose n} x^n
+  \end{array}
+  \end{equation}
+\end{proposition}
 
 
 \section{Continuity of Functions}
@@ -96,21 +173,9 @@
 \end{example}
 
 \begin{proof}
-  Let $x_0 = \frac{p}{q}$ be a rational point,
-  $R(x_0) = \frac{1}{q}$.
-  As a sequence of irrational points converges to $x_0$,
-  the limit is $0$, which is different from the function value $R(x_0) = 0$.
-  Thus $R(x)$ is discontinuous at rational points.
-
-  Let $x_0$ be an irrational point, for all $\epsilon > 0$, the number of $q$ satisfying
-  $\frac{1}{q} > \epsilon$ is finite.
-  Let these points be $x_1, \cdots, x_n$,
-  and take $\delta < \min \{|x_0 - x_i|\}$,
-  then we have
-  \begin{equation}
-    \forall x \in (x_0 - \delta, x_0 + \delta) - \{x_0\}, |f(x_0) - f(x)| < \epsilon,
-  \end{equation}
-  thus $R(x)$ is continuous at irrational points.
+  We have already proven that the limit of the Riemann function is $0$
+  at all points in the interval $[0, 1]$,
+  thus it is continuous at irrational points and is not continuous at rational points.
 \end{proof}
 
 \begin{proposition}{Continuity of Elementary Functions}{}
@@ -133,6 +198,42 @@
     f(\xi) = 0.
   \end{equation}
 \end{theorem}
+
+\begin{proof}
+  We prove it by the Nested Interval Theorem:
+  Let $a_1 = a$ and $b_1 = b$, define $c_1 = \frac{a_1 + b_1}{2}$.
+  Select $a_2, b_2$ based on the sign of $f(c_1)$,
+  and so on.
+  Since $\lim \limits _{n \rightarrow \infty} |a_n - b_n| = 0$ and $f(a_n)f(b_n)
+  < 0$, by the Nested Interval Theorem,
+  when the interval is divided small enough,
+  there exists $\xi$ such that $a_n, b_n \rightarrow \xi$, i.e.,
+  \begin{equation}
+    f^2(\xi) \leq 0,
+  \end{equation}
+  that means $f(\xi) = 0$.
+\end{proof}
+
+\begin{example}{Construct Auxiliary Functions and Apply Zero-Point Existence Theorem}{}
+  Prove the following propositions
+  \begin{enumerate}
+  \item Let $f(x), g(x)$ be continuous functions on $[0, 1]$,
+    and have the same maximum value on $[0, 1]$.
+    Prove that there exists $\xi \in [0, 1]$ such that $f(\xi) = g(\xi)$.
+  \item Let $f(x)$ be a continuous function on $[0, 2a]$,
+    and $f(0) = f(2a)$. Prove that there exists $\xi \in [0, a]$ such that
+    $f(\xi) = f(\xi + a)$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Let $x_1, x_2$ be the points where $f(x)$ and $g(x)$ reach their maximum
+  values respectively. If $x_1 = x_2$, then the conclusion is proved.
+  If $x_1 \neq x_2$, then take $F(x) = f(x) - g(x)$. We know $F(x_1) \geq 0,
+  F(x_2) \leq 0$. The conclusion follows from the zero-point existence theorem.
+
+  (2)
+\end{proof}
 
 \begin{theorem}{Intermediate-Value Theorem}{}
   If $f(x)$ is a continuous function on $[a, b]$,

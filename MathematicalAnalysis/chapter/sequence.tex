@@ -12,6 +12,23 @@
   denoting as $\lim \limits _{n \rightarrow \infty}a_n = A$.
 \end{definition}
 
+\begin{example}{Find the Sequence Limits}{}
+  Find the following limits:
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \sin^2(\pi \sqrt{n^2 + n}).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  By the periodic properties of trigonometric functions, we have
+  \begin{equation}
+    \sin^2 (\pi \sqrt{n^2 + n})
+    = \sin^2 (\pi \sqrt{n^2 + n} - n \pi)
+    = \sin^2 \left(\frac{n\pi}{\sqrt{n^2 + n} + n}\right).
+  \end{equation}
+  When $n$ goes to infinity, the limit is $\sin^2 \frac{\pi}{2} = 1$.
+\end{solution}
+
 \begin{proposition}{Four Arithmetic Operations of Limits}{}
   If the limits $\lim \limits _{n \rightarrow \infty} a_n$ and $\lim \limits _{n \rightarrow \infty} b_n$
   both exist, then
