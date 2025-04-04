@@ -1,0 +1,124 @@
+
+\section{Theory of Divisibility}
+
+\begin{definition}{Divisibility}{}
+  Let $g(x)$ and $f(x)$ be polynomials over a number field $\mathbb{P}$.
+  If there exists a polynomial $h(x)$ such that
+  \begin{equation}
+    f(x) = g(x) h(x),
+  \end{equation}
+  then $g(x)$ is said to \emph{divide $f(x)$}, denoted as $g(x)| f(x)$.
+  Here, $g(x)$ is called a \emph{divisor (factor) of $f(x)$},
+  and $f(x)$ is a \emph{multiple of $g(x)$}.
+\end{definition}
+
+\begin{proposition}{Division Algorithm with Remainder}{}
+  For any $f(x), g(x) \in \mathbb{P}[x]$,
+  there exist unique $q(x), r(x) \in \mathbb{P}[x]$ such that
+  \begin{equation}
+    f(x) = q(x) g(x) + r(x),
+  \end{equation}
+  where either $r(x) = 0$ or $\operatorname{deg}(r(x)) < \operatorname{deg} (g(x))$.
+  Here $q(x)$ and $r(x)$ are said to be the \emph{quotient} and \emph{remainder} respectively.
+\end{proposition}
+
+\begin{example}{Computation of the Division Algorithm with Remainder}{}
+  Given $f(x) = x^4 + 2x^3 - 5x + 7$ and $g(x) = x^2 - 3x + 1$,
+  find the quotient and the remainder when $g(x)$ divides $f(x)$.
+\end{example}
+
+\begin{solution}
+  Compute like the integer division, the answer is $q(x) = x^2 + 5x + 14$, $r(x)
+  = 32x - 7$.
+\end{solution}
+
+\begin{example}{Application of Division Algorithm with Remainder}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item Let $g(x) = ax + b$, $f(x)$ be a polynomial, prove that $g(x) | f(x)$ if
+    and only if $g(x) | f^2(x)$.
+  \item Let $f(x), g(x), h(x)$ be three non-zero polynomials, prove that
+    $h(x) | [f(x) - g(x)]$ if and only if the remainder of $f(x)$ and $g(x)$
+    divided by $h(x)$ are the same.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Left-to-right is direct, so we only prove the right-to-left.
+  Suppose $f(x) = q(x)g(x) + r(x)$, then we get
+  \begin{equation}
+    f^2(x) = p(x)g(x) + r^2(x).
+  \end{equation}
+  Due to $g(x) | r^2(x)$, we know that $r(x) = 0$.
+\end{proof}
+
+\section{Greatest Common Divisor}
+
+\begin{definition}{Common Divisor}{}
+  Let $f(x), g(x), d(x) \in \mathbb{P}[x]$,
+  if $d(x)$ divides both $f(x)$ and $g(x)$,
+  then $d(x)$ is said to be a \emph{common divisor of $f(x)$ and $g(x)$}.
+\end{definition}
+
+\begin{definition}{Greatest Common Divisor}{}
+  Let $d(x)$ be a common divisor of $f(x)$ and $g(x)$,
+  if $d(x)$ can not divide any other common divisor of $f(x)$ and $g(x)$,
+  then it is called the \emph{greatest common divisor of $f(x)$ and $g(x)$},
+  denoted as
+  \begin{equation}
+    d(x) = \left( f(x), g(x) \right).
+  \end{equation}
+\end{definition}
+
+\begin{theorem}{Representation of Greatest Common Divisor}{}
+  For any $f(x), g(x) \in \mathbb{P}[x]$,
+  there exists $d(x) = (f(x), g(x))$, and there exist $u(x), v(x) \in \mathbb{P}[x]$
+  such that
+  \begin{equation}
+    d(x) = u(x) f(x) + v(x) g(x).
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  We prove the proposition using the Euclidean algorithm,
+  \begin{equation}
+    f(x) = q_1(x)g(x) + r_1(x), \quad g(x) = q_2(x)r_1(x) + r_2(x), \quad r_1(x) = q_3(x)r_2(x) + r_3(x),
+  \end{equation}
+  repeat this process, and finally get
+  \begin{equation}
+    r_{s-3}(x) = q_{s-1}(x)r_{s-2}(x) + r_{s-1}(x), \quad
+    r_{s-2}(x) = q_s(x)r_{s-1}(x) + r_s(x), \quad
+    r_{s-1}(x) = q_{s+1}(x)r_s(x) + 0.
+  \end{equation}
+  At this point $r_s(x)$ is the GCD of $f(x)$ and $g(x)$.
+  And it can be represented as
+  \begin{align}
+    r_s(x) &= r_{s-2}(x) - q_s(x)r_{s-1}(x)\\
+           &= r_{s-2}(x) - q_s(x)(r_{s-3}(x) - q_{s-1}(x)r_{s-2}(x))\\
+           &= (r_{s-4}(x) - q_{s-2}(x)r_{s-3}(x)) - q_s(x)(r_{s-3}(x) - q_{s-1}(x)r_{s-2}(x))\\
+           &= \cdots\\
+           &= u(x)f(x) + v(x)g(x)
+  \end{align}
+  which completes the proof.
+\end{proof}
+
+\begin{note}
+  The polynomial $d(x) = u(x)f(x) + v(x)g(x)$ is not necessarily the greatest
+  common divisor of $f(x), g(x)$.
+  The representation is also not unique.
+\end{note}
+
+\begin{example}{Find the Representation of GCD}{}
+  Let $f(x) = x^4 + 3x^3 - x^2 - 4x - 3$ and $g(x) = 3x^3 + 10x^2 + 2x - 3$,
+  find their GCD $d(x)$, and $u(x), v(x)$ such that
+  \begin{equation}
+    d(x) = u(x)f(x) + v(x) g(x).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
+
+
+
