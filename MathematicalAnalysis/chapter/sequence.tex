@@ -194,6 +194,14 @@
   By Taylor expansion, we know $\ln (1 - \frac{1}{n}) = - \frac{1}{n} -
   \frac{1}{2n^2} + o(\frac{1}{n^2})$,
   and $a_n - a_{n-1} < 0$ is monotonically decreasing.
+  Now we prove that the sequence is bounded:
+  \begin{equation}
+    \ln n = \ln \frac{n}{n-1} + \ln \frac{n-1}{n-2} + \cdots + \ln \frac{2}{1},
+  \end{equation}
+  for each $n$, we know that $\ln \frac{n}{n-1} = \ln (1 + \frac{1}{n-1}) <
+  \frac{1}{n-1}$,
+  thus $a_n > 0$.
+  By the monotone convergence theorem, we get the sequence is convergent.
 \end{proof}
 
 \begin{definition}{Euler's Constant}{}
@@ -211,7 +219,37 @@
   \end{equation}
 \end{corollary}
 
-\section{The Squeeze Theorem}
+\section{Criteria for Convergence}
+
+\subsection{Monotone Convergence Theorem}
+
+\begin{theorem}{Monotone Convergence Theorem}{}
+  If a sequence $\{a_n\}$ is monotonic and bounded,
+  then it must be convergent.
+\end{theorem}
+
+\begin{example}{Application of Monotone Convergence Theorem}{}
+  Suppose $a_1 = \sqrt{c}, a_{n+1} = \sqrt{a_n + c}$,
+  prove that $a_n$ is convergent and
+  evaluate $\lim \limits _{n \rightarrow \infty} a_n$.
+\end{example}
+
+\begin{solution}
+  We prove that $a_n > a_{n-1}$ by induction.
+  First $a_2 = \sqrt{c + a_1} = \sqrt{c + \sqrt{c}} > \sqrt{c} = a_1$.
+  Assume $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n + c} > \sqrt{a_{n-1} + c} =
+  a_n$, we get that $a_n$ is monotonically increasing.
+  Suppose the limit of $a_n$ exists and is $A$, then $A$ satisfies $A = \sqrt{A
+    + c}$, which means
+  \begin{equation}
+    A = \frac{1 + \sqrt{1 + 4c}}{2}.
+  \end{equation}
+  Since $a_n = \sqrt{a_{n-1} + c}$ and $A = \sqrt{A + c}$, if $a_{n-1} < A$,
+  then $a_n < A$.
+  Thus $a_n$ is bounded and convergent, its limit is $A$.
+\end{solution}
+
+\subsection{The Squeeze Theorem}
 
 \begin{theorem}{The Squeeze Theorem}{}
   Let $a_n, b_n, c_n$ be three sequences.
@@ -227,24 +265,24 @@
   \end{equation}
 \end{theorem}
 
-\section{Monotone Convergence Theorem}
-
-\begin{theorem}{Monotone Convergence Theorem}{}
-  If a sequence $\{a_n\}$ is monotonic and bounded,
-  then it must be convergent.
-\end{theorem}
-
-\begin{example}{}{}
-  \begin{enumerate}
-  \item Suppose $a_1 = \sqrt{c}, a_{n+1} = \sqrt{a_n + c}$, evaluate $\lim \limits _{n \rightarrow \infty} a_n$.
-  \item Suppose $a_n = \sqrt{1 + \sqrt{2 + \cdots + \sqrt{n}}}$,
-    prove that the sequence $\{a_n\}$ is convergent.
-  \end{enumerate}
+\begin{example}{Application of The Squeeze Theorem}{}
+  Find $\lim \limits _{n \rightarrow \infty} \frac{1}{2} \cdot
+  \frac{3}{4} \cdots \frac{2n-1}{2n}$.
 \end{example}
 
 \begin{solution}
-  (1)
+  The sequence is monotonically decreasing and positive,
+  by monotone convergence theorem we know that the sequence is convergent.
+  Now we try to find it limit,
+  denote $a_n = \frac{1}{2} \cdot \frac{3}{4} \cdots \frac{2n-1}{2n}$ and $b_n =
+  \frac{2}{3} \cdot \frac{4}{5} \cdots \frac{2n}{2n+1}$,
+  then $a_n b_n = \frac{1}{2n+1}$ and
+  \begin{equation}
+    a_n^2 < a_n b_n = \frac{1}{2n+1} \rightarrow 0,
+  \end{equation}
+  thus $\lim \limits _{n \rightarrow \infty} a_n = 0$.
 \end{solution}
+
 
 \section{Using the Definition of Definite Integral}
 
@@ -257,6 +295,38 @@
   \end{equation}
 \end{proposition}
 
-\section{Contraction Mapping Theorem}
+\begin{example}{Simple Applications}{}
+  Find the following limits
+  \begin{equation}
+    (1) \lim \limits _{n \rightarrow \infty} n \left( \frac{1}{n^2 + 1} + \frac{1}{n^2 + 2} + \cdots + \frac{1}{n^2 + n^2} \right), \quad
+    (2) \lim \limits _{n \rightarrow \infty}  \left( \frac{1}{\sqrt{n^2 + 1^2}} + \frac{1}{\sqrt{n^2 + 2^2}} + \cdots + \frac{1}{\sqrt{n^2 + n^2}} \right)
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) We can rewrite the limit into the form of
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{1}{n^2} \left( \frac{1}{1 + \frac{1}{n^2}} + \frac{1}{1 + \frac{2}{n^2}} \cdots + \frac{1}{1 + 1} \right),
+  \end{equation}
+  it is equivalent to $\int_0^1 \frac{1}{1 + x^2} \mathrm{d} x = \arctan x
+  \big|^1_0 = \frac{\pi}{4}$.
+
+  (2) We can rewrite the limit into the form of
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{1}{n} \left( \frac{1}{\sqrt{1 + (\frac{1}{n})^2}} + \frac{1}{\sqrt{1 + (\frac{2}{n})^2}} + \cdots + \frac{1}{\sqrt{1 + 1^2}} \right),
+  \end{equation}
+  it is equivalent to $\int_0^1 \frac{1}{\sqrt{1 + x^2}}\mathrm{d} x = \ln (x +
+  \sqrt{x^2 + 1}) \big|^1_0 = \ln (1 + \sqrt{2})$.
+\end{solution}
+
+\begin{example}{The Squeeze Theorem + Definition of Definite Integrals}{}
+  Find the following limits
+  \begin{equation}
+    (1) I = \lim \limits _{n \rightarrow \infty} \left( \frac{\sin \frac{\pi}{n}}{n + \frac{1}{n}} + \frac{\sin \frac{2}{n}\pi}{n + \frac{2}{n}} + \cdots + \frac{\sin \pi}{n + 1} \right), \quad
+    (2) \lim \limits _{n \rightarrow \infty} \left( \frac{1}{n^2 + n + 1^2} + \frac{2}{n^2 + n + 2^2} + \cdots + \frac{n}{n^2 + n + n^2}\right).
+  \end{equation}
+\end{example}
+
+
 
 
