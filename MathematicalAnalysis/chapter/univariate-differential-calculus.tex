@@ -94,7 +94,7 @@
   and it is differentiable at $x_0$.
   And its \emph{differential} is
   \begin{equation}
-    \mathrm{d} f = f^{\prime}(x_0) \mathrm{d} x,
+    \mathrm{d} f := f^{\prime}(x_0) \mathrm{d} x,
   \end{equation}
   where $\mathrm{d} x = \Delta x = x - x_0$.
 \end{definition}
@@ -166,6 +166,29 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{High-order Derivatives for Inverse Trigonometric Functions}{}
+  Find the $n$-th order derivative of the following functions
+  \begin{equation}
+    f(x) = \arctan x, \quad
+    g(x) = \arcsin x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) We know $f^{\prime}(x) = \frac{1}{1+x^2}$, and by Taylor expansion
+  \begin{equation}
+    f^{\prime}(x) = \frac{1}{1+x^2} = 1 - x^2 + x^4 - \cdots + (-1)^mx^{2m} + \cdots.
+  \end{equation}
+  Thus $f(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots +
+  \frac{(-1)^m}{2m+1}x^{2m+1} + \cdots$,
+  which yields
+  \begin{equation}
+    f^{(2m)}(x) = 0, \quad f^{(2m+1)}(x) = (-1)^m (2m)!.
+  \end{equation}
+
+  (2) is similar.
+\end{solution}
+
 \subsection{Commonly Used Derivatives Formulas}
 
 \begin{proposition}{Derivatives of Trigonometric Functions}{}
@@ -193,26 +216,6 @@
     \end{array}
   \end{equation}
 \end{proposition}
-
-\begin{example}{Higher-Order Derivatives of Inverse-Trigonometric Functions}{}
-  Consider $f(x) = \arctan x, g(x) = \arcsin x$,
-  find $f^{(n)}(0)$ and $g^{(n)}(0)$.
-\end{example}
-
-\begin{solution}
-  (1) We know that $f^{\prime}(x) = \frac{1}{1 + x^2}$,
-  and according to Taylor expansion, we have
-  \begin{equation}
-    f^{\prime}(x) = \frac{1}{1 + x^2} = 1 - x^2 + x^4 - \cdots + (-1)^m x^{2m} + \cdots,
-  \end{equation}
-  thus $f(x) = x - \frac{x^3}{3} + \frac{x^5}{5} - \cdots + \frac{(-1)^m}{2m +
-    1}x^{2m+1} + \cdots$.
-  According to the coefficients, we know that $f^{(2m)}(0) = 0, f^{(2m+1)}(0) = (-1)^m
-  (2m)!$.
-\end{solution}
-
-
-
 
 \section{Differential Mean-Value Theorems}
 
@@ -245,6 +248,12 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  Let $M, m$ be the maximum value and minimum value of $f(x)$ on $[a, b]$ respectively.
+  If $M = m$ then $f(x) \equiv M$.
+  If $m < M$, then $f(x)$ has at least one extreme-value point in $(a, b)$.
+  The conclusion follows from the Fermat's theorem.
+\end{proof}
 
 \begin{theorem}{Lagrange's Mean-Value Theorem}{}
   If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$,
@@ -253,6 +262,18 @@
     f^{\prime}(\xi) = \frac{f(b) - f(a)}{b - a}.
   \end{equation}
 \end{theorem}
+
+\begin{proof}
+  Construct an auxiliary function
+  $F(x) = f(x) - \frac{f(b) - f(a)}{b - a}x$,
+  then we have
+  \begin{equation}
+    F(b) - F(a) = \left[ f(b) - f(a) \right]
+    - \frac{f(b) - f(a)}{b - a}(b - a) = 0,
+  \end{equation}
+  that is $F(b) = F(a)$.
+  The conclusion follows from Rolle's Mean-Value theorem.
+\end{proof}
 
 \begin{theorem}{Cauchy's Mean-Value Theorem}{}
   If $f$ and $g$ are continuous on $[a, b]$,

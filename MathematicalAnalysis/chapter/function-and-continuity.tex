@@ -311,7 +311,15 @@
 \end{example}
 
 \begin{proof}
-  Hint: Use the definition of uniform continuity.
+  (1) Without loss of generality, suppose $x_1 > x_2$,
+  then we have
+  \begin{align}
+    |f(x_1) - f(x_2)| &= |\cos \sqrt{x_1} - \cos \sqrt{x_2}| = 2 \left| \sin \frac{\sqrt{x_1} + \sqrt{x_2}}{2} \sin \frac{\sqrt{x_1} - \sqrt{x_2}}{2} \right|\\
+   & \leq 2 \left| \sin \frac{\sqrt{x_1} - \sqrt{x_2}}{2} \right| \leq |\sqrt{x_1} - \sqrt{x_2}| = \frac{|x_1 - x_2|}{\sqrt{x_1} + \sqrt{x_2}}\\
+    & = \frac{x_1 - x_2}{\sqrt{(x_1 - x_2) + x_2} + \sqrt{x_2}} \leq \frac{x_1 - x_2}{\sqrt{x_1 - x_2}} = \sqrt{x_1 - x_2}.
+  \end{align}
+  For all $\epsilon > 0$, let $\delta = \epsilon^2$,
+  when $|x_1 - x_2| < \delta$, we have $|f(x_1) - f(x_2)| < \epsilon$.
 \end{proof}
 
 \subsection{Cantor Theorem and Its Generalization}
@@ -321,11 +329,62 @@
   then it is uniformly continuous on $[a, b]$.
 \end{theorem}
 
+\begin{proof}
+  Assume $f(x)$ is not uniformly continuous on $[a, b]$,
+  then
+  \begin{equation}
+    \exists \epsilon_0 > 0, \exists \{x_n\}, \{y_n\},
+    \lim \limits _{n \rightarrow \infty} (x_n - y_n) = 0,
+    |f(x_n) - f(y_n)| \geq \epsilon_0.
+  \end{equation}
+  Due to the boundedness of $\{x_n\}$ and the Bolzano-Weierstrass theorem,
+  $\{x_n\}$ has a convergent subsequence.
+  Let $\lim \limits _{k \rightarrow \infty}x_{n_k} = x_0$,
+  then
+  \begin{equation}
+    \lim \limits _{k \rightarrow \infty} y_{n_k}
+    = \lim \limits _{k \rightarrow \infty}[(y_{n_k} - x_{n_k}) + x_{n_k}] = x_0.
+  \end{equation}
+  Since $f(x)$ is continuous at $x_0$,
+  we have $\lim \limits _{k \rightarrow \infty}|f(x_{n_k}) - f(y_{n_k})| =
+  |f(x_0) - f(x_0)| = 0$, which is a contradiction.
+\end{proof}
+
+\begin{example}{Cantor Theorem on an Open Interval}{}
+  Let $f(x)$ be a continuous function on the open interval $(a, b)$.
+  Prove that $f(x)$ is uniformly contunious on $(a, b)$ if and only if
+  $\lim \limits _{x \rightarrow a^+}f(x)$ and $\lim \limits _{x \rightarrow b^-}
+  f(x)$ exist and are finite.
+\end{example}
+
+\begin{proof}
+  Right-to-left is direct, redefine the function values at the two endpoints and
+  accords to Cantor's theorem.
+  To prove left-to-right, since $f(x)$ is uniformly continous on $(a, b)$,
+  then
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta > 0, \forall x_1, x_2 \in (a, b),
+    |x_1 - x_2| < \delta, |f(x_1) - f(x_2)| < \epsilon.
+  \end{equation}
+  Take $x_1, x_2 \in (a, a + \delta)$, $|f(x_1) - f(x_2)| < \epsilon$.
+  The conclusion follows from the Cauchy criterion.
+\end{proof}
+
 \begin{theorem}{Cantor Theorem on an Infinite Interval}{}
   If $f(x)$ is continuous on $[a, +\infty)$,
   and $\lim \limits _{x \rightarrow +\infty} f(x) = A$,
   then $f(x)$ is uniformly continuous on $[a, +\infty)$.
 \end{theorem}
+
+% \begin{proof}
+%   Since $\lim \limits _{x \rightarrow \infty} f(x) = A$,
+%   then by Cauchy's criterion for convergence
+%   \begin{equation}
+%     \forall \epsilon > 0, \exists M > 0,
+%     \forall x_1, x_2 > M, |f(x_1) - f(x_2)| < \epsilon.
+%   \end{equation}
+%   Then by Cantor theorem, 
+% \end{proof}
 
 \subsection{Lipschitz Continuity}
 
@@ -356,7 +415,7 @@
 
 \begin{corollary}{Bounded Derivative Implies Uniform Continuity}{}
   If $f^{\prime}(x)$ is bounded on $I$, then $f(x)$ is Lipschitz continuous and
-  uniformly continuous.
+  uniformly continuous on $I$.
 \end{corollary}
 
 \begin{example}{Use Lipschitz Continuity to Prove Uniform Continuity}{}
