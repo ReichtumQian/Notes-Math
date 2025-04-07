@@ -114,7 +114,7 @@
   \end{equation}
 \end{proposition}
 
-\begin{example}{Finding Derivatives of Inverse Functions}{}
+\begin{example}{Find Derivatives of Inverse Functions}{}
   Find the derivatives of
   (1) $\arcsin x$ (2) $\arccos x$ (3) $\arctan x$.
 \end{example}
@@ -167,7 +167,7 @@
 \end{proposition}
 
 \begin{example}{High-order Derivatives for Inverse Trigonometric Functions}{}
-  Find the $n$-th order derivative of the following functions
+  Find the $n$-th order derivative of the following functions at $0$:
   \begin{equation}
     f(x) = \arctan x, \quad
     g(x) = \arcsin x.
@@ -385,7 +385,8 @@
   The fact that $f$ is a convex function on $I$ is equivalent to
   the following conditions:
   \begin{itemize}
-  \item Not differentiable: $f(x) \geq f(x_0) + k(x - x_0)$;
+  \item Not differentiable: There exists $k \geq 0$ such that $f(x) \geq f(x_0)
+    + k(x - x_0)$ for all $x \geq x_0$;
   \item First-order derivative form: For any $x_0 \in I$,
     there is $f(x) \geq f(x_0) + f^{\prime}(x_0) (x - x_0)$;
   \item Differentiable: $f^{\prime}(x)$ being monotonically increasing;
@@ -402,7 +403,12 @@
 \end{example}
 
 \begin{proof}
-  
+  By $f^{\prime\prime}(x) \geq 0$ we know $f(x)$ is a convex function,
+  which means
+  \begin{equation}
+    \frac{f(x+h) - f(x)}{h} \geq \frac{f(x) - f(x-h)}{h}.
+  \end{equation}
+  The above equation yields the conclusion.
 \end{proof}
 
 \begin{example}{Application of Convex Functions}{}

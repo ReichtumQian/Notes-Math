@@ -49,8 +49,25 @@ The specific operation can be carried out in the following table:
 
 \subsection{Commonly Used Indefinite Integral Formulas}
 
-\subsection{Selected Examples from the Table of Indefinite Integrals}
-
+\begin{proposition}{Commonly Used Indefinite Integral Formulas}{}
+  The following formulas are commonly used and should be memorized.
+  \begin{align}
+      &\int \sin x \, \mathrm{d}x = -\cos x + c 
+      && \int \cos x \, \mathrm{d}x = \sin x + c \\
+      &\int \sec x \, \mathrm{d}x = \ln|\sec x + \tan x| + c 
+      && \int \sec x \tan x \, \mathrm{d}x = \sec x + c \\
+      &\int \sec^2 x \, \mathrm{d}x = \tan x + c 
+      && \int \csc^2 x \, \mathrm{d}x = -\cot x + c \\
+      &\int \frac{1}{x^2 + a^2} \, \mathrm{d}x = \frac{1}{a} \arctan \frac{x}{a} + c 
+      && \int \frac{1}{x^2 - a^2} \, \mathrm{d}x = \frac{1}{2a} \ln \left| \frac{x-a}{x+a} \right| + c \\
+      &\int \frac{1}{\sqrt{x^2 + a^2}} \, \mathrm{d}x = \ln \left| x + \sqrt{x^2 + a^2} \right| + c 
+      && \int \frac{1}{\sqrt{x^2 - a^2}} \, \mathrm{d}x = \ln \left| x + \sqrt{x^2 - a^2} \right| + c \\
+      &\int \frac{1}{\sqrt{a^2 - x^2}} \, \mathrm{d}x = \arcsin \frac{x}{a} + c 
+      && {} \\
+      &\int \ln x \, \mathrm{d}x = x \ln x - x + c 
+      && {}
+  \end{align}
+\end{proposition}
 
 \section{Definite Integrals}
 
@@ -140,6 +157,7 @@ The specific operation can be carried out in the following table:
   \begin{equation}
     \sum _T \omega_i \Delta x_i < \epsilon.
   \end{equation}
+  This implies that the integral is zero.
 \end{proof}
 
 \begin{proposition}{Integrability of the Function after Elementary Operations}{}
@@ -151,12 +169,33 @@ The specific operation can be carried out in the following table:
   are integrable on $[a, b]$.
 \end{proposition}
 
+\begin{proof}
+  The scalar multiplication and addition are direct,
+  we only prove that $f(x)g(x)$ is integrable.
+  Since both $f(x)$ and $g(x)$ are integrable, then they are all bounded.
+  Assume $|f(x)| \leq M, |g(x)| \leq N$, then
+  \begin{equation}
+    \sum \omega_i^{fg} \Delta x_i \leq
+    M \sum \omega_i^g \Delta x_i + N \sum \omega_i^f \Delta x_i.
+  \end{equation}
+  The limit is zero since both two terms go to zero.
+\end{proof}
+
 \begin{note}
   Note that even when $g(x) \neq 0$, the function
   \begin{equation}
     \varphi(x) = \frac{f(x)}{g(x)}
   \end{equation}
   is not necessarily integrable.
+  For example $f(x) = 1$, and
+  \begin{equation}
+    g(x) =
+    \begin{cases}
+      x & x \in (0, 1];\\
+      1 & x = 0.
+    \end{cases}
+  \end{equation}
+  Then $f(x)/g(x)$ is unbounded, and therefore non-integrable.
 \end{note}
 
 \begin{proposition}{Integrability of Composition Functions}{}
@@ -169,6 +208,24 @@ The specific operation can be carried out in the following table:
   \end{equation}
   is integrable on $[\alpha, \beta]$.
 \end{proposition}
+
+\begin{proof}
+  Since $f(x)$ is contunuous on a closed interval, then it is bounded and
+  uniformly continuous. Let $M = \max f(x)$ and we have
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta > 0, \forall x_1, x_2, |x_1 - x_2| < \delta,
+    |f(x_1) - f(x_2)| < \epsilon.
+  \end{equation}
+  Since $\varphi(x)$ is integrable, there exists a partition $T$ such that
+  $\sum \limits_{\omega_i^{\varphi} \geq \delta} \Delta x_i < \epsilon$.
+  Then
+  \begin{align}
+    \sum\limits_T \omega_i^{f \circ \varphi} \Delta t_i &= \sum\limits_{\omega_i^{\varphi} \geq \delta} \omega_i^{f \circ \varphi} \Delta t_i + \sum\limits_{\omega_i^{\varphi} < \delta} \omega_i^{f \circ \varphi} \Delta t_i\\
+    &\leq 2M \sum\limits_{\omega_i^{\varphi} \geq \delta} \Delta t_i + \epsilon \sum\limits_{\omega_i^{\varphi} < \delta} \Delta t_i\\
+    &< 2M \epsilon + (\beta - \alpha)\epsilon = \epsilon^{\prime}.
+  \end{align}
+  The conclusion follows from the condition for integrability.
+\end{proof}
 
 \subsection{Newton-Leibniz Formula}
 
@@ -206,7 +263,18 @@ The specific operation can be carried out in the following table:
 \end{example}
 
 \begin{proof}
-  
+  Simplify the left-hand-side with the following steps
+  \begin{align}
+    \int_a^b \frac{f(x+h) - f(x)}{h}\mathrm{d} x &= \frac{1}{h} \left( \int_a^b f(x+h)\mathrm{d} x - \int_a^b f(x)\mathrm{d}x \right)\\
+    &= \frac{1}{h} \left( \int_{a+h}^{b+h} f(x)\mathrm{d} x - \int_a^b f(x)\mathrm{d} x \right)\\
+    &= \frac{1}{h} \left( \int _b^{b+h} f(x)\mathrm{d} x - \int_a^{a+h} f(x)\mathrm{d} x \right)
+  \end{align}
+  Define $F(x) = \int_A^xf(t)\mathrm{d}t$,
+  then by the fundamental theorem of calculus
+  \begin{equation}
+    F^{\prime}(b) = \lim \limits _{h \rightarrow 0^+} \frac{F(b + h) - F(b)}{h} = f(b),
+  \end{equation}
+  similarly $F^{\prime}(a) = f(a)$.
 \end{proof}
 
 \subsection{The Mean Value Theorems for Integrals}
@@ -311,7 +379,10 @@ The specific operation can be carried out in the following table:
   limit does not exist.
 \end{proof}
 
+\subsection{Compare Tests for Improper Integrals}
 
+
+\subsection{Dirichlet and Abel Tests for Improper Integrals}
 
 
 
