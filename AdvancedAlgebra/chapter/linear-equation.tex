@@ -1,0 +1,118 @@
+
+\section{Existence of Solutions}
+
+\begin{proposition}{Conditions for the Existence of Solutions}{}
+  A system of linear equations $Ax = b$ over $\mathbb{P}$ has a solution
+  if and only if 
+  \begin{equation}
+    r(A) = r(\overline{A}),
+  \end{equation}
+  where $\overline{A} := (A|b)$.
+\end{proposition}
+
+\begin{proposition}{Conditions for the Same Solutions}{}
+  Two system of linear equations $Ax = 0$ and $Bx = 0$ have same solutions
+  if and only if $A$ and $B$ are row-equivalent.
+\end{proposition}
+
+\begin{example}{Applications of Same Solutions}{}
+  Given that the following two systems of linear equations have the same
+  solutions, find the value of $a,b$ and $c$.
+  \begin{equation}
+    \begin{cases}
+      x_1 + 2x_2 + 3x_3 = 0\\
+      2x_1 + 3x_2 + 5x_3=0\\
+      x_1 + x_2 + ax_3 = 0
+    \end{cases}
+    \quad
+    \begin{cases}
+      x_1 + bx_2 + cx_3 = 0\\
+      2x_1 + b^2x_2 + (c+1)x_3 = 0
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Hint: Denote the first system of linear equations as $Ax = 0$, and the second
+  $Bx = 0$. Then apply elementary row operations to the following matrix
+  \begin{equation}
+    C =
+    \begin{bmatrix}
+      A\\
+      B
+    \end{bmatrix}.
+  \end{equation}
+  Make sure that all the rows corresponding to $B$ are reduced to zero rows.
+\end{solution}
+
+\begin{proposition}{Number of Solutions}{}
+  For a system of linear equation $Ax = b$ satisfying $r(A) = r(\overline{A})$,
+  \begin{enumerate}
+  \item if $r(A) = n$, then $Ax = b$ has a unique solution;
+  \item if $r(A) < n$, then $Ax = b$ has infinitely many solutions.
+  \end{enumerate}
+\end{proposition}
+
+
+\section{Solving Systems of Linear Equations}
+
+\subsection{Solving $Ax = 0$}
+
+\begin{definition}{Free Variables}{}
+  Let $A$ be a matrix with a rank of $r$,
+  and $Ax = 0$ be a system of linear equations where $x = [x_1,\cdots,x_n]^T$.
+  The variables $x_{r+1},\cdots,x_n$ are said to be \emph{free variables of $Ax = 0$}.
+\end{definition}
+
+\begin{definition}{Fundamental Solution System}{}
+  Let $A$ be a matrix with a rank of $r$,
+  and $Ax = 0$ be a system of linear equations where $x = [x_1,\cdots,x_n]^T$.
+  If there exist vectors
+  \begin{equation}
+    \begin{cases}
+      \eta_1 = (*,\cdots,*,1,0,\cdots,0)\\
+      \eta_2 = (*,\cdots,*,0,1,\cdots,0)\\
+      \quad \vdots\\
+      \eta_{n-r} = (*,\cdots,*,0,0,\cdots,1)
+    \end{cases},
+  \end{equation}
+  satisfying $A\eta_i = 0$.
+  Then we call $\eta_1,\cdots,\eta_{n-r}$ the \emph{fundamental solution system of
+    $Ax = 0$}.
+\end{definition}
+
+\begin{proposition}{Solution of Homogeneous Systems of Linear Equations}{}
+  Any solution of the homogeneous system of linear equations $Ax = 0$ is
+  a linear combination of its fundamental solution system.
+\end{proposition}
+
+\subsection{Solving $Ax = b$}
+
+\begin{definition}{Particular Solution}{}
+  Given a non-homogenous system of linear equations $Ax = b$,
+  if a vector $\gamma$ satisfying 
+  \begin{equation}
+    A \gamma = b,
+  \end{equation}
+  then it is called a \emph{particular solution of $Ax = b$}.
+\end{definition}
+
+\begin{proposition}{Solution of Non-homogeneous Systems of Linear Equations}{}
+  The general solution of the non-homogeneous system of linear equations $Ax = b$
+  is the sum of its particular solution $\gamma$ and the general solution of
+  the corresponding homogeneous system of linear equations $Ax = 0$.
+  That is
+  \begin{equation}
+    x = \gamma + \operatorname{span} (\eta_1,\cdots,\eta_{n-r}).
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Solve Systems of Linear Equations}{}
+  
+\end{example}
+
+\section{Least Square Problems}
+
+
+
+

@@ -383,17 +383,121 @@
 \end{proof}
 
 \begin{proposition}{Standard Form of Real Symmetric Matrices}{}
-  Any real symmetric matrix is orthogonally similar to the identity matrix.
+  Any real symmetric matrix is orthogonally similar to a diagonal matrix.
 \end{proposition}
 
 \begin{proof}
-  We prove the proposition by induction.
+  We prove by induction.
   When $n = 1$, the conclusion holds.
+  Assume the conclusion holds for $n - 1$,
+  then for all eigenvalue $\lambda$, and an eigenvector $\alpha_1$ belonging to
+  $\lambda$, expand $\alpha_1$ to an orthonormal basis
+  $\alpha_1,\cdots,\alpha_n$.
+  Let $T = (\alpha_1,\cdots,\alpha_n)$, then
+  \begin{equation}
+    AT = T \left(
+      \begin{array}{cc}
+        \lambda&\beta^T\\
+        0&A_{n-1}
+      \end{array}
+    \right) \Rightarrow T^T AT = \left(
+      \begin{array}{cc}
+        \lambda&\beta^T \\
+               0&A_{n-1}
+      \end{array}
+    \right).
+  \end{equation}
+  Since $T^TAT$ is symmetric, we know that $\beta^T = \mathbf{0}$.
+  By assumption, there exists another orthogonal matrix $P_1$ such that
+  $P_1^TA_{n-1}P$ is diagonal. Let $P = \operatorname{diag}\{1, P_1\}$,
+  and $Q = TP$, we get $Q^TAQ$ is a diagonal matrix, and $Q$ is an orthogonal matrix.
 \end{proof}
 
 \subsection{Orthogonal Matrices}
 
-\subsection{Idempotent Matrices}
+\begin{definition}{Orthogonal Matrix}{}
+  Let $A = (a_{ij})$ be an $n$-order square matrix, if 
+  \begin{equation}
+    AA^T = I,
+  \end{equation}
+  then it is said to be an \emph{orthogonal matrix}.
+\end{definition}
 
 \subsection{Nilpotent Matrices}
+
+\begin{definition}{Nilpotent Matrix}{}
+  Let $A = (a_{ij})$ be an $n$-order square matrix, if
+  there exists an integer $k$ such that
+  \begin{equation}
+    A^k = O,
+  \end{equation}
+  then it is said to be a \emph{nilpotent matrix}.
+\end{definition}
+
+\begin{proposition}{Eigenvalue of Nilpotent Matrix}{}
+  A square matrix $A$ is nilpotent if and only if all the eigenvalues of $A$ are
+  zero.
+\end{proposition}
+
+\begin{proof}
+  Hint: Consider the Jordan canonical form of $A$.
+\end{proof}
+
+\begin{corollary}{Characteristic Polynomial of Nilpotent Matrix}{}
+  The characteristic polynomial of a nilpotent matrix is $f(x) = x^n$.
+\end{corollary}
+
+\begin{proof}
+  Hint: Consider the Jordan canonical form.
+\end{proof}
+
+\subsection{Idempotent Matrices}
+
+\begin{definition}{Idempotent Matrix}{}
+  Let $A$ be a $n$-order square matrix, if it satisfies
+  \begin{equation}
+    A^2 = A,
+  \end{equation}
+  then it is said to be an \emph{idempotent matrix}.
+\end{definition}
+
+\begin{proposition}{Eigenvalues of Idempotent Matrix}{}
+  The eigenvalues of an idempotent matrix are either $0$ or $1$.
+\end{proposition}
+
+\begin{proof}
+  Let $\lambda$ be an eigenvalue of $A$, then
+  \begin{equation}
+    \lambda \alpha = A \alpha = A^2\alpha = \lambda^2\alpha,
+  \end{equation}
+  which implies that $\lambda = \lambda^2$.
+  Then $\lambda$ is either $0$ or $1$.
+\end{proof}
+
+\begin{example}{Idempotent Matrices Decomposition}{}
+  Prove that any square matrix can be decomposed into the product
+  of an invertible matrix and an idempotent matrix.
+\end{example}
+
+\begin{proof}
+  Using the standard form of a matrix
+  \begin{equation}
+    A = P \left(
+      \begin{array}{cc}
+        I_r&O\\
+        O&O
+      \end{array}
+    \right)Q = PQ Q^{-1} \left(
+      \begin{array}{cc}
+        I_r&O\\
+        O&O
+      \end{array}
+    \right) Q = A_1A_2,
+  \end{equation}
+  where $A_1 = PQ$, and $A_2$ is an idempotent matrix.
+\end{proof}
+
+
+
+
 
