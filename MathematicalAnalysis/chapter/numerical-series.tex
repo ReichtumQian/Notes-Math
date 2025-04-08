@@ -25,8 +25,9 @@
   Since $u_n = S_n - S_{n-1}$, taking limit at both sides yields
   \begin{equation}
     \lim \limits _{n \rightarrow \infty} u_n = \lim \limits _{n \rightarrow \infty} S_n - \lim \limits _{n \rightarrow \infty} S_{n-1}
-    = L - L = 0.
+    = L - L = 0,
   \end{equation}
+  which complete the proof.
 \end{proof}
 
 \begin{proposition}{Cauchy Criterion for Numerical Series}{}
@@ -49,7 +50,7 @@
 
 \begin{proof}
   (1) Take $\epsilon = \frac{1}{2}$, $m = N, p = N$.
-  By the contrapositive of Cauchy criterion.
+  Use the contrapositive of Cauchy criterion.
 
   (2) $\frac{1}{n^2} < \frac{1}{n(n-1)} = \frac{1}{n-1} - \frac{1}{n}$,
   which yields
@@ -126,8 +127,8 @@
 \begin{solution}
   (1) equivalent to $\sum \frac{1}{n}$, thus diverges.
   (2) equivalent to $\sum \frac{2^n}{3^n}\pi$, thus converges to $2\pi$.
-  (3) equivalent to $\ln 2 \frac{1}{n}$, thus diverges (using Taylor expansion).
-  (4) equivalent to $\ln^2 a \frac{1}{n^2}$, thus converges (using Taylor expansion).
+  (3) equivalent to $\sum \frac{1}{n} \ln 2$, thus diverges (using Taylor expansion).
+  (4) equivalent to $\sum \frac{1}{n^2} \ln^2 a$, thus converges (using Taylor expansion).
 \end{solution}
 
 \begin{example}{Series Involving Logarithms and Exponents}{}
@@ -188,7 +189,7 @@
 
 \section{Arbitrary-Term Series}
 
-\subsection{Absolute Convergent and Conditional Convergent}
+\subsection{Absolute Convergence and Conditional Convergence}
 
 \begin{definition}{Absolute Convergent}{}
   A series $\sum\limits_{n = 1}^{\infty}a_n$ is said to \emph{converge absolutely}
@@ -225,6 +226,7 @@
   following series
   \begin{equation}
     (1) \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n^{p+\frac{1}{n}}}; \quad
+    (2) \sum\limits_{n = 1}^{\infty} \sin (\pi \sqrt{n^2 + p^2}).
   \end{equation}
 \end{example}
 
@@ -241,11 +243,26 @@
   \begin{equation}
     \lim \limits _{n \rightarrow \infty} \frac{(-1)^n}{n^{p + \frac{1}{n}}} \neq 0,
   \end{equation}
-  thus diverges.
+  so it diverges.
+
+  (2) By the properties of trigonometric functions, we know
+  the term equals to
+  \begin{equation}
+    \sum\limits_{n = 1}^{\infty} (-1)^n \sin (\pi \sqrt{n^2 + p^2} - n\pi)
+    = \sum\limits_{n = 1}^{\infty}(-1)^n \sin \frac{p^2 \pi}{\sqrt{n^2 + p^2} + n},
+  \end{equation}
+  which is absolutely convergent when $p = 0$,
+  and conditionally convergent when $p \neq 0$.
 \end{solution}
 
 \subsection{Dirichlet's and Abel's Test}
 
+\begin{theorem}{Dirichlet's Test}{}
+  
+\end{theorem}
 
+\begin{theorem}{Abel's Test}{}
+  
+\end{theorem}
 
 

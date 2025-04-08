@@ -22,6 +22,40 @@
   \end{equation}
 \end{theorem}
 
+\begin{example}{Use Definition to Prove Uniform Convergence}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item The function sequence $\frac{x}{n}$ is uniformly convergent on $(0, a]$
+    for all $a \in \mathbb{R}^+$, but it is not uniformly convergent on $(0, +\infty)$.
+  \item The function sequence $x^n$ is pointwise convergent in $(0, 1)$,
+    but it is not uniformly convergent.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) For all $x \in (0, a]$, the function limit $f(x) = \lim \limits _{n
+    \rightarrow \infty} f_n(x) = 0$. For all $\epsilon > 0$, choose $N >
+  \frac{a}{\epsilon}$,
+  then we have
+  \begin{equation}
+    |f_n(x) - 0| = \frac{x}{n} - 0 < \epsilon,
+  \end{equation}
+  which implies that $f(x)$ is uniformly convergent on $(0, a]$.
+  Let $\epsilon = \frac{1}{2}$, for all $N$, let $n = N$ and $x = N$,
+  we get
+  \begin{equation}
+    |f_n(x) - 0| = \frac{x}{n} = 1 > \epsilon,
+  \end{equation}
+  which implies that $f(x)$ is not uniformly convergent on $(0, +\infty)$.
+
+  (2) Consider $x_n = 1 - \frac{1}{n}$, then
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} |x_n^n - 0|
+    = \lim \limits _{n \rightarrow \infty} (1 - \frac{1}{n})^n = e^{-1} \neq 0.
+  \end{equation}
+  This means that $x^n$ is not uniformly convergent.
+\end{proof}
+
 \subsection{Criteria for Uniform Convergence}
 
 \begin{theorem}{Weierstrass M-test}{}
@@ -37,6 +71,15 @@
   Prove that
   (1) $f_n(x) = \sqrt{x^2 + \frac{1}{n^2}}$ converges uniformly on any interval $I$;
 \end{example}
+
+\begin{proof}
+  Let $n$ go up to $\infty$ we get $f(x) = x$.
+  And
+  \begin{equation}
+    |f_n(x) - f(x)| = \frac{\frac{1}{n^2}}{\sqrt{x^2 + \frac{1}{n^2}} + |x|} \leq \frac{1}{n} \rightarrow 0,
+  \end{equation}
+  and the conclusion follows from the M-test.
+\end{proof}
 
 \begin{theorem}{Supremum Criterion}{}
   Let $\{f_n\}$ be a sequence of functions on the interval $I$, then
@@ -55,6 +98,32 @@
   \end{equation}
   does not converge to $0$.
 \end{corollary}
+
+\begin{example}{}{}
+  Determine the uniform convergence of following functions on $(0, +\infty)$:
+  \begin{equation}
+    f_n(x) = \frac{x}{1 + n^2x^2}, \quad
+    f_n(x) = \frac{1}{1+nx}, \quad
+    f_n(x) = \frac{nx}{1+n^2x^2}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1)
+
+  (2) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, and
+  \begin{equation}
+    f_n(x_n) - f(x_n) = \frac{1}{2} \neq 0,
+  \end{equation}
+  so it is not uniformly convergent.
+
+  (3) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, then
+  \begin{equation}
+    f_n(x_n) - f(x_n) = \frac{1}{2} \neq 0,
+  \end{equation}
+  so it is not uniformly convergent.
+\end{solution}
+
 
 \subsection{Uniform Convergence in Arithmetic Operations and Composite Limits}
 
@@ -129,9 +198,6 @@
 \end{theorem}
 
 
-
-\section{Function Series}
-
 \section{Power Series}
 
 \subsection{Convergence Interval and Radius of Convergence}
@@ -145,11 +211,50 @@
   then for all $x$ with $|x| > |x_0|$, it diverges.
 \end{theorem}
 
+\begin{definition}{Radius of Convergence}{}
+ Let $R$ be a real number, and $\sum a_nx^n$ be a power series.
+ If for all $|x| < R$ the power series is absolutely convergent,
+ and for all $|x| > R$ it is divergent.
+ Then $R$ is said to be the \emph{radius of convergence of the power series},
+ and the interval $(-R, R)$ the \emph{interval of convergence}.
+\end{definition}
+
+\begin{proposition}{Cauchy-Hadamard Test}{}
+  Let $\sum a_nx^n$ be a power series, then its radius of convergence satsifies
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \sqrt[n]{|a_n|} = \frac{1}{R}.
+  \end{equation}
+\end{proposition}
+
+\begin{proposition}{Ratio Test}{}
+  Let $\sum a_nx^n$ be a power series, then its radius of convergence satsifies
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|} = \frac{1}{R}.
+  \end{equation}
+\end{proposition}
+
+\subsection{Sum Function of Power Series}
+
+\begin{proposition}{Commonly Used Power Series Expansion}{}
+  The following power series expansions are commonly used
+  \begin{equation}
+    (1) \frac{1}{1-x} = \sum\limits_{n = 0}^{\infty} x^n, \quad
+    (2) e^x = \sum\limits_{n = 0}^{\infty} \frac{x^n}{n!}, \quad
+    (3) \ln (1 + x) = \sum\limits_{n = 1}^{\infty} (-1)^{n-1} \frac{x^n}{n}, \quad
+    (4) \arctan x = \sum\limits_{n = 0}^{\infty} \frac{(-1)^n x^{2n+1}}{2n + 1}.
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Geometric Series}{}
+  Find the sum function of
+  \begin{equation}
+    (1) \sum\limits_{n = 1}^{\infty} \frac{n^2 + 3n}{2^n}, \quad
+    (2) \sum\limits_{n = 1}^{\infty} \frac{x^n}{n(n+1)}.
+  \end{equation}
+\end{example}
 
 
-
-
-
+\subsection{Power Series Expansion of Functions}
 
 
 
