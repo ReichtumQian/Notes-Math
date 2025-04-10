@@ -14,7 +14,7 @@
     and $\langle \alpha, \alpha \rangle = 0$ if and only
     if $\alpha = 0$,
   \end{enumerate}
-  then it is said the \emph{inner product in $V$}.
+  then it is said to be an \emph{inner product in $V$}.
 \end{definition}
 
 \begin{example}{}{}
@@ -24,6 +24,10 @@
     \langle f(x), g(x) \rangle := \int_a^b f(x)g(x)\mathrm{d} x.
   \end{equation}
 \end{example}
+
+\begin{proof}
+  Hint: Verify the three properties of inner product.
+\end{proof}
 
 \begin{definition}{Metric/Gram Matrix}
   Let $\epsilon_1,\cdots,\epsilon_n$ be a basis of an Euclidean space $V$,
@@ -137,10 +141,40 @@
   The final results are $\eta_{1}=\frac{1}{\sqrt{6}}(1,2,-1)^{T},\eta_{2}=\frac{1}{\sqrt{3}}(-1,1,1)^{T},\eta_{3}=\frac{1}{\sqrt{2}}(1,0,1)^{T}$.
 \end{solution}
 
+\begin{theorem}{QR Decomposition}{}
+  Any real-invertible matrix $A$ can be uniquely decomposed into the product of an
+  orthogonal matrix $Q$ and an upper-triangular matrix with positive main
+  diagonal elements $R$:
+  \begin{equation}
+    A = QR.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Denote the column vectors of $A$ as $\alpha_1,\cdots,\alpha_n$.
+  Applying Schmidt orthogonalization to $\alpha_1,\cdots,\alpha_n$ yields
+  $\beta_1,\cdots,\beta_n$, and normalizing then yields $\eta_1,\cdots,\eta_n$.
+  Let $Q = (\eta_1,\cdots,\eta_n)$, then $A = QR$,
+  where $R$ is an upper-triangular matrix with $r_{ii} = |\beta_i|$.
+\end{proof}
+
+\begin{example}{QR Decomposition}{}
+  Decompose the following matrix $A$ into the product of an orthogonal matrix
+  and an upper-triangular matrix
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      1 & 1 & 1\\
+      1 & 0 & 1\\
+      1 & 2 & 0
+    \end{bmatrix}.
+  \end{equation}
+\end{example}
+
 \subsection{Orthogonal Sum and Orthogonal Complement}
 
 \begin{definition}{Orthogonal Sum}{}
-  Let $V_1, \cdots, V_s$ be a sequence of subspace of an Euclidean space $V$,
+  Let $V_1, \cdots, V_s$ be a sequence of subspaces of an Euclidean space $V$,
   if they are pairwise orthogonal, then we call
   \begin{equation}
     V_1 + \cdots + V_s
@@ -159,7 +193,7 @@
 \end{proof}
 
 \begin{definition}{Orthogonal Complement}{}
-  Let $V_1, V_2$ be two subspace of $V$.
+  Let $V_1, V_2$ be two subspaces of $V$.
   If $V_1$ and $V_2$ be orthogonal and
   \begin{equation}
     V = V_1 + V_2,

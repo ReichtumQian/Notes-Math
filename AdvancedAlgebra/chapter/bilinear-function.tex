@@ -218,7 +218,30 @@
 \end{theorem}
 
 \begin{proof}
-  
+  We prove it by mathematical induction. The conclusion holds when $n = 1$.
+  Assume that conclusion holds for $n - 1$, we consider
+  \begin{equation}
+    A_n =
+    \begin{bmatrix}
+      \alpha_{11} & \alpha^T\\
+      \alpha & A_{n-1}
+    \end{bmatrix},
+    \quad
+    P_n =
+    \begin{bmatrix}
+      1 & - \frac{1}{a_{11}}\alpha^T\\
+      0 & I_{n-1}
+    \end{bmatrix},
+  \end{equation}
+  we get $P_n^TAP_n = \operatorname{diag} (a_{11}, B_{n-1})$,
+  where $B_{n-1} = A_{n-1} - \frac{1}{a_{11}}\alpha \alpha^T$.
+  By assumption, there exists $Q_{n-1}$ such that $Q_{n-1}^TB_{n-1}Q_{n-1}$ is
+  diagonal.
+  Let $Q_n = \operatorname{diag}(1, Q_{n-1})$, then
+  \begin{equation}
+    Q_n^T P_n^T A P_n Q_n = \operatorname{diag}(a_{11}, Q_{n-1}^T B_{n-1}Q_{n-1}),
+  \end{equation}
+  which completes the proof.
 \end{proof}
 
 \begin{proposition}{Completing-the-Square Method for Canonical Form of Quadratic
@@ -238,12 +261,16 @@
   completing-the-square method.
 \end{note}
 
-\begin{example}{Using the Completing-the-Square Method}{}
+\begin{example}{Use the Completing-the-Square Method}{}
   Use the completing-the-square method to find the canonical form of
   \begin{equation}
     f(x_1, x_2, x_3) = 2x_1x_2 + 2x_1x_3 - 6x_2x_3.
   \end{equation}
 \end{example}
+
+\begin{solution}
+  
+\end{solution}
 
 \begin{proposition}{Elementary Transformation Method for Canonical Form of
     Quadratic Forms}{}
@@ -268,9 +295,14 @@
   Use the elementary transformation method to find the canonical form
   and corresponding transition matrix of
   \begin{equation}
-    f(x_1, x_2, x_3) = 2x_1x_2 + 2x_1x_3 - 6x_2x_3.
+    f = x_1^2 + 2x_1x_2 + 2x_2^2 + 4x_2x_3 + 4x_3^2, \quad
+    g = 2x_1x_2 + 2x_1x_3 - 6x_2x_3.
   \end{equation}
 \end{example}
+
+\begin{solution}
+  
+\end{solution}
 
 \subsection{Orthogonal Transformation Method for Quadratic Forms}
 
@@ -322,6 +354,37 @@
   \item Normalize the eigenvectors and form $P = [v_1,\cdots,v_n]$.
   \end{enumerate}
 \end{proposition}
+
+\begin{example}{Calculate Canonical Form via Orthogonal Transformation}{}
+  Find the canonical form of the following quadratic forms:
+  \begin{equation}
+    f = x_1^2 + 2x_1x_2 + 2x_2^2 + 4x_2x_3 + 4x_3^2.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
+
+\begin{example}{Application of Orthogonal Similarity}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item Let $A$ be a $n$-order real symmetric matrix with eigenvalues
+    $\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_n$, then
+    \begin{equation}
+      \max \limits_{x \in \mathbb{R}^n} \frac{x^T A x}{x^Tx} = \lambda_1,\quad
+      \min \limits_{x \in \mathbb{R}^n} \frac{x^TAx}{x^Tx} = \lambda_n.
+    \end{equation}
+  \item Let $A, B$ be two $n$-order real symmetric matrices,
+    all the eigenvalues of $A$ are greater than $a$,
+    and all the eigenvalues of $B$ are greater than $b$.
+    Then the eigenvalues of $A + B$ are greater than $a + b$.
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
 
 \subsection{Positive Definite Quadratic Forms over $\mathbb{R}$}
 
@@ -411,10 +474,75 @@ quadratic forms in $\mathbb{R}^n$, and its representative is $x^TIx$.
   \end{equation}
 \end{example}
 
+\begin{proposition}{}{}
+  Let $A, B$ be two positive definite matrices,
+  then
+  \begin{equation}
+    A^{-1}, A^k, A+B, A^{\ast}
+  \end{equation}
+  are all positive definite.
+  If $AB$ is symmetric, then it is also positive definite.
+\end{proposition}
 
+\subsection{Matrix Decomposition via Positive Definite Quadratics}
 
+\begin{proposition}{Square Decomposition}{}
+  Let $A$ be an $n$-order square positive definite matrix,
+  then there exists a real symmetric matrix $C$ such that
+  \begin{equation}
+    A = C^2.
+  \end{equation}
+\end{proposition}
 
+\begin{proof}
+  Since $A$ is a positive definite matrix, then there exists an
+  orthogonal matrix $P$ such that
+  $P^TAP = \Lambda$ where $\Lambda =
+  \operatorname{diag}(\lambda_1,\cdots,\lambda_n)$.
+  Let $C = P^T \sqrt{\Lambda} P$, then $A = C^2$.
+\end{proof}
 
+\begin{proposition}{Upper-Triangular Decomposition}{}
+  Let $A$ be an $n$-order square positive definite matrix,
+  then there exists an invertible upper-triangular matrix $R$ such that
+  \begin{equation}
+    A = R^TR.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Since $A$ is positive definite, then there exists an invertible matrix $C$
+  such that $A = C^TC$.
+  Apply QR decomposition to $C = QR$, then we get
+  \begin{equation}
+    A = R^TR.
+  \end{equation}
+\end{proof}
+
+\begin{lemma}{}{}
+  Let $A$ be an $m \times n$ real matrix, then
+  \begin{equation}
+    r(A^TA) = r(A).
+  \end{equation}
+\end{lemma}
+
+\begin{theorem}{}{}
+  Let $A$ be an $m \times n$ matrix over $\mathbb{R}$,
+  then $A^TA$ and $AA^T$ are semi-positive definite matrices.
+  And $A^TA$ is positive definite when it is column-full-rank,
+  $AA^T$ is positive definite when it is row-full-rank.
+\end{theorem}
+
+\subsection{Simultaneous Diagonalization of Positive Definite Matrices}
+
+\begin{proposition}{Simultaneous Diagonalization}{}
+  Let $A, B$ be two semi-positive definite matrices,
+  then there exists an invertible matrix $P$, such that
+  \begin{equation}
+    P^TAP, P^TBP
+  \end{equation}
+  are diagonal matrices.
+\end{proposition}
 
 
 
