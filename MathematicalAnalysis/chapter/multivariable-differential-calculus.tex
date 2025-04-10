@@ -1,7 +1,7 @@
 
 \section{Derivatives and Differentials of Multivariable Functions}
 
-\subsection{Total Differential and Partial Derivatives}
+\subsection{Partial Derivatives and Total Differential}
 
 \begin{definition}{Partial Derivative}{}
   Let $f$ be a multivariable function, then the \emph{partial derivative of $f$
@@ -14,6 +14,12 @@
 \begin{example}{Find the Partial Derivative}{}
   Find the partial derivative of $u = xe^{yz} + e^{-z} + y$ at the origin.
 \end{example}
+
+\begin{solution}
+  Substitute $y = z = 0$, we get $u(x, 0, 0) = x$, and $u_x(x,0,0) = 1$,
+  $u_x(0,0,0) = 1$.
+  Similarly we get $u_y(0,0,0) = 1$ and $u_z(0,0,0) = 1$.
+\end{solution}
 
 \begin{definition}{Total Differential}{}
   Let $f(x, y)$ be a multivariable function,
@@ -30,12 +36,49 @@
   \end{equation}
 \end{definition}
 
+\begin{note}
+  If a function does not have partial derivatives at a point,
+  then it is not differentiable.
+\end{note}
+
 \begin{example}{Find the Total Differential}{}
   Determine the differentiability of the following function at the origin.
   \begin{equation}
     f(x,y)=\begin{cases}\frac{xy}{\sqrt{x^2+y^2}},&(x,y)\neq(0,0)\\0,&(x,y)=(0,0)\end{cases} \quad
   \end{equation}
 \end{example}
+
+\begin{solution}
+  We first calculate the partial derivatives: $f_x(0, 0) = 0$ and $f_y(0, 0) = 0$.
+  Then use the definition of total differential, we check
+  \begin{equation}
+    \frac{f(x, y) - f(0, 0) - f_x(0, 0) x - f_y(0, 0)y}{\sqrt{x^2 + y^2}}
+    = \frac{xy}{x^2 + y^2}.
+  \end{equation}
+  Take $y = kx$ we find that the above limit does not exist,
+  so it is not differentiable at $(0, 0)$.
+\end{solution}
+
+\begin{example}{Determine the Differentiability}{}
+  Determine if the following functions are differentiable at $(0, 0)$.
+  \begin{equation}
+    f(x, y) =
+    \begin{cases}
+      y \ln (x^2 + y^2) & (x, y) \neq (0, 0);\\
+      0 & (x, y) = (0, 0).
+    \end{cases}
+    \quad
+    g(x, y) =
+    \begin{cases}
+      \frac{|x|^{\alpha} y}{x^2 + y^2} & (x, y) \neq (0, 0);\\
+      0 & (x, y) = (0, 0).
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
 
 \subsection{Gradient and Directional Derivatives}
 
