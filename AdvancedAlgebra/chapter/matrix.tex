@@ -98,7 +98,7 @@
 \end{lemma}
 
 \begin{example}{}{}
-  Let $A$ and $B$ be $m \times n$ and $n \times s$ matrices respectively,
+  Let $A$ and $B$ be $m \times n (m > n)$ and $n \times s$ matrices respectively,
   prove (1) if $r(A) = n$, then $r(AB) = r(B)$;
   (2) if $r(B) = n$, then $r(AB) = r(A)$.
 \end{example}
@@ -121,6 +121,13 @@
       \end{bmatrix}
     \right) = r(A_1B) = r(B).
   \end{equation}
+
+  (2) Similarly, there exists an invertible matrix $P$ such that $BP = [B_1, O]$,
+  then
+  \begin{equation}
+    r(AB) = r(A [B_1, O]) = r([AB_1, O]) = r(AB_1) = r(A),
+  \end{equation}
+  thus the conclusion holds.
 \end{proof}
 
 \begin{lemma}{Rank of Block Matrices}{}
@@ -412,16 +419,6 @@
   $P_1^TA_{n-1}P$ is diagonal. Let $P = \operatorname{diag}\{1, P_1\}$,
   and $Q = TP$, we get $Q^TAQ$ is a diagonal matrix, and $Q$ is an orthogonal matrix.
 \end{proof}
-
-\subsection{Orthogonal Matrices}
-
-\begin{definition}{Orthogonal Matrix}{}
-  Let $A = (a_{ij})$ be an $n$-order square matrix, if 
-  \begin{equation}
-    AA^T = I,
-  \end{equation}
-  then it is said to be an \emph{orthogonal matrix}.
-\end{definition}
 
 \subsection{Nilpotent Matrices}
 

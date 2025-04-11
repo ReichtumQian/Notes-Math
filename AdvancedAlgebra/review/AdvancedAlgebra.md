@@ -3,27 +3,29 @@
 
 ## Polynomials
 
-### Theory of Divisibility
+- Divisibility: Divide, Multiple, Divisor, Quotient, Remainder, Division Algorithm with Remainder, Prove Divisibility
+- Greatest Common Divisor: GCD, Euclidean Algorithm, Invariant under Multiplication and Addition
+- Relatively Prime Polynomials: Definition, Equivalent Condition
+- Irreducible Polynomials: Definition, Unique Factorization Theorem, The Remainder Theorem
+- Multiple Roots and Multiple Factors: Definition, Relationship
 
-- Concepts: Divide, Multiple, Divisor, Quotient, Remainder
-- Calculation: Division Algorithm with Remainder
-- Applications: Prove Divisibility
+## Determinants
 
-### Greatest Common Divisor
+- Concepts: Determinants, Elementary Transformation, Minor, Cofactor
+- Expansion: By a Row, By Two Rows
+- Cramer's Rule
 
-- Concepts: GCD
-- Calculation: Euclidean Algorithm
-- Properties: Invariant under Multiplication and Addition
+## Matrices
 
-### Relatively Prime Polynomials
+- Matrix Rank Basics: Definition of Rank, Elementary Transformation Standard Form, Matrix Decomposition
+- Rank Inequality: Rank of Block Matrices, Rank of Multiplication, Rank of Addition
+- Rank of Polynomial Matrices
+- Inverse of Matrix: Definition, Properties, Condition, Through Elementary Operations
+- Adjugate Matrix: Definition, Relation with the Inverse, Determinant, Rank, Eigenvalue, 
+- Real Symmetric Matrix: Definition, Eigenvalues and Eigenvectors, Diagonalization
+- Nilpotent Matrix: Definition, Eigenvalues
+- Idempotent Matrix: Definition, Eigenvalues
 
-- Concepts: Relatively Prime
-- Equivalent Condition and its Applications
+## Systems of Linear Equations
 
-### Irreducible Polynomials
-
-- Concepts: Irreducible Polynomials
-- Properties: Unique Factorization Theorem, The Remainder Theorem
-- Applications
-
-
+- Existence of Solutions
