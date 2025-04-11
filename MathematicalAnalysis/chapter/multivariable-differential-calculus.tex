@@ -77,7 +77,21 @@
 \end{example}
 
 \begin{solution}
-  
+  (1) We first check the partial derivatives,
+  $f_x(0, 0) = 0$, but
+  \begin{equation}
+    f_y(0, 0) = \lim \limits _{y \rightarrow 0} \frac{2y\ln y}{y} = \lim \limits _{y \rightarrow 0} 2 \ln y \rightarrow - \infty.
+  \end{equation}
+  That means one partial derivative of $f(x, y)$ does not exist, thus it is not
+  differentiable at the origin.
+
+  (2) By calculation we get $f_x(0, 0) = f_y(0, 0) = 0$, and
+  \begin{equation}
+    \frac{f(x, y)}{\sqrt{x^2 + y^2}} = \frac{|x|^{\alpha} y}{(x^2 + y^2)^{\frac{3}{2}}}.
+  \end{equation}
+  Use the polar coordinates we get it is $r^{\alpha - 2}|\cos \theta|^\alpha
+  \sin \theta$. When $\alpha > 2$ it is differentiable, and $\alpha \leq 2$ it
+  is not differentiable.
 \end{solution}
 
 \subsection{Gradient and Directional Derivatives}
@@ -96,7 +110,7 @@
 \end{example}
 
 \begin{solution}
-  $(1,2,3)$.
+  The direction that grows fastest is the gradient direction, that is $(1,2,3)$.
 \end{solution}
 
 \begin{definition}{Directional Derivatives}{}
@@ -110,8 +124,19 @@
 
 \begin{example}{}{}
   Prove that $f(x,y) = \sqrt[3]{x^2 + y^2}$ has no directional derivatives in
-  any direction.
+  any direction at the origin.
 \end{example}
+
+\begin{proof}
+  Consider the direction $\mathbf{u} = (\cos \alpha, \sin \alpha)$,
+  then we can calculate the directional derivative
+  \begin{equation}
+    \frac{\partial f}{\partial \mathbf{u}}
+    = \lim \limits _{r \rightarrow 0} \frac{f(r\cos \alpha, r \sin \alpha) - f(0,0)}{r}
+    = \lim \limits _{r \rightarrow 0} \frac{1}{r^{\frac{1}{3}}},
+  \end{equation}
+  and the limit does not exist.
+\end{proof}
 
 \begin{proposition}{Represent Directional Derivatives in Gradient}{}
   If $f(x, y)$ is differentiable at $(x_0, y_0)$,
@@ -123,35 +148,95 @@
   between the vector $\mathbf{u}$ and the $x$-axis and $y$-axis respectively.
 \end{proposition}
 
-\begin{example}{}{}
+\begin{example}{Use Gradient to Represent Directional Derivatives}{}
   Calculate the directional derivative of $u = xyz$
   at $A(5,1,2)$ in the direction towards $B(9,4,14)$.
 \end{example}
 
 \begin{solution}
-  $\frac{98}{13}$.
+  We first find the partial derivatives,
+  $u_x = yz, u_y = xz, u_z = xy$, and 
+  \begin{equation}
+    u_x(5, 1, 2) = 2, \quad
+    u_y(5, 1, 2) = 10, \quad
+    u_z(5, 1, 2) = 5.
+  \end{equation}
+  We can also get the directional vector $\mathbf{v} = (\frac{4}{13},
+  \frac{3}{13}, \frac{12}{13})$.
+  Then the directional derivative $u_{\mathbf{v}} = \nabla u \cdot \mathbf{v} = \frac{98}{13}$.
 \end{solution}
 
 \subsection{Relationship between Differentiability and Continuity}
 
-\begin{example}{Properties of Differentiability}{}
+\begin{proposition}{Properties of Differentiability}{}
   Let $f$ be a multivariable function that is differentiable at $\mathbf{x}_0$,
   Prove that (1) $f$ is continuous at $\mathbf{x}_0$
   (2) $f$ has partial derivatives and directional derivatives in any direction
   at $\mathbf{x}_0$.
-\end{example}
+\end{proposition}
 
 \begin{proof}
-  
+  (1) According to the definition of differentiability,
+  let $\Delta x^2 + \Delta y^2$ approximates zero, then we get
+  \begin{equation}
+    \lim \limits _{(x,y) \rightarrow (x_0, y_0)} f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0) 
+    = 0,
+  \end{equation}
+  which implies the continuity.
+
+  (2) Let $\Delta x = 0$ or $\Delta y = 0$ implies the existence of the partial
+  derivatives. The proof of directional derivatives are similar.
 \end{proof}
 
-\begin{example}{Continuous Derivatives Means Differentiability}{}
+\begin{proposition}{Continuous Derivatives Means Differentiability}{}
   If the partial derivatives $f_x, f_y$ are continous at $(x_0, y_0)$,
   prove that $f(x,y)$ is differentiable at $(x_0, y_0)$.
+\end{proposition}
+
+\begin{proof}
+  Use the Lagrange mean-value theorem, we know that there exist $\theta_1,
+  \theta_2 \in \mathbb{R}$ such that
+  \begin{equation}
+    f(x_0 + \delta x, y_0 + \Delta y) - f(x_0, y_0)
+    = f_x(x_0 + \theta_1 \Delta x, y_0 + \Delta y) \Delta x
+    + f_y(x_0, y_0 + \theta_2 \Delta y)\Delta y.
+  \end{equation}
+  Since the partial derivatives are continuous, then there exists $\alpha,
+  \beta$ such that
+  \begin{equation}
+    f_x(x_0 + \theta_1 \Delta x, y_0 + \Delta y) = f_x(x_0, y_0) + \alpha,
+    \quad f_y(x_0, y_0 + \Delta y) = f_y(x_0, y_0) + \beta,
+  \end{equation}
+  where $\alpha, \beta$ satisfy
+  $\lim \limits _{(\Delta x, \Delta y) \rightarrow (0, 0)} \alpha = 0$ and
+  $\lim \limits _{(\Delta x, \Delta y) \rightarrow (0, 0)} \beta = 0$.
+  We get
+  \begin{equation}
+    f(x_0 + \delta x, y_0 + \Delta y) - f(x_0, y_0)
+    = f_x(x_0, y_0) \Delta x + f_y(x_0, y_0)\Delta y + \alpha \Delta x + \beta \Delta y,
+  \end{equation}
+  which implies that it is differentiable.
+\end{proof}
+
+\begin{example}{A Classic Example}{}
+  Prove the following $f(x, y)$ is not continuous and differentiable at the origin,
+  but its partial derivatives and any directional derivatives exist and are zero.
+  \begin{equation}
+    f(x, y) =
+    \begin{cases}
+      1 & 0 < y < x^2, -\infty < x < \infty;\\
+      0 & \text{otherwise}
+    \end{cases}
+  \end{equation}
 \end{example}
 
 \begin{proof}
-  
+  $f(x, y)$ is not continuous at the origin since we can approximate the origin
+  with different directions.
+  The function values can approach either $0$ or $1$.
+  The reason why all directional derivatives at the origin are $0$ is that the
+  tangent line of $y = x^2$ at the origin is horizontal.
+  For all directions, it will pass through the region where $f(x, y) = 0$.
 \end{proof}
 
 \subsection{Composite Differentiation: Chain Rule}
