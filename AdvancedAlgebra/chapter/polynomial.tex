@@ -8,7 +8,8 @@
     f(x) = g(x) h(x),
   \end{equation}
   then $g(x)$ is said to \emph{divide $f(x)$}, denoted as $g(x)| f(x)$.
-  Here, $g(x)$ is called a \emph{divisor (factor) of $f(x)$},
+  Here, $g(x)$ is called a \emph{divisor of $f(x)$},
+  $h(x)$ is called the \emph{quotient},
   and $f(x)$ is a \emph{multiple of $g(x)$}.
 \end{definition}
 
@@ -32,7 +33,7 @@
   = 32x - 7$.
 \end{solution}
 
-\begin{example}{Application of Division Algorithm with Remainder}{}
+\begin{example}{Use Division Algorithm with Remainder to Prove Divisibility}{}
   Prove the following propositions:
   \begin{enumerate}
   \item Let $g(x) = ax + b$, $f(x)$ be a polynomial, prove that $g(x) | f(x)$ if
@@ -40,6 +41,8 @@
   \item Let $f(x), g(x), h(x)$ be three non-zero polynomials, prove that
     $h(x) | [f(x) - g(x)]$ if and only if the remainder of $f(x)$ and $g(x)$
     divided by $h(x)$ are the same.
+  \item Let $f(x), g(x)$ be polynomials, prove that $g^m(x)|f^m(x)$ if and only if
+    $g(x)|f(x)$.
   \end{enumerate}
 \end{example}
 
@@ -50,6 +53,24 @@
     f^2(x) = p(x)g(x) + r^2(x).
   \end{equation}
   Due to $g(x) | r^2(x)$, we know that $r(x) = 0$.
+
+  (2) Right-to-left is direct. We prove the left-to-right direction.
+  Suppose $f(x) = q_1(x)h(x)+r_1(x)$ and $g(x) = q_2(x)h(x) + r_2(x)$,
+  then
+  \begin{equation}
+    f(x) - g(x) = q_1(x)h(x) - q_2(x)h(x) + r_1(x) - r_2(x),
+  \end{equation}
+  but $\mathrm{deg}(r_1(x) - r_2(x)) < \mathrm{deg}(h(x))$,
+  which means $r_1(x) = r_2(x)$.
+
+  (3) Right-to-left is direct. Left-to-right we can use the irreducible
+  polynomial factorization, that is assuming
+  \begin{equation}
+    f(x) = c_1p_1^{r_1}(x) \cdots p_s^{r_s}(x), \quad
+    g(x) = c_2p_1^{t_1}(x) \cdots p_s^{t_s}(x),
+  \end{equation}
+  then the condition implies $mt_i \leq mr_i$,
+  that is $t_i \leq r_i$, therefore $g(x)|f(x)$.
 \end{proof}
 
 \section{Greatest Common Divisor}
@@ -107,6 +128,34 @@
   common divisor of $f(x), g(x)$.
   The representation is also not unique.
 \end{note}
+
+\begin{example}{Euclidean Algorithm}{}
+  Let $f(x), g(x)$ be two polynomials, and assume that
+  \begin{equation}
+    f(x) = q_1(x)g(x) + r_1(x), \quad
+    g(x) = q_2(x)r_1(x) + r_2(x), \quad
+    r_1(x) = q_3(x)r_2(x) + r_3(x), \quad
+    r_2(x) = q_4(x)r_3(x).
+  \end{equation}
+  Find $u(x)$ and $v(x)$ such that
+  \begin{equation}
+    r_3(x) = u(x)f(x) + v(x)g(x).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  We start with the first equation,
+  that is $r_1(x) = f(x) - q_1(x)g(x)$, substituting it into the second equation implies
+  \begin{equation}
+    r_2(x) = g(x) - q_2(x)f(x) + q_1(x)q_2(x)g(x).
+  \end{equation}
+  Similarly, substituting it into the third equation yields
+  \begin{align}
+    r_3(x) &= f(x) - q_1(x)g(x) - q_3(x)g(x) + q_2(x)q_3(x)f(x) - q_1(x)q_2(x)q_3(x)g(x)\\
+           &= [1 + q_2(x)q_3(x)]f(x) - [q_1(x) + q_3(x) + q_1(x)q_2(x)q_3(x)]g(x).
+  \end{align}
+  So we can get $u(x), v(x)$.
+\end{solution}
 
 \begin{example}{Find the Representation of GCD}{}
   Let $f(x) = x^4 + 3x^3 - x^2 - 4x - 3$ and $g(x) = 3x^3 + 10x^2 + 2x - 3$,
@@ -229,7 +278,7 @@
   $g(x)$. This contradicts the given conditions.
 \end{proof}
 
-\begin{theorem}{Uniqueness of Factorization}{}
+\begin{theorem}{Irreducible Polynomial Factorization}{}
   If $f(x)$ is a polynomial over $\mathbb{P}$ with degree greater than or equal
   to $1$, then $f(x)$ can be uniquely decomposed into a product of finite number
   of irreducible polynomials over $\mathbb{P}$:
@@ -251,21 +300,88 @@
   Substituting $x = \alpha$ yields the conclusion.
 \end{proof}
 
+\begin{note}
+  It is important to factorize the polynomial over $\mathbb{C}$ flexibly.
+\end{note}
+
 \begin{example}{Applications of the Remainder Theorem}{}
-  Suppose $(x - 1)| f(x^m)$, prove that $(x^m - 1) | f(x^m)$.
+  Prove the following propositions:
+  \begin{enumerate}
+  \item Given that $(x - 1)| f(x^m)$, prove that $(x^m - 1) | f(x^m)$.
+  \item Given that $x^2 + 1 | f_1(x^4) + xf_2(x^4)$, prove that $1$ is a
+    common root of $f_1(x)$ and $f_2(x)$.
+  \item Given two positive integers $d, n$,
+    prove that $x^d - 1 | x^n - 1$ if and only if $d|n$.
+  \end{enumerate}
 \end{example}
 
 \begin{proof}
-  By the remainder theorem, we get $f(x^m) = (x-1)q(x) + f(1)$.
+  (1) By the remainder theorem, we get $f(x^m) = (x-1)q(x) + f(1)$.
   Since $x-1$ divides $f(x^m)$, we know that $f(1) = 0$.
   Using the remainder theorem to $f(x)$ and $x-1$, then
   \begin{equation}
     f(x) = (x-1)p(x) + f(1) = (x-1)p(x).
   \end{equation}
   Substituting the original $x$ with $x^m$ yields the conclusion.
+
+  (2) $x^2 + 1 = (x-i)(x+i)$,
+  since $(x^2 + 1)|f_1(x^4) + xf_2(x^4)$,
+  by taking $x$ as either $\pm i$, we get
+  \begin{equation}
+    f_1(1) + i f_2(1) = 0,
+  \end{equation}
+  which implies that $f_1(1) = f_2(1) = 0$.
+
+  (3) Left-to-right we can factorize $x^d - 1 = (x - x_1)\cdots(x-x_d)$ over $\mathbb{C}$.
+  Since $x^d - 1 | x^n - 1$, we know $x_i^d - 1 = x_i^n - 1 = 0$.
+  Suppose $n = kd + r$, then $x_i^n = x_i^{kd+r} = x_i^r$, which is not zero
+  when $x_i \neq 1$ and $r \neq 0$. Therefore $r$ can only be zero.
+  Right-to-left we know $n = dk$, and therefore $x_i^n = (x_i^d)^k = 1$,
+  we get $x^d - 1|x^n - 1$.
 \end{proof}
 
+\section{Multiple Factors and Multiple Roots}
 
+\begin{proposition}{Properties of Multiple Factors}{}
+  Let $f(x)$ be a polynomial of degree greater than $0$,
+  and $p(x)$ be an irreducible polynomial. Then
+  $p(x)$ is a $k$-fold of $f(x)$, then it is a $(k-1)$-fold factor of $f^{\prime}(x)$.
+\end{proposition}
 
+\begin{corollary}{}{}
+  $f(x)$ has no multiple factors if and only if $f(x)$ and $f^{\prime}(x)$ is
+  relatively prime.
+\end{corollary}
 
+\begin{note}
+  Relationship between multiple factors and multiple roots:
+  Multiple factors do not change with the number field,
+  while the multiple roots do.
+  For example, $(x^2 + 1)^2$ has multiple factors in $\mathbb{C}, \mathbb{R}, \mathbb{Q}$,
+  but only has multiple roots in $\mathbb{C}$.
+  So having multiple roots implies having multiple factors,
+  but having multiple factors does not necessarily mean having multiple roots.
+\end{note}
+
+\begin{example}{Application of Multiple Factors}{}
+  Prove that the following $f(x)$ does not have multiple roots in any number field.
+\end{example}
+
+\begin{proof}
+  We can consider the multiple factors over $\mathbb{C}$.
+  Take derivative of $f(x)$, we get 
+  \begin{equation}
+    f^{\prime}(x) = 1 + x + \frac{x^2}{2!} + \cdots + \frac{x^{n-1}}{(n-1)!}.
+  \end{equation}
+  And by the properties of the greatest common divisor we get
+  \begin{equation}
+    (f(x), f^{\prime}(x)) = (f(x), f(x) - f^{\prime}(x))
+    = (f(x), \frac{x^n}{n!}) = (f(x), x^n).
+  \end{equation}
+  The GCD must be in the form of $x^k$.
+  But when we substitute $x$ with $0$, we know $f(0) = 1$,
+  that means $0$ is not a root of $f(x)$, and $k = 0$.
+  Therefore, $f(x)$ and $f^{\prime}(x)$ are relatively prime,
+  and they do have common roots over $\mathbb{C}$.
+\end{proof}
 
