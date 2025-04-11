@@ -258,14 +258,48 @@
     x^2}$ and $\frac{\partial^2 z}{\partial x\partial y}$.
 \end{example}
 
+\begin{solution}
+  Use the chain rule, we get
+  \begin{equation}
+    \frac{\partial z}{\partial x} = f_1^{\prime}(x, \frac{x}{y}) + f_2^{\prime}(x, \frac{x}{y}) \frac{1}{y},
+  \end{equation}
+  and
+  \begin{equation}
+    \frac{\partial^2 z}{\partial x^2} = f_{11}^{\prime\prime} + \frac{2}{y}f_{12}^{\prime\prime} + \frac{1}{y^2}f_{22}.
+  \end{equation}
+  The second is similar.
+\end{solution}
 
+\begin{proposition}{Proposition for Mixed Partial Derivatives}{}
+  Suppose both $f_{xy}(x, y)$ and $f_{yx}(x, y)$ are continuous in the
+  neighborhood of $(x_0, y_0)$, then
+  \begin{equation}
+    f_{xy}(x_0, y_0) = f_{yx}(x_0, y_0).
+  \end{equation}
+\end{proposition}
 
-\section{Mean-Value Theorem and Taylor Expansion of Multivariable Functions}
+\begin{example}{Example of Unequal Mixed Partial Derivatives}{}
+  Prove that the following function satisfies $f_{xy}(0, 0) \neq f_{yx}(0, 0)$.
+  \begin{equation}
+    f(x, y) =
+    \begin{cases}
+      xy \frac{x^2 - y^2}{x^2 + y^2} & (x, y) \neq (0, 0)\\
+      0 & (x, y) = (0, 0)
+    \end{cases}.
+  \end{equation}
+\end{example}
 
-\subsection{Mean-Value Theorem of Multivariable Functions}
+\begin{proof}
+  Direct calculation yields $f_{xy}(0, 0) = -1$ and $f_{yx}(0, 0) = 1$.
+  We show how to calculate $f_{xy}(0, 0)$. Use the definition of the partial dierivatives
+  \begin{equation}
+    f_x(0, y) = \lim \limits _{\Delta x \rightarrow 0} \frac{f(\Delta x, y) - f(0, y)}{\Delta x}
+    = \lim \limits _{\Delta x \rightarrow 0} \frac{\Delta x^2 - y^2}{\Delta x^2 + y^2}y = -y.
+  \end{equation}
+  This implies that $f_{xy}(0, 0) = -1$.
+\end{proof}
 
-\subsection{Taylor Expansion of Multivariable Functions}
-
+\section{Multivariable Mean-value Theorem and Taylor Expansion}
 
 
 
