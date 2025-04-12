@@ -22,7 +22,7 @@
     (3) Associativity of scalar multiplication: $(c_1c_2)\alpha = c_1(c_2\alpha)$;
     (4) Identity scalar multiplication: $1 \cdot \alpha = \alpha$.
   \end{enumerate}
-  Then $V$ is a \emph{linear space over $\mathbb{P}$}.
+  Then $V$ is said to be a \emph{linear space over $\mathbb{P}$}.
 \end{definition}
 
 \begin{example}{Prove a Space is Linear Space}{}
@@ -30,6 +30,10 @@
   (n \geq 1)$, with respect to the addition of polynomial and the scalar multiplication
   by real numbers is a linear space.
 \end{example}
+
+\begin{proof}
+  Hint: Verify the eight axioms of linear space.
+\end{proof}
 
 \begin{definition}{Linear Dependence and Linear Independence}{}
   Let $\alpha_1, \cdots, \alpha_n$ be a sequence of vectors,
@@ -45,21 +49,21 @@
 \begin{example}{Linear Independence of Nilpotent Basis}{}
   Let $\mathcal{A}$ be a linear transformation on $V$,
   and let $\xi$ be a vector in $V$.
-  Prove that if $\mathcal{A}^{k - 1}\xi \neq 0, \mathcal{A}^k \xi = 0$ ($k > 1$),
+  Prove that if $\mathcal{A}^{n - 1}\xi \neq 0, \mathcal{A}^n \xi = 0$ ($k > 1$),
   then
   \begin{equation}
-    \xi, \mathcal{A} \xi, \cdots, \mathcal{A}^{k-1}\xi
+    \xi, \mathcal{A} \xi, \cdots, \mathcal{A}^{n-1}\xi
   \end{equation}
   are linearly independent.
 \end{example}
 
 \begin{proof}
   Assume that $k_0 \xi + k_1 \mathcal{A} \xi + \cdots +
-  k_{k-1}\mathcal{A}^{k-1}\xi = 0$.
-  Apply $\mathcal{A}^{k-1}$ to both sides to get $k_0 \mathcal{A}^{k-1}\xi = 0$.
-  Since $\mathcal{A}^{k-1}\xi \neq 0$,
+  k_{n-1}\mathcal{A}^{n-1}\xi = 0$.
+  Apply $\mathcal{A}^{n-1}$ to both sides to get $k_0 \mathcal{A}^{n-1}\xi = 0$.
+  Since $\mathcal{A}^{n-1}\xi \neq 0$,
   we get $k_0 = 0$.
-  And by repeating this process, we can deduce that $k_0, k_1, \cdots, k_{k-1}$
+  And by repeating this process, we can deduce that $k_0, k_1, \cdots, k_{n-1}$
   are all zeroes.
 \end{proof}
 
@@ -72,7 +76,7 @@
   leading entries) located form a maximal linearly independent subset.
 \end{proposition}
 
-\begin{example}{Finding the Maximal Linearly Independent Sub-sets}{}
+\begin{example}{Finding the Maximal Linearly Independent Subsets}{}
   Calculate the maximal linearly independent subsets of the following vector set:
   \begin{equation}
     \alpha_1 = (1, -1, 2, 4), \alpha_2 = (0, 3, 1, 2), \alpha_3 = (3, 0, 7, 14), \alpha_4 = (1, -1, 2, 0), \alpha_5 = (2, 1, 5, 6).
@@ -121,8 +125,8 @@
   \begin{equation}
     \alpha = (\epsilon_1, \cdots, \epsilon_n)X,
   \end{equation}
-  where $X \in \mathbb{P}^n$ is called the \emph{coordinate} of $\alpha$
-  under the basis $\epsilon_1,\cdots, \epsilon_n$.
+  where $X \in \mathbb{P}^n$ is called the \emph{coordinate of $\alpha$
+  under the basis $\epsilon_1,\cdots, \epsilon_n$}.
 \end{definition}
 
 \begin{example}{Calculating Coordinates}{}
@@ -134,14 +138,37 @@
     \end{equation}
 \end{example}
 
+\begin{solution}
+  Let the coordinate of $\alpha$ under $\epsilon_1,\epsilon_2,\epsilon_3$ be
+  $x$, then
+  \begin{equation}
+    \alpha = (\epsilon_1,\epsilon_2,\epsilon_3)x.
+  \end{equation}
+  That is, solve the system of linear equations
+  \begin{equation}
+    \begin{bmatrix}
+      1 & 1 & 1\\
+      1 & 1 & -1\\
+      1 & -1 & -1
+    \end{bmatrix}x =
+    \begin{bmatrix}
+      1\\
+      2\\
+      1
+    \end{bmatrix}.
+  \end{equation}
+  And the solution of the above system of linear equation is $x = [1,
+  \frac{1}{2}, - \frac{1}{2}]^T$.
+\end{solution}
+
 \begin{definition}{Transition Matrix}{}
   Given two bases $(\epsilon_1, \cdots, \epsilon_n)$
   and $(\eta_1, \cdots, \eta_n)$, if there exists a matrix $T$ such that
   \begin{equation}
     (\epsilon_1, \cdots, \epsilon_n) = (\eta_1, \cdots, \eta_n)T,
   \end{equation}
-  then $T$ is called the \emph{transition matrix} from $\eta_1, \cdots, \eta_n$
-  to $\epsilon_1, \cdots, \epsilon_n$.
+  then $T$ is called the \emph{transition matrix from $\eta_1, \cdots, \eta_n$
+  to $\epsilon_1, \cdots, \epsilon_n$}.
 \end{definition}
 
 \begin{proposition}{Coordinate Transformation}{}
@@ -154,6 +181,16 @@
     Y = TX.
   \end{equation}
 \end{proposition}
+
+\begin{proof}
+  By the definition of the coordinate and transition matrix, we get
+  \begin{equation}
+    \alpha = (\epsilon_1,\cdots,\epsilon_n)X
+    = (\eta_1,\cdots,\eta_n)TX.
+  \end{equation}
+  At the same time $\alpha = (\eta_1,\cdots,\eta_n)Y$,
+  comparing the above two equations implies $Y = TX$.
+\end{proof}
 
 \begin{note}{}
   Calculation of Transition Matrix:
@@ -175,7 +212,7 @@
 
 \begin{solution}
   (1) Hint: Construct matrix $A, B$ and calculate the transition matrix by
-  $(A|B) \rightarrow (I|A^{-1}B)$. The answer is
+  elementary row operations $(A|B) \rightarrow (I|A^{-1}B)$. The answer is
   \begin{equation}
     A^{-1}B=\frac{1}{4}\left[\begin{array}{cccc}3&7&2&-1\\1&-1&2&3\\-1&3&0&-1\\1&-1&0&-1\end{array}\right]
   \end{equation}
@@ -191,7 +228,7 @@
 \end{definition}
 
 \begin{theorem}{Isomorphism Mapping of Finite-Dimensional Linears Spaces}{}
-  Let $V$ be a finite-dimensional linear space over $\mathbb{P}$,
+  Let $V$ be an $n$-dimensional linear space over $\mathbb{P}$,
   then it is isomorphic with $\mathbb{P}^n$.
 \end{theorem}
 
@@ -217,7 +254,10 @@
 \end{example}
 
 \begin{proof}
-  Hint: Represent the matrix $[\beta_1, \beta_2, \beta_3]$ by $\alpha_1, \alpha_2, \alpha_3$.
+  (1) It is equivalent to prove that there exists an invertible matrix $T$ such that
+  $(\beta_1, \beta_2, \beta_3) = (\alpha_1, \alpha_2, \alpha_3)T$.
+  So it is similar to find the transition matrix between them, i.e.,
+  apply elementary row operations to find $T = A^{-1}B$.
 \end{proof}
 
 \subsection{Sum Operations and Dimension Theorem}
@@ -238,8 +278,7 @@
 \end{proposition}
 
 \begin{proof}
-  The left-to-right direction is proved directly from the difinition of subspace.
-  So we only prove the reverse direction.
+  It is direct, so we omit the proof here.
 \end{proof}
 
 \begin{definition}{Sum of Linear Spaces}{}
@@ -263,7 +302,17 @@
   \item Closure under scalar multiplication: $c v \in V_1, c v \in V_2$,
     thus $c v \in V$.
   \end{enumerate}
-  Therefore, we have $V_1 \cap V_2$ is a linear space.
+  Therefore, we get $V_1 \cap V_2$ is a linear space.
+  Next prove that $V_1 + V_2$ is a subspace.
+  \begin{enumerate}
+  \item Closure under addition: Let $u = u_1 + u_2$ and $v = v_1 + v_2$,
+    where $u_1, v_1 \in V_1$ and $u_2, v_2 \in V_2$.
+    Then $u + v = (u_1 + v_1) + (u_2 + v_2)$, and $u_1 + v_1 \in V_1$, $u_2 +
+    v_2 \in V_2$.
+  \item Closure under scalar multiplication: $cu = cu_1 + cu_2$,
+    where $cu_1 \in V_1$ and $cu_2 \in V_2$.
+  \end{enumerate}
+  Thus $V_1 + V_2$ is a linear space.
 \end{proof}
 
 \begin{example}{Basic Calculations of Intersection and Sum}{}
@@ -295,6 +344,8 @@
   \begin{equation}
     \left.\eta_1=\left(\begin{array}{c}-1\\-1\\1\\0\\0\end{array}\right.\right),\eta_2=\left( \begin{array}{c}1\\-4\\0\\-3\\1\end{array} \right).
   \end{equation}
+  This implies the dimension of $V_1 \cap V_2$ is $2$,
+  with the basis being $\eta_1, \eta_2$.
 \end{solution}
 
 \begin{example}{The Differences between Sum and Union}{}
@@ -319,7 +370,7 @@
   \begin{equation}
     \alpha \not\in V_1, \beta \in V_1, \alpha \in V_2, \beta \not \in V_2.
   \end{equation}
-  Let $\gamma = \alpha + \beta$, we have $\gamma \not \in V_1, \gamma \not \in V_2$.
+  Let $\gamma = \alpha + \beta$, it satisfies $\gamma \not \in V_1, \gamma \not \in V_2$.
 
   (2) The right-to-left direction is direct, so we only prove the left-to-right direction.
   Assume that $V_1 + V_2 = V_1 \cup V_2$, but $V_1 \not\subseteq V_2$,
@@ -330,7 +381,7 @@
   \end{equation}
   Since $V_1 + V_2 = V_1 \cup V_2$,
   $\alpha$ should belong to either $V_1$ or $V_2$.
-  According to the closure of addition, we have $\alpha \not \in V_2$,
+  According to the closure of addition, we know $\alpha \not \in V_2$,
   which means that $\alpha \in V_1$.
   Then $\alpha_2 = \alpha - \alpha_1 \in V_1$, that is,
   $V_2 \subseteq V_1$.
@@ -369,6 +420,31 @@
   which implies the linear independence.
 \end{proof}
 
+\begin{example}{Application of the Dimension Theorem}{}
+  Let $V_1, V_2$ be two subspace of a finite-dimensional space $V$,
+  satisfying
+  \begin{equation}
+    \operatorname{dim}(V_1 + V_2) = \operatorname{dim}(V_1 \cap V_2) + 1,
+  \end{equation}
+  prove that either $V_1 \subseteq V_2$ or $V_2 \subseteq V_1$.
+\end{example}
+
+\begin{proof}
+  The dimension theorem yields
+  \begin{equation}
+    \operatorname{dim}(V_1) + \operatorname{dim}(V_2)
+    = \operatorname{dim}(V_1 + V_2) + \operatorname{dim}(V_1 \cap V_2)
+    = 2 \operatorname{dim}(V_1 \cap V_2) + 1,
+  \end{equation}
+  which means
+  \begin{equation}
+    [\operatorname{dim}(V_1) - \operatorname{dim}(V_1 \cap V_2)]
+    + [\operatorname{dim}(V_2) - \operatorname{dim}(V_1 \cap V_2)] = 1.
+  \end{equation}
+  Since all the dimensions are integers,
+  then one of the above terms is $0$, while the other one is $1$.
+\end{proof}
+
 
 \subsection{Direct-Sum Theory}
 
@@ -387,7 +463,42 @@
   then $V_2$ is called the \emph{complementary space of $V_1$}.
 \end{definition}
 
-\begin{proposition}{Equivalent Conditions for Direct Sum}{}
+\begin{proposition}{Essential Equivalent Conditions for Direct Sum}{}
+  Let $V_1 = \operatorname{span}(\epsilon_1,\cdots,\epsilon_n),
+  V_2 = \operatorname{span}(\eta_1,\cdots,\eta_m)$ be two subspaces of $V$.
+  Then $V_1 + V_2 = V_1 \oplus V_2$ if and only if the vectors
+  \begin{equation}
+    \epsilon_1,\cdots,\epsilon_n,\eta_1,\cdots,\eta_m
+  \end{equation}
+  are linearly independent.
+\end{proposition}
+
+\begin{proof}
+  Right-to-left: Let $\alpha \in V_1 \cap V_2$, then
+  \begin{equation}
+    \alpha = k_1\epsilon_1 + \cdots + k_n\epsilon_n = l_1\eta_1 + \cdots + l_m\eta_m,
+  \end{equation}
+  which implies $k_1 \epsilon_1 + \cdots + k_n \epsilon_n - l_1\eta_1 - \cdots -
+  l_m \eta_m = 0$.
+  Apply the given condition, we know all the coefficents are zero,
+  thus $\alpha = 0$, and $V_1 \cap V_2 = \{0\}$.
+
+  Left-to-right:
+  Assume that $k_1\epsilon_1 + \cdots + k_n\epsilon_n + l_1\eta_1 + \cdots +
+  l_m\eta_m = 0$, which yields
+  \begin{equation}
+    k_1\epsilon_1 + \cdots + k_n\epsilon_n = -l_1\eta_1 - \cdots - l_m\eta_m.
+  \end{equation}
+  Define the both the left-side and right-side term in above equation as
+  $\alpha$, then $\alpha \in V_1 \cap V_2$.
+  According to the definition of direct sum,
+  $V_1 \cap V_2 = \{0\}$, which means $\alpha = 0$.
+  And the linear independence of $\epsilon_1,\cdots,\epsilon_n$ and
+  $\eta_1,\cdots,\eta_m$
+  implies all the coefficents are zero.
+\end{proof}
+
+\begin{proposition}{Other Equivalent Conditions for Direct Sum}{}
   The equation $V = V_1 \oplus V_2$ holds if and only if:
   \begin{itemize}
   \item Any vector $\alpha$ in $V$ has a unique representation $\alpha =
@@ -397,6 +508,10 @@
   \item $\operatorname{dim} V = \operatorname{dim} V_1 + \operatorname{dim} V_2$.
   \end{itemize}
 \end{proposition}
+
+\begin{proof}
+  Hint: Use the essential equivalent condition.
+\end{proof}
 
 \begin{proposition}{Direct-Sum Combination Theorem}{}
   If we have $V = V_1 \oplus V_2$,

@@ -31,3 +31,11 @@
 - Existence of Solutions: Condition for Existence, Condition for Same Solutions, Number of Solutions
 - Solving $Ax = 0$: Free Variables, Fundamental Solution System, Solution of Homogeneous Equations
 - Solving $Ax = b$: Particular Solution, Solution of Non-homogeneous Equations
+- Least Squares Solutions: Rank of $A^TA$, Least-Squares Solutions, Normal Equations, Existence of Least Squares Solution
+
+## Linear Spaces and Linear Transformations
+
+- Linear Spaces: Definition, Linear Independence, Maximal Linear Independence Subset, Basis, Coordinates, Transition Matrix, Sum of Spaces, Intersection of Spaces, Dimension Theorem, Direct Sum, 
+
+
+
