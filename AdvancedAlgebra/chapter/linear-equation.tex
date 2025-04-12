@@ -1,13 +1,22 @@
 
 \section{Existence of Solutions}
 
+\begin{definition}{Coefficient Matrix and Augmented Matrix}{}
+  Given a system of linear equation $Ax = b$, then
+  \begin{equation}
+    \overline{A} = A | b
+  \end{equation}
+  is called the \emph{augmented matrix of $Ax = b$},
+  and $A$ is called the \emph{coefficient matrix of $Ax = b$}.
+\end{definition}
+
 \begin{proposition}{Conditions for the Existence of Solutions}{}
   A system of linear equations $Ax = b$ over $\mathbb{P}$ has a solution
   if and only if 
   \begin{equation}
     r(A) = r(\overline{A}),
   \end{equation}
-  where $\overline{A} := (A|b)$.
+  where $\overline{A}$ is the augmented matrix of $Ax = b$.
 \end{proposition}
 
 \begin{proposition}{Conditions for the Same Solutions}{}
@@ -108,10 +117,125 @@
 \end{proposition}
 
 \begin{example}{Solve Systems of Linear Equations}{}
-  
+ Discuss the solution of the following system of linear equations 
+ \begin{equation}
+   \begin{cases}
+     x_1 + x_2 - x_3 = 1\\
+     2x_1 + 3x_2 + kx_3 = 3\\
+     x_1 + kx_2 + 3x_3 = 2
+   \end{cases}.
+ \end{equation}
 \end{example}
 
+\begin{solution}
+  We first perform row elementary operations to the augmented matrix
+  \begin{equation}
+    \begin{bmatrix}
+      1 & 1 & -1 & 1\\
+      2 & 3 & k & 3\\
+      1 & k & 3 & 2
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 1 & -1 & 1\\
+      0 & 1 & k+2 & 1\\
+      0 & 0 & (k+3)(k-2) & k-2
+    \end{bmatrix}.
+  \end{equation}
+  The solution exists if and only if $r(A) = r(\overline{A})$,
+  that means when $k = -3$, the solution does not exist.
+  Now consider the number of solutions,
+  if $k = 2$ then there are infinite number of solutions,
+  when $k \neq 2, 3$ there is a unique solution.
+  Therefore when $k = 2$, we consider the particular solution
+  and the fundamental solution system
+  \begin{equation}
+    \gamma =
+    \begin{pmatrix}
+      0 \\
+      1 \\
+      0
+    \end{pmatrix}, \quad
+    \eta_1 =
+    \begin{pmatrix}
+      5 \\
+      -3 \\
+      1
+    \end{pmatrix} \Rightarrow
+    x = \gamma + k_1 \eta_1.
+  \end{equation}
+  When $k \neq 2$, then we can solve the system of linear equations directly.
+\end{solution}
+
 \section{Least Square Problems}
+
+\begin{proposition}{Rank of $A^TA$}{}
+  Let $A$ be a $m \times n$ real matrix, then
+  \begin{equation}
+    r(A^TA) = r(A).
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Consider the relation between the solutions of $Ax = 0$ and $A^TA x = 0$.
+  First, if $x$ satisfies $Ax = 0$, then it also follows $A^TAx = 0$.
+  Then, if $x$ satisfies $A^TAx = 0$, then we have $x^TA^TAx = 0$.
+  Since $\alpha = Ax$ is a real vector, it implies $\alpha^T\alpha = 0$
+  if and only if $\alpha = 0$.
+  Therefore, the solutions of the systems of linear equations $A^TAx = 0$ and
+  $Ax = 0$ are the same. According to the number of solutions, we know
+  \begin{equation}
+    n - r(A) = n - r(A^TA),
+  \end{equation}
+  which deduces that $r(A) = r(A^TA)$.
+\end{proof}
+
+\begin{definition}{Least-Squares Solution}{}
+  For an inconsistent system of linear equations (which has no solutions),
+  $Ax = b$ where $A \in \mathbb{R}^{n \times m}$.
+  If a vector $x \in \mathbb{R}^n$ minimizes the distance
+  \begin{equation}
+    d = \sum\limits_{i = 1}^n (a_{i1}x_1 + \cdots + a_{in}x_n - b_i)^2,
+  \end{equation}
+  then $x$ is called a \emph{least-squares solution of $Ax = b$}.
+\end{definition}
+
+\begin{theorem}{Normal Equations}{}
+  For any systems of linear equations $Ax = b$, a least-squares solution always
+  exists.
+  Moreover, $x$ is a least-squares solution if and only if
+  \begin{equation}
+    A^TAx = A^Tb.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  Let $\alpha_1,\cdots,\alpha_n$ be the column vectors of $A$,
+  and define $W = \operatorname{span}(\alpha_1,\cdots,\alpha_n)$.
+  Then $x$ is a least-squares solution if and only if $Ax$ is the projection
+  of $b$ onto $W$,
+  that is, $(b - Ax) \perp \alpha_i$. Thus
+  $\alpha_i^T(b - Ax)$ implies
+  \begin{equation}
+    A^T(b - Ax) = 0 \Rightarrow A^TAx = A^Tb.
+  \end{equation}
+  Therefore, the least-squares solutions follow the normal equations.
+\end{proof}
+
+\begin{proposition}{Existence of Least-Squares Solutions}{}
+  The solution of the system of linear equations $A^TAx = A^Tb$ exists.
+\end{proposition}
+
+\begin{proof}
+  We know that $r(A^TA) = r(A)$, consider $r(A^T[A|b])$, by rank inequalities
+  \begin{equation}
+    r(A^T[A|b]) \leq r(A^T) = r(A) = r(A^TA).
+  \end{equation}
+  On the other hand, it is direct to see that $r([A^TA|A^Tb]) \geq r(A^TA)$.
+  Conclude the above equations, the rank of the coefficient matrix
+  and the rank of the augmented matrix are the same,
+  which implies the existence of the solution.
+\end{proof}
 
 
 
