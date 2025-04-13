@@ -106,6 +106,32 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  Since $f_1(x), f_2(x)$ are relatively prime, then there exist $u(x), v(x)$
+  such that $u(x)f_1(x) + v(x)f_2(x) = 1$, that is
+  \begin{equation}
+    \mathcal{I} = u(\mathcal{A}) f_1(\mathcal{A}) + v(\mathcal{A}) f_2(\mathcal{A}).
+  \end{equation}
+  Then for any $\alpha \in \operatorname{Ker}(f(\mathcal{A}))$,
+  $\alpha = u(\mathcal{A})f_1(\mathcal{A})\alpha +
+  v(\mathcal{A})f_2(\mathcal{A})\alpha := \alpha_1 + \alpha_2$.
+  We get
+  \begin{equation}
+    f_2(\mathcal{A}) \alpha_1 = u(\mathcal{A})f(\mathcal{A})\alpha = 0 \Rightarrow
+    \alpha_1 \in \operatorname{Ker}(f_1(\mathcal{A})),
+  \end{equation}
+  Similarly we get $\alpha_2 \in \operatorname{Ker}(f_2(\mathcal{A}))$, and thus
+  $\operatorname{Ker}(f(\mathcal{A})) = \operatorname{Ker}(f_1(\mathcal{A}))
+  + \operatorname{Ker}(f_2(\mathcal{A}))$.
+  Next, we prove that it is direct sum. For any $\alpha \in
+  \operatorname{Ker}(f_1(\mathcal{A})) + \operatorname{Ker}(f_2(\mathcal{A}))$,
+  we have
+  \begin{equation}
+    \alpha = u(\mathcal{A})f_1(\mathcal{A})\alpha + v(\mathcal{A}) f_2(\mathcal{A})\alpha = 0,
+  \end{equation}
+  which satisfies the condition for direct sum.
+\end{proof}
+
 \begin{lemma}{Kernel Space of the Zero Transformation}{}
   Let $V$ be a linear space over $\mathbb{P}$,
   and $\mathcal{O}$ be the zero transformation.
@@ -135,7 +161,48 @@
 
 \subsection{Concept of $\lambda$ Matrices}
 
+\begin{definition}{$\lambda$-Matrix}{}
+  If $A(\lambda)$ is a matrix whose elements are polynomials in $\lambda$,
+  then it is called a \emph{$\lambda$-matrix}.
+\end{definition}
+
+\begin{definition}{Elementary Operations of $\lambda$-Matrices}{}
+  There are three types of elementary transformations for $\lambda$-matrices:
+  \begin{enumerate}
+  \item Interchange two rows/columns;
+  \item Multiply a row/column by a non-zero constant (cannot multiply by a $\lambda$-polynomial!);
+  \item Add a $\lambda$-polynomial of one row/column to another row/column.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}{Equivalence between $\lambda$-Matrices}{}
+  If one $\lambda$-matrix can be transformed into another $\lambda$-matrix
+  by elementary operations, then the two $\lambda$-matrices are said to be
+  \emph{equivalent}.
+\end{definition}
+
+\begin{theorem}{Smith Normal Form}{}
+  For a matrix $A$, $\lambda I - A$ is always equivalent to
+  \begin{equation}
+    D = \operatorname{diag}\{1, \cdots, 1, d_1(\lambda), \cdots, d_m(\lambda)\},
+  \end{equation}
+  where $d_i(\lambda)$ is a monic polynomial, satisfying
+  $d_i(\lambda)|d_{i+1}(\lambda)$.
+\end{theorem}
+
+\begin{proposition}{Calculation of Smith Normal Form}{}
+  Each step, move the element with the lowest degree to the corner
+  and attempt to eliminate:
+\end{proposition}
+
 \subsection{Determinant Divisors and Invariant Factors}
+
+\begin{definition}{Determinant Divisor}{}
+  Let $A(\lambda)$ be a $\lambda$-matrix. If the determinants of all $k$-minors
+  of $A$ are $0$, then its $k$-th determinant divisor is zero.
+  Otherwise, it is defined as the monic common divisor of all non-zero $k$-minors.
+\end{definition}
+
 
 \subsection{Elementary Divisors and Jordan Canonical Form}
 
