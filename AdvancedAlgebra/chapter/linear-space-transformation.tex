@@ -561,6 +561,104 @@
   then $\mathcal{A}$ is called a \emph{linear transformation on $V$}.
 \end{definition}
 
+\subsection{The Matrices of Linear Transformations}
+
+\begin{definition}{The Matrix of a Linear Transformation}{}
+  Let $\mathcal{A}$ be a linear transformation in $V$,
+  and $V = \operatorname{span} (\epsilon_1,\cdots,\epsilon_n)$.
+  If
+  \begin{equation}
+    (\mathcal{A}(\epsilon_1),\cdots,\mathcal{A}(\epsilon_n)) = (\epsilon_1,\cdots,\epsilon_n)A,
+  \end{equation}
+  then we call $A$ \emph{the matrix of $\mathcal{A}$ with respect to the basis $\epsilon_1,\cdots,\epsilon_n$}.
+\end{definition}
+
+\begin{note}
+  How to find the matrix of a linear transformation with respect to a basis:
+  \begin{equation}
+    A = (\epsilon_1,\cdots,\epsilon_n)^{-1}(\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n).
+  \end{equation}
+  We can calculate it via row elementary operations.
+\end{note}
+
+\begin{example}{Find the Matrix of Linear Transformations}{}
+  Given that $A = (a_{ij}), i,j = 1,2,3$ is the matrix of $\mathcal{A}$
+  with respect to the basis $\epsilon_1,\epsilon_2,\epsilon_3$. Calculate
+  \begin{enumerate}
+  \item The matrix of $\mathcal{A}$ with respect to the basis $\epsilon_3, \epsilon_2, \epsilon_1$;
+  \item The matrix of $\mathcal{A}$ with respect to the basis $\epsilon_1 + \epsilon_2, \epsilon_2, \epsilon_3$;
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) Switch the first column and the third column of the matrix.
+  (2) Define a new basis $\eta_1 = \epsilon_1 + \epsilon_2, \eta_2 = \epsilon_2,
+  \eta_3 = \epsilon_3$, then
+  \begin{equation}
+    (\eta_1, \eta_2, \eta_3) = (\epsilon_1, \epsilon_2, \epsilon_3) 
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      1 & 1 & 0\\
+      0 & 0 & 1
+    \end{bmatrix} := (\epsilon_1, \epsilon_2, \epsilon_3)T.
+  \end{equation}
+  Denote the matrix of $\mathcal{A}$ with respect to $\eta_1,\eta_2,\eta_3$ as $B$,
+  by the definition of matrix of linear transformation, we know
+  \begin{equation}
+    \mathcal{A}(\eta_1, \eta_2, \eta_3) = (\eta_1, \eta_2, \eta_3) B.
+  \end{equation}
+  On the other hand, by $\mathcal{A}(\epsilon_1, \epsilon_2, \epsilon_3) =
+  (\epsilon_1, \epsilon_2, \epsilon_3)A$, we know
+  \begin{equation}
+    \mathcal{A}(\eta_1, \eta_2, \eta_3) = \mathcal{A}(\epsilon_1, \epsilon_2, \epsilon_3)T
+    = (\epsilon_1, \epsilon_2, \epsilon_3) AT = (\eta_1, \eta_2, \eta_3)T^{-1}AT.
+  \end{equation}
+  Combining the above equations yields
+  \begin{equation}
+    B = T^{-1}AT =
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      -1 & 1 & 0\\
+      0 & 0 & 1
+    \end{bmatrix}A
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      1 & 1 & 0\\
+      0 & 0 & 1
+    \end{bmatrix}
+    \Rightarrow
+    B =
+    \begin{bmatrix}
+      a_{11} + a_{12} & a_{12} & a_{13}\\
+      a_{21} + a_{22} - a_{11} - a_{12} & a_{22} - a_{12} & a_{23} - a_{13}\\
+      a_{31} + a_{32} & a_{32} & a_{33}
+    \end{bmatrix}.
+  \end{equation}
+  So the matrix of $\mathcal{A}$ with respect to $\epsilon_1 + \epsilon_2,
+  \epsilon_2, \epsilon_3$ is $B$.
+\end{solution}
+
+\begin{proposition}{Coordinates After Linear Transformation}{}
+  If the coordinate of $\alpha$ with respect to the basis
+  $(\epsilon_1,\cdots,\epsilon_n)$ is $x$,
+  then the coordinates $\mathcal{A}\alpha$ with respect to this basis is $Ax$,
+  that is,
+  \begin{equation}
+    \mathcal{A}\alpha = (\epsilon_1,\cdots,\epsilon_n)Ax
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  By the difinition of coordinates, we have $\alpha =
+  (\epsilon_1,\cdots,\epsilon_n)x$,
+  and
+  \begin{equation}
+    \mathcal{A}\alpha = (\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n)x = (\epsilon_1,\cdots,\epsilon_n)Ax.
+  \end{equation}
+  That is, the coordinate of $\mathcal{A}\alpha$ with respect to
+  $\epsilon_1,\cdots,\epsilon_n$ is $Ax$.
+\end{proof}
+
 \subsection{Kernel and Image of Linear Mappings}
 
 The kernel and the image are the most common invariant subspaces,
@@ -575,6 +673,27 @@ thus we need to investigate these two special sets.
     \operatorname{Im} (\varphi) = \{\varphi (\alpha) : \alpha \in U\}.
   \end{equation}
 \end{definition}
+
+\begin{proposition}{Representation of Kernel and Image}{}
+  Let $A$ be the matrix of a linear transformation $\mathcal{A}$ under a basis,
+  then $\operatorname{Ker}(\mathcal{A})$ is the solution space of $Ax = 0$;
+  $\operatorname{Im}(\mathcal{A})$ is the column space of $A$.
+\end{proposition}
+
+\begin{proof}
+  Given that $\alpha \in \operatorname{Ker}(\mathcal{A})$,
+  then $A \alpha = 0$, thus all $\alpha$ form the solution space of $Ax = 0$.
+  Given that $\alpha \in \operatorname{Im}(\mathcal{A})$,
+  then there exists $\beta$ such that $\mathcal{A} \beta = \alpha$,
+  that is $A\beta = \alpha$, which can be rewritten into
+  \begin{equation}
+    b_1\mathbf{a}_1 + \cdots + b_n \mathbf{a}_n = \alpha,
+  \end{equation}
+  where $\mathbf{a}_i$ is the $i$-th column of $A$,
+  $b_i$ is the $i$-th element of $\beta$.
+  Therefore, $\alpha$ satisfies $\mathcal{A} \beta = \alpha$
+  if and only if it is from the column space of $A$.
+\end{proof}
 
 \begin{example}{Calculate Kernel and Image}{}
   Consider a linear mapping $\mathcal{A}: \mathbb{P}^4 \rightarrow
@@ -597,20 +716,8 @@ thus we need to investigate these two special sets.
 \end{example}
 
 \begin{solution}
-  $\operatorname{Ker} \mathcal{A}$ is the solution space of $AX = 0$,
+  $\operatorname{Ker} \mathcal{A}$ is the solution space of $Ax = 0$,
   while $\operatorname{Im} \mathcal{A}$ is the column space of $A$.
-  And the reason for why the image of $\mathcal{A}$ is the column space of $A$ is
-  \begin{equation}
-    A \left(
-      \begin{array}{c}
-        x_1\\
-        x_2\\
-        x_3\\
-        x_4
-      \end{array}
-    \right) = \mathbf{a}_1x_1 + \mathbf{a}_2x_2 + \mathbf{a}_3x_3 + \mathbf{a}_4x_4,
-  \end{equation}
-  where $\mathbf{a}_i$ is the $i$-th column vector of $A$.
 \end{solution}
 
 \begin{theorem}{Dimension Theorem for the Kernel and Image}{}
@@ -723,75 +830,6 @@ However, idempotent transformations are an exception.
   \end{equation}
 \end{theorem}
 
-\subsection{The Matrices of Linear Transformations}
-
-\begin{definition}{The Matrix of a Linear Transformation}{}
-  Let $\mathcal{A}$ be a linear transformation in $V$,
-  and $V = \operatorname{span} (\epsilon_1,\cdots,\epsilon_n)$.
-  If
-  \begin{equation}
-    (\mathcal{A}(\epsilon_1),\cdots,\mathcal{A}(\epsilon_n)) = (\epsilon_1,\cdots,\epsilon_n)A,
-  \end{equation}
-  then we call $A$ \emph{the matrix of $\mathcal{A}$ with respect to the basis $\epsilon_1,\cdots,\epsilon_n$}.
-\end{definition}
-
-\begin{note}
-  How to find the matrix of a linear transformation with respect to a basis:
-  \begin{equation}
-    A = (\epsilon_1,\cdots,\epsilon_n)^{-1}(\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n).
-  \end{equation}
-  We can calculate it via row elementary operations.
-\end{note}
-
-\begin{example}{Find the Matrix of Linear Transformations}{}
-  Given that $A = (a_{ij}), i,j = 1,2,3$ is the matrix of $\mathcal{A}$
-  with respect to the basis $\epsilon_1,\epsilon_2,\epsilon_3$. Calculate
-  \begin{enumerate}
-  \item The matrix of $A$ with respect to the basis $\epsilon_3, \epsilon_2, \epsilon_1$;
-  \item The matrix of $A$ with respect to the basis $\epsilon_1 + \epsilon_2, \epsilon_2, \epsilon_3$;
-  \end{enumerate}
-\end{example}
-
-\begin{solution}
-  (1) Switch the first column and the third column of the matrix.
-  (2) By the definition of linear transformation, we get
-  \begin{equation}
-    \begin{cases}
-      \mathcal{A}\epsilon_1 = a_{11}\epsilon_1 + a_{21}\epsilon_2 + a_{31}\epsilon_3 \\
-      \mathcal{A}\epsilon_2 = a_{12}\epsilon_1 + a_{22}\epsilon_2 + a_{32}\epsilon_3 \\
-      \mathcal{A}\epsilon_3 = a_{13}\epsilon_1 + a_{23}\epsilon_2 + a_{33}\epsilon_3
-    \end{cases}
-  \end{equation}
-  and
-  \begin{equation}
-    \begin{cases}
-      \mathcal{A}(\epsilon_1 + \epsilon_2)= (a_{11} + a_{12})\epsilon_1 + (a_{21} + a_{22})\epsilon_2 + (a_{31} + a_{32})\epsilon_3 \\
-      \mathcal{A}\epsilon_2 = a_{12}\epsilon_1 + a_{22}\epsilon_2 + a_{32}\epsilon_3 \\
-      \mathcal{A}\epsilon_3 = a_{13}\epsilon_1 + a_{23}\epsilon_2 + a_{33}\epsilon_3
-    \end{cases}
-  \end{equation}
-\end{solution}
-
-\begin{proposition}{Coordinates After Linear Transformation}{}
-  If the coordinate of $\alpha$ with respect to the basis
-  $(\epsilon_1,\cdots,\epsilon_n)$ is $X$,
-  then the coordinates $\mathcal{A}\alpha$ with respect to this basis is $AX$,
-  that is,
-  \begin{equation}
-    \mathcal{A}\alpha = (\epsilon_1,\cdots,\epsilon_n)AX
-  \end{equation}
-\end{proposition}
-
-\begin{proof}
-  By the difinition of coordinates, we have $\alpha =
-  (\epsilon_1,\cdots,\epsilon_n)X$,
-  and
-  \begin{equation}
-    \mathcal{A}\alpha = (\mathcal{A}\epsilon_1,\cdots,\mathcal{A}\epsilon_n)X = (\epsilon_1,\cdots,\epsilon_n)AX.
-  \end{equation}
-  That is, the coordinate of $\mathcal{A}\alpha$ with respect to
-  $\epsilon_1,\cdots,\epsilon_n$ is $AX$.
-\end{proof}
 
 \subsection{Similarity: Matrices of Linear Transformation under Different Bases}
 
@@ -823,6 +861,12 @@ However, idempotent transformations are an exception.
   \end{equation}
   thus $A = T^{-1}BT$.
 \end{proof}
+
+\begin{note}
+  Why $\mathcal{A} (\epsilon_1,\cdots,\epsilon_n) = \mathcal{A} (\eta_1,\cdots,\eta_n)T$?
+  Since $\mathcal{A}$ is a linear mapping, that is, we can extract any linear
+  operations (including matrix multiplication).
+\end{note}
 
 \begin{definition}{Similarity}{}
   Two square matrices $A$ and $B$ of the same size $n \times n$ are said to be

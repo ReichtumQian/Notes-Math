@@ -35,7 +35,8 @@
 
 ## Linear Spaces and Linear Transformations
 
-- Linear Spaces: Definition, Linear Independence, Maximal Linear Independence Subset, Basis, Coordinates, Transition Matrix, Sum of Spaces, Intersection of Spaces, Dimension Theorem, Direct Sum, 
+- Linear Spaces: Definition, Linear Independence, Maximal Linear Independence Subset, Basis, Coordinates, Transition Matrix, Sum of Spaces, Intersection of Spaces, Dimension Theorem, Direct Sum
+- Linear Mapping and Transformation: Definition, Kernel
 
 
 
