@@ -774,6 +774,14 @@ thus we need to investigate these two special sets.
   thus $k_{r+1} = \cdots = k_n = 0$.
 \end{proof}
 
+\begin{theorem}{Decomposition of the Kernel and Image Spaces of General Linear Transformations}{}
+  Suppose $\mathcal{A}$ is linear transformation on $V$,
+  and $\dim V = n$. Then we have
+  \begin{equation}
+    V = \operatorname{Ker} \mathcal{A}^n \oplus \operatorname{Im} \mathcal{A}^n.
+  \end{equation}
+\end{theorem}
+
 \subsection{Kernel and Image of Idempotent Linear Transformations}
 
 Generally speaking, although there is a dimensional relationship between the
@@ -822,14 +830,69 @@ However, idempotent transformations are an exception.
   Since $\mathcal{A} \alpha = 0$, we know that $\alpha = 0$.
 \end{proof}
 
-\begin{theorem}{Decomposition of the Kernel and Image Spaces of General Linear Transformations}{}
-  Suppose $\mathcal{A}$ is linear transformation on $V$,
-  and $\dim V = n$. Then we have
+\begin{proposition}{Invariance of Idempotent Transformation}{}
+  Let $\mathcal{A}$ be an idempotent transformation in $V$,
+  and $\alpha$ be a vector in the image of $\mathcal{A}$,
+  then
   \begin{equation}
-    V = \operatorname{Ker} \mathcal{A}^n \oplus \operatorname{Im} \mathcal{A}^n.
+    \mathcal{A} \alpha = \alpha.
   \end{equation}
-\end{theorem}
+\end{proposition}
 
+\begin{proof}
+  Since $\alpha \in \operatorname{Im}(\mathcal{A})$,
+  then there exists a vector $\beta \in V$ such that $\mathcal{A} \beta = \alpha$.
+  Then we have
+  \begin{equation}
+    \mathcal{A} \alpha = \mathcal{A} (\mathcal{A} \beta) = \mathcal{A} \beta = \alpha,
+  \end{equation}
+  which implies that $\mathcal{A}$ does not change the vector in its image.
+\end{proof}
+
+\begin{example}{Applications of Idempotent Transformations}{}
+  Let $\mathcal{A}, \mathcal{B}$ be two idempotent linear transformation over
+  $\mathbb{P}$,
+  prove that
+  \begin{enumerate}
+  \item $\operatorname{Im}(\mathcal{A}) = \operatorname{Im}(\mathcal{B})$
+    if and only if $\mathcal{A} \mathcal{B} = \mathcal{B}$ and
+    $\mathcal{B}\mathcal{A} = \mathcal{A}$.
+  \item $\operatorname{Ker}(\mathcal{A}) = \operatorname{Ker}(\mathcal{B})$
+    if and only if $\mathcal{A} \mathcal{B} = \mathcal{A}$ and
+    $\mathcal{B}\mathcal{A} = \mathcal{B}$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Left-to-right: For any $\alpha \in V$,
+  we have $\mathcal{B} \alpha \in \operatorname{Im}(\mathcal{B}) =
+  \operatorname{Im}(\mathcal{A})$, then there exists $\beta \in V$ such that
+  $\mathcal{B}\alpha = \mathcal{A} \beta$, and
+  \begin{equation}
+    \mathcal{A}(\mathcal{B}\alpha) = \mathcal{A} (\mathcal{A}\beta) = \mathcal{A} \beta
+    = \mathcal{B} \alpha \Rightarrow \mathcal{A} \mathcal{B} = \mathcal{B}.
+  \end{equation}
+  Right-to-left: For any $\gamma \in \operatorname{Im}(\mathcal{A})$,
+  we know that $\mathcal{A} \gamma = \gamma$ based on the properites of
+  idempotent transformations, then
+  \begin{equation}
+  \mathcal{B} \mathcal{A} \gamma = \mathcal{A} \gamma = \gamma \Rightarrow \mathcal{B} \gamma = \gamma.
+  \end{equation}
+
+  (2) Left-to-right: Since $V = \operatorname{Im}(\mathcal{A}) \oplus
+  \operatorname{Ker}(\mathcal{A})$,
+  then for all $\alpha \in V$, we have decomposition
+  \begin{equation}
+    \alpha = \alpha_1 + \alpha_2, \alpha_1 \in \operatorname{Im}(\mathcal{A}), \alpha_2 \in \operatorname{Ker}(\mathcal{A})
+  \end{equation}
+  which implies $\alpha - \alpha_1 \in \operatorname{Ker}(\mathcal{A}) =
+  \operatorname{Ker}(\mathcal{B})$, then
+  \begin{equation}
+    \mathcal{B}(\alpha - \alpha_1) = 0 \Rightarrow \mathcal{B}\alpha = \mathcal{B}\alpha_1 \Rightarrow
+    (\mathcal{B}\mathcal{A})\alpha = \mathcal{B} \alpha_1 = \mathcal{B} \alpha,
+  \end{equation}
+  where the third step uses $\mathcal{A} \alpha = \alpha_1$.
+\end{proof}
 
 \subsection{Similarity: Matrices of Linear Transformation under Different Bases}
 
@@ -876,6 +939,46 @@ However, idempotent transformations are an exception.
   \end{equation}
 \end{definition}
 
+\begin{example}{Calculation of the Matrices under Different Bases}{}
+  Given the following two bases, and a linear transformation $T$ satisfying
+  $T\epsilon_i = \eta_i$
+  \begin{equation}
+    \epsilon_1 =
+    \begin{pmatrix}
+      1\\ 0 \\ 1
+    \end{pmatrix},
+    \epsilon_2 =
+    \begin{pmatrix}
+      2\\ 1 \\ 0
+    \end{pmatrix},
+    \epsilon_3 =
+    \begin{pmatrix}
+      1\\ 1 \\ 1
+    \end{pmatrix},
+    \eta_1 =
+    \begin{pmatrix}
+      1\\ 2 \\ -1
+    \end{pmatrix},
+    \eta_2 =
+    \begin{pmatrix}
+      2\\ 2 \\ -1
+    \end{pmatrix},
+    \eta_3 =
+    \begin{pmatrix}
+      2\\ -1 \\ -1
+    \end{pmatrix}.
+  \end{equation}
+  Find
+  (1) the transition matrix from $\epsilon_1, \epsilon_2, \epsilon_3$ to
+  $\eta_1, \eta_2, \eta_3$;
+  (2) the matrix of $T$ with respect to $\epsilon_1, \epsilon_2, \epsilon_3$;
+  (3) the matrix of $T$ with respect to $\eta_1, \eta_2, \eta_3$.
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
+
 \begin{proposition}{Properties of Similarity}{}
   If matrices $A$ and $B$ are similar, that is $A = T^{-1}BT$,
   then:
@@ -885,6 +988,21 @@ However, idempotent transformations are an exception.
   \item If $f(x)$ is a polynomial, then $f(A)$ is similar to $B$;
   \end{itemize}
 \end{proposition}
+
+\begin{proof}
+  It is direct to prove, so we omit them here.
+\end{proof}
+
+\begin{example}{Properties of Similarity}{}
+  Let $A, B$ be two invertible matrices, prove that
+  (1) $AB$ is similar to $BA$;
+  (2) $A^{-1}$ is similar to $B^{-1}$.
+\end{example}
+
+\begin{proof}
+  (1) $BA = (A^{-1}A)BA = A^{-1}(AB)A$.
+  (2) $(P^{-1}AP)^{-1} = B^{-1}$, which implies that $P^{-1}A^{-1}P = B^{-1}$.
+\end{proof}
 
 \begin{note}
   Note that if $A_1, B_1$ are similar, $A_2, B_2$ are similar,
@@ -915,6 +1033,37 @@ However, idempotent transformations are an exception.
     \mathcal{A} \xi = \lambda \xi.
   \end{equation}
 \end{definition}
+
+\begin{example}{Eigenvalue Practice}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item Let $\lambda_1, \lambda_2$ be different eigenvalues of $T$, with
+    $T \alpha_1 = \lambda_1 \alpha_1$ and $T \alpha_2 = \lambda_2 \alpha_2$.
+    Then $\alpha_1 + \alpha_2$ is not an eigenvector of $T$.
+  \item The linear transformations $\mathcal{A}\mathcal{B}$ and $\mathcal{B}\mathcal{A}$
+    have same non-zero eigenvalues.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) With the condition, we know $T(\alpha_1 + \alpha_2) = \lambda_1 \alpha_1 +
+  \lambda_2 \alpha_2$. If $\alpha_1 + \alpha_2$ is an eigenvector of $T$,
+  with corresponding eigenvalue $\lambda$. Then
+  \begin{equation}
+    T(\alpha_1 + \alpha_2) = \lambda(\alpha_1 + \alpha_2) = \lambda_1 \alpha_1 + \lambda_2 \alpha_2,
+  \end{equation}
+  which implies $\lambda - \lambda_1 = \lambda - \lambda_2 = 0$, and contradicts
+  with the condition.
+
+  (2) Let $\lambda$ be a non-zero eigenvalue of $\mathcal{A}\mathcal{B}$,
+  there exists $\xi \in V$ such that $\mathcal{A}\mathcal{B} \xi = \lambda \xi$.
+  Applying $\mathcal{B}$ to both sides yields
+  \begin{equation}
+    \mathcal{B}(\mathcal{A}\mathcal{B})\xi = \mathcal{B}(\lambda \xi)
+    \Rightarrow (\mathcal{B}\mathcal{A})(\mathcal{B}\xi) = \lambda (\mathcal{B}\xi).
+  \end{equation}
+  This means that $\lambda$ is also an eigenvalue of $\mathcal{B}\mathcal{A}$.
+\end{proof}
 
 \begin{proposition}{Eigenspace is a Subspace}{}
   The eigenspace $V_{\lambda}$ is a subspace of $V$.
@@ -962,9 +1111,18 @@ However, idempotent transformations are an exception.
   \end{equation}
 \end{definition}
 
-\begin{proposition}{}{}
+\begin{proposition}{Characteristic Polynomials of Similar Matrices}{}
   Similar matrices have the same characteristic polynomial.
 \end{proposition}
+
+\begin{proof}
+  Let $B = P^{-1}AP$, then
+  \begin{equation}
+    |\lambda I - B| = |\lambda I - P^{-1}AP| = |\lambda I - A| \cdot |P|^{-1} \cdot |P| =
+    |\lambda I - A|.
+  \end{equation}
+  This verifies that $A$ and $B$ have same characteristic polynomials.
+\end{proof}
 
 \begin{proposition}{Basic Properties of Eigenvalues}{}
   If $\lambda_1,\cdots,\lambda_n$ are the eigenvalues of matrix $A$,
@@ -997,6 +1155,13 @@ However, idempotent transformations are an exception.
   its algebraic multiplicity is greater than or equal to its geometric multiplicity.
 \end{lemma}
 
+\begin{proof}
+  Use Jordan canonical form to prove.
+  The algebraic multiplicity corresponds to the size of the Jordan block of
+  $\lambda_i$.
+  The geometric multiplicity corresponds to the rank of the Jordan block matrix.
+\end{proof}
+
 \begin{proposition}{Linear Independence of Eigenvectors Corresponding to
     Different Eigenvalues}{}
   Eigenvectors belonging to different eigenvalues are linearly independent.
@@ -1028,16 +1193,108 @@ However, idempotent transformations are an exception.
   then $\mathcal{A}$ is diagonalizable.
 \end{proposition}
 
+\begin{proof}
+  If $\mathcal{A}$ has $n$ different eigenvalues, then it has $n$ Jordan blocks,
+  and is diagonalizable.
+\end{proof}
+
 \begin{proposition}{Necessary and Sufficient Conditions for Diagonalization}{}
   Suppose $V$ is a $n$-dimension linear space,
   then the following are equivalent conditions for $\mathcal{A}$ to be diagonalizable:
   \begin{itemize}
-  \item $\mathcal{A}$ has $n$ different eigenvectors.
+  \item $\mathcal{A}$ has $n$ different linearly independent eigenvectors.
   \item $V = \oplus_i V_i$, where $V_i$ is the eigenspace of $\lambda_i$.
   \item The geometric multiplicity of each eigenvalue equals its algebraic multiplicity.
   \item The minimal polynomial of $\mathcal{A}$ is a product of first-degree polynomial.
   \end{itemize}
 \end{proposition}
+
+\begin{proof}
+  Hint: Use Jordan canonical form.
+\end{proof}
+
+\begin{example}{Calculation of Diagonalization Matrix}{}
+  Find the eigenvalues and the matrix $Q$ such that $Q^{-1}AQ$
+  is a diagonal matrix:
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      3 & 4\\
+      5 & 2
+    \end{bmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  We first find the eigenvalues,
+  $f_A(\lambda) = (\lambda - 7)(\lambda + 2)$,
+  thus the eigenvalues are $\lambda_1 = 7, \lambda_2 = -2$.
+  Then we find the eigenvectors,
+  for $\lambda_1 = 7$,
+  \begin{equation}
+    \begin{bmatrix}
+      4 & -4\\
+      -5 & 5
+    \end{bmatrix} x =
+    \begin{bmatrix}
+      0\\
+      0
+    \end{bmatrix} \Rightarrow x = k
+    \begin{bmatrix}
+      1\\
+      1
+    \end{bmatrix}
+  \end{equation}
+  For $\lambda_2 = -2$,
+  \begin{equation}
+    \begin{bmatrix}
+      -5 & -4\\
+      -5 & -4
+    \end{bmatrix} x =
+    \begin{bmatrix}
+      0\\
+      0
+    \end{bmatrix} \Rightarrow x = k
+    \begin{bmatrix}
+      4\\
+      -5
+    \end{bmatrix}
+  \end{equation}
+  Then we get
+  \begin{equation}
+    D = \begin{bmatrix}
+      7 & 0\\
+      0 & -2
+    \end{bmatrix}
+     =
+    \begin{bmatrix}
+      1 & 4\\
+      1 & -5
+    \end{bmatrix}^{-1}
+    \begin{bmatrix}
+      3 & 4\\
+      5 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 4\\
+      1 & -5
+    \end{bmatrix}
+    = 
+    \begin{bmatrix}
+      \frac{5}{9} & \frac{4}{9}\\
+      \frac{1}{9} & - \frac{1}{9}
+    \end{bmatrix}
+    \begin{bmatrix}
+      3 & 4\\
+      5 & 2
+    \end{bmatrix}
+    \begin{bmatrix}
+      1 & 4\\
+      1 & -5
+    \end{bmatrix}
+  \end{equation}
+  which completes the solution.
+\end{solution}
 
 \section{Minimal Polynomials}
 
