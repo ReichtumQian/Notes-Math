@@ -338,7 +338,69 @@ The specific operation can be carried out in the following table:
 \end{example}
 
 \begin{proof}
-  
+  The antiderivative of $x^{-p}$ is
+  \begin{equation}
+    F(x) = \int x^{-p}\mathrm{d} x =
+    \begin{cases}
+      \frac{1}{1-p} x^{1-p}, & p \neq 1;\\
+      \ln x, & p =1.
+    \end{cases}
+  \end{equation}
+  Consider $F(+\infty) - F(1)$.
+\end{proof}
+
+\begin{example}{Properties of Convergent Improper Integrals}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item If $\int_a^{\infty}f(x)\mathrm{d} x$ is convergent,
+    and $\lim \limits _{x \rightarrow \infty}f(x) = A$ exists,
+    then $A = 0$.
+  \item Find an example satisfies that $f(x)$ is continuous on $[a, +\infty)$,
+    $\int_a^{\infty}f(x)\mathrm{d} x$ is convergent,
+    but the limit $\lim \limits _{x \rightarrow \infty}f(x)$ does not exist.
+  \item Find an example satisfies that $f(x)$ is integrable on an arbitrary interval,
+    and $\int_a^{\infty}f(x)\mathrm{d} x$ is convergent, but $f(x)$ is not bounded.
+  \item If $f(x)$ is uniformly continuous on $[a, \infty)$,
+    and $\int_a^{+\infty}f(x)\mathrm{d} x$ is convergent,
+    then $\lim \limits _{x \rightarrow \infty}f(x) = 0$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) If $A \neq 0$, without loss of generality, we assume $A > 0$.
+  Then
+  \begin{equation}
+    \exists M \geq a, \forall x \geq M, f(x) \geq \frac{M}{2}.
+  \end{equation}
+  But $\int_a^{\infty}\frac{M}{2}\mathrm{d} x$ is not convergent,
+  and the compare test implies $\int_a^{\infty}f(x)\mathrm{d} x$ also diverges.
+  This contradicts the given condition.
+
+  (2) $\int_1^{\infty} \sin x^2\mathrm{d} x$, substitue $x = \sqrt{t}$ and use Dirichlet
+  test to prove the convergence. But the limit does not exist.
+
+  (3) Construct a function $f(x)$ that takes $x$ when $x$ is an integer, and $0$ otherwise.
+
+  (4) Assume $\lim \limits _{x \rightarrow \infty}f(x) \neq 0$, then there
+  exists $\epsilon > 0$, $N > 0$ and a sequence $\{x_n\}$ such that $|f(x_n)| \geq
+  \epsilon, n \geq N$.
+  By the definition of uniformly continuous, there exists $\delta$ such that
+  \begin{equation}
+    \forall x, y, |x - y| \leq \delta, |f(x) - f(y)| < \frac{\epsilon}{2}.
+  \end{equation}
+  Then for each $x_n$, for all $x \in [x_n, x_n + \delta]$,
+  $|f(x) - f(x_n)| < \frac{\epsilon}{2}$, we get
+  \begin{equation}
+    |f(x)| \geq |f(x_n)| - |f(x) - f(x_n)| > \frac{\epsilon}{2}.
+  \end{equation}
+  That means
+  \begin{equation}
+    \left| \int_{x_n}^{x_n + \delta} f(x)\mathrm{d} x \right|
+    = \int_{x_n}^{x_n + \delta}|f(x)|\mathrm{d} x
+    \geq \int_{x_n}^{x_n + \delta} \frac{\epsilon}{2} \mathrm{d} x
+     = \frac{\epsilon \delta}{2} \not \rightarrow 0.
+  \end{equation}
+  This contradicts the given condition.
 \end{proof}
 
 \begin{definition}{Improper Integrals with Singular Points}{}
@@ -369,7 +431,7 @@ The specific operation can be carried out in the following table:
 \end{example}
 
 \begin{proof}
-  (1) We first find the antiderivative of $x^{-p}$:
+  The antiderivative of $x^{-p}$ is
   \begin{equation}
     F(x) = \int x^{-p}\mathrm{d} x =
     \begin{cases}
@@ -387,6 +449,83 @@ The specific operation can be carried out in the following table:
 \end{proof}
 
 \subsection{Compare Tests for Improper Integrals}
+
+\begin{proposition}{Compare Test for Improper Integrals}{}
+  Let $f(x), g(x)$ be a non-negative function on $I$.
+  If for any $x \in I$, $0 \leq f(x) \leq g(x)$, and $\int_a^bg(x)\mathrm{d} x$
+  (Here $b$ can be infinity)
+  is convergent, then $\int_a^b f(x)\mathrm{d} x$ is convergent.
+\end{proposition}
+
+\begin{example}{Applications of the Compare Test}{}
+  Determine the convergence of the following improper integrals
+  \begin{equation}
+    (1) \int_0^{\infty} \frac{x \arctan x}{1 + x^p}\mathrm{d} x, \quad
+    (2) \int_0^{\infty} \frac{x}{1-e^x}\mathrm{d} x, \quad
+    (3) \int_0^{\infty} \frac{\ln x}{e^x}\mathrm{d}x, \quad
+    (4) \int_3^{\infty} \frac{1}{x^p(\ln x)^q (\ln \ln x)^r}\mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $0$ is not a singular point, so we only consider $x \rightarrow \infty$.
+  We know $\frac{x \arctan x}{1 + x^p} \sim \frac{\pi}{2} x^{1-p}$.
+  Then the improper integral is convergent if and only if $p > 2$.
+
+  (2) First consider point $0$, $1-e^x \sim -x$, thus $\lim \limits _{x
+  \rightarrow 0} \frac{x}{1-e^x} \neq 0$, it is not a singular point.
+  When $x$ approximates infinity, $e^x \sim x^{\infty}$, so it is convergent.
+
+  (3) First consider point $0$, $e^0 = 1$ and $\ln x < x^{-\epsilon}$,
+  $\epsilon < 1$ then it is convergent at $0$.
+  Consider $x$ goes up to infinity, since $e^x \sim x^{\infty}$,
+  then it is convergent.
+
+  (4) If $p > 1$ then it is convergent, and $p<1$ it does not converge.
+  If $p = 1$, then consider
+  \begin{equation}
+    \int_3^{+\infty} \frac{\mathrm{d} (\ln x)}{(\ln x)^q (\ln \ln x)^r}
+    = \int_{\ln 3}^{\infty} \frac{\mathrm{d} u}{u^q (\ln u)^r}.
+  \end{equation}
+  It is convergent when $q > 1$, and not convergent when $q < 1$.
+  If $q = 1$, it is similar to the discussion of $p = 1$.
+\end{solution}
+
+\begin{note}
+  Why $\ln x < x^{-\epsilon}$ when $x \rightarrow 0$
+  and $\ln x < x^{\epsilon}$ when $x \rightarrow \infty$:
+  \begin{equation}
+    \lim \limits _{x \rightarrow 0} \frac{\ln x}{x^{-\epsilon}}
+    = \lim \limits _{x \rightarrow 0} \frac{x^{-1}}{-\epsilon x^{-\epsilon - 1}}
+    = \lim \limits _{x \rightarrow 0} \frac{1}{-\epsilon x^{-\epsilon}} \rightarrow 0.
+  \end{equation}
+  \begin{equation}
+    \lim \limits _{x \rightarrow \infty} \frac{\ln x}{x^{\epsilon}}
+    = \lim \limits _{x \rightarrow \infty} \frac{x^{-1}}{\epsilon x^{\epsilon - 1}}
+    = \lim \limits _{x \rightarrow \infty} \frac{1}{\epsilon x^{\epsilon}} \rightarrow 0.
+  \end{equation}
+\end{note}
+
+\begin{definition}{Absolute Convergence and Conditional Convergence}{}
+  Let $\int_a^bf(x)\mathrm{d}x$ be an improper integral,
+  if the improper integral
+  \begin{equation}
+    \int_a^b |f(x)|\mathrm{d}x
+  \end{equation}
+  is convergent, then it is said to be \emph{absolutely convergent}.
+  If $\int_a^bf(x)\mathrm{d}x$ is convergent but not absolutely convergent,
+  then it is said to be \emph{conditionally convergent}.
+\end{definition}
+
+\begin{proposition}{Absolute Convergence Implies Convergence}{}
+  If an improper integral $\int_a^b f(x)\mathrm{d} x$ is absolutely convergent,
+  then it is convergent.
+\end{proposition}
+
+\begin{proof}
+  Hint: $\int_a^b f(x)\mathrm{d} x \leq \int_a^b |f(x)|\mathrm{d} x$,
+  and use the compare test.
+\end{proof}
 
 
 \subsection{Dirichlet and Abel Tests for Improper Integrals}
@@ -499,10 +638,6 @@ The specific operation can be carried out in the following table:
   (3) is the second type.
 \end{solution}
 
-\begin{proposition}{}{}
-  
-\end{proposition}
-
 \begin{theorem}{Dirichlet Integrals}{}
   Given an integer $p$, then
   \begin{equation}
@@ -518,6 +653,22 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{example}
 
+\begin{solution}
+  (1) Apply change of variable $t = x^2$:
+  \begin{equation}
+    \int_0^{\infty} \frac{\sin t}{\sqrt{t}}\mathrm{d} \sqrt{t}
+    = \frac{1}{2} \int_0^{\infty} \frac{\sin t}{t}\mathrm{d} t
+    = \frac{\pi}{4}.
+  \end{equation}
+
+  (2) First $\int_0^{\infty} \frac{\sin^2 x}{x^2}\mathrm{d} x =
+  - \int_0^{\infty} \sin^2x \mathrm{d} \frac{1}{x}$, use the integration-by-part formula
+  \begin{equation}
+    - \int_0^{\infty} \sin^2 x \mathrm{d} \frac{1}{x}
+    = - \frac{\sin^2 x}{x} \big|^{\infty}_0 + \int_0 ^{\infty} \frac{\sin 2x}{2x}\mathrm{d} 2x
+    = \frac{\pi}{2}.
+  \end{equation}
+\end{solution}
 
 
 
