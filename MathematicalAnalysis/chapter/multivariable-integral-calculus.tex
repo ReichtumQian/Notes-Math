@@ -28,6 +28,25 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{Use Parametric Integrals to Calculate Definite Integrals}{}
+  Calculate the values of the following parametric integrals
+  \begin{equation}
+    \int_0^1 \frac{x^b - x^a}{\ln x}\mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Notice that $\int_a^b x^y \mathrm{d} y = \frac{x^b - x^a}{\ln x}$,
+  then interchanging the order of the integral yields
+  \begin{equation}
+    \int_0^1 \frac{x^b - x^a}{\ln x}\mathrm{d} t
+    = \int_0^1 \mathrm{d} x \int_a^b x^y \mathrm{d} y
+    = \int_a^b \mathrm{d} y \int_0^1 x^y \mathrm{d} x
+    = \int_a^b \frac{1}{y+1}\mathrm{d} y
+    = \ln \frac{1+b}{1+a}. 
+  \end{equation}
+\end{solution}
+
 \begin{proposition}{Properties of Proper Parametric Integrals over Irregular Regions}{}
   If $f(x, t), f_t(x, t)$ are continuous on $[\alpha(t), \beta(t)] \times [c, d]$,
   $\alpha(t), \beta(t)$ are differentiable on $[c, d]$, then
@@ -62,18 +81,6 @@
   Therefore the answer is $F^{\prime\prime}(y) = 2f(y)$.
 \end{solution}
 
-\begin{example}{Use Parametric Integrals to Calculate Definite Integrals}{}
-  Calculate the values of the following parametric integrals
-  \begin{equation}
-    \int_0^1 \frac{x^b - x^a}{\ln x}\mathrm{d} x, \quad
-    \int_0^{\frac{\pi}{2}} \ln \frac{1 + a \cos x}{1 - a \cos x} \cdot \frac{1}{\cos x}\mathrm{d} x.
-  \end{equation}
-\end{example}
-
-\begin{solution}
-  
-\end{solution}
-
 \subsection{Improper Parametric Integrals}
 
 \begin{definition}{Improper Parametric Integrals}{}
@@ -90,8 +97,8 @@
 \begin{definition}{Uniform Convergence for Improper Parametric Integrals}{}
   Given an improper parametric integral $\int_c^{+\infty}f(x, t)\mathrm{d} x$, if
   \begin{equation}
-    \forall \epsilon > 0, \exists N \in \mathbb{Z}^+, \forall M > N, \forall t \in I
-    \left| \int_M^{+\infty} f(x, t)\mathrm{d} t \right| < \epsilon,
+    \forall \epsilon > 0, \exists N \in \mathbb{Z}^+, \forall M > N, \forall t \in I, \quad
+    \left| \int_M^{+\infty} f(x, t)\mathrm{d} x \right| < \epsilon,
   \end{equation}
   then $\int_c^{+\infty}f(x, t)\mathrm{d} x$ is said to \emph{uniformly converge
   to $\Phi(t)$}.
@@ -106,13 +113,6 @@
   \end{equation}
 \end{proposition}
 
-\begin{proposition}{Superemum Test for Improper Parametric Integrals}{}
-  An improper parametric integral is uniformly convergent if and only if
-  \begin{equation}
-    \lim \limits _{A \rightarrow +\infty} \sup \limits_{t \in I} \left| \int_A^{+\infty} f(x,t)\mathrm{d}x \right| = 0.
-  \end{equation}
-\end{proposition}
-
 \begin{example}{Determine Uniform Convergence}{}
   Prove that the following improper parametric integrals are
   uniformly convergent on $[\delta, +\infty)$, and not uniformly convergent
@@ -121,6 +121,28 @@
     \Phi(x) = \int_0^{+\infty} \frac{\sin xy}{y} \mathrm{d} y.
   \end{equation}
 \end{example}
+
+\begin{proof}
+  (1) We first prove that it is uniformly convergent on $[\delta, +\infty)$.
+  Apply change of variables $u = xy$, and we get
+  \begin{equation}
+    \int_A^{+\infty} \frac{\sin xy}{y} \mathrm{d} y = \int_{Ax}^{+\infty} \frac{\sin u}{u} \mathrm{d} u,
+  \end{equation}
+  and according to the Dirichlet test of improper integrals, we know the integral
+  $\int_0^{+\infty} \frac{\sin u}{u} \mathrm{d} u$ is convergent, i.e.,
+  \begin{equation}
+    \forall \epsilon > 0, \exists M > 0, \forall A > M,
+    \left| \int_A^{+\infty} \frac{\sin u}{u} \mathrm{d} u \right| < \epsilon.
+  \end{equation}
+  Take $B > \frac{M}{\delta}$, then for all $x \in [\delta, +\infty)$,
+  \begin{equation}
+    \left| \int_B^{+\infty} \frac{\sin xy}{y}\mathrm{d} y \right|
+    \leq \left| \int_A^{+\infty} \frac{\sin u}{u} \mathrm{d} u \right| < \epsilon,
+  \end{equation}
+  which satisfies the definition of uniform convergence.
+
+  (2) Next, we prove that it is not uniformly convergent on $(0, +\infty)$.
+\end{proof}
 
 \subsection{Applications of Improper Parametric Integrals}
 

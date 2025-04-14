@@ -332,6 +332,15 @@ The specific operation can be carried out in the following table:
   and call it \emph{an improper integral over an infinite interval}.
 \end{definition}
 
+\begin{example}{Improper Integrals over Infinite Interval}{}
+  prove that $\int_1^{+\infty} \frac{\mathrm{d}x}{x^p}$ converges when $p > 1$
+  and diverges when $p \leq 1$.
+\end{example}
+
+\begin{proof}
+  
+\end{proof}
+
 \begin{definition}{Improper Integrals with Singular Points}{}
   Let $f(x)$ be defined $(a, b]$,
   and $\lim \limits _{x \rightarrow a^+}f(x) = \infty$.
@@ -354,11 +363,9 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{theorem}
 
-\begin{example}{Improper Integrals of $\frac{1}{x^p}$}{}
-  Prove that (1) $\int_0^1 \frac{\mathrm{d} x}{x^p}$ converges when $p < 1$,
+\begin{example}{Improper Integrals with Singular Points}{}
+  Prove that $\int_0^1 \frac{\mathrm{d} x}{x^p}$ converges when $p < 1$,
   and diverges when $p \geq 1$.
-  (2) $\int_1^{+\infty} \frac{\mathrm{d}x}{x^p}$ converges when $p > 1$
-  and diverges when $p \leq 1$.
 \end{example}
 
 \begin{proof}
@@ -383,6 +390,137 @@ The specific operation can be carried out in the following table:
 
 
 \subsection{Dirichlet and Abel Tests for Improper Integrals}
+
+\begin{theorem}{Dirichlet Test}{}
+  If $F(x) = \int_a^x f(t)\mathrm{d} t$ is bounded in $[a, +\infty)$,
+  and $g(x)$ is decreasing monotonically to $0$ when $x$ goes up to infinity.
+  Then
+  \begin{equation}
+    \int_a^{+\infty} f(x)g(x)\mathrm{d}x
+  \end{equation}
+  is convergent.
+\end{theorem}
+
+\begin{example}{Convergence of Imporper Integrals involving $\sin x$}{}
+  Discuss the convergence of the following improper integrals
+  \begin{equation}
+    (1) \int_1^{+\infty} \frac{\sin x}{x^p}\mathrm{d}x, \quad
+    (2) \int_0^{+\infty} \frac{\sin x}{x^p} \mathrm{d} x, \quad
+    (3) \int_0^{+\infty} \sin x^2 \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) When $p \geq 1$, $\left| \frac{\sin x}{x^p} \right| \leq \frac{1}{x^p}$,
+  and the comparison test implies it is absolutely convergent.
+  When $0 < p \leq 1$, we know it is convergent by the Dirichlet test,
+  now we prove that it is not absolutely convergent
+  \begin{equation}
+    \left| \frac{\sin x}{x^p} \right| \geq \frac{\sin^2 x}{x^p}
+    = \frac{1}{2} \left( \frac{1}{x^p} - \frac{\cos 2x}{x^p} \right),
+  \end{equation}
+  since $\int_1^{+\infty} \frac{1}{x^p}\mathrm{d} x$ is not convergent,
+  the improper integral is not absolutely convergent.
+  When $p \leq 0$, take $u_1 = 2k\pi$ and $u_2 = 2k\pi + \frac{\pi}{2}$, we get
+  \begin{equation}
+    \left| \int_{u_1}^{u_2} \frac{\sin x}{x^p}\mathrm{d} x \right| \geq
+    \int_{u_1}^{u_2} \sin x \mathrm{d} x = 1,
+  \end{equation}
+  so it is not convergent.
+
+  (2) Notice $\int_0^{+\infty} f(x)\mathrm{d} x = \int_0^1 f(x)\mathrm{d} x +
+  \int_1^{+\infty}f(x)\mathrm{d} x$, where the second term is discussed in (1).
+  So we only consider the first term. When $x \rightarrow 0$, we know
+  \begin{equation}
+    \frac{\sin x}{x^p} \sim \frac{1}{x^{p-1}},
+  \end{equation}
+  which implies that when $p < 2$, it is absolutely convergent.
+  When $p \geq 2$, it diverges.
+
+  (3) Substitute $x$ with $\sqrt{t}$, the integral is 
+  \begin{equation}
+    \int_0^{+\infty} \sin x^2 \mathrm{d} x = \frac{1}{2} \int_0^{+\infty} \frac{\sin t}{\sqrt{t}}\mathrm{d} t,
+  \end{equation}
+  which is conditionally convergent.
+\end{solution}
+
+\begin{theorem}{Abel Test}{}
+  If $\int_a^{+\infty} f(x)\mathrm{d} x$ is convergent,
+  $g(x)$ is monotonic and bounded. Then
+  \begin{equation}
+    \int_a^{+\infty} f(x)g(x)\mathrm{d}x
+  \end{equation}
+  is convergent.
+\end{theorem}
+
+\subsection{Commonly Used Improper Integrals}
+
+\begin{example}{Exponential and Trigonometric Functions}{}
+  
+\end{example}
+
+\begin{theorem}{Froullani Integrals}{}
+  Let $f(x)$ be a continuous function on $[0, +\infty)$,
+  $a, b$ be two positive real numbers.
+  If $\lim \limits _{x \rightarrow +\infty}f(x)$ exists, then
+  \begin{equation}
+    \int_0^{+\infty} \frac{f(ax) - f(bx)}{x}\mathrm{d} x
+    = [f(0) - f(+\infty)] \ln \frac{b}{a}.
+  \end{equation}
+  If there exists a positive real number $A$ such that
+  $\int_A^{+\infty} \frac{f(x)}{x}\mathrm{d} x$ converges, then
+  \begin{equation}
+    \int_0^{+\infty} \frac{f(ax) - f(bx)}{x}\mathrm{d} x
+    = f(0) \ln \frac{b}{a}.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  
+\end{proof}
+
+\begin{example}{Examples of Froullani Integrals}{}
+  Calculate the following improper integrals
+  \begin{equation}
+    (1) \int_0^{+\infty} \frac{\arctan(ax) - \arctan(bx)}{x}\mathrm{d} x, \quad
+    (2) \int_0^{+\infty} \frac{e^{-ax} - e^{-bx}}{x}\mathrm{d} x, \quad
+    (3) \int_0^{+\infty} \frac{\cos ax - \cos bx}{x} \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Apply the result of Froullani integral, we get 
+  \begin{equation}
+    (1) - \frac{\pi}{2} \ln \frac{b}{a}, \quad
+    (2) \ln \frac{b}{a}, \quad
+    (3) \ln \frac{b}{a},
+  \end{equation}
+  where (1)(2) are the first type of Froullani integral,
+  (3) is the second type.
+\end{solution}
+
+\begin{proposition}{}{}
+  
+\end{proposition}
+
+\begin{theorem}{Dirichlet Integrals}{}
+  Given an integer $p$, then
+  \begin{equation}
+    \int_0^{+\infty} \frac{\sin px}{x} \mathrm{d} x= \frac{\pi}{2} \operatorname{sgn}(p).
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Examples of Dirichlet Integrals}{}
+  Calculate the following improper integrals
+  \begin{equation}
+    (1) \int_0^{+\infty} \frac{\sin x^2}{x}\mathrm{d} x, \quad
+    (2) \int_0^{+\infty} \frac{\sin^2 x}{x^2} \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+
+
+
 
 
 
