@@ -595,8 +595,25 @@ The specific operation can be carried out in the following table:
 \subsection{Commonly Used Improper Integrals}
 
 \begin{example}{Exponential and Trigonometric Functions}{}
-  
+  Calculate the following two improper integrals
+  \begin{equation}
+    (1) \int_0^{\infty} e^{-ax} \cos bx \mathrm{d} x, \quad
+    (2) \int_0^{\infty} e^{-ax} \sin bx\mathrm{d} x.
+  \end{equation}
 \end{example}
+
+\begin{solution}
+  (1) We first find the indefinite integral of the function. By tabular method,
+  we get
+  \begin{equation}
+    \int e^{-ax} \cos bx \mathrm{d} x
+    = \frac{e^{-ax}}{b} \cos bx - \frac{a e^{-ax}}{b^2}\cos bx - \frac{a^2}{b^2}\int e^{-ax}\cos bx\mathrm{d}x,
+  \end{equation}
+  and it is $F(x) = \frac{e^{-ax}}{a^2 + b^2}(b \sin bx - a \cos bx)$.
+  The value of the improper integral is $F(\infty) - F(0) = \frac{a}{a^2 + b^2}$.
+
+  (2) The process is similar, the answer is $\frac{b}{a^2 + b^2}$.
+\end{solution}
 
 \begin{theorem}{Froullani Integrals}{}
   Let $f(x)$ be a continuous function on $[0, +\infty)$,
@@ -613,10 +630,6 @@ The specific operation can be carried out in the following table:
     = f(0) \ln \frac{b}{a}.
   \end{equation}
 \end{theorem}
-
-\begin{proof}
-  
-\end{proof}
 
 \begin{example}{Examples of Froullani Integrals}{}
   Calculate the following improper integrals
