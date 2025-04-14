@@ -17,6 +17,32 @@
   $a_{i, \sigma(i)}$ is the entry of $A$ in the $i$-th row and $\sigma(i)$-th column.
 \end{definition}
 
+\begin{example}{Basic Calculation of Determinants}{}
+  Find the determinant of $A$ in the form of
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      0 & 0 & \cdots & 0 & a_1\\
+      0 & 0 & \cdots & a_2 & 0 \\
+      \vdots & \vdots & \ddots & \vdots & \vdots \\
+      a_n & 0 & \cdots & 0 & 0
+    \end{bmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  By the definition of the determinant, here the permutation $\sigma$ is
+  \begin{equation}
+    \sigma(i) = n - i + 1, \quad i = 1,2,\cdots,n.
+  \end{equation}
+  And $\operatorname{inv}(\sigma) = (n-1) + (n-2) + \cdots + 1 = \frac{n(n-1)}{2}$.
+  Therefore,
+  \begin{equation}
+    |A| = (-1)^{\frac{n(n-1)}{2}} a_1a_2\cdots a_n,
+  \end{equation}
+  which completes the solution.
+\end{solution}
+
 \begin{proposition}{Elementary Transformation of Determinants}{}
   When performing elementary rwo-operations on a matrix,
   the corresponding changes to the determinant are as follows:

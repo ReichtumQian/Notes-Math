@@ -289,6 +289,47 @@
   and we call them the \emph{invariant factors of $A(\lambda)$}.
 \end{definition}
 
+\begin{example}{Find the Invariant Factors via Determinant Divisor}{}
+  Find the Invariant Factors of
+  \begin{equation}
+    A = \begin{bmatrix}&&1&\lambda+2\\&1&\lambda+2\\1&\lambda+2\\\lambda+2\end{bmatrix}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $D_n(\lambda) = (\lambda + 2)^4$,
+  the left top minor is $-1$, thus the invariant factors are $1, 1, 1, (\lambda
+  + 2)^4$.
+\end{solution}
+
+\begin{example}{Determinant Divisor and Jordan Canonical Form}{}
+  Let $a, b$ be complex numbers, find the Jordan canonical form of
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      a & b & \cdots & b & b\\
+        & a & \cdots & b & b\\
+        &   & \ddots & \vdots & \vdots\\
+        &   &        & a & b\\
+        &   &        &   & a
+    \end{bmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  If $b = 0$, then the Jordan canonical form is $a I$.
+  Otherwise, consider $\lambda I - A$:
+  \begin{equation}
+    \lambda I-A=\begin{bmatrix}\lambda-a&-b&\cdots&-b&-b\\&\lambda-a&\cdots&-b&-b\\&&\ddots&\vdots&\vdots\\&&&\lambda-a&-b\\&&&&\lambda-a\end{bmatrix}
+  \end{equation}
+  $D_n(\lambda) = |\lambda I - A| = (\lambda - a)^n$.
+  Consider $D_{n-1}(\lambda)$, the right bottem minor is $(\lambda - a)^{n-1}$,
+  but the right top minor is not zero when $\lambda = a$.
+  This means $D_{n-1}(\lambda) = 1$.
+  Then the elementary divisors of $A$ is $(\lambda - a)^n$,
+  and the Jordan canonical form is an $n$-order Jordan block with $a$ on its diagonal.
+\end{solution}
+
 \begin{proposition}{Invariant Factors and Minimal Polynomial}{}
   The minimal polynomial of $A$ is the last invariant factor of $\lambda I - A$.
 \end{proposition}
@@ -348,4 +389,120 @@
   \end{equation}
 \end{example}
 
+\begin{solution}
+  We use elementary row operations to find the Jordan canonical form,
+  consider $\lambda I - A$:
+  \begin{align}
+    \lambda I - A &=
+    \begin{bmatrix}
+      \lambda - 2 & -3 & -2\\
+      -1 & \lambda - 8 & -2\\
+      2 & 14 & \lambda + 3
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      -1 & \lambda - 8 & -2\\
+      \lambda - 2 & -3 & -2\\
+      2 & 14 & \lambda + 3
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & \lambda^2 - 10\lambda + 13 & -2\lambda + 2\\
+      0 & 2\lambda - 2 & \lambda-1
+    \end{bmatrix}\\
+    &\rightarrow
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & \lambda-1 & 2\lambda-2\\
+      0 & -2\lambda+2 & \lambda^2-10\lambda + 13
+    \end{bmatrix}
+      \rightarrow 
+    \begin{bmatrix}
+      1 & 0 & 0\\
+      0 & \lambda-1 & 0\\
+      0 & 0 & (\lambda-3)^2
+    \end{bmatrix}.
+  \end{align}
+  The elementary divisors are $(\lambda-1), (\lambda-3)^2$, then the
+  Jordan canonical form is
+  \begin{equation}
+    J =
+    \begin{bmatrix}
+      1 & & \\
+        & 3 & 1\\
+        & & 3
+    \end{bmatrix}
+  \end{equation}
+  Now we find the transition matrix $P$. First, we consider the second Jordan
+  block $J_2$. Assume $P_2 = [x_2, x_3]$, since $AP = PJ$, we know
+  \begin{equation}
+    Ax_2 = 3x_2, Ax_3 = 3x_3 + x_2
+    \Rightarrow (A - 3I)x_2 = 0, (A - 3I)x_3 = x_2.
+  \end{equation}
+  Consider the first system of linear equations,
+  \begin{equation}
+    (A - 3I) =
+    \begin{bmatrix}
+      -1 & 3 & 2\\
+      1 & 5 & 2\\
+      -2 & -14 & -6
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+     - 1 & 3 & 2\\
+      0 & 2 & 1\\
+      0 & 0 & 0
+    \end{bmatrix}
+    \Rightarrow
+    x_2 = k
+    \begin{pmatrix}
+      1\\
+      -1\\
+      2
+    \end{pmatrix}.
+  \end{equation}
+  Let $x_2 = (1, -1, 2)^T$, and consider the second system of linear equations
+  \begin{equation}
+    [A - 3I|x_2] = 
+    \begin{bmatrix}
+      -1 & 3 & 2 & 1\\
+      1 & 5 & 2 & -1\\
+      -2 & -14 & -6 & 2
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      -1 & 3 & 2 & 1\\
+      0 & 2 & 1 & 0\\
+      0 & 0 & 0 & 0
+    \end{bmatrix}
+    \Rightarrow
+    x_2 =
+    \begin{pmatrix}
+      -1\\0\\0
+    \end{pmatrix}
+    + k
+    \begin{pmatrix}
+      1\\-1\\2
+    \end{pmatrix},
+  \end{equation}
+  we can choose $x_3 = (-1, 0, 0)^T$.
+  Now consider $(A - I) x = 0$,
+  \begin{equation}
+    A - I =
+    \begin{bmatrix}
+      1 & 3 & 2\\
+      1 & 7 & 2\\
+      -2 & -14 & -4
+    \end{bmatrix}
+    \rightarrow
+    \begin{bmatrix}
+      1 & 0 & 2\\
+      0 & 1 & 0\\
+      0 & 0 & 0
+    \end{bmatrix},
+  \end{equation}
+  we can choose $x_1 = (-2, 0, 1)^T$.
+  Then $P = [x_1, x_2, x_3]$.
+\end{solution}
 
