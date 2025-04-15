@@ -383,6 +383,18 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{theorem}
 
+\begin{corollary}{Newton-Leibniz Inequality}{}
+  If $f(x)$ is continuously differentiable on $[a, b]$.
+  Then for all $x_1, x_2 \in [a, b]$, 
+  \begin{equation}
+    |f(x_2)| \leq |f(x_1)| + \int_a^b |f^{\prime}(x)|\mathrm{d} x.
+  \end{equation}
+\end{corollary}
+
+\begin{example}{Applications of Newton-Leibniz Inequality}{}
+  
+\end{example}
+
 \begin{theorem}{Fundamental Theorem of Calculus}{}
   Let $f(x)$ be an integrable function on $[a, b]$.
   Define $F(x) = \int_a^x f(t)\mathrm{d} t$,
@@ -444,6 +456,39 @@ The specific operation can be carried out in the following table:
   According to the intermediate-value property we can get the conclusion.
 \end{proof}
 
+\begin{example}{Applications of Mean-Value Theorem for Integrals}{}
+  If $f(a) = f(b) = 0$, prove that
+  \begin{equation}
+    \left| \int_a^b f(x)\mathrm{d} x \right| \leq \frac{M}{2} (b - a)^2.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  For any $x \in [a, b]$, the mean-value theorem yields $f(x) =
+  f^{\prime}(\xi)(x - a) = f^{\prime}(\eta)(x - b)$,
+  where $\xi \in [a, x]$ and $\eta \in [x, b]$.
+  Then consider the integral over the interval $[a, \frac{a+b}{2}]$,
+  \begin{equation}
+    \int_a^{\frac{a+b}{2}} |f(x)| \mathrm{d} x
+    = \int_a^{\frac{a+b}{2}} |f^{\prime}(\xi) (x - a)| \mathrm{d} x
+    \leq \frac{b-a}{2} \cdot M \cdot \frac{b-a}{2} = \frac{M(b-a)^2}{4}.
+  \end{equation}
+  Similarly, we can get
+  \begin{equation}
+    \int_{\frac{a+b}{2}}^b |f(x)|\mathrm{d} x \leq \frac{M(b-a)^2}{4}.
+  \end{equation}
+  Adding the above two equations yields the conclusion.
+\end{proof}
+
+\begin{example}{Application of Mean-Value Theorem for Integrals}{}
+  Suppose $f(x)$ is twice differentiable on $[a, b]$,
+  and $|f^{\prime\prime}(x)| \leq M$.
+  If $f(\frac{a+b}{2}) = 0$, prove that
+  \begin{equation}
+    \left| \int_a^b f(x)\mathrm{d} x \right| \leq \frac{M}{24}(b - a)^3.
+  \end{equation}
+\end{example}
+
 \begin{theorem}{The Second Mean Value Theorem for Integrals}{}
   Suppose $f(x)$ is integrable on $[a, b]$ and $g(x)$ is monotonic on $[a, b]$.
   Then 
@@ -460,6 +505,30 @@ The specific operation can be carried out in the following table:
     \end{equation}
   \end{itemize}
 \end{theorem}
+
+\begin{example}{Inequalities of Definite Integrals}{}
+  Let $f(x)$ be a strictly increasing continuous function on $[a, b]$,
+  prove that
+  \begin{equation}
+    \int _a^b x f(x)\mathrm{d} x > \frac{a+b}{2} \int_a^b f(x)\mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  It is equivalent to prove that
+  \begin{equation}
+    \int_a^b \left( x - \frac{a+b}{2} \right) f(x)\mathrm{d} x > 0.
+  \end{equation}
+  We consider the integral over $[a, \frac{a+b}{2}]$ and $[\frac{a+b}{2}, b]$ respectively,
+  and let $t$ represents the distance between $x$ and $\frac{a+b}{2}$,
+  \begin{align}
+    \int_a^b \left( x - \frac{a+b}{2} \right)f(x)\mathrm{d} x
+    &=  \int_a^{\frac{a+b}{2}} \left( x - \frac{a+b}{2} \right) f(x)\mathrm{d} x + \int_{\frac{a+b}{2}}^b \left( x - \frac{a+b}{2} \right) f(x)\mathrm{d} x\\
+    &= \int_{\frac{b-a}{2}}^0 (-t) f(\frac{a+b}{2} - t)(-\mathrm{d} t) + \int_0^{\frac{b-a}{2}} tf(t + \frac{a+b}{2})\mathrm{d} t\\
+    &= \int _0^{\frac{b-a}{2}} t \left[ f(t + \frac{a+b}{2}) - f(\frac{a+b}{2} - t) \right]\mathrm{d} t > 0.
+  \end{align}
+  Therefore the conclusion holds.
+\end{proof}
 
 \section{Improper Integrals}
 
