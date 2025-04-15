@@ -26,9 +26,57 @@
 \end{proposition}
 
 \begin{example}{Calculation of Line Integrals with Respect to Arc Length}{}
-  
+  Calculate the following line integrals
+  \begin{enumerate}
+  \item $\int_L x^2 + 2y^2 \mathrm{d} s$ where $L$ is $x^2 + y^2 = 1$.
+  \item $\int_L \sqrt{2y^2 + z^2}\mathrm{d}s$ where $L$ is the intersection
+    between $x^2 + y^2 + z^2 = a^2$ and $x = y$.
+  \end{enumerate}
 \end{example}
 
+\begin{solution}
+  (1) Let $x = \cos \theta$ and $y = \sin \theta$, then
+  \begin{equation}
+    \int_L x^2 + 2y^2 \mathrm{d} s = \int_0^{2\pi} 1 + \sin^2 \theta \mathrm{d} \theta
+    = 2\pi + \pi = 3\pi.
+  \end{equation}
+  The integral of the second term is gained by the Wallis formula.
+
+  (2) $L$ satisfies $2y^2 + z^2 = a^2$,
+  then
+  \begin{equation}
+    \int_L \sqrt{2y^2 + z^2}\mathrm{d} s = a \cdot 2a\pi = 2\pi a^2.
+  \end{equation}
+\end{solution}
+
+\begin{example}{Applications of Symmetry}{}
+  Calculate the following line integrals
+  \begin{enumerate}
+  \item $\int_L|y|\mathrm{d} s$ where $L$ is $(x^2 + y^2)^2 = a^2(x^2 - y^2)$;
+  \item $\oint _L|x|^{\frac{1}{3}}\mathrm{d} s$ where
+    $L$ is $x^{\frac{2}{3}} + y^{\frac{2}{3}} = a^{\frac{2}{3}}$.
+  \item $\int_L x\mathrm{d} s$, $\int_L x^2\mathrm{d} s$, and
+    $\int_Lyz\mathrm{d}s$, where $L$ is the intersection of
+    $x+y+z=0$ and $x^2+y^2+z^2 = 1$.
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) $L$ is symmetric about both the $x$-axis and $y$-axis.
+  So divide $L$ into four parts. Let $L_1$ be the part in the first quadrant.
+  Then $\int_L|y|\mathrm{d}s = 4\int_{L_1}y \mathrm{d} s$.
+  Consider $x = r \cos \theta$ and $y = r \sin \theta$, then $L_1$ is $r = a
+  \sqrt{\cos 2\theta}$ with $\theta \in [0, \frac{\pi}{4}]$.
+  Here $x = a \cos \theta \sqrt{\cos 2\theta}$ and $y = a \sin \theta \sqrt{\cos
+  2\theta}$. Then
+  \begin{equation}
+    4\int_{L_1}y\mathrm{d} s
+    = 4 \int_0^{\frac{\pi}{4}} a \sqrt{\cos 2\theta} \sin \theta \sqrt{a^2 \cos 2\theta + a^2 \frac{\sin^2 2\theta}{\cos 2\theta}} \mathrm{d} \theta
+    = 4 a^2 \int_0^{\frac{\pi}{4}} \sin \theta \mathrm{d} \theta = (4 - 2 \sqrt{2})a^2
+  \end{equation}
+
+  (3)
+\end{solution}
 
 \begin{theorem}{Mean-Value Theorem for Line Integrals}{}
   Let $f(x, y)$ be a continuous function on the smooth curve

@@ -530,6 +530,54 @@ The specific operation can be carried out in the following table:
   Therefore the conclusion holds.
 \end{proof}
 
+\subsection{Definite Integrals of Trigonometric Functions}
+
+\begin{theorem}{Wallis Formula}{}
+  Denote $I(m, n) = \int_0^{\frac{\pi}{2}} \cos ^m x \sin^n x\mathrm{d}x$,
+  then if both $m$ and $n$ are even
+  \begin{equation}
+    I(m, n) = \frac{(m-1)!! (n-1)!!}{(m+n)!!} \frac{\pi}{2},
+  \end{equation}
+  otherwise
+  \begin{equation}
+    I(m, n) = \frac{(m-1)!! (n-1)!!}{(m+n)!!}.
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Application of the Wallis Formula}{}
+  Calculate the following integrals
+  \begin{equation}
+    (1) \int_0^{\frac{\pi}{2}} \cos^3 x \sin^2 x \mathrm{d} x, \quad
+    (2) \int_0^{\frac{\pi}{2}} \cos^4 x \sin^3 x \mathrm{d} x, \quad
+    (3) \int_0^{\frac{\pi}{2}} \sin^2 x \cos^4 x \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $I(3, 2) = \frac{2 \cdot 1}{5 \cdot 3 \cdot 1} = \frac{2}{15}$;
+  (2) $I(4, 3) = \frac{2}{35}$;
+  (3) $I(2, 4) = \frac{\pi}{32}$.
+\end{solution}
+
+\begin{corollary}{Wallis Formula on $[0, \pi]$ and $[0, 2\pi]$}{}
+  Let $m, n$ be non-negative integers, then
+  \begin{equation}
+    \int_0^{\pi} \sin^m x \cos^n x \mathrm{d} x =
+    \begin{cases}
+      2I(m, n) & \text{$n$ is even};\\
+      0 & \text{$n$ is odd}.
+    \end{cases}
+  \end{equation}
+  \begin{equation}
+    \int_0^{2\pi} \sin^m x \cos^n x \mathrm{d} x =
+    \begin{cases}
+      4I(m, n) & \text{both $m$ and $n$ are even};\\
+      0 & \text{Otherwise}.
+    \end{cases}
+  \end{equation}
+\end{corollary}
+
+
 \section{Improper Integrals}
 
 \subsection{The Concepts of Improper Integrals}
