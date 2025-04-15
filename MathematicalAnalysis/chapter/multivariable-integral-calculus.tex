@@ -193,8 +193,9 @@
 \begin{proof}
   (1) For any $\epsilon > 0$, there exist a finite number of $(x, y)$
   such that $f(x,y) > \epsilon$.
-  Let $s_1,\cdots,s_m$ be these subregions,
-  and let $T$ be a partition such that $\Delta s_i < \frac{\epsilon}{2m}$.
+  Let these points be $(x_1, y_1),\cdots,(x_m, y_m)$,
+  and $s_1,\cdots,s_m$ be subregions containing these points.
+  There exists a partition $T$ such that $\Delta s_i < \frac{\epsilon}{2m}$.
   The difference between Darboux upper sum and lower sum is
   \begin{equation}
     S(T) - s(T) = \sum\limits_{i = 1}^n \omega_i \Delta s_i
@@ -221,6 +222,28 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{Calculation of Double Integrals}{}
+  Calculate the following double integrals
+  \begin{equation}
+    (1) \iint_{D_1} \frac{\sin x}{x}\mathrm{d} x\mathrm{d}y, \quad
+    (2) \iint_{D_2} \frac{\mathrm{d}x\mathrm{d}y}{\sqrt{2a - x}},
+  \end{equation}
+  where $D_1 = \{(x, y): x \in [0, 1], x^2 \leq y \leq x\}$,
+  $D_2$ is the region bounded by $x=0, y=0$ and $(x-a)^2 + (y-a)^2 = a^2$.
+\end{example}
+
+\begin{solution}
+  (1) Note that we should integrate with respect to $y$ first, that is
+  \begin{align}
+    \iint_{D_1} \frac{\sin x}{x}\mathrm{d} x \mathrm{d} y
+    &= \int_0^1 \mathrm{d} x \int_{x^2}^x \frac{\sin x}{x} \mathrm{d} y
+    = \int_0^1 \sin x - x\sin x\mathrm{d} x\\
+    &= (-\cos 1 + 1) + \cos 1 - \sin 1
+      = 1 - \sin 1
+  \end{align}
+  where the second integral uses the integration-by-part formula.
+\end{solution}
+
 \subsection{Change of Variables in Double Integrals}
 
 \begin{proposition}{Change of Variables in Double Integrals}{}
@@ -242,6 +265,38 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{Applications of Change of Variable}{}
+  Calculate the following double integral, where $D$ is bounded by $x = 0, y =
+  0$ and $x+y = a (a > 0)$.
+  \begin{equation}
+    \iint_D e^{\frac{x-y}{x+y}}\mathrm{d} x \mathrm{d} y.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Substitute $x+y = u$ and $x-y = v$, i.e., $x = \frac{u+v}{2}$ and $y = \frac{u-v}{2}$.
+  The new region $D^{\prime}$ is bounded by $u = -v, u = v$ and $u = a$.
+  The Jacobi matrix is 
+  \begin{equation}
+    J = \left|
+      \begin{array}{cc}
+        \frac{1}{2}&\frac{1}{2}\\
+        \frac{1}{2}&-\frac{1}{2}
+      \end{array}
+    \right| = - \frac{1}{2}.
+  \end{equation}
+  And the absolute value is $\frac{1}{2}$.
+  Then
+  \begin{align}
+    \iint_D e^{\frac{x-y}{x+y}}\mathrm{d} x \mathrm{d} y
+    &= \frac{1}{2}\iint_{D^{\prime}} e^{\frac{v}{u}}\mathrm{d}u\mathrm{d}v
+    = \frac{1}{2} \int_0^a \mathrm{d} u \int_{-u}^u e^{\frac{v}{u}}\mathrm{d} v\\
+    &= \frac{1}{2} \int_0^a ue - ue^{-1}\mathrm{d} u
+    = \frac{a^2}{4}[e - e^{-1}].
+  \end{align}
+  Thus the answer is $\frac{a^2}{4} [e - e^{-1}]$.
+\end{solution}
+
 \begin{proposition}{Polar Coordinate Transformation for Double Integrals}{}
   Making the polar coordinate transformation $x = r\cos\theta, y = r \sin
   \theta$,
@@ -256,13 +311,88 @@
   and then $\mathrm{d} \theta$.
 \end{note}
 
+\begin{example}{Applications of Polar Coordinate Transformation for Double Integrals}{}
+  Let $D$ be the region $x^2 + y^2 \leq 1$, find
+  \begin{equation}
+    \iint_D \frac{\mathrm{d} x\mathrm{d}y}{\sqrt{1 - x^2 - y^2}}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Substituting $x = r \cos \theta$ and $y = r \sin \theta$,
+  then $|J| = r$ and the new region $D^{\prime} = \{0 \leq r \leq 1, 0 \leq
+  \theta \leq 2\pi\}$. Then
+  \begin{align}
+    \iint_D \frac{\mathrm{d} x\mathrm{d} y}{\sqrt{1 - x^2 - y^2}}
+    &= \iint _{D^{\prime}} \frac{r \mathrm{d}r \mathrm{d}\theta}{1 - r^2}
+     = \int_0^{2\pi} \mathrm{d} \theta \int_0^1 \frac{r}{1-r^2}\mathrm{d} r\\
+    &= 2\pi \cdot \frac{1}{2}\int_0^1 \frac{\mathrm{d} r^2}{1 - r^2}
+     = 2\pi.
+  \end{align}
+  Then the answer is $2\pi$.
+\end{solution}
 
 \section{Triple Integrals}
 
+\subsection{Projection Method and Cross-Section Method}
+
+\begin{proposition}{Projection Method}{}
+  For an integration region $V \subset \mathbb{R}^3$,
+  with the projection region $D$ on the $x,y$-coordinate plane, and
+  $V = \{(x,y,z): (x, y) \in D, z_1(x, y) \leq z \leq z_2(x,y)\}$, then
+  \begin{equation}
+    \iiint _V f(x,y,z) \mathrm{d}V = \iint _D \mathrm{d}x \mathrm{d}y \int _{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\mathrm{d}z.
+  \end{equation}
+\end{proposition}
+
+\begin{note}
+  Generally, the projection method is more frequently used than the
+  cross-section method.
+\end{note}
+
+\begin{proposition}{Cross-Section Method}{}
+  For an integration region $V \subset \mathbb{R}^3$,
+  if the cross-section of $V$ cut by a plane perpendicular
+  to the $z$-axis is $D_z$, then
+  \begin{equation}
+    \iiint _Vf(x,y,z) \mathrm{d}V = \int ^b_a \mathrm{d}z \iint _{D_z}f(x,y,z)\mathrm{d}x\mathrm{d}y.
+  \end{equation}
+\end{proposition}
+
+\subsection{Change of Variables in Triple Integrals}
+
+\begin{proposition}{Change of Variables in Triple Integrals}{}
+  If the coordinate transformation is $x = x(u,v,w), y=y(u,v,w), z=z(u,v,w)$,
+  then
+  \begin{equation}
+     \iiint _V f(x,y,z) \mathrm{d}x\mathrm{d}y\mathrm{d}z = \iiint_{V^{\prime}}f(x,y,z)\left|\frac{\partial (x,y,z)}{\partial(u,v,w)}\right|\mathrm{d}u\mathrm{d}v\mathrm{d}w.
+  \end{equation}
+  where
+  \begin{equation}
+    \left|\frac{\partial(x,y,z)}{\partial(u,v,w)}\right| = \left|
+      \begin{array}{ccc}
+        \frac{\partial x}{\partial u}&\frac{\partial x}{\partial v}&\frac{\partial x}{\partial w}\\
+        \frac{\partial y}{\partial u}&\frac{\partial y}{\partial v}&\frac{\partial y}{\partial w} \\
+                                     \frac{\partial z}{\partial u}&\frac{\partial z}{\partial v}&\frac{\partial z}{\partial w}
+      \end{array}
+    \right|
+  \end{equation}
+\end{proposition}
+
+\begin{proposition}{Cylindrical Coordinate Transformation}{}
+  When making the transformation $x = r\cos \theta$, $y = r\sin \theta$,
+  we have $J(u,v,w) = r$, and the region
+  \begin{equation}
+    V^{\prime} = \left\{ a \leq r \leq b, c \leq \theta \leq d, \alpha(r,\theta) \leq z \leq \beta(r,\theta) \right\}.
+  \end{equation}
+  The general order of integration is $\mathrm{d}z, \mathrm{d} r, \mathrm{d} \theta$.
+\end{proposition}
 
 
-
-
-
-
-
+\begin{proposition}{Spherical Coordinate Transformation}{}
+  When making the transformation $x = r\sin \varphi\cos \theta$,
+  $y = r\sin \varphi\sin \theta$,
+  $z = r \cos \varphi$,
+  we have $J(u,v,w) = r^2 \sin \varphi$.
+  The general order of integration is $\mathrm{d}r, \mathrm{d} \varphi, \mathrm{d} \theta$.
+\end{proposition}
