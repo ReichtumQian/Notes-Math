@@ -47,6 +47,28 @@ The specific operation can be carried out in the following table:
   \end{equation}
 \end{solution}
 
+\begin{example}{A Pair of Commonly Used Integrals}{}
+  Find the following indefinite integrals
+  \begin{equation}
+    (1) \int e^{ax} \cos bx \mathrm{d} x, \quad
+    (2) \int e^{ax} \sin bx \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  We only calculate the first one, the second is similar.
+  Use the tabular method, we know
+  \begin{equation}
+    \int e^{ax}\cos bx \mathrm{d} x
+    = \frac{e^{ax}}{b}\sin bx + \frac{ae^{ax}}{b^2}\cos bx
+    - \frac{a^2}{b^2} \int e^{ax} \cos bx \mathrm{d} x.
+  \end{equation}
+  Then $\int e^{ax} \cos bx \mathrm{d} x = \frac{e^{ax}}{a^2 + b^2}(b \sin bx + a \cos
+  bx) + c$.
+  Similarly, $\int e^{ax} \sin bx \mathrm{d} x = \frac{e^{ax}}{a^2 + b^2}(a \sin bx - b \cos
+  bx) + c$.
+\end{solution}
+
 \subsection{Commonly Used Indefinite Integral Formulas}
 
 \begin{proposition}{Commonly Used Indefinite Integral Formulas}{}
@@ -68,6 +90,128 @@ The specific operation can be carried out in the following table:
       && {}
   \end{align}
 \end{proposition}
+
+\begin{example}{Trigonometric Indefinite Integrals}{}
+  Find the following indefinite integrals
+  \begin{equation}
+    (1) \int \tan x\mathrm{d} x, \quad
+    (2) \int \sec x \mathrm{d} x, \quad
+    (3) \int \tan^2 x \mathrm{d}x, \quad
+    (4) \int \sec^3 x \mathrm{d} x, \quad
+    (5) \int \frac{\mathrm{d} x}{1 \pm \cos x}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Write $\tan x = \frac{\sin x}{\cos x}$, then
+  \begin{equation}
+    \int \tan x \mathrm{d} x = - \int \frac{\mathrm{d} \cos x}{\cos x}
+    = - \ln |\cos x| + c.
+  \end{equation}
+
+  (2) This integral is a bit tricky
+  \begin{equation}
+    \int \sec x \mathrm{d} x = \int \frac{\sec x (\sec x + \tan x)}{\sec x + \tan x} \mathrm{d} x
+     = \int \frac{\mathrm{d} (\sec x + \tan x)}{\sec x + \tan x} = \ln |\sec x + \tan x| + c.
+  \end{equation}
+
+  (3) Notice that $\tan ^2 x = \sec^2 x - 1$, then
+  \begin{equation}
+    \int \tan^2 x \mathrm{d} x = \int \sec^2 x - 1\mathrm{d} x
+    = \tan x - x + c.
+  \end{equation}
+
+  (4) This is also a bit tricky, but will be widely used in integrals of square
+  root functions
+  \begin{align}
+    \int \sec^3 x \mathrm{d} x = \int \sec x \mathrm{d} \tan x
+    &= \sec x \tan x - \int \tan^2 x \sec x \mathrm{d} x\\
+    &= \sec x \tan x - \int \sec^3 x\mathrm{d} x + \int \sec x \mathrm{d} x.
+  \end{align}
+  Then the answer is $\frac{1}{2}\sec x \tan x + \ln |\sec x + \tan x| + c$.
+
+  (5) By properties of trigonometric functions, we know
+  $1 + \cos x = 2 \cos^2 \frac{x}{2}$ and $1 - \cos x = 2 \sin^2 \frac{x}{2}$.
+  Then
+  \begin{equation}
+    \int \frac{\mathrm{d} x}{1 + \cos x} = \frac{1}{2} \int \sec^2 \frac{x}{2}\mathrm{d} x
+    = \tan \frac{x}{2} + c;
+  \end{equation}
+  \begin{equation}
+    \int \frac{\mathrm{d} x}{1 - \cos x} = \frac{1}{2} \int \csc^2 \frac{x}{2} \mathrm{d} x
+    = - \operatorname{cot} \frac{x}{2} + c.
+  \end{equation}
+\end{solution}
+
+\begin{example}{Indefinite Integrals of Rational Functions}{}
+  Find the following indefinite integrals: Here we assume $a > 0$, 
+  \begin{equation}
+    (1) \int \frac{\mathrm{d} x}{ax^2 + b}, \quad
+    (2) \int  \frac{\mathrm{d} x}{(ax^2 + b)^2}, \quad
+    (3) \int \frac{\mathrm{d} x}{ax^2 + bx + c}, \quad
+    (4) \int \frac{x}{ax^2 + bx + c}\mathrm{d} x, \quad
+    (5) \int \frac{\mathrm{d} x}{x^4 + 1}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Take out the coefficient $a$, then $\frac{1}{ax^2 + b} = \frac{1}{a} \cdot
+  \frac{1}{x^2 + \frac{b}{a}}$. Then when $b > 0$
+  \begin{equation}
+    \frac{1}{a} \int \frac{\mathrm{d} x}{x^2 + (\sqrt{\frac{b}{a}})^2}
+    = \frac{1}{a}\cdot \sqrt{\frac{a}{b}} \arctan \left( \sqrt{\frac{a}{b}}x \right).
+  \end{equation}
+  When $b < 0$,
+  \begin{equation}
+    \frac{1}{a} \int \frac{\mathrm{d} x}{x^2 + (\sqrt{-\frac{b}{a}})^2}
+    = \frac{1}{a}\cdot \sqrt{-\frac{a}{b}} \arctan \left( \sqrt{-\frac{a}{b}}x \right).
+  \end{equation}
+
+  (2) By integration-by-part formula, we know
+  \begin{align}
+    \int \frac{\mathrm{d} x}{(ax^2 + b)^2}
+    = - \int \frac{1}{2ax} \mathrm{d} \frac{1}{ax^2 + b}
+    &= - \frac{1}{2ax} \cdot \frac{1}{ax^2 + b} + \int \frac{1}{ax^2 + b}\mathrm{d} \frac{1}{2ax}\\
+    &= - \frac{1}{2ax} \cdot \frac{1}{ax^2 + b} - \int \frac{1}{ax^2 + b} \cdot \frac{1}{2ax^2}\mathrm{d} x
+  \end{align}
+  Here we decompose
+  \begin{equation}
+  \frac{1}{2ax^2(ax^2 + b)} = \frac{1}{b} \cdot \frac{1}{2ax^2} - \frac{1}{2b}\cdot \frac{1}{ax^2 + b},
+  \end{equation}
+  and these two integrals are in the form of (1).
+
+  (3) We can complete the square
+  \begin{equation}
+    \int \frac{\mathrm{d} x}{ax^2 + bx + c}
+    = \frac{1}{a} \int \frac{\mathrm{d} x}{(x + \frac{b}{2a})^2 + \frac{c}{a} - \frac{b^2}{4a^2}}.
+  \end{equation}
+  Then it is changed into the form of (1).
+
+  (4) We can decompose the term
+  \begin{equation}
+    \int \frac{x}{ax^2 + bx + c}\mathrm{d} x
+    = \frac{1}{2a} \int \frac{2ax + b}{ax^2 + bx + c}
+      - \frac{b}{ax^2 + bx + c} \mathrm{d} x
+      = \frac{1}{2a} \left[
+        \int \frac{\mathrm{d}(ax^2 + bx + c)}{ax^2 + bx + c}
+        - \int \frac{b}{ax^2 + bx + c}\mathrm{d}x
+      \right].
+  \end{equation}
+  Then it is changed into the form of (3).
+\end{solution}
+
+\begin{example}{Indefinite Integral of Square Root Functions}{}
+  Find the following indefinite integrals:
+  \begin{equation}
+    (1) \int \sqrt{a^2 - x^2} \mathrm{d} x, \quad
+    (2) \int \sqrt{x^2 - a^2} \mathrm{d} x, \quad
+    (3) \int \sqrt{x^2 + a^2} \mathrm{d} x.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  
+\end{solution}
 
 \section{Definite Integrals}
 
