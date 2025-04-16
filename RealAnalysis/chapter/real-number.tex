@@ -1,5 +1,5 @@
 
-\section{Sets and Their Operations}
+\section{Sets and Operations of Sets}
 
 \begin{definition}{Operations of Sets}{}
   Let $A$, $B$ be two sets,
@@ -43,21 +43,75 @@
   If they are equal, then $\{A_n\}$ is said to have a \emph{limit}.
 \end{definition}
 
+\begin{proposition}{Properties of Set Sequence Limits}{}
+  Let $\{A_n\}$ be a sequence of sets, then
+  \begin{enumerate}
+  \item $x \in \limsup \limits_{n \rightarrow \infty} A_n$ if and only if
+    $\forall N > 0$, $\exists n \geq N$, $x \in A_n$.
+  \item $x \in \liminf \limits_{n \rightarrow \infty} A_n$ if and only if
+    $\exists N_x$, $\forall n \geq N_x$, $x \in A_n$.
+  \item $\liminf \limits_{n \rightarrow \infty} A_n \subset \limsup \limits_{n
+      \rightarrow \infty} A_n$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  We only prove the first proposition, the second is similar,
+  while the third is the corollary of the first and second.
+  If $x \in \limsup\limits_{n \rightarrow \infty}A_n$,
+  then for all $N > 0$, $x \in \bigcup \limits_{k = N}^{\infty}A_k$,
+  that is, there exists $n \geq N$ such that $x \in A_n$.
+  The reverse is also similar.
+\end{proof}
+
 \begin{example}{Examples of Set Sequence Limits}{}
-  
+  Let $A_n = \{\frac{m}{n}\}$, where $m$ is an integer. Prove
+  \begin{equation}
+    \limsup \limits_{n \rightarrow \infty} A_n = \mathbb{Q}, \quad
+    \liminf \limits_{n \rightarrow \infty} A_n = \mathbb{Z}.
+  \end{equation}
 \end{example}
 
-\begin{proposition}{Properties of Set Sequence Limits}{}
-  
-\end{proposition}
+\begin{proof}
+  For each $A_n$, it is obvious that $\mathbb{Z} \subset A_n \subset
+  \mathbb{Q}$, then
+  \begin{equation}
+    \mathbb{Z} \subset \liminf \limits_{n \rightarrow \infty} A_n, \quad
+    \limsup \limits_{n \rightarrow \infty} A_n \subset \mathbb{Q}.
+  \end{equation}
+
+  For all $x \in \liminf \limits_{n \rightarrow \infty} A_n$, there exists $n$
+  such that $x \in A_n \cap A_{n+1}$.
+  Then there exist integers $m_n$ and $m_{n+1}$ such that
+  \begin{equation}
+    x = \frac{m_n}{n} = \frac{m_{n+1}}{n+1} \Rightarrow x = m_{n+1} - m_n
+  \end{equation}
+  which is an integer, then $\liminf \limits_{n \rightarrow \infty} A_n \subset \mathbb{Z}$.
+
+  For all $\frac{p}{q} \in \mathbb{Q}$ and $n \geq 1$,
+  \begin{equation}
+    \frac{q}{p} = \frac{nq}{np} \in \cup _{k = n}^{\infty} A_k
+    \Rightarrow
+    \frac{q}{p} \in \cap _{n = 1}^{\infty} \cup _{k = n}^{\infty}A_k,
+  \end{equation}
+  which means $\mathbb{Q} \subset \limsup \limits_{n \rightarrow \infty}A_n$.
+\end{proof}
+
 
 
 \section{Mappings}
 
 
 
+\section{Equivalence and Cardinality of Sets}
 
-
+\begin{definition}{Equivalence}{}
+  If there exists a one-to-one and onto mapping between set $A$ and set $B$,
+  then we say that $A$ and $B$ are \emph{equivalent}, denoted as
+  \begin{equation}
+    A \sim B.
+  \end{equation}
+\end{definition}
 
 
 
