@@ -219,15 +219,142 @@
   \end{equation}
 \end{solution}
 
-
-
-
-
 \section{Surface Integrals}
+
+\subsection{Surface Area}
+
+\begin{proposition}{Surface Area Formula}{}
+  Let $D$ be a bounded region in the plane with a well-defined area.
+  If $z = f(x, y)$ has continuous first-order partial derivatives on $D$, then
+  the surface area is
+  \begin{equation}
+    S = \iint_D \sqrt{1 + f_x^2 + f_y^2}\mathrm{d} x \mathrm{d} y.
+  \end{equation}
+  If the surface is given by $x = x(u, v), y = y(u, v), z = z(u, v)$, then
+  the surface area is
+  \begin{equation}
+    S = \iint_D \sqrt{EG - F^2}\mathrm{d} u\mathrm{d}v.
+  \end{equation}
+  where $E = x_u^2 + y_u^2 + z_u^2$, $F = x_ux_v + y_uy_v + z_uz_v$,
+  and $G = x_v^2 + y_v^2 + z_v^2$.
+\end{proposition}
+
+\begin{example}{Calculation of Surface Area}{}
+  Calculate the surface area of $x^2 + y^2 + z^2 = R^2$.
+\end{example}
+
+\begin{solution}
+  Let $x = R\sin\varphi \cos \theta$, $y = R \sin \varphi \sin \theta$,
+  and $z = R \cos \varphi$.
+  Then
+  \begin{equation}
+    x_{\varphi} = R \cos \varphi \cos \theta, x_{\theta} = -R \sin \varphi \sin \theta; \quad
+    y_{\varphi} = R \cos \varphi \sin \theta, y_{\theta} = R \sin \varphi \cos \theta; \quad
+    z_{\varphi} = -R\sin \varphi, z_{\theta} = 0.
+  \end{equation}
+  We can get $E = R^2$, $F = 0$, and $G = R^2 \sin^2 \varphi$.
+  Then the surface area is
+  \begin{equation}
+    R^2\int_0^{2\pi}\mathrm{d} \theta \int_0^{\pi} \sin \varphi \mathrm{d} \varphi
+    = 4\pi R^2.
+  \end{equation}
+  Then the area of the surface of the ball is $4\pi R^2$.
+\end{solution}
 
 \subsection{Surface Integral with Respect to Area}
 
+\begin{definition}{Surface Integral with Respect to Area}{}
+  Let $S$ be a smooth surface,
+  and let $S = \{\Delta S_1, \cdots, \Delta S_n\}$ be a partition of $S$.
+  Denote $\|\Delta\| = \max \{\text{area}(\Delta S_i)\}$,
+  then \emph{the surface integral with respect to area} of a function $f(x, y, z)$ is
+  \begin{equation}
+    \iint_S f(x,y,z)\mathrm{d}S = \lim \limits _{\|\Delta\| \rightarrow 0}
+    \sum\limits_{i = 1}^n f(x_i, y_i, z_i) \Delta S_i.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Projection Method for Surface Integrals with Respect to Area}{}
+  If the surface $S$ can be represented by $z = z(x, y)$, then
+  \begin{equation}
+    \iint_S f(x,y,z)\mathrm{d}S = \iint_D f(x,y,z(x,y)) \sqrt{1 + z_x^2 + z_y^2}\mathrm{d} x \mathrm{d} y.
+  \end{equation}
+  If it can be represented as $x = x(u, v), y = y(u, v), z = z(u, v)$, then
+  \begin{equation}
+    \iint_S f(x,y,z)\mathrm{d}S = \iint_D f(x(u,v),y(u,v),z(uv)) \sqrt{EG-F^2}\mathrm{d} u \mathrm{d} v,
+  \end{equation}
+  where $E = x_u^2 + y_u^2 + z_u^2$, $F = x_ux_v + y_uy_v + z_uz_v$,
+  and $G = x_v^2 + y_v^2 + z_v^2$.
+\end{proposition}
+
+\begin{example}{Calculation of Surface Integral with Respect to Area}{}
+  Calculate the following integrals:
+  \begin{enumerate}
+  \item $\iint_S x + y + z \mathrm{d} S$, where $S$ is $x^2 + y^2 + z^2 = a^2$,
+    $z \geq 0$.
+  \item $\iint_S \frac{\mathrm{d} S}{\sqrt{x^2 + y^2 + (z+a)^2}}$, where $S$ is
+    $x^2 + y^2 + z^2 = a^2$, $z \geq 0$.
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) Let $z = \sqrt{a^2 - x^2 - y^2}$. Due to symmetry, 
+  \begin{equation}
+    \iint_S x+y+z\mathrm{d}S
+    = \iint_S z \mathrm{d} S
+    = \iint_{x^2 + y^2 \leq a^2} z \cdot \frac{a}{z} \mathrm{d} x \mathrm{d}y
+    = a^3\pi.
+  \end{equation}
+\end{solution}
+
+
+
 \subsection{Surface Integral of a Vector Field}
+
+\begin{definition}{Surface Integral of a Vector Field}{}
+  For a vector field $F(x,y,z) = P(x,y,z)\mathbf{i} + Q(x,y,z)\mathbf{j} + R(x,y,z)\mathbf{k}$,
+  the flux of $F$ through a surface $S$ is defined as the
+  \emph{surface integral of a vector field}:
+  \begin{equation}
+    \iint_S P(x,y,z)\mathrm{d}y\mathrm{d}z + Q(x,y,z)\mathrm{d}z\mathrm{d}x + R(x,y,z)\mathrm{d} x\mathrm{d}y.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Projection Method}{}
+  If the equation of the surface $S$ is $z = z(x,y)$, and its projection region
+  on the $xy$-plane is $D_{xy}$, then
+  \begin{equation}
+    \iint_S R(x,y,z)\mathrm{d}x\mathrm{d}y = \pm \iint_{D_{xy}} R(x,y,z(x,y))\mathrm{d}x\mathrm{d}y.
+  \end{equation}
+  The sign depends on depends on the angle between the normal vector of $S$ and
+  the positive $z$-axis. It takes positive if acute angle,
+  negative if obtuse angle, and $0$ if right angle.
+\end{proposition}
+
+\begin{proposition}{Parametric Equation Method}{}
+  If the surface $S$ can be represented as $x = x(u,v), y = y(u,v), z = z(u,v)$,
+  where $(u,v) \in D$. Then
+  \begin{equation}
+    \iint_S P\mathrm{d}y\mathrm{d}z + Q\mathrm{d}z\mathrm{d}x + R\mathrm{d}x\mathrm{d}y
+    = \pm \iint_D (PA + QB + RC)\mathrm{d}u\mathrm{d}v,
+  \end{equation}
+  where $A = |\frac{\partial(y,z)}{\partial(u,v)}|$, $B =
+  |\frac{\partial(z,x)}{\partial(u,v)}|$, $C = |\frac{\partial(x,y)}{\partial(u,v)}|$,
+  and the sign takes positive if $(A, B, C)$ has the same direction as the
+  normal vector of $S$.
+\end{proposition}
+
+
+\subsection{Gauss's Theorem}
+
+\begin{theorem}{Gauss's Theorem}{}
+  Let $V \subset \mathbb{R}^3$ be a bounded closed region, and the boundary of
+  $V$ be a piece-wise smooth surface $S$. If $P(x,y,z)$, $Q(x,y,z)$, and $R(x,y,z)$ have continuous
+  partial derivatives within $V$, then
+  \begin{equation}
+    \oiint _{S_+}P\mathrm{d}y \mathrm{d}z + Q \mathrm{d}z \mathrm{d}x + R \mathrm{d}x \mathrm{d}y = \iiint_V (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z})\mathrm{d}x \mathrm{d}y \mathrm{d}z
+  \end{equation}
+\end{theorem}
 
 
 
