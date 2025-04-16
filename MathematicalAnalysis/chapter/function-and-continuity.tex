@@ -223,6 +223,9 @@
   \item Let $f(x)$ be a continuous function on $[0, 2a]$,
     and $f(0) = f(2a)$. Prove that there exists $\xi \in [0, a]$ such that
     $f(\xi) = f(\xi + a)$.
+  \item Let $f(x)$ be a continuous function on $[0, 1]$,
+    and $f(0) = f(1) = 0$. Prove that for all $n \in \mathbb{N}^+$,
+    there exists $\xi \in [0, 1]$ such that $f(\xi + \frac{1}{n}) = f(\xi)$.
   \end{enumerate}
 \end{example}
 
@@ -236,6 +239,13 @@
   f(a) - f(2a) = f(a) - f(0)$.
   This indicates that $F(0) = -F(a)$, and the conclusion follows from the
   zero-point existence theorem.
+
+  (3) Take $F(x) = f(x + \frac{1}{n}) - f(x)$, then
+  \begin{equation}
+    F(0) + F(\frac{1}{n}) + \cdots + F(\frac{n-1}{n}) = f(1) - f(0) = 0.
+  \end{equation}
+  Either all the terms are zero, or there are both positive and negative values
+  among them.
 \end{proof}
 
 \begin{theorem}{Intermediate-Value Theorem}{}
