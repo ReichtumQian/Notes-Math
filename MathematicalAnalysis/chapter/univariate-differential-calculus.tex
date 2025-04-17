@@ -407,6 +407,24 @@
   where $\xi \in (a, b)$.
 \end{theorem}
 
+\begin{example}{Applications of Taylor's Expansion}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item If $f(x)$ is twice continuously differentiable on $[a, b]$,
+    prove there exists $\xi \in (a, b)$ such that
+    \begin{equation}
+      f(b) - 2 f(\frac{a+b}{2}) + f(a)
+      = \frac{1}{4}(b-a)^2 f^{\prime\prime}(\xi).
+    \end{equation}
+  \item If $f(x)$ is twice continuously differentiable on $[a, b]$,
+    prove that there exists $\xi \in (a, b)$ such that
+    \begin{equation}
+      \int_a^b f(x)\mathrm{d} x
+      = (b-a) f(\frac{a+b}{2}) + \frac{1}{24} (b-a)^3 f^{\prime\prime\prime}(\xi).
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
 \section{Convex and Concave Functions}
 
 \begin{definition}{Convex Function}{}
@@ -429,10 +447,8 @@
 
 \begin{proposition}{Equivalent Conditions of Convex Functions}{}
   The fact that $f$ is a convex function on $I$ is equivalent to
-  the following conditions:
+  the following conditions
   \begin{itemize}
-  \item Not differentiable: There exists $k \geq 0$ such that $f(x) \geq f(x_0)
-    + k(x - x_0)$ for all $x \geq x_0$;
   \item First-order derivative form: For any $x_0 \in I$,
     there is $f(x) \geq f(x_0) + f^{\prime}(x_0) (x - x_0)$;
   \item Differentiable: $f^{\prime}(x)$ being monotonically increasing;

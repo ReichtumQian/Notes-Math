@@ -210,8 +210,19 @@ The specific operation can be carried out in the following table:
 \end{example}
 
 \begin{solution}
-  
+  (1) Substitute $x$ with $a \sin t$, then
+  \begin{equation}
+    I = \int a^2 \cos^2 t \mathrm{d} t
+    = \frac{a^2}{2} \int(1 + \cos 2t)\mathrm{d} t
+    = \frac{a^2}{2} (t + \sin t \cos t) + C.
+  \end{equation}
+  We can draw a triangle and find $\sin t = \frac{x}{a}, \cos t \frac{\sqrt{a^2
+      - x^2}}{a}$, then
+  \begin{equation}
+    I = \frac{1}{2} (x \sqrt{a^2 - x^2} + a^2 \arcsin \frac{x}{a}) + C.
+  \end{equation}
 \end{solution}
+
 
 \section{Definite Integrals}
 
