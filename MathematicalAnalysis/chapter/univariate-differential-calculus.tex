@@ -255,6 +255,57 @@
   The conclusion follows from the Fermat's theorem.
 \end{proof}
 
+\begin{example}{Applications of Rolle's Mean-Value Theorem}{}
+  Prove the following propositions:
+  \begin{enumerate}
+  \item If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$,
+    $f(a) < 0, f(b) < 0$, and there exists $c \in (a, b)$ such that $f(c) > 0$,
+    prove that there exists $\xi \in (a, b)$ such that
+    \begin{equation}
+      f(\xi) + f^{\prime}(\xi) = 0.
+    \end{equation}
+  \item If $f(x)$ is continuous on $[0, 1]$, differentiable on $(a, b)$,
+    satisfying $f(0) = f(1) = 0$, $f(\frac{1}{2}) = 1$.
+    Prove that for all $\lambda > 0$, there exists $\xi \in (0, 1)$ such that
+    \begin{equation}
+      f^{\prime}(\xi) - \lambda [f(\xi) - \xi] = 1.
+    \end{equation}
+  \item If $f(x)$ is continuous on $(0, 1)$, prove that there exists $c \in (0,
+    1)$, such that
+    \begin{equation}
+      \int_0^cf(x)\mathrm{d}x = (1-c)f(c).
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Let $F(x) = e^xf(x)$, then $F(a) < 0, F(b) < 0, F(c) > 0$,
+  then there exist $\xi \in (a, c), \eta \in (c, b)$ such that
+  $F(\xi) = F(\eta) = 0$.
+  Use the Rolle's mean-value theorem, there exists $\zeta$ such that
+  \begin{equation}
+    F^{\prime}(\zeta) = e^{\zeta}[ f(\zeta) + f^{\prime}(\zeta)] = 0
+    \Rightarrow f(\zeta) + f^{\prime}(\zeta) = 0.
+  \end{equation}
+
+  (2) Let $F(x) = [f(x) - x]e^{-\lambda x}$, then
+  \begin{equation}
+     F(0) = 0, F(\frac{1}{2}) > 0, F(1) < 0,
+  \end{equation}
+  then there exists a zero point in $[\frac{1}{2}, 1]$.
+  The conclusion follows from the Rolle's mean-value theorem.
+
+  (3) It is equivalent to prove that $\int_0^c f(x)\mathrm{d} x - (1-c)f(c) =
+  0$,
+  then define
+  \begin{equation}
+    F(x) = (1-x)\int_0^xf(t)\mathrm{d} t \Rightarrow
+    F(0) = F(1) = 0.
+  \end{equation}
+  The conclusion follows from the Rolle's mean-value theorem.
+
+\end{proof}
+
 \begin{theorem}{Lagrange's Mean-Value Theorem}{}
   If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$,
   then there exists $\xi \in (a, b)$ such that
@@ -295,6 +346,16 @@
 \begin{proof}
   (1) Define $F(x) = xf(x)$, then the conclusion follows from the Lagrange's
   Mean-Value theorem.
+
+  (2) To prove the left-hand inequality, we assume it does not hold,
+  i.e., for all $x \in (a, b)$, $f^{\prime}(x) \geq \frac{f(b) - f(a)}{b - a}$.
+  Then we construct
+  \begin{equation}
+    F(x) = f(x) - \frac{f(b) - f(a)}{b - a} x  \Rightarrow
+    F^{\prime}(x) \geq 0, F(a) = F(b) = 0,
+  \end{equation}
+  which implies $F^{\prime}(x) \equiv 0$,
+  and contradicts the given condition.
 \end{proof}
 
 \begin{theorem}{Cauchy's Mean-Value Theorem}{}
@@ -307,21 +368,6 @@
   \end{equation}
 \end{theorem}
 
-\begin{example}{Mean-Value Problems}{}
-  Prove the following propositions:
-  \begin{enumerate}
-  \item If $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$,
-    $f(a) < 0, f(b) < 0$, and there exists $c \in (a, b)$ such that $f(c) > 0$,
-    prove that there exists $\xi \in (a, b)$ such that
-    \begin{equation}
-      f(\xi) + f^{\prime}(\xi) = 0.
-    \end{equation}
-  \end{enumerate}
-\end{example}
-
-\begin{proof}
-  
-\end{proof}
 
 \section{L'Hopital's Rule and Taylor's Formulas}
 

@@ -386,15 +386,24 @@
   then $f(x)$ is uniformly continuous on $[a, +\infty)$.
 \end{theorem}
 
-% \begin{proof}
-%   Since $\lim \limits _{x \rightarrow \infty} f(x) = A$,
-%   then by Cauchy's criterion for convergence
-%   \begin{equation}
-%     \forall \epsilon > 0, \exists M > 0,
-%     \forall x_1, x_2 > M, |f(x_1) - f(x_2)| < \epsilon.
-%   \end{equation}
-%   Then by Cantor theorem, 
-% \end{proof}
+\begin{proof}
+  Since $\lim \limits _{x \rightarrow \infty} f(x) = A$,
+  then by Cauchy's criterion for convergence
+  \begin{equation}
+    \forall \epsilon > 0, \exists M > 0,
+    \forall x_1, x_2 > M, |f(x_1) - f(x_2)| < \epsilon.
+  \end{equation}
+  On the other hand, the Cantor theorem implies that
+  $f(x)$ is uniformly continuous on $[a, M+1]$.
+  Then for all $x_1, x_2 \in [a, +\infty)$,
+  if $x_1, x_2 \in [a, M+1]$ or $x_1, x_2 \in [M, +\infty)$,
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta < 1,
+    |x_1 - x_2| < \delta,
+    |f(x_1) - f(x_2)| < \epsilon,
+  \end{equation}
+  which deduces the uniform continuity on $[a, +\infty)$.
+\end{proof}
 
 \subsection{Lipschitz Continuity}
 
