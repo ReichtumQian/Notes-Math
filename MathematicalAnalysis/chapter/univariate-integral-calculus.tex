@@ -221,6 +221,12 @@ The specific operation can be carried out in the following table:
   \begin{equation}
     I = \frac{1}{2} (x \sqrt{a^2 - x^2} + a^2 \arcsin \frac{x}{a}) + C.
   \end{equation}
+
+  (2) Substitute $x$ with $a\sec^2 t$, then 
+  \begin{equation}
+    I = a^2 \int \sec t \cdot \tan^2 t \mathrm{d} t
+    = a^2 \int \sec t - \sec^3 t \mathrm{d} t.
+  \end{equation}
 \end{solution}
 
 
@@ -355,11 +361,11 @@ The specific operation can be carried out in the following table:
 
 \begin{proposition}{Integrability of Composition Functions}{}
   If $f(x)$ is continuous on the interval $[a, b]$,
-  and $g(t)$ is integrable on the interval $[\alpha, \beta]$,
-  satisfying $a \leq g(t) \leq b, t \in [\alpha, \beta]$,
+  and $\varphi(t)$ is integrable on the interval $[\alpha, \beta]$,
+  satisfying $a \leq \varphi(t) \leq b, t \in [\alpha, \beta]$,
   then
   \begin{equation}
-    \varphi(t) = f(g(t))
+    g(t) = f(\varphi(t))
   \end{equation}
   is integrable on $[\alpha, \beta]$.
 \end{proposition}
@@ -382,6 +388,37 @@ The specific operation can be carried out in the following table:
   The conclusion follows from the condition for integrability.
 \end{proof}
 
+\begin{proposition}{Sign-preserving Property of Definite Integrals}{}
+  If $f(x)$ is continuous on $[a, b]$ and $f(x) \geq 0$, then
+  \begin{equation}
+    \int_a^b f(x)\mathrm{d} x \geq 0.
+  \end{equation}
+  Additionally, $\int_a^b f(x)\mathrm{d} x = 0$ if and only if $f(x) \equiv 0$.
+\end{proposition}
+
+\begin{example}{Properties of Sign-preserving Property}{}
+  If $f(x)$ is continuous on $[a, b]$, and for any continuous function $g(x)$
+  satisfying $\int_a^b g(x)\mathrm{d} x= 0$, we have $\int_a^bf(x)g(x)\mathrm{d}
+  x= 0$. Prove that $f(x)$ is a constant function.
+\end{example}
+
+\begin{proof}
+  Take $g(x) = f(x) - \frac{1}{b-a}\int_a^b f(t)\mathrm{d} t$,
+  then it is not hard to see that $\int_a^b g(x)\mathrm{d} x = 0$.
+  Furthermore, 
+  \begin{equation}
+    \int_a^b f(x)g(x)\mathrm{d}x
+    = \int_a^b f^2(x)\mathrm{d} x - \frac{1}{b-a} \left( \int_a^b f(x)\mathrm{d} x \right)^2.
+  \end{equation}
+  With the given condition, the above integral is zero.
+  This implies
+  \begin{equation}
+    (b - a)\int_a^b f^2(x)\mathrm{d} x
+    = \left( \int_a^b f(x)\mathrm{d} x \right)^2,
+  \end{equation}
+  By Cauchy inequality, the equility holds if and only if $f(x) = c$.
+\end{proof}
+
 \subsection{Newton-Leibniz Formula}
 
 \begin{theorem}{Newton-Leibniz Formula}{}
@@ -401,10 +438,6 @@ The specific operation can be carried out in the following table:
     |f(x_2)| \leq |f(x_1)| + \int_a^b |f^{\prime}(x)|\mathrm{d} x.
   \end{equation}
 \end{corollary}
-
-\begin{example}{Applications of Newton-Leibniz Inequality}{}
-  
-\end{example}
 
 \begin{theorem}{Fundamental Theorem of Calculus}{}
   Let $f(x)$ be an integrable function on $[a, b]$.
@@ -922,6 +955,38 @@ The specific operation can be carried out in the following table:
   where (1)(2) are the first type of Froullani integral,
   (3) is the second type.
 \end{solution}
+
+\begin{lemma}{Lemma for Dirichlet Integrals}{}
+  Let $p$ be a positive real number, then 
+  \begin{equation}
+    \int_0^{+\infty} e^{-px} \frac{\sin bx - \sin ax}{x}\mathrm{d}x
+    = \arctan \frac{b}{p} - \arctan \frac{a}{p}.
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  Since $\frac{\sin bx - \sin ax}{x} = \int_a^b \cos xy \mathrm{d} y$, then
+  \begin{equation}
+    I = \int_0^{+\infty} \mathrm{d} x \int_a^b e^{-px}\cos xy \mathrm{d} y.
+  \end{equation}
+  Notice that
+  \begin{equation}
+    \int_0^{+\infty} e^{-px} \cos xy\mathrm{d} x
+    \leq \int_0^{+\infty}e^{-px}\mathrm{d} x,
+  \end{equation}
+  which implies that $\int_0^{+\infty}e^{-px}\cos xy \mathrm{d} x$ is uniformly
+  convergent, then we can exchange the integral order.
+  \begin{equation}
+    I = \int_a^b \mathrm{d} y \int_0^{+\infty} e^{-px} \cos xy \mathrm{d} x.
+  \end{equation}
+  Then applying integration-by-part we can calculate the integration with
+  respect to $x$:
+  \begin{equation}
+    \frac{y^2 + p^2}{p^2}\int_0^{+\infty} e^{-px} \cos xy \mathrm{d} y = \frac{1}{p}
+    \Rightarrow I = \int_a^b \frac{p}{p^2 + y^2}\mathrm{d} y
+    = \arctan \frac{b}{p} - \arctan \frac{a}{p}.
+  \end{equation}
+\end{proof}
 
 \begin{theorem}{Dirichlet Integrals}{}
   Given an integer $p$, then
