@@ -421,6 +421,15 @@ The specific operation can be carried out in the following table:
 
 \subsection{Newton-Leibniz Formula}
 
+\begin{definition}{Antiderivative/Primitive Function}{}
+  Let $f(x)$ and $F(x)$ be functions on $I$, if for a given point $x$,
+  \begin{equation}
+    F^{\prime}(x) = f(x),
+  \end{equation}
+  then $F(x)$ is said to be the \emph{antiderivative (or primitive function)
+  of $f(x)$ at $x$}.
+\end{definition}
+
 \begin{theorem}{Newton-Leibniz Formula}{}
   Let $f(x)$ be an integrable function on $[a, b]$,
   and $F(x)$ be a continuous function on $[a, b]$.
@@ -453,6 +462,19 @@ The specific operation can be carried out in the following table:
     and $F^{\prime}(x) = f(x)$.
   \end{itemize}
 \end{theorem}
+
+\begin{example}{Counterexample of Funcamental Theorem of Calculus}{}
+  Determine the validity of the following statement:
+  \begin{enumerate}
+  \item If $f(x)$ is integrable on $[0, 1]$, then it has a primitive
+    function on $[0, 1]$.
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) False. If $f(x)$ is continuous at $x_0$, then it has a primitive function.
+  A counterexample is the Riemann function.
+\end{solution}
 
 \begin{example}{Application of Fundamental Theorem of Calculus}{}
   Suppose a function $f(x)$ is integrable on the interval $[A, B]$,
@@ -660,6 +682,9 @@ The specific operation can be carried out in the following table:
   \item If $\int_a^{\infty}f(x)\mathrm{d} x$ is convergent,
     and $\lim \limits _{x \rightarrow \infty}f(x) = A$ exists,
     then $A = 0$.
+  \item If $f(x)$ is monotonically decreasing on $[0, +\infty)$,
+    and $\int_0^{+\infty}f(x)\mathrm{d} x$ is convergent,
+    then $\lim \limits _{x \rightarrow \infty} xf(x) = 0$.
   \item Find an example satisfies that $f(x)$ is continuous on $[a, +\infty)$,
     $\int_a^{\infty}f(x)\mathrm{d} x$ is convergent,
     but the limit $\lim \limits _{x \rightarrow \infty}f(x)$ does not exist.
@@ -681,12 +706,19 @@ The specific operation can be carried out in the following table:
   and the compare test implies $\int_a^{\infty}f(x)\mathrm{d} x$ also diverges.
   This contradicts the given condition.
 
-  (2) $\int_1^{\infty} \sin x^2\mathrm{d} x$, substitue $x = \sqrt{t}$ and use Dirichlet
+  (2) By Cauchy criterion we know that for all $\epsilon > 0$, there exists $N >
+  0$, when $x, \frac{x}{2} > N$, we have
+  \begin{equation}
+    0 \leq xf(x) = 2 \int_{\frac{x}{2}}^x f(x)\mathbb{d} t \leq 2 \int_{\frac{x}{2}}^xf(t)\mathrm{d} t < \epsilon,
+  \end{equation}
+  which implies that $\lim \limits _{x \rightarrow \infty} xf(x) = 0$.
+
+  (3) $\int_1^{\infty} \sin x^2\mathrm{d} x$, substitue $x = \sqrt{t}$ and use Dirichlet
   test to prove the convergence. But the limit does not exist.
 
-  (3) Construct a function $f(x)$ that takes $x$ when $x$ is an integer, and $0$ otherwise.
+  (4) Construct a function $f(x)$ that takes $x$ when $x$ is an integer, and $0$ otherwise.
 
-  (4) Assume $\lim \limits _{x \rightarrow \infty}f(x) \neq 0$, then there
+  (5) Assume $\lim \limits _{x \rightarrow \infty}f(x) \neq 0$, then there
   exists $\epsilon > 0$, $N > 0$ and a sequence $\{x_n\}$ such that $|f(x_n)| \geq
   \epsilon, n \geq N$.
   By the definition of uniformly continuous, there exists $\delta$ such that
