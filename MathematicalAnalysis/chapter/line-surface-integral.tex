@@ -1,6 +1,34 @@
 
 \section{Line Integrals}
 
+\subsection{Arc Length}
+
+\begin{proposition}{Arc Length}{}
+  Let $\Gamma$ be a smooth curve in $\mathbb{R}^3$,
+  and can be expressed as $\mathbf{r} = x(t)\mathbf{i} + y(t)\mathbf{j} +
+  z(t)\mathbf{k}$, where $t \in [a, b]$.
+  Then the arc length of $\Gamma$ is
+  \begin{equation}
+    \int_a^b \sqrt{x^{\prime 2}(t) + y^{\prime 2}(t) + z^{\prime 2}(t)}\mathrm{d} t.
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Calculation of Arc Length}{}
+  Let $\Gamma$ be a smooth curve with expression $y = \frac{2}{3}
+  x^{\frac{3}{2}}$,
+  where $x \in [0, 1]$. Find the arc length of $\Gamma$.
+\end{example}
+
+\begin{solution}
+  Use the formula of arc length, we get
+  \begin{equation}
+    L = \int_0^1 \sqrt{1 + x} \mathrm{d} x 
+    = \frac{2}{3} (1 + x)^{\frac{3}{2}} \big|^1_0
+    = \frac{4 \sqrt{2} - 2}{3}.
+  \end{equation}
+  Thus the arc length is $\frac{4 \sqrt{2} - 2}{3}$.
+\end{solution}
+
 \subsection{Line Integral with Respect to Arc Length}
 
 \begin{definition}{Line Integrals with Respect to Arc Length}{}
