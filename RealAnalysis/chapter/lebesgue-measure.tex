@@ -1,0 +1,72 @@
+
+\section{Lebesgue Measure and Measurable Sets}
+
+\subsection{Lebesgue Outer Measure}
+
+\begin{definition}{Lebesgue Outer Measure}{}
+  For every subset $E$ of the set of real numbers,
+  let $\{I_n\}$ be any sequence of open intervals satisfying
+  $E \subset \cup _{n = 1}^{\infty} I_n$. Then we say
+  \begin{equation}
+    m^{\ast} (E) = \inf_{\{I_n\}} \left\{\sum_{n = 1}^{\infty} \ell(I_n)\right\}
+  \end{equation}
+  the \emph{lebesgue outer measure of $E$},
+  where $\ell(I_n)$ is the length of the interval $I_n$.
+\end{definition}
+
+\begin{proposition}{Countable Sub-additivity}{}
+  If $\{E_n\}$ is an arbitrary sequence of subsets of real numbers,
+  then
+  \begin{equation}
+    m^{\ast} (\cup _{n = 1}^{\infty} E_n) \leq \sum _{n = 1}^{\infty} m^{\ast}(E_n).
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  If $\sum_n m^{\ast}(E_n) = \infty$, then the conclusion holds naturally.
+  Otherwise, for all $\epsilon > 0$, there exists $\{I_k^{(n)}\}$ such that
+  $E_n \subset \cup_k I_k^{(n)}$ and
+  \begin{equation}
+    \sum \limits _k \ell(I_k^{(n)}) < m^{\ast}(E_n) + \frac{\epsilon}{2^n}.
+  \end{equation}
+  Since $\cup _n E_n \subset \cup _n \cup _k I_k^{(n)}$, then
+  \begin{equation}
+    m^{\ast}(\cup _n E_n)
+    \leq \sum _n \sum _k \ell(I_k^{(n)})
+    < \sum _n \left[ m^{\ast}(E_n) + \frac{\epsilon}{2^n} \right]
+    = \sum _n m^{\ast}(E_n) + \epsilon.
+  \end{equation}
+  By the arbitrariness of $\epsilon$, the conclusion holds.
+\end{proof}
+
+
+\subsection{Lebesgue Measure}
+
+\begin{definition}{Lebesgue Measurable Set}{}
+  Let $E$ be a subset of real numbers.
+  If for any subset $A$ of real numbers,
+  \begin{equation}
+    m^{\ast}(A) = m^{\ast}(A \cap E) + m^{\ast}(A \cap E^c).
+  \end{equation}
+  Then $E$ is said to be a \emph{lebesgue measurable set},
+  and
+  \begin{equation}
+    m(A) := m^{\ast}(A)
+  \end{equation}
+  is said to be the \emph{measure of $A$}.
+\end{definition}
+
+\begin{note}
+  Hereafter, we use the notation $\Omega$ to represent the set of measurable sets.
+\end{note}
+
+\begin{example}{Practice of the Concept of Measure}{}
+  Prove the following statements:
+  \begin{enumerate}
+  \item If $m^{\ast}(A) = 0$, then $A$ is measurable and $m(A) = 0$;
+  \item 
+  \end{enumerate}
+\end{example}
+
+\subsection{Lebesgue Measurable Sets in Set Operations}
+

@@ -1,5 +1,7 @@
 
-\section{Sets and Operations of Sets}
+\section{Sets and Mappings}
+
+\subsection{Sets and Operations of Sets}
 
 \begin{definition}{Operations of Sets}{}
   Let $A$, $B$ be two sets,
@@ -99,11 +101,11 @@
 
 
 
-\section{Mappings}
+\subsection{Mappings}
 
 
 
-\section{Equivalence and Cardinality of Sets}
+\subsection{Cardinality of Sets}
 
 \begin{definition}{Equivalence}{}
   If there exists a one-to-one and onto mapping between set $A$ and set $B$,
@@ -113,8 +115,83 @@
   \end{equation}
 \end{definition}
 
+\begin{definition}{Set with Cardinality of Continuum}{}
+  If a set $A$ is equivalent to $[0, 1]$,
+  then we say it is a \emph{set with cardinality of continuum}.
+\end{definition}
+
+\section{The Sets of Real Numbers}
+
+\subsection{Open Sets and Closed Sets}
+
+\begin{definition}{Open Set}{}
+  Let $E \subset \mathbb{R}^n$, if $E$ is the neighborhood of every point in
+  $E$,
+  then it is said to be an \emph{open set}.
+\end{definition}
+
+\begin{definition}{Closed Set}{}
+  Let $E \subset \mathbb{R}^n$, if $E^c$ is an open set,
+  then $E$ is said to be a \emph{closed set}.
+\end{definition}
+
+\subsection{Interior and Closure}
 
 
 
+
+
+\subsection{Accumulation Points, Isolated Points and Perfect Sets}
+
+\begin{definition}{Accumulation Point}{}
+  Let $E \subset \mathbb{R}^n$ and $x \in \mathbb{R}^n$.
+  If any neighborhood $V$ of $x$ satisfies
+  \begin{equation}
+    (V - \{x\}) \cap E \neq \emptyset,
+  \end{equation}
+  then $x$ is called an \emph{accumulation point of $E$},
+  and the set of all accumulation points of $E$ is called the \emph{derived set
+    of $E$}, denoted as $E^{\prime}$.
+\end{definition}
+
+\begin{example}{Practice for Derived Set}{}
+  Let $A$ be a closed set in $\mathbb{R}^n$,
+  determine the validity of the following statements:
+  \begin{equation}
+    (1) A = A^{\prime}, \quad
+    (2) A^{\prime} \subset A.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Suppose $A$ consists of a single point,
+  then $A^{\prime} = \emptyset$, thus the conclusion does not hold.
+
+  (2) Correct. Since a closed set must contain all its accumulation points.
+\end{solution}
+
+\begin{definition}{Isolated Point}{}
+  Let $E \subset \mathbb{R}^n$ and $x \in \mathbb{R}^n$.
+  If $x \in E$ but $x$ is not an accumulation point of $E$,
+  then it is called an \emph{isolated point of $E$}.
+\end{definition}
+
+\begin{definition}{Perfect Set}{}
+  If a set $E \subset \mathbb{R}^n$ is closed and does have any isolated point,
+  then it is called a \emph{perfect set}.
+\end{definition}
+
+
+
+\subsection{Cantor Set}
+
+\begin{definition}{Cantor Set}{}
+  Let $C_0 = [0, 1]$, and for each $n \geq 1$, define $C_n$ by removing the open
+  middle third from each closed interval in $C_{n-1}$.
+  Then the \emph{cantor set} is
+  \begin{equation}
+    \mathcal{C} = \cap _{n = 0}^{\infty}C_n.
+  \end{equation}
+\end{definition}
 
 
