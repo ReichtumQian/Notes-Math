@@ -101,6 +101,20 @@
   then $\sum\limits_{n = 1}^{\infty}v_n$ also diverges.
 \end{theorem}
 
+\begin{example}{Generalization of the Comparison Test}{}
+  Let $a_n, b_n, c_n$ be arbitrary-term sequences,
+  satisfying $a_n \leq b_n \leq c_n$.
+  Suppose that $\sum a_n$ and $\sum c_n$ are convergent,
+  prove that $\sum b_n$ is convergent.
+\end{example}
+
+\begin{proof}
+  It is not hard to know that $0 \leq b_n - a_n \leq c_n - a_n$,
+  where $b_n - a_n$ and $c_n - a_n$ are non-zero.
+  Then by comparison test, we know $\sum b_n - a_n$ is convergent,
+  so is $\sum b_n$.
+\end{proof}
+
 \begin{theorem}{limit form of Comparison Test}{}
   Let $\sum\limits_{n = 1}^{\infty} u_n$ and $\sum\limits_{n = 1}^{\infty}v_n$
   be two positive-term series.

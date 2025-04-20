@@ -5,7 +5,7 @@
 
 \begin{definition}{Uniform Convergence}{}
   Let $\{f_n\}$ be a sequence of functions on the interval $I$.
-  If for any $\epsilon > 0$, there exists a positive-integer $N$
+  If for any $\epsilon > 0$, there exists a positive integer $N$
   such that for all $x \in I, n > N$,
   \begin{equation}
     |f_n(x) - f(x)| < \epsilon,
@@ -29,6 +29,13 @@
     for all $a \in \mathbb{R}^+$, but it is not uniformly convergent on $(0, +\infty)$.
   \item The function sequence $x^n$ is pointwise convergent in $(0, 1)$,
     but it is not uniformly convergent.
+  \item If $f(x)$ has continuous derivative on $\mathbb{R}$, $a_n$ is a
+    positive-term sequence that monotonically increases to $+\infty$.
+    Then
+    \begin{equation}
+      f_n(x) = a_n \left[ f(x + \frac{1}{a_n}) - f(x) \right]
+    \end{equation}
+    converge uniformly to $f^{\prime}(x)$ on any closed interval $[a, b]$.
   \end{enumerate}
 \end{example}
 
@@ -68,18 +75,27 @@
 \end{theorem}
 
 \begin{example}{Application of M-test}{}
-  Prove that
-  (1) $f_n(x) = \sqrt{x^2 + \frac{1}{n^2}}$ converges uniformly on any interval $I$;
+  Determine if the following series are uniformly convergent on $(0, +\infty)$:
+  \begin{equation}
+    (1) f_n(x) = \sqrt{x^2 + \frac{1}{n^2}}, \quad
+    (2) f_n(x) = \frac{x}{1 + n^2x^2}, \quad
+  \end{equation}
 \end{example}
 
-\begin{proof}
-  Let $n$ go up to $\infty$ we get $f(x) = x$.
+\begin{solution}
+  (1) The limit function is $f(x) = x$.
   And
   \begin{equation}
     |f_n(x) - f(x)| = \frac{\frac{1}{n^2}}{\sqrt{x^2 + \frac{1}{n^2}} + |x|} \leq \frac{1}{n} \rightarrow 0,
   \end{equation}
   and the conclusion follows from the M-test.
-\end{proof}
+
+  (2) The limit function $f(x) = 0$, and
+  \begin{equation}
+    |f_n(x) - f(x)| = \frac{x}{1 + n^2 x^2} \leq \frac{x}{2nx} = \frac{1}{2n} \rightarrow 0,
+  \end{equation}
+  then it is uniformly convergent.
+\end{solution}
 
 \begin{theorem}{Supremum Criterion}{}
   Let $\{f_n\}$ be a sequence of functions on the interval $I$, then
@@ -99,33 +115,37 @@
   does not converge to $0$.
 \end{corollary}
 
-\begin{example}{}{}
+\begin{example}{Determine Non-uniformly Convergent Sequences}{}
   Determine the uniform convergence of following functions on $(0, +\infty)$:
   \begin{equation}
-    f_n(x) = \frac{x}{1 + n^2x^2}, \quad
-    f_n(x) = \frac{1}{1+nx}, \quad
-    f_n(x) = \frac{nx}{1+n^2x^2}.
+    (1) f_n(x) = \frac{1}{1+nx}, \quad
+    (2) f_n(x) = \frac{nx}{1+n^2x^2}, \quad
+    (3) f_n(x) = \sin \frac{x}{n}.
   \end{equation}
 \end{example}
 
 \begin{solution}
-  (1)
-
-  (2) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, and
+  (1) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, and
   \begin{equation}
     f_n(x_n) - f(x_n) = \frac{1}{2} \neq 0,
   \end{equation}
   so it is not uniformly convergent.
 
-  (3) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, then
+  (2) The limit function $f(x) = 0$, choose $x_n = \frac{1}{n}$, then
   \begin{equation}
     f_n(x_n) - f(x_n) = \frac{1}{2} \neq 0,
   \end{equation}
   so it is not uniformly convergent.
+
+  (3) The limit function is $f(x) = 0$, let $x_n = n$ then
+  \begin{equation}
+    |f_n(x) - f(x)| = \sin 1 \neq 0,
+  \end{equation}
+  thus the function sequence is not uniformly convergent.
 \end{solution}
 
 
-\subsection{Uniform Convergence in Arithmetic Operations and Composite Limits}
+\subsection{Uniform Convergence in Arithmetic Operations and Composite}
 
 \begin{definition}{Uniform Boundedness}{}
   Let $\{f_n\}$ be a sequence of functions on $I$.
@@ -135,6 +155,26 @@
   \end{equation}
   then it is said to be \emph{uniformly bounded on $I$}.
 \end{definition}
+
+\begin{proposition}{Uniform Convergence in Arithmetic Operations}{}
+  Let $f_n(x)$ and $g_n(x)$ be functions that uniformly converge
+  to $f(x)$ and $g(x)$ on an interval $I$ respectively. Then
+  \begin{enumerate}
+  \item $kf_n(x), f_n(x) + g_n(x)$ uniformly converge to $kf(x)$ and $f(x) + g(x)$;
+  \item If $f_n(x),g_n(x)$ are bounded, then $f_n(x)g_n(x)$ converges uniformly
+    to $f(x)g(x)$.
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}{Uniform Convergence in Composite}{}
+  If $f_n(x)$ converges uniformly to $f(x)$ on an interval $I$,
+  and each $f_n(x)$ is bounded, $g(x)$ is continuous on $\mathbb{R}$.
+  Then $g(f_n(x))$ converges uniformly to $g(f(x))$.
+\end{proposition}
+
+\begin{proof}
+  
+\end{proof}
 
 \section{Properties of Uniformly Convergent Function Sequences}
 
