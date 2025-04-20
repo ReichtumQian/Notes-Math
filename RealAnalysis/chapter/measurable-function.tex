@@ -1,0 +1,53 @@
+
+
+\section{Measurable Functions}
+
+\subsection{Concept of Measurable Functions}
+
+\begin{definition}{Measurable Function}{}
+  Let $f$ be a function defined on a measurable set $D$.
+  If for any real number $\alpha$, the set
+  \begin{equation}
+    \{x \in D: f(x) > \alpha\}
+  \end{equation}
+  is measurable, then $f$ is said to be a \emph{measurable function on $D$}.
+\end{definition}
+
+\subsection{Approximation by Simple Functions}
+
+\subsection{Approximation by Continuous Functions}
+
+\begin{theorem}{Egoroff Theorem}{}
+  Let $f$ and $f_n$ be measurable functions that are almost-everywhere finite
+  on a set $D$ of finite measure.
+  If $f_n$ converges almost-everywhere to $f$ on $D$,
+  then for any $\epsilon > 0$, there exists a closed subset $F$ of $D$,
+  such that $m(D - F) < \epsilon$
+  and $f_n$ converges uniformly to $f$ on $F$.
+\end{theorem}
+
+\begin{theorem}{Lusin Theorem}{}
+  Let $f$ be a almost-everywhere finite measurable function on a measurable set
+  $D$.
+  Then for any $\epsilon > 0$, there exists a continuous function $f^{\ast}$ on
+  $D$ such that
+  \begin{equation}
+    m(\{f \neq f^{\ast}\}) < \epsilon, \quad
+    \sup \limits_{x \in D} |f^{\ast}(x)| \leq \sup \limits_{x \in D} |f(x)|.
+  \end{equation}
+\end{theorem}
+
+
+\section{Convergence in Measure}
+
+
+
+
+
+
+
+
+
+
+
+

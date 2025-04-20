@@ -60,13 +60,34 @@
   Hereafter, we use the notation $\Omega$ to represent the set of measurable sets.
 \end{note}
 
-\begin{example}{Practice of the Concept of Measure}{}
+\begin{example}{Practice for Lebesgue Measure}{}
   Prove the following statements:
   \begin{enumerate}
   \item If $m^{\ast}(A) = 0$, then $A$ is measurable and $m(A) = 0$;
-  \item 
+  \item If $m(A) = 0$ and $A$ is an open set, then $A = \emptyset$.
   \end{enumerate}
 \end{example}
+
+\begin{proof}
+  (1) For any set of real numbers $A$,
+  \begin{equation}
+    0 \leq m^{\ast}(A \cap E) \leq m^{\ast}(E) = 0,
+  \end{equation}
+  thus $m^{\ast}(A \cap E) = 0$. On the other hand, $A \supset A \cap E^c$,
+  then
+  \begin{equation}
+    m^{\ast}(A) \geq m^{\ast}(A \cap E^c) = m^{\ast}(A \cap E^c) + m^{\ast}(A \cap E),
+  \end{equation}
+  which implies that $A$ is measurable and its measure is zero.
+\end{proof}
+
+\begin{example}{Example of Non-measurable Set}{}
+  Prove that for any $x \in [0, 1]$, the following set is non-measurable
+\end{example}
+
+\begin{proof}
+  
+\end{proof}
 
 \subsection{Lebesgue Measurable Sets in Set Operations}
 

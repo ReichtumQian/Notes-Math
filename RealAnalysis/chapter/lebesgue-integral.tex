@@ -1,0 +1,52 @@
+
+
+\section{Lebesgue Integral}
+
+\subsection{Integral of Simple Functions}
+
+\subsection{Integral of Non-negative Measurable Functions}
+
+\begin{theorem}{Levi's Monotone Convergence Theorem}{}
+  Let $f$ and $f_n$ be non-negative measurable functions on a measurable set
+  $D$,
+  and for almost every $x \in D$, the sequence $\{f_n(x)\}$ is non-decreasing
+  and converges to $f(x)$, then
+  \begin{equation}
+    \int_D f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}{Fatou Theorem}{}
+  Let $f_n$ be non-negative measurable functions on a measurable set $D$,
+  then
+  \begin{equation}
+    \int_D \liminf \limits_{n \rightarrow \infty} f_n\mathrm{d} x
+    \leq \liminf \limits_{n \rightarrow \infty} \int_D f_n\mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+\subsection{Integral of Normal Measurable Functions}
+
+\begin{theorem}{Lebesgue's Dominated Convergence Theorem (LDCT)}{}
+  Let $f$ and $f_n$ be measurable functions on a measurable set $D$.
+  If $f_n(x)$ converges to $f(x)$ almost everywhere on $D$ and
+  there exists $g \in L(D)$ such that for each $n \geq 1$,
+  $|f_n(x)| \leq g(x)$ almost everywhere on $D$.
+  Then both $f$ and $f_n$ are integrable on $D$, and
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x
+    = \int_D f\mathrm{d}x.
+  \end{equation}
+\end{theorem}
+
+\subsection{Riemann Integral}
+
+
+\section{Multiple Integral and Iterated Integral}
+
+
+
+
+
+
+
