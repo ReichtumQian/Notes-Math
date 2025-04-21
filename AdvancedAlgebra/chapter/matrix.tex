@@ -287,6 +287,33 @@
   \rightarrow (I, A^{-1}B)$.
 \end{proposition}
 
+\subsection{Diagonal Dominant Matrix}
+
+\begin{proposition}{Invertibility of Dominant Matrices}{}
+  Let $A$ be a $n$-order real matrix, if $|a_{ii}| > \sum_{j \neq i} |a_{ij}|$,
+  then $|A| \neq 0$.
+\end{proposition}
+
+\begin{proof}
+  Assume $|A| = 0$, then $Ax = 0$ has a non-trivial solution.
+  Let $x = (x_1,\cdots,x_n)^T$ be a non-zero solution of $Ax = 0$,
+  and $|x_k|$ be the largest among all the elements.
+  Since $-a_{kk}x_k = \sum _{j \neq k}a_{kj}x_j$, then
+  \begin{equation}
+    |a_{kk}| \cdot |x_k| \leq \sum_{j \neq k} |a_{kj}| \cdot |x_j|
+    \leq \sum _{j \neq k} |a_{kj}| \cdot |x_k|,
+  \end{equation}
+  which contradicts the condition.
+\end{proof}
+
+\begin{corollary}{Enlarge Diagonal Elements to Make a Matrix Invertible}{}
+  For any non-invertible matrix $A$, there exists a real number $M$ such that
+  \begin{equation}
+    B = tI + A, \quad t > M,
+  \end{equation}
+  are invertible.
+\end{corollary}
+
 \subsection{Adjugate Matrix}
 
 
@@ -327,7 +354,8 @@
   Find
   (1) the determinant of $A^{\ast}$;
   (2) the rank of $A^{\ast}$;
-  (3) the eigenvalue of $A^{\ast}$.
+  (3) the eigenvalue of $A^{\ast}$;
+  (4) $(AB)^{\ast} = B^{\ast}A^{\ast}$.
 \end{example}
 
 \begin{solution}
@@ -349,6 +377,20 @@
     \lambda_j^{\ast} = \prod \limits_{i \neq j} \lambda_i,
   \end{equation}
   where $\lambda_1,\cdots,\lambda_n$ are the eigenvalues of $A$.
+
+  (4) If both $A$ and $B$ are invertible, then
+  \begin{equation}
+    (AB)^{\ast} = |AB|(AB)^{-1} = |B|B^{-1}\cdot |A|A^{-1} = B^{\ast}A^{\ast}.
+  \end{equation}
+  Otherwise, there exists a real number $M$, and for all $t > M$ such that
+  $tI + A$ and $t I + B$ are invertible. Then
+  \begin{equation}
+    [(tI + A)(tI + B)]^{\ast} = (tI + B)^{\ast}(tI + A)^{\ast},
+  \end{equation}
+  each entry of the above two matrices are polynomials with respect to $t$.
+  Since the equation holds for all $t > M$, then the left-hand-side and
+  right-hand-side matrices are identical.
+  So the equation also holds when $t = 0$, which deduces the conclusion.
 \end{solution}
 
 \section{Several Special Matrices}
