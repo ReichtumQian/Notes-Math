@@ -101,19 +101,6 @@
   then $\sum\limits_{n = 1}^{\infty}v_n$ also diverges.
 \end{theorem}
 
-\begin{example}{Generalization of the Comparison Test}{}
-  Let $a_n, b_n, c_n$ be arbitrary-term sequences,
-  satisfying $a_n \leq b_n \leq c_n$.
-  Suppose that $\sum a_n$ and $\sum c_n$ are convergent,
-  prove that $\sum b_n$ is convergent.
-\end{example}
-
-\begin{proof}
-  It is not hard to know that $0 \leq b_n - a_n \leq c_n - a_n$,
-  where $b_n - a_n$ and $c_n - a_n$ are non-zero.
-  Then by comparison test, we know $\sum b_n - a_n$ is convergent,
-  so is $\sum b_n$.
-\end{proof}
 
 \begin{theorem}{limit form of Comparison Test}{}
   Let $\sum\limits_{n = 1}^{\infty} u_n$ and $\sum\limits_{n = 1}^{\infty}v_n$
@@ -346,5 +333,46 @@
   \end{equation}
   is convergent.
 \end{theorem}
+
+\section{Theory for Numerical Series}
+
+\subsection{Mutual Control of Series}
+
+\begin{proposition}{Mutual Control of Series}{}
+  Let $a_n, b_n, c_n$ be arbitrary-term sequences,
+  satisfying $a_n \leq b_n \leq c_n$.
+  Suppose that $\sum a_n$ and $\sum c_n$ are convergent,
+  prove that $\sum b_n$ is convergent.
+\end{proposition}
+
+\begin{proof}
+  It is not hard to know that $0 \leq b_n - a_n \leq c_n - a_n$,
+  where $b_n - a_n$ and $c_n - a_n$ are non-zero.
+  Then by comparison test, we know $\sum b_n - a_n$ is convergent,
+  so is $\sum b_n$.
+\end{proof}
+
+\begin{example}{Applications of Mutual Control}{}
+  Suppose $a_n$ is a monotonically decreasing sequence.
+  Prove that $\sum\limits_{n = 1}^{\infty} a_n$ and $\sum\limits_{m =
+    1}^{\infty} 2^m a_{2^m}$ have the same convergence behavior.
+\end{example}
+
+\begin{proof}
+  Since $a_n$ is monotonically decreasing, we have
+  \begin{equation}
+    2^{k-1}a_{2^k} \leq a_{2^{k-1} + 1} + a_{2^{k-1} + 2} + \cdots + a_{2^k}
+    \leq 2^{k-1}a_{2^{k-1}}.
+  \end{equation}
+  Summing over $k$, we get
+  \begin{equation}
+    \frac{1}{2} \sum\limits_{k = 1}^n 2^ka_{2^k}
+    \leq a_1 + a_2 + \cdots + a_{2^n}
+    \leq \sum\limits_{k = 0}^{n-1}2^ka_{2^k}.
+  \end{equation}
+  This shows that the two partial-sums are equivalent,
+  so they have the same convergence behavior.
+\end{proof}
+
 
 
