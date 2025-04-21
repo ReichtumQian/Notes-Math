@@ -26,6 +26,16 @@
 
 \subsection{Integral of Non-negative Measurable Functions}
 
+\begin{definition}{Lebesgue Integral of Non-negative Measurable Function}{}
+  Let $f$ be a non-negative measurable function on a measurable set $D$,
+  $f_n$ be a sequence of non-negative simple functions that increasingly
+  converges to $f$ for each $x \in D$.
+  Then the \emph{Lebesgue integral of $f$ on $D$} is
+  \begin{equation}
+    \int_D f \mathrm{d} x= \lim \limits _{n \rightarrow \infty} \int_D f_n \mathrm{d} x.
+  \end{equation}
+\end{definition}
+
 \begin{theorem}{Levi's Monotone Convergence Theorem}{}
   Let $f$ and $f_n$ be non-negative measurable functions on a measurable set
   $D$,
@@ -47,6 +57,16 @@
 
 \subsection{Integral of Normal Measurable Functions}
 
+\begin{definition}{Lebesgue Integral}{}
+  Let $f$ be a measurable function on a measurable set $D$,
+  and $f_+(x) := \max\{0, f(x)\}$, $f_-(x) := \max\{0, -f(x)\}$.
+  Then the \emph{lebesgue integral of $f$ over $D$} is
+  \begin{equation}
+    \int_D f \mathrm{d} x 
+    = \int_D f_+ \mathrm{d} x - \int_D f_-\mathrm{d} x.
+  \end{equation}
+\end{definition}
+
 \begin{theorem}{Lebesgue's Dominated Convergence Theorem (LDCT)}{}
   Let $f$ and $f_n$ be measurable functions on a measurable set $D$.
   If $f_n(x)$ converges to $f(x)$ almost everywhere on $D$ and
@@ -56,6 +76,23 @@
   \begin{equation}
     \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x
     = \int_D f\mathrm{d}x.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}{Countable Additivity of the Lebesgue Integral}{}
+  Let $f$ be Lebesgue integrable over $D$,
+  and $\{E_k\}$ be a partition of $D$. Then
+  \begin{equation}
+    \int_D f \mathrm{d} x = \sum\limits_{k = 1}^{\infty} \int_{E_k} f \mathrm{d} x.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}{Absolute Continuity of the Lebesgue Integral}{}
+  Let $f$ be Lebesgue integrable over $D$,
+  then
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta > 0, \forall A \subset D,
+    m(A) < \delta, \left| \int_A f \mathrm{d} x \right| < \epsilon.
   \end{equation}
 \end{theorem}
 
