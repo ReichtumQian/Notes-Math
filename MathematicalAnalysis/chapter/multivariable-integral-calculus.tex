@@ -359,6 +359,37 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{Exercise on Cross-Section Method}{}
+  Calculate the triple integral
+  \begin{equation}
+    \iiint_{\Omega} |x^2 + y^2 - 1|\mathrm{d} x \mathrm{d} y \mathrm{d} z
+  \end{equation}
+  where $\Omega$ is the region bounded by $x^2 + y^2 = 2z$ and $z = 2$.
+\end{example}
+
+\begin{solution}
+  Use the cross-section method, we know
+  \begin{equation}
+    \iiint_{\Omega} |x^2 + y^2 - 1| \mathrm{d} x \mathrm{d} y \mathrm{d} z
+    = \int_0^2 \mathrm{d} z \iint_{D_z} |x^2 + y^2 - 1|\mathrm{d} x \mathrm{d} y,
+  \end{equation}
+  where $D_z = \{(x, y): x^2 + y^2 \leq 2z\}$.
+  For $z \in (0, 0.5)$, the part is
+  \begin{equation}
+    \int_0^{0.5} \mathrm{d} z \iint_{D_z} 1 - x^2 - y^2 \mathrm{d} x \mathrm{d} y
+    = 2\pi \int_0^{0.5} z - z^2 \mathrm{d} z = \frac{\pi}{6}.
+  \end{equation}
+  For $z \in (0.5, 2)$, the part is
+  \begin{equation}
+    \int_{0.5}^2 \mathrm{d} z
+    \left[
+      \int_0^{2\pi} \mathrm{d} \theta \int_0^{0.5} r - r^3\mathrm{d} r
+      + \int_0^{2\pi} \mathrm{d} \theta \int_{0.5}^{\sqrt{2z}} r - r^3\mathrm{d} r
+    \right]= \frac{3\pi}{4} + \frac{9\pi}{4}.
+  \end{equation}
+  Then the final answer is $\frac{19\pi}{6}$.
+\end{solution}
+
 \subsection{Change of Variables in Triple Integrals}
 
 \begin{proposition}{Change of Variables in Triple Integrals}{}
