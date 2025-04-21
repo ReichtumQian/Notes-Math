@@ -561,6 +561,7 @@
   then $\mathcal{A}$ is called a \emph{linear transformation on $V$}.
 \end{definition}
 
+
 \subsection{The Matrices of Linear Transformations}
 
 \begin{definition}{The Matrix of a Linear Transformation}{}
@@ -774,13 +775,27 @@ thus we need to investigate these two special sets.
   thus $k_{r+1} = \cdots = k_n = 0$.
 \end{proof}
 
-\begin{theorem}{Decomposition of the Kernel and Image Spaces of General Linear Transformations}{}
-  Suppose $\mathcal{A}$ is linear transformation on $V$,
-  and $\dim V = n$. Then we have
+\begin{proposition}{Linear Injective and Surjective Transformations}{}
+  Suppose $\sigma$ is a linear transformation on a finite-dimensional linear space.
+  Then $\sigma$ is injective if and only if $\sigma$ is surjective.
+\end{proposition}
+
+\begin{proof}
+  Left-to-right: If $\sigma$ is injective, then $\operatorname{Ker}(\sigma) = \{0\}$.
+  Because if $\sigma(u) = \sigma(v)$, then
   \begin{equation}
-    V = \operatorname{Ker} \mathcal{A}^n \oplus \operatorname{Im} \mathcal{A}^n.
+  \sigma(u - v) = 0 \Rightarrow u - v \in \operatorname{Ker} \sigma,
   \end{equation}
-\end{theorem}
+  and the definition of injective mapping implies that $u = v$, i.e.,
+  $\operatorname{Ker}(\sigma) = \{0\}$. Then the dimension theorem deduces that
+  $\operatorname{Im}(\sigma) = \operatorname{dim}(V)$,
+  so $\sigma$ is surjective.
+
+  Right-to-left: Since $\sigma$ is surjective, then $\operatorname{Im}\sigma =
+  V$, $\operatorname{dim}(\operatorname{Im} \sigma) = n$,
+  then $\operatorname{dim}(\operatorname{Ker} \sigma) = 0$,
+  which is equivalent to $\sigma$ is injective.
+\end{proof}
 
 \subsection{Kernel and Image of Idempotent Linear Transformations}
 
