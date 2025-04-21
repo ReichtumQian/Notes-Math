@@ -4,6 +4,26 @@
 
 \subsection{Integral of Simple Functions}
 
+\begin{definition}{Characteristic Function}{}
+  Let $X$ be a set, and let $E \subset X$.
+  The \emph{characteristic function of $E$} is
+  \begin{equation}
+    \chi_E(x) :=
+    \begin{cases}
+      1 & \text{if } x \in E;\\
+      0 & \text{if } x \not \in E.
+    \end{cases}
+  \end{equation}
+\end{definition}
+
+\begin{definition}{Lebesgue Integral of Simple Functions}{}
+  Let $f = \sum _{i = 1}^s a_i \chi_{E_i}(x)$ be a simple function,
+  then \emph{Lebesgue integral of $f$} over $D = \cup _{i = 1}^s E_i$ is
+  \begin{equation}
+    \int_D f(x)\mathrm{d} x = \sum\limits_{i = 1}^s a_i m(E_i).
+  \end{equation}
+\end{definition}
+
 \subsection{Integral of Non-negative Measurable Functions}
 
 \begin{theorem}{Levi's Monotone Convergence Theorem}{}

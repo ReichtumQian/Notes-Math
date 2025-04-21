@@ -91,3 +91,25 @@
 
 \subsection{Lebesgue Measurable Sets in Set Operations}
 
+\section{$\sigma$-Algebra and Borel Set}
+
+\begin{definition}{$\sigma$-Algebra}{}
+  Let $X$ be a set. A collection $\mathcal{F}$ of subsets of $X$ is called a
+  \emph{$\sigma$-algebra} if
+  (1) $X \in \mathcal{F}$;
+  (2) $\forall A \in \mathcal{F}$, $A^c \in \mathcal{F}$;
+  (3) If $\{A_n\}_{n=1}^{\infty} \subset \mathcal{F}$, then $\cup _{n = 1}^{\infty} A_n \in \mathcal{F}$.
+\end{definition}
+
+\begin{definition}{Borel $\sigma$-Algebra and Borel Set}{}
+  Let $X$ be a set,
+  and let $\mathcal{T}$ denote the collection of open sets in $X$.
+  The \emph{Borel $\sigma$-algebra $\mathcal{B}(X)$} is the smallest $\sigma$-algebra
+  on $X$ that contains all open sets in $\mathcal{T}$.
+  For any $B \in \sigma(\mathcal{T})$,
+  we call $B$ a \emph{Borel set}.
+\end{definition}
+
+
+
+

@@ -15,6 +15,15 @@
 
 \subsection{Approximation by Simple Functions}
 
+\begin{definition}{Simple Function}{}
+  Let $f$ be a function defined on a measurable set $D$, satisfying
+  \begin{equation}
+    f(x) = a_k, \quad x \in E_k,
+  \end{equation}
+  where $a_k$ is a constant and $D = \cup _{k = 1}^n E_k$.
+  Then $f$ is said to be a \emph{simple function on $D$}.
+\end{definition}
+
 \subsection{Approximation by Continuous Functions}
 
 \begin{theorem}{Egoroff Theorem}{}
@@ -37,11 +46,27 @@
   \end{equation}
 \end{theorem}
 
-
 \section{Convergence in Measure}
 
+\begin{definition}{Convergence in Measure}{}
+  Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
+  a measurable set $D$. If for any $\delta > 0$,
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0,
+  \end{equation}
+  then we say that $f_n$ \emph{converges to $f$ in measure on $D$}.
+\end{definition}
 
-
+\begin{theorem}{Riesz Theorem}{}
+  Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
+  a measurable set $D$. Then
+  \begin{enumerate}
+  \item If $f_n$ converges to $f$ in measure, then there exists a subsequence of
+    $f_n$ that converges to $f$ almost everywhere;
+  \item If $m(D) < \infty$ and $f_n$ converges to $f$ almost everywhere,
+    then $f_n$ converges to $f$ in measure.
+  \end{enumerate}
+\end{theorem}
 
 
 
