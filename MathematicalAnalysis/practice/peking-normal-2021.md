@@ -59,3 +59,19 @@ And $S = f_{1}(\frac{1}{\sqrt{2}}) = (1 + \frac{\sqrt{2}}{2}) \ln 2$.
 Calculate the line integral
 $$ I = \oint_{C} \frac{x \mathrm{d} y - y\mathrm{d}x}{x^{2} + 8y^{2}}, $$
 where $C$ is a circle centered at $(1, 0)$ with radius $R (R > 0, R \neq 1)$, oriented counter-clockwise.
+
+**Solution**. Let $P = \frac{-y}{x^{2} + 8y^{2}}$ and $Q = \frac{x}{x^{2} + 8y^{2}}$, we know that
+$$ P_{y} = \frac{-(x^{2} + 8y^{2}) + y \cdot 16 y}{(x^{2} + 8y^{2})^{2}} = \frac{8y^{2} - x^{2}}{(x^{2} + 8y^{2})^{2}}, Q_{x} = \frac{x^{2} + 8y^{2} - 2x^{2}}{(x^{2} + 8y^{2})^{2}} = \frac{8y^{2} - x^{2}}{(x^{2} + 8y^{2})^{2}}. $$
+If $R < 1$, then the region bounded by $C$ does not contain the origin, and by Green's theorem we know
+$$ I = \iint_{D} Q_{x} - P_{y} \mathrm{d} x \mathrm{d} y = 0. $$
+If $R > 1$, then exclude a small region bounded by $L_{1}: x^{2} + 8y^{2} = r^{2}$ with counter-clockwise orientation. The Green's theorem yields
+$$ I =  \int_{L_{1}} P\mathrm{d} x + Q\mathrm{d} y = \frac{1}{r^{2}} \int_{L_{1}} x\mathrm{d} y - y\mathrm{d}x,$$
+Applying Green's theorem again yields
+$$ I = \frac{1}{r^{2}} \iint_{D_{1}} 2 \mathrm{d} x \mathrm{d} y = \frac{\sqrt{2}}{2} \pi. $$
+
+## Problem 8
+
+Discuss the uniform convergence behavior of
+$$ f(t) = \int_{0}^{1} \frac{1}{x^{t}} \sin \frac{1}{x} \mathrm{d} x, $$
+on $(0, 2)$.
+
