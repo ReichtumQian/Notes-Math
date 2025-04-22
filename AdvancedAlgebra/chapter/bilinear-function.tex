@@ -474,6 +474,21 @@ quadratic forms in $\mathbb{R}^n$, and its representative is $x^TIx$.
   \end{equation}
 \end{example}
 
+\begin{solution}
+  The matrix of $f$ is 
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      1 & t & -1\\
+      t & 1 & 2\\
+      -1 & 2 & 5
+    \end{bmatrix}.
+  \end{equation}
+  $f$ is positive definite if and only if the principal minors are positive,
+  so $1 - t^2 > 0$ and $-5t^2 - 4t > 0$.
+  Therefore the when $t \in (-\frac{4}{5}, 0)$, the quadratic form is positive definite.
+\end{solution}
+
 \begin{proposition}{}{}
   Let $A, B$ be two positive definite matrices,
   then
