@@ -294,7 +294,40 @@
 \end{example}
 
 \begin{solution}
-  (1) Consider $f_1(x) = $
+  (1) Here we show how to derive from the known formula
+  (because we want to differeiate a function rather than integrate it).
+  \begin{equation}
+    f_1(x) = \sum\limits_{n = 0}^{\infty} x^n = \frac{1}{1-x}
+    \Rightarrow
+    f_1^{\prime}(x) = \sum\limits_{n = 1}^{\infty} nx^{n-1} = \frac{1}{(1-x)^2}.
+  \end{equation}
+  Since we want to find the formula for $\sum nx^n$, multiply $f_1^{\prime}(x)$
+  by $x$ and define it as $f_2(x)$:
+  \begin{equation}
+    f_2(x) = \sum\limits_{n = 1}^{\infty} nx^n = \frac{x}{(1-x)^2}
+    \Rightarrow
+    f_2^{\prime}(x) = \sum\limits_{n = 1}^{\infty} n^2x^{n-1} = \frac{1+x}{(1-x)^3}.
+  \end{equation}
+  Similarly, we also want to find the formula for $\sum n^2x^n$, so multiply $f_2^{\prime}(x)$
+  by $x$ and define it as $f_3(x)$:
+  \begin{equation}
+    f_3(x) = \sum\limits_{n = 1}^{\infty} n^2x^n = \frac{x(1+x)}{(1-x)^3}.
+  \end{equation}
+  Then the term we want to evaluate is $f_3(\frac{1}{2}) + 3f_2(\frac{1}{2}) = 12$.
+
+  (2) Here we show how to derive from the given condition
+  (because we want to differeiate a function rather than integrate it).
+  Denote the target function as $f_1(x)$, and $f_2(x) = xf_1(x)$, then
+  \begin{equation}
+    f_2(x) = \sum\limits_{n = 1}^{\infty} \frac{x^{n+1}}{n(n+1)}
+    \Rightarrow f_2^{\prime}(x) = \sum\limits_{n = 1}^{\infty} \frac{x^n}{n}
+    \Rightarrow f_2^{\prime\prime}(x) = \sum\limits_{n = 1}^{\infty} x^{n-1} = \sum\limits_{n = 0}^{\infty}x^n = \frac{1}{1-x}.
+  \end{equation}
+  Then integrate at both sides and get $f_2^{\prime}(x) = -\ln(1-x)$, $f_2(x) =
+  (1-x)\ln(1-x) + x$, and
+  \begin{equation}
+    f_1(x) = \frac{1 - x}{x} \ln(1-x) + 1.
+  \end{equation}
 \end{solution}
 
 

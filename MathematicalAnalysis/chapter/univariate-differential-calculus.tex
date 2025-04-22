@@ -368,6 +368,32 @@
   \end{equation}
 \end{theorem}
 
+\begin{example}{Application of Cauchy's Mean-Value Theorem}{}
+  Let $f(x, y)$ be continuous on $[a, b]$, differentiable on $(a, b)$, $ab > 0$,
+  prove that there exists $\xi \in (a, b)$ such that
+  \begin{equation}
+    \frac{af(b) - bf(a)}{a - b} = f(\xi) - \xi f^{\prime}(\xi).
+  \end{equation}
+  As an example, if $0 < a < b < \infty$, prove that there exists $\theta \in
+  (a, b)$ such that
+  \begin{equation}
+    ae^b - be^a = (1 - \theta) e^{\theta}(a-b).
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  (1) Divide both numerator and the denominator by $ab$ on the left-hand side,
+  it is equivalent to prove that
+  \begin{equation}
+    \frac{\frac{f(b)}{b} - \frac{f(a)}{a}}{\frac{1}{b} - \frac{1}{a}}
+    = f(\xi) - \xi f^{\prime}(\xi).
+  \end{equation}
+  Define $g(x) = \frac{f(x)}{x}$ and $h(x) = \frac{1}{x}$, then use the Cauchy's
+  Mean-Value theorem, we get there exists $\xi$ such that
+  \begin{equation}
+    \frac{g(b) - g(a)}{h(b) - h(a)} = f(\xi) - \xi f^{\prime}(\xi).
+  \end{equation}
+\end{proof}
 
 \section{L'Hopital's Rule and Taylor's Formulas}
 
