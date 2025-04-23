@@ -28,18 +28,21 @@
   \end{enumerate}
 \end{proposition}
 
-\begin{proof}
-  
-\end{proof}
+\begin{theorem}{De Morgan Formula}{}
+  Let $\{A_{\lambda}: \lambda \in \Lambda\}$ be a family of subsets of $X$, then
+  \begin{equation}
+    \left(\cup_{\lambda\in\Lambda}A_{\lambda}\right)^{c}=\cap_{\lambda\in\Lambda}A_{\lambda}^{c},\quad\left(\cap_{\lambda\in\Lambda}A_{\lambda}\right)^{c}=\cup_{\lambda\in\Lambda}A_{\lambda}^{c}.
+  \end{equation}
+\end{theorem}
 
 \begin{definition}{Limits of Set Sequences}{}
   Let $\{A_n\}$ be a sequence of sets,
   define
   \begin{equation}
-    \limsup \limits_{n \rightarrow \infty} A_n := \bigcap \limits_{n = 1}^{\infty}
-    \bigcup \limits_{k = n} ^{\infty} A_k, \quad
-    \liminf \limits_{n \rightarrow \infty} A_n := \bigcup \limits_{n = 1}^{\infty}
-    \bigcap \limits_{k = n}^{\infty}A_k.
+    \limsup \limits_{n \rightarrow \infty} A_n := \cap _{n = 1}^{\infty}
+    \cup _{k = n} ^{\infty} A_k, \quad
+    \liminf \limits_{n \rightarrow \infty} A_n := \cup _{n = 1}^{\infty}
+    \cap _{k = n}^{\infty}A_k.
   \end{equation}
   as the \emph{upper limit and lower limit of $A_n$} respectively.
   If they are equal, then $\{A_n\}$ is said to have a \emph{limit}.
@@ -99,11 +102,25 @@
   which means $\mathbb{Q} \subset \limsup \limits_{n \rightarrow \infty}A_n$.
 \end{proof}
 
-
-
 \subsection{Mappings}
 
+\begin{definition}{Injective Mapping}{}
+  A mapping $f:A \rightarrow B$ is \emph{injective} if
+  \begin{equation}
+    f(x_1) = f(x_2) \Rightarrow x_1 = x_2.
+  \end{equation}
+\end{definition}
 
+\begin{definition}{Surjective/Onto Mapping}{}
+  A mapping $f:A \rightarrow B$ is \emph{surjective} if
+  \begin{equation}
+    \forall y \in B, \exists x \in A, \quad f(x) = y.
+  \end{equation}
+\end{definition}
+
+\begin{definition}{Bijective Mapping}{}
+  A mapping $f:A \rightarrow B$ is \emph{bijective} if it is both injective and surjective.
+\end{definition}
 
 \subsection{Cardinality of Sets}
 
@@ -115,14 +132,28 @@
   \end{equation}
 \end{definition}
 
-\begin{definition}{Set with Cardinality of Continuum}{}
+\begin{definition}{Countable Set and Uncountable Set}{}
+  A set $S$ is \emph{countable} if it is either finite or there
+  exists a bijection between $S$ and $\mathbb{N}$.
+  If $S$ is not countable then we say it is \emph{uncountable}.
+\end{definition}
+
+\begin{definition}{Cardinality of Continuum}{}
   If a set $A$ is equivalent to $[0, 1]$,
-  then we say it is a \emph{set with cardinality of continuum}.
+  then we say it is a set with \emph{cardinality of continuum}.
 \end{definition}
 
 \section{The Sets of Real Numbers}
 
-\subsection{Open Sets and Closed Sets}
+\subsection{Neighborhood, Open Sets and Closed Sets}
+
+\begin{definition}{Neighborhood}{}
+  Let $x \in \mathbb{R}^n$, and $\epsilon > 0$, then 
+  \begin{equation}
+    V(x, \epsilon) := \{y \in \mathbb{R}^n: d(x,y) < \epsilon\}
+  \end{equation}
+  is said to be the \emph{$\epsilon$-neighborhood of $x$}.
+\end{definition}
 
 \begin{definition}{Open Set}{}
   Let $E \subset \mathbb{R}^n$, if $E$ is the neighborhood of every point in
@@ -137,6 +168,13 @@
 
 \subsection{Interior and Closure}
 
+\begin{definition}{Interior Point}{}
+  A point $x$ is called an \emph{interior point of $S$} if there exists a
+  neighborhood $N$ of $x$ such that
+  \begin{equation}
+    N \subseteq S.
+  \end{equation}
+\end{definition}
 
 
 
@@ -193,5 +231,12 @@
     \mathcal{C} = \cap _{n = 0}^{\infty}C_n.
   \end{equation}
 \end{definition}
+
+\begin{proposition}{Properties of the Cantor Set}{}
+  The Cantor set satisfies
+  (1) It is a perfect set;
+  (2) It has no interior points;
+  (3) Its measure is zero.
+\end{proposition}
 
 
