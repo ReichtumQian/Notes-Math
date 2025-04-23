@@ -46,7 +46,7 @@
   Let $E$ be a subset of real numbers.
   If for any subset $A$ of real numbers,
   \begin{equation}
-    m^{\ast}(A) = m^{\ast}(A \cap E) + m^{\ast}(A \cap E^c).
+    m^{\ast}(A) \geq m^{\ast}(A \cap E) + m^{\ast}(A \cap E^c).
   \end{equation}
   Then $E$ is said to be a \emph{lebesgue measurable set},
   and
@@ -81,15 +81,59 @@
   which implies that $A$ is measurable and its measure is zero.
 \end{proof}
 
-\begin{example}{Example of Non-measurable Set}{}
-  Prove that for any $x \in [0, 1]$, the following set is non-measurable
+\begin{theorem}{Complement, Union and Intersection of Measurable Sets}{}
+  Let $\{A_n\}_{n \geq 1}$ be a collection of measurable sets, then
+  \begin{equation}
+    A_n^c, \quad \cup _n A_n, \quad \cap _n A_n
+  \end{equation}
+  are measurable sets.
+\end{theorem}
+
+\begin{corollary}{Open Sets and Closed Sets}{}
+  All the open sets and closed sets in $\mathbb{R}$ are measurable.
+\end{corollary}
+
+\begin{theorem}{Countable Additivity}{}
+  Let $\{A_n\}_{n \geq 1}$ be a sequence of pairwise-disjoint measurable sets, then
+  \begin{equation}
+    m(\cup _n A_n) = \sum\limits_n m(A_n).
+  \end{equation}
+\end{theorem}
+
+
+\subsection{A Non-Measurable Set Example}
+
+\begin{example}{Non-Measurable Example}{}
+  For any $x \in [0, 1]$, define $E(x) := \{y \in [0, 1]: x - y \in \mathbb{Q}\}$.
+  There exists $F \subseteq [0, 1]$ such that
+  \begin{equation}
+    \forall x \in [0, 1], F \cap E(x) \text{ contains exactly one element}.
+  \end{equation}
+  And this set $F$ is non-measurable.
 \end{example}
 
 \begin{proof}
-  
+  Choose one representative from each $E(x)$ and form $F$ deduces the existence.
+
+  Define $\{r_n\} := \mathbb{Q} \cap [-1, 1]$, and $F_n = F + r_n$.
+  We can get that
+  (1)$\{F_n\}$ satisfies $F_m \cap F_n = \emptyset$ for $m \neq n$, since if not,
+  there exists $x, y \in F$ such that
+  \begin{equation}
+    x + r_m = y + r_n \Rightarrow x - y \in \mathbb{Q},
+  \end{equation}
+  which contradicts the definition of $F$;
+  (2) For any $z \in [0, 1]$, there exists $x \in F$ such that $z \in E(x)$.
+
+  Now we prove $F$ is non-measurable. By $m(F_n) = m(F)$,
+  \begin{equation}
+    1 = m([0, 1]) \leq \sum\limits_{n = 1}^{\infty} m(F_n)
+    = \sum\limits_{n = 1}^{\infty} m(F) \leq m([-1, 2]) = 3.
+  \end{equation}
+  If $m(F) > 0$, the sum diverges; if $m(F) = 0$, the total measure is $0$.
+  Both cases contradict the equation.
 \end{proof}
 
-\subsection{Lebesgue Measurable Sets in Set Operations}
 
 \section{$\sigma$-Algebra and Borel Set}
 
