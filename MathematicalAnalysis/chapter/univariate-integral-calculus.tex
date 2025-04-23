@@ -659,6 +659,18 @@ The specific operation can be carried out in the following table:
   and call it \emph{an improper integral over an infinite interval}.
 \end{definition}
 
+\begin{note}
+  The improper integral exists if and only if
+  there is a constant $A$ such that
+  \begin{equation}
+    \forall \epsilon > 0, \exists M > 0, \forall b > M,
+    \quad
+    \left| A - \int_a^b f(x)\mathrm{d} x  \right|
+    = \left| \int_b^{+\infty} f(x)\mathrm{d} x \right|
+    < \epsilon.
+  \end{equation}
+\end{note}
+
 \begin{example}{Improper Integrals over Infinite Interval}{}
   prove that $\int_1^{+\infty} \frac{\mathrm{d}x}{x^p}$ converges when $p > 1$
   and diverges when $p \leq 1$.
