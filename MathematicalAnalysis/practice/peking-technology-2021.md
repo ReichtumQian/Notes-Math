@@ -21,7 +21,30 @@ $$ x^{\prime}(y_0) = \frac{1}{y^{\prime}(x_0)} = \frac{1}{2}. $$
 
 (4) Given $I(y) = \int_{y^2}^{y^3} e^{-x^2y} \mathrm{d} x$, find $I^{\prime}(y)$.
 
-**Solution**. 
+**Solution**. $I^{\prime}(y) = 3y^2 e^{-y^7} - 2y e^{-y^5} - \int_{y^2}^{y^3} x^2 e^{-x^2y}\mathrm{d} x.$
+
+(5) Calculate $\iint_D (x^2 + 2xy)\mathrm{d} x \mathrm{d} y$, where $D = \{(x,y): 0 \leq x \leq 1, x \leq y \leq 2x\}$.
+
+**Solution**. The integral can be converted into iterated integral
+$$ \int_0^1 \mathrm{d} x \int_x^{2x} x^2 + 2xy \mathrm{d}y = \int_0^1 4x^3 \mathrm{d} x = 1.$$
+
+(6) Calculate $I = \iiint_{\Omega} \sin(z^2)\mathrm{d}V$, where $\Omega = \{(x,y,z): 0 \leq z \leq 1, x^2 + y^2 \leq z\}$.
+
+**Solution**. Use the cross-section method,
+$$ I = \int_0^1 \mathrm{d} z \iint_{D_z} \sin(z^2)\mathrm{d} x \mathrm{d} y, $$
+where $D_z = \{(x,y): x^2 + y^2 \leq z\}$. Let $x = r\cos \theta$ and $y = r\sin \theta$, then
+$$ \iint_{D_z} \sin(z^2)\mathrm{d} x \mathrm{d} y = \int_0^{2\pi}\mathrm{d}\theta \int_0^{\sqrt{z}} r \cdot \sin z^2 \mathrm{d} r = \pi z \sin z^2. $$
+Then
+$$ I = \int_0^1 \pi z \sin z^2\mathrm{d} z
+= \frac{\pi}{2} (1 - \cos 1).
+$$ 
+
+(7) Let $z = z(x,y)$ be an implicit function defined by $e^x + z - \frac{1}{2} \cos z = \sin y$, find $z^{\prime}_x, z^{\prime}_y, z^{\prime\prime}_{xx}, z^{\prime\prime}_{xy}$
+
+**Solution**. Take derivative of both sides of the equation with respect to $x$ and $y$, we get
+$$ z_x = \frac{-2e^x}{2 + \sin z}, \quad z_y = \frac{2 \cos y}{2 + \sin z}. $$
+Taking derivative of $x$ on $2z_x + z_x\sin z = 2e^x$ yields
+$$ z_{xx} = \frac{-2e^x - z_x^2 \cos z}{2 + \sin z}, \quad z_{xy} = \frac{-z_xz_y \cos z}{2 + \sin z}. $$
 
 ## Problem 2
 
@@ -64,13 +87,23 @@ Next, we consider $(1, +\infty)$, take the absolute value, then
 $$ \int_1^{+\infty} \left| \frac{e^{\sin x} \sin 2x}{x^p} \right| \mathrm{d} x \leq \int_1^{+\infty} \frac{e}{x^p}\mathrm{d} x,$$
 so the improper integral is absolutely convergent if $p > 1$. When $1 \geq p > 0$, by Dirichlet test, $F(y) = \int_1^y e^{\sin x} \sin 2x\mathrm{d} x$ is bounded and $\frac{1}{x^p}$ monotonically decreases to zero, so it is conditionally convergent.
 
+## Problem 6
 
+(1) Let $f(x)$ be continuous in $[0, +\infty)$, differentiable on $(0, +\infty)$. If $\lim \limits _{x \rightarrow +\infty} f(x) = f(0)$, prove there exists $\xi \in (0, +\infty)$ such that
+$$ f^{\prime}(\xi) = 0. $$
 
+**Proof**. Consider $F(x) := f(x) - f(0)$. Then $F(0) = 0$, $\lim \limits _{x \rightarrow +\infty}F(x) = 0$. Since the limit of $F(x)$ when $x$ goes up to infinity exists, then
+$$ \forall \epsilon > 0, \exists X > 0, \forall x > X, |F(x)| < \epsilon. $$
+Then assume $M$ and $m$ be the supremum and infimum of $F(x)$ on $(0, +\infty)$. If $M = m$, then $F$ is a constant function, and its derivative is zero everywhere. Otherwise $M \neq m$, without loss of generality, assume $M > 0$. We can choose $\epsilon < M$, so $M$ is an extreme value point of $F$. The conclusion follows from the differentiability and the Fermat's theorem.
 
+(2) Let $f(x)$ be continuous on $[0, +\infty)$ and differentiable on $(0, +\infty)$, $0 \leq f(x) \leq xe^{-x}$ ($x \geq 0$). Prove thet there exists $\xi \in (0, +\infty)$ such that
+$$ f^{\prime}(\xi) = e^{-\xi} (1-\xi). $$
 
+**Proof**. Define $F(x) = f(x) - x e^{-x}$, then $F(0) = 0$, $\lim \limits _{x \rightarrow \infty}F(x) = 0$. Then conclusion follows from (1).
 
+## Problem 7
 
-
+Let $f_n(x)$ be differentiable in $[a, b]$, and point-wisely converge to $f(x)$. Prove that if $f_n^{\prime}(x)$ converges uniformly, then $f_n(x)$ uniformly converges to $f(x)$.
 
 
 

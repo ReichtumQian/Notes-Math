@@ -268,6 +268,38 @@
   The conclusion follows from the Fermat's theorem.
 \end{proof}
 
+\begin{example}{Generalization of Rolle's Mean-Value Theorem}{}
+  If $f(x)$ is continuous on $[0, +\infty)$ and differentiable on $(0,
+  +\infty)$, satisifying $\lim \limits _{x \rightarrow +\infty}f(x) = f(0)$.
+  Prove that there exists $\xi \in (0, +\infty)$ such that
+  \begin{equation}
+    f^{\prime}(\xi) = 0.
+  \end{equation}
+  Furthermore, prove that if a function $f(x)$ satisifies $0 \leq f(x) \leq
+  xe^{-x}$ ($x \geq 0$), then there exists $\xi \in (0, +\infty)$ such that
+  \begin{equation}
+    f^{\prime}(\xi) = e^{-\xi} (1 - \xi).
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  (1) Define $F(x) = f(x) - f(0)$, then $F(0) = \lim \limits _{x \rightarrow
+    +\infty}F(x) = 0$.
+  Since $\lim \limits _{x \rightarrow +\infty}F(x) = 0$, then
+  \begin{equation}
+    \forall \epsilon > 0, \exists X > 0, \forall x > X, |F(x)| < \epsilon.
+  \end{equation}
+  Let $M = \sup_{x \in [0, +\infty)}F(x)$ and $m = \inf _{x \in [0, +\infty)} F(x)$.
+  If $M = m$, then $F(x)$ is a contant function, the conclusion holds.
+  If $M \neq m$, without loss of generality, assume $M > 0$.
+  Choose $\epsilon = \frac{M}{2}$, then for all $x > X$, $|F(x)| < \epsilon < M$.
+  So there exists $x_0 \in (0, X]$ such that $F(x_0) = M$,
+  which is a local maximum of $F$. The Fermat's theorem derives the conclusion.
+
+  (2) Define $F(x) = f(x) - xe^{-x}$, then $F(0) = 0$ and $\lim \limits _{x
+    \rightarrow \infty}F(x) = 0$. The conclusion follows from the result of (1).
+\end{proof}
+
 \begin{example}{Applications of Rolle's Mean-Value Theorem}{}
   Prove the following propositions:
   \begin{enumerate}
