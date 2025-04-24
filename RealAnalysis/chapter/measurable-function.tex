@@ -13,6 +13,21 @@
   is measurable, then $f$ is said to be a \emph{measurable function on $D$}.
 \end{definition}
 
+\begin{note}
+  It is equivalent to substitute the set in the definitio of measurable function with
+  $\{f \geq \alpha\}$, $\{f = \alpha\}$, $\{f \leq \alpha\}$, $\{f < \alpha\}$.
+\end{note}
+
+\begin{proposition}{Closure of Measurable Functions under Operations}{}
+  Let $f$, $g$, and $f_n$ be measurable functions, then
+  \begin{equation}
+    f \pm g, \quad f \times g, \quad f / g, \quad \sup f_n, \quad \inf f_n, \quad
+    \limsup \limits_{n \rightarrow \infty}f_n, \quad
+    \liminf \limits_{n \rightarrow \infty}f_n
+  \end{equation}
+  are measurable.
+\end{proposition}
+
 \subsection{Approximation by Simple Functions}
 
 \begin{definition}{Simple Function}{}
@@ -24,27 +39,45 @@
   Then $f$ is said to be a \emph{simple function on $D$}.
 \end{definition}
 
-\subsection{Approximation by Continuous Functions}
-
-\begin{theorem}{Egoroff Theorem}{}
-  Let $f$ and $f_n$ be measurable functions that are almost-everywhere finite
-  on a set $D$ of finite measure.
-  If $f_n$ converges almost-everywhere to $f$ on $D$,
-  then for any $\epsilon > 0$, there exists a closed subset $F$ of $D$,
-  such that $m(D - F) < \epsilon$
-  and $f_n$ converges uniformly to $f$ on $F$.
-\end{theorem}
-
-\begin{theorem}{Lusin Theorem}{}
-  Let $f$ be a almost-everywhere finite measurable function on a measurable set
-  $D$.
-  Then for any $\epsilon > 0$, there exists a continuous function $f^{\ast}$ on
-  $D$ such that
+\begin{theorem}{Measurable Function Approximated by Simple Functions}{}
+  Let $f$ be a measurable function on $D$,
+  then there exists a sequence of simple functions $\{f_n\}$ such that
   \begin{equation}
-    m(\{f \neq f^{\ast}\}) < \epsilon, \quad
-    \sup \limits_{x \in D} |f^{\ast}(x)| \leq \sup \limits_{x \in D} |f(x)|.
+    \lim \limits _{n \rightarrow \infty} f_n(x) = f(x), \quad x \in D.
   \end{equation}
 \end{theorem}
+
+\subsection{Approximation by Continuous Functions}
+
+\begin{theorem}{Egoroff Theorem (Pointwise Convergence vs Uniform Convergence)}{}
+  Let $f$ and $f_n$ be measurable functions that are almost-everywhere finite
+  on a set $D$ of finite measure.
+  If $f_n \aeconv f$ on $D$,
+  then
+  \begin{equation}
+    \forall \epsilon > 0, \exists F \subset D, m(D - F) < \epsilon, \quad
+    f_n(x) \unifconv f(x), x \in F.
+  \end{equation}
+  where $F$ is a closed subset of $D$.
+\end{theorem}
+
+\begin{note}
+  Egoroff theorem indicates that pointwise convergence is basically uniform convergence.
+\end{note}
+
+\begin{theorem}{Lusin Theorem (Measurable Function vs Continuous Function)}{}
+  Let $f$ be a almost-everywhere finite measurable function on a measurable set
+  $D$.
+  Then
+  \begin{equation}
+    \forall \epsilon > 0, \exists f^{\ast} \in C(D), \quad
+    m(\{f \neq f^{\ast}\}) < \epsilon.
+  \end{equation}
+\end{theorem}
+
+\begin{note}
+  Lusin theorem indicates that measurable functions are basically continuous functions.
+\end{note}
 
 \section{Convergence in Measure}
 
@@ -54,19 +87,26 @@
   \begin{equation}
     \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0,
   \end{equation}
-  then we say that $f_n$ \emph{converges to $f$ in measure on $D$}.
+  then we say that $f_n$ \emph{converges to $f$ in measure on $D$},
+  denoted as $f_n \measconv f$.
 \end{definition}
 
-\begin{theorem}{Riesz Theorem}{}
+\begin{theorem}{Riesz Theorem (Convergence in Measure to Pointwise Convergence)}{}
   Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
   a measurable set $D$. Then
-  \begin{enumerate}
-  \item If $f_n$ converges to $f$ in measure, then there exists a subsequence of
-    $f_n$ that converges to $f$ almost everywhere;
-  \item If $m(D) < \infty$ and $f_n$ converges to $f$ almost everywhere,
-    then $f_n$ converges to $f$ in measure.
-  \end{enumerate}
+  \begin{equation}
+    f_n \measconv f \quad \Rightarrow \quad \exists \{f_{n_k}\} \subset \{f_n\}, f_{n_k} \aeconv f.
+  \end{equation}
 \end{theorem}
+
+\begin{theorem}{Lebesgue Theorem (Pointwise Convergence to Convergence in Measure)}{}
+  Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
+  a finite-measure measurable set $D$. Then
+  \begin{equation}
+    f_n \aeconv f \quad \Rightarrow \quad f_n \measconv f.
+  \end{equation}
+\end{theorem}
+
 
 
 
