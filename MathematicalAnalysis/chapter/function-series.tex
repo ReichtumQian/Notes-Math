@@ -196,18 +196,6 @@
   
 \end{proof}
 
-\begin{theorem}{Local Continuity of the Limit Function}{}
-  If $\{f_n(x)\}$ converges uniformly in the neighborhood of $x_0$,
-  and $f_n(x)$ is continuous at $x_0$, then the limit function $f(x)$
-  is also continuous at $x_0$.
-\end{theorem}
-
-\begin{theorem}{Uniform Continuity of the Limit Function}{}
-  If $\{f_n(x)\}$ converges uniformly to $f(x)$ on the interval $I$,
-  and each $f_n(x)$ is uniformly continuous,
-  then the limit function $f(x)$ is also uniformly continuous on $I$.
-\end{theorem}
-
 \subsection{Integrability of the Limit Function}
 
 \begin{theorem}{Integrability of the Limit Function}{}
@@ -220,23 +208,62 @@
   \end{equation}
 \end{theorem}
 
-
+\begin{proof}
+  We first prove that $f(x)$ is integrable.
+  Since $f_n(x)$ converges uniformly to $f(x)$, i.e.,
+  \begin{equation}
+    \forall \epsilon > 0, \exists N > 0, \forall x \in [a, b], \forall n > N, \quad
+    |f(x) - f_n(x)| < \frac{\epsilon}{b - a}.
+  \end{equation}
+  Given a partition $T$, for any $x_1, x_2$ from a subinterval, consider the
+  oscillation
+  \begin{align}
+    |f(x_1) - f(x_2)| &\leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |f_n(x_2) - f(x_2)|\\
+    &\leq \frac{\epsilon}{b - a} + \omega_i^{f_n} + \frac{\epsilon}{b-a} = \frac{2\epsilon}{b-a} + \omega_i^{f_n}.
+  \end{align}
+  Therefore
+  \begin{equation}
+    \sum \limits_T \omega_i^f \Delta x_i \leq \sum \limits_T \frac{2\epsilon}{b-a}\Delta x_i
+    + \sum \limits_T \omega_i^{f_n}\Delta x_i < 3\epsilon,
+  \end{equation}
+  which implies that $f(x)$ is integrable. Then consider the integral:
+  \begin{equation}
+    \left| \int_a^b f_n(x) \mathrm{d} x - \int_a^b f(x)\mathrm{d} x \right|
+    \leq \int_a^b \left| f_n(x) - f(x) \right|\mathrm{d} x
+    < \int_a^b \frac{\epsilon}{b-a}\mathrm{d} x = \epsilon,
+  \end{equation}
+  so the conclusion holds.
+\end{proof}
 
 \subsection{Differentiability of the Limit Function}
 
 \begin{theorem}{Differentiability of the Limit Function}{}
-  If $\{f_n\}$ converges uniformly to $f(x)$ on $[a, b]$,
-  and each $f_n(x)$ has a continuous derivative on $[a, b]$,
-  with $f_n^{\prime}(x)$ converging uniformly to $g(x)$.
-  If there exists $x_0 \in [a, b]$ such that $f_n(x_0)$ converges,
-  then $f_n(x)$ converges uniformly to a continuously differentiable function $f(x)$
-  on $[a, b]$, and $f^{\prime}(x) = g(x)$, that is
+  If each $f_n(x)$ has continuous derivative,
+  $\{f_n^{\prime}(x)\}$ converge uniformly on $[a, b]$,
+  and there exists $x_0 \in [a, b]$ such that $f_n(x_0)$ converges.
+  Then $\{f_n\}$ converges uniformly on $[a, b]$ and
   \begin{equation}
     (\lim \limits _{n \rightarrow \infty} f_n(x))^{\prime}
-    = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x).
+    = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x), \quad x \in [a, b].
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  Suppose $f_n^{\prime}(x)$ converges uniformly to $g(x)$.
+  According to Neitown-Leibniz formula,
+  \begin{equation}
+    f_n(x) = f_n(x_0) + \int_{x_0}^x f_n^{\prime}(t)\mathrm{d}t.
+  \end{equation}
+  Since $\int_{x_0}^xf_n^{\prime}(t)\mathrm{d} t$ converges uniformly
+  to $\int_{x_0}^xg(t)\mathrm{d} t$,
+  and uniform convergence is closed under addition, so $f_n(x)$ converges
+  uniformly to
+  \begin{equation}
+    f(x) = \lim \limits _{n \rightarrow \infty} f_n(x_0) + \int_{x_0}^xg(t)\mathrm{d} t.
+  \end{equation}
+  Furthermore, the fundamental theorem of calculus yields that $f^{\prime}(x) = g(x)$,
+  so $(\lim \limits _{n \rightarrow \infty} f_n(x))^{\prime} = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x)$.
+\end{proof}
 
 \section{Power Series}
 
