@@ -235,6 +235,31 @@
   so the conclusion holds.
 \end{proof}
 
+\begin{corollary}{Uniform Convergence of Integral}{Uniform Convergence of Integral}
+  If $f_n(x)$ converges uniformly to $f(x)$ on $[a, b]$, $f_n(x)$ is integrable,
+  then
+  \begin{equation}
+    \int_{x_0}^x f_n(t)\mathrm{d} t \rightarrow \int_{x_0}^xf(t)\mathrm{d}t \quad
+    \text{uniformly}.
+  \end{equation}
+\end{corollary}
+
+\begin{proof}
+  Since $f_n(x)$ converges uniformly to $f(x)$,
+  then
+  \begin{equation}
+    \forall \epsilon > 0, \exists N > 0, \forall n > N, \forall x \in [a,b],
+    |f_n(x) - f(x)| < \epsilon.
+  \end{equation}
+  Then
+  \begin{equation}
+    \left| \int_{x_0}^x f_n(t) \mathrm{d} t - \int_{x_0}^x f(t)\mathrm{d} t \right|
+    \leq \int_a^b |f_n(t) - f(t)|\mathrm{d}t
+    \leq (b-a)\epsilon.
+  \end{equation}
+  This result satisfies the definition of uniform convergence.
+\end{proof}
+
 \subsection{Differentiability of the Limit Function}
 
 \begin{theorem}{Differentiability of the Limit Function}{}
@@ -255,7 +280,7 @@
     f_n(x) = f_n(x_0) + \int_{x_0}^x f_n^{\prime}(t)\mathrm{d}t.
   \end{equation}
   Since $\int_{x_0}^xf_n^{\prime}(t)\mathrm{d} t$ converges uniformly
-  to $\int_{x_0}^xg(t)\mathrm{d} t$,
+  to $\int_{x_0}^xg(t)\mathrm{d} t$ (see Corollary \ref{th:Uniform Convergence of Integral}),
   and uniform convergence is closed under addition, so $f_n(x)$ converges
   uniformly to
   \begin{equation}

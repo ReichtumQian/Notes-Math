@@ -105,6 +105,12 @@ $$ f^{\prime}(\xi) = e^{-\xi} (1-\xi). $$
 
 Let $f_n(x)$ be differentiable in $[a, b]$, and point-wisely converge to $f(x)$. Prove that if $f_n^{\prime}(x)$ converges uniformly, then $f_n(x)$ uniformly converges to $f(x)$.
 
+**Proof**. Assume that $f_n^{\prime}(x)$ uniformly converges to $g(x)$, and by the fundamental theorem of calculus, we know given $x_0 \in [a, b]$
+$$ f_n(x) = f_n(x_0) + \int_{x_0}^x f_n^{\prime}(t)\mathrm{d} t. $$
+Let $n$ goes up to $\infty$, we get
+$$ f(x) = f(x_0) + \int_{x_0}^x g(t)\mathrm{d} t. $$
+By the integral properties of uniformly convergent function sequence, $\int_{x_0}^x f_n^{\prime}(t)\mathrm{d} t$ converges to $\int_{x_0}^x g(t)\mathrm{d} t$. 
+$$ f(x) = f(x_0) + \int_{x_0}^x g(t)\mathrm{d} t $$
 
 
 
