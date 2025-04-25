@@ -14,9 +14,73 @@
 \end{definition}
 
 \begin{note}
-  It is equivalent to substitute the set in the definitio of measurable function with
+  It is equivalent to substitute the set in the definition of measurable function with
   $\{f \geq \alpha\}$, $\{f = \alpha\}$, $\{f \leq \alpha\}$, $\{f < \alpha\}$.
 \end{note}
+
+\begin{example}{Practice for Definition of Measurable Function}{}
+  Prove that if $f$ is a measurable function if and only if for any $r \in
+    \mathbb{Q}$, $\{x \in D: f(x) > r\}$ is measurable.
+\end{example}
+
+\begin{proof}
+  Left-to-right is obvious, we only prove the right-to-left.
+  For any $a \in \mathbb{R}$, we can find a sequence of rational numbers $r_n$
+  such that $\lim \limits _{n \rightarrow \infty} r_n = a$.
+  Then
+  \begin{equation}
+    \{f > a\} = \cap _{n=1}^{\infty} \{f > r_n\}.
+  \end{equation}
+  Since the intersection of countable measurable sets is also measurable,
+  so the conclusion holds.
+\end{proof}
+
+\begin{example}{Properties of Measurable Functions}{}
+  Prove that measurable functions are \emph{basically} bounded,
+  convergent measurable function sequences are \emph{basically} uniformly bounded:
+  \begin{enumerate}
+  \item If $m(E) < \infty$, $f(x)$ is measurable and finite a.e. on $E$, then
+    \begin{equation}
+      \forall \delta > 0, \exists M > 0, \exists E_{\delta} \subseteq E, m(E - E_{\delta}) < \delta,
+      \forall x \in E_{\delta}, |f(x)| \leq M.
+    \end{equation}
+  \item If $m(E) < \infty$, $f_n(x) \aeconv f(x)$, both $f_n, f$ are measurable
+    and finite a.e., then
+    \begin{equation}
+      \forall \delta > 0, \exists M > 0, \exists E_{\delta} \subseteq E, m(E - E_{\delta}) < \delta,
+      \forall n, \forall x \in E_{\delta}, |f_n(x)| \leq M.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Since $f$ is finite almost everywhere, then $m(\{|f| = \infty\}) = 0$,
+  \begin{equation}
+    m(\{|f| < \infty\})
+    = \lim \limits _{k \rightarrow \infty} m(\{|f| \leq k\}).
+  \end{equation}
+  Then according to the definition of sequence limit
+  \begin{equation}
+    \forall \delta > 0, \exists K, \forall k \geq K,
+    m(\{|f| < \infty\}) \leq m(\{|f| \leq k\}) + \delta.
+  \end{equation}
+  Let $E_{\delta} := \{|f| \leq k\}$, it is obvious that $m(E - E_{\delta}) < \delta$.
+
+  (2) Remove infinite and divergent points first.
+  Let $E_n := \{|f_n| = \infty\}$ and $E_0 := \{f_n \not \rightarrow f\}$,
+  then $m(E_i) = m(E_0) = 0$.
+  Let $A := \cup _{n = 0}^{\infty} E_n$, we have $m(A) = 0$.
+  Define $B = E - A$,
+  \begin{equation}
+    \forall x \in B, \quad g(x) := \sup \left\{ |f_n(x)| , n \in \mathbb{N}^+\right\} < \infty.
+  \end{equation}
+  Apply the conclusion of (1),
+  \begin{equation}
+    \forall \delta > 0, \exists M > 0, \exists E_{\delta}, m(E - E_{\delta})
+    \quad g(x) \leq M,
+  \end{equation}
+  which also implies that for all $n > 0$ and $x \in D$, $|f_n(x)| \leq M$.
+\end{proof}
 
 \begin{proposition}{Closure of Measurable Functions under Operations}{}
   Let $f$, $g$, and $f_n$ be measurable functions, then
@@ -27,6 +91,23 @@
   \end{equation}
   are measurable.
 \end{proposition}
+
+\begin{proof}
+  We first prove $\sup$ and $\inf$
+  \begin{equation}
+    \{\sup f_n > \alpha\} = \cup _{n = 1}^{\infty} \{f_n > \alpha\}, \quad
+    \{\inf f_n < \alpha\} = \cup _{n = 1}^{\infty} \{f_n < \alpha\},
+  \end{equation}
+  which means $\sup f_n$ and $\inf f_n$ are measurable.
+
+  Now prove $\limsup f_n$ and $\liminf f_n$ are measurable
+  \begin{equation}
+    \limsup _{n \rightarrow \infty} f_n(x) = \inf_{n \geq 1} \sup_{k \geq n}f_k(x),
+    \quad
+    \liminf _{n \rightarrow \infty} f_n(x) = \sup _{n \geq 1} \inf_{k \geq n}f_k(x),
+  \end{equation}
+  which means $\limsup f_n$ and $\liminf f_n$ are measurable.
+\end{proof}
 
 \subsection{Approximation by Simple Functions}
 
@@ -49,6 +130,25 @@
 
 \subsection{Approximation by Continuous Functions}
 
+\begin{theorem}{Lusin Theorem (Measurable Function vs Continuous Function)}{}
+  Let $f$ be a almost-everywhere finite measurable function on a measurable set
+  $D$.
+  Then
+  \begin{equation}
+    \forall \epsilon > 0, \exists f^{\ast} \in C(D), \quad
+    m(\{f \neq f^{\ast}\}) < \epsilon.
+  \end{equation}
+\end{theorem}
+
+\begin{note}
+  Lusin theorem indicates that measurable functions are
+  \emph{basically} (except a sufficiently small set) continuous functions.
+\end{note}
+
+\section{Convergence Results in Measure Theory}
+
+\subsection{Pointwise Convergence and Uniform Convergence}
+
 \begin{theorem}{Egoroff Theorem (Pointwise Convergence vs Uniform Convergence)}{}
   Let $f$ and $f_n$ be measurable functions that are almost-everywhere finite
   on a set $D$ of finite measure.
@@ -62,24 +162,11 @@
 \end{theorem}
 
 \begin{note}
-  Egoroff theorem indicates that pointwise convergence is basically uniform convergence.
+  Egoroff theorem indicates that pointwise convergence is
+  \emph{basically} (except a sufficiently small set) uniform convergence.
 \end{note}
 
-\begin{theorem}{Lusin Theorem (Measurable Function vs Continuous Function)}{}
-  Let $f$ be a almost-everywhere finite measurable function on a measurable set
-  $D$.
-  Then
-  \begin{equation}
-    \forall \epsilon > 0, \exists f^{\ast} \in C(D), \quad
-    m(\{f \neq f^{\ast}\}) < \epsilon.
-  \end{equation}
-\end{theorem}
-
-\begin{note}
-  Lusin theorem indicates that measurable functions are basically continuous functions.
-\end{note}
-
-\section{Convergence in Measure}
+\subsection{Convergence in Measure}
 
 \begin{definition}{Convergence in Measure}{}
   Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
@@ -99,13 +186,43 @@
   \end{equation}
 \end{theorem}
 
+\begin{proof}
+  For any $k \geq 1$, $m \left( \{ |f_n - f| \geq \frac{1}{2^k}\} \right)
+  \rightarrow 0$, then there exists $n_k$ such that
+  \begin{equation}
+    m \left( \left\{ |f_{n_k} - f| \geq \frac{1}{2^k} \right\} \right) < \frac{1}{2^k},
+    \quad k \geq 1, n_1 < n_2 < \cdots
+  \end{equation}
+  Let $E = \cap _{p = 1}^{\infty} \cup _{k = p}^{\infty} \left\{ |f_{n_k} - f|
+    \geq \frac{1}{2^k} \right\}$,
+  then for each $p \geq 1$,
+  \begin{equation}
+    m(E) \leq m \left( \cup _{k = p}^{\infty} \left\{ |f_{n_k} - f| \geq \frac{1}{2^k} \right\} \right)
+    < \sum\limits_{k = p}^{\infty} \frac{1}{2^k} = \frac{1}{2^{p-1}}.
+  \end{equation}
+  Let $p \rightarrow \infty$ we get $m(E) = 0$.
+  So for each $x \in D - E = \cup _{p = 1}^{\infty} \cap _{k = p}^{\infty}
+  \left\{ |f_{n_k} - f| < \frac{1}{2^k} \right\}$,
+  there exists $p_0 \geq 1$, 
+  \begin{equation}
+    x \in \cap _{k = p_0}^{\infty} \left\{ |f_{n_k} - f| < \frac{1}{2^k} \right\}
+    \Rightarrow
+    |f_{n_k}(x) - f(x)| < \frac{1}{2^k}, \quad k \geq p_0.
+  \end{equation}
+  This indicates that $f_{n_k} \aeconv f$.
+\end{proof}
+
 \begin{theorem}{Lebesgue Theorem (Pointwise Convergence to Convergence in Measure)}{}
   Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
-  a finite-measure measurable set $D$. Then
+  a measurable set $D$, $m(D) < \infty$. Then
   \begin{equation}
     f_n \aeconv f \quad \Rightarrow \quad f_n \measconv f.
   \end{equation}
 \end{theorem}
+
+\begin{proof}
+  
+\end{proof}
 
 
 
