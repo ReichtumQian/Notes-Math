@@ -24,6 +24,34 @@
   \end{equation}
 \end{definition}
 
+\begin{example}{Practice on Lebesgue Integral of Non-Negative Simple Functions}{}
+  \begin{enumerate}
+  \item Let $C$ be the Cantor set in $[0, 1]$,
+    $f(x) = 0$ for $x \in C$, $f(x) = n$ for $x \in D_n$,
+    where $D_n$ is a subset in $[0, 1] - C$ with length $3^{-n}$.
+    Prove that $f(x) \in L([0, 1])$ and compute $\int_0^1 f(x)\mathrm{d} x$.
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) According to the definition of Cantor set,
+  the number of intervals in $[0, 1] - C$ with length $3^{-n}$ is $2^{n-1}$.
+  Then the definition of Lebesgue integral for non-negative simple functions yields
+  \begin{equation}
+    \int_0^1 f(x)\mathrm{d} x
+    = \sum\limits_{n = 1}^{\infty} 2^{n-1} \cdot n \cdot 3^{-n}
+    = \sum\limits_{n = 1}^{\infty} \left( \frac{2}{3} \right)^n \frac{n}{2}
+    := S_n.
+  \end{equation}
+  Consider $\frac{2}{3}S_n = \sum\limits_{n = 2}^{\infty} (\frac{2}{3})^n
+  \frac{n-1}{2}$, then
+  \begin{equation}
+    \frac{1}{3}S_n = \frac{1}{3} + \sum\limits_{n = 2}^{\infty} \left( \frac{2}{3} \right)^n \frac{1}{2}
+    = 1.
+  \end{equation}
+  This means $S_n = 3$, and the lebesgue integral is $3$.
+\end{solution}
+
 \subsection{Integral of Non-negative Measurable Functions}
 
 \begin{definition}{Lebesgue Integral of Non-negative Measurable Function}{}
@@ -35,6 +63,10 @@
     \int_D f \mathrm{d} x= \lim \limits _{n \rightarrow \infty} \int_D f_n \mathrm{d} x.
   \end{equation}
 \end{definition}
+
+\begin{example}{Practice on Lebesgue Integral of Non-Negative Measurable Functions}{}
+\end{example}
+
 
 \begin{theorem}{Levi's Monotone Convergence Theorem}{}
   Let $f$ and $f_n$ be non-negative measurable functions on a measurable set
@@ -65,9 +97,48 @@
     = \int_D f_+ \mathrm{d} x - \int_D f_-\mathrm{d} x
     := I^+ - I^-.
   \end{equation}
-  If $I^+, I^- < \infty$, then $f$ is said to be \emph{lebesgue integrable over
+  If $I^+, I^- < +\infty$, then $f$ is said to be \emph{lebesgue integrable over
     $D$}, denoted as $f \in L(D)$.
 \end{definition}
+
+\begin{note}
+  A measurable function $f$ is Lebesgue integrable if and only if $|f|$
+  is Lebesgue integrable.
+\end{note}
+
+\begin{example}{Practice on Lebesgue Integral of Normal Measurable Functions}{}
+  Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
+  Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
+  Prove that $f$ is Lebesgue integrable if and only if
+  \begin{equation}
+    \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  When $n \geq 1$, according to the definition of Lebesgue integral,
+  \begin{equation}
+    |n| \cdot m(E_n) = \int_{E_n} n \mathrm{d} x \geq \int_{E_n} |f(x)| \mathrm{d}x
+    > |n-1| \cdot m(E_n).
+  \end{equation}
+  Similarly, when $n < 1$,
+  \begin{equation}
+    |n - 1| \cdot m(E_n) = (1-n) \cdot m(E_n) \geq \int_{E_n} |f(x)|\mathrm{d}x
+    > |n|\cdot m(E_n).
+  \end{equation}
+
+  Since $f$ is Lebesgue integrable, then $|f|$ is integrable,
+  \begin{align}
+    +\infty > \int_E |f|\mathrm{d} x
+    &= \sum\limits_{n = 1}^{+\infty} \int_{E_n} |f|\mathrm{d}x + \sum\limits_{n = 0}^{-\infty} \int_{E_n}|f|\mathrm{d}x\\
+    &> \sum\limits_{n = 1}^{+\infty} |n-1| \cdot m(E_n)
+    + \sum\limits_{n = 0}^{-\infty} |n| \cdot m(E_n)\\
+    &= \sum\limits_{n = -\infty}^{+\infty} |n| \cdot m(E_n) - \sum\limits_{n = 1}^{+\infty} m(E_n),
+  \end{align}
+  here, $\sum\limits_{n = 1}^{\infty} m(E_n) = m(\{f \geq 1\}) < \infty$.
+  Therefore the conclusion holds.
+\end{proof}
+
 
 \begin{theorem}{Countable Additivity of the Lebesgue Integral}{}
   Let $f$ be Lebesgue integrable over $D$,
@@ -85,6 +156,33 @@
     m(A) < \delta, \left| \int_A f \mathrm{d} x \right| < \epsilon.
   \end{equation}
 \end{theorem}
+
+\begin{example}{Applications of Absolute Continuity of the Lebesgue Integral}{}
+  Let $E$ be a measurable set, $f \in L(E)$, $e_n := \{|f| \geq n\}$,
+  prove that $\lim \limits _{n \rightarrow \infty} n \cdot m(e_n) = 0$.
+\end{example}
+
+\begin{proof}
+  According to the definition of Lebesgue integral of non-negative simple
+  functions we have
+  \begin{equation}
+    n \cdot m(e_n) = \int_{e_n} n \mathrm{d} x \leq \int_{e_n} |f(x)|\mathrm{d} x.
+  \end{equation}
+  It is not hard to see that $e_n$ is monotonically decreasing,
+  and since $f$ is finite a.e., then
+  \begin{equation}
+    m(\lim \limits _{n \rightarrow \infty} e_n)
+    = m(\lim \limits _{n \rightarrow \infty} \{|f| \geq n\}) = 0
+  \end{equation}
+  which means $\forall \delta > 0, \exists N > 0, \forall n > N$, $m(e_n) < \delta$.
+  Then according to the absolute continuity of Lebesgue integral
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta > 0, \exists A \subset E, m(A) < \delta,
+    \int_A |f(x)|\mathrm{d} x < \epsilon.
+  \end{equation}
+  Combining the above two equations yields $n\cdot m(e_n) < \epsilon$,
+  so it converges to $0$.
+\end{proof}
 
 \begin{theorem}{Lebesgue's Dominated Convergence Theorem (LDCT)}{}
   Let $f$ and $f_n$ be measurable functions on a measurable set $D$.
@@ -113,7 +211,7 @@
   respectively,
   \begin{equation}
     \int_{\mathbb{R}^p \times \mathbb{R}^q} f(x,y)\mathrm{d} x\mathrm{d}y 
-    = \int_{\mathbb{R}}^p \left[ \int_{\mathbb{R}^q} f(x,y)\mathrm{d} y \right]\mathrm{d} x.
+    = \int_{\mathbb{R}^p} \left[ \int_{\mathbb{R}^q} f(x,y)\mathrm{d} y \right]\mathrm{d} x.
   \end{equation}
 \end{theorem}
 
