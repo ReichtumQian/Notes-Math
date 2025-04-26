@@ -290,6 +290,40 @@
   so $(\lim \limits _{n \rightarrow \infty} f_n(x))^{\prime} = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x)$.
 \end{proof}
 
+\section{Function Series}
+
+\subsection{Uniform Convergence of Function Series}
+
+\begin{proposition}{M-test}{}
+  Let $\sum u_n(x)$ be a function series on $D$,
+  if there exists a convergent numerical series $\sum M_n$ such that
+  \begin{equation}
+    |u_n(x)| \leq M, \quad x \in D,
+  \end{equation}
+  then $\sum u_n(x)$ is uniformly convergent.
+\end{proposition}
+
+\begin{example}{Application of M-test}{}
+  Prove that $\sum\limits_{n = 0}^{\infty} \frac{1}{n^3} \ln (1 + n^2x^2)$ is
+  uniformly convergent in $[0, 1]$, and the sum function has continuous derivative.
+\end{example}
+
+\begin{proof}
+  For $x \in [0, 1]$, $\ln(1 + n^2x^2) \leq \ln(1+n^2)$, then
+  \begin{equation}
+    |u_n(x)| \leq \frac{\ln(1 + n^2)}{n^3},
+  \end{equation}
+  when $n$ is sufficiently large, the term is approximately $2\ln(n)$, so by
+  M-test, the series is uniformly convergent.
+  Similarly, consider $f_n^{\prime}(x)$
+  \begin{equation}
+    f^{\prime}_n(x) = \frac{2x}{n(1+n^2x^2)} \leq \frac{2x}{n \cdot 2nx} = \frac{1}{n^2}.
+  \end{equation}
+\end{proof}
+
+\subsection{Properties of Uniformly Convergent Function Series}
+
+
 \section{Power Series}
 
 \subsection{Convergence Interval and Radius of Convergence}

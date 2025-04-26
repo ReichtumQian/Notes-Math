@@ -114,6 +114,14 @@
   \end{equation}
 \end{proposition}
 
+\begin{proof}
+  By chain rule we have
+  \begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d} y} = \frac{\mathrm{d} y}{\mathrm{d} x} \cdot \frac{\mathrm{d} x}{\mathrm{d} y} = 1,
+  \end{equation}
+  so the conclusion holds.
+\end{proof}
+
 \begin{example}{Practice for the Derivatives of Inverse Functions}{}
   Suppose $y = f(x) = 2x - \frac{1}{2} \cos x$,
   find the derivative of $x = f^{-1}(y)$ at $y_0 = -\frac{1}{2}$.
@@ -299,6 +307,14 @@
   (2) Define $F(x) = f(x) - xe^{-x}$, then $F(0) = 0$ and $\lim \limits _{x
     \rightarrow \infty}F(x) = 0$. The conclusion follows from the result of (1).
 \end{proof}
+
+\begin{note}
+  How to construct the auxiliary function:
+  given $f^{\prime}(\xi) + f(\xi)g(\xi)$, we have
+  \begin{equation}
+    [f(x) e^{\int g(x)\mathrm{d} x}]^{\prime} = [f^{\prime}(x) + f(x)g(x)] e^{\int g(x)\mathrm{d} x}.
+  \end{equation}
+\end{note}
 
 \begin{example}{Applications of Rolle's Mean-Value Theorem}{}
   Prove the following propositions:
