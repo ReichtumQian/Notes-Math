@@ -1,0 +1,71 @@
+
+\section{Cauchy's Theorem}
+
+\subsection{Goursat's Theorem}
+
+\begin{theorem}{Goursat's Theorem}{}
+  If $\Omega$ is an open set in $\mathbb{C}$,
+  and $T \subset \Omega$ a triangle whose interior is also contained in $\Omega$,
+  then
+  \begin{equation}
+    \int_T f(z)\mathrm{d} z = 0
+  \end{equation}
+  whenever is holomorphic in $\Omega$.
+\end{theorem}
+
+\subsection{Cauchy's Theorem for a Disc}
+
+\begin{theorem}{Existence of Primitives in a Disc}{}
+  A holomorphic function in an open disc has a primitive in that disc.
+\end{theorem}
+
+\begin{theorem}{Cauchy's Theorem for a Disc}{}
+  If $f$ is holomorphic in a disc, then
+  \begin{equation}
+    \int_{\gamma} f(z)\mathrm{d} z = 0
+  \end{equation}
+  for any closed curve $\gamma$ in that disc.
+\end{theorem}
+
+\subsection{Cauchy's Theorem for any Closed Curve}
+
+\begin{theorem}{Cauchy's Theorem}{}
+  If $f$ is holomorphic in a connected region $D \subset \mathbb{C}$,
+  and $\gamma$ is a closed curve in $D$, then
+  \begin{equation}
+    \int_{\gamma} f(z)\mathrm{d} z = 0.
+  \end{equation}
+\end{theorem}
+
+\section{Cauchy's Integral Formula}
+
+\begin{theorem}{Cauchy's Integral Formula}{}
+  Suppose $f$ is holomorphic in an open set that contains the closure of a disc $D$.
+  If $C$ denotes the boundary circle of this disc with the positive orintation, then
+  \begin{equation}
+    f(z) = \frac{1}{2 \pi i} \int_C \frac{f(\zeta)}{\zeta - z}\mathrm{d} \zeta, \quad
+    z \in D.
+  \end{equation}
+\end{theorem}
+
+\begin{corollary}{Cauchy's Derivative Formula}{}
+  If $f$ is holomorphic in an open set $\Omega$,
+  then $f$ has infinitely many complex derivatives in $\Omega$.
+  Moreover, if $C \subset \Omega$ is a circle whose interior is also contained in $\Omega$,
+  then
+  \begin{equation}
+    f^{(n)}(z) = \frac{n!}{2 \pi i} \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}\mathrm{d} \zeta
+  \end{equation}
+  for all $z$ in the interior of $C$.
+\end{corollary}
+
+\begin{corollary}{Cauchy Inequality}{}
+  If $f$ is holomorphic in an open set that contains the closure of a disc $D$
+  centered at $z_0$ and of radius of $R$, then
+  \begin{equation}
+    |f^{(n)}(z_0)| \leq \frac{n! \|f\|_C}{R^n},
+  \end{equation}
+  where $\|f\|_C = \sup \limits_{z \in C}|f(z)|$ denotes the supremum of $|f|$
+  on the boundary circle $C$.
+\end{corollary}
+
