@@ -17,6 +17,13 @@
   \end{equation}
 \end{definition}
 
+\begin{definition}{Complex Conjugate of Complex Number}{}
+  The \emph{complex conjugate} of $z = x + iy$ is
+  \begin{equation}
+    \overline{z} := x - iy.
+  \end{equation}
+\end{definition}
+
 \begin{definition}{Addition and Multiplication of Complex Number}{}
   Let $z_1 = x_1 + iy_1$ and $z_2 = x_2 + iy_2$, define
   \begin{equation}
@@ -24,6 +31,21 @@
     z_1 z_2 = (x_1 + iy_1)(x_2 + iy_2).
   \end{equation}
 \end{definition}
+
+\begin{example}{Practice on Definition of Complex Numbers}{}
+  Let $\frac{\overline{z}}{z} = a + bi$, prove that $a^2 + b^2 = 1$.
+\end{example}
+
+\begin{proof}
+  Assume $z = x + iy$,
+  multiply the denominator by $\overline{z}$, we get
+  \begin{equation}
+    \frac{\overline{z}}{z} = \frac{\overline{z}^2}{z \cdot \overline{z}}
+    = \frac{(x-iy)^2}{x^2 + y^2} = \frac{x^2 - 2ixy - y^2}{x^2 + y^2},
+  \end{equation}
+  then $a = \frac{x^2 - y^2}{x^2 + y^2}$, $b = \frac{-2xy}{x^2 + y^2}$,
+  it is obvious to verify that $a^2 + b^2 = 1$.
+\end{proof}
 
 \begin{definition}{Absolute Value of Complex Number}{}
   Let $z = x + iy$, then the \emph{absolute value of $z$} is
@@ -40,16 +62,6 @@
   \end{equation}
 \end{proposition}
 
-\begin{proof}
-  
-\end{proof}
-
-\begin{definition}{Complex Conjugate of Complex Number}{}
-  The \emph{complex conjugate} of $z = x + iy$ is
-  \begin{equation}
-    \overline{z} := x - iy.
-  \end{equation}
-\end{definition}
 
 \subsection{Polar Form of Complex Numbers}
 
@@ -61,10 +73,121 @@
   where $r = |z|$ and $e^{i\theta} = \cos \theta + i \sin \theta$.
 \end{definition}
 
+\begin{example}{Application of Polar Form}{}
+  Prove that for any complex number $z \neq -1$, if $|z| = 1$,
+  then there exists $t \in \mathbb{R}$ such that
+  \begin{equation}
+    z = \frac{1 + it}{1 - it}.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  Consider $z = \cos \theta + i \sin \theta$, then by universal formula of
+  trigonometric function
+  \begin{equation}
+    z = \frac{1 - t^2}{1 + t^2} + \frac{2i t}{1 + t^2} = \frac{1+it}{1 - it},
+  \end{equation}
+  where $t = \tan \frac{\theta}{2}$.
+\end{proof}
+
+\begin{proposition}{Solutions of $z^n = re^{i\theta}$}{}
+  The roots of $z^n = re^{i\theta}$ are
+  \begin{equation}
+    z_k = \sqrt[n]{r} e^{\frac{2k\pi + \theta}{n}i}, \quad k = 0,1,\cdots,n-1.
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Applications of Solutions of $z^n = re^{i\theta}$}{}
+  Find the solutions of
+  \begin{equation}
+    (1+z)^5 = (1-z)^5.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  The equation is equivalent to 
+  \begin{equation}
+    \left( \frac{1+z}{1-z} \right)^5 = 1 \Rightarrow
+    \frac{1+z}{1-z} = e^{\frac{2k\pi}{5}i} := w_k, \quad k = 0,1,2,3,4.
+  \end{equation}
+  then $\frac{1}{1-z} - 1 = w_k$, and $z = \frac{w_k}{w_k + 1}$.
+\end{solution}
+
 \subsection{Sequence of Complex Numbers}
 
 \section{Complex Functions}
 
+\subsection{Continuous Complex Functions}
+
+\begin{definition}{Continuous Complex Function}{}
+  Let $f$ be a complex function defined on $\Omega$.
+  We say it is \emph{continuous at $z_0$} if
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta, \forall z, |z - z_0| < \delta,
+    \quad |f(z) - f(z_0)| < \epsilon.
+  \end{equation}
+\end{definition}
+
+\begin{theorem}{Extremum and Boundedness of Continuous Functions}{}
+  A continuous function on a compact set $\Omega$ is bounded and
+  attains a maximum and minimum on $\Omega$.
+\end{theorem}
+
+\subsection{Holomorphic Functions}
+
+\begin{definition}{Holomorphic Function}{}
+  Let $\Omega$ be an open set in $\mathbb{C}$ and $f$ a complex-valued function
+  on $\Omega$. The function $f$ is \emph{holomorphic at $z_0 \in \Omega$} if
+  \begin{equation}
+    f^{\prime}(z_0) := \lim \limits _{h \rightarrow 0}\frac{f(z_0 + h) - f(z_0)}{h}, \quad h \in \mathbb{C}
+  \end{equation}
+  exists. We call the limit \emph{derivative of $f$ at $z_0$}, denoted as $f^{\prime}(z_0)$.
+\end{definition}
+
+\begin{example}{Examples of Non-Holomorphic Functions}{}
+  Prove that $f(z) = \overline{z}$ is not holomorphic.
+\end{example}
+
+\begin{proof}
+  Consider the limit
+  \begin{equation}
+    \lim \limits _{h \rightarrow 0} \frac{ \overline{z_0 + h} - \overline{z_0}}{h}
+    = \lim \limits _{h \rightarrow 0}\frac{\overline{h}}{h}.
+  \end{equation}
+  The limit of $\frac{\overline{h}}{h}$ does not exist, so $f(z)$ is not holomorphic.
+\end{proof}
+
+\begin{definition}{Partial Derivatives with Respect to $z$ and $\overline{z}$}{}
+  Let $f$ be a complex-valued function,
+  then the derivatives of $f$ with respect to $z$ and $\overline{z}$ are
+  \begin{equation}
+    \frac{\partial f}{\partial z} := \frac{1}{2} \left( \frac{\partial f}{\partial x} + \frac{1}{i} \frac{\partial }{\partial y} \right), \quad
+    \frac{\partial f}{\partial \overline{z}} := \frac{1}{2} \left( \frac{\partial }{\partial x} - \frac{1}{i} \frac{\partial}{\partial y} \right).
+  \end{equation}
+\end{definition}
+
+\begin{note}
+  Why we define the above partial derivatives?
+  Consider $f(x,y) = f(z, \overline{z})$,
+  with $x(z, \overline{z}) = \frac{1}{2}(z + \overline{z})$ and $y(z,
+  \overline{z}) = \frac{1}{2}(z - \overline{z})$, then
+  \begin{equation}
+    f_z = f_x x_z + f_y y_z = \frac{1}{2}(f_x + \frac{1}{i}f_y), \quad
+    f_{\overline{z}} = f_x x_{\overline{z}} + f_y y_{\overline{z}} = \frac{1}{2}(f_x - \frac{1}{i}f_y).
+  \end{equation}
+\end{note}
+
+\begin{theorem}{Cauchy-Riemann Equation}{}
+  A complex-valued function $f(z, \overline{z}) = u(z, \overline{z}) + iv(z, \overline{z})$ is holomorphic at $z_0 \in \mathbb{C}$ if and
+  only if
+  \begin{equation}
+    \frac{\partial f}{\partial \overline{z}} = 0.
+  \end{equation}
+\end{theorem}
+
+\begin{proof}
+  
+\end{proof}
 
 \section{Complex Integrals}
 
