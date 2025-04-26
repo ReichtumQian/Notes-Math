@@ -178,9 +178,12 @@
 \end{note}
 
 \begin{theorem}{Cauchy-Riemann Equation}{}
-  A complex-valued function $f(z, \overline{z}) = u(z, \overline{z}) + iv(z, \overline{z})$ is holomorphic at $z_0 \in \mathbb{C}$ if and
+  A complex-valued function $f(z) = u(z) + iv(z)$ is holomorphic at $z_0 \in \mathbb{C}$ if and
   only if
   \begin{equation}
+    \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y},
+    \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}, \quad
+    \text{or} \quad
     \frac{\partial f}{\partial \overline{z}} = 0.
   \end{equation}
 \end{theorem}
@@ -188,6 +191,14 @@
 \begin{proof}
   
 \end{proof}
+
+\begin{note}
+  Cauchy-Riemann equation implies that any function that relies on
+  $\overline{z}$ is not holomorphic.
+  E.g., $\overline{z}$, $|z|^2 = z\overline{z}$.
+\end{note}
+
+\subsection{Power Series}
 
 \section{Complex Integrals}
 
