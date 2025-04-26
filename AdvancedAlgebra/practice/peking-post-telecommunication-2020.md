@@ -30,3 +30,26 @@ Let $A$ be a $3 \times 4$ matrix, $r(A) = 1$. If the vector sequence
 $$ \alpha_1 = (1,2,0,2)^T, \alpha_2 = (-1,-1,1,a)^T, \alpha_3=(1,-1,a,5)^T, \alpha_4=(2,a,-3,-5)^T $$
 is equivalent to the solution system of $AX = O$. Find the general solution of $AX = O$.
 
+**Solution**. Since $r(A) = 1$, then the number of free variables in the fundamental solution system of $Ax = 0$ is $3$. Then
+$$
+  \begin{bmatrix}
+    1 & 2 & 0 & 2\\
+    -1 & -1 & 1 & a\\
+    1 & -1 & a & 5\\
+    2 & a & -3 & -5
+  \end{bmatrix}
+  \rightarrow
+  \begin{bmatrix}
+    1 & 2 & 0 & 2\\
+    0 & 1 & 1 & 2+a\\
+    0 & 0 & a+3 & 9+3a\\
+    0 & 0 & 1-a & -a^2 + 2a - 1
+  \end{bmatrix}
+$$
+has a rank of $3$, so $a = -3$ or $a = 1$. When $a = -3$, the general solution is
+$$ x = \gamma_1 (1, 2, 0, 2)^T + \gamma_2 (0, 1, 1, -1)^T + \gamma_3(0, 0, 4, -4)^T.  $$
+When $a = 1$, the general solution is
+$$ x = \gamma_1 (1, 2, 0, 2)^T + \gamma_2 (0, 1, 1, 3)^T + \gamma_3(0, 0, 4, 12)^T.  $$
+
+
+## Problem 5
