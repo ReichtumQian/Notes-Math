@@ -14,7 +14,8 @@
   where $\ell(I_n)$ is the length of the interval $I_n$.
 \end{definition}
 
-\begin{proposition}{Countable Sub-additivity}{}
+
+\begin{proposition}{Countable Sub-Additivity}{}
   If $\{E_n\}$ is an arbitrary sequence of subsets of real numbers,
   then
   \begin{equation}
@@ -39,6 +40,48 @@
   By the arbitrariness of $\epsilon$, the conclusion holds.
 \end{proof}
 
+\begin{example}{Properties of Lebesgue Outer Measure}{}
+  \begin{enumerate}
+  \item Let $E \subset [a, b]$, $E_x := [a, x] \cap E$ for $x \in [a, b]$.
+    Prove that $f(x) := m^{\ast}(E_x)$ is continuous on $[a, b]$.
+  \item Let $S_1,S_2$ be disjoint sets,
+    $E_1 \subset S_2$, $E_2 \subset S_2$ respectively.
+    Prove that 
+    \begin{equation}
+      m^{\ast}(E_1 \cup E_2) = m^{\ast}(E_1) + m^{\ast}(E_2).
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) Consider $x_1, x_2 \in [a, b]$, $x_2 > x_1$, then by sub-additivity,
+  $m^{\ast}E_{x_2} \leq m^{\ast}\left( [a, x_1] \cap E \right) + m^{\ast} \left( (x_1, x_2] \cap E \right)$.
+  Then
+  \begin{equation}
+    |f(x_2) - f(x_1)| = |m^{\ast}E_{x_2} - m^{\ast}E_{x_1}|
+    \leq m^{\ast} \left[ (x_1, x_2] \cap E \right] \leq |x_2-x_1|.
+  \end{equation}
+  Therefore $f(x)$ is Lipschitz continuous and continuous.
+
+  (2) We only have to prove $m^{\ast}(E_1 \cup E_2) \geq m^{\ast}(E_1) + m^{\ast}(E_2)$.
+  Let $I_1,\cdots,I_n$ be a sequence of open intervals that covers $E_1 \cup E_2$.
+  So
+  \begin{equation}
+    m^{\ast}(E_1 \cup E_2) + \epsilon \geq \sum_i \ell(I_i).
+  \end{equation}
+  Since $S_1, S_2$ are disjoint,
+  we can split them into two groups $I_1^{(1)},\cdots,I_{n_1}^{(1)}$ and $I_1^{(2)},\cdots,I_{n_2}^{(2)}$
+  that cover $E_1$ and $E_2$ respectively. Then
+  \begin{equation}
+    \sum_i \ell(I_i) = \sum_i \ell(I_i^{(1)}) + \sum_i \ell(I_i^{(2)})
+    \geq m^{\ast}(E_1) + m^{\ast}(E_2).
+  \end{equation}
+  Combining the above equations yields
+  \begin{equation}
+    m^{\ast}(E_1 \cup E_2) \geq m^{\ast}(E_1) + m^{\ast}(E_2),
+  \end{equation}
+  taking $\epsilon \rightarrow 0$ implies the conclusion.
+\end{solution}
 
 \subsection{Lebesgue Measure}
 
@@ -55,10 +98,6 @@
   \end{equation}
   is said to be the \emph{measure of $A$}.
 \end{definition}
-
-\begin{note}
-  Hereafter, we use the notation $\Omega$ to represent the set of measurable sets.
-\end{note}
 
 \begin{example}{Practice for Lebesgue Measure}{}
   Prove the following statements:
@@ -84,14 +123,11 @@
 \begin{theorem}{Complement, Union and Intersection of Measurable Sets}{}
   Let $\{A_n\}_{n \geq 1}$ be a collection of measurable sets, then
   \begin{equation}
-    A_n^c, \quad \cup _n A_n, \quad \cap _n A_n
+    A_n^c, \quad \cup _{n=1}^{+\infty} A_n, \quad \cap_{n=1}^{\infty} A_n, \quad
+    \limsup \limits _{n \rightarrow \infty} A_n, \quad \liminf \limits_{n \rightarrow \infty} A_n
   \end{equation}
   are measurable sets.
 \end{theorem}
-
-\begin{corollary}{Open Sets and Closed Sets}{}
-  All the open sets and closed sets in $\mathbb{R}$ are measurable.
-\end{corollary}
 
 \begin{theorem}{Countable Additivity}{}
   Let $\{A_n\}_{n \geq 1}$ be a sequence of pairwise-disjoint measurable sets, then
