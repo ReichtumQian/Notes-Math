@@ -35,6 +35,53 @@
   \end{equation}
 \end{theorem}
 
+\begin{example}{Operations on Countable Sets}{}
+  Let $f, g$ be mappings from $E$ to $\mathbb{R}$, where $E \subset \mathbb{R}$.
+  Prove that
+  \begin{equation}
+    \{x: f(x) > g(x) \} = \cup _{n=1}^{+\infty} \{x: f(x) > g(x) + \frac{1}{n}\},
+  \end{equation}
+  \begin{equation}
+    \{x: f(x) \geq g(x)\} = \cap _{n = 1}^{\infty} \{x: f(x) > g(x) - \frac{1}{n}\}.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  (1) For all $x$ from the lhs set,
+  then $f(x) > g(x)$. There must exist $n$ such that $f(x) > g(x) + \frac{1}{n}$,
+  which indicates $x$ is contained in the rhs set.
+  Similarly, for all $x$ from the rhs set, there exists $n$ such that $x \in A_n$,
+  which means $f(x) > g(x) + \frac{1}{n} > g(x)$.
+
+  (2) Left-to-right is easy. For all $x$ from the rhs set,
+  we have $x \in A_n$ for all $n \geq 1$, so $g(x) < f(x) + \frac{1}{n}$.
+  This indicates that $g(x) \leq f(x)$.
+\end{proof}
+
+\begin{example}{Union and Intersection Form of Function Supremum and Infimum}{}
+  Given a sequence of functions $\{f_n\}$, where $f_n: E \rightarrow \mathbb{R}$,
+  $E \subset \mathbb{R}$. Prove that for all $c \in \mathbb{R}$,
+  \begin{equation}
+    \{x: \inf_n \{f_n(x)\} < c\} = \cup _{n = 1}^{\infty} \{x: f_n(x) < c\},
+  \end{equation}
+  \begin{equation}
+    \{x: \inf_n \{f_n(x)\} \geq c\} = \cap _{n = 1}^{\infty} \{x: f_n(x) \geq c\}.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  We only prove the first equation.
+  By the definition of infimum, for $x$ from the lhs set,
+  there exists $n_0$ such that $f_{n_0}(x) < c$,
+  therefore
+  \begin{equation}
+    x \in \{x: f_{n_0}(x) < c\} \subset \cup _{n = 1}^{\infty} \{x: f_n(x) < c\}.
+  \end{equation}
+  The reverse direction is similar.
+\end{proof}
+
+\subsection{Limit of Set Sequences}
+
 \begin{definition}{Limits of Set Sequences}{}
   Let $\{A_n\}$ be a sequence of sets,
   define
@@ -70,21 +117,24 @@
 \end{proof}
 
 \begin{example}{Examples of Set Sequence Limits}{}
-  Let $A_n = \{\frac{m}{n}\}$, where $m$ is an integer. Prove
-  \begin{equation}
-    \limsup \limits_{n \rightarrow \infty} A_n = \mathbb{Q}, \quad
-    \liminf \limits_{n \rightarrow \infty} A_n = \mathbb{Z}.
-  \end{equation}
+  \begin{enumerate}
+  \item Let $A_{2n-1} = (0, \frac{1}{n})$ and $A_{2n} = (0, n)$, find
+    $\limsup \limits_{n \rightarrow \infty} A_n$ and $\liminf \limits_{n \rightarrow \infty} A_n$.
+  \item Let $A_n = \{\frac{m}{n}\}$, where $m$ is an integer. Prove
+    \begin{equation}
+      \limsup \limits_{n \rightarrow \infty} A_n = \mathbb{Q}, \quad
+      \liminf \limits_{n \rightarrow \infty} A_n = \mathbb{Z}.
+    \end{equation}
+  \end{enumerate}
 \end{example}
 
 \begin{proof}
-  For each $A_n$, it is obvious that $\mathbb{Z} \subset A_n \subset
-  \mathbb{Q}$, then
-  \begin{equation}
-    \mathbb{Z} \subset \liminf \limits_{n \rightarrow \infty} A_n, \quad
-    \limsup \limits_{n \rightarrow \infty} A_n \subset \mathbb{Q}.
-  \end{equation}
+  (1) By proposition, $\limsup \limits_{n \rightarrow \infty} A_n = (0, +\infty)$ and
+  $\liminf \limits_{n \rightarrow \infty} A_n = \emptyset$.
 
+  (2) For each $A_n$, we know $\mathbb{Z} \subset A_n \subset \mathbb{Q}$, so
+  $\mathbb{Z} \subset \liminf \limits_{n \rightarrow \infty} A_n$ and
+  $\limsup \limits_{n \rightarrow \infty} A_n \subset \mathbb{Q}$.
   For all $x \in \liminf \limits_{n \rightarrow \infty} A_n$, there exists $n$
   such that $x \in A_n \cap A_{n+1}$.
   Then there exist integers $m_n$ and $m_{n+1}$ such that
@@ -100,6 +150,43 @@
     \frac{q}{p} \in \cap _{n = 1}^{\infty} \cup _{k = n}^{\infty}A_k,
   \end{equation}
   which means $\mathbb{Q} \subset \limsup \limits_{n \rightarrow \infty}A_n$.
+\end{proof}
+
+\begin{proposition}{Limit of Increasing Set Sequences}{}
+  If the set sequence $\{A_n\}$ is monotonically increasing or decreasing,
+  then $\lim \limits _{n \rightarrow \infty} A_n$ exists, and
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} A_n = \cup _{n = 1}^{\infty} A_n ~~  \text{if increasing},
+    \quad \quad
+    \lim \limits _{n \rightarrow \infty} A_n = \cap _{n = 1}^{\infty} A_n ~~  \text{if decreasing}.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  It is direct to verify that the upper limit and lower limit are identical,
+  and find the limit.
+\end{proof}
+
+\begin{example}{Limits of Monotone Set Sequence}{}
+  Let $\{f_n\}$ be a sequence of functions, $f_n : E \rightarrow \mathbb{R}$, $E \subset \mathbb{R}$.
+  For all $x \in E$, $f_n(x) \leq f_{n+1}(x)$. Prove that for all $c \in \mathbb{R}$,
+  the limit of set sequence $A_n = \{x: f_n(x) > c\}$ exists and 
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} A_n = \left\{ x:\lim \limits _{n \rightarrow \infty} f_n(x) > c \right\}.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  It is obvious that $A_n$ is monotonically increasing, so the limit exists.
+  Then
+  \begin{equation}
+    \lim \limits _{n \rightarrow \infty} A_n = \cup _{n = 1}^{+\infty}A_n.
+  \end{equation}
+  It is easy to prove that for all $x \in \cup _{n = 1}^{+\infty}A_n$,
+  $x \in \{x: \lim \limits _{n \rightarrow \infty} f_n(x) > c\}$.
+  And for all $x \in \{x: \lim \limits _{n \rightarrow \infty} f_n(x) > c\}$,
+  there must exist a sufficiently large $N$ such that $f_N(x) > c$,
+  so $x \in A_N$.
 \end{proof}
 
 \subsection{Mappings}
