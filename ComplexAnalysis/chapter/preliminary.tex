@@ -113,8 +113,6 @@
   then $\frac{1}{1-z} - 1 = w_k$, and $z = \frac{w_k}{w_k + 1}$.
 \end{solution}
 
-\subsection{Sequence of Complex Numbers}
-
 \section{Complex Functions}
 
 \subsection{Continuous Complex Functions}
@@ -143,6 +141,10 @@
   \end{equation}
   exists. We call the limit \emph{derivative of $f$ at $z_0$}, denoted as $f^{\prime}(z_0)$.
 \end{definition}
+
+\begin{note}
+  If $f$ is holomorphic in $\mathbb{C}$, then it is said to be an \emph{entire function}.
+\end{note}
 
 \begin{example}{Examples of Non-Holomorphic Functions}{}
   Prove that $f(z) = \overline{z}$ is not holomorphic.
@@ -184,8 +186,9 @@
     \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y},
     \frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x}, \quad
     \text{or} \quad
-    \frac{\partial f}{\partial \overline{z}} = 0.
+    \frac{\partial f}{\partial \overline{z}} = 0,
   \end{equation}
+  and $u, v$ have continuous derivatives at $z_0$.
 \end{theorem}
 
 \begin{proof}
@@ -198,11 +201,61 @@
   E.g., $\overline{z}$, $|z|^2 = z\overline{z}$.
 \end{note}
 
+\begin{example}{Counterexample of Cauchy-Riemann Equation}{}
+  Prove the following $f(z)$ satisfies Cauchy-Riemann equation,
+  but is not differentiable at the origin.
+  \begin{equation}
+    f(z) =
+    \begin{cases}
+      \frac{x^3 - y^3 + i(x^3 + y^3)}{x^2 + y^2} & \text{ if } z \neq 0;\\
+      0 & \text{ if } z = 0.
+    \end{cases}
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  Write $f(z) = u(x,y) + v(x,y)i$, then
+  \begin{equation}
+    u(x, 0) = x, u_x(x, 0) = 1, u_x(0, 0) = 1; \quad
+    u(0, y) = -y, u_y(0, y) = -1, u_y(0, 0) = -1.
+  \end{equation}
+  \begin{equation}
+    v(x,0) = x, v_x(x,0) = 1, v_x(0,0) = 1; \quad
+    v(0,y) = y, v_y(0, y) = 1, v_y(0, 0) = 1.
+  \end{equation}
+  The above derivatives satisfy the Cauchy-Riemann equation.
+  Let $y = kx$, then the limit $\lim \limits _{(x,y) \rightarrow (0,0)}\frac{f(x,y) - f(0, 0)}{x+iy}$
+  does not exist, so it is not differentiable at the origin.
+\end{proof}
+
 \subsection{Power Series}
 
 \section{Complex Integrals}
 
+\begin{definition}{Integral of Parametrized Curve}{}
+  Given a smooth curve $\gamma$ in $\mathbb{C}$ parametrized by $z(t):[a,b] \rightarrow \mathbb{C}$,
+  and $f$ a continuous function on $\gamma$.
+  The \emph{integral of $f$ along $\gamma$} is
+  \begin{equation}
+    \int_{\gamma} f(z)\mathrm{d} z = \int_a^b f(z(t)) z^{\prime}(t) \mathrm{d} t.
+  \end{equation}
+\end{definition}
 
+\begin{theorem}{Newton-Leibniz Formula}{}
+  If a continuous function $f$ has a primitive $F$ in $\Omega$,
+  and $\gamma$ is a curve in $\Omega$ that begins at $w_1$ and
+  ends at $w_2$. Then
+  \begin{equation}
+    \int_{\gamma}f(z)\mathrm{d} z = F(w_2) - F(w_1).
+  \end{equation}
+\end{theorem}
 
+\begin{corollary}{Integral along Closed Curves}{}
+  If $\gamma$ is a closed curve in an open set $\Omega$,
+  and $f$ is continuous and has a primitive in $\Omega$, then
+  \begin{equation}
+    \int_{\gamma} f(z) \mathrm{d} z = 0.
+  \end{equation}
+\end{corollary}
 
 

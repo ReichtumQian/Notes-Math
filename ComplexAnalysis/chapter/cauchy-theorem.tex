@@ -1,47 +1,29 @@
 
 \section{Cauchy's Theorem}
 
-\subsection{Goursat's Theorem}
-
-\begin{theorem}{Goursat's Theorem}{}
-  If $\Omega$ is an open set in $\mathbb{C}$,
-  and $T \subset \Omega$ a triangle whose interior is also contained in $\Omega$,
-  then
-  \begin{equation}
-    \int_T f(z)\mathrm{d} z = 0
-  \end{equation}
-  whenever is holomorphic in $\Omega$.
-\end{theorem}
-
-\subsection{Cauchy's Theorem for a Disc}
-
-\begin{theorem}{Existence of Primitives in a Disc}{}
-  A holomorphic function in an open disc has a primitive in that disc.
-\end{theorem}
-
-\begin{theorem}{Cauchy's Theorem for a Disc}{}
-  If $f$ is holomorphic in a disc, then
-  \begin{equation}
-    \int_{\gamma} f(z)\mathrm{d} z = 0
-  \end{equation}
-  for any closed curve $\gamma$ in that disc.
-\end{theorem}
-
-\subsection{Cauchy's Theorem for any Closed Curve}
-
 \begin{theorem}{Cauchy's Theorem}{}
-  If $f$ is holomorphic in a connected region $D \subset \mathbb{C}$,
+  If $f$ is holomorphic in the closure of a simply connected region $D \subset \mathbb{C}$,
   and $\gamma$ is a closed curve in $D$, then
   \begin{equation}
     \int_{\gamma} f(z)\mathrm{d} z = 0.
   \end{equation}
 \end{theorem}
 
+\begin{example}{Apply Cauchy's Theorem to Calculate Improper Integrals}{}
+  Apply Cauchy's theorem to 
+  \begin{enumerate}
+  \item Prove that if $\xi \in \mathbb{R}$,
+    \begin{equation}
+      e^{- \pi \xi^2} = \int_{-\infty}^{+\infty} e^{-\pi x^2} e^{-2\pi i x \xi} \mathrm{d} x.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
 \section{Cauchy's Integral Formula}
 
 \begin{theorem}{Cauchy's Integral Formula}{}
-  Suppose $f$ is holomorphic in an open set that contains the closure of a disc $D$.
-  If $C$ denotes the boundary circle of this disc with the positive orintation, then
+  Suppose $f$ is holomorphic in the closure of an open set $D \subset \mathbb{C}$.
+  Denote the boundary of $D$ with the positive orintation as $C$, then
   \begin{equation}
     f(z) = \frac{1}{2 \pi i} \int_C \frac{f(\zeta)}{\zeta - z}\mathrm{d} \zeta, \quad
     z \in D.
@@ -68,4 +50,27 @@
   where $\|f\|_C = \sup \limits_{z \in C}|f(z)|$ denotes the supremum of $|f|$
   on the boundary circle $C$.
 \end{corollary}
+
+\section{Liouville's Theorem}
+
+\begin{theorem}{Liouville's Theorem}{}
+  If a complex-valued function $f$ is entire and bounded, then $f$ is constant.
+\end{theorem}
+
+\begin{corollary}{Fundamental Theorem for Algebra}{}
+  
+\end{corollary}
+
+
+\section{Morera's Theorem}
+
+\begin{theorem}{Morera's Theorem}{}
+  Suppose $f$ is a continuous function in the simply connected region $D$,
+  and for any closed curve $C$ in $D$,
+  \begin{equation}
+    \int_C f(z)\mathrm{d} z = 0,
+  \end{equation}
+  then $f$ is holomorphic.
+\end{theorem}
+
 
