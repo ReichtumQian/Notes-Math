@@ -241,6 +241,34 @@
   \end{equation}
 \end{definition}
 
+\begin{example}{Calculation of Integrals of Parametrized Curve}{}
+  \begin{enumerate}
+  \item Let $C$ be the line connecting $z_0 = 0$ and $z_1 = 1 + i$, calculate
+    \begin{equation}
+      \int_C x - y + ix^2 \mathrm{d} z.
+    \end{equation}
+  \item Let $C$ be the upper semicircle with radius $r = 1$, calculate
+    \begin{equation}
+      \int_C |z| \mathrm{d} z.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) $C$ can be parametrized as $z(t) = t + it$, $t \in [0, 1]$.
+  So substituting $x = t$ and $y = t$
+  \begin{equation}
+    \int_C x-y+ix^2 \mathrm{d} z = \int_0^1 (t - t + t^2 i) (1 + i)\mathrm{d} t
+    = - \frac{1}{3} + \frac{1}{3} i.
+  \end{equation}
+
+  (2) $C$ can be parametrized as $z(\theta) = e^{i\theta}$. Then
+  \begin{equation}
+    \int_C |z|\mathrm{d} z = \int_0^{\pi} 1 \cdot i e^{i\theta}\mathrm{d} \theta
+    = e^{i\theta} \big|^{\pi}_0 = -1 - 1 = -2.
+  \end{equation}
+\end{solution}
+
 \begin{theorem}{Newton-Leibniz Formula}{}
   If a continuous function $f$ has a primitive $F$ in $\Omega$,
   and $\gamma$ is a curve in $\Omega$ that begins at $w_1$ and
@@ -249,6 +277,21 @@
     \int_{\gamma}f(z)\mathrm{d} z = F(w_2) - F(w_1).
   \end{equation}
 \end{theorem}
+
+\begin{example}{Applications of Newton-Leibniz Formula}{}
+  Calculate the following integrals:
+  \begin{equation}
+    \int_{-2}^{-2 + i} (z+2)^2 \mathrm{d} z
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Apply the Newton-Leibniz formula, we have
+  \begin{equation}
+    \int_{-2}^{-2+i} (z+2)^2 \mathrm{d} z = \frac{1}{3}(z+2)^3 \big|^{i-2}_{-2}
+    = - \frac{1}{3}i.
+  \end{equation}
+\end{solution}
 
 \begin{corollary}{Integral along Closed Curves}{}
   If $\gamma$ is a closed curve in an open set $\Omega$,
