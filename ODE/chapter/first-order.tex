@@ -1,0 +1,122 @@
+
+\section{Separable Equation and its Generalization}
+
+\subsection{Separable Equation}
+
+\begin{definition}{Separable Equation}{}
+  A \emph{separable equation} is an ODE of the form
+  \begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d} x} = f(x)\varphi(y),
+  \end{equation}
+  where $f$ and $\varphi$ are continuous functions.
+\end{definition}
+
+\begin{proposition}{Solution for Separable Equations}{}
+  If $\varphi(y) \neq 0$,
+  then the solution for separable equations satisfies
+  \begin{equation}
+    \int \frac{\mathrm{d} y}{\varphi(y)} = \int f(x)\mathrm{d} x + c.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Omitted since it is direct to see.
+\end{proof}
+
+\begin{example}{Applications of Separable Equations}{}
+  Solve the following ODEs
+  \begin{equation}
+    (1) \frac{\mathrm{d}y}{\mathrm{d} x} = P(x)y, \quad
+    (2) 2yy^{\prime} - y^2 - 2 = 0, y(0) = 1.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $y = c e^{\int P(x)\mathrm{d} x}$.
+  (2) $y = \sqrt{3e^x - 2}$.
+\end{solution}
+
+\subsection{Homogeneous Equation}
+
+\begin{definition}{Homogeneous Equation}{}
+  A \emph{homogeneous equation} is an ODE of the form
+  \begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d}x} = g \left( \frac{y}{x} \right),
+  \end{equation}
+  where $g$ is continuous.
+\end{definition}
+
+\begin{proposition}{Homogeneous Equation to Separable Equation}{}
+  Any homogeneous equation can be transformed into a separable equation
+  by substituting $y(x) = u(x)x$, that is
+  \begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d} x} = g \left( \frac{y}{x} \right)
+    \Rightarrow
+    u + x \frac{\mathrm{d}u}{\mathrm{d} x} = g(u).
+  \end{equation}
+\end{proposition}
+
+\begin{example}{Solve Homogeneous Equations}{}
+  Solve the following ODEs
+  \begin{equation}
+    xy^{\prime} + y(\ln x - \ln y) = 0, y(1) = e^3.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  $y^{\prime} = - \frac{y}{x} \ln \frac{x}{y} = \frac{y}{x} \ln \frac{y}{x}$, so it is a homogeneous equation.
+  Let $y(x) = x u(x)$, then the ODE can be transformed into
+  \begin{equation}
+    \frac{\mathrm{d} u}{u(\ln u - 1)} = \frac{\mathrm{d} x}{x}
+    \Rightarrow
+    u = e^{1 \pm e^c x}.
+  \end{equation}
+  When $x = 1$, $y(1) = e^3$, so $u(1) = e^3$. So $e^c = 2$, $u = e^{1\pm 2x}$
+  and $y = x e^{1 \pm 2x}$.
+\end{solution}
+
+% \begin{proposition}{Generalization of Homogeneous Equation}{}
+%   The generalization of homogeneous equation
+%   \begin{equation}
+%     \frac{\mathrm{d} y}{\mathrm{d} x} = \frac{a_1 x + b_1 y + c_1}{a_2x + b_2 y + c_2},
+%   \end{equation}
+%   can be solved using the substitution:
+%   \begin{equation}
+%     u = 
+%   \end{equation}
+% \end{proposition}
+
+\section{First-Order Linear ODEs}
+
+\begin{definition}{First-Order Linear ODE}{}
+  A \emph{first-order linear ODE} is an ODE of the form
+  \begin{equation}
+    \frac{\mathrm{d} y}{\mathrm{d} x} = P(x) y + Q(x),
+  \end{equation}
+  where $P(x), Q(x)$ are continuous functions.
+\end{definition}
+
+\section{Exact Equation}
+
+\begin{definition}{Exact Equation}{}
+  A \emph{exact equation} is an ODE of the form
+  \begin{equation}
+    M(x,y)\mathrm{d} x + N(x,y)\mathrm{d} y = 0,
+  \end{equation}
+  where $M_y = N_x$.
+\end{definition}
+
+\section{First-Order Implicit Equation}
+
+\begin{definition}{First-Order Implicit Equation}{}
+  A \emph{first-order implicit equation} is an ODE of the form
+  \begin{equation}
+    F(x, y, y^{\prime}) = 0.
+  \end{equation}
+\end{definition}
+
+
+
+
+
+
