@@ -1,7 +1,56 @@
 
 
+\section{Poles and Zeros}
+
+\subsection{Singularities and Poles}
+
+\begin{definition}{Isolated Singularity}{}
+  Let $f(z)$ be a complex-valued function that is holomorphic
+  in some deleted neighborhood of $z_0$, but not defined at $z_0$.
+  Then $z_0$ is said to be an \emph{isolated singularity of $f(z)$}.
+\end{definition}
+
+\begin{definition}{Pole Singularity and Essential Singularity}{}
+  An isolated singularity $z_0$ is called a \emph{pole of $f(z)$}
+  if $\lim \limits _{z \rightarrow z_0}f(z)$ goes up to infinity.
+  If there exists $n \in \mathbb{Z}^+$ such that
+  \begin{equation}
+    g(z) = (z-z_0)^n f(z)
+  \end{equation}
+  is holomorphic and nonzero at $z_0$,
+  then $z_0$ is said to be a \emph{pole of order $n$}.
+  If no finite $n$ exists, then $z_0$ is said to be an \emph{essential singularity}.
+\end{definition}
+
+\begin{definition}{Principal Part and Residue}{}
+  If $f$ has a pole of order $n$ at $z_0$, and
+  \begin{equation}
+    f(z) = \frac{a_{-n}}{(z-z_0)^n} + \frac{a_{-n+1}}{(z-z_0)^{n-1}} + \cdots + \frac{a_{-1}}{z-z_0} + G(z)
+    := H(z) + G(z),
+  \end{equation}
+  then $H(z)$ is said to be the \emph{principal part of $f$ at $z_0$},
+  and $a_{-1}$ the \emph{residue of $f$ at $z_0$}.
+\end{definition}
+
+\subsection{Zeros}
+
+\begin{definition}{Zero}{}
+  A complex number $z_0$ is a \emph{zero of $f(z)$} if
+  \begin{equation}
+    f(z_0) = 0.
+  \end{equation}
+  Then there exists a neighborhood $U \subset \Omega$ of $z_0$,
+  and a unique positive integer $n$ such that
+  \begin{equation}
+    f(z) = (z - z_0)^n g(z), \quad z \in U,
+  \end{equation}
+  where $g(z)$ is a non-vanishing holomorphic function on $U$.
+  Then $z_0$ is said to be a \emph{zero of order $n$}.
+\end{definition}
 
 \section{The Residue Formula}
+
+\subsection{The Residue Formula}
 
 \begin{theorem}{The Residue Formula}{}
   Suppose that $f$ is holomorphic in an open set containing a circle $C$
