@@ -180,6 +180,31 @@
   where $M_y = N_x$.
 \end{definition}
 
+\begin{proposition}{Solution for Exact Equation}{}
+  The general solution of $M(x,y)\mathrm{d}x + N(x,y)\mathrm{d} y = 0$
+  the solution of $F(x,y) = C$, where $F(x,y)$ satisfies $F_x(x,y) = M(x,y)$ and $F_y(x,y)=N(x,y)$.
+  It is calculated by
+  \begin{equation}
+    F(x,y) = \int M(x,y)\mathrm{d} x + h(y)
+  \end{equation}
+  and $F^{\prime}_y(x,y) = N(x,y)$.
+\end{proposition}
+
+\begin{example}{Practice on Exact Equation}{}
+  Find the solution of
+  \begin{equation}
+    (1) (x^3 + xy^2)\mathrm{d} x + (x^2y + y^3)\mathrm{d} y = 0
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $M_y = N_x$. $F(x,y) = \frac{1}{4}x^4 + \frac{1}{2} x^2 y^2 + h(y)$,
+  $F^{\prime}_y(x,y) = x^2y + h^{\prime}(y)$.
+  \begin{equation}
+    F^{\prime}_y(x,y) = N(x,y) \Rightarrow h(y) = \frac{1}{4}y^4.
+  \end{equation}
+\end{solution}
+
 \section{First-Order Implicit Equation}
 
 \begin{definition}{First-Order Implicit Equation}{}
@@ -189,6 +214,17 @@
   \end{equation}
 \end{definition}
 
+\begin{proposition}{Explicit $x$ or $y$}{}
+  The solution of $y = f(x,y^{\prime})$ is $y(x) = f(x, P)$ where
+  $P$ follows
+  \begin{equation}
+    P = f_x + f_P \cdot P_x.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  
+\end{proof}
 
 
 

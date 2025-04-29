@@ -5,7 +5,7 @@
 
 - [x] Video1
 - [x] Video2
-- [ ] Video3
+- [x] Video3
 - [ ] Video4
 
 ## Existence and Uniqueness of Solutions
