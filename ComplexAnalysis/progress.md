@@ -9,11 +9,23 @@
 ## Holomorphic Functions
 
 - [x] Video1
-- [ ] Video2
+- [ ] Video2: Ignored
 
 ## Complex Integrals
 
+- [x] Video1
+- [ ] Video2
+
 ## Complex Power Series
+
+- [ ] Video1
+- [ ] Video2
+- [ ] Video3
+- [ ] Video4
 
 ## The Residue Formula
 
+- [ ] Video1
+- [ ] Video2
+- [ ] Video3
+- [ ] Video4
