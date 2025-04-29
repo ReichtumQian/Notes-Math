@@ -88,6 +88,8 @@
 
 \section{First-Order Linear ODEs}
 
+\subsection{Variation of Parameters}
+
 \begin{definition}{First-Order Linear ODE}{}
   A \emph{first-order linear ODE} is an ODE of the form
   \begin{equation}
@@ -95,6 +97,78 @@
   \end{equation}
   where $P(x), Q(x)$ are continuous functions.
 \end{definition}
+
+\begin{proposition}{Variation of Parameters}{}
+  The general solutions for $y^{\prime} = P(x)y$ and $y^{\prime}(x) = P(x)y + Q(x)$ are
+  \begin{equation}
+    y = C e^{\int P(x)\mathrm{d} x}, \quad
+    y = \left( \int Q(x) e^{-\int P(x)\mathrm{d} x}\mathrm{d} x + C \right) e^{\int P(x)\mathrm{d} x}
+  \end{equation}
+  respectively.
+\end{proposition}
+
+\begin{proof}
+  The homogeneous case is direct. To solve the non-homogeneous case,
+  consider $y = C(x)e^{\int P(x) \mathrm{d} x}$, then
+  \begin{equation}
+    y^{\prime}(x) = C^{\prime}(x) e^{\int P(x)\mathrm{d} x} + C(x) P(x) e^{\int P(x)\mathrm{d} x}.
+  \end{equation}
+  Meanwhile, the given condition indicates
+  \begin{equation}
+    y^{\prime}(x) = C(x)P(x)e^{\int P(x)\mathrm{d} x} + Q(x).
+  \end{equation}
+  Comparing the above two equations, we get $Q(x) = C^{\prime}(x) e^{\int P(x)\mathrm{d} x}$,
+  which implies
+  \begin{equation}
+    C(x) = \int Q(x) e^{-\int P(x)\mathrm{d} x} \mathrm{d} x + C.
+  \end{equation}
+\end{proof}
+
+\begin{example}{Applications of Variation of Parameters}{}
+  Find the solution for
+  \begin{equation}
+    (1) y^{\prime} = \frac{y + \sin^3 x}{\sin x \cos x}, \quad
+    (2) y^{\prime} = \frac{y}{x + y^3}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Apply the formula.
+
+  (2) Take reciprocal on both sides, then $x^{\prime} = \frac{x}{y} + y^2$. Then apply the formula.
+\end{solution}
+
+\subsection{Bernoulli's Equation}
+
+\begin{proposition}{Bernoulli's Equation}{}
+  The solution for $y^{\prime} = P(x) y + Q(x) y^n$ is the solution of
+  \begin{equation}
+    \frac{\mathrm{d} z}{\mathrm{d} x} = (1-n)P(x)z + (1-n)Q(x), \quad y = z^{n-1},
+  \end{equation}
+  or $y = 0$.
+\end{proposition}
+
+\begin{proof}
+  Multiplying both sides by $y^{-n}$ yields
+  \begin{equation}
+    y^{-n}y^{\prime} = P(x)y^{1-n} + Q(x).
+  \end{equation}
+  Let $z(x) = y^{1-n}(x)$, then $z^{\prime}(x) = (1-n)y^{-n}y^{\prime}$. Then the equation is equivalent to
+  \begin{equation}
+    z^{\prime}(x) = (1-n)P(x)z(x) + Q(x).
+  \end{equation}
+\end{proof}
+
+\begin{example}{Practice on Bernoulli's Equation}{}
+  Find the solution for
+  \begin{equation}
+    y^{\prime} = \frac{x^4 + y^3}{xy^2}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  $y^{\prime} = \frac{y}{x} + \frac{x^3}{y^2}$, so it is a Bernoulli's equation with $n = -2$.
+\end{solution}
 
 \section{Exact Equation}
 
