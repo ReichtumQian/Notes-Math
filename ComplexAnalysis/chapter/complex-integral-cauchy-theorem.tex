@@ -1,0 +1,161 @@
+
+\section{Complex Integrals}
+
+\subsection{Integral of Parametrized Curve}
+
+\begin{definition}{Integral of Parametrized Curve}{}
+  Given a smooth curve $\gamma$ in $\mathbb{C}$ parametrized by $z(t):[a,b] \rightarrow \mathbb{C}$,
+  and $f$ a continuous function on $\gamma$.
+  The \emph{integral of $f$ along $\gamma$} is
+  \begin{equation}
+    \int_{\gamma} f(z)\mathrm{d} z = \int_a^b f(z(t)) z^{\prime}(t) \mathrm{d} t.
+  \end{equation}
+\end{definition}
+
+\begin{example}{Calculation of Integrals of Parametrized Curve}{}
+  \begin{enumerate}
+  \item Let $C$ be the line connecting $z_0 = 0$ and $z_1 = 1 + i$, calculate
+    \begin{equation}
+      \int_C x - y + ix^2 \mathrm{d} z.
+    \end{equation}
+  \item Let $C$ be the upper semicircle with radius $r = 1$, calculate
+    \begin{equation}
+      \int_C |z| \mathrm{d} z.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{solution}
+  (1) $C$ can be parametrized as $z(t) = t + it$, $t \in [0, 1]$.
+  So substituting $x = t$ and $y = t$
+  \begin{equation}
+    \int_C x-y+ix^2 \mathrm{d} z = \int_0^1 (t - t + t^2 i) (1 + i)\mathrm{d} t
+    = - \frac{1}{3} + \frac{1}{3} i.
+  \end{equation}
+
+  (2) $C$ can be parametrized as $z(\theta) = e^{i\theta}$. Then
+  \begin{equation}
+    \int_C |z|\mathrm{d} z = \int_0^{\pi} 1 \cdot i e^{i\theta}\mathrm{d} \theta
+    = e^{i\theta} \big|^{\pi}_0 = -1 - 1 = -2.
+  \end{equation}
+\end{solution}
+
+\subsection{Newton-Leibniz Formula}
+
+\begin{theorem}{Newton-Leibniz Formula}{}
+  If a continuous function $f$ has a primitive $F$ in $\Omega$,
+  and $\gamma$ is a curve in $\Omega$ that begins at $w_1$ and
+  ends at $w_2$. Then
+  \begin{equation}
+    \int_{\gamma}f(z)\mathrm{d} z = F(w_2) - F(w_1).
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Applications of Newton-Leibniz Formula}{}
+  Calculate the following integrals:
+  \begin{equation}
+    \int_{-2}^{-2 + i} (z+2)^2 \mathrm{d} z
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Apply the Newton-Leibniz formula, we have
+  \begin{equation}
+    \int_{-2}^{-2+i} (z+2)^2 \mathrm{d} z = \frac{1}{3}(z+2)^3 \big|^{i-2}_{-2}
+    = - \frac{1}{3}i.
+  \end{equation}
+\end{solution}
+
+\begin{corollary}{Integral along Closed Curves}{}
+  If $\gamma$ is a closed curve in an open set $\Omega$,
+  and $f$ is continuous and has a primitive in $\Omega$, then
+  \begin{equation}
+    \int_{\gamma} f(z) \mathrm{d} z = 0.
+  \end{equation}
+\end{corollary}
+
+\section{Cauchy's Theorem and its Generalizations}
+
+\subsection{Cauchy's Theorem}
+
+\begin{theorem}{Cauchy's Theorem}{}
+  If $f$ is holomorphic in the closure of a simply connected region $D \subset \mathbb{C}$,
+  and $\gamma$ is a closed curve in $D$, then
+  \begin{equation}
+    \int_{\gamma} f(z)\mathrm{d} z = 0.
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Applications of Cauchy's Theorem}{}
+  
+\end{example}
+
+\begin{example}{Apply Cauchy's Theorem to Calculate Improper Integrals}{}
+  Apply Cauchy's theorem to 
+  \begin{enumerate}
+  \item Prove that if $\xi \in \mathbb{R}$,
+    \begin{equation}
+      e^{- \pi \xi^2} = \int_{-\infty}^{+\infty} e^{-\pi x^2} e^{-2\pi i x \xi} \mathrm{d} x.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\subsection{Cauchy's Integral Formula}
+
+\begin{theorem}{Cauchy's Integral Formula}{}
+  Suppose $f$ is holomorphic in the closure of an open set $D \subset \mathbb{C}$.
+  Denote the boundary of $D$ with the positive orintation as $C$, then
+  \begin{equation}
+    f(z) = \frac{1}{2 \pi i} \int_C \frac{f(\zeta)}{\zeta - z}\mathrm{d} \zeta, \quad
+    z \in D.
+  \end{equation}
+\end{theorem}
+
+\begin{example}{Applications of Cauchy's Integral Formula}{}
+  
+\end{example}
+
+\begin{corollary}{Cauchy's Derivative Formula}{}
+  If $f$ is holomorphic in an open set $\Omega$,
+  then $f$ has infinitely many complex derivatives in $\Omega$.
+  Moreover, if $C \subset \Omega$ is a circle whose interior is also contained in $\Omega$,
+  then
+  \begin{equation}
+    f^{(n)}(z) = \frac{n!}{2 \pi i} \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}\mathrm{d} \zeta
+  \end{equation}
+  for all $z$ in the interior of $C$.
+\end{corollary}
+
+\begin{corollary}{Cauchy Inequality}{}
+  If $f$ is holomorphic in an open set that contains the closure of a disc $D$
+  centered at $z_0$ and of radius of $R$, then
+  \begin{equation}
+    |f^{(n)}(z_0)| \leq \frac{n! \|f\|_C}{R^n},
+  \end{equation}
+  where $\|f\|_C = \sup \limits_{z \in C}|f(z)|$ denotes the supremum of $|f|$
+  on the boundary circle $C$.
+\end{corollary}
+
+\subsection{Liouville's Theorem}
+
+\begin{theorem}{Liouville's Theorem}{}
+  If a complex-valued function $f$ is entire and bounded, then $f$ is constant.
+\end{theorem}
+
+\begin{corollary}{Fundamental Theorem for Algebra}{}
+  
+\end{corollary}
+
+
+\subsection{Morera's Theorem}
+
+\begin{theorem}{Morera's Theorem}{}
+  Suppose $f$ is a continuous function in the simply connected region $D$,
+  and for any closed curve $C$ in $D$,
+  \begin{equation}
+    \int_C f(z)\mathrm{d} z = 0,
+  \end{equation}
+  then $f$ is holomorphic.
+\end{theorem}
+
+
