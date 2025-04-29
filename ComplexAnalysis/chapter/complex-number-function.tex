@@ -57,8 +57,9 @@
 \begin{proposition}{Properties of Absolute Value}{}
   Given $z, w$ two complex numbers, then
   \begin{equation}
-    (1) |z| \leq |x| + |y|, \quad
-    (2) |z + w| \leq |z| + |w|.
+    (1) |z|^2 = z \cdot \overline{z}, \quad
+    (2) |z| \leq |x| + |y|, \quad
+    (3) |z + w| \leq |z| + |w|.
   \end{equation}
 \end{proposition}
 
@@ -113,25 +114,9 @@
   then $\frac{1}{1-z} - 1 = w_k$, and $z = \frac{w_k}{w_k + 1}$.
 \end{solution}
 
-\section{Complex Functions}
+\section{Holomorphic Functions}
 
-\subsection{Continuous Complex Functions}
-
-\begin{definition}{Continuous Complex Function}{}
-  Let $f$ be a complex function defined on $\Omega$.
-  We say it is \emph{continuous at $z_0$} if
-  \begin{equation}
-    \forall \epsilon > 0, \exists \delta, \forall z, |z - z_0| < \delta,
-    \quad |f(z) - f(z_0)| < \epsilon.
-  \end{equation}
-\end{definition}
-
-\begin{theorem}{Extremum and Boundedness of Continuous Functions}{}
-  A continuous function on a compact set $\Omega$ is bounded and
-  attains a maximum and minimum on $\Omega$.
-\end{theorem}
-
-\subsection{Holomorphic Functions}
+\subsection{Concept of Holomorphic Function}
 
 \begin{definition}{Holomorphic Function}{}
   Let $\Omega$ be an open set in $\mathbb{C}$ and $f$ a complex-valued function
@@ -140,11 +125,8 @@
     f^{\prime}(z_0) := \lim \limits _{h \rightarrow 0}\frac{f(z_0 + h) - f(z_0)}{h}, \quad h \in \mathbb{C}
   \end{equation}
   exists. We call the limit \emph{derivative of $f$ at $z_0$}, denoted as $f^{\prime}(z_0)$.
-\end{definition}
-
-\begin{note}
   If $f$ is holomorphic in $\mathbb{C}$, then it is said to be an \emph{entire function}.
-\end{note}
+\end{definition}
 
 \begin{example}{Examples of Non-Holomorphic Functions}{}
   Prove that $f(z) = \overline{z}$ is not holomorphic.
@@ -159,12 +141,49 @@
   The limit of $\frac{\overline{h}}{h}$ does not exist, so $f(z)$ is not holomorphic.
 \end{proof}
 
+\begin{proposition}{Representation of Complex Derivative}{}
+  If $f(z)$ is holomorphic at $z_0$, then
+  \begin{equation}
+    f^{\prime}(z_0) = u_x(z_0) + v_x(z_0) i = v_y(z_0) - iu_y(z_0).
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  By the definition of derivative, let $h \in \mathbb{R}$, then
+  \begin{equation}
+    f^{\prime}(z_0) = \lim \limits _{h \rightarrow 0} \frac{u(x_0+h, y_0) + i v(x_0 + h, y_0) - u(x_0, y_0) - iv(x_0, y_0)}{h}
+    = u_x(z_0) + v_x(z_0)i.
+  \end{equation}
+  Similarly, let $h = ik$, then
+  \begin{equation}
+    f^{\prime}(z_0) = \lim \limits _{k \rightarrow 0} \frac{u(x_0,y_0+k) + i v(x_0, y_0 + k) - u(x_0,y_0) - iv(x_0,y_0)}{ik}
+    = v_y(z_0) - iu_y(z_0).
+  \end{equation}
+  This completes the proof.
+\end{proof}
+
+\begin{example}{Application of Complex Derivatives}{}
+  If $f(z)$ is holomorphic in $D$, and $f^{\prime}(z) = 0$ for all $z \in D$.
+  Prove that $f(z)$ is constant in $D$.
+\end{example}
+
+\begin{proof}
+  We know $0 = f^{\prime}(z) = u_x(z)+iv_x(z) = v_y(z)-iu_y(z)$,
+  which implies that 
+  \begin{equation}
+    u_x(z) = u_y(z) = v_x(z) = v_y(z) = 0, \quad z \in D.
+  \end{equation}
+  This means $f(z)$ is contant in $D$.
+\end{proof}
+
+\subsection{Cauchy-Riemann Equation}
+
 \begin{definition}{Partial Derivatives with Respect to $z$ and $\overline{z}$}{}
   Let $f$ be a complex-valued function,
   then the derivatives of $f$ with respect to $z$ and $\overline{z}$ are
   \begin{equation}
-    \frac{\partial f}{\partial z} := \frac{1}{2} \left( \frac{\partial f}{\partial x} + \frac{1}{i} \frac{\partial }{\partial y} \right), \quad
-    \frac{\partial f}{\partial \overline{z}} := \frac{1}{2} \left( \frac{\partial }{\partial x} - \frac{1}{i} \frac{\partial}{\partial y} \right).
+    \frac{\partial f}{\partial z} := \frac{1}{2} \left( \frac{\partial f}{\partial x} + \frac{1}{i} \frac{\partial f}{\partial y} \right), \quad
+    \frac{\partial f}{\partial \overline{z}} := \frac{1}{2} \left( \frac{\partial f}{\partial x} - \frac{1}{i} \frac{\partial f}{\partial y} \right).
   \end{equation}
 \end{definition}
 
@@ -190,16 +209,6 @@
   \end{equation}
   and $u, v$ have continuous derivatives at $z_0$.
 \end{theorem}
-
-\begin{proof}
-  
-\end{proof}
-
-\begin{note}
-  Cauchy-Riemann equation implies that any function that relies on
-  $\overline{z}$ is not holomorphic.
-  E.g., $\overline{z}$, $|z|^2 = z\overline{z}$.
-\end{note}
 
 \begin{example}{Counterexample of Cauchy-Riemann Equation}{}
   Prove the following $f(z)$ satisfies Cauchy-Riemann equation,
@@ -228,7 +237,35 @@
   does not exist, so it is not differentiable at the origin.
 \end{proof}
 
-\subsection{Power Series}
+\begin{note}
+  Cauchy-Riemann equation implies that any function that relies on
+  $\overline{z}$ is not holomorphic.
+  E.g., $\overline{z}$, $|z|^2 = z\overline{z}$.
+\end{note}
+
+\begin{example}{What Happens When Conjugate is not Zero}{}
+  Suppose $f(z)$ is holomorphic in $D$.
+  If (1) $\overline{f(z)}$ is holomorphic,
+  or (2) $|f(z)|$ is constant,
+  or (3) $\operatorname{Re}(f(z)) \equiv 0$,
+  prove that $f(z)$ is contant in $D$.
+\end{example}
+
+\begin{proof}
+  (1) Since $\overline{f(z)} = u - iv$ is holomorphic, so it follows Cauchy-Riemann equation, i.e.,
+  \begin{equation}
+    u_x = -v_y, \quad u_y = v_x.
+  \end{equation}
+  At the same time, $f(z)$ also follows Cauchy-Riemann equation.
+  We can obtain that $u_x = u_y = v_x = v_y = 0$ for all $z \in D$,
+  which means $f(z)$ is constant in $D$.
+
+  (2) $\overline{f(z)} = \frac{|f(z)|^2}{f(z)}$, since the numerator is constant,
+  $\overline{f(z)}$ is holomorphic, so $f(z)$ is constant.
+
+  (3) $u(x,y) \equiv 0$ means that $u_x(x,y)$ and $u_y(x,y)$ are zero functions.
+  Then Cauchy-Riemann equation implies that $v_x$ and $v_y$ are also zero functions.
+\end{proof}
 
 
 
