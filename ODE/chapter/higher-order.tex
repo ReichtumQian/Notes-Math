@@ -1,0 +1,94 @@
+
+\section{Solution Structure of Higher-Order Linear ODEs}
+
+\subsection{Linear Dependence and Wronsky Determinant}
+
+\begin{definition}{Linear Independence}{}
+  Let $x_1(t),\cdots,x_k(t)$ be functions defined on $t \in [a, b]$,
+  if there exist $c_1,c_2,\cdots,c_k$ that are not all zero such that
+  \begin{equation}
+    c_1x_1(t) + \cdots + c_kx_k(t) \equiv 0, \quad t \in [a, b].
+  \end{equation}
+  Then $x_1(t), \cdots, x_k(t)$ are said to be \emph{linearly dependent}.
+  Otherwise, they are said to be \emph{linearly independent}.
+\end{definition}
+
+\begin{definition}{Wronsky Determinant}{}
+  Let $x_1(t),\cdots,x_k(t)$ be functions that are $k-1$ times differentiable on $[a, b]$,
+  then the \emph{Wronsky determinant} is
+  \begin{equation}
+    W =
+    \begin{vmatrix}
+      x_1(t) & x_2(t) & \cdots & x_k(t)\\
+      x^{\prime}_1(t) & x^{\prime}_2(t) & \cdots & x^{\prime}_k(t)\\
+      \vdots & \vdots & & \vdots\\
+      x^{(k-1)}_1(t) & x^{(k-1)}_2(t) & \cdots & x^{(k-1)}_k(t)
+    \end{vmatrix}.
+  \end{equation}
+\end{definition}
+
+\begin{proposition}{Wronsky Determinant to Determine Linear Dependence}{}
+  Given $x_1(t),\cdots,x_k(t)$, if their Wronsky determinant is zero,
+  then they are linearly dependent. Otherwise, they are linearly independent.
+\end{proposition}
+
+\subsection{Solution Structure of $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_n(t)x(t) = 0$}
+
+\begin{proposition}{Solution Structure of Homogeneous Higher-Order Linear ODEs}{}
+  If $x_1(t), \cdots, x_k(t)$ are $k$ linearly independent solutions of
+  $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_{n-1}(t)x^{\prime}(t) + a_n(t)x(t) = 0$.
+  Then the general solution is
+  \begin{equation}
+    c_1x_1(t) + \cdots + c_kx_k(t), \quad c_1,c_2,\cdots,c_k \in \mathbb{R}.
+  \end{equation}
+\end{proposition}
+
+\subsection{Solution Structure of $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_n(t)x(t) = f(t)$}
+
+\begin{proposition}{Solution Structure of Non-Homogeneous Higher-Order Linear ODEs}{}
+  Let $x_1(t), \cdots, x_n(t)$ be $n$ linearly independent solutions of homogeneous ODE.
+  Then the solution of the non-homogeneous ODE
+  $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_{n-1}(t)x^{\prime}(t) + a_n(t)x(t) = f(t)$
+  is
+  \begin{equation}
+    x(t) = c_1(t)x_1(t) + \cdots + c_n(t)x_n(t),
+  \end{equation}
+  where $c_1(t),\cdots,c_n(t)$ follows
+  \begin{align}
+    & c^{\prime}_1(t)x_1(t) + \cdots + c_n^{\prime}(t)x_n(t) = 0\\
+    & c^{\prime}_1(t)x_1^{\prime}(t) + \cdots + c_n^{\prime}(t)x_n^{\prime}(t) = 0\\
+    & \quad \quad \quad \vdots\\
+    & c^{\prime}_1(t)x_1^{(n-1)}(t) + \cdots +  c_n^{\prime}(t)x_n^{(n-1)}(t) = f(t).
+  \end{align}
+\end{proposition}
+
+\begin{proof}
+  Let us validate the solution. With the given conditions
+  \begin{align}
+    & x^{\prime}(t) = c_1(t)x^{\prime}_1(t) + \cdots + c_n(t)x^{\prime}_n(t)\\
+    & x^{\prime\prime}(t) = c_1(t)x^{\prime\prime}_1(t) + \cdots + c_n(t)x_n^{\prime\prime}(t)\\
+    & \quad \quad \quad \vdots\\
+    & x^{(n-1)}(t) = c_1(t)x_1^{(n-1)}(t) + \cdots + c_n(t) x_n^{(n-1)}(t)\\
+    & x^{(n)}(t) = c_1(t)x_1^{(n)}(t) + \cdots + c_n(t) x_n^{(n)}(t) + f(t).
+  \end{align}
+  Then consider
+  \begin{align}
+    &x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_{n-1}(t)x^{\prime}(t) + a_n(t)x(t)\\
+    =& f(t) + c_1(t)[x_1^{(n)}(t) + a_1(t) x_1^{(n-1)}(t) + \cdots] + \cdots + c_n(t)[x_n^{(n)}(t) + a_1(t)x_n^{(n-1)}(t) + \cdots]\\
+    =& f(t).
+  \end{align}
+  Then the $x(t)$ is a solution of the non-homogeneous ODE.
+\end{proof}
+
+\section{Solving Higher-Order Linear ODEs}
+
+\subsection{Solving $x^{(n)}(t) + a_1x^{(n-1)}(t) + \cdots + a_nx(t) = 0$}
+
+
+
+
+\subsection{Solving $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_n(t)x(t) = 0$}
+
+
+
+
