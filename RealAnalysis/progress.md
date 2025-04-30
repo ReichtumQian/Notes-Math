@@ -19,7 +19,7 @@ Ignored
 ## Measurable Functions
 
 - [x] Video1
-- [ ] Video2
+- [x] Video2
 - [ ] Video3
 - [ ] Video4
 
