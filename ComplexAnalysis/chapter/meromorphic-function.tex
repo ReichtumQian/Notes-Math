@@ -49,6 +49,8 @@
 
 \section{The Residue Formula}
 
+\subsection{The Concept and Representation of Residue}
+
 \begin{definition}{Residue}{}
   Given the Laurent series of a holomorphic function
   \begin{equation}
@@ -56,15 +58,77 @@
   \end{equation}
   then $a_{-1}$ is said to be the \emph{residue of $f(z)$ at $z_0$},
   denoted as $\operatorname{res}_{z_0} f$.
+  If $z_0 = \infty$, then $- a_{-1}$ is said to be the residue.
 \end{definition}
+
+\begin{proposition}{Representation of Residue}{}
+  If $z_0$ is an $m$-order pole of $f(z)$, i.e.,
+  $\varphi(z) = (z-z_0)^mf(z) $, $\varphi(z_0) \neq 0$, then
+  \begin{equation}
+    \operatorname{res}_{z_0} f = \frac{\varphi^{(m-1)}(z_0)}{(m-1)!}.
+  \end{equation}
+  If $z_0 = \infty$, then the residue of $f$ at $\infty$ is the negative of the sum of the residues at
+  all other finite singularities
+  \begin{equation}
+    \operatorname{res}_{z = \infty} f = - \sum\limits_{k = 1}^n \operatorname{res}_{z_k} f(z).
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  $\varphi(z) = (z-z_0)^m f(z) = \sum _{n = 0}^{+\infty} a_{n-m}(z - z_0)^n$.
+  The term with coefficent $a_{-1}$ is when $n = m-1$, that is $a_{-1}(z - z_0)^{m-1}$, so
+  \begin{equation}
+    \varphi^{(m-1)}(z_0) = (m-1)! a_{-1}.
+  \end{equation}
+  This implies the conclusion.
+\end{proof}
+
+\begin{example}{Practice on Finding Residue}{}
+  Find the residue of
+  \begin{equation}
+    (1) f(z) = \frac{z}{(z-1)(z+1)^2}, \quad z = \pm 1, \infty, \quad
+    (2) f(z) = \frac{1}{\sin z}, \quad z = n \pi.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) $z = 1$ is a $1$-order pole, and $\varphi(z) = (z-1)f(z)= \frac{z}{(z+1)^2}$.
+  Then the residue is $\varphi(1) = \frac{1}{4}$.
+
+  $z = -1$ is a $2$-order pole, $\varphi(z) = (z+1)^2f(z) = \frac{z}{z-1}$.
+  Then the residue is $\varphi^{\prime}(-1) = - \frac{1}{4}$.
+
+  $z = \infty$ is $- [\operatorname{res}_1f + \operatorname{res}_{-1}f] = 0$.
+
+  (2) 
+\end{solution}
+
+\subsection{The Residue Formula}
 
 \begin{theorem}{The Residue Formula}{}
   Suppose that $f$ is holomorphic in an open set containing a circle $C$
   and its interior, except for a pole at $z_0$ inside $C$. Then
   \begin{equation}
-    \operatorname{res}_{z_0} f = \frac{1}{2 \pi i} \int_C f(z)\mathrm{d} z.
+    \int_C f(z)\mathrm{d} z
+    =
+    2 \pi i\operatorname{res}_{z_0} f.
   \end{equation}
 \end{theorem}
+
+\begin{proof}
+  By the coefficent of Laurent series.
+\end{proof}
+
+\begin{corollary}{Cauchy Residue Formula}{}
+  Let $U$ be an open, simply connected domain, and $C$ a positively oriented, piecewise smooth,
+  simple closed contour in $U$.
+  If $f(z)$ is holomorphic in $U$ except isolated singularities $z_1,z_2,\cdots,z_n$, then
+  \begin{equation}
+    \oint_C f(z)\mathrm{d} z
+    =
+    2 \pi i \sum\limits_{k = 1}^n \operatorname{res}_{z_k}f(z).
+  \end{equation}
+\end{corollary}
 
 \section{Meromorphic Functions}
 
