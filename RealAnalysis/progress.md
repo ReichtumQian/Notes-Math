@@ -26,8 +26,8 @@ Ignored
 ## Lebesgue Integration
 
 
-- [ ] Video1
-- [ ] Video2
+- [x] Video1
+- [x] Video2
 - [ ] Video3
 - [ ] Video4
 - [ ] Video5
