@@ -6,9 +6,9 @@
 
 \begin{definition}{Measurable Function}{}
   Let $f$ be a function defined on a measurable set $D$.
-  If for any real number $\alpha$, the set
+  If for any real number $a$, the set
   \begin{equation}
-    \{x \in D: f(x) > \alpha\}
+    \{x \in D: f(x) > a\}
   \end{equation}
   is measurable, then $f$ is said to be a \emph{measurable function on $D$}.
 \end{definition}
@@ -18,7 +18,7 @@
   $\{f \geq \alpha\}$, $\{f = \alpha\}$, $\{f \leq \alpha\}$, $\{f < \alpha\}$.
 \end{note}
 
-\begin{example}{Practice for Definition of Measurable Function}{}
+\begin{example}{Practice on Definition of Measurable Function}{}
   Prove that if $f$ is a measurable function if and only if for any $r \in
     \mathbb{Q}$, $\{x \in D: f(x) > r\}$ is measurable.
 \end{example}
@@ -36,7 +36,7 @@
 \end{proof}
 
 \begin{example}{Properties of Measurable Functions}{}
-  Prove that measurable functions are \emph{basically} bounded,
+  Prove that measurable functions are \emph{basically} bounded;
   convergent measurable function sequences are \emph{basically} uniformly bounded:
   \begin{enumerate}
   \item If $m(E) < \infty$, $f(x)$ is measurable and finite a.e. on $E$, then
@@ -109,6 +109,23 @@
   which means $\limsup f_n$ and $\liminf f_n$ are measurable.
 \end{proof}
 
+\begin{example}{Closure of Measurable Functions under Composition}{}
+  Let $f(x)$ be a continuous function on $(-\infty, +\infty)$,
+  and $g(x)$ a finite measurable function on measurable set $E \subset \mathbb{R}$.
+  Prove that $h(x) = f(g(x))$ is also measurable.
+\end{example}
+
+\begin{proof}
+  Since $f(x)$ is continuous, $G := f^{-1}(a, +\infty)$ is an open set.
+  \begin{equation}
+    \{x \in E: f(g(x)) > a\} = \{x \in E: g(x) \in G\} = g^{-1}(G) \cap E.
+  \end{equation}
+  Since $G$ is an open set of $\mathbb{R}$, then $G = \cup _{k = 1}^{\infty}(a_k, b_k)$.
+  For each $k$, $g^{-1}(a_k, b_k)$ is measurable, so $g^{-1}(G)$ is also measurable.
+  Then we get the conclusion that $\{x \in E: f(g(x)) > a\}$ is measurable,
+  which indicates $f(g(x))$ is also measurable.
+\end{proof}
+
 \subsection{Approximation by Simple Functions}
 
 \begin{definition}{Simple Function}{}
@@ -145,13 +162,17 @@
   \emph{basically} (except a sufficiently small set) continuous functions.
 \end{note}
 
+\begin{example}{Generalization of Lusin Theorem}{}
+  
+\end{example}
+
 \section{Convergence Results in Measure Theory}
 
 \subsection{Pointwise Convergence and Uniform Convergence}
 
 \begin{theorem}{Egoroff Theorem (Pointwise Convergence vs Uniform Convergence)}{}
   Let $f$ and $f_n$ be measurable functions that are almost-everywhere finite
-  on a set $D$ of finite measure.
+  on a measurable set $D$, $m(D) < +\infty$.
   If $f_n \aeconv f$ on $D$,
   then
   \begin{equation}
@@ -163,8 +184,31 @@
 
 \begin{note}
   Egoroff theorem indicates that pointwise convergence is
-  \emph{basically} (except a sufficiently small set) uniform convergence.
+  \emph{basically} (except a sufficiently small set) uniform convergence
+  \textbf{on a finite-measure set}.
 \end{note}
+
+\begin{example}{Generalization of the Egoroff Theorem}{}
+  Let $f_n$ be measurable functions on an arbitrary-measure set $D$.
+  If $f_n$ basically uniformly converges to $f(x)$, then
+  \begin{equation}
+    f_n(x) \aeconv f(x).
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  Since $f_n$ basically uniformly converges to $f$, then
+  \begin{equation}
+    \forall \delta > 0, \exists E_{\delta} \subset E, m(E - E_{\delta}) < \delta,
+    \quad f_n(x) \unifconv f(x), x \in E_{\delta}.
+  \end{equation}
+  Denote $E_0 = \{x \in E: f_n(x) \not \unifconv f(x)\}$, then $E_0 \subset E - E_{\delta}$ for any $\delta > 0$.
+  Thus
+  \begin{equation}
+    m(E_0) \leq m(E - E_{\delta}) < \delta.
+  \end{equation}
+  Let $\delta \rightarrow 0$, then $m(E_0) = 0$, which implies that $f_n(x) \aeconv f(x)$.
+\end{proof}
 
 \subsection{Convergence in Measure}
 
