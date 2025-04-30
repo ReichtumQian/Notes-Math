@@ -86,21 +86,29 @@
 \begin{example}{Practice on Finding Residue}{}
   Find the residue of
   \begin{equation}
-    (1) f(z) = \frac{z}{(z-1)(z+1)^2}, \quad z = \pm 1, \infty, \quad
-    (2) f(z) = \frac{1}{\sin z}, \quad z = n \pi.
+    (1) \frac{z}{(z-1)(z+1)^2}, \quad z = \pm 1, \infty, \quad
+    (2) \frac{1}{\sin z}, \quad z = n \pi, \quad
+    (3) \frac{1}{e^{z-1}}, \quad z = 1, \infty.
   \end{equation}
 \end{example}
 
 \begin{solution}
   (1) $z = 1$ is a $1$-order pole, and $\varphi(z) = (z-1)f(z)= \frac{z}{(z+1)^2}$.
   Then the residue is $\varphi(1) = \frac{1}{4}$.
-
   $z = -1$ is a $2$-order pole, $\varphi(z) = (z+1)^2f(z) = \frac{z}{z-1}$.
   Then the residue is $\varphi^{\prime}(-1) = - \frac{1}{4}$.
-
   $z = \infty$ is $- [\operatorname{res}_1f + \operatorname{res}_{-1}f] = 0$.
 
-  (2) 
+  (2) $z = n\pi$ are $1$-order poles, $\varphi(z) = \frac{z - n\pi}{\sin z}$.
+  Apply the L'Hospital formula,
+  \begin{equation}
+    \varphi(z_0) = \frac{1}{\cos n\pi } = (-1)^n,
+  \end{equation}
+  so the residue is $(-1)^n$ at $z = n \pi$.
+
+  (3) $z = 1$ is a infinite-order pole, but $e^x = \sum _{n = 0}^{\infty} \frac{x^n}{n!}$,
+  so the residue is $1$.
+  The residue of $z = \infty$ is $-1$.
 \end{solution}
 
 \subsection{The Residue Formula}
