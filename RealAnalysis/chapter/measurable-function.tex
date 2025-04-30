@@ -238,6 +238,20 @@
   denoted as $f_n \measconv f$.
 \end{definition}
 
+\begin{example}{Practice on Definition of Convergence in Measure}{}
+  If $f_n(x) \measconv f(x)$ and $g_n(x) = f_n(x)$ a.e. in $E$.
+  Prove that $g_n(x) \measconv f(x)$.
+\end{example}
+
+\begin{proof}
+  By definition, for any $\delta > 0$, $m(\{|f_n - f| \geq \delta\}) \rightarrow 0$.
+  We know
+  \begin{equation}
+    \{|g_n - f| \geq \delta \} \subset \{|f_n - f| \geq \delta\} \cup \{g_n \neq f_n\}.
+  \end{equation}
+  Then it is not hard to see that $m(\{|g_n - f| \geq \delta\}) \rightarrow 0$.
+\end{proof}
+
 \begin{theorem}{Riesz Theorem (Convergence in Measure to Pointwise Convergence)}{}
   Let $f$ and $f_n$ be measurable functions that are finite almost everywhere on
   a measurable set $D$. Then
@@ -246,30 +260,27 @@
   \end{equation}
 \end{theorem}
 
+\begin{example}{Applications of Riesz Theorem}{}
+  Prove the following statements
+  \begin{enumerate}
+  \item If $f_n(x) \measconv f(x)$, and for all $n \in \mathbb{Z}^+$, $f_n(x) \leq g(x)$ a.e. in $E$.
+    Then $f(x) \leq g(x)$ a.e. in $E$.
+  \item If $f_n(x) \measconv f(x)$ and $f_n(x)$ is monotonically increasing a.e. in $E$.
+    Prove that $f_n(x) \aeconv f(x)$.
+  \end{enumerate}
+\end{example}
+
 \begin{proof}
-  For any $k \geq 1$, $m \left( \{ |f_n - f| \geq \frac{1}{2^k}\} \right)
-  \rightarrow 0$, then there exists $n_k$ such that
+  (1) By Riesz theorem, then there exists $f_{n_k}(x)$ such that $f_{n_k} \aeconv f(x)$ in $E$.
+  By condition, we know $f_{n_k}(x) \leq g(x)$ a.e. in $E$.
+  Then the properties of function limit yields
   \begin{equation}
-    m \left( \left\{ |f_{n_k} - f| \geq \frac{1}{2^k} \right\} \right) < \frac{1}{2^k},
-    \quad k \geq 1, n_1 < n_2 < \cdots
+    f(x) \leq g(x), \quad a.e.
   \end{equation}
-  Let $E = \cap _{p = 1}^{\infty} \cup _{k = p}^{\infty} \left\{ |f_{n_k} - f|
-    \geq \frac{1}{2^k} \right\}$,
-  then for each $p \geq 1$,
-  \begin{equation}
-    m(E) \leq m \left( \cup _{k = p}^{\infty} \left\{ |f_{n_k} - f| \geq \frac{1}{2^k} \right\} \right)
-    < \sum\limits_{k = p}^{\infty} \frac{1}{2^k} = \frac{1}{2^{p-1}}.
-  \end{equation}
-  Let $p \rightarrow \infty$ we get $m(E) = 0$.
-  So for each $x \in D - E = \cup _{p = 1}^{\infty} \cap _{k = p}^{\infty}
-  \left\{ |f_{n_k} - f| < \frac{1}{2^k} \right\}$,
-  there exists $p_0 \geq 1$, 
-  \begin{equation}
-    x \in \cap _{k = p_0}^{\infty} \left\{ |f_{n_k} - f| < \frac{1}{2^k} \right\}
-    \Rightarrow
-    |f_{n_k}(x) - f(x)| < \frac{1}{2^k}, \quad k \geq p_0.
-  \end{equation}
-  This indicates that $f_{n_k} \aeconv f$.
+
+  (2) By Riesz theorem, there exists $f_{n_k}(x) \aeconv f(x)$,
+  togather with $f_n(x)$ is monotonically increasing.
+  Then $f_n(x) \aeconv f(x)$.
 \end{proof}
 
 \begin{theorem}{Lebesgue Theorem (Pointwise Convergence to Convergence in Measure)}{}
@@ -279,10 +290,6 @@
     f_n \aeconv f \quad \Rightarrow \quad f_n \measconv f.
   \end{equation}
 \end{theorem}
-
-\begin{proof}
-  
-\end{proof}
 
 
 
