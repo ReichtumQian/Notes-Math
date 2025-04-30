@@ -45,7 +45,7 @@
 
 \subsection{Solution Structure of $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_n(t)x(t) = f(t)$}
 
-\begin{proposition}{Solution Structure of Non-Homogeneous Higher-Order Linear ODEs}{}
+\begin{proposition}{Variation of Parameters}{}
   Let $x_1(t), \cdots, x_n(t)$ be $n$ linearly independent solutions of homogeneous ODE.
   Then the solution of the non-homogeneous ODE
   $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_{n-1}(t)x^{\prime}(t) + a_n(t)x(t) = f(t)$
@@ -80,14 +80,46 @@
   Then the $x(t)$ is a solution of the non-homogeneous ODE.
 \end{proof}
 
-\section{Solving Higher-Order Linear ODEs}
+\section{Solving Higher-Order Constant-Coefficient Linear ODEs}
 
 \subsection{Solving $x^{(n)}(t) + a_1x^{(n-1)}(t) + \cdots + a_nx(t) = 0$}
 
+\begin{proposition}{Method of Characteristic Equation}{}
+  The solution of $x^{(n)}(t) + a_1x^{(n-1)}(t) + \cdots + a_nx(t) = 0$ is determined by
+  the roots of
+  \begin{equation}
+    \lambda^n + a_1 \lambda^{n-1} + \cdots + a_{n-1} \lambda + a_n = 0.
+  \end{equation}
+  Specifically, the fundamental solution system is composed of
+  \begin{enumerate}
+  \item For each \textbf{distinct real root} $\lambda$, include a term $c e^{\lambda t}$;
+  \item For each \textbf{repeated real root} $\lambda$ of multiplicity $k$,
+    include $c_1 e^{\lambda t}, c_2 t e^{\lambda t},\cdots, c_k t^{k-1} e^{\lambda t}$;
+  \item For each pair of \textbf{complex conjugate roots} $\alpha \pm \beta i$,
+    include terms $c_1 e^{\alpha t} \cos(\beta t)$ and $c_2 e^{\alpha t} \sin (\beta t)$;
+  \item For \textbf{repeated complex roots}, analogously multiply $t^m$ to the base terms.
+  \end{enumerate}
+\end{proposition}
 
+\subsection{Solving $x^{(n)}(t) + a_1x^{(n-1)}(t) + \cdots + a_nx(t) = f(t)$}
 
+\begin{proposition}{Method of Undetermined Coefficients}{}
+  If the $n$-order ODE is given by
+  $x^{(n)}(t) + \cdots + a_nx(t) = (b_0t^m + \cdots + b_{m-1}t + b_m)e^{\lambda t}$.
+  Then a particular solution $x_p(t)$ follows
+  \begin{equation}
+    x_p(t) = t^k e^{\lambda t} (c_0 t^m + c_1 t^{m-1} + \cdots + c_{m-1}t + c_m),
+  \end{equation}
+  where $k$ is the multiplicity of $\lambda$ as a root of the characteristic equation,
+  and $c_0,\cdots,c_m$ are determined by substituting $x_p(t)$ into the ODE.
+\end{proposition}
 
-\subsection{Solving $x^{(n)}(t) + a_1(t)x^{(n-1)}(t) + \cdots + a_n(t)x(t) = 0$}
+\begin{note}
+  Method of undertermined coefficients only works for some special right-hand side functions,
+  but it offers higher computation efficiency.
+  Method of variation parameters offer a more general method, but it requires a ton of computation.
+\end{note}
+
 
 
 
