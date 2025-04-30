@@ -1,67 +1,80 @@
 
 
-\section{Poles and Zeros}
+\section{The Laurent Series}
 
-\subsection{Singularities and Poles}
-
-\begin{definition}{Isolated Singularity}{}
-  Let $f(z)$ be a complex-valued function that is holomorphic
-  in some deleted neighborhood of $z_0$, but not defined at $z_0$.
-  Then $z_0$ is said to be an \emph{isolated singularity of $f(z)$}.
-\end{definition}
-
-\begin{definition}{Pole Singularity and Essential Singularity}{}
-  An isolated singularity $z_0$ is called a \emph{pole of $f(z)$}
-  if $\lim \limits _{z \rightarrow z_0}f(z)$ goes up to infinity.
-  If there exists $n \in \mathbb{Z}^+$ such that
+\begin{theorem}{Laurent Series}{}
+  Let $f(z)$ be a complex-valued function that is holomorphic in $A = \{z \in \mathbb{C}: r < |z-z_0| < R\}$.
+  Then $f(z)$ can be uniquely represented by
   \begin{equation}
-    g(z) = (z-z_0)^n f(z)
+    f(z) = \sum\limits_{n = -\infty}^{+\infty} a_n(z-z_0)^n, \quad z \in A,
   \end{equation}
-  is holomorphic and nonzero at $z_0$,
-  then $z_0$ is said to be a \emph{pole of order $n$}.
-  If no finite $n$ exists, then $z_0$ is said to be an \emph{essential singularity}.
-\end{definition}
+  where $a_n = \frac{1}{2\pi i} \oint_C \frac{f(\zeta)}{(\zeta - z_0)^{n+1}}\mathrm{d} \zeta$,
+  $C$ is any positively oriented, simple closed contour lying within $A$ and enclosing $z_0$.
+\end{theorem}
 
-\begin{definition}{Principal Part and Residue}{}
-  If $f$ has a pole of order $n$ at $z_0$, and
+\begin{note}
+  Laurent series vs Taylor series:
+  (1) $f(z)$ can be expanded to Laurent series within a region contains singularities;
+  (2) Laurent series converges globally instead of locally.
+\end{note}
+
+
+\section{Singularities and Zeros}
+
+\begin{definition}{Principal Part and Analytic Part}{}
+  Let $f(z)$ be a complex-valued function of the form $f(z) = \sum_{n = -\infty}^{+\infty}a_n(z-z_0)^n$.
+  Then
   \begin{equation}
-    f(z) = \frac{a_{-n}}{(z-z_0)^n} + \frac{a_{-n+1}}{(z-z_0)^{n-1}} + \cdots + \frac{a_{-1}}{z-z_0} + G(z)
-    := H(z) + G(z),
+    \sum\limits_{n = 0}^{+\infty}a_n(z-z_0)^n, \quad
+    \sum\limits_{n = -\infty}^{-1}a_n (z-z_0)^n
   \end{equation}
-  then $H(z)$ is said to be the \emph{principal part of $f$ at $z_0$},
-  and $a_{-1}$ the \emph{residue of $f$ at $z_0$}.
+  are called the \emph{analytic part}
+  and the \emph{principal part} of $f(z)$ at $z_0$, respectively.
 \end{definition}
 
-\subsection{Zeros}
+\begin{definition}{Singularities}{}
+  If a complex-valued function $f(z)$ is defined in a punctured neighborhood of $z_0$,
+  then $z_0$ is said to be an \emph{isolated singularity of $f(z)$}.
+  \begin{enumerate}
+  \item If $f(z) = \sum_{n = 0}^{+\infty}a_n(z-z_0)^n$, $z_0$ is said to be an \emph{removable singularity};
+  \item If $f(z) = \sum_{n=-m}^{+\infty}a_n(z-z_0)^n$, $z_0$ is said to be a \emph{pole singularity of order $m$};
+  \item If $f(z) = \sum_{n = -\infty}^{+\infty}a_n(z-z_0)^n$, $z_0$ is said to be an \emph{essential singularity}.
+  \end{enumerate}
+\end{definition}
 
 \begin{definition}{Zero}{}
-  A complex number $z_0$ is a \emph{zero of $f(z)$} if
-  \begin{equation}
-    f(z_0) = 0.
-  \end{equation}
-  Then there exists a neighborhood $U \subset \Omega$ of $z_0$,
-  and a unique positive integer $n$ such that
-  \begin{equation}
-    f(z) = (z - z_0)^n g(z), \quad z \in U,
-  \end{equation}
-  where $g(z)$ is a non-vanishing holomorphic function on $U$.
-  Then $z_0$ is said to be a \emph{zero of order $n$}.
+  If a complex-valued function $f(z)$ can be represented as $f(z) = \sum_{n = m}^{+\infty} a_n(z-z_0)^n$,
+  then $z_0$ is said to be a \emph{zero of order $m$ of $f(z)$}.
 \end{definition}
 
 \section{The Residue Formula}
 
-\subsection{The Residue Formula}
+\begin{definition}{Residue}{}
+  Given the Laurent series of a holomorphic function
+  \begin{equation}
+    f(z) = \sum_{n = -\infty}^{+\infty}a_n(z-z_0)^n,
+  \end{equation}
+  then $a_{-1}$ is said to be the \emph{residue of $f(z)$ at $z_0$},
+  denoted as $\operatorname{res}_{z_0} f$.
+\end{definition}
 
 \begin{theorem}{The Residue Formula}{}
   Suppose that $f$ is holomorphic in an open set containing a circle $C$
   and its interior, except for a pole at $z_0$ inside $C$. Then
   \begin{equation}
-    \int_C f(z)\mathrm{d} z = 2\pi i \operatorname{res}_{z_0} f.
+    \operatorname{res}_{z_0} f = \frac{1}{2 \pi i} \int_C f(z)\mathrm{d} z.
   \end{equation}
 \end{theorem}
 
+\section{Meromorphic Functions}
 
-
-
+\begin{definition}{Meromorphic Function}{}
+  A complex-valued function $f(z)$ on an open set $\Omega$ is \emph{meromorphic} if there exists
+  $\{z_n\}_{n=1}^{+\infty}$ that has on limit points in $\Omega$ such that
+  \begin{enumerate}
+  \item $f$ is holomorphic in $\Omega - \{z_1,z_2,\cdots\}$;
+  \item $f$ has poles at $\{z_0,z_1,\cdots\}$.
+  \end{enumerate}
+\end{definition}
 
 
