@@ -263,12 +263,51 @@
 \begin{example}{Apply Residue Formula to Calculate Integrals of Rational Functions}{}
   Calculate the following integrals:
   \begin{equation}
-    \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d} x
+    (1) \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d} x, \quad
+    (2) \int_{-\infty}^{+\infty} \frac{x^2}{(x^2 + a^2)^2}\mathrm{d} x
   \end{equation}
 \end{example}
 
 \begin{solution}
-  (1) 
+  (1) The the poles with positive image of $f(z)$ are $i, 2i$.
+  The residue at $i$ is $\frac{i}{6}$, the residue at $2i$ is $- \frac{i}{3}$. Then
+  \begin{equation}
+    \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d} x
+    = \frac{1}{2} \int_{-\infty}^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d} x
+    = \pi i (\frac{i}{6} - \frac{i}{3}) = \frac{1}{6}\pi.
+  \end{equation}
+
+  (2) Final answer is $\frac{1}{4a i}$.
 \end{solution}
 
+\begin{proposition}{The Residue Formula for Rational Functions times an Expotential Function}{}
+  Let $f(z) = \frac{P(z)}{Q(z)} e^{imz} := g(z) e^{imz}$ satisfying
+  (1) $(f(z), Q(z)) = 1$;
+  (2) $\operatorname{deg}(Q(z)) > \operatorname{deg}(P(z))$;
+  (3) $Q(z)$ has no roots on $\mathbb{R}$;
+  (4) $m > 0$.
+  Then
+  \begin{equation}
+    \int_{-\infty}^{+\infty} f(x)\mathrm{d} x = 2 \pi i \sum \operatorname{res}_{z = a_k} f(z) := A + Bi,
+  \end{equation}
+  where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
+  Furthermore
+  \begin{equation}
+    \int_{-\infty}^{+\infty} g(x) \cos mx \mathrm{d} x = A, \quad
+    \int_{-\infty}^{+\infty} g(x) \sin mx \mathrm{d} x = B.
+  \end{equation}
+\end{proposition}
 
+\begin{example}{}{}
+  Calculate the following integrals
+  \begin{equation}
+    (1) \int_{-\infty}^{+\infty} \frac{\cos x}{(x^2 + 1)(x^2 + 9)}\mathrm{d} x, \quad
+    (2) \int_0^{+\infty} \frac{x \sin mx}{x^4 + a^4}\mathrm{d} x ~~ (a < 0, m > 0).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Consider $f(z) = \frac{e^{iz}}{(z^2 + 1)(z^2 + 9)}$.
+
+  (2) Consider $f(z) = \frac{z}{z^4 + a^4}e^{imz}$.
+\end{solution}
