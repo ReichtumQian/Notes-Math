@@ -65,7 +65,7 @@
   If $z_0$ is an $m$-order pole of $f(z)$, i.e.,
   $\varphi(z) = (z-z_0)^mf(z) $, $\varphi(z_0) \neq 0$, then
   \begin{equation}
-    \operatorname{res}_{z_0} f = \frac{\varphi^{(m-1)}(z_0)}{(m-1)!}.
+    \operatorname{res}_{z_0} f = \lim \limits _{z \rightarrow z_0}\frac{\varphi^{(m-1)}(z)}{(m-1)!}.
   \end{equation}
   If $z_0 = \infty$, then the residue of $f$ at $\infty$ is the negative of the sum of the residues at
   all other finite singularities
@@ -127,6 +127,27 @@
   By the coefficent of Laurent series.
 \end{proof}
 
+\begin{example}{Apply Residue Formula to Calculate Integrals}{}
+  Calculate the following integrals
+  \begin{equation}
+    \int_{|z| = 1} \frac{1}{z \sin z}\mathrm{d} z, \quad
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  By Residue formula, $\int_{|z| = 1} \frac{1}{z \sin z}\mathrm{d} z = 2 \pi i \operatorname{res}_{z = 0}f(z)$.
+  $z = 0$ is a $2$-order pole, and $\varphi(z) = z^2 f(z) = \frac{z}{\sin z}$.
+  Then
+  \begin{equation}
+    \operatorname{res}_{z = 0} f(z)
+    = \lim \limits _{z \rightarrow 0} \varphi^{\prime}(z)
+    = \frac{\sin z - z \cos z}{\sin^2 z}.
+  \end{equation}
+  Apply the Taylor expansion, we get the limit is equal to
+  $\lim \limits _{z \rightarrow 0} - \frac{2}{3} \cdot \frac{z^3}{z^2} = 0$.
+  Then the value of the integral is $0$.
+\end{solution}
+
 \begin{corollary}{Cauchy Residue Formula}{}
   Let $U$ be an open, simply connected domain, and $C$ a positively oriented, piecewise smooth,
   simple closed contour in $U$.
@@ -137,6 +158,23 @@
     2 \pi i \sum\limits_{k = 1}^n \operatorname{res}_{z_k}f(z).
   \end{equation}
 \end{corollary}
+
+\begin{example}{Apply Cauchy Residue Fomula to Calculate Integrals}{}
+  Calculate the following integrals:
+  \begin{equation}
+    \frac{1}{2\pi i} \int_{|z| = 2} \frac{e^{iz}}{1 + z^2}\mathrm{d} z.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  $z = \pm i$ are $1$-order poles. Consider $z = i$, $\varphi(z) := \frac{e^{iz}}{z + i}$,
+  then $\operatorname{res}_{z = i} f = - \frac{i}{2e}$.
+  Similarly $\operatorname{res}_{z = -i} f = - \frac{e i}{2}$.
+  By Cauchy residue formula, the integral is
+  \begin{equation}
+    - \frac{i}{2e} - \frac{e i}{2}.
+  \end{equation}
+\end{solution}
 
 \section{Meromorphic Functions}
 

@@ -26,7 +26,7 @@
 ## The Residue Formula
 
 - [x] Video1
-- [ ] Video2
+- [x] Video2
 - [ ] Video3
 - [ ] Video4
 - [ ] Video5
