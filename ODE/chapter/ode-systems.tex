@@ -1,11 +1,114 @@
 
 \section{Solution Structure of Systems of ODEs}
 
+\subsection{Linear Dependence and Wronsky Determinant}
+
+\begin{definition}{Linear Dependence}{}
+  Let $\mathbf{x}_1(t),\cdots, \mathbf{x}_k(t)$ be vector functions $\mathbf{x}_i(t): [a,b] \rightarrow \mathbb{R}^n$.
+  If there exists $c_1,\cdots,c_k$ that are not all zero such that
+  \begin{equation}
+    c_1\mathbf{x}_1(t) + \cdots + c_k\mathbf{x}_k(t) = 0, \quad t \in [a, b].
+  \end{equation}
+  Then $\mathbf{x}_1(t),\cdots,\mathbf{x}_k(t)$ are said to be \emph{linearly dependent}.
+  Otherwise, they are said to be \emph{linearly independent}.
+\end{definition}
+
+\begin{definition}{Wronsky Determinant}{}
+  Let $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ be $n$ vector functions $\mathbf{x}_i(t): [a,b] \rightarrow \mathbb{R}^n$.
+  Then the \emph{Wronsky determinant} is
+  \begin{equation}
+    W(t) :=
+    \begin{vmatrix}
+      x_{11}(t) & x_{12}(t) & \cdots & x_{1n}(t)\\
+      x_{21}(t) & x_{22}(t) & \cdots & x_{2n}(t)\\
+      \vdots & \vdots & & \vdots\\
+      x_{n1}(t) & x_{n2}(t) & \cdots & x_{nn}(t)
+    \end{vmatrix},
+  \end{equation}
+  where $x_{ij}$ is the $j$-th component of $\mathbf{x}_i$.
+\end{definition}
+
+\subsection{Solution Structure of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$}
+
+\begin{definition}{Fundamental System of Solutions}{}
+  Let $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ be linearly independent vector functions.
+  If for any solution $\mathbf{x}(t)$ of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$,
+  it can be represented as
+  \begin{equation}
+    \mathbf{x}(t) = c_1\mathbf{x}_1(t) + \cdots + c_n\mathbf{x}_n(t),
+  \end{equation}
+  then $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ are said to be a \emph{fundamental system of solutions}.
+\end{definition}
+
+\begin{definition}{Fundamental Solution Matrix}{}
+  Let $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ be the fundamental system of solutions of
+  $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$,
+  then the \emph{fundamental solution matrix} is
+  \begin{equation}
+    \Phi(t) := 
+    \begin{bmatrix}
+      x_{11}(t) & x_{12}(t) & \cdots & x_{1n}(t)\\
+      x_{21}(t) & x_{22}(t) & \cdots & x_{2n}(t)\\
+      \vdots & \vdots & & \vdots\\
+      x_{n1}(t) & x_{n2}(t) & \cdots & x_{nn}(t)
+    \end{bmatrix},
+  \end{equation}
+  where $x_{ij}$ is the $j$-th component of $\mathbf{x}_i$.
+\end{definition}
+
+\begin{proposition}{Matrix Form of System of ODEs}{}
+  Let $\Phi(t)$ be the fundamental solution matrix of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$,
+  then
+  \begin{equation}
+    \Phi^{\prime}(t) = A(t) \Phi(t).
+  \end{equation}
+\end{proposition}
+
+\begin{proposition}{Solution Structure of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$}{}
+  Let $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ be linearly independent solutions
+  of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$.
+  Then they are fundamental system of solutions if and only if
+  \begin{equation}
+    |\Phi(t)| \neq 0, \quad t \in [a,b].
+  \end{equation}
+  Furthermore, any solution of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$ can be written into matrix forms
+  \begin{equation}
+    \mathbf{x}(t) = \Phi(t)C, \quad C \in \mathbb{R}^{n \times 1}.
+  \end{equation}
+\end{proposition}
+
+\subsection{Solution Structure of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t) + \mathbf{f}(t)$}
+
+\begin{proposition}{Variation of Parameters}{}
+  Let $\Phi(t)$ be the fundamental solution matrix of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$,
+  then the general solution of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t) + \mathbf{f}(t)$ is
+  \begin{equation}
+    \mathbf{x}(t) = \Phi(t)C(t), \quad C(t): [a, b] \rightarrow \mathbb{R}^{n \times 1},
+  \end{equation}
+  where $C(t)$ follows $C^{\prime}(t) = \Phi^{-1}(t)f(t)$.
+\end{proposition}
+
+\begin{proof}
+  Consider $\mathbf{x}(t) = \Phi(t)C(t)$, then
+  \begin{equation}
+    \mathbf{x}^{\prime}(t) = \Phi^{\prime}(t) C(t) + \Phi(t)C^{\prime}(t), \quad
+    A(t)\mathbf{x}(t) + \mathbf{f}(t) = A(t) \Phi(t) C(t) + \mathbf{f}(t).
+  \end{equation}
+  Since $\Phi^{\prime}(t) = A(t)\Phi(t)$, then
+  \begin{equation}
+    \mathbf{x}^{\prime}(t) = A(t) \Phi(t)C(t) + \Phi(t)C^{\prime}(t).
+  \end{equation}
+  Compare the right-hand side and the left-hand side, we get
+  \begin{equation}
+    \Phi(t)C^{\prime}(t) = \mathbf{f}(t) \Rightarrow C^{\prime}(t) = \Phi^{-1}(t) \mathbf{f}(t).
+  \end{equation}
+\end{proof}
 
 \section{Solving Constant-Coefficient Systems of ODEs}
 
+\subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$}
 
-
+\subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t) + \mathbf{f}(t)$}
 
 
 
