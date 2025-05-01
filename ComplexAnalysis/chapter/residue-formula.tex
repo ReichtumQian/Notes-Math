@@ -176,15 +176,99 @@
   \end{equation}
 \end{solution}
 
-\section{Meromorphic Functions}
+\subsection{Integrateing Trigonometric Rational Functions}
 
-\begin{definition}{Meromorphic Function}{}
-  A complex-valued function $f(z)$ on an open set $\Omega$ is \emph{meromorphic} if there exists
-  $\{z_n\}_{n=1}^{+\infty}$ that has on limit points in $\Omega$ such that
-  \begin{enumerate}
-  \item $f$ is holomorphic in $\Omega - \{z_1,z_2,\cdots\}$;
-  \item $f$ has poles at $\{z_0,z_1,\cdots\}$.
-  \end{enumerate}
-\end{definition}
+\begin{proposition}{Integrating Rational Functions of $\sin \theta$ and $\cos \theta$}{}
+  Let $R(\cos \theta, \sin \theta)$ be a rational function of $\sin \theta$ and $\cos \theta$,
+  then
+  \begin{equation}
+    \int_0^{2\pi} R(\cos \theta, \sin \theta) \mathrm{d} \theta
+    = \int_{|z| = 1} R(\frac{z + z^{-1}}{2}, \frac{z - z^{-1}}{2i}) \cdot \frac{1}{iz}\mathrm{d} z.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Consider $z = e^{i\theta}$, then $\cos \theta = \frac{z + z^{-1}}{2}$,
+  $\sin \theta = \frac{z - z^{-1}}{2i}$, $\mathrm{d} \theta = \frac{\mathrm{d} z}{iz}$.
+  Then change of variation yields the conclusion.
+\end{proof}
+
+\begin{example}{Practice on Integrating Rational Functions of $\sin \theta$ and $\cos \theta$}{}
+  Calculate the following integrals
+  \begin{equation}
+    \int_0^{2\pi} \frac{1}{a + \cos \theta}\mathrm{d} \theta ~~ (a > 1), \quad
+    \int_0^{2\pi} \frac{1}{(2 + \sqrt{3} \cos \theta)^2}\mathrm{d} \theta
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) Let $z = e^{i\theta}$, $\cos \theta = \frac{z + z^{-1}}{2}$, $\mathrm{d} \theta = \frac{1}{iz}\mathrm{d} z$, then
+  \begin{equation}
+    \int_0^{2\pi} \frac{1}{a + \cos \theta}\mathrm{d} \theta = \int_{|z| = 1} \frac{-2i}{z^2 + 2az + 1}\mathrm{d} z.
+  \end{equation}
+  Poles of the above integral are $\alpha = -a + \sqrt{a^2 - 1}$ and $\beta = -a - \sqrt{a^2 - 1}$.
+  Since $a > 1$, then $|\alpha| < 1$ and $|\beta| > 1$, so only $\alpha$ lies in the unit disk.
+  Consider $\varphi(z) = \frac{-2i}{z - \beta}$, then the residue at $\alpha$ is $\varphi(\alpha) = \frac{2i}{\beta - \alpha}$.
+  Therefore
+  \begin{equation}
+    \int_{|z| = 1} \frac{-2i}{z^2 + 2az + 1}\mathrm{d} z = 2 \pi i \operatorname{res}_{z = \alpha}f
+    = 2 \pi i \frac{2i}{\beta - \alpha} = \frac{2\pi}{\sqrt{a^2 - 1}}.
+  \end{equation}
+
+  (2) Similarly, we can calculate in following steps
+  \begin{align}
+    \int_0^{2\pi} \frac{1}{(2 + \sqrt{3} \cos \theta)^2} \mathrm{d} \theta
+    & = \frac{4}{3i}\int_{|z| = 1} \frac{z}{(z^2 + \frac{4}{\sqrt{3}}z + 1)^2}\mathrm{d} z
+      = \frac{4}{3i} \int_{|z| = 1} \frac{z}{(z + \sqrt{3})^2(z + \frac{1}{\sqrt{3}})^2} \mathrm{d} z
+  \end{align}
+  Denote $\alpha = -\sqrt{3}$ and $\beta = - \frac{1}{\sqrt{3}}$, then $|\alpha| > 1$, $|\beta| < 1$.
+  Define $\varphi(z) = \frac{z}{(z+\sqrt{3})^2}$, then $\varphi^{\prime}(z) = \frac{\sqrt{3} - z}{(z + \sqrt{3})^3}$,
+  $\varphi(\beta) = \frac{3}{2}$.
+  \begin{equation}
+    \int_0^{2\pi} \frac{1}{(2 + \sqrt{3} \cos \theta)^2} \mathrm{d} \theta
+    = \frac{4}{3i} \cdot 2 \pi i \cdot \frac{3}{2} = 4 \pi.
+  \end{equation}
+\end{solution}
+
+\begin{note}
+  Similarly, we can calculate integrals involve $\tan \theta$ by 
+  \begin{equation}
+    \tan \theta = \frac{\frac{e^{i\theta} - e^{-i\theta}}{2i}}{\frac{e^{i\theta} + e^{-i\theta}}{2}}
+    = \frac{1}{i} \frac{e^{2i\theta} - 1}{e^{2i\theta} + 1}.
+  \end{equation}
+\end{note}
+
+\begin{example}{Calculate Integrals involve $\tan \theta$}{}
+  Calculate the followin integrals
+  \begin{equation}
+    \int_0^{\pi} \tan (\theta + ia) \mathrm{d} \theta ~~ (a \neq 0).
+  \end{equation}
+\end{example}
+
+\subsection{Integrating Rational Functions}
+
+\begin{proposition}{The Residue Formula for Rational Functions}{}
+  Let $f(z) = \frac{P(z)}{Q(z)}$ where $P(z), Q(z)$ are polynomials satisfying
+  (1) $(f(z), Q(z)) = 1$;
+  (2) $\operatorname{deg}(Q(z)) \geq \operatorname{deg}(P(z)) + 2$;
+  (3) $Q(z)$ has no roots on $\mathbb{R}$.
+  Then 
+  \begin{equation}
+    \int_{-\infty}^{+\infty} f(x) \mathrm{d} x
+    = 2\pi i \sum \operatorname{res}_{z = a_k}f(z),
+  \end{equation}
+  where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
+\end{proposition}
+
+\begin{example}{Apply Residue Formula to Calculate Integrals of Rational Functions}{}
+  Calculate the following integrals:
+  \begin{equation}
+    \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d} x
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  (1) 
+\end{solution}
 
 
