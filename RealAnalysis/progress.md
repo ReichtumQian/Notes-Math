@@ -28,7 +28,7 @@ Ignored
 
 - [x] Video1
 - [x] Video2
-- [ ] Video3
-- [ ] Video4
+- [x] Video3
+- [x] Video4
 - [ ] Video5
 - [ ] Video6
