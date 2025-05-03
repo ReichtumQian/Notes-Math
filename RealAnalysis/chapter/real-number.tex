@@ -22,9 +22,9 @@
 \begin{proposition}{Properties of Operations of Sets}{}
   The operations of sets have the following properties:
   \begin{enumerate}
-  \item $(A \cup B)\cap C = (A \cap C) \cup (B \cap C)$,
+  \item Distributive Law: $(A \cup B)\cap C = (A \cap C) \cup (B \cap C)$,
     $(A \cap B) \cup C = (A \cup C) \cap (B \cup C)$.
-  \item $(A\cup B)^c = A^c \cap B^c$, $(A \cap B)^c = A^c \cup B^c$.
+  \item De Morgan's Law: $(A\cup B)^c = A^c \cap B^c$, $(A \cap B)^c = A^c \cup B^c$.
   \end{enumerate}
 \end{proposition}
 
@@ -58,6 +58,20 @@
   This indicates that $g(x) \leq f(x)$.
 \end{proof}
 
+\begin{definition}{Supremum and Infimum}{}
+  Let $S \subseteq \mathbb{R}$. A real number $\eta$ is the \emph{supremum of $S$},
+  denoted as $\eta = \sup S$, if
+  \begin{equation}
+    \forall x \in S, x \leq \eta; \quad
+    \forall \epsilon > 0, \exists x \in S, x > \eta - \epsilon.
+  \end{equation}
+  $\eta$ is the \emph{infimum of $S$}, denoted as $\eta = \inf S$, if
+  \begin{equation}
+    \forall x \in S, x \geq \eta; \quad
+    \forall \epsilon > 0, \exists x \in S, x < \eta + \epsilon.
+  \end{equation}
+\end{definition}
+
 \begin{example}{Union and Intersection Form of Function Supremum and Infimum}{}
   Given a sequence of functions $\{f_n\}$, where $f_n: E \rightarrow \mathbb{R}$,
   $E \subset \mathbb{R}$. Prove that for all $c \in \mathbb{R}$,
@@ -67,17 +81,38 @@
   \begin{equation}
     \{x: \inf_n \{f_n(x)\} \geq c\} = \cap _{n = 1}^{\infty} \{x: f_n(x) \geq c\}.
   \end{equation}
+  \begin{equation}
+    \{x: \sup_n \{f_n(x)\} \leq c\} = \cap _{n = 1}^{\infty} \{x: f_n(x) \leq c\},
+  \end{equation}
+  \begin{equation}
+    \{x: \sup_n \{f_n(x)\} > c\} = \cup _{n = 1}^{\infty} \{x: f_n(x) > c\}.
+  \end{equation}
 \end{example}
 
 \begin{proof}
-  We only prove the first equation.
-  By the definition of infimum, for $x$ from the lhs set,
-  there exists $n_0$ such that $f_{n_0}(x) < c$,
+  We only prove the infimum case.
+
+  (1) For any $x$ from the lhs set, denote $A = \inf_n \{f_n(x)\}$, then
+  $A < c$ and
+  \begin{equation}
+    \forall \epsilon > 0, \exists n_0 > 0,
+    f_{n_0}(x) < A + \epsilon.
+  \end{equation}
+  Choose $\epsilon < c - A$, then there exists $n_0$ such that $f_{n_0}(x) < c$,
   therefore
   \begin{equation}
     x \in \{x: f_{n_0}(x) < c\} \subset \cup _{n = 1}^{\infty} \{x: f_n(x) < c\}.
   \end{equation}
-  The reverse direction is similar.
+  For any $x$ from the rhs set, there exists $n_0$ such that $f_{n_0}(x) < c$, then
+  \begin{equation}
+    \inf_n f_n(x) \leq f_{n_0}(x) < c \Rightarrow x \in \{x: \inf_n f_n(x) < c\}.
+  \end{equation}
+
+  (2) $\inf_n \{f_n\} \geq c$ indicates that
+  \begin{equation}
+    \forall n \in \mathbb{Z}^+, f_n(x) \geq c
+    \Leftrightarrow x \in \cap_{n = 1}^{\infty} \{x: f_n(x) \geq c\}.
+  \end{equation}
 \end{proof}
 
 \subsection{Limit of Set Sequences}
@@ -120,7 +155,7 @@
   \begin{enumerate}
   \item Let $A_{2n-1} = (0, \frac{1}{n})$ and $A_{2n} = (0, n)$, find
     $\limsup \limits_{n \rightarrow \infty} A_n$ and $\liminf \limits_{n \rightarrow \infty} A_n$.
-  \item Let $A_n = \{\frac{m}{n}\}$, where $m$ is an integer. Prove
+  \item Let $A_n = \{\frac{m}{n}: m \in \mathbb{Z}\}$. Prove
     \begin{equation}
       \limsup \limits_{n \rightarrow \infty} A_n = \mathbb{Q}, \quad
       \liminf \limits_{n \rightarrow \infty} A_n = \mathbb{Z}.
@@ -212,7 +247,7 @@
 \subsection{Cardinality of Sets}
 
 \begin{definition}{Equivalence}{}
-  If there exists a one-to-one and onto mapping between set $A$ and set $B$,
+  If there exists a bijective mapping between set $A$ and set $B$,
   then we say that $A$ and $B$ are \emph{equivalent}, denoted as
   \begin{equation}
     A \sim B.
@@ -248,26 +283,36 @@
   then it is said to be an \emph{open set}.
 \end{definition}
 
-\begin{definition}{Closed Set}{}
-  Let $E \subset \mathbb{R}^n$, if $E^c$ is an open set,
-  then $E$ is said to be a \emph{closed set}.
-\end{definition}
-
 \begin{theorem}{Structure of Open Sets in $\mathbb{R}$}{}
   Let $G$ be an open set of $\mathbb{R}$,
   then $G$ is the union of at most countably many pairwise-disjoint open intervals.
 \end{theorem}
 
+\begin{definition}{Closed Set}{}
+  Let $E \subset \mathbb{R}^n$, if $E^c$ is an open set,
+  then $E$ is said to be a \emph{closed set}.
+\end{definition}
+
 \subsection{Interior and Closure}
 
-\begin{definition}{Interior Point}{}
-  A point $x$ is called an \emph{interior point of $S$} if there exists a
+\begin{definition}{Interior}{}
+  Let $S \subset \mathbb{R}^n$.
+  A point $x \in S$ is called an \emph{interior point of $S$} if there exists a
   neighborhood $N$ of $x$ such that
   \begin{equation}
     N \subseteq S.
   \end{equation}
+  The set composed of all the interior points of $S$ is called the \emph{interior of $S$}.
 \end{definition}
 
+\begin{definition}{Adherent Point and Closure}{}
+  A point $x \in \mathbb{R}^n$ is called an \emph{adherent point of $E \subset \mathbb{R}^n$} if
+  every neighborhood of $x$ intersects $E$, that is,
+  \begin{equation}
+    U \cap E \neq \emptyset.
+  \end{equation}
+  The set of all adherent points of $E$ is called the \emph{closure of $E$}, denoted as $\overline{E}$.
+\end{definition}
 
 
 
@@ -275,9 +320,9 @@
 
 \begin{definition}{Accumulation Point}{}
   Let $E \subset \mathbb{R}^n$ and $x \in \mathbb{R}^n$.
-  If any neighborhood $V$ of $x$ satisfies
+  If any neighborhood $U$ of $x$ satisfies
   \begin{equation}
-    (V - \{x\}) \cap E \neq \emptyset,
+    (U - \{x\}) \cap E \neq \emptyset,
   \end{equation}
   then $x$ is called an \emph{accumulation point of $E$},
   and the set of all accumulation points of $E$ is called the \emph{derived set
@@ -311,8 +356,6 @@
   then it is called a \emph{perfect set}.
 \end{definition}
 
-
-
 \subsection{Cantor Set}
 
 \begin{definition}{Cantor Set}{}
@@ -320,7 +363,7 @@
   middle third from each closed interval in $C_{n-1}$.
   Then the \emph{cantor set} is
   \begin{equation}
-    \mathcal{C} = \cap _{n = 0}^{\infty}C_n.
+    \mathcal{C} := \cap _{n = 0}^{\infty}C_n.
   \end{equation}
 \end{definition}
 
