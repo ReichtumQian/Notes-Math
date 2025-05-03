@@ -117,18 +117,34 @@
 \end{theorem}
 
 \begin{example}{Applications of Fatou Theorem}{}
-  Let $\{f_n(x)\}$ be measurable functions, $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.
-  Prove that there exists $K$ such that $\int_E |f_n(x)| \mathrm{d} x \leq K$.
+  Prove the following statements
+  \begin{enumerate}
+  \item Let $\{f_n(x)\}$ be measurable functions, $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.
+    Prove that there exists $K$ such that $\int_E |f_n(x)| \mathrm{d} x \leq K$.
+  \item Let $f_n(x)$ be measurable functions, $f(x)$ be non-negative Lebesgue integrable,
+    $|f_n(x)| \leq f(x)$ a.e. in $E$. Prove that
+    \begin{equation}
+      \int_E \liminf_{n \rightarrow \infty} f_n(x) \mathrm{d} x \leq \liminf _{n \rightarrow \infty} \int_E f_n(x)\mathrm{d} x.
+    \end{equation}
+  \end{enumerate}
 \end{example}
 
 \begin{proof}
-  Since $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.,
+  (1) Since $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.,
   $\lim \limits _{n \rightarrow \infty} |f_n(x)| = f(x)$ a.e.
   Consider the Lebesgue integral of $|f(x)|$, by Fatou theorem
   \begin{equation}
     \int_E |f(x)|\mathrm{d} x = \int_E \lim \limits _{n \rightarrow \infty} |f_n(x)| \mathrm{d} x
     \leq \lim \limits _{n \rightarrow \infty} \int_E |f_n(x)|\mathrm{d} x \leq K < +\infty.
   \end{equation}
+
+  (2) Consider $g_n(x) = f(x) + f_n(x)$, then $g_n(x)$ is non-negative measurable functions.
+  Then by Fatou theorem
+  \begin{equation}
+    \int_E \liminf_{n \rightarrow \infty} f + f_n \mathrm{d} x
+    \leq \liminf_{n \rightarrow \infty} \int_E f + f_n \mathrm{d} x.
+  \end{equation}
+  Cancel $\int_E f(x)\mathrm{d} x$ from both sides, then we get the conclusion.
 \end{proof}
 
 \subsection{Integral of Normal Measurable Functions}
@@ -152,16 +168,19 @@
 \end{note}
 
 \begin{example}{Practice on Lebesgue Integral of Normal Measurable Functions}{}
-  Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
-  Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
-  Prove that $f$ is Lebesgue integrable if and only if
-  \begin{equation}
-    \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
-  \end{equation}
+  Prove the following statements
+  \begin{enumerate}
+  \item Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
+    Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
+    Prove that $f$ is Lebesgue integrable if and only if
+    \begin{equation}
+      \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
+    \end{equation}
+  \end{enumerate}
 \end{example}
 
 \begin{proof}
-  When $n \geq 1$, according to the definition of Lebesgue integral,
+  (1) When $n \geq 1$, according to the definition of Lebesgue integral,
   \begin{equation}
     |n| \cdot m(E_n) = \int_{E_n} n \mathrm{d} x \geq \int_{E_n} |f(x)| \mathrm{d}x
     > |n-1| \cdot m(E_n).
@@ -184,6 +203,32 @@
   Therefore the conclusion holds.
 \end{proof}
 
+\begin{proposition}{Properties of Lebesgue Integral}{}
+  Let $f(x)$ and $g(x)$ be Lebesgue integrable on $E$, then
+  \begin{equation}
+    \lambda f(x), \quad f(x) \pm g(x), \quad f(x)g(x)
+  \end{equation}
+  are all Lebesgue integrable on $E$.
+\end{proposition}
+
+\begin{example}{Apply Properties of Lebesgue Integral}{}
+  Prove the following statements:
+  \begin{enumerate}
+  \item Let $f(x) \in L(\mathbb{R})$, $f(0) = 0$ and $f^{\prime}(0)$ is finite.
+    Prove that $\frac{f(x)}{x} \in L(\mathbb{R})$.
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) Assume that $\lim \limits _{x \rightarrow 0} \frac{f(x)}{x} = A$,
+  then
+  \begin{equation}
+    \forall \epsilon > 0, \exists \delta > 0, \forall x, |x| < \delta,
+    \quad |\frac{f(x)}{x} - A| < \epsilon.
+  \end{equation}
+  This means $\frac{f(x)}{x} \in L(-\delta, \delta)$.
+  When $|x| > \delta$, $\frac{f(x)}{x}$ is Lebesgue integrable since both $f(x)$ and $\frac{1}{x}$ are Lebesgue integrable.
+\end{proof}
 
 \begin{theorem}{Countable Additivity of the Lebesgue Integral}{}
   Let $f$ be Lebesgue integrable over $D$,
@@ -192,6 +237,7 @@
     \int_D f \mathrm{d} x = \sum\limits_{k = 1}^{\infty} \int_{E_k} f \mathrm{d} x.
   \end{equation}
 \end{theorem}
+
 
 \begin{theorem}{Absolute Continuity of the Lebesgue Integral}{}
   Let $f$ be Lebesgue integrable over $D$,
@@ -239,10 +285,6 @@
     = \int_D f\mathrm{d}x.
   \end{equation}
 \end{theorem}
-
-\begin{example}{Applications of LDCT}{}
-  
-\end{example}
 
 \section{Riemann Integral}
 
@@ -315,5 +357,30 @@
     = \int_{\mathbb{R}^p} \left[ \int_{\mathbb{R}^q} f(x,y)\mathrm{d} y \right]\mathrm{d} x.
   \end{equation}
 \end{theorem}
+
+\begin{example}{Applications of Fubini Theorem}{}
+  Prove the following statements:
+  \begin{enumerate}
+  \item Let $f(x), g(x)$ be non-negative measurable functions, $f(x)g(x)$ be Lebesgue integrable,
+    and $E_y := \{g \geq y\}$.
+    Prove that $F(y) = \int_{E_y} f(x)\mathrm{d} x$ exists for all $y > 0$, and
+    \begin{equation}
+      \int_0^{+\infty} F(y) \mathrm{d} y = \int_E f(x) g(x) \mathrm{d} x.
+    \end{equation}
+  \end{enumerate}
+\end{example}
+
+\begin{proof}
+  (1) $F(y) = \int_{E_y}f(x)\mathrm{d} x = \int_E \chi_{E_y}f(x)\mathrm{d} x$, then
+  \begin{equation}
+    I = \int_0^{+\infty} F(y) \mathrm{d} y = \int_0^{+\infty} \mathrm{d} y \int_E \chi_{E_y}(x) f(x)\mathrm{d} x
+    \Rightarrow
+    I = \int_E f(x) \left[ \int_0^{+\infty} \chi_{E_y}(x) \mathrm{d} y \right]\mathrm{d} x,
+  \end{equation}
+  where the second step we apply Fubini theorem.
+  Define $\varphi(x) = \int_0^{+\infty} \chi_{E_y}(x)\mathrm{d} y$,
+  then we prove $\varphi(x) = g(x)$.
+\end{proof}
+
 
 
