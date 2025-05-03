@@ -40,16 +40,14 @@
 \end{definition}
 
 \begin{example}{Practice on Lebesgue Integral of Non-Negative Simple Functions}{}
-  \begin{enumerate}
-  \item Let $C$ be the Cantor set in $[0, 1]$,
-    $f(x) = 0$ for $x \in C$, $f(x) = n$ for $x \in D_n$,
-    where $D_n$ is a subset in $[0, 1] - C$ with length $3^{-n}$.
-    Prove that $f(x) \in L([0, 1])$ and compute $\int_0^1 f(x)\mathrm{d} x$.
-  \end{enumerate}
+  Let $C$ be the Cantor set in $[0, 1]$,
+  $f(x) = 0$ for $x \in C$, $f(x) = n$ for $x \in D_n$,
+  where $D_n$ is a subset in $[0, 1] - C$ with length $3^{-n}$.
+  Prove that $f(x) \in L([0, 1])$ and compute $\int_0^1 f(x)\mathrm{d} x$.
 \end{example}
 
 \begin{solution}
-  (1) According to the definition of Cantor set,
+  According to the definition of Cantor set,
   the number of intervals in $[0, 1] - C$ with length $3^{-n}$ is $2^{n-1}$.
   Then the definition of Lebesgue integral for non-negative simple functions yields
   \begin{equation}
@@ -168,19 +166,16 @@
 \end{note}
 
 \begin{example}{Practice on Lebesgue Integral of Normal Measurable Functions}{}
-  Prove the following statements
-  \begin{enumerate}
-  \item Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
-    Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
-    Prove that $f$ is Lebesgue integrable if and only if
-    \begin{equation}
-      \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
-    \end{equation}
-  \end{enumerate}
+  Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
+  Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
+  Prove that $f$ is Lebesgue integrable if and only if
+  \begin{equation}
+    \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
+  \end{equation}
 \end{example}
 
 \begin{proof}
-  (1) When $n \geq 1$, according to the definition of Lebesgue integral,
+  When $n \geq 1$, according to the definition of Lebesgue integral,
   \begin{equation}
     |n| \cdot m(E_n) = \int_{E_n} n \mathrm{d} x \geq \int_{E_n} |f(x)| \mathrm{d}x
     > |n-1| \cdot m(E_n).
@@ -212,15 +207,12 @@
 \end{proposition}
 
 \begin{example}{Apply Properties of Lebesgue Integral}{}
-  Prove the following statements:
-  \begin{enumerate}
-  \item Let $f(x) \in L(\mathbb{R})$, $f(0) = 0$ and $f^{\prime}(0)$ is finite.
-    Prove that $\frac{f(x)}{x} \in L(\mathbb{R})$.
-  \end{enumerate}
+  Let $f(x) \in L(\mathbb{R})$, $f(0) = 0$ and $f^{\prime}(0)$ is finite.
+  Prove that $\frac{f(x)}{x} \in L(\mathbb{R})$.
 \end{example}
 
 \begin{proof}
-  (1) Assume that $\lim \limits _{x \rightarrow 0} \frac{f(x)}{x} = A$,
+  Assume that $\lim \limits _{x \rightarrow 0} \frac{f(x)}{x} = A$,
   then
   \begin{equation}
     \forall \epsilon > 0, \exists \delta > 0, \forall x, |x| < \delta,
@@ -359,19 +351,16 @@
 \end{theorem}
 
 \begin{example}{Applications of Fubini Theorem}{}
-  Prove the following statements:
-  \begin{enumerate}
-  \item Let $f(x), g(x)$ be non-negative measurable functions, $f(x)g(x)$ be Lebesgue integrable,
-    and $E_y := \{g \geq y\}$.
-    Prove that $F(y) = \int_{E_y} f(x)\mathrm{d} x$ exists for all $y > 0$, and
-    \begin{equation}
-      \int_0^{+\infty} F(y) \mathrm{d} y = \int_E f(x) g(x) \mathrm{d} x.
-    \end{equation}
-  \end{enumerate}
+  Let $f(x), g(x)$ be non-negative measurable functions, $f(x)g(x)$ be Lebesgue integrable,
+  and $E_y := \{g \geq y\}$.
+  Prove that $F(y) = \int_{E_y} f(x)\mathrm{d} x$ exists for all $y > 0$, and
+  \begin{equation}
+    \int_0^{+\infty} F(y) \mathrm{d} y = \int_E f(x) g(x) \mathrm{d} x.
+  \end{equation}
 \end{example}
 
 \begin{proof}
-  (1) $F(y) = \int_{E_y}f(x)\mathrm{d} x = \int_E \chi_{E_y}f(x)\mathrm{d} x$, then
+  $F(y) = \int_{E_y}f(x)\mathrm{d} x = \int_E \chi_{E_y}f(x)\mathrm{d} x$, then
   \begin{equation}
     I = \int_0^{+\infty} F(y) \mathrm{d} y = \int_0^{+\infty} \mathrm{d} y \int_E \chi_{E_y}(x) f(x)\mathrm{d} x
     \Rightarrow

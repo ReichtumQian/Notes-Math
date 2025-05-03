@@ -200,34 +200,20 @@
   Both cases contradict the equation.
 \end{proof}
 
-\subsection{Open and Closed Set Approximators}
+\subsection{Approximation by Open and Closed Sets}
 
-\begin{theorem}{Open Set Approximator}{}
-  Let $E$ be a measurable set.
-  If for any $\epsilon > 0$, there exists open intervals $\{I_n\}$ such that
-  $E \subset \cup I_n$ and $m(E) + \epsilon > \sum \ell(I_n)$.
-  Then $G := \cup I_n$ is an open set, and
-  \begin{equation}
-    m^{\ast}(G - E) < \epsilon.
-  \end{equation}
+\begin{theorem}{Approximate by Open Sets and Closed Sets}{}
+  A set $E \subset \mathbb{R}$ is measurable if and only if one of the following propositions holds
+  \begin{enumerate}
+  \item For any $\epsilon > 0$, there exists an open set $G \supset E$ such that
+    $m^{\ast}(G - E) < \epsilon$.
+  \item For any $\epsilon > 0$, there exists a closed set $F \subset E$ such that
+    $m^{\ast}(E - F) < \epsilon$.
+  \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-  If $m(E) < \infty$, then the conclusion follows from
-  \begin{equation}
-    m(G) \leq \sum \ell(I_n) < m(E) + \epsilon.
-  \end{equation}
-  Otherwise, let $E_n := E \cap [n, n+1)$ where $n = 0, \pm 1, \pm 2, \cdots$.
-  For each $E_n$, there exists an open set $G_n$ such that
-  \begin{equation}
-    E_n \subset G_n, \quad m(G_n - E_n) < \frac{\epsilon}{2^{|n| + 2}}.
-  \end{equation}
-  Let $G = \cup_n G_n$, $G$ is an open set, and $G \supset \cup _n E_n = E$.
-  Since $\cup_n G_n - \cup_n E_n \subset \cup_n (G_n - E_n)$, so
-  \begin{equation}
-    m(G - E) \leq \sum _n m(G_n - E_n) < \sum_n \frac{\epsilon}{2^{|n| + 2}} < \epsilon.
-  \end{equation}
-  The proof is completed.
+  
 \end{proof}
 
 \begin{note}
