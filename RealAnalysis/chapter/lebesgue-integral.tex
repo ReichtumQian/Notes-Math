@@ -84,7 +84,8 @@
 \end{example}
 
 \begin{proof}
-  Denote $E_{\sigma} := \{x \in E: f_n(x) \geq \sigma\}$, then we have
+  For any $n \geq 1$,
+  denote $E_{\sigma} := \{x \in E: f_n(x) \geq \sigma\}$, then we have
   \begin{equation}
     \int_{E_{\sigma}}f_n(x)\mathrm{d} x \geq \sigma \cdot m (E_{\sigma}), \quad
     \int_{E_{\sigma}}f_n(x) \mathrm{d} x \leq \int_E f_n(x) \mathrm{d} x.
@@ -150,13 +151,13 @@
 \begin{definition}{Lebesgue Integral}{}
   Let $f$ be a measurable function on a measurable set $D$,
   and $f_+(x) := \max\{0, f(x)\}$, $f_-(x) := \max\{0, -f(x)\}$.
-  Then the \emph{lebesgue integral of $f$ over $D$} is
+  Then the \emph{Lebesgue integral of $f$ over $D$} is
   \begin{equation}
     \int_D f \mathrm{d} x 
     = \int_D f_+ \mathrm{d} x - \int_D f_-\mathrm{d} x
     := I^+ - I^-.
   \end{equation}
-  If $I^+, I^- < +\infty$, then $f$ is said to be \emph{lebesgue integrable over
+  If $I^+, I^- < +\infty$, then $f$ is said to be \emph{Lebesgue integrable over
     $D$}, denoted as $f \in L(D)$.
 \end{definition}
 
