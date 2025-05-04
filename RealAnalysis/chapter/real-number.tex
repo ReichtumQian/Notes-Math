@@ -28,6 +28,18 @@
   \end{enumerate}
 \end{proposition}
 
+\begin{example}{Practice on Operations of Sets}{}
+  Prove that $\cup_n G_n - \cup_n E_n \subset \cup_n (G_n - E_n)$.
+\end{example}
+
+\begin{proof}
+  For $x \in \cup_n G_n - \cup_n E_n$,
+  $x$ is included in $G_i(\forall i)$, and not included in all $E_i(i=1,2,\cdots)$.
+  On the other hand, for $x \in \cup_n (G_n - E_n)$,
+  $x$ is included in $G_i - E_i(\forall i)$.
+  That is, included in $G_i (\forall i)$, and not included the corresponding $E_i$.
+\end{proof}
+
 \begin{theorem}{De Morgan Formula}{}
   Let $\{A_{\lambda}: \lambda \in \Lambda\}$ be a family of subsets of $X$, then
   \begin{equation}

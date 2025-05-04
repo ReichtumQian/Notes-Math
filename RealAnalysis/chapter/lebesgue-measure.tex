@@ -202,7 +202,7 @@
 
 \subsection{Approximation by Open and Closed Sets}
 
-\begin{theorem}{Approximate by Open Sets and Closed Sets}{}
+\begin{theorem}{Approximation by Open Sets and Closed Sets}{}
   A set $E \subset \mathbb{R}$ is measurable if and only if one of the following propositions holds
   \begin{enumerate}
   \item For any $\epsilon > 0$, there exists an open set $G \supset E$ such that
@@ -213,17 +213,30 @@
 \end{theorem}
 
 \begin{proof}
-  
-\end{proof}
+  (1) Right-to-left: For any $n \geq 1$, there exists an open set $G_n \supset E$ such that
+  $m^{\ast}(G_n - E) < \frac{1}{n}$.
+  Let $G = \cap_n G_n$, then
+  \begin{equation}
+    G - E \subset G_n - E \Rightarrow m^{\ast}(G - E) \leq m^{\ast}(G_n - E) < \frac{1}{n}.
+  \end{equation}
+  Since the equation holds for all $n \geq 1$, then $m^{\ast}(G - E) = 0$.
+  This means $G - E$ is measurable, so is $E = G - (G - E)$.
 
-\begin{note}
-  Why $\cup_n G_n - \cup_n E_n \subset \cup_n (G_n - E_n)$:
-  \begin{itemize}
-  \item Left-hand: $x$ is included in $G_i(\forall i)$, and not included in all $E_i(i=1,2,\cdots)$.
-  \item Right-hand: $x$ is included in $G_i - E_i(\forall i)$.
-    That is, included in $G_i (\forall i)$, and not included the corresponding $E_i$.
-  \end{itemize}
-\end{note}
+  Left-to-right: If $m(E) < \infty$, choose $G = \cup_n I_n$, where $E \subset \cup_n I_n$
+  and $m(E) < \sum_n \ell(I_n) + \epsilon$.
+  If $m(E) = \infty$, let $E_n = E \cap [n, n+1)$, and choose $G_n$ as
+  \begin{equation}
+    E_n \subset G_n, \quad m(G_n - E_n) < \frac{\epsilon}{2^{|n|}}.
+  \end{equation}
+  Take $G = \cup_n G_n$.
+
+  (2) Right-to-left: For any $n \geq 1$, there exists a closed set $F_n \subset E$ such that
+  $m^{\ast}(E - F_n) < \frac{1}{n}$. Choose $F = \cup_n F_n$, then
+  \begin{equation}
+    E - F \subset E - F_n \Rightarrow m^{\ast}(E - F) \leq m^{\ast}(E - F_n) < \frac{1}{n}.
+  \end{equation}
+  This means $m^{\ast}(E - F) = 0$, and $E - F$, $E$ are measurable.
+\end{proof}
 
 \begin{theorem}{The Squeeze Theorem for Measurable Sets}{}
   If there are two sequences of measurable sets $A_n$ and $B_n$ such that

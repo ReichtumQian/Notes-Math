@@ -36,7 +36,7 @@
 \end{proof}
 
 \begin{example}{Properties of Measurable Functions}{}
-  Prove that measurable functions are \emph{basically} bounded;
+  Measurable functions are \emph{basically} bounded;
   convergent measurable function sequences are \emph{basically} uniformly bounded:
   \begin{enumerate}
   \item If $m(E) < \infty$, $f(x)$ is measurable and finite a.e. on $E$, then
@@ -54,17 +54,17 @@
 \end{example}
 
 \begin{proof}
-  (1) Since $f$ is finite almost everywhere, then $m(\{|f| = \infty\}) = 0$,
+  (1) Since $f$ is finite a.e., $m(\{|f| = \infty\}) = 0$. We know
   \begin{equation}
     m(\{|f| < \infty\})
     = \lim \limits _{k \rightarrow \infty} m(\{|f| \leq k\}).
   \end{equation}
-  Then according to the definition of sequence limit
+  According to the definition of sequence limit
   \begin{equation}
-    \forall \delta > 0, \exists K, \forall k \geq K,
+    \forall \delta > 0, \exists K > 0, \forall k \geq K,
     m(\{|f| < \infty\}) \leq m(\{|f| \leq k\}) + \delta.
   \end{equation}
-  Let $E_{\delta} := \{|f| \leq k\}$, it is obvious that $m(E - E_{\delta}) < \delta$.
+  Let $E_{\delta} := \{|f| \leq k\}$, then $m(E - E_{\delta}) < \delta$ holds.
 
   (2) Remove infinite and divergent points first.
   Let $E_n := \{|f_n| = \infty\}$ and $E_0 := \{f_n \not \rightarrow f\}$,
@@ -143,7 +143,22 @@
   \begin{equation}
     \lim \limits _{n \rightarrow \infty} f_n(x) = f(x), \quad x \in D.
   \end{equation}
+  If $f(x)$ is non-negative, then $f_n$ monotonically converges to $f$;
+  If $f(x)$ is bounded, then $f_n \unifconv f$.
 \end{theorem}
+
+\begin{proof}
+  For any $n \geq 1$, let
+  \begin{equation}
+    f_n(x) =
+    \begin{cases}
+      n & \text{if } f(x) \geq n;\\
+      \frac{k-1}{2^n} & \text{if } \frac{k-1}{2^n} \leq f(x) < \frac{k}{2^n},
+                        \quad k=-n2^n+1,-n2^n+2,\cdots,n2^n;\\
+      -n & \text{if } f(x) < -n.
+    \end{cases}
+  \end{equation}
+\end{proof}
 
 \subsection{Approximation by Continuous Functions}
 
@@ -291,7 +306,20 @@
   \end{equation}
 \end{theorem}
 
-
+\begin{proof}
+  By Egoroff theorem
+  \begin{equation}
+    \forall \delta > 0, \exists E \subset D, m(D - E) < \delta,
+    \quad f_n \unifconv f, x \in E.
+  \end{equation}
+  This means for any $\epsilon > 0$,
+  there exists $N > 0$ such that $|f_n(x) - f(x)| < \epsilon$ for all $n > N$ and $x \in E$.
+  Then
+  \begin{equation}
+    m(\{|f_n - f| \geq \epsilon\}) \leq m(D - E) < \delta, \quad n > N,
+  \end{equation}
+  this implies that $f_n \measconv f$.
+\end{proof}
 
 
 
