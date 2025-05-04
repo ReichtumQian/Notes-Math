@@ -1,4 +1,5 @@
 NAME := RealAnalysis
+WORKBOOK := RealAnalysisWorkbook
 LATEXMK := latexmk
 LATEXMKFLAGS := -pdf
 
@@ -18,10 +19,11 @@ STY = $(shell $(FIND_CMD) '*.sty')
 CLS = $(shell $(FIND_CMD) '*.cls')
 FIGS = $(shell $(FIND_CMD) '*.png' -o -name '*.jpg')
 
-all:${NAME}.pdf
+all:${NAME}.pdf ${WORKBOOK}.pdf
 
 ${NAME}.pdf:$(TEX) $(BIB) $(STY) $(CLS) $(FIGS)
 	$(LATEXMK) $(LATEXMKFLAGS) $(NAME)
+	$(LATEXMK) $(LATEXMKFLAGS) $(WORKBOOK)
 #	${MAKE} clean
 
 clean:
