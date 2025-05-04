@@ -16,21 +16,6 @@
   \end{equation}
 \end{definition}
 
-\begin{example}{Application of Characteristic Function}{}
-  $m (E) \neq 0$, $f \in L(E)$, for any measurable function $\varphi(x)$,
-  $\int_E f(x)\varphi(x)\mathrm{d} x = 0$. Prove that $f(x) = 0$ a.e. in $E$.
-\end{example}
-
-\begin{proof}
-  For any $n \in \mathbb{Z}^+$. Define $E_n := \{x \in E: f(x) \geq \frac{1}{n}\}$.
-  Then
-  \begin{equation}
-    0 \leq \frac{1}{n} m(E_n) \leq \int_{E_n} f(x)\mathrm{d} x = \int_E \chi_{E_n}(x) f(x)\mathrm{d} x = 0,
-  \end{equation}
-  thus $m(E_n) = 0$.
-  We get $m(\{f > 0\}) = m(\cup_{n=1}^{+\infty} E_n) = 0$, similarly we can prove $m(\{f < 0\}) = 0$.
-\end{proof}
-
 \begin{definition}{Lebesgue Integral of Non-Negative Simple Functions}{}
   Let $f = \sum _{i = 1}^s a_i \chi_{E_i}(x)$ be a simple function,
   then \emph{Lebesgue integral of $f$} over $D = \cup _{i = 1}^s E_i$ is
@@ -97,13 +82,6 @@
   then $f_n(x) \measconv 0$.
 \end{proof}
 
-\begin{exercise}{}{}
-  \begin{enumerate}
-  \item If $m(E) > 0$, $f \in L(E)$, $f$ is non-negative and $\int_E f(x)\mathrm{d} x = 0$.
-    Prove that $f(x) = 0$ a.e.
-  \end{enumerate}
-\end{exercise}
-
 \begin{theorem}{Levi's Monotone Convergence Theorem}{}
   Let $f$ and $f_n$ be non-negative measurable functions on a measurable set
   $D$.
@@ -122,36 +100,6 @@
   \end{equation}
 \end{theorem}
 
-\begin{example}{Applications of Fatou Theorem}{}
-  Prove the following statements
-  \begin{enumerate}
-  \item Let $\{f_n(x)\}$ be measurable functions, $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.
-    Prove that there exists $K$ such that $\int_E |f_n(x)| \mathrm{d} x \leq K$.
-  \item Let $f_n(x)$ be measurable functions, $f(x)$ be non-negative Lebesgue integrable,
-    $|f_n(x)| \leq f(x)$ a.e. in $E$. Prove that
-    \begin{equation}
-      \int_E \liminf_{n \rightarrow \infty} f_n(x) \mathrm{d} x \leq \liminf _{n \rightarrow \infty} \int_E f_n(x)\mathrm{d} x.
-    \end{equation}
-  \end{enumerate}
-\end{example}
-
-\begin{proof}
-  (1) Since $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$ a.e.,
-  $\lim \limits _{n \rightarrow \infty} |f_n(x)| = f(x)$ a.e.
-  Consider the Lebesgue integral of $|f(x)|$, by Fatou theorem
-  \begin{equation}
-    \int_E |f(x)|\mathrm{d} x = \int_E \lim \limits _{n \rightarrow \infty} |f_n(x)| \mathrm{d} x
-    \leq \lim \limits _{n \rightarrow \infty} \int_E |f_n(x)|\mathrm{d} x \leq K < +\infty.
-  \end{equation}
-
-  (2) Consider $g_n(x) = f(x) + f_n(x)$, then $g_n(x)$ is non-negative measurable functions.
-  Then by Fatou theorem
-  \begin{equation}
-    \int_E \liminf_{n \rightarrow \infty} f + f_n \mathrm{d} x
-    \leq \liminf_{n \rightarrow \infty} \int_E f + f_n \mathrm{d} x.
-  \end{equation}
-  Cancel $\int_E f(x)\mathrm{d} x$ from both sides, then we get the conclusion.
-\end{proof}
 
 \subsection{Integral of Normal Measurable Functions}
 
@@ -169,42 +117,10 @@
 \end{definition}
 
 \begin{note}
-  A measurable function $f$ is Lebesgue integrable if and only if $|f|$
-  is Lebesgue integrable.
+  A measurable function $f$ is Lebesgue integrable if and only if $|f|$ is Lebesgue integrable.
+  If $f \in L(E)$, then it is finite a.e.
+  But an almost-everywhere finite function is not necessarily Lebesgue integrable, e.g., $\frac{1}{x}$ over $(0, 1)$.
 \end{note}
-
-\begin{example}{Practice on Lebesgue Integral of Normal Measurable Functions}{}
-  Let $E$ be a measurable set with finite measure, and $f$ be a measurable function.
-  Define $E_n = \{n - 1 \leq f < n\}$, where $n \in \mathbb{Z}$.
-  Prove that $f$ is Lebesgue integrable if and only if
-  \begin{equation}
-    \sum\limits_{- \infty}^{+\infty} |n| \cdot m(E_n) < +\infty.
-  \end{equation}
-\end{example}
-
-\begin{proof}
-  When $n \geq 1$, according to the definition of Lebesgue integral,
-  \begin{equation}
-    |n| \cdot m(E_n) = \int_{E_n} n \mathrm{d} x \geq \int_{E_n} |f(x)| \mathrm{d}x
-    > |n-1| \cdot m(E_n).
-  \end{equation}
-  Similarly, when $n < 1$,
-  \begin{equation}
-    |n - 1| \cdot m(E_n) = (1-n) \cdot m(E_n) \geq \int_{E_n} |f(x)|\mathrm{d}x
-    > |n|\cdot m(E_n).
-  \end{equation}
-
-  Since $f$ is Lebesgue integrable, then $|f|$ is integrable,
-  \begin{align}
-    +\infty > \int_E |f|\mathrm{d} x
-    &= \sum\limits_{n = 1}^{+\infty} \int_{E_n} |f|\mathrm{d}x + \sum\limits_{n = 0}^{-\infty} \int_{E_n}|f|\mathrm{d}x\\
-    &> \sum\limits_{n = 1}^{+\infty} |n-1| \cdot m(E_n)
-    + \sum\limits_{n = 0}^{-\infty} |n| \cdot m(E_n)\\
-    &= \sum\limits_{n = -\infty}^{+\infty} |n| \cdot m(E_n) - \sum\limits_{n = 1}^{+\infty} m(E_n),
-  \end{align}
-  here, $\sum\limits_{n = 1}^{\infty} m(E_n) = m(\{f \geq 1\}) < \infty$.
-  Therefore the conclusion holds.
-\end{proof}
 
 \begin{proposition}{Properties of Lebesgue Integral}{}
   Let $f(x)$ and $g(x)$ be Lebesgue integrable on $E$, then
@@ -220,7 +136,8 @@
 \end{example}
 
 \begin{proof}
-  Assume that $\lim \limits _{x \rightarrow 0} \frac{f(x)}{x} = A$,
+  Assume $f^{\prime}(0) = A$, where $A < \infty$.
+  By definition of derivative, $\lim \limits _{x \rightarrow 0} \frac{f(x)}{x} = A$,
   then
   \begin{equation}
     \forall \epsilon > 0, \exists \delta > 0, \forall x, |x| < \delta,
@@ -248,32 +165,6 @@
   \end{equation}
 \end{theorem}
 
-\begin{example}{Applications of Absolute Continuity of the Lebesgue Integral}{}
-  Let $E$ be a measurable set, $f \in L(E)$, $e_n := \{|f| \geq n\}$,
-  prove that $\lim \limits _{n \rightarrow \infty} n \cdot m(e_n) = 0$.
-\end{example}
-
-\begin{proof}
-  According to the definition of Lebesgue integral of non-negative simple
-  functions we have
-  \begin{equation}
-    n \cdot m(e_n) = \int_{e_n} n \mathrm{d} x \leq \int_{e_n} |f(x)|\mathrm{d} x.
-  \end{equation}
-  It is not hard to see that $e_n$ is monotonically decreasing,
-  and since $f$ is finite a.e., then
-  \begin{equation}
-    m(\lim \limits _{n \rightarrow \infty} e_n)
-    = m(\lim \limits _{n \rightarrow \infty} \{|f| \geq n\}) = 0
-  \end{equation}
-  which means $\forall \delta > 0, \exists N > 0, \forall n > N$, $m(e_n) < \delta$.
-  Then according to the absolute continuity of Lebesgue integral
-  \begin{equation}
-    \forall \epsilon > 0, \exists \delta > 0, \exists A \subset E, m(A) < \delta,
-    \int_A |f(x)|\mathrm{d} x < \epsilon.
-  \end{equation}
-  Combining the above two equations yields $n\cdot m(e_n) < \epsilon$,
-  so it converges to $0$.
-\end{proof}
 
 \begin{theorem}{Lebesgue's Dominated Convergence Theorem (LDCT)}{}
   Let $f$ and $f_n$ be measurable functions on a measurable set $D$.
