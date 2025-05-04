@@ -44,7 +44,7 @@
     = \frac{(x-iy)^2}{x^2 + y^2} = \frac{x^2 - 2ixy - y^2}{x^2 + y^2},
   \end{equation}
   then $a = \frac{x^2 - y^2}{x^2 + y^2}$, $b = \frac{-2xy}{x^2 + y^2}$,
-  it is obvious to verify that $a^2 + b^2 = 1$.
+  it is not hard to verify that $a^2 + b^2 = 1$.
 \end{proof}
 
 \begin{definition}{Absolute Value of Complex Number}{}
@@ -58,8 +58,9 @@
   Given $z, w$ two complex numbers, then
   \begin{equation}
     (1) |z|^2 = z \cdot \overline{z}, \quad
-    (2) |z| \leq |x| + |y|, \quad
-    (3) |z + w| \leq |z| + |w|.
+    (2) \frac{1}{z} = \frac{\overline{z}}{|z|^2}, \quad
+    (3) |z| \leq |x| + |y|, \quad
+    (4) |z + w| \leq |z| + |w|.
   \end{equation}
 \end{proposition}
 
@@ -169,7 +170,7 @@
 
 \begin{proof}
   We know $0 = f^{\prime}(z) = u_x(z)+iv_x(z) = v_y(z)-iu_y(z)$,
-  which implies that 
+  which implies that
   \begin{equation}
     u_x(z) = u_y(z) = v_x(z) = v_y(z) = 0, \quad z \in D.
   \end{equation}
