@@ -93,6 +93,22 @@
 \end{theorem}
 
 \begin{example}{}{}
+  Prove that the value of following integrals are zero
+  \begin{equation}
+    \int_C \frac{\mathrm{d} z}{\cos z}, \quad
+    \int_C \frac{\mathrm{d} z}{z^2 + 2z + 2}.
+  \end{equation}
+  where $C$ is the unit circle $|z| = 1$
+\end{example}
+
+\begin{proof}
+  (1) The roots of $\cos z$ is $z = \frac{\pi}{2} + n\pi$ where $n \in \mathbb{Z}$.
+  All of the roots are not contained in $|z| \leq 1$, thus by Cauchy's theorem the integral is zero.
+
+  (2) The roots of $z^2 + 2z + 1$ are $z = -2 \pm i$, the absolute values of both roots are greater than $1$.
+\end{proof}
+
+\begin{example}{}{}
   Prove that $e^{-\pi x^2}$ is its own Fourier transform, i.e., if $\xi \in \mathbb{R}$,
   \begin{equation}
     e^{- \pi \xi^2} = \int_{-\infty}^{+\infty} e^{-\pi x^2} e^{-2\pi i x \xi} \mathrm{d} x.
@@ -138,15 +154,15 @@
 \end{theorem}
 
 \begin{example}{Applications of Cauchy's Integral Formula}{}
-  Calculate the following integrals
-  \begin{enumerate}
-  \item $\int_C \frac{z^2 - z + 1}{z - 1}\mathrm{d} z$,
-    where $C$ is the circle centered at the origin with a radius of $2$.
-  \end{enumerate}
+  Calculate
+  \begin{equation}
+    \int_C \frac{z^2 - z + 1}{z - 1}\mathrm{d} z,
+  \end{equation}
+  where $C$ is the circle centered at the origin with a radius of $2$.
 \end{example}
 
 \begin{solution}
-  (1) Denote $f(z) = z^2 - z + 1$, $f(1) = 1$.
+  Denote $f(z) = z^2 - z + 1$, $f(1) = 1$.
   Since $z = 1$ is in the region enclosed by $C$, so by Cauchy's integral formula
   \begin{equation}
     f(1) = \frac{1}{2\pi i}\int_C \frac{z^2 - z + 1}{z - 1}\mathrm{d} z
@@ -166,11 +182,11 @@
 \end{corollary}
 
 \begin{example}{Applications of Cauchy's Derivative Formula}{}
-  Calculate the following integrals:
-  \begin{enumerate}
-  \item $\int_C \frac{z^2 - z + 1}{(z-1)^2}\mathrm{d} z$,
-    where $C$ is the circle centered at the origin with a radius of $2$.
-  \end{enumerate}
+  Calculate
+  \begin{equation}
+    \int_C \frac{z^2 - z + 1}{(z-1)^2}\mathrm{d} z,
+  \end{equation}
+  where $C$ is the circle centered at the origin with a radius of $2$.
 \end{example}
 
 \begin{solution}
@@ -186,6 +202,15 @@
   where $\|f\|_C = \sup \limits_{z \in C}|f(z)|$ denotes the supremum of $|f|$
   on the boundary circle $C$.
 \end{corollary}
+
+\begin{theorem}{Taylor Expansion of Holomorphic Functions}{}
+  If $f$ is holomorphic in an open set $\Omega$,
+  then $f$ has a power series expansion at any point $z_0 \in \Omega$,
+  \begin{equation}
+    f(z) = \sum\limits_{n = 0}^{\infty} \frac{f^{(n)}(z_0)}{n!}(z-z_0)^n, \quad n \in \mathbb{N}.
+  \end{equation}
+   And $f$ is infinitely differentiable.
+\end{theorem}
 
 \subsection{Liouville's Theorem}
 
