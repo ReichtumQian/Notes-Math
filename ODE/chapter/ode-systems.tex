@@ -287,6 +287,18 @@
   The fundamental solution matrix $\Phi(t) = e^{At}$.
 \end{solution}
 
+\begin{proposition}{Method of Characteristic Equation}{}
+  The solution of $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$ is determined by the
+  eigenvalues and eigenvectors of $A$.
+  More specifically, the fundamental solution system is composed of
+  \begin{equation}
+    e^{\lambda t}\mathbf{v}_0, te^{\lambda t}\mathbf{v}_1, t^2e^{\lambda t}\mathbf{v}_2,\cdots, t^{m-1}e^{\lambda t}\mathbf{v}_{m-1},
+  \end{equation}
+  where $\lambda$ is an eigenvalue of $A$,
+  $m$ is the algebraic multiplicity of $\lambda$,
+  $\mathbf{v}_0,\cdots,\mathbf{v}_{m-1}$ are linearly independent eigenvectors associated with $\lambda$.
+\end{proposition}
+
 \subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t) + \mathbf{f}(t)$}
 
 
