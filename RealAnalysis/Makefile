@@ -1,5 +1,5 @@
 NAME := RealAnalysis
-WORKBOOK := RealAnalysisWorkbook
+WORKBOOK := RealAnalysisWorkBook
 LATEXMK := latexmk
 LATEXMKFLAGS := -pdf
 
@@ -28,10 +28,12 @@ ${NAME}.pdf:$(TEX) $(BIB) $(STY) $(CLS) $(FIGS)
 
 clean:
 	$(LATEXMK) -c $(NAME)
+	$(LATEXMK) -c $(WORKBOOK)
 	$(RM_CMD) *.bbl *.thm *.xml *.out.ps *.dvi *.rel *.spl
 
 purge:
 	$(LATEXMK) -C $(NAME)
+	$(LATEXMK) -C $(WORKBOOK)
 	$(RM_CMD) -r *.bbl *.thm *.xml *.out.ps *.dvi *.rel *.spl *.pdf
 	$(RM_CMD) ./tikz/*.aux ./tikz/*.log ./tikz/*.pdf ./tikz/*.gz
 

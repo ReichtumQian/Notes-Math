@@ -1,4 +1,5 @@
 NAME := ComplexAnalysis
+WOOKBOOK := ComplexAnalysisWorkBook
 LATEXMK := latexmk
 LATEXMKFLAGS := -pdf
 
@@ -18,18 +19,21 @@ STY = $(shell $(FIND_CMD) '*.sty')
 CLS = $(shell $(FIND_CMD) '*.cls')
 FIGS = $(shell $(FIND_CMD) '*.png' -o -name '*.jpg')
 
-all:${NAME}.pdf
+all:${NAME}.pdf ${WOOKBOOK}.pdf
 
 ${NAME}.pdf:$(TEX) $(BIB) $(STY) $(CLS) $(FIGS)
 	$(LATEXMK) $(LATEXMKFLAGS) $(NAME)
+	$(LATEXMK) $(LATEXMKFLAGS) $(WORKBOOK)
 #	${MAKE} clean
 
 clean:
 	$(LATEXMK) -c $(NAME)
+	$(LATEXMK) -c $(WORKBOOK)
 	$(RM_CMD) *.bbl *.thm *.xml *.out.ps *.dvi *.rel *.spl
 
 purge:
 	$(LATEXMK) -C $(NAME)
+	$(LATEXMK) -C $(WORKBOOK)
 	$(RM_CMD) -r *.bbl *.thm *.xml *.out.ps *.dvi *.rel *.spl *.pdf
 	$(RM_CMD) ./tikz/*.aux ./tikz/*.log ./tikz/*.pdf ./tikz/*.gz
 
