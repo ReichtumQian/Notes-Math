@@ -288,18 +288,113 @@
 \end{solution}
 
 \begin{proposition}{Method of Characteristic Equation}{}
-  The solution of $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$ is determined by the
-  eigenvalues and eigenvectors of $A$.
-  More specifically, the fundamental solution system is composed of
+  The solution of $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$ can be expressed
+  by the (generalized) eigenvectors and (generalized) eigenvalues of $A$.
+  To be more specific, if $A$ is diagonalizable, then the fundamental solution system is
   \begin{equation}
-    e^{\lambda t}\mathbf{v}_0, te^{\lambda t}\mathbf{v}_1, t^2e^{\lambda t}\mathbf{v}_2,\cdots, t^{m-1}e^{\lambda t}\mathbf{v}_{m-1},
+    e^{\lambda_1 t}\mathbf{v}_1, e^{\lambda_2 t}\mathbf{v}_2 \cdots, e^{\lambda_n t}\mathbf{v}_n,
   \end{equation}
-  where $\lambda$ is an eigenvalue of $A$,
-  $m$ is the algebraic multiplicity of $\lambda$,
-  $\mathbf{v}_0,\cdots,\mathbf{v}_{m-1}$ are linearly independent eigenvectors associated with $\lambda$.
+  where $\mathbf{v}_i$ is an eigenvector of $A$ with respect to $\lambda_i$.
+  If $A$ is not diagonalizable, then the fundamental solution system is
+  \begin{equation}
+    e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right),
+  \end{equation}
+  where $\mathbf{v}_0, \cdots, \mathbf{v}_k$ are generalized eigenvectors corresponding to $\lambda$,
+  satisfying $(A - \lambda I)^k \mathbf{v}_k = 0$ and $(A - \lambda I)\mathbf{v}_j = \mathbf{v}_{j-1}$.
 \end{proposition}
 
-\subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t) + \mathbf{f}(t)$}
+\begin{proof}
+  (1) If $A$ is diagonalizable, then $A$ has $n$ linearly independent eigenvectors
+  $\mathbf{v}_1,\cdots,\mathbf{v}_n$. For each $\lambda_i$ and $\mathbf{v}_i$, it is not hard to
+  verify that $\mathbf{x}(t) = e^{\lambda_i t}\mathbf{v}_i$ satisfies
+  \begin{equation}
+    \mathbf{x}^{\prime}(t) = \lambda_i e^{\lambda_i t}\mathbf{v}_i, \quad
+    A\mathbf{x}(t) = A (e^{\lambda_i t}\mathbf{v}_i) = e^{\lambda_i t} A\mathbf{v}_i = \lambda_i e^{\lambda_i t}\mathbf{v}_i.
+  \end{equation}
+  This means $\mathbf{x}(t)$ is a solution of the ODE.
+  Furthermore, since $\mathbf{v}_i$ are linearly independent, these solutions form a fundamental solution system.
+
+  (2) Otherwise, there exists an invertible matrix $P$ such that $P^{-1}AP = J$,
+  where $J = \operatorname{diag}(J_1,\cdots,J_m)$, where
+  \begin{equation}
+    J_m =
+    \begin{bmatrix}
+       \lambda_m & 1 & \cdots & 0 & 0\\
+       0 & \lambda_m & \cdots & 0 & 0\\
+       \vdots & \vdots & \ddots & \vdots& \vdots\\
+       0 &  0& \cdots &\lambda_m & 1\\
+       0 &  0& \cdots &0 & \lambda_m
+    \end{bmatrix}
+    \Rightarrow
+    e^{J_m t} = e^{\lambda_m t}
+    \begin{bmatrix}
+       1 & t & \frac{t^2}{2} & \cdots & \frac{t^{m-1}}{(m-1)!}\\
+       0 & 1 & t & \cdots & \frac{t^{m-2}}{(m-2)!}\\
+       \vdots & \vdots & \ddots & \ddots & \vdots\\
+       0 &  0&  0& 1 & t\\
+       0 &  0&  0& 0 & 1
+    \end{bmatrix}.
+  \end{equation}
+  Then $e^{At} = Pe^{J t}P^{-1}$.
+\end{proof}
+
+\begin{example}{}{}
+  Find the fundamental solution matrix of
+  \begin{equation}
+    \mathbf{x}^{\prime} =
+    \begin{bmatrix}
+      -4 & 1 & 0 & 0 & 0\\
+      0 & -4 & 1 & 0 & 0\\
+      0 & 0 & -4 & 0 & 0\\
+      0 & 0 & 0 & -4 & 0\\
+      0 & 0 & 0 & 0 & -4\\
+    \end{bmatrix} \mathbf{x}.
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  $A$ is already a Jordan matrix composed of three Jordan blocks.
+  Consider the first Jordan block, the generalized eigenvectors $\mathbf{v}_1, \mathbf{v}_2, \mathbf{v}_3$ satisfy
+  \begin{equation}
+    (A + 4I)\mathbf{v}_1 = 0, \quad (A + 4I)\mathbf{v}_2 = \mathbf{v}_1, \quad
+    (A + 4I)\mathbf{v}_3 = \mathbf{v}_2.
+  \end{equation}
+  Solving the above three systems of linear equations, we get
+  $\mathbf{v}_1 = \mathbf{e}_1$, $\mathbf{v}_2 = \mathbf{e}_2$ and $\mathbf{v}_3 = \mathbf{e}_3$.
+  It is not hard to find the eigenvectors of the second and third Jordan blocks,
+  which are $\mathbf{v}_4 = \mathbf{e}_4$ and $\mathbf{v}_5 = \mathbf{e}_5$ respectively.
+  Then the fundamental solution system is
+  \begin{equation}
+    e^{-4t}\mathbf{v}_1,\quad
+    e^{-4t}(t\mathbf{v}_1+\mathbf{v}_2),\quad
+    e^{-4t}(\frac{t^2}{2}\mathbf{v}_1+t\mathbf{v}_2+\mathbf{v}_3),\quad
+    e^{-4t}\mathbf{v}_4,\quad
+    e^{-4t}\mathbf{v}_5.
+  \end{equation}
+  The corresponding fundamental solution matrix is
+  \begin{equation}
+    \Phi(t) = e^{-4t}
+      \begin{bmatrix}
+      1 & t & \frac{t^2}{2} & 0 & 0 \\
+      0 & 1 & t & 0 & 0 \\
+      0 & 0 & 1 & 0 & 0 \\
+      0 & 0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 0 & 1
+      \end{bmatrix}
+  \end{equation}
+\end{solution}
+
+\begin{exercise}{}{}
+  Find the fundamental solution matrix of
+  \begin{equation}
+    A = 
+    \begin{bmatrix}
+    2 & -3 & 3 \\
+    4 & -5 & 3 \\
+    4 & -4 & 2
+    \end{bmatrix}
+  \end{equation}
+\end{exercise}
 
 
 
