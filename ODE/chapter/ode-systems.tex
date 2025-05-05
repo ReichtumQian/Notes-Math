@@ -77,6 +77,30 @@
   \end{equation}
 \end{proposition}
 
+\begin{example}{}{}
+  Define
+  \begin{equation}
+    \Phi(t) =
+      \begin{bmatrix}
+        e^t & te^t\\
+        0 & e^t
+      \end{bmatrix},
+      \quad A = 
+      \begin{bmatrix}
+        1 & 1\\
+        0 & 1
+      \end{bmatrix}.
+  \end{equation}
+  Prove that $\Phi(t)$ is a fundamental solution matrix of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$.
+\end{example}
+
+\begin{proof}
+  Let $\Phi(t) = [\mathbf{x}_1(t), \mathbf{x}_2(t)]$,
+  it is not hard to verify that $\mathbf{x}_1(t)$ and $\mathbf{x}_2(t)$ are solutions of
+  $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t)$.
+  Meanwhile, $|\Phi(t)| \neq 0$, then $\Phi(t)$ is a fundamental solution matrix of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$.
+\end{proof}
+
 \subsection{Solution Structure of $\mathbf{x}^{\prime}(t) = A(t) \mathbf{x}(t) + \mathbf{f}(t)$}
 
 \begin{proposition}{Variation of Parameters}{}
@@ -85,7 +109,8 @@
   \begin{equation}
     \mathbf{x}(t) = \Phi(t)C(t), \quad C(t): [a, b] \rightarrow \mathbb{R}^{n \times 1},
   \end{equation}
-  where $C(t)$ follows $C^{\prime}(t) = \Phi^{-1}(t)f(t)$.
+  where $C(t)$ follows $C^{\prime}(t) = \Phi^{-1}(t)\mathbf{f}(t)$
+  and $C(t_0) = \Phi^{-1}(t_0) \mathbf{x}(t_0)$.
 \end{proposition}
 
 \begin{proof}
@@ -104,9 +129,163 @@
   \end{equation}
 \end{proof}
 
+\begin{example}{}{}
+  Find the solutions of
+  \begin{equation}
+    \mathbf{x}^{\prime} =
+    \begin{bmatrix}
+      1 & 1\\
+      0 & 1
+    \end{bmatrix} \mathbf{x} +
+    \begin{bmatrix}
+      e^{-t}\\
+      0
+    \end{bmatrix}, \quad
+    \mathbf{x}(0) =
+    \begin{bmatrix}
+      -1 \\
+      1
+    \end{bmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  First, we consider the fundamental solution matrix of $\mathbf{x}^{\prime} = A\mathbf{x}$,
+  \begin{equation}
+    \Phi(t) =
+    \begin{bmatrix}
+      e^t & te^t\\
+      0 & e^t
+    \end{bmatrix} \Rightarrow
+    \Phi^{-1}(t) =
+    \begin{bmatrix}
+      e^{-t} & -te^{-t}\\
+      0 & e^{-t}
+    \end{bmatrix}
+  \end{equation}
+  Since $C^{\prime}(t) = \Phi^{-1}(t)\mathbf{f}(t)$ and $C(t_0) = \Phi^{-1}(t_0)\mathbf{x}(t_0)$, i.e.,
+  \begin{equation}
+    C^{\prime}(t) =
+    \begin{bmatrix}
+      e^{-2t}\\
+      0
+    \end{bmatrix}, \quad
+    C(0) =
+    \begin{bmatrix}
+      -1\\
+      1
+    \end{bmatrix}.
+  \end{equation}
+  Then $C(t) = \int_{t_0}^t \Phi^{-1}(t)\mathbf{f}(t) \mathrm{d} t + C(t_0)$,
+  so $C(t) = (-\frac{1}{2}e^{-2t} - \frac{1}{2}, 1)^T$.
+  Then the solution is in the form of
+  \begin{equation}
+    \mathbf{x}(t) = \Phi(t)C(t) = 
+    \begin{bmatrix}
+      (t-\frac{1}{2})e^t - \frac{1}{2}e^{-t}\\
+      e^t
+    \end{bmatrix}.
+  \end{equation}
+\end{solution}
+
 \section{Solving Constant-Coefficient Systems of ODEs}
 
+\begin{definition}{Matrix Exponential}{}
+  Let $A$ be an $n$-order matrix, then its \emph{matrix exponential} is
+  \begin{equation}
+    e^A := \sum\limits_{n = 0}^{\infty} \frac{A^n}{n!}.
+  \end{equation}
+\end{definition}
+
+\begin{example}{}{}
+  Calculate $e^{A}$, where
+  \begin{equation}
+    A =
+    \begin{bmatrix}
+      2 & 1\\
+      0 & 2
+    \end{bmatrix}
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  Consider $A = B + C$, where
+  \begin{equation}
+    B =
+    \begin{bmatrix}
+      2 & 0\\
+      0 & 2
+    \end{bmatrix}, \quad
+    C =
+    \begin{bmatrix}
+      0 & 1\\
+      0 & 0
+    \end{bmatrix}.
+  \end{equation}
+  Then $e^A = e^{B + C} = e^B e^C$, where
+  \begin{equation}
+    e^B =
+    \begin{bmatrix}
+      e^2 & 0\\
+      0 & e^2
+    \end{bmatrix}, \quad
+    e^C =
+    \begin{bmatrix}
+      0 & 1\\
+      0 & 0
+    \end{bmatrix}
+    \Rightarrow
+    e^A =
+    \begin{bmatrix}
+      0 & e^2\\
+      0 & 0
+    \end{bmatrix}.
+  \end{equation}
+\end{solution}
+
 \subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$}
+
+\begin{proposition}{Solution Matrix of $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$}{}
+  The solution matrix of $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t)$ is
+  \begin{equation}
+    \mathbf{x}(t) = e^{At} c,
+  \end{equation}
+  where $c \in \mathbb{R}^n$.
+\end{proposition}
+
+\begin{example}{}{}
+  Find the fundamental solution matrix of
+  \begin{equation}
+    \mathbf{x}^{\prime} =
+    \begin{bmatrix}
+      2 & 1\\
+      0 & 2
+    \end{bmatrix} \mathbf{x}(t).
+  \end{equation}
+\end{example}
+
+\begin{solution}
+  First consider $e^{At}$, let $A = B + C$, then
+  \begin{equation}
+    e^{At} = e^{Bt}e^{Ct}, \quad
+    \text{where} \quad
+    B =
+    \begin{bmatrix}
+      2 & 0\\
+      0 & 2
+    \end{bmatrix}, C =
+    \begin{bmatrix}
+      0 & 1\\
+      0 & 0
+    \end{bmatrix}
+    \Rightarrow e^{At} =
+    \begin{bmatrix}
+      e^{2t} & t\\
+      0 & e^{2t}
+    \end{bmatrix}.
+  \end{equation}
+  The fundamental solution matrix $\Phi(t) = e^{At}$.
+\end{solution}
 
 \subsection{Solving $\mathbf{x}^{\prime}(t) = A \mathbf{x}(t) + \mathbf{f}(t)$}
 

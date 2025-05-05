@@ -2,6 +2,29 @@
 \section{Cauchy's Theorem}
 
 \begin{exercise}{}{}
+  Prove that
+  \begin{equation}
+    \int_0^{\pi} \frac{1 + 2 \cos \theta}{5 + 4 \cos \theta} \mathrm{d} \theta = 0.
+  \end{equation}
+  Use the value of $\int_C \frac{\mathrm{d} z}{z + 2}$, where $C$ is the unit circle $|z| = 1$.
+\end{exercise}
+
+\begin{proof}
+  The pole of $\frac{1}{z+2}$ is $z = -2$, it is not contained in the unit disk.
+  Then by Cauchy's theorem
+  \begin{equation}
+    \int_C \frac{\mathrm{d} z}{z + 2} = 0.
+  \end{equation}
+  Since $\cos \theta = \frac{z + z^{-1}}{2}$ and $\theta = \frac{1}{i}\ln z$,
+  change variables of integral, we get
+  \begin{equation}
+    \int_0^{\pi} \frac{1 + 2 \cos \theta}{5 + 4 \cos \theta}\mathrm{d} \theta
+    = \int_{C^{\prime}} \frac{1 + z + z^{-1}}{5 + 2z + 2z^{-1}} \frac{\mathrm{d} z}{i z},
+  \end{equation}
+  where $C^{\prime}$ is the upper half of the circle.
+\end{proof}
+
+\begin{exercise}{}{}
   Prove that 
   \begin{equation}
     \int_0^{\infty} \frac{1 - \cos x}{x^2}\mathrm{d} x = \frac{\pi}{2}.
