@@ -148,6 +148,25 @@
 \end{proof}
 
 \begin{exercise}{}{}
+  Let $f_n$ be a sequence of non-negative measurable functions,
+  $f_n \measconv f$. Prove that
+  \begin{equation}
+    \int_E f(x) \mathrm{d} x \leq \liminf _{n \rightarrow \infty} \int_E f_n(x)\mathrm{d} x.
+  \end{equation}
+\end{exercise}
+
+\begin{proof}
+  By Riesz theorem, there exists a subsequence $f_{n_k} \aeconv f$.
+  By Fatou's theorem,
+  \begin{equation}
+    \int_E f(x)\mathrm{d} x \leq \liminf_{k \rightarrow \infty} \int_E f_{n_k}(x)\mathrm{d} x.
+  \end{equation}
+  It is not hard to see that
+  $\liminf_{k \rightarrow \infty} \int_E f_{n_k}\mathrm{d} x \leq \liminf_{n \rightarrow \infty} \int_E f_n \mathrm{d} x$,
+  which implies the conclusion.
+\end{proof}
+
+\begin{exercise}{}{}
   Let $f_n(x)$ be measurable functions, $f(x)$ be non-negative Lebesgue integrable,
   $|f_n(x)| \leq f(x)$ a.e. in $E$. Prove that
   \begin{equation}
