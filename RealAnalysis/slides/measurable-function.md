@@ -42,6 +42,8 @@ Speaker: Yixiao Qian
 <br>
 
 - Concept of Measurable Function
+- Approximation by Simple and Continuous Functions
+- Convergence Results in Measure Theory
 
 ---
 
@@ -49,13 +51,40 @@ Speaker: Yixiao Qian
 
 ---
 
-## Definition of Measurable Function
+## Key Points of Measurable Function
 
 <br>
 
 - **Measurable Function**: $\{f > a\}$, $\{f \geq a\}$, $\{f = a\}$ etc. are measurable.
 - **Boundedness**: $f$ is basically bounded; $\{f_n\}$ are basically uniformly bounded.
 - **Closure under Operations**: $\pm$, $\times$, $/$, $\sup$, $\inf$, $\limsup$, $\liminf$.
+- **Closure under Composition**: $f$ is continuous, $g$ is finite and measurable, then $f(g)$ is measurable.
 
+---
+
+# Approximation by Simple and Continuous Functions
+
+---
+
+## Approximation by Simple and Continuous Functions
+
+<br>
+
+- **Approximation by Simple Functions**: $\lim \limits _{n \rightarrow \infty} f_n(x) = f(x)$, $x \in E$.
+- **Approximation by Continuous Functions (Lusin)**: Basically continuous on finite measure set.
+
+---
+
+# Convergence Results in Measure Theory
+
+---
+
+## Convergence Results in Measure Theory
+
+<br>
+
+- **Pointwise to Uniform (Egoroff)**: Basically on finite measure set.
+- **Measure to Pointwise (Riesz)**: There exists a subsequence.
+- **Pointwise to Measure (Lebesgue)**: On finite measure set.
 
 
