@@ -37,9 +37,11 @@ Speaker: Yixiao Qian
 
 ---
 
-# Table of Contents
+## Table of Contents
 
-- 
+<br>
+
+- Concept of Measurable Function
 
 ---
 
@@ -47,6 +49,13 @@ Speaker: Yixiao Qian
 
 ---
 
+## Definition of Measurable Function
+
+<br>
+
+- **Measurable Function**: $\{f > a\}$, $\{f \geq a\}$, $\{f = a\}$ etc. are measurable.
+- **Boundedness**: $f$ is basically bounded; $\{f_n\}$ are basically uniformly bounded.
+- **Closure under Operations**: $\pm$, $\times$, $/$, $\sup$, $\inf$, $\limsup$, $\liminf$.
 
 
 

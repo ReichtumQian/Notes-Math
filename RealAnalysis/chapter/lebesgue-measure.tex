@@ -44,7 +44,7 @@
   \begin{enumerate}
   \item Let $E \subset [a, b]$, $E_x := [a, x] \cap E$ for $x \in [a, b]$.
     Prove that $f(x) := m^{\ast}(E_x)$ is continuous on $[a, b]$.
-  \item Let $S_1,S_2$ be disjoint sets,
+  \item Let $S_1,S_2$ be disjoint measurable sets,
     $E_1 \subset S_2$, $E_2 \subset S_2$ respectively.
     Prove that 
     \begin{equation}
@@ -265,6 +265,23 @@
   (2) $\forall A \in \mathcal{F}$, $A^c \in \mathcal{F}$;
   (3) If $\{A_n\}_{n=1}^{\infty} \subset \mathcal{F}$, then $\cup _{n = 1}^{\infty} A_n \in \mathcal{F}$.
 \end{definition}
+
+\begin{proposition}{Closure under Countable Intersection}{}
+  Let $\mathcal{F}$ be a $\sigma$-algebra, $\{A_n\} \subset \mathcal{F}$,
+  then 
+  \begin{equation}
+    \cap _{n = 1}^{\infty} A_n \in \mathcal{F}.
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Define $B_n = A_n^c$, $B_n \in \mathcal{F}$ since the closure under complement.
+  Then
+  \begin{equation}
+    \cap_{n=1}^{\infty} A_n = (\cup_{n=1}^{\infty}B_n)^c,
+  \end{equation}
+  which implies that $\cup_{n=1}^{\infty}A_n$ is a element in $\mathcal{F}$.
+\end{proof}
 
 \begin{definition}{Borel $\sigma$-Algebra and Borel Set}{}
   Let $X$ be a set,
