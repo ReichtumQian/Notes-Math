@@ -1,4 +1,19 @@
 
+\section{Integrals of Parametrized Curves}
+
+\begin{exercise}{}{}
+  Calculate
+  \begin{equation}
+    \int_C |z| \mathrm{d} z,
+  \end{equation}
+  where $C$ is the line from the origin to $1 + i$.
+\end{exercise}
+
+\begin{solution}
+  $\frac{\sqrt{2}}{2}(1+i)$.
+\end{solution}
+
+
 \section{Cauchy's Theorem}
 
 \begin{exercise}{}{}
@@ -25,18 +40,116 @@
 \end{proof}
 
 \begin{exercise}{}{}
+  Prove that $e^{-\pi x^2}$ is its own Fourier transform, i.e., if $\xi \in \mathbb{R}$,
+  \begin{equation}
+    e^{- \pi \xi^2} = \int_{-\infty}^{+\infty} e^{-\pi x^2} e^{-2\pi i x \xi} \mathrm{d} x.
+  \end{equation}
+\end{exercise}
+
+\begin{proof}
+  If $\xi = 0$, then the formula is precisely the known integral $1 = \int_{-\infty}^{+\infty} e^{-\pi x^2}\mathrm{d} x$
+  \footnote{Consider $I^2 = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} e^{-\pi (x^2 + y^2)}\mathrm{d} x \mathrm{d}y$
+    and let $x = r \cos \theta$, $y = r\sin \theta$.}.
+  Suppose $\xi > 0$, and consider $f(z) = e^{-\pi z^2}$, which is entire.
+  Consider the contour $\gamma_R$ consists of a rectangle with vertices
+  $R, R+i\xi, -R+i\xi, -R$ with counterclockwise orintation.
+  By Cauchy's theorem, 
+  \begin{equation}
+    \int_{\gamma_R} f(z)\mathrm{d} z = 0
+  \end{equation}
+  The integral over the real segment is $\int_{-R}^R e^{-\pi x^2} \mathrm{d} x$,
+  which converges to $1$ as $R \rightarrow \infty$.
+  The integral on the vertical side on the right is
+  \begin{equation}
+    I(R) = \int^{\xi}_0 f(R + iy)i \mathrm{d} y = \int_0^{\xi} e^{-\pi (R^2 + 2i Ry - y^2)}i \mathrm{d} y,
+  \end{equation}
+  which goes to $0$ as $R \rightarrow \infty$ since $|I(R)| \leq C e^{-\pi R^2}$.
+  Similarly, the integral over vertical segment on the left also goes to $0$ as $R \rightarrow \infty$.
+  Finally, the integral over the horizontal segment on top is
+  \begin{equation}
+    \int_R^{-R} e^{-\pi (x+i\xi)^2}\mathrm{d} x = - e^{\pi \xi^2} \int_{-R}^R e^{-\pi x^2}e^{-2\pi i x \xi}\mathrm{d} x.
+  \end{equation}
+  Therefore, the conclusion follows from the limit as $R \rightarrow \infty$.
+  In the case $\xi < 0$, just consider the symmetric rectangle in the lower half-plane.
+\end{proof}
+
+\begin{exercise}{}{}
   Prove that 
   \begin{equation}
     \int_0^{\infty} \frac{1 - \cos x}{x^2}\mathrm{d} x = \frac{\pi}{2}.
   \end{equation}
 \end{exercise}
 
+\section{Cauchy's Integral Formula}
 
+\begin{exercise}{}{}
+  Calculate the following integral
+  \begin{equation}
+    I = \int_{|z| = 1} \frac{\left( z + \frac{1}{z} \right)^{2n}}{z} \mathrm{d} z,
+  \end{equation}
+  and prove that
+  \begin{equation}
+    J = \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d} \theta = 2 \pi \cdot \frac{(2n-1)!!}{(2n)!!}.
+  \end{equation}
+\end{exercise}
 
+\begin{solution}
+  Consider $f(z) = (1 + z^2)^{2n}$, by Cauchy's integral formula
+  \begin{equation}
+    f^{(2n)}(0) = \frac{(2n)!}{2 \pi i} \int_{|z| = 1} \frac{f(z)}{(z - 0)^{2n+1}}\mathrm{d} z
+    = \frac{(2n)!}{2 \pi i} \int_{|z| = 1} \frac{(z + \frac{1}{z})^{2n}}{z}\mathrm{d} z.
+  \end{equation}
+  Since $(1 + x)^n = \sum_{k = 0}^{\infty} \binom{n}{k} x^k = \sum_{k = 0}^{\infty} \frac{n!}{k!(n-k)!}x^k$,
+  then
+  \begin{equation}
+    f(z) = \sum\limits_{k = 0}^{\infty} \frac{(2n)!}{k!(2n-k)!}z^{2k}
+    \Rightarrow
+    f^{(2n)}(0) = \frac{(2n)! \cdot (2n)!}{n! \cdot n!}.
+  \end{equation}
+  Then we get $I = 2\pi i \frac{(n+1)(n+2)\cdots (2n)}{n!}$.
+  On the other hand, let $z = e^{i\theta}$, then
+  \begin{equation}
+    I = \int_0^{2\pi} \frac{4^n (\cos \theta)^{2n}}{e^{i \theta}} \cdot i e^{i\theta} \mathrm{d} \theta
+    = 4^n i \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d} \theta.
+  \end{equation}
+  Then $J = 2 \pi \frac{(2n)!}{(2^n n!) \cdot (2^n n!)} = 2 \pi \cdot \frac{(2n-1)!!}{(2n)!!}$.
+\end{solution}
 
+\section{Inequalities}
 
+\begin{exercise}{}{}
+  Let $\Gamma$ be the line from $-i$ to $i$, prove that
+  \begin{equation}
+    \left| \int_{\Gamma} (x^2 + iy^2)\mathrm{d} z \right| \leq 2.
+  \end{equation}
+\end{exercise}
 
+\begin{proof}
+  The curve can be represented as $z = 0 + it$, then
+  $|x^2 + iy^2| = |it^2| \leq 1$.
+  \begin{equation}
+    \left| \int_{\Gamma} (x^2 + iy^2)\mathrm{d} z \right|
+    \leq \ell(\Gamma) \cdot 1 = 2.
+  \end{equation}
+\end{proof}
 
+\begin{exercise}{}{}
+  Let $C$ denote the upper circle from $z = R$ to $z = -R$, prove that
+  \begin{equation}
+    \left| \int_C e^{iz}\mathrm{d} z \right| < \pi.
+  \end{equation}
+\end{exercise}
+
+\begin{proof}
+  $z = R e^{i\theta} = R \cos \theta + i R \sin \theta$, then $|e^{iz}| = |e^{iR \cos \theta - R \sin \theta}| = e^{-R \sin \theta}$.
+  On the other hand, $\mathrm{d}z = Rie^{i\theta}\mathrm{d} \theta$, then $|\mathrm{d} z| = R \mathrm{d} \theta$.
+  Then
+  \begin{align}
+    \left| \int_C e^{iz}\mathrm{d} z \right| &\leq \int_C |e^{iz}| \cdot |\mathrm{d} z|
+    = \int_0^{\pi} e^{-R \sin \theta}R \mathrm{d} \theta \\
+    &\leq 2 \int_0^{\frac{\pi}{2}} e^{- \frac{2}{\pi} R \theta}R \mathrm{d}\theta = \pi(1 - e^{-R}) < \pi.
+  \end{align}
+\end{proof}
 
 
 

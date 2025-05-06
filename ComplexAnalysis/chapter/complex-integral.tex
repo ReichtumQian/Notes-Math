@@ -108,39 +108,6 @@
   (2) The roots of $z^2 + 2z + 1$ are $z = -2 \pm i$, the absolute values of both roots are greater than $1$.
 \end{proof}
 
-\begin{example}{}{}
-  Prove that $e^{-\pi x^2}$ is its own Fourier transform, i.e., if $\xi \in \mathbb{R}$,
-  \begin{equation}
-    e^{- \pi \xi^2} = \int_{-\infty}^{+\infty} e^{-\pi x^2} e^{-2\pi i x \xi} \mathrm{d} x.
-  \end{equation}
-\end{example}
-
-\begin{proof}
-  If $\xi = 0$, then the formula is precisely the known integral $1 = \int_{-\infty}^{+\infty} e^{-\pi x^2}\mathrm{d} x$
-  \footnote{Consider $I^2 = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty} e^{-\pi (x^2 + y^2)}\mathrm{d} x \mathrm{d}y$
-    and let $x = r \cos \theta$, $y = r\sin \theta$.}.
-  Suppose $\xi > 0$, and consider $f(z) = e^{-\pi z^2}$, which is entire.
-  Consider the contour $\gamma_R$ consists of a rectangle with vertices
-  $R, R+i\xi, -R+i\xi, -R$ with counterclockwise orintation.
-  By Cauchy's theorem, 
-  \begin{equation}
-    \int_{\gamma_R} f(z)\mathrm{d} z = 0
-  \end{equation}
-  The integral over the real segment is $\int_{-R}^R e^{-\pi x^2} \mathrm{d} x$,
-  which converges to $1$ as $R \rightarrow \infty$.
-  The integral on the vertical side on the right is
-  \begin{equation}
-    I(R) = \int^{\xi}_0 f(R + iy)i \mathrm{d} y = \int_0^{\xi} e^{-\pi (R^2 + 2i Ry - y^2)}i \mathrm{d} y,
-  \end{equation}
-  which goes to $0$ as $R \rightarrow \infty$ since $|I(R)| \leq C e^{-\pi R^2}$.
-  Similarly, the integral over vertical segment on the left also goes to $0$ as $R \rightarrow \infty$.
-  Finally, the integral over the horizontal segment on top is
-  \begin{equation}
-    \int_R^{-R} e^{-\pi (x+i\xi)^2}\mathrm{d} x = - e^{\pi \xi^2} \int_{-R}^R e^{-\pi x^2}e^{-2\pi i x \xi}\mathrm{d} x.
-  \end{equation}
-  Therefore, the conclusion follows from the limit as $R \rightarrow \infty$.
-  In the case $\xi < 0$, just consider the symmetric rectangle in the lower half-plane.
-\end{proof}
 
 \subsection{Cauchy's Integral Formula}
 
