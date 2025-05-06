@@ -239,6 +239,26 @@
 
 \section{Multiple Integral and Iterated Integral}
 
+\begin{theorem}{Tonelli Theorem}{}
+  Let $ f(x, y) \geq 0 $ be a measurable function on $ \mathbb{R}^p \times \mathbb{R}^q $. Then
+  for almost every $ x \in \mathbb{R}^p $, the function $ f(x, \cdot) $ is measurable and integrable over $ \mathbb{R}^q $,
+  and for almost every $ y \in \mathbb{R}^q $, the function $ f(\cdot, y) $ is measurable and integrable over $ \mathbb{R}^p $.
+  Moreover, the following equality holds:
+  \begin{equation}
+    \int_{\mathbb{R}^p \times \mathbb{R}^q} f(x,y)\,\mathrm{d}x\mathrm{d}y 
+    = \int_{\mathbb{R}^p} \left( \int_{\mathbb{R}^q} f(x,y)\,\mathrm{d}y \right)\mathrm{d}x
+    = \int_{\mathbb{R}^q} \left( \int_{\mathbb{R}^p} f(x,y)\,\mathrm{d}x \right)\mathrm{d}y.
+  \end{equation}
+\end{theorem}
+
+\begin{corollary}{Interchange of Summation and Integration}{}
+  Let $ \{f_n(x)\}_{n=1}^\infty $ be a sequence of non-negative measurable functions on $ \mathbb{R}^p $. Then
+  $$
+  \int_{\mathbb{R}^p} \sum_{n=1}^\infty f_n(x) \,\mathrm{d}x 
+  = \sum_{n=1}^\infty \int_{\mathbb{R}^p} f_n(x) \,\mathrm{d}x.
+  $$
+\end{corollary}
+
 \begin{theorem}{Fubini Theorem}{}
   Let $f(x, y)$ be integrable over $\mathbb{R}^p \times \mathbb{R}^q$. Then
   for $x, y$ a.e., $f(x,y)$ is integrable with respect to both $y$ and $x$
