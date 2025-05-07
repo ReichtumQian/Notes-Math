@@ -58,6 +58,8 @@ Speaker: Yixiao Qian
 - **Integral of Non-Negative Simple Function**: $\displaystyle \int_D f \mathrm{d} x = \sum\limits_{i = 1}^s a_i m(E_i)$.
 - **Integral of Non-Negative Measurable Function**: $\displaystyle \int_D f \mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d}x$.
 - **Integral of Measurable Function**: ${\displaystyle \int_D f \mathrm{d} x = \int_D f_+ \mathrm{d} x - \int_D f_- \mathrm{d} x}$.
+- **Closure under Operations**: $\lambda f$, $f \pm g$, $fg$.
+- **Almost-Everywhere Finite**: $f \in L(E)$ then $f$ is finite a.e.
 - **Condition for Integrability**: Almost-everywhere bounded on finite-measure $E$. Note that finite a.e. is not enough.
 
 <div class=note>
@@ -66,8 +68,6 @@ Example: $f = 1$ is not integrable on $(0, +\infty)$. $f = \frac{1}{x}$ is not i
 
 </div>
 
-- **Almost-Everywhere Finite**: $f \in L(E)$ then $f$ is finite a.e.
-- **Closure under Operations**: $\lambda f$, $f \pm g$, $fg$.
 
 ---
 
