@@ -54,8 +54,6 @@ Speaker: Yixiao Qian
 
 ## Key Points of Lebesgue Outer Measure
 
-<br>
-
 - **Definition**: $m^{\ast}(E) = \inf_{\{I_n\}} \left\{ \sum \ell(I_n) \right\}$.
 - **Countable Sub-Additivity**: $m^{\ast}(\cup E_n) \leq \sum m^{\ast}(E_n)$.
 
@@ -64,8 +62,40 @@ Speaker: Yixiao Qian
 $$m^*\left(\bigcup_n E_n\right) \leq \sum_n \sum_k \ell(I_k^{(n)}) < \sum_n \left[m^*(E_n) + \frac{\epsilon}{2^n}\right] = \sum_n m^*(E_n) + \epsilon.$$
 </div>
 
-- **Additivity**: $E_n$ from disjoint measurable sets $S_n$, then $m^{\ast}(\cup E_n) = \sum m^{\ast}(E_n)$.
+- **Corollary of Sub-Additivity**: $m^{\ast}(E) - m^{\ast}(F) \leq m^{\ast}(E - F)$, including the case $F \subset E$.
+
 - **Continuity**: $f(x) = m^{\ast}([a, x] \cap E)$ is continuous.
+
+<div class=note>
+
+Prove that $f(x_2) - f(x_1) \leq |x_2 - x_1|$.
+
+</div>
+
+---
+
+## Additivity of Lebesgue Outer Measure
+
+- **Disjoint Open Sets**: $E_n$ from disjoint open sets $S_n$, then $m^{\ast}(\cup E_n) = \sum m^{\ast}(E_n)$.
+
+<div class=note>
+
+Take open set $U \supset \cup E_n$, $m^{\ast}(\cup E_n) > m(U) - \epsilon$. Define $U_n := U \cap S_n$,
+$$ m^{\ast}(\cup E_n) > m(U) - \epsilon = \sum m(U_n) -\epsilon \geq \sum m^{\ast}(E_n) -\epsilon. $$
+</div>
+
+- **Non-Zero Distance**: If $d(E_1, E_2) = \inf\{d(x_1,x_2):x_1 \in E_1, x_2 \in E_2\} > 0$, then $m^{\ast}(E_1 \cup E_2) = m^{\ast}(E_1) + m^{\ast}(E_2)$.
+
+<div class=note>
+
+Since distance is non-zero, then we can find disjoint open sets $S_1, S_2$ such that $E_1 \subset S_1$, $E_2 \subset S_2$.
+
+</div>
+
+---
+
+## Limit of Lebesgue Outer Measure
+
 
 ---
 
@@ -84,6 +114,10 @@ $$m^*\left(\bigcup_n E_n\right) \leq \sum_n \sum_k \ell(I_k^{(n)}) < \sum_n \lef
 
 ---
 
+## Definition of Lebesgue Measure
+
+---
+
 # A Non-Measurable Set Example
 
 ---
@@ -91,5 +125,15 @@ $$m^*\left(\bigcup_n E_n\right) \leq \sum_n \sum_k \ell(I_k^{(n)}) < \sum_n \lef
 # Approximation by Open and Closed Sets
 
 ---
+
+## Approximation Results for Measurable Sets
+
+<br>
+
+- **Open Sets**: There exists an open set $G \supset E$ such that $m^{\ast}(G - E) < \epsilon$.
+- **Closed Sets**: There exists a closed set $F \subset E$ such that $m^{\ast}(E - F) < \epsilon$.
+- **Squeeze Theorem**: If there exists measurable sets $A_n$ and $B_n$ such that $A_n \subset E \subset B_n$ and $\lim \limits _{n \rightarrow \infty} m(B_n - A_n) = 0$, then $E$ is measurable
+
+
 
 

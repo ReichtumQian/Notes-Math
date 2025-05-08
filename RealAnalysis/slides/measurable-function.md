@@ -21,13 +21,13 @@ img[alt~="center"] {
   background-color: #eef;
   padding: 10px;
   margin: 10px 0;
-  text-align: center;
+  text-align: left;
 }
 .warning {
   background-color: #fee;
   padding: 10px;
   margin: 10px 0;
-  text-align: center;
+  text-align: left;
 }
 </style>
 
@@ -56,6 +56,18 @@ Speaker: Yixiao Qian
 <br>
 
 - **Measurable Function**: $\{f > a\}$, $\{f \geq a\}$, $\{f = a\}$ etc. are measurable.
+- **Equivalent Definition**: For any $r \in \mathbb{Q}$, $\{f > r\}$ is measurable.
+
+<div class=note>
+
+For any $a \in \mathbb{R}$, $\lim \limits _{n \rightarrow \infty} r_n = a$, then $\{f > a\} = \cap_{n=1}^{\infty} \{f > r_n\}$.
+</div>
+
+---
+
+## Properities of Measurable Functions
+
+
 - **Boundedness**: $f$ is basically bounded; $\{f_n\}$ are basically uniformly bounded.
 - **Closure under Operations**: $\pm$, $\times$, $/$, $\sup$, $\inf$, $\limsup$, $\liminf$.
 - **Closure under Composition**: $f$ is continuous, $g$ is finite and measurable, then $f(g)$ is measurable.
