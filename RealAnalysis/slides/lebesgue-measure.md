@@ -96,6 +96,18 @@ Since distance is non-zero, then we can find disjoint open sets $S_1, S_2$ such 
 
 ## Limit of Lebesgue Outer Measure
 
+<br>
+
+- If $\{E_n\}$ is monotonically increasing, then $m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)$.
+
+<div class=note>
+
+If $\lim \limits _{n \rightarrow \infty} m^{\ast}(E_n) = \infty$, then conclusion holds. Take open set $G_n \supset E_n$, $m(G_n) < m^{\ast}(E_n) + \epsilon$.
+$$ E_n \subset \cap_{s=n}^{\infty} G_s := P_n \Rightarrow m(P_n) < m^{\ast}(E_n) + \epsilon. $$
+$P_n$ is also monotonically increasing, then
+$$ m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = m^{\ast}(\cup_{n=1}^{\infty}E_n) \leq m(\cup_{n=1}^{\infty}P_n)= \lim \limits _{n \rightarrow \infty} m(P_n) \leq \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)+\epsilon. $$
+
+</div>
 
 ---
 
@@ -108,13 +120,41 @@ Since distance is non-zero, then we can find disjoint open sets $S_1, S_2$ such 
 <br>
 
 - **Measurable Set**: For any $A \subset \mathbb{R}$, $m^{\ast}(A) \geq m^{\ast}(A \cap E) + m^{\ast}(A \cap E^c)$.
-- **Closure under Operations**: $A^c$, $\cup$, $\cap$, $\limsup$, $\liminf$.
 - **Countable Sub-Additivity**: $A_n$ are arbitrary, then $m(\cup_n A_n) \leq \sum_n m(A_n)$.
 - **Countable Additivity**: $A_n$ are pairwise-disjoint, then $m(\cup_n A_n) = \sum_n m(A_n)$.
+- **Corollary**: If $E \subset F$, then $m(F - E) = m(F) - m(E)$.
+- **Closure under Operations**: $A^c$, $\cup$, $\cap$, $\limsup$, $\liminf$.
 
 ---
 
-## Definition of Lebesgue Measure
+## Measurable Sets
+
+<br>
+
+- If $E$ satisfies $m^{\ast}(E) = 0$, then $E$ is measurable, $m(E) = 0$.
+
+<div class=note>
+
+For any $A$, $0 \leq m^{\ast}(A \cap E) \leq m^{\ast}(E) = 0$. Then $m^{\ast}(A) \geq m^{\ast}(A \cap E^c)$ holds.
+
+</div>
+
+- If $A$ is measurable, $A \Delta B$ is measurable, then $B$ is measurable.
+
+<div class=note>
+
+$A \cap B = A - [(A \Delta B) \cap A]$ is measurable, $B = [(A \Delta B) - A] \cup (A \cap B)$ is measurable.
+
+</div>
+
+
+---
+
+## Limit of Lebesgue Measure
+
+- $E_n$ are measurable, $m(\liminf\limits_{n \rightarrow \infty} E_n) \leq \liminf\limits_{n \rightarrow \infty} m(E_n)$.
+- $E_n$ are measurable, $m(\cup_{k=k_0}^{\infty}E_k) < \infty$ for some $k_0$, then $m(\limsup\limits_{n \rightarrow \infty}E_n) \geq \limsup\limits_{n \rightarrow \infty} m(E_n)$.
+- If $m(\cup_{k=1}^{\infty}E_k) < \infty$ and $\lim \limits _{n \rightarrow \infty} E_n$ exists, then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$.
 
 ---
 
