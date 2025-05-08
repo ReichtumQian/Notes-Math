@@ -153,8 +153,27 @@ $A \cap B = A - [(A \Delta B) \cap A]$ is measurable, $B = [(A \Delta B) - A] \c
 ## Limit of Lebesgue Measure
 
 - $E_n$ are measurable, $m(\liminf\limits_{n \rightarrow \infty} E_n) \leq \liminf\limits_{n \rightarrow \infty} m(E_n)$.
+
+<div class=note>
+
+$m(\liminf\limits_{n\rightarrow \infty} E_n) = m(\cup_{n=1}^{\infty}\cap_{k=n}^{\infty}E_k) = \lim\limits_{n \rightarrow \infty} m(\cap_{k=n}^{\infty}E_k)$, and $m(\cap_{k=n}^{\infty} E_k) \leq m(E_n)$.
+
+</div>
+
 - $E_n$ are measurable, $m(\cup_{k=k_0}^{\infty}E_k) < \infty$ for some $k_0$, then $m(\limsup\limits_{n \rightarrow \infty}E_n) \geq \limsup\limits_{n \rightarrow \infty} m(E_n)$.
+
+<div class=note>
+
+$m(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}E_k)=\lim \limits _{n \rightarrow \infty} m(\cup_{k=n}^{\infty}E_k)$ and $m(\cup_{k=n}^{\infty}E_k) \geq m(E_n)$.
+</div>
+
 - If $m(\cup_{k=1}^{\infty}E_k) < \infty$ and $\lim \limits _{n \rightarrow \infty} E_n$ exists, then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$.
+
+<div class=note>
+
+By two previous statements.
+
+</div>
 
 ---
 
