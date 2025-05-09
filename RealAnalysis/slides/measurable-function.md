@@ -188,7 +188,7 @@ $$ \forall \epsilon > 0, \exists F \subset D, m(D - F) < \epsilon, \quad f_n(x) 
 $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0. $$
 - **Measure to Pointwise (Riesz)**: $f, f_n$ measurable and finite a.e. Then
 $$ f_n \xrightarrow{m} f \quad \Rightarrow \quad  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f. $$
-- **Pointwise to Measure (Lebesgue)**: $f_n,f$ measurable and finite a.e. $m(D) < \infty$. Then
+- **Pointwise to Measure**: $f_n,f$ measurable and finite a.e. $m(D) < \infty$. Then
 $$ f_n \xrightarrow{a.e.} f \quad \Rightarrow \quad f_n \xrightarrow{m} f. $$
 
 ---
@@ -229,14 +229,35 @@ Define $A = \{|f_k-f| > \frac{\epsilon}{2}\}$, $B = \{|g_k-g| > \frac{\epsilon}{
 </div>
 
 - **Absolute Value and Extreme**: (1) $|f_k| \xrightarrow{m} |f|$ (2) $\min\{f_k, g_k\} \xrightarrow{m} \min\{f, g\}$
-- **Multiplication**: $f_k \xrightarrow{m} f$ and $g_k \xrightarrow{m} g$, $m(D) < \infty$ then $f_k g_k \xrightarrow{m} fg$.
+- **Multiplication**: $f_n \xrightarrow{m} f$ and $g_k \xrightarrow{m} g$, $m(D) < \infty$ then $f_n g_n \xrightarrow{m} fg$.
 
 <div class=note>
 
-By generalized Riesz, 
+By generalized Riesz, $\forall \{f_{n_i}\} \subset \{f_n\}$, $\exists \{f_{n_{ij}}\} \subset \{f_{n_i}\}$ such that $f_{n_{ij}} \xrightarrow{a.e.} f$. For $\{g_{n_{ij}}\}$, $\exists \{g_{n_{ijk}}\} \subset \{g_{n_{ij}}\}$ such that $g_{n_{ijk}} \xrightarrow{a.e.} g$. Then $f_{n_{ijk}}g_{n_{ijk}} \xrightarrow{a.e.} fg$. So for any $\{f_{n_i}g_{n_i}\}$,
+$$ \{f_{n_{ijk}}g_{n_{ijk}}\} \subset \{f_{n_i}g_{n_i}\}, \quad f_{n_{ijk}}g_{n_{ijk}} \xrightarrow{a.e.} fg. $$
 
 </div>
 
+---
+
+## Properties of Convergence in Measure
+
 - **Composition**: If $f_k \xrightarrow{m} f$ on $[a, b]$, $g$ is continuous, then $g \circ f_k \xrightarrow{m} g \circ f$.
+
+<div class=note>
+
+$g$ is uniformly continuous on $[a, b]$, then
+$$ \forall \epsilon > 0, \exists \delta > 0, |f_k(x) - f(x)| < \delta, \quad |g(f_k(x)) - g(f(x))| < \epsilon. $$
+Then $m(\{|g(f_k) - g(f)| < \epsilon\}) \geq m(\{|f_k - f| < \delta\}) \rightarrow b-a$. This means 
+$$ m(\{|g(f_k) - g(f)| > \epsilon\}) \rightarrow 0 \quad \Rightarrow \quad g \circ f_k \xrightarrow{m} g \circ f. $$
+</div>
+
+- **Transitivity**: $m(E) < \infty$, $f_n \xrightarrow{m} f$, $g_n^{(k)} \xrightarrow{m} f_n$, then $\exists g_{n_i}^{(k_j)} \xrightarrow{m} f$.
+
+<div class=note>
+
+By Riesz, $f_{n_i} \xrightarrow{a.e.} f$ and $g_{n_i}^{(k_j)} \xrightarrow{a.e.} f_{n_i}$, then $g_{n_i}^{(k_j)} \xrightarrow{a.e.} f$. And almost-everywhere pointwise convergence implies convergence in measure.
+
+</div>
 
 
