@@ -153,9 +153,11 @@ $$ \forall \epsilon > 0, \exists f^{\ast} \in C(D), \quad m(\{f \neq f^{\ast}\})
 
 <div class=note>
 
-By Lusion, there exists $f_k$ such that $m(\{f \neq f_k\}) < \frac{1}{k}$.
+By Lusin, there exists $f_n$ such that $m(\{f \neq f_n\}) < \frac{1}{n}$, then $f_n \xrightarrow{m} f$. Riesz implies $f_{n_k} \xrightarrow{a.e.} f$.
 
 </div>
+
+- **Counterexample**: $f = \chi_{\mathbb{Q} \cap [0, 1]}$ is finite a.e. and measurable on $[0, 1]$. But $\nexists  g \in C([a, b])$ such that $f = g$ a.e.
 
 
 ---
@@ -178,12 +180,63 @@ $$ \forall \epsilon > 0, \exists F \subset D, m(D - F) < \epsilon, \quad f_n(x) 
 
 ---
 
-## Convergence in Measure and Pointwise Convergence
+## Convergence in Measure
+
+<br>
 
 - **Convergence in Measure**: $f, f_n$ measurable and finite a.e.
 $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0. $$
+- **Measure to Pointwise (Riesz)**: $f, f_n$ measurable and finite a.e. Then
+$$ f_n \xrightarrow{m} f \quad \Rightarrow \quad  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f. $$
+- **Pointwise to Measure (Lebesgue)**: $f_n,f$ measurable and finite a.e. $m(D) < \infty$. Then
+$$ f_n \xrightarrow{a.e.} f \quad \Rightarrow \quad f_n \xrightarrow{m} f. $$
 
-- **Measure to Pointwise (Riesz)**: There exists a subsequence.
-- **Pointwise to Measure (Lebesgue)**: On finite measure set.
+---
+
+## Generalized Riesz Theorem
+
+- **Generalized Riesz**: $f_n, f$ measurable and finite a.e. $m(D) < \infty$. Then $f_n \xrightarrow{m} f$ iff $\forall \{f_{n_i}\} \subset \{f_n\}$, there exists $\{f_{n_{ij}}\} \subset \{f_{n_i}\}$, $f_{n_{ij}} \xrightarrow{a.e.} f$.
+
+<div class=note>
+
+(1) $\Rightarrow$: By Riesz theorem. (2) $\Leftarrow$: Assume $f_n \not \xrightarrow{m} f$, then
+$$ \exists \epsilon > 0, \exists \delta > 0, \forall N > 0, \exists n > N, \quad m(\{|f_n - f| > \delta\}) > \epsilon. $$
+There exists $\{f_{n_i}\}$ such that $m(\{|f_{n_i} - f| > \delta\}) > \epsilon$, which contradicts $f_{n_{ij}} \xrightarrow{a.e.} f$.
+</div>
+
+- **Counterexample**: Why inverse of Riesz theorem is wrong?
+
+<div class=note>
+
+Take $f_n(x) = \chi_{[a_n,b_n]}(x)$ where $b_n - a_n = \frac{1}{2}$ and slide over $[0, 1]$. Define $f \equiv 0$, then
+- $f_n \not \xrightarrow{m} f$: $m(\{|f_n(x)| \geq \epsilon\}) = \frac{1}{2}$.
+- $f_{n_k} \xrightarrow{a.e.} f$: Since the interval keep sliding, then we can find such a subsequence.
+
+</div>
+
+
+---
+
+## Properties of Convergence in Measure
+
+- **Addition and Substraction**: If $f_k \xrightarrow{m} f$ and $g_k \xrightarrow{m} g$, then $f_k \pm g_k \xrightarrow{m} f_k \pm g_k$.
+
+<div class=note>
+
+$\{|(f_k+g_k) - (f+g)| > \epsilon\} \subset \{|f_k-f| + |g_k-g| > \epsilon\} \subset \{|f_k - f| > \frac{\epsilon}{2}\} \cup \{|g_k - g| > \frac{\epsilon}{2}\}$.
+Define $A = \{|f_k-f| > \frac{\epsilon}{2}\}$, $B = \{|g_k-g| > \frac{\epsilon}{2}\}$, then $m(A \cup B) \leq m(A) + m(B) \rightarrow 0$.
+
+</div>
+
+- **Absolute Value and Extreme**: (1) $|f_k| \xrightarrow{m} |f|$ (2) $\min\{f_k, g_k\} \xrightarrow{m} \min\{f, g\}$
+- **Multiplication**: $f_k \xrightarrow{m} f$ and $g_k \xrightarrow{m} g$, $m(D) < \infty$ then $f_k g_k \xrightarrow{m} fg$.
+
+<div class=note>
+
+By generalized Riesz, 
+
+</div>
+
+- **Composition**: If $f_k \xrightarrow{m} f$ on $[a, b]$, $g$ is continuous, then $g \circ f_k \xrightarrow{m} g \circ f$.
 
 
