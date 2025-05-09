@@ -187,10 +187,15 @@ By two previous statements.
 
 ## Approximation Results for Measurable Sets
 
-<br>
+- **Open Sets**: There exists an open set $G \supset E$ such that $m(G - E) < \epsilon$.
 
-- **Open Sets**: There exists an open set $G \supset E$ such that $m^{\ast}(G - E) < \epsilon$.
-- **Closed Sets**: There exists a closed set $F \subset E$ such that $m^{\ast}(E - F) < \epsilon$.
+<div class=note>
+
+$m(E) < \infty$: Take open intervals $I_n$, $E \subset \cup I_n$, $m(E) > \sum \ell(I_n) - \epsilon$. Take $G = \cup I_n$.
+$m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ where $n \in \mathbb{Z}$. For each $E_n$ take $G_n = \cup_k I_n^{(k)}$, where $E_n \subset \cup_k I_n^{(k)}$ and $m(G_n - E_n) < \frac{\epsilon}{2^n}$. Take $G = \cup_n G_n$.
+</div>
+
+- **Closed Sets**: There exists a closed set $F \subset E$ such that $m(E - F) < \epsilon$.
 - **Squeeze Theorem**: If there exists measurable sets $A_n$ and $B_n$ such that $A_n \subset E \subset B_n$ and $\lim \limits _{n \rightarrow \infty} m(B_n - A_n) = 0$, then $E$ is measurable
 
 
