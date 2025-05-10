@@ -125,7 +125,7 @@ Cauchy's inequality implies $|f^{\prime}(z_0)| \leq \frac{B}{R}$ for any $z_0$ a
 
 </div>
 
-- **Fundamental Theorem of Algebra**: $P(z) = a_nz^n + \cdots + a_0$ ($n \geq 1$) has $n$ roots in $\mathbb{C}$, and
+- **Fundamental Theorem for Algebra**: $P(z) = a_nz^n + \cdots + a_0$ ($n \geq 1$) has $n$ roots in $\mathbb{C}$, and
 $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 <div class=note>

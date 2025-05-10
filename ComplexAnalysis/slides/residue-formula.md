@@ -41,9 +41,33 @@ Speaker: Yixiao Qian
 
 <br>
 
+- Laurent Expansion
 - Concept of Residue
-- Residue Formula
-- Applications of Residue Formula
+- Residue Formula and Its Applications
+- Argument Principle and Applications
+
+---
+
+# Laurent Expansion
+
+---
+
+## Laurent Expansion, Singularities and Zeros
+
+- **Laurent Expansion**: $f$ is holomorphic, then it can be uniquely represented as
+$$ f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_n)^n $$
+
+<div class=note>
+
+$$ \sum_{n=0}^{\infty} a_n(z-z_0)^n \text{ is analytic part} \quad
+\sum_{n=-\infty}^{-1}a_n(z-z_0)^n \text{ is principal part}.$$
+
+</div>
+
+- **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$.
+- **Pole Singularity of Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$.
+- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$.
+- **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
 
 ---
 
@@ -141,6 +165,38 @@ where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
 - ${\displaystyle \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d}x}$
 
 - ${\displaystyle \int_{-\infty}^{+\infty} \frac{x^2}{(x^2 + a^2)^2}\mathrm{d} x}$
+
+---
+
+# Argument Principle and Applications
+
+---
+
+## Argument Principle and Its Generalizations
+
+- **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, these poles have no limit points.
+- **Argument Principle**: $f$ meromorphic, $C$ closed contour. $f$ has no poles and never vanishes on $C$. $N_z$ the number of zeros of $f$ inside $C$, $N_p$ the poles (counted with multiplicities).
+$$ \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z = N_z - N_p $$
+- **Rouche's Theorem**: $f, g$ holomorphic, $C$ closed contour, $|f| > |g|$ for all $z \in C$. Then $N_z(f) = N_z(f+g)$ inside $C$.
+- **Open Mapping Theorem**: $f$ holomorphic and non-constant, then $f$ is open.
+
+---
+
+## Applications of Argument Principle
+
+---
+
+## Applications of Rouche's Theorem
+
+- Apply Rouche's theorem to prove fundamental theorem for algebra.
+
+<div class=note>
+
+Consider $f(z) = z^n$ and $g(z) = a_{n-1}z^{n-1} + \cdots + a_0$, $P(z) = f(z) + g(z)$. Take sufficiently large $R$ such that on $|z| = R$
+$$ |f(z)| = R^n > (|a_{n-1}| + \cdots + |a_0|)R^{n-1} \geq |g(z)|.$$
+Then $N_z(P) = N_z(f)$, and $z^n = 0$ has $n$ roots in $C$ ($z=0$ of multiplicity $n$), $P$ has $n$ roots.
+
+</div>
 
 
 
