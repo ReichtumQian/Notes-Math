@@ -54,8 +54,8 @@ Speaker: Yixiao Qian
 
 ## Laurent Expansion, Singularities and Zeros
 
-- **Laurent Expansion**: $f$ is holomorphic, then it can be uniquely represented as
-$$ f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_n)^n $$
+- **Taylor Expansion**: $z_0 \in \mathbb{C}$, $f$ is holomorphic in $|z-z_0| < R$, then $f(z) = \sum\limits_{n = 0}^{\infty} a_n(z-z_0)^n$.
+- **Laurent Expansion**: $z_0 \in \mathbb{C}$ (it can be a pole of $f$), $f$ is holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.
 
 <div class=note>
 
@@ -68,6 +68,20 @@ $$ \sum_{n=0}^{\infty} a_n(z-z_0)^n \text{ is analytic part} \quad
 - **Pole Singularity of Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$.
 - **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$.
 - **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
+
+---
+
+## Expand Functions to Laurent Series
+
+- Expand $f(z) = \frac{1}{(z-1)^2}$ in $1 < |z| < +\infty$.
+
+<div class=note>
+
+It is equivalent to expand $f(z) = \frac{1}{z^2(1-\frac{1}{z})^2}$ in $|\frac{1}{z}| < 1$. We know when $|x| < 1$,
+$$ \frac{1}{(1+x)^2} = \sum\limits_{n = 0}^{\infty} (-1)^{n} (n+1) x^n. $$
+Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} = \sum\limits_{n = 0}^{\infty} (n+1)\frac{1}{z^{n+2}}$.
+
+</div>
 
 ---
 

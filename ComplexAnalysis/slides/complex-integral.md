@@ -115,7 +115,23 @@ $$ |f^{(n)}(z_0)| \leq \frac{n! \|f\|_C}{R^n}.$$
 
 ---
 
-## Liouville's Theorem and Its Applications
+## Applications of Cauchy's Theorem
+
+
+
+---
+
+## Applications of Cauchy's Integral Formula
+
+- Calculate ${\displaystyle I = \int_{|z| = 1} \frac{(z + \frac{1}{z})^{2n}}{z}\mathrm{d} z}$ and prove that ${\displaystyle J = \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d}\theta = 2\pi \cdot \frac{(2n-1)!!}{(2n)!!}}$.
+
+<div class=note>
+
+</div>
+
+---
+
+## Liouville's Theorem
 
 - **Liouville's Theorem**: If $f$ is entire and bounded, then it is constant.
 
@@ -136,17 +152,28 @@ $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 ---
 
-## Applications of Cauchy's Theorem
+## Generalization of Liouville's Theorem
 
+- **Holomorphic at $z=\infty$**: Let $w = \frac{1}{z}$, $f(\frac{1}{w})$ is holomorphic at $w = 0$.
+- **Generalized Liouville's Theorem**: If $f$ is holomorphic on $\mathbb{C}_{\infty} := \mathbb{C} \cup \{\infty\}$, then $f(z)$ is constant.
 
+<div class=note>
+
+Since $f(\frac{1}{w})$ is holomorphic at $w = 0$, then $f(\frac{1}{w}) = a_0 + a_1w + a_2w^2 + \cdots$, substitue $w = \frac{1}{z}$
+$$ f(z) = a_0 + \frac{a_1}{z} + \frac{a_2}{z} + \cdots \Rightarrow \lim \limits _{z \rightarrow \infty}f(z) = a_0. $$
+When $|z| < R$, $f$ is bounded, and when $|z| \geq R$, $f \rightarrow a_0$ is also bounded. So $f$ is globally bounded, then Liouville's theorem gives the desired result.
+
+</div>
 
 ---
 
-## Applications of Cauchy's Integral Formula
+## Applications of Liouville's Theorem
 
-- Calculate ${\displaystyle I = \int_{|z| = 1} \frac{(z + \frac{1}{z})^{2n}}{z}\mathrm{d} z}$ and prove that ${\displaystyle J = \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d}\theta = 2\pi \cdot \frac{(2n-1)!!}{(2n)!!}}$.
+- If $f(z)$ has a unique pole at $z=1$ on $\mathbb{C}_{\infty}$, with principal part $\frac{1}{(z-1)^2}$, $f(0) = 1$. Find the expression of $f(z)$.
 
 <div class=note>
+
+$f(z) = \frac{1}{(z-1)^2} + g(z)$, where $g(z)$ has no pole on $\mathbb{C}_{\infty}$ ($z = \infty$ is not a pole). By generalized Liouville's theorem, $g(z)$ is constant. Then $f(z) = \frac{1}{(z-1)^2} + C$ satisfies $f(0) = 1$. So $C = 0$.
 
 </div>
 
