@@ -144,5 +144,10 @@ $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 ## Applications of Cauchy's Integral Formula
 
+- Calculate ${\displaystyle I = \int_{|z| = 1} \frac{(z + \frac{1}{z})^{2n}}{z}\mathrm{d} z}$ and prove that ${\displaystyle J = \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d}\theta = 2\pi \cdot \frac{(2n-1)!!}{(2n)!!}}$.
+
+<div class=note>
+
+</div>
 
 
