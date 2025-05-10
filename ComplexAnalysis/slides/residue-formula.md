@@ -41,21 +41,31 @@ Speaker: Yixiao Qian
 
 <br>
 
-- Laurent Expansion
+- Taylor Expansion and Laurent Expansion
 - Concept of Residue
 - Residue Formula and Its Applications
 - Argument Principle and Applications
 
 ---
 
-# Laurent Expansion
+# Taylor Expansion and Laurent Expansion
+
+---
+
+## Taylor Expansion
+
+- **Taylor Expansion**: Given $z_0 \in \mathbb{C}$, $f$ is holomorphic in $|z-z_0| < R$ (include $z_0$), then
+$$ f(z) = \sum\limits_{n = 0}^{\infty} a_n(z-z_0)^n, \quad |z - z_0| < R. $$
+- **Maximum Radius**: Let $R_{z_0}$ be the convergence radius of series at $z_0$,
+$$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
+- **Global Convergence**: Taylor series of entire functions converge globally. E.g., $e^z, \sin z$.
+- **Local Convergence**: $\frac{1}{z-1}$ is convergent in $|z| < 1$ since $z = 1$ is a pole.
 
 ---
 
 ## Laurent Expansion, Singularities and Zeros
 
-- **Taylor Expansion**: $z_0 \in \mathbb{C}$, $f$ is holomorphic in $|z-z_0| < R$, then $f(z) = \sum\limits_{n = 0}^{\infty} a_n(z-z_0)^n$.
-- **Laurent Expansion**: $z_0 \in \mathbb{C}$ (it can be a pole of $f$), $f$ is holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.
+- **Laurent Expansion**: $z_0 \in \mathbb{C}$ (it can be a singularity of $f$), $f$ is holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.
 
 <div class=note>
 
@@ -64,9 +74,9 @@ $$ \sum_{n=0}^{\infty} a_n(z-z_0)^n \text{ is analytic part} \quad
 
 </div>
 
-- **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$.
-- **Pole Singularity of Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$.
-- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$.
+- **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) = a_0$.
+- **Pole Singularity of Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) \rightarrow \infty$ and $(z-z_0)^mf(z_0) = a_{-m}$.
+- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
 - **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
 
 ---
