@@ -56,6 +56,13 @@ Speaker: Yixiao Qian
 - **Complex Conjugate**: $\overline{z} = x - iy$.
 - **Absolute Value**: $|z| = x^2 + y^2$.
 - **Properties of Absolute Value**: (1) $|z|^2 = z \cdot \overline{z}$; (2) $|z| \leq |x| + |y|$; (3) $|z+w| \leq |z| + |w|$.
+- Prove that $|z_1 + z_2|^2 + |z_1 - z_2|^2 = 2(|z_1|^2 + |z_2|^2)$.
+
+<div class=note>
+
+$|z_1+z_2|^2 = (x_1+x_2)^2 + (y_1+y_2)^2$, $|z_1 - z_2|^2=(x_1-x_2)^2 + (y_1-y_2)^2$ and expand.
+
+</div>
 
 ---
 
@@ -183,6 +190,23 @@ $u(x,y) \equiv 0$ implies $u_x \equiv u_y \equiv 0$. Then C-R equation implies $
 
 </div>
 
+---
 
+## Examples of Non-Differentiable Functions
 
+- $f(z) = |z|$ is not differentiable on $\mathbb{C}$.
+
+<div class=note>
+
+$|z| = (x^2+y^2) + 0i$. Then $u_x \not\equiv 0$ and $u_y \not\equiv 0$, which contradicts C-R equation.
+
+</div>
+
+- $f(z) = \frac{1}{\overline{z}}$ is not differentiable on $\mathbb{C}$.
+
+<div class=note>
+
+$\frac{1}{\overline{z}}$ explicitly contains a $\overline{z}$. Then it does not satisfy C-R equation $\frac{\partial f}{\partial \overline{z}} = 0$.
+
+</div>
 

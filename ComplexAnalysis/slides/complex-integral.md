@@ -58,6 +58,8 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
+$C$ is $z = t + it$ where $t \in [0, 1]$, $\mathrm{d} z = (1+i)\mathrm{d}t$. ${\displaystyle \int_C |z| \mathrm{d} z = \int_0^1 \sqrt{2}t (1+i)\mathrm{d} t = \frac{\sqrt{2}}{2}(1 + i)}$.
+
 </div>
 
 - Calculate $\displaystyle \int_0^{2\pi a}2z^2 + 8z + 1 \mathrm{d} z$, where $x = a(\theta - \sin \theta)$ and $y = a(1-\cos \theta)$.
@@ -65,7 +67,7 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
-Apply Newton-Leibniz formula, the integral is unrelated to the curve.
+$$ I = \frac{2}{3} z^3 + 4z^2 + z \bigg|^{2\pi a}_0 = \frac{16}{3} \pi^3 a^3 + 16 \pi^2 a^2 + 2 \pi a. $$
 </div>
 
 ---
@@ -80,7 +82,20 @@ $$ \left| \int_C f(z) \mathrm{d} z \right| \leq \int_a^b R_1 R_2 \mathrm{d}\thet
 </div>
 
 - ${\displaystyle \left| \int_{\Gamma}(x^2+iy^2)\mathrm{d} z \right| \leq 2}$, where $\Gamma: -i \rightarrow i$.
+
+<div class=note>
+
+$\Gamma: z = 0 + it$ then $|x^2 + iy^2| = |it|^2 \leq 1$ and $|\mathrm{d}z| = |t| \leq 1$. ${\displaystyle \left| \int_{\Gamma}(x^2+iy^2)\mathrm{d} z \right| \leq \int_0^2 1 \mathrm{d} t = 2}$.
+
+</div>
+
 - ${\displaystyle \left| \int_C e^{iz}\mathrm{d} z \right| \leq \pi}$, where $C$ is the upper circle from $R$ to $-R$.
+
+<div class=note>
+
+$|e^{iz}| = |e^{- iR \cos \theta - R \sin \theta}| = e^{-R \sin \theta}$, $|\mathrm{d}z| = |Rie^{i\theta}\mathrm{d}\theta| = R\mathrm{d}\theta$. Then ${\displaystyle \left| \int_C e^{iz}\mathrm{d}z \right| \leq \int_0^{2\pi} e^{-R\sin\theta} R \mathrm{d}\theta}$
+
+</div>
 
 ---
 
@@ -94,11 +109,40 @@ $$ \left| \int_C f(z) \mathrm{d} z \right| \leq \int_a^b R_1 R_2 \mathrm{d}\thet
 $$ \int_{\gamma} f \mathrm{d} z = 0. $$
 - **Cauchy's Integral Formula**: $f$ is holomorphic in simply connected region $D$, $C$ the boundary with positive orintation.
 $$ f(z) = \frac{1}{2 \pi i} \int_C \frac{f(\zeta)}{\zeta - z}\mathrm{d} \zeta, \quad z \in D. $$
-- **Cauchy's Derivative Formula**:
-$$ f^{(n)}(z) = \frac{n!}{2 \pi i} \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}\mathrm{d} \zeta, \quad z \in D. $$
+- **Cauchy's Derivative Formula**: ${\displaystyle f^{(n)}(z) = \frac{n!}{2 \pi i} \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}\mathrm{d} \zeta, \quad z \in D}$.
+- **Cauchy's Inequality**: Denote $\|f\|_C := \sup_{z \in C}|f(z)|$ as the supremum of $|f|$ on boundary $C$
+$$ |f^{(n)}(z_0)| \leq \frac{n! \|f\|_C}{R^n}.$$
+
+---
+
+## Liouville's Theorem and Its Applications
+
 - **Liouville's Theorem**: If $f$ is entire and bounded, then it is constant.
 
+<div class=note>
 
+Cauchy's inequality implies $|f^{\prime}(z_0)| \leq \frac{B}{R}$ for any $z_0$ and $R$, where $B$ is a bound. Let $R \rightarrow \infty$ gives the result.
+
+</div>
+
+- **Fundamental Theorem of Algebra**: $P(z) = a_nz^n + \cdots + a_0$ ($n \geq 1$) has $n$ roots in $\mathbb{C}$, and
+$$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
+
+<div class=note>
+
+(1) If $P(z)$ has no roots, then $\frac{1}{P(z)}$ is entire and bounded. By Liouville's theorem, $P(z)$ is constant, which contradicts the condition.
+(2) Then $P(z)$ must have a root $z_1$, and $P(z) = (z-z_1)Q(z)$. By induction, we can get the conclusion.
+</div>
+
+---
+
+## Applications of Cauchy's Theorem
+
+
+
+---
+
+## Applications of Cauchy's Integral Formula
 
 
 
