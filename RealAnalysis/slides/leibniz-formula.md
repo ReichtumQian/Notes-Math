@@ -64,7 +64,22 @@ $$ V(x) = \sum_{k=1}^n |f(x_k) - f(x_{k-1})|. $$
 - **Total Variation**: $T_a^b(f) = \sup \{V(x): X \text{ is partition of } [a, b]\}$ is the *total variation of $f$*.
 - **Function of Bounded Variation**: $f$ is a *function of bounded variation* if $T_a^b(f) < \infty$.
 - **Decomposition**: Any BV function is the difference of two monotonic functions.
+
+---
+
+## Properties of BV Functions
+
 - **Almost-Everywhere Differentiable**: Any BV function is differentiable a.e.
+- **Continuous not Bounded-Variation**: $f = x \cos \frac{\pi}{2x}$ with $f(0) = 0$ is continuous on $[0, 1]$, but does not have bounded variation.
+
+<div class=note>
+
+Take $X_n = \left\{ 0, \frac{1}{2n}, \frac{1}{2n-1}, \cdots, \frac{1}{3}, \frac{1}{2}, 1 \right\}$, $|f(\frac{1}{k})| = \frac{1}{k}, 0$ when $k = 0,1 (\operatorname{mod} 2)$. Then
+$$ V(X_n) =  2 \cdot \frac{1}{2n} + 2 \cdot \frac{1}{2n-2} + \cdots + 2 \cdot \frac{1}{2} = 1 + \frac{1}{2} + \cdots + \frac{1}{n} \rightarrow \infty $$
+
+</div>
+
+- **Bounded-Variation not Continuous**: $f(x) = 0$ for $x \in [0,1)$ with $f(1) = 1$ is bounded-variation but not continuous on $[0, 1]$.
 
 ---
 
