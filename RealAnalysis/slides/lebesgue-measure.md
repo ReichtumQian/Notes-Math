@@ -129,8 +129,6 @@ $$ m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = m^{\ast}(\cup_{n=1}^{\in
 
 ## Measurable Sets
 
-<br>
-
 - If $E$ satisfies $m^{\ast}(E) = 0$, then $E$ is measurable, $m(E) = 0$.
 
 <div class=note>
@@ -144,6 +142,15 @@ For any $A$, $0 \leq m^{\ast}(A \cap E) \leq m^{\ast}(E) = 0$. Then $m^{\ast}(A)
 <div class=note>
 
 $A \cap B = A - [(A \Delta B) \cap A]$ is measurable, $B = [(A \Delta B) - A] \cup (A \cap B)$ is measurable.
+
+</div>
+
+- $A \subset \mathbb{R}$, if $m^{\ast}(A) = 0$ and $A$ is an open set, then $A = \emptyset$.
+
+<div class=note>
+
+Suppose $A \neq \emptyset$, then there exists $x \in A$ such that $(x-\epsilon, x+\epsilon) \subset A$. Then
+$$ m^{\ast}(A) \geq m^{\ast}(x - \epsilon, x + \epsilon) = 2\epsilon > 0. $$
 
 </div>
 

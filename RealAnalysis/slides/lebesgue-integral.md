@@ -181,6 +181,12 @@ $$ \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x = \int_D f \mathr
 
 ---
 
+## Applications of Absolute Continuity
+
+- Let $E$ be a measurable set, $f \in L(E)$, $e_n := \{|f| \geq n\}$. Prove that $\lim \limits _{n \rightarrow \infty} n \cdot m(e_n) = 0$.
+
+---
+
 ## Generalizations of Fatou's Theorem
 
 - $f_n$ are non-negative and measurable, $f_n \xrightarrow{m} f$, then ${\displaystyle \int_E f \mathrm{d} x\leq \liminf_{n \rightarrow \infty} \int_E f_n \mathrm{d} x}$.
@@ -227,9 +233,40 @@ $|f_n| \rightarrow |f|$ a.e.,
 
 ---
 
-## Applications of Absolute Continuity
 
-- Let $E$ be a measurable set, $f \in L(E)$, $e_n := \{|f| \geq n\}$. Prove that $\lim \limits _{n \rightarrow \infty} n \cdot m(e_n) = 0$.
+## Use LDCT to Calculate Integral Limits
+
+- Calculate ${\displaystyle \lim \limits _{k \rightarrow \infty} \int_0^{+\infty} e^{-x^k}}\mathrm{d} x$.
+
+<div class=note>
+
+(1) First calculate the limit function, denote $f_k(x) = e^{-x^k}$, then
+$$f_k(x) \rightarrow f(x) =
+\begin{cases}
+  1 & x \in [0,1),\\
+  e^{-1} & x = 1,\\
+  0 & x > 1.
+\end{cases}
+\Rightarrow
+f_k(x) \xrightarrow{a.e.}
+f(x) =
+\begin{cases}
+  1 & x \in [0, 1],\\
+  0 & x > 1.
+\end{cases}$$
+
+(2) Find the control function. When $x \in [0, 1]$, $e^{-x^k} \leq 1$, when $x > 1$, $e^{-x^k} \leq e^{-x}$. Take
+$$ g(x) =
+\begin{cases}
+  1 & x \in [0, 1],\\
+  e^{-x} & x > 1.
+\end{cases}$$
+
+(3) Apply LDCT, ${\displaystyle \lim \limits _{k \rightarrow \infty} \int_0^{+\infty} e^{-x^k}\mathrm{d} x = \int_0^{+\infty} \lim \limits _{k \rightarrow \infty} e^{-x^k}\mathrm{d} x}$, then
+$$ \int_0^{+\infty} f \mathrm{d} x = \int_0^1 1 \mathrm{d} x + \int_1^{+\infty} 0 \mathrm{d} x = 1. $$
+
+</div>
+
 
 ---
 
