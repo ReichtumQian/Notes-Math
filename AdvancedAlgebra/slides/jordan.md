@@ -42,6 +42,7 @@ Speaker: Yixiao Qian
 <br>
 
 - Existence of Jordan Canonical Form
+- Properties of Jordan Canonical Form
 - $\lambda$ Matrices
 
 ---
@@ -97,7 +98,29 @@ $$ G_{\lambda_i} = \operatorname{span}(v_1, \mathcal{A}_i v_1, \cdots, \mathcal{
 
 ---
 
+# Properties of Jordan Canonical Form
 
+---
 
+## Powers of Jordan Canonical Form
 
+- **Powers of a Jordan Block**: The $n$-order power of $J(\lambda)_{k \times k}$ is
+
+$$
+  J(\lambda)^n = 
+  \begin{bmatrix}
+  \lambda^n & \binom{n}{1}\lambda^{n - 1} & \binom{n}{2}\lambda^{n - 2} & \cdots & \binom{n}{k - 1}\lambda^{n - k + 1} \\
+  0 & \lambda^n & \binom{n}{1}\lambda^{n - 1} & \cdots & \binom{n}{k - 2}\lambda^{n - k + 2} \\
+  \vdots & \vdots & \ddots & \ddots & \vdots \\
+  0 & 0 & \cdots & \lambda^n & \binom{n}{1}\lambda^{n - 1} \\
+  0 & 0 & \cdots & 0 & \lambda^n
+  \end{bmatrix}
+$$
+
+<div class=note>
+
+Consider $J(\lambda) = \lambda I + N$, then $J(\lambda)^n = (\lambda I + N)^n = \sum_{i=0}^n \binom{n}{i} \lambda^{n-i}N^i$. Here, $N^i$ is a matrix with $1$s on the $k$-th superdiagonal and $0$s elsewhere. Then $N^{k-1} \neq O$ and $N^k = O$, so
+$$ J(\lambda)^n = \sum\limits_{i=0}^{\min(n, k)} \binom{n}{i} \lambda^{n-i} N^i. $$
+
+</div>
 
