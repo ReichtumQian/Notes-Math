@@ -41,7 +41,7 @@ Speaker: Yixiao Qian
 
 ---
 
-# Geometric Interpretation of the Complex Derivative
+# Local Conformal Mappings
 
 ---
 
@@ -86,36 +86,37 @@ The scale factor is $|f^{\prime}(z_0)| \neq 0$ (Same for each direction). Angle-
 
 ---
 
----
-
-## Open Mapping Theorem
-
-- **Open Mapping Theorem**: If $f$ is holomorphic in a domain $D$, then $f(D)$ is also a domain (open and connected set).
-
-<div class=note>
-
-Does continuous functions preserve domain? No, like $f(z) = |z|$ maps any domain to $x$ axis.
-
-</div>
+# Univalent Mappings (Global Conformal Mappings)
 
 ---
 
-## Univalent Mapping
+## Univalent Mapping (Global Conformal Mapping)
 
 - **Univalent Mapping**: $f$ is holomorphic and injective ($z_1 \neq z_2$, $f(z_1) \neq f(z_2)$).
-- **Properties of Univalent Mapping**: If $f(z)$ is univalent in $D$, then $f^{\prime}(z) \neq 0$ in $D$.
+- **Univalent Mapping is Conformal**: If $f(z)$ is univalent in $D$, then $f^{\prime}(z) \neq 0$ in $D$.
 
 <div class=note>
 
-Assume $f^{\prime}(z_0) = 0$, then $f(z) = f(z_0) + a_k(z-z_0)^k + o[(z-z_0)^k]$ where $k \geq 2$. Then by local mapping theorem
+Assume $f^{\prime}(z_0) = 0$, then $z_0$ is a $n$-order zero for $g(z) = f(z) - f(z_0)$ where $n \geq 2$. Denote $C:|z-z_0| = \delta$, $m = \inf_C |f(z) - f(z_0)|$. By Rouche's theorem when $0 < |a| < m$, 
+$$ h(z) = f(z) - f(z_0) - a $$
+has $n$ zeros inside $C$. Take $\delta$ sufficiently small such that $f(z)$ has no zeros other than $z_0$, then there exists $z_1,z_2,\cdots,z_n$ such that $f(z_i)-f(z_0)-a = 0$ and $z_i \neq z_0$. Then
+$$ f(z_i) = f(z_0) + a, \quad i = 1,2,\cdots,n. $$
+This contradicts the injectivity.
 
 </div>
 
 ---
 
+## Applications of Univalent Mapping
 
-## Conformal Mapping
+- Prove that except linear functions, there does not exist any entire function $f$ such that the inverse $f^{-1}$ is also entire.
 
-- **Equivalent Definition**: $f$ is holomorphic at $z_0$ and $f^{\prime}(z_0) \neq 0$.
-- **Global Conformal Mapping**: $f$ is univalent
+<div class=note>
+
+(1) Since $f$ and $f^{-1}$ are entire, then $f$ is bijective (surjective since $f^{-1}$ defined on every points in $\mathbb{C}$, injective since the existence of $f^{-1}$).
+(2) $f$ is univalent, then $f^{\prime}(z) \neq 0$ for any $z \in \mathbb{C}$.
+(3) Assume $f^{\prime}(z)$ is not constant, then 
+
+</div>
+
 

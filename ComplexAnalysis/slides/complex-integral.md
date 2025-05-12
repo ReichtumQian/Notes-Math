@@ -131,6 +131,10 @@ $$ |f^{(n)}(z_0)| \leq \frac{n! \|f\|_C}{R^n}.$$
 
 ---
 
+# Liouville's Theorem and Its Applications
+
+---
+
 ## Liouville's Theorem
 
 - **Liouville's Theorem**: If $f$ is entire and bounded, then it is constant.
@@ -148,6 +152,19 @@ $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 (1) If $P(z)$ has no roots, then $\frac{1}{P(z)}$ is entire and bounded. By Liouville's theorem, $P(z)$ is constant, which contradicts the condition.
 (2) Then $P(z)$ must have a root $z_1$, and $P(z) = (z-z_1)Q(z)$. By induction, we can get the conclusion.
+</div>
+
+---
+
+## Generalization of Liouville's Theorem
+
+- **Bijective Entire Functions**: If $f$ is entire and bijective, then $f(z) = az + b$ ($a \neq 0$).
+
+<div class=note>
+
+(1) If $f = a_nz^n + a_{n-1}z^{n-1} + \cdots + a_0$, then $f^{\prime}(z)$ is an $n-1$-order polynomial. It has at least one zero $z_0$ in $\mathbb{C}$. $f^{\prime}(z_0) = 0$ contradicts the injectivity (see univalent function).
+(2) If $f$ is not a polynomial, 
+
 </div>
 
 ---

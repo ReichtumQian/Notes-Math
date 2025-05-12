@@ -42,7 +42,7 @@ Speaker: Yixiao Qian
 <br>
 
 - Complex Numbers
-- Holomorphic Functions
+- Holomorphic Function
 
 ---
 
@@ -85,7 +85,7 @@ $\left( \frac{1+z}{1-z} \right)^5 = 1$, then $\frac{1+z}{1-z} = e^{\frac{2k\pi}{
 
 ---
 
-## Key Points of Holomorphic Function
+## Concept of Holomorphic Function
 
 - **Complex-Valued Function**: $f(z) = u(z) + v(z) i$.
 - **Holomorphic Function**: $f^{\prime}(z_0) := \lim \limits _{h \rightarrow 0} \frac{f(z_0+h) - f(z_0)}{h}$ ($h \in \mathbb{C}$) exists.
@@ -141,7 +141,27 @@ Cauchy-Riemann equation implies that any function relies on $\overline{z}$ is no
 
 ---
 
-## Example of Cauchy-Riemann Equation
+## Examples of Non-Differentiable Functions
+
+- $f(z) = |z|$ is not differentiable on $\mathbb{C}$.
+
+<div class=note>
+
+$|z| = (x^2+y^2) + 0i$. Then $u_x \not\equiv 0$ and $u_y \not\equiv 0$, which contradicts C-R equation.
+
+</div>
+
+- $f(z) = \frac{1}{\overline{z}}$ is not differentiable on $\mathbb{C}$.
+
+<div class=note>
+
+$\frac{1}{\overline{z}}$ explicitly contains a $\overline{z}$. Then it does not satisfy C-R equation $\frac{\partial f}{\partial \overline{z}} = 0$.
+
+</div>
+
+---
+
+## C-R Equation doesn's Sufficiently Imply Differentiability
 
 Prove $f(z)$ satisifies Cauchy-Riemann equation, but is not differentiable at the origin.
 
@@ -193,21 +213,16 @@ $u(x,y) \equiv 0$ implies $u_x \equiv u_y \equiv 0$. Then C-R equation implies $
 
 ---
 
-## Examples of Non-Differentiable Functions
+## Applications of C-R Equation
 
-- $f(z) = |z|$ is not differentiable on $\mathbb{C}$.
-
-<div class=note>
-
-$|z| = (x^2+y^2) + 0i$. Then $u_x \not\equiv 0$ and $u_y \not\equiv 0$, which contradicts C-R equation.
-
-</div>
-
-- $f(z) = \frac{1}{\overline{z}}$ is not differentiable on $\mathbb{C}$.
+- Let $f(z) = u(x,y) + v(x,y)i$ be a holomorphic function, where $u(x,y) = y^3 - 3x^2y$, $f(i) = 1+i$. Find $v(x,y)$.
 
 <div class=note>
 
-$\frac{1}{\overline{z}}$ explicitly contains a $\overline{z}$. Then it does not satisfy C-R equation $\frac{\partial f}{\partial \overline{z}} = 0$.
+(1) By C-R equation: $v_y = -6xy$ and $v_x = 3x^2 - 3y^2$. Then $v = -3xy^2 + x^3 + c$.
+(2) Since $f(i) = 1+i$, then 
 
 </div>
+
+
 
