@@ -69,6 +69,7 @@ $|z_1+z_2|^2 = (x_1+x_2)^2 + (y_1+y_2)^2$, $|z_1 - z_2|^2=(x_1-x_2)^2 + (y_1-y_2
 ## Polar Form of Complex Numbers
 
 - **Polar Form of Complex Number**: $z = r e^{i\theta}$, where $r = |z|$ and $e^{i\theta} = \cos \theta + i \sin \theta$.
+- **Argument**: The *argument* of $z = re^{i\theta}$ is $\theta$, denoted as $\operatorname{arg}(z)$.
 - **Solution of $z^n = re^{i\theta}$**: $z_k = \sqrt[n]{r} e^{\frac{2k\pi + \theta}{n}i}$ for $k = 0,1,\cdots,n-1$.
 - Find the roots of $(1 + z)^5 = (1 - z)^5$.
 
