@@ -50,7 +50,7 @@ Speaker: Yixiao Qian
 
 ---
 
-## Monotonic Function
+## Monotonic Functions
 
 - **Monotonic Function**: For any $x < y$, $f(x) \leq f(y)$ (or $f(x) \geq f(y)$).
 - **Almost-Everywhere Differentiable**: If $f$ is monotonic, then $f$ is differentiable a.e.
@@ -61,9 +61,33 @@ Speaker: Yixiao Qian
 
 - **Variation**: Let $X = \{x_k\}_{0\leq k\leq n}$ where $a = x_0 < x_1 < \cdots < x_n = b_n$ be a paritition of $[a, b]$. *Variation of $f$ with respect to partition $X$* is
 $$ V(x) = \sum_{k=1}^n |f(x_k) - f(x_{k-1})|. $$
-- **Total Variation**: $T_a^b(f) = \sup \{V(x): X \text{ is partition of } [a, b]\}$ is the *total variation of $f$*.
-- **Function of Bounded Variation**: $f$ is a *function of bounded variation* if $T_a^b(f) < \infty$.
-- **Decomposition**: Any BV function is the difference of two monotonic functions.
+- **Total Variation**: $\bigvee_a^b(f) = \sup \{V(x): X \text{ is partition of } [a, b]\}$ is the *total variation of $f$*.
+- **Addition of Total Variation**: $\bigvee_a^b(f) = \bigvee_a^c (f) + \bigvee_c^b(f)$.
+- **Function of Bounded Variation**: $f$ is a *function of bounded variation* if $\bigvee_a^b(f) < \infty$.
+- **Boundedness**: Any BV function is bounded.
+
+<div class=note>
+
+For any $x \in [a, b]$, $|f(x) - f(a)| < \bigvee _a^b f(x) < \infty$.
+
+</div>
+
+- **Closure under Operations**: $f\pm g$, $fg$ are BV; if $|g(x)| \leq \epsilon > 0$ then $f/g$ is BV.
+
+---
+
+## Fundamental Property of BV Function
+
+- **Decomposition**: $f$ is a BV function iff it is the difference of two monotonic functions.
+
+<div class=note>
+
+(1) $\Leftarrow$ is direct.
+(2) $\Rightarrow$: For any $a \leq x_1 < x_2 \leq b$, $f(x_2)-f(x_1) \leq \bigvee_{x_1}^{x_2}(f) = \bigvee_a^{x_2}(f) - \bigvee_a^{x_1}(f)$. Then
+$$ \bigvee_a^{x_1}(f) - f(x_1) \leq \bigvee_a^{x_2}(f) - f(x_2). $$
+$F(x) = \bigvee_a^x(f) - f(x)$ is monotonically increasing, then $f(x) = \bigvee_a^x(f) - [\bigvee_a^x(f) - f]$ is the difference of two monotonic functions.
+
+</div>
 
 ---
 
@@ -97,6 +121,35 @@ $$ \sum\limits_{k = 1}^n |f(b_k) - f(a_k)| < \epsilon.$$
 ---
 
 ## Lebesgue Indefinite Integral
+
+- **Lebesgue Indefinite Integral**: ${\displaystyle F(x) = \int_a^x f(t)\mathrm{d} t}$ for $x \in [a, b]$.
+- **Fundamental Theorem**: $F^{\prime}(x) = f(x)$ a.e.
+- **Indefinite Integral is BV**: $F(x)$ is BV on $[a, b]$, and
+$$ \bigvee_a^b(F) = \int_a^b |F^{\prime}(t)| \mathrm{d} t = \int_a^b |f(t)|\mathrm{d}t. $$
+
+---
+
+## Apply Indefinite Integral to Calculate Total Variation
+
+- If $f$ has continuous derivative, $x_1<x_2<\cdots<x_n$ are roots of $f^{\prime}(x)$, what is $\bigvee_a^b (f)$?
+
+<div class=note>
+
+$$ \bigvee_a^b(f) = \int_a^{x_1}|f^{\prime}(t)|\mathrm{d} t + \int_{x_1}^{x_2}|f^{\prime}(t)| \mathrm{d}t + \cdots + \int_{x_n}^b |f^{\prime}(t)|\mathrm{d}t. $$
+
+</div>
+
+- Calculate $\bigvee_0^{4\pi} (\cos x)$.
+
+<div class=note>
+
+$f^{\prime}(x) = -\sin x$, then roots of $f^{\prime}(x) = 0$ are $0, \pi, 2\pi, 3\pi, 4\pi$.
+$$ \bigvee_0^{4\pi}(\cos x) = 4 \int_0^{\pi} |\sin x|\mathrm{d}x = 8. $$
+
+</div>
+
+
+
 
 
 

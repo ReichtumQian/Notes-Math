@@ -36,8 +36,8 @@
 \end{proof}
 
 \begin{example}{Properties of Measurable Functions}{}
-  Measurable functions are \emph{basically} bounded;
-  convergent measurable function sequences are \emph{basically} uniformly bounded:
+  Measurable functions are \emph{almost} bounded;
+  convergent measurable function sequences are \emph{almost} uniformly bounded:
   \begin{enumerate}
   \item If $m(E) < \infty$, $f(x)$ is measurable and finite a.e. on $E$, then
     \begin{equation}
@@ -174,7 +174,7 @@
 
 \begin{note}
   Lusin theorem indicates that measurable functions are
-  \emph{basically} (except a sufficiently small set) continuous functions.
+  \emph{almost} (except a sufficiently small set) continuous functions.
 \end{note}
 
 \begin{example}{Generalization of Lusin Theorem}{}
@@ -215,20 +215,20 @@
 
 \begin{note}
   Egoroff theorem indicates that pointwise convergence is
-  \emph{basically} (except a sufficiently small set) uniform convergence
+  \emph{almost} (except a sufficiently small set) uniform convergence
   \textbf{on a finite-measure set}.
 \end{note}
 
 \begin{example}{Generalization of the Egoroff Theorem}{}
   Let $f_n$ be measurable functions on an arbitrary-measure set $D$.
-  If $f_n$ basically uniformly converges to $f(x)$, then
+  If $f_n$ almost uniformly converges to $f(x)$, then
   \begin{equation}
     f_n(x) \aeconv f(x).
   \end{equation}
 \end{example}
 
 \begin{proof}
-  Since $f_n$ basically uniformly converges to $f$, then
+  Since $f_n$ almost uniformly converges to $f$, then
   \begin{equation}
     \forall \delta > 0, \exists E_{\delta} \subset E, m(E - E_{\delta}) < \delta,
     \quad f_n(x) \unifconv f(x), x \in E_{\delta}.

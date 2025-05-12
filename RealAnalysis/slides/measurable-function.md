@@ -83,7 +83,7 @@ Note: if $\lim \limits _{n \rightarrow \infty} E_n$ exists and finite-measure, t
 ## Properties of Measurable Functions
 
 
-- **Boundedness**: $f$ is basically bounded; $\{f_n\}$ are basically uniformly bounded.
+- **Boundedness**: $f$ is almost bounded; $\{f_n\}$ are almost uniformly bounded.
 - **Preimage of Measurable Functions**: For any open set $G$ or closed set $F$, $f^{-1}(G)$ and $f^{-1}(F)$ are measurable.
 
 <div class=note>
@@ -145,7 +145,7 @@ $$
 
 ## Approximation by Continuous Functions
 
-- **By Continuous Functions (Lusin)**: $f$ finite a.e. and measurable. Then it is basically continuous on finite measure set.
+- **By Continuous Functions (Lusin)**: $f$ finite a.e. and measurable. Then it is almost continuous on finite measure set.
 
 $$ \forall \epsilon > 0, \exists f^{\ast} \in C(D), \quad m(\{f \neq f^{\ast}\}) < \epsilon. $$
 
@@ -168,9 +168,9 @@ By Lusin, there exists $f_n$ such that $m(\{f \neq f_n\}) < \frac{1}{n}$, then $
 
 ## Pointwise Convergence and Uniform Convergence
 
-- **Pointwise to Uniform (Egoroff)**: $f, f_n$ finite a.e. and measurable, $m(D) < \infty$. Then $f_n \xrightarrow{a.e.} f$ implies $f_n \rightrightarrows f$ basically on a closed subset $F$.
+- **Pointwise to Uniform (Egoroff)**: $f, f_n$ finite a.e. and measurable, $m(D) < \infty$. Then $f_n \xrightarrow{a.e.} f$ implies $f_n \rightrightarrows f$ almost on a closed subset $F$.
 $$ \forall \epsilon > 0, \exists F \subset D, m(D - F) < \epsilon, \quad f_n(x) \rightrightarrows f(x), x \in F. $$
-- **Uniform to Pointwise**: $f_n$ measurable, $m(D)$ is arbitrary. Then $f_n$ basically uniformly converges to $f$ implies $f_n \xrightarrow{a.e.} f$.
+- **Uniform to Pointwise**: $f_n$ measurable, $m(D)$ is arbitrary. Then $f_n$ almost uniformly converges to $f$ implies $f_n \xrightarrow{a.e.} f$.
 
 <div class=note>
 
@@ -190,6 +190,22 @@ $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \
 $$ f_n \xrightarrow{m} f \quad \Rightarrow \quad  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f. $$
 - **Pointwise to Measure**: $f_n,f$ measurable and finite a.e. $m(D) < \infty$. Then
 $$ f_n \xrightarrow{a.e.} f \quad \Rightarrow \quad f_n \xrightarrow{m} f. $$
+
+---
+
+## Example of Three Types of Convergence
+
+- If $f_k(x) = \chi_{[0, k]}(x)$, determine if $f$ is (1) pointwise convergent a.e. (2) almost uniformly convergent; (3) convergent in measure.
+
+<div class=note>
+
+Define $f \equiv 1$ for $x \in [0, +\infty)$.
+
+(1) Yes. For any $x \in [0, +\infty)$, $\lim \limits _{k \rightarrow \infty}f_k(x) = f(x)$. So $f_k$ pointwisely converges everywhere.
+(2) No. We want except a small set, $\forall \epsilon > 0$, $\exists N > 0$, $\forall m,n > N$, $\forall x \in [0, +\infty)$, $|f_n - f_m| < \epsilon$. But $m(\{|f_n - f_m| > \epsilon\}) = (m-n)$.
+(3) No. $m(\{|f_k - 1| > \epsilon\}) = m(\{|x > k|\}) = \infty$.
+
+</div>
 
 ---
 
