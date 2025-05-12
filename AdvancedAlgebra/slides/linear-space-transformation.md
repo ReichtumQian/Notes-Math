@@ -54,7 +54,7 @@ Speaker: Yixiao Qian
 
 ## Sum and Intersection of Linear Spaces
 
-- **Subspace**: Closed under addition and scalar multiplication.
+- **Subspace**: Subsets which are closed under addition and scalar multiplication.
 - **Sum of Subspaces**: $V_1 + V_2 = \{\alpha = \alpha_1 + \alpha_2: \alpha_1 \in V_1, \alpha_2 \in V_2\}$.
 
 <div class=note>
