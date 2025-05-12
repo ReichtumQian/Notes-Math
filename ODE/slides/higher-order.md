@@ -43,6 +43,83 @@ Speaker: Yixiao Qian
 
 # Solution Structure
 
+---
+
+# Solve Constant-Coefficients Higher-Order Linear ODEs
+
+---
+
+## Method of Characteristic Equation
+
+
+The solution of $x^{(n)}(t) + a_{n-1}x^{(n-1)}(t) + \cdots + a_n x(t) = 0$ is determined by the roots of
+$$ \lambda^n + a_{n-1}\lambda^{n-1} + \cdots + a_1 \lambda + a_n = 0. $$
+Specifically, the fundamental solution system is composed of
+1. For each **distinct real root** $\lambda$, include $ce^{\lambda t}$
+2. For each **repeated real root** $\lambda$ of multiplicity $k$, include $c_1e^{\lambda t}, c_2 t e^{\lambda t}, \cdots, c_k t^{k-1}e^{\lambda t}$.
+3. For each pair of **complex conjugate roots** $\alpha \pm \beta i$, include $c_1e^{\alpha t}\cos(\beta t)$ and $c_2e^{\alpha t}\sin (\beta t)$.
+4. For **repeated complex roots**, analogously multiply $t^m$ to the base term.
+
+<div class=note>
+
+Why multiply by $t$ for each multiplicity: Consider $D = \frac{\mathrm{d}}{\mathrm{d}t}$, then ODE is
+$$ (D - \lambda_1)^{m_1} (D - \lambda_2)^{m_2} \cdots (D- \lambda_k)^{m_k}x(t) = 0. $$
+For $l < m_i$, $(D - \lambda_i)^{m_i} t^l e^{\lambda_i t} = 0$ and $e^{\lambda_i t}, te^{\lambda_i t},\cdots, t^{m_i-1}e^{\lambda_i t}$ exactly form a base of the space.
+
+</div>
+
+---
+
+## Practice on Method of Characteristic Equation
+
+- Solve $y^{\prime\prime} + 4y = 0$.
+
+<div class=note>
+
+The characteristic equation is $\lambda^2 + 4 = 0$, the roots are $\pm 2i$, then the general solution is
+$$ y = c_1 \cos(2x) + c_2 \sin(2x). $$
+
+</div>
+
+---
+
+## Method of Undetermined Coefficients
+
+<div class=trick>
+
+1. Guess the form of particular solution for each term in right hand side.
+2. If the form is included in the solution of homogenous one, multiply by extra $t$.
+
+</div>
+
+- Find solution of $y^{\prime\prime} + 4y = \cos x - \sin 2x$.
+
+<div class=note>
+
+The general solution of homogenous equation is $y = c_1 \cos 2x + c_2 \sin 2x$.
+
+(1) Consider $\cos x$: Assume $y_1=A\cos x + B \sin x$, then $y_1 = \frac{1}{3} \cos x$.
+(2) Consider $\sin 2x$: Assume $y_2 = x[A\cos 2x + B \sin 2x]$ (since without $x$, it is included in solution of homogenous equation), then $y_2 = \frac{x}{4} \cos 2x$.
+
+</div>
+
+---
+
+## Applications of Undetermined Coefficients
+
+- Find solution of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$.
+
+<div class=note>
+
+We first solve $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = 0$.
+
+(1) Suppose $y = x^r$, then $r(r-1)x^r + 4rx^r + 3x^r = 0$, meaning $r(r-1) + 4r + 3 = 0$.
+(2) We get $r = -\frac{3}{2} \pm \frac{\sqrt{3}}{2}i$, then $y = x^{- \frac{3}{2} \pm \frac{\sqrt{3}}{2}i} = x^{-\frac{3}{2}} e^{\pm \frac{\sqrt{3}}{2}i \ln x}$. The general solution is
+$$ y = x^{- \frac{3}{2}} \left[ c_1 \cos \left( \frac{\sqrt{3}}{2} \ln x \right) + c_2 \sin \left( \frac{\sqrt{3}}{2} \ln x \right) \right]. $$
+
+We look for particular solutions of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$. Assume $y_p = Ax + B$, then $y_p = \frac{x}{7}$.
+
+</div>
 
 ---
 

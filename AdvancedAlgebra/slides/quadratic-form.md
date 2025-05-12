@@ -63,6 +63,12 @@ Speaker: Yixiao Qian
 - **Eigenvalue Perspective**: Iff all eigenvalues are positive.
 - **Closure under Operations**: $A^{-1}$, $A^k$, $A+B$, $A^{\ast}$ are all positive definite.
 
+<div class=note>
+
+(1) The eigenvalues of $A^{-1}$, $A^k$, $A^{\ast}$ are positive. (2) $x^T(A+B)x = x^TAx+x^TBx>0$.
+
+</div>
+
 ---
 
 ## Determine if a Quadratic Form is Positive Definite
