@@ -294,4 +294,42 @@ $$ f - g_n \in L(E) \Rightarrow f = (f-g_n)+g_n \in L(E). $$
 
 ---
 
+## Key Results of Multiple Integrals and Iterated Integrals
+
+- **Tonelli Theorem**: $f(x,y) \geq 0$ is measurable on $\mathbb{R}^p \times \mathbb{R}^q$. $f(x,\cdot)$ and $f(\cdot,y)$ are measurable and integrable a.e., then
+$$
+\int_{\mathbb{R}^p \times \mathbb{R}^q} f(x,y)\,\mathrm{d}x\mathrm{d}y 
+= \int_{\mathbb{R}^p} \left( \int_{\mathbb{R}^q} f(x,y)\,\mathrm{d}y \right)\mathrm{d}x
+= \int_{\mathbb{R}^q} \left( \int_{\mathbb{R}^p} f(x,y)\,\mathrm{d}x \right)\mathrm{d}y.
+$$
+- **Interchange of Summation and Integration**: $\{f_n(x)\}$ are non-negative measurable on $\mathbb{R}^p$, then
+$$
+\int_{\mathbb{R}^p} \sum_{n=1}^\infty f_n(x) \,\mathrm{d}x 
+= \sum_{n=1}^\infty \int_{\mathbb{R}^p} f_n(x) \,\mathrm{d}x.
+$$
+- **Fubini Theorem**: $f(x,y)$ is integrable over $\mathbb{R}^p \times \mathbb{R}^q$. $f(x,\cdot)$ and $f(\cdot, y)$ are integrable a.e., 
+$$
+\int_{\mathbb{R}^p \times \mathbb{R}^q} f(x,y)\mathrm{d} x\mathrm{d}y 
+= \int_{\mathbb{R}^p} \left[ \int_{\mathbb{R}^q} f(x,y)\mathrm{d} y \right]\mathrm{d} x.
+$$
+
+---
+
+## Applications of Tonelli and Fubini Theorems
+
+- $E$ is measurable, $f:E \rightarrow \mathbb{R}$ is non-negative and measurable. $G(f)$ is defined as $\{(x,y) \in \mathbb{R}^2: x \in E, y = f(x)\}$. Prove that $G(f)$ is measurable and $m(G(f)) = 0$.
+
+<div class=note>
+
+(1) Define $F:\mathbb{R}^2 \rightarrow \mathbb{R}$ that $F(x,y) = y - f(x)$. It is measurable on $E \times \mathbb{R}$ and we have $G(f) = F^{-1}(0) \cap (E \times \mathbb{R})$, which means $G(f)$ is measurable.
+(2) For any $x \in E$, $G_x := \{y: (x,y) \in G(f)\}$ is single-point set $\{f(x)\}$.
+(3) By Tonelli theorem,
+$$ m(G(f)) = \int_{E} m(G_x) \mathrm{d} x = \int_E 0 \mathrm{d} x = 0.$$
+
+</div>
+
+
+
+
+
 

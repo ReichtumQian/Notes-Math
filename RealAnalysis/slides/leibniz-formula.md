@@ -111,8 +111,35 @@ $$ V(X_n) =  2 \cdot \frac{1}{2n} + 2 \cdot \frac{1}{2n-2} + \cdots + 2 \cdot \f
 
 - **Absolutely Continuous Function**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall (a_k, b_k)_{1\leq k\leq n}$ are pairwise disjoint, $\sum_{k=1}^n(b_k-a_k) < \delta$,
 $$ \sum\limits_{k = 1}^n |f(b_k) - f(a_k)| < \epsilon.$$
-- **Uniform Continuity and Continuity**: AC implies uniform continuity and continuity.
+- **Closure under Operations**: $f \pm g$, $fg$, and $f/g$ ($g \neq 0$) are AC.
+- **Closure under composition**: $f,\varphi$ are AC, $\varphi$ is strictly increasing, then $f(\varphi)$ is AC.
 - **Relation with BV**: Any AC function is BC.
+
+---
+
+## Analysis Properties of AC Functions
+
+- **Uniform Continuity and Continuity**: AC implies uniform continuity and continuity.
+- **Differentiability**: Any AC function is differentiable a.e. and its derivative is integrable.
+- **Leibniz Formula**: If $f$ is AC, then $\displaystyle f(x) = f(a) + \int_a^x f^{\prime}(t)\mathrm{d} t$.
+
+---
+
+## Applications of AC Functions
+
+- If $f$ is AC on $[0, 1]$, $f(0) = 0$, prove that ${\displaystyle \int_0^1 |f(x)f^{\prime}(x)|\mathrm{d} x \leq \int_0^1 |f^{\prime}(x)|^2 \mathrm{d} x}$.
+
+<div class=note>
+
+(1) $f$ is AC and $f(0) = 0$, then ${\displaystyle f(x) = \int_0^x f^{\prime}(t) \mathrm{d} t}$, it is equivalent to prove
+$$ \int_0^1 \left( \int_0^x |f^{\prime}(t)|\mathrm{d}t \right) |f^{\prime}(x)|\mathrm{d}x \leq \int_0^1 |f^{\prime}(x)|^2 \mathrm{d} x. $$
+(2) By Tonelli theorem, the left-hand side equals to ${\displaystyle \int_0^1 \int_t^1 |f^{\prime}(t)| \cdot |f^{\prime}(x)|\mathrm{d} x \mathrm{d} t}$
+(3) Since symmetry, ${\displaystyle \int_0^1 \int_t^1 |f^{\prime}(t)| \cdot |f^{\prime}(x)|\mathrm{d} x \mathrm{d} t \leq \left( \int_0^1 |f^{\prime}(x)| \mathrm{d} x \right)^2}$.
+(4) By Cauchy-Schwarz inequility
+$$ \left( \int_0^1 |f^{\prime}(x)|\mathrm{d}x \right)^2 \leq \int_0^1 1^2 \mathrm{d} x \cdot \int_0^1 |f^{\prime}(x)|^2 \mathrm{d} x = \int_0^1 |f^{\prime}(x)|^2\mathrm{d} x. $$
+
+</div>
+
 
 ---
 
@@ -126,6 +153,7 @@ $$ \sum\limits_{k = 1}^n |f(b_k) - f(a_k)| < \epsilon.$$
 - **Fundamental Theorem**: $F^{\prime}(x) = f(x)$ a.e.
 - **Indefinite Integral is BV**: $F(x)$ is BV on $[a, b]$, and
 $$ \bigvee_a^b(F) = \int_a^b |F^{\prime}(t)| \mathrm{d} t = \int_a^b |f(t)|\mathrm{d}t. $$
+- **Indefinite Integral is AC**: $F(x)$ is AC on $[a, b]$
 
 ---
 
