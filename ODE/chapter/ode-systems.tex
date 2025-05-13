@@ -297,10 +297,12 @@
   where $\mathbf{v}_i$ is an eigenvector of $A$ with respect to $\lambda_i$.
   If $A$ is not diagonalizable, then the fundamental solution system is
   \begin{equation}
+    e^{\lambda t} \mathbf{v}_0, \quad
+    e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 \right), \quad \cdots, \quad
     e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right),
   \end{equation}
   where $\mathbf{v}_0, \cdots, \mathbf{v}_k$ are generalized eigenvectors corresponding to $\lambda$,
-  satisfying $(A - \lambda I)^k \mathbf{v}_k = 0$ and $(A - \lambda I)\mathbf{v}_j = \mathbf{v}_{j-1}$.
+  $(A - \lambda I) \mathbf{v}_k = 0$ and $(A - \lambda I)\mathbf{v}_j = \mathbf{v}_{j+1}$ ($j < k$).
 \end{proposition}
 
 \begin{proof}
@@ -314,28 +316,18 @@
   This means $\mathbf{x}(t)$ is a solution of the ODE.
   Furthermore, since $\mathbf{v}_i$ are linearly independent, these solutions form a fundamental solution system.
 
-  (2) Otherwise, there exists an invertible matrix $P$ such that $P^{-1}AP = J$,
-  where $J = \operatorname{diag}(J_1,\cdots,J_m)$, where
+  (2) Consider $\mathbf{x}(t) = e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right)$.
+  Differentiating on both sides we get
   \begin{equation}
-    J_m =
-    \begin{bmatrix}
-       \lambda_m & 1 & \cdots & 0 & 0\\
-       0 & \lambda_m & \cdots & 0 & 0\\
-       \vdots & \vdots & \ddots & \vdots& \vdots\\
-       0 &  0& \cdots &\lambda_m & 1\\
-       0 &  0& \cdots &0 & \lambda_m
-    \end{bmatrix}
-    \Rightarrow
-    e^{J_m t} = e^{\lambda_m t}
-    \begin{bmatrix}
-       1 & t & \frac{t^2}{2} & \cdots & \frac{t^{m-1}}{(m-1)!}\\
-       0 & 1 & t & \cdots & \frac{t^{m-2}}{(m-2)!}\\
-       \vdots & \vdots & \ddots & \ddots & \vdots\\
-       0 &  0&  0& 1 & t\\
-       0 &  0&  0& 0 & 1
-    \end{bmatrix}.
+    \mathbf{x}^{\prime}(t) = \lambda e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right) + e^{\lambda t} \left( \mathbf{v}_1 + t\mathbf{v}_2 + \cdots + \frac{t^{k-1}}{(k-1)!}\mathbf{v}_k \right).
   \end{equation}
-  Then $e^{At} = Pe^{J t}P^{-1}$.
+  The product of $A$ and $\mathbf{x}(t)$ is
+  \begin{equation}
+    A\mathbf{x}(t) = e^{\lambda t} \left( A\mathbf{v}_0 + tA\mathbf{v}_1 + \cdots + \frac{t^k}{k!}A\mathbf{v}_k \right).
+  \end{equation}
+  For the term $t^m$, the coefficient at lhs is $\lambda \frac{\mathbf{v}_m}{m!} + \frac{\mathbf{v}_{m+1}}{m!}$,
+  while rhs is $\frac{A\mathbf{v}_m}{m!}$.
+  Since $A\mathbf{v}_{m} - \lambda \mathbf{v}_{m} = \mathbf{v}_{m+1}$, the equation holds.
 \end{proof}
 
 \begin{example}{}{}
