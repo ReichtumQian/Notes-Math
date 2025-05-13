@@ -187,6 +187,22 @@ $$ \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x = \int_D f \mathr
 
 ---
 
+## Generalizations of Levi's MCT
+
+- $f, f_n$ are non-nagative measurable, $f_n \xrightarrow{m} f$ non-decreasingly for any $x \in D$. Prove that
+$$ \int_D f \mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n \mathrm{d} x. $$
+
+<div class=note>
+
+(1) Since $f_n$ is non-decreasing, it converges to a function $g$ (maybe infinity). By MCT,
+$$ \int_D g \mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n \mathrm{d} x. $$
+(2) By Riesz, there exists $f_{n_k} \xrightarrow{a.e.} f$. Since $f_{n_k} \rightarrow g$, then $f = g$ a.e. This means
+$$ \int_D f \mathrm{d} x = \int_D g \mathrm{d} x. $$
+
+</div>
+
+---
+
 ## Generalizations of Fatou's Theorem
 
 - $f_n$ are non-negative and measurable, $f_n \xrightarrow{m} f$, then ${\displaystyle \int_E f \mathrm{d} x\leq \liminf_{n \rightarrow \infty} \int_E f_n \mathrm{d} x}$.
