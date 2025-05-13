@@ -78,6 +78,21 @@ $|z_1+z_2|^2 = (x_1+x_2)^2 + (y_1+y_2)^2$, $|z_1 - z_2|^2=(x_1-x_2)^2 + (y_1-y_2
 $\left( \frac{1+z}{1-z} \right)^5 = 1$, then $\frac{1+z}{1-z} = e^{\frac{2k\pi}{5}i} := w_k$ for $k = 0,1,2,3,4$. Thus $z = \frac{w_k}{w_k + 1}$.
 </div>
 
+---
+
+## Practice on Complex Numbers
+
+- Prove that $z + e^{-z} = a (a > 1)$ has unique root on $\operatorname{Re} z > 0$, and it is real.
+
+<div class=note>
+
+(1) Existence of Real Root: $f(x) = x + e^{-x}$, $f^{\prime}(x) = 1 - e^{-x} > 0$, $f(0) = 0$, $f(\infty) = \infty$. Then by intermidiate theorem, the root exists.
+(2) Exclude Complex Roots: Let $z = x + iy$, then
+$$ x + e^{-x}\cos y = a, \quad y - e^{-x}\sin y = 0. $$
+$y = e^{-x}\sin y$ implies $|y| = e^{-x} |\sin y| \leq e^{-x}|y|$, which requires $x \leq 0$. So $f(z)$ does not have complex roots on $\operatorname{Re} z > 0$.
+
+</div>
+
 
 ---
 

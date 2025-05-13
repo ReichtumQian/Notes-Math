@@ -95,6 +95,21 @@ Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} =
 
 ---
 
+## Practice on Zeros
+
+- $D = \{|z| < 1\}$, $f(z)$ defined on $D$. If $f^2$ and $f^3$ are holomorphic in $D$. Prove that $f(z)$ is also holomorphic.
+
+<div class=note>
+
+(1) For $z_0 \in D$ that $f(z_0) \neq 0$: $f(z_0) = \frac{f^3}{f^2}$ is holomorphic.
+(2) For $z_0 \in D$ that $f(z_0) = 0$: Suppose $z_0$ is an $m$-order zero, then
+$$ f^2(z) = (z-z_0)^{2m}\varphi(z), \quad f^3(z) = (z-z_0)^{3m}\psi(z). $$
+$f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(z)$ and $\psi(z)$ are holomorphic. Then so is $f(z)$.
+
+</div>
+
+---
+
 # Concept of Residue
 
 ---
@@ -198,7 +213,7 @@ where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
 
 ## Argument Principle and Its Generalizations
 
-- **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, these poles have no limit points.
+- **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, which have no limit points.
 - **Argument Principle**: $f$ meromorphic, $C$ closed contour. $f$ has no poles and never vanishes on $C$. $N_z$ the number of zeros of $f$ inside $C$, $N_p$ the poles (counted with multiplicities).
 $$ \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z = N_z - N_p $$
 - **Rouche's Theorem**: $f, g$ holomorphic, $C$ closed contour, $|f| > |g|$ for all $z \in C$. Then $N_z(f) = N_z(f+g)$ inside $C$.
