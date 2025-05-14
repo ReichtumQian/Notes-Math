@@ -127,7 +127,7 @@ $$ m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = m^{\ast}(\cup_{n=1}^{\in
 
 ---
 
-## Measurable Sets
+## Prove Sets are Measurable
 
 - If $E$ satisfies $m^{\ast}(E) = 0$, then $E$ is measurable, $m(E) = 0$.
 
@@ -205,6 +205,19 @@ $m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ where $n \in \mathbb{Z}$. For each
 - **Closed Sets**: There exists a closed set $F \subset E$ such that $m(E - F) < \epsilon$.
 - **Squeeze Theorem**: If there exists measurable sets $A_n$ and $B_n$ such that $A_n \subset E \subset B_n$ and $\lim \limits _{n \rightarrow \infty} m(B_n - A_n) = 0$, then $E$ is measurable
 
+---
 
+## Applications of Approximation Results
 
+- $E \subset \mathbb{R}$, $m(E) > 0$, $0 < \alpha < 1$. Prove there exists an open interval $I$, $m(I \cap E) > \alpha \cdot m(I)$.
+
+<div class=note>
+
+(1) There exists an open set $G$ such that $G \supset E$ and $m(G - E) < \frac{1 - \alpha}{\alpha} m(E)$. Then
+$$ m(G) = m(G-E) + m(E) < \frac{1}{\alpha} m(E) \Rightarrow \alpha m(G) < m(E). $$
+(2) Since $G \subset \mathbb{R}$, then $G = \cup_n (a_n, b_n)$ where $(a_i, b_i)$ are disjoint. Then
+$$ m(E) = m(E \cap G) = m(\cup_n (E \cap (a_n, b_n))) = \sum_n m(E \cap (a_n, b_n)),  $$
+Since $m(E) > \alpha m(G) = \alpha \sum_n m(a_n, b_n)$. This means there must there exists $i$ such that $m(E \cap (a_i, b_i)) > \alpha m(a_i, b_i)$.
+
+</div>
 

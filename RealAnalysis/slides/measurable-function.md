@@ -159,6 +159,20 @@ By Lusin, there exists $f_n$ such that $m(\{f \neq f_n\}) < \frac{1}{n}$, then $
 
 - **Counterexample**: $f = \chi_{\mathbb{Q} \cap [0, 1]}$ is finite a.e. and measurable on $[0, 1]$. But $\nexists  g \in C([a, b])$ such that $f = g$ a.e.
 
+---
+
+## Applications of Approximation by Continuous Functions
+
+- If $\{f_k\}$ are real-valued ($f_k(x) \neq \infty$) measurable functions on $[a, b]$, prove that there exists a positive sequence $\{a_k\}$ such that $a_kf_k \xrightarrow{a.e.} 0$.
+
+<div class=note>
+
+(1) Since $f$ is real-valued, there exists $t_k$ such that $m(\{|f_k(x)| > t_k\}) < \frac{1}{2^k}$. Take $a_k = \frac{1}{kt_k}$.
+(2) Denote $E_k = \{|f_k(x)| > t_k\}$, then $\sum_k m(E_k) = 1 < \infty$. Then almost every $x \in [a, b]$ only belongs to finite $E_k$ (Borel-Cantelli), and there exists $K(x)$, such that
+$$ k \geq K(x), x \not \in E_k \Rightarrow |a_kf_k(x)| \leq \frac{1}{k} \Rightarrow a_kf_k \xrightarrow{a.e.} 0.$$
+
+</div>
+
 
 ---
 
