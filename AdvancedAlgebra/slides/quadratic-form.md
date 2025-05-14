@@ -69,6 +69,14 @@ Speaker: Yixiao Qian
 
 </div>
 
+- **Diagonal Entries**: (1) $a_{ii} > 0$; (2) $2|a_{ij}| < a_{ii} + a_{ij}$ ($i \neq j$); (3) $a_{ij}$ satisfies $|a_{ij}| = \max\limits _{k,l} |a_{kl}|$ must lie on diagonal, and is positive.
+
+<div class=note>
+
+(1) $e_i^TAe_i = a_{ii} > 0$; (2) $(e_i+e_j)^TA(e_i+e_j) = a_{ii}+a_{jj} + 2a_{ij} > 0$; (3) $|a_{ij}| < \max\{a_{ii},a_{ij}\}$.
+
+</div>
+
 ---
 
 ## Determine if a Quadratic Form is Positive Definite
@@ -93,5 +101,56 @@ $t \in (- \frac{4}{5}, 0)$.
 </div>
 
 ---
+
+## Matrix Decomposition of Positive Definite Matrices
+
+- **Identity Decomposition**: $A$ positive definite, then $A = P^TP$. (Congruent to identity).
+- **Squared Decompositition**: $A$ is positive definite, then $A = C^2$ where $C$ is symmetric.
+
+<div class=note>
+
+There exists an orthogonal matrix $P$ such that $A = P\Lambda P^T$. Take $C = P \sqrt{\Lambda} P^T$.
+
+</div>
+
+- **Lemma (QR)**: Any inversible matrix $A = QR$, $Q$ orthogonal $R$ upper-triangular.
+
+<div class=note>
+
+Appy Schmidt orthogonalization to find an standard orthogonal basis and form $Q$.
+
+</div>
+
+- **Upper-Triangular Decomposition**: $A$ positive definite, $A = R^TR$, $R$ is upper-triangular.
+
+<div class=note>
+
+$A = P^TP$ and $P = QR$. Then $A = R^TR$.
+
+</div>
+
+---
+
+## Simultaneous Diagonalization
+
+- **Both Positive Definite**: $A, B$ positive definite, $\exists P$, $P^TAP, P^TBP$ are diagonal.
+
+<div class=note>
+
+(1) $A+B$ positive definite, $Q^T(A+B)Q = I$. Then $Q^TAQ + Q^TBQ = I$.
+(2) There exists an orthogonal matrix $R$ such that $R^TQ^TAQR = \Lambda$, where $\Lambda$ is diagonal.
+(3) $R^TQ^TBQR = I - R^TQ^TAQR = I - \Lambda$ is diagonal. Take $P = QR$.
+
+</div>
+
+- **One Positive Definite**: $A$ positive definite, $B$ real symmetric, $P^TAP$, $P^TBP$ are diagonal.
+
+<div class=note>
+
+(1) Take $\lambda > \max\limits_i |\lambda_i(B)|$, $C = \lambda I + B$ is positive definite. ($Q^TBQ = \Lambda$, $Q^TCQ = \lambda I + \Lambda$)
+(2) There exists $P$ such that $P^TAP$ and $P^TCP$ are diagonal, then $P^TBP$ is also diagonal.
+
+</div>
+
 
 
