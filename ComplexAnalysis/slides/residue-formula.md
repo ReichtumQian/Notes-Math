@@ -233,11 +233,24 @@ $$ \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z = N_z - N_p $$
 
 ---
 
-## Applications of Argument Principle
+## Proof of Fundamental Theorem for Algebra
+
+- Apply argument principle to prove fundamental theorem for algebra.
+
+<div class=note>
+
+(1) Take sufficiently large $R$ such that all the roots of $P(z)$ lie in $|z| < R$. Then
+$$ N = \frac{1}{2 \pi i} \oint_C \frac{P^{\prime}(z)}{P(z)}\mathrm{d} z = \frac{1}{2\pi i}\oint _C \frac{n}{z}\mathrm{d} z + \frac{1}{2\pi i} \oint_C \frac{Q^{\prime}(z)}{1 + Q(z)} \mathrm{d} z := I_1 + I_2. $$
+(2) Here $Q(z) = \frac{a_{n-1}}{z} + \frac{a_{n-2}}{z^2} + \cdots + \frac{a_0}{z^n}$, $|Q(z)| < 1$ (When $R$ is sufficiently large)
+(3) Calculate the integrals, $I_1 = n$ and $Q^{\prime}(z) \sim R^{-2}$ when $R \rightarrow \infty$
+$$ \left| \oint_C \frac{Q^{\prime}(z)}{1 + Q(z)}\mathrm{d} z \right| \leq 2 \pi R \cdot \max \left| \frac{Q^{\prime}(z)}{1 + Q(z)} \right| \rightarrow 0 $$
+(4) When $R$ is sufficiently large, the number of roots is $n$.
+
+</div>
 
 ---
 
-## Applications of Rouche's Theorem
+## Proof of Fundamental Theorem for Algebra
 
 - Apply Rouche's theorem to prove fundamental theorem for algebra.
 
@@ -250,4 +263,31 @@ Then $N_z(P) = N_z(f)$, and $z^n = 0$ has $n$ roots in $C$ ($z=0$ of multiplicit
 </div>
 
 
+---
+
+## Apply Rouche's Theorem to Find Number of Roots
+
+- Find the number of roots of $z^5 - 5z^3 - z + 3 = 0$ in unit disk.
+
+<div class=note>
+
+(1) $f = -5z^3+3$ and $g = z^5 - z$. On $|z| = 1$, $|f| \geq |5|-|3| = 2$, $|g| \leq 2$. Then $|f| \geq |g|$.
+(2) Note when $|g(z_0)| = 2$, $z_0^4 = 1$, $z_0^3 \neq -1$, so $|f(z_0)| > 2 = |g(z_0)|$. Thus $|f| > |g|$.
+(3) By Rouche's theorem, the number of roots of $f+g$ is equal to that of $f$, i.e., $3$.
+
+</div>
+
+- Find the number of roots of $z^8 + e^z + 6z + 1 = 0$ in $1 < |z| < 2$.
+
+<div class=note>
+
+Consider $f_1 = 6z$, $g_1 = z^8+e^z+1$; $f_2 = z^8$, $g_2 = e^z + 6z + 1$. $F = f_1 + g_1 = f_2 + g_2$.
+
+(1) $|z| = 1$: $|f_1| = 6$, $|g_1| \leq 2+e$, then $|f_1| > |g_1|$. By Rouche, $F$ has $1$ roots inside $|z| = 1$
+(2) $|z| = 2$: $|f_2| = 256$, $|g_2| \leq e^2+13$, then $|f_2| > |g_2|$. By Rouche, $F$ has $8$ roots inside $|z| = 2$
+In conclusion, $F$ has $8 - 1 = 7$ roots in $1 < |z| < 2$.
+
+</div>
+
+---
 
