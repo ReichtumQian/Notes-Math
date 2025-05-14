@@ -39,6 +39,57 @@ Speaker: Yixiao Qian
 
 ## Table of Contents
 
+---
+
+# Indefinite Integrals
+
+---
+
+## Commonly Used Indefinite Integrals
+
+
+---
+
+## Indefinite Integrals of Rational Functions
+
+- Calculate ${\displaystyle \int \frac{x}{(x+1)(x^2 + 2)}\mathrm{d} x}$.
+
+<div class=note>
+
+Hint: Assume $\frac{x}{(x+1)(x^2+2)} = \frac{A}{x+1} + \frac{Bx + C}{x^2 + 2}$. Then $A = -\frac{1}{3}$, $B = \frac{1}{3}$, $C = \frac{2}{3}$.
+
+</div>
+
+---
+
+## Indefinite Integrals of $\ln x$ and $e^x$
+
+- Calculate ${\displaystyle \int \ln(1 + \sqrt{x}) \mathrm{d} x}$.
+
+---
+
+## Indefinite Integrals of Trigonometric Functions
+
+- Calculate the following integrals
+
+$$
+(1) \int \tan x\mathrm{d} x, \quad
+(2) \int \sec x \mathrm{d} x, \quad
+(3) \int \sec^3 x \mathrm{d} x.
+$$
+
+<div class=note>
+
+(1) ${\displaystyle \int \tan x \mathrm{d} x = - \int \frac{\mathrm{d} \cos x}{\cos x} = - \ln |\cos x| + C}$.
+(2) ${\displaystyle \int \sec x \mathrm{d} x = \int \frac{\sec x (\sec x + \tan x)}{\sec x + \tan x}\mathrm{d} x = \int \frac{\mathrm{d} (\sec x + \tan x)}{\sec x + \tan x} = \ln |\sec x + \tan x| + C}$.
+(3) ${\displaystyle \int \sec^3 x \mathrm{d} x = \int \sec x \mathrm{d} \tan x = \sec x \tan x - \int \tan^2 x \sec x \mathrm{d} x}$. Since $\tan^2 x = \sec^2 x - 1$,
+$$ \int \sec^3 x \mathrm{d} x = \sec x \tan x - \int \sec^3 x \mathrm{d} x + \int \sec x \mathrm{d} x $$
+
+</div>
+
+---
+
+## Indefinite Integrals of Squared Functions
 
 ---
 
