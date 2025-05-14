@@ -91,7 +91,7 @@ where $\mathbf{v}_k$ is the solution of $(A - \lambda I)\mathbf{v} = 0$, $\mathb
 
 ---
 
-## Examples
+## Examples of Homogeneous Systems
 
 - Solve ODEs
 $$
@@ -110,6 +110,22 @@ $$
 (4) The fundamental solution system is
 $$ e^{-t}(0,1,1)^T, \quad e^{-t}t (1,0,0)^T, \quad e^{2t}(1,1,0)^T. $$
 (5) $\mathbf{x} = (c_2 t e^{-t} + c_3 e^{2t}, c_1e^{-t} + c_2e^{2t}, c_1e^{-t})$. Then $c_1 = c_2 = 1$, $c_3 = 0$.
+
+</div>
+
+---
+
+## Examples of Inhomogeneous Systems
+
+- Solve ODEs
+$$
+\begin{cases}
+  x^{\prime} = x + y\\
+  y^{\prime} = -x + 3y + e^{2t}
+\end{cases}, \quad x(0) = 1, y(0) = -1.
+$$
+
+<div class=note>
 
 </div>
 

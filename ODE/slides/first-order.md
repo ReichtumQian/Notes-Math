@@ -137,7 +137,7 @@ $$ y^{\prime}=P(x)y \Leftrightarrow \frac{\mathrm{d}}{\mathrm{d} x}(\mu(x)y) = 0
 
 </div>
 
-- **Non-Homogeneous Case** $y^{\prime} = P(x) y + Q(x)$: The solution is $y = C(x)e^{\int P(x) \mathrm{d} x}$ (variation of parameters).
+- **Inhomogeneous Case** $y^{\prime} = P(x) y + Q(x)$: The solution is $y = C(x)e^{\int P(x) \mathrm{d} x}$ (variation of parameters).
 
 <div class=note>
 

@@ -17,6 +17,12 @@ img[alt~="center"] {
 }
 </style>
 <style>
+.question {
+  background-color: #f5f5f5;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: left;
+}
 .note {
   background-color: #eef;
   padding: 10px;
@@ -75,10 +81,19 @@ where $h = \min \left( a, \frac{b}{M} \right)$, $M = \max_{(x,y) \in R} |f(x,y)|
 
 ## Practice on Existence and Uniqueness Theorem
 
-- If $f$ is continuous in $\mathbb{R}$. Prove that $y^{\prime} = -f(y)$, $y(x_0) = y_0$ has unique solution at $x = x_0$.
+<div class=question>
 
-<div class=note>
-
+Assume $\frac{\mathrm{d} y}{\mathrm{d} x} = 2x + \sqrt{\max(0, y)}$ with $y(x_0) = y_0$.
+(1) Write the corresponding integration equation;
+(2) Write the Picard sequence;
+(3) Determine if the solution exists and is unique.
 
 </div>
 
+<div class=note>
+
+(1) The integration equation is ${\displaystyle y(x) = y_0 + \int_{x_0}^x \left[2t + \sqrt{\max(0, y(t))} \right]\mathrm{d} t}$.
+(2) The Picard sequence is $y_0(x) = y_0$, $\displaystyle y_{n+1}(x) = y_0 + \int_{x_0}^x \left( 2t + \sqrt{\max (0, y_n(t))} \right)\mathrm{d} t$
+(3) $F(x,y) = 2x + \sqrt{\max(0, y)}$. When $y > 0$, $F = 2x + \sqrt{y}$, when $y \leq 0$, $F = 2x$. Consider $y > 0$, $F^{\prime}_y = \frac{1}{2\sqrt{y}}$, when $y \rightarrow 0$, $F^{\prime}_y \rightarrow \infty$, then it does not satisfy Lipschitz condition.
+
+</div>
