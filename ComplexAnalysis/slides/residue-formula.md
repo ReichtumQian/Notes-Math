@@ -63,6 +63,18 @@ $$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
 
 ---
 
+## Expand Functions to Taylor Series
+
+- Expand $f(z) = \frac{1}{z-2} + e^{-z}$ at the origin, and find the convergence radius.
+
+<div class=note>
+
+(1) $\frac{1}{z-2} = - \frac{1}{2} \cdot \frac{1}{1-\frac{z}{2}} = - \frac{1}{2} \sum\limits_{n = 0}^{\infty} \left( \frac{z}{2} \right)^n$. (2) $e^{-z} = \sum\limits_{n = 0}^{\infty} \frac{(-1)^nz^n}{n!}$ (3) Convergence radius is $2$.
+
+</div>
+
+---
+
 ## Laurent Expansion, Singularities and Zeros
 
 - **Laurent Expansion**: $z_0 \in \mathbb{C}$ (it can be a singularity of $f$), $f$ is holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.

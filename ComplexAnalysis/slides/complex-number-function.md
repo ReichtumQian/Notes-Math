@@ -43,6 +43,7 @@ Speaker: Yixiao Qian
 
 - Complex Numbers
 - Holomorphic Function
+- Multivalued Function
 
 ---
 
@@ -176,7 +177,7 @@ $\frac{1}{\overline{z}}$ explicitly contains a $\overline{z}$. Then it does not 
 
 ---
 
-## C-R Equation doesn's Sufficiently Imply Differentiability
+## C-R Equation doesn't Sufficiently Imply Differentiability
 
 Prove $f(z)$ satisifies Cauchy-Riemann equation, but is not differentiable at the origin.
 
@@ -235,9 +236,32 @@ $u(x,y) \equiv 0$ implies $u_x \equiv u_y \equiv 0$. Then C-R equation implies $
 <div class=note>
 
 (1) By C-R equation: $v_y = -6xy$ and $v_x = 3x^2 - 3y^2$. Then $v = -3xy^2 + x^3 + c$.
-(2) Since $f(i) = 1+i$, then 
+(2) Since $f(i) = 1+i$, then
 
 </div>
 
+---
+
+# Multivalued Function
+
+---
+
+## Concept of Multivalued Function
+
+- **Multi-valued Function**: For each $z$, $f(z)$ has multiple values.
+- **Univalent Function**: $f$ is holomorphic and injective.
+- **Univalence Region**: Region $D$ that a function $f$ is univalent.
+- **Branch**: Restricting $f$ to a domain such that it is single-valued.
+- **Branch Point**: A point where branches of $f$ switches as $f$ continued along a closed loop encircling the point.
+
+
+---
+
+## Multi-Valuedness of $\sqrt[n]{z}$
+
+
+---
+
+## Multi-Valuedness of $\ln z$
 
 
