@@ -94,4 +94,23 @@ $$ \operatorname{dim}V_1 + \operatorname{dim}V_2 = \operatorname{dim}(V_1 + V_2)
 
 ## Direct Sum
 
+---
+
+# Minimal Polynomial
+
+---
+
+## Key Points
+
+- **Hamilton-Cayley Theorem**: $f(\lambda) = |\lambda I - A|$ is an annihilating polynomial of $A$.
+
+
+---
+
+## Applications of Hamilton-Cayley Theorem
+
+- Prove that $A^{-1}$ and $A^{\ast}$ can be represented as polynomials of $A$.
+
+
+
 

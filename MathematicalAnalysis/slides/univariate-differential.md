@@ -98,10 +98,8 @@ $$ \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} = \frac{\mathrm{d} y^{\prime}}{\mathrm{
 
 - **Fermat's Theorem**: $x_0$ is extreme, then $f^{\prime}(x_0) = 0$.
 - **Rolle**: $f(a) = f(b)$, then $\exists \xi \in (a, b)$ such that $f^{\prime}(\xi) = 0$.
-- **Lagrange**: $\exists \xi \in (a, b)$ such that
-$$ f^{\prime}(\xi) = \frac{f(b)-f(a)}{b-a} $$
-- **Cauchy**: $g(a) \neq g(b)$, $\exists \xi \in (a, b)$ such that
-$$ \frac{f^{\prime}(\xi)}{g^{\prime}(\xi)} = \frac{f(b)-f(a)}{g(b)-g(a)} $$
+- **Lagrange**: $\exists \xi \in (a, b)$ such that $\displaystyle f^{\prime}(\xi) = \frac{f(b)-f(a)}{b-a}$.
+- **Cauchy**: $g(a) \neq g(b)$, $\exists \xi \in (a, b)$ such that $\displaystyle \frac{f^{\prime}(\xi)}{g^{\prime}(\xi)} = \frac{f(b)-f(a)}{g(b)-g(a)}$.
 
 ---
 
@@ -112,4 +110,28 @@ $$ \frac{af(b) - bf(a)}{a-b} = f(\xi) - \xi f^{\prime}(\xi). $$
 
 
 ---
+
+# Convex Function
+
+---
+
+## Concept of Convex Function
+
+- **Ratio Dividing Point Formula**: $\forall x \in [x_1, x_2]$, ${\displaystyle x = \frac{x_2 - x}{x_2 - x_1} x_1 + \frac{x - x_1}{x_2 - x_1}x_2}$.
+- **Convex Function**: $f(\lambda x_1 + (1-\lambda)x_2) \leq \lambda f(x_1) + (1 - \lambda) f(x_2)$.
+- **First-Order Derivative Form**: $f(x) \geq f(x_0) + f^{\prime}(x_0)(x-x_0)$ or $f^{\prime}(x)$ is increasing.
+- **Second-Order Derivative Form**: $f^{\prime\prime}(x) \geq 0$.
+- $\forall x_0 \in (0, 1)$, $\exists m \in \mathbb{R}$, $f(x) \geq f(x_0) + m(x-x_0)$ for any $x \in (0, 1)$. Prove $f$ is convex.
+
+<div class=note>
+
+Take $x_1, x_2$ satisfying $x_0 = \lambda x_1 + (1-\lambda)x_2$, we have $f(x_1) \geq f(x_0) + m(x_1 - x_0)$ and $f(x_2) \geq f(x_0) + m(x_2 - x_0)$, then
+$$ \lambda f(x_1) + (1-\lambda)f(x_2) \geq f(x_0) +  \lambda m (x_1 - x_0) + (1 - \lambda) m(x_2 - x_0). $$
+where the sum of the second term and the third term is zero.
+
+</div>
+
+---
+
+## Integrals of Convex Functions
 

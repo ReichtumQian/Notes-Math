@@ -1387,6 +1387,18 @@ However, idempotent transformations are an exception.
   The minimal polynomial and the characteristic polynomial of $A$ have the same roots.
 \end{corollary}
 
+\begin{example}{Applications of Hamilton-Cayley Theorem}{}
+  Prove that $A^{-1}$ and $A^{\ast}$ can be represented as polynomials of $A$.
+\end{example}
+
+\begin{proof}
+  (1) By Hamilton-Cayley theorem, $f(A) = A^n + a_{n-1}A^{n-1} + \cdots + a_1A + a_0I = O$, then
+  \begin{equation}
+    A^n + a_{n-1}A^{n-1} + \cdots + a_1A = -a_0 I \Rightarrow
+    A^{n-1} +a_{n-1}A^{n-2} + \cdots + a_1 = -a_0A^{-1}.
+  \end{equation}
+  Then $A^{-1}$ can be represented as a polynomial of $A$.
+\end{proof}
 
 
 
