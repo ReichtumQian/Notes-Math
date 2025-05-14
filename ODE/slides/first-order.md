@@ -54,11 +54,23 @@ Speaker: Yixiao Qian
 ## Separable Equations
 
 - **Separable Equation**: $y^{\prime} = f(x)\varphi(y)$, then ${\displaystyle \int \frac{\mathrm{d} y}{\varphi(y)} = \int f(x) \mathrm{d} x + c}$.
-- Solve $2yy^{\prime} - y^2 - 2 = 0$ with $y(0) = 1$.
+- Solve $y^{\prime} = \cos^2 (x - y - 2023)$.
 
 <div class=note>
 
-$\frac{2y}{y^2+2}\mathrm{d} y = \mathrm{d} x$, then $\ln(y^2 + 2) = x + c$, where $c = \ln 3$. So the final answer is $y = \sqrt{3e^x - 2}$.
+(1) Take $u = x - y - 2023$, then $y^{\prime} = 1 - u^{\prime}$. ODE is $u^{\prime} = \sin^2 u$, solution $x = - \cot(u) + c$.
+(2) Take back, we get $x = - \cot(x - y - 2023) + c$.
+
+</div>
+
+- Solve $(xy + \sqrt{1-x^2y^2})\mathrm{d} x + x^2 \mathrm{d} y = 0$.
+
+<div class=note>
+
+(1) Take $u(y) = x(y)y$, differentiating $y$, $\frac{\mathrm{d} u}{\mathrm{d} y} = \frac{\mathrm{d} x}{\mathrm{d}y}y + x$. Then $\mathrm{d} y = \frac{\mathrm{d} u - y\mathrm{d} x}{x}$ and $y = \frac{u}{x}$.
+(2) $(u + \sqrt{1-u^2})\mathrm{d} x + x\mathrm{d} u - u\mathrm{d} x = 0$ or $\frac{\mathrm{d} u}{\mathrm{d} x} = - \frac{\sqrt{1-u^2}}{x}$. Solution $\arcsin(u) = - \ln |x| + c$.
+(3) The general solution is $\arcsin (xy) + \ln |x| = c$.
+
 </div>
 
 ---
@@ -115,7 +127,7 @@ General solutions follow $-xy + y^2\ln y = C$.
 
 ## First-Order Linear ODEs
 
-- $y^{\prime} = P(x)y$: The solution is $y = C e^{\int P(x) \mathrm{d} x}$.
+- **Homogeneous Case** $y^{\prime} = P(x)y$: The solution is $y = C e^{\int P(x) \mathrm{d} x}$.
 
 <div class=note>
 
@@ -125,7 +137,7 @@ $$ y^{\prime}=P(x)y \Leftrightarrow \frac{\mathrm{d}}{\mathrm{d} x}(\mu(x)y) = 0
 
 </div>
 
-- $y^{\prime} = P(x) y + Q(x)$: The solution is $y = C(x)e^{\int P(x) \mathrm{d} x}$ (variation of parameters).
+- **Non-Homogeneous Case** $y^{\prime} = P(x) y + Q(x)$: The solution is $y = C(x)e^{\int P(x) \mathrm{d} x}$ (variation of parameters).
 
 <div class=note>
 
@@ -162,7 +174,7 @@ $$ c(y) = \frac{1}{3}y^3 + C \quad \Rightarrow \quad x = \frac{1}{3}y^4 + cy. $$
 
 ## Bernoulli's Equation
 
-- $y^{\prime} = P(x)y + Q(x)y^n$: Multiply both sides by $y^{-n}$, take $z = y^{1-n}$.
+- **Bernoulli's Equation** $y^{\prime} = P(x)y + Q(x)y^n$: Multiply both sides by $y^{-n}$, take $z = y^{1-n}$.
 
 <div class=note>
 
