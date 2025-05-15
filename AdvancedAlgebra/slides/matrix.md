@@ -34,3 +34,21 @@ img[alt~="center"] {
 # Matrix
 
 Speaker: Yixiao Qian
+
+---
+
+## Table of Contents
+
+---
+
+# Matrix Rank
+
+---
+
+
+
+
+
+
+
+

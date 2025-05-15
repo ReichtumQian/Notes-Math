@@ -51,6 +51,39 @@ Speaker: Yixiao Qian
 
 ---
 
+## Concept of Quadratic Form
+
+- **Quadratic Form**: $f(x_1,x_2,\cdots,x_n) = \sum_{i=1}^n a_{ii}x_i^2 + \sum_{1 \leq i < j \leq n}2a_{ij}x_ix_j$.
+- **Matrix Form**: $A = (a_{ij})$, $f = x^TAx$.
+- **Canonical Form**: $P^TAP = D$ where $D$ is diagonal, $x^TDx$ is called canonical form of $f$.
+- **Completing-the-Square Method**: (1) If $x_1^2$ exists, group all terms containing $x_1$ togather; (2) If $x_1^2$ does not exist, but $x_1x_2$ exists, then let $x_1=y_1+y_2$, $x_2 = y_1-y_2$.
+- **Elementary Transformation Method**: Perform row and corresponding column transformation on
+$$
+\begin{pmatrix}
+  A \\ I
+\end{pmatrix} \rightarrow
+\begin{pmatrix}
+  P^TAP \\ P
+\end{pmatrix}
+$$
+- **Orthogonal Transformation Method**: (1) Find $\lambda_1,\cdots,\lambda_n$ (2) Find eigenvectors, for eigenvectors corresponding to the same $\lambda_i$, orthogonalization is needed.
+
+---
+
+## Practice on Canonical Form of Quadratic Forms
+
+- $f = 5x_1^2 + 5x_2^2 + 3x_3^2 - 2x_1x_2 + 6x_1x_3 - 6x_2x_3$. Find an orthogonal transformation $x = Ty$ and corresponding canonical form.
+
+<div class=note>
+
+(1) Eigenvalues: $\lambda_1 = 0$, $\lambda_2 = 4$, $\lambda_3 = 9$.
+(2) Eigenvectors: $v_1 = (-1, 1, 2)^T$, $v_2 = (1,1,0)^T$, $v_3 = (1,-1,1)^T$
+(3) Normalized Eigenvectors: $v_1 = \frac{1}{\sqrt{6}}(-1,1,2)^T$, $v_2 = \frac{1}{\sqrt{2}}(1,1,0)^T$, $v_3 = \frac{1}{\sqrt{3}}(1,-1,1)$.
+
+</div>
+
+---
+
 # Positive Definite Quadratic Forms
 
 ---
