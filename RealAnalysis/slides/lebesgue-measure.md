@@ -184,6 +184,30 @@ By two previous statements.
 
 ---
 
+## Operations on Measurable Sets
+
+- If $E_1, E_2$ are measurable, prove that $m(E_1) + m(E_2) = m(E_1 \cup E_2) + m(E_1 \cap E_2)$.
+
+<div class=note>
+
+(1) $E_2$ is measurable, $m(E_1) = m(E_1 \cap E_2^c) + m(E_1 \cap E_2) = m(E_1 - E_2) + m(E_1 \cap E_2)$.
+(2) $E_1$ is measurable, $m(E_2) = m(E_2 - E_1) + m(E_1 \cap E_2)$.
+(3) Similarly, $m(E_1 \cup E_2) = m(E_1-E_2) + m(E_2-E_1) + m(E_1 \cap E_2)$.
+
+</div>
+
+- If $\{E_k\}_{1\leq k \leq n}$ ($E_k \subset [0,1]$) are measurable , $\sum_{k=1}^n m(E_k) > n-1$. Prove $m(\cap_{k=1}^n E_k) > 0$.
+
+<div class=note>
+
+(1) $I = [0, 1]$, then $m(I - \cap_{k=1}^n E_k) = m(\cup_{k=1}^n (I - E_k)) \leq \sum\limits_{k = 1}^n m(I-E_k) = n - \sum\limits_{k = 1}^n m(E_k)$
+(2) Since $m(I - \cap_{k=1}^n E_k) = 1 - m(\cap_{k=1}^n E_k)$. Then $m(\cap_{k=1}^nE_k) > 1 - n + (n-1) = 0$.
+
+</div>
+
+
+---
+
 # A Non-Measurable Set Example
 
 ---

@@ -134,7 +134,13 @@ Fix $n$, let $E_{\sigma} = \{f_n \geq \sigma\}$, ${\displaystyle \int_E f_n\math
 
 ## What Happens When the Integral is Zero
 
-<br>
+- $f \in L(\mathbb{R})$, for any open set $G \subset \mathbb{R}$, ${\displaystyle \int_G f\mathrm{d} x = 0}$, then $f(x) = 0$ a.e.
+
+<div class=note>
+
+Since $\displaystyle \frac{1}{h}\int_x^{x+h} f(t)\mathrm{d} t \rightarrow f(x)$ a.e. (Lebesgue differentiation theorem). Then $f = 0$ a.e.
+
+</div>
 
 - $f \in L(E)$, for any measurable $\varphi(x)$, ${\displaystyle \int_E f(x)\varphi(x) \mathrm{d} x = 0}$, then $f(x) = 0$ a.e.
 
