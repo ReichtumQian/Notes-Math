@@ -44,6 +44,7 @@ Speaker: Yixiao Qian
 - Separable Equations and Generalizations
 - Exact Equations
 - First-Order Linear ODEs
+- First-Order Implicit ODE and Singular Solution
 
 ---
 
@@ -191,4 +192,33 @@ $$ (x^2z)^{\prime} = x^2 \Rightarrow z = \frac{1}{3}x + \frac{c}{x^2}. $$
 
 </div>
 
+---
+
+# First-Order Implicit ODE and Singular Solution
+
+---
+
+## Solving First-Order Implicit ODE
+
+- **Parametric Method**: $F(x,y,y^{\prime}) = 0$, consider $x=x(s,t), y=y(s,t), y^{\prime}=p(s,t)$.
+$$ \mathrm{d}y(s,t) = p(s,t) \mathrm{d} x(s,t). $$
+
+
+---
+
+## Concept of Singular Solution
+
+- **Singular Solution**: $y = \varphi(x)$ is a solution, but is not included in the general solution.
+- **P-Discriminant Method**: If $\varphi(x)$ is a singular solution of $F(x,y,y^{\prime}) = 0$. Denote $p = \varphi^{\prime}(x)$
+$$ F(x,y,p) = 0, \quad F_p (x, y, p) = 0. $$
+- **Example**: $x(y^{\prime})^2 - 2yy^{\prime} + 9x = 0$, the singular solution is $y = \pm 3x$.
+
+<div class=note>
+
+(1) $F = xp^2 - 2yp + 9x$, $F_p = 2xp - 2y$.
+(2) $y = 3x$, $p = 3$. $F = 9x-18x+9x=0$, $F_p = 6x-6x=0$. $y=-3x$, $p = -3$ is similar.
+
+</div>
+
+- **Example**: $y = (y^{\prime})^2 - xy^{\prime} + \frac{1}{2}x^2$, the singular solution is $y = \frac{x^2}{4}$.
 
