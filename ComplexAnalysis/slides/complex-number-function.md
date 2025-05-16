@@ -114,13 +114,21 @@ Take $h \in \mathbb{R}$, $f^{\prime}(z_0) = u_x(z_0) + v_x(z_0)i$. Take $h = ik$
 
 </div>
 
-- **Zero Derivative**: If $f(z)$ is holomorphic, $f^{\prime}(z) \equiv 0$, then $f(z)$ is constant.
+- **Jacobian Determinant**: $J_f(z) =
+\begin{bmatrix}
+  u_x & u_y\\
+  v_x & v_y
+\end{bmatrix}
+$.
+- **Properties of Jacobian**: If $f$ holomorphic, $|J_f| = |f^{\prime}(z)|^2$, then $|J_f| = 0$ iff $f^{\prime}(z) = 0$.
 
 <div class=note>
 
-$f^{\prime}(z) \equiv 0$ implies $u_x \equiv u_y \equiv v_x \equiv v_y \equiv 0$. Then $f$ is constant.
+(1) $|J_f| = u_xv_y-u_yv_x$. By C-R equation, $v_y=u_x$, $u_y=-v_x$, then $|J_f| = u_x^2 + v_x^2$.
+(2) $f^{\prime}(z) = u_x + v_x i$, so $|f^{\prime}(z)|^2 = |J_f|^2$.
 
 </div>
+
 
 ---
 
@@ -201,13 +209,19 @@ does not exist.
 
 ## Cases of Constant Function
 
+- If $f(z)$ is holomorphic, $f^{\prime}(z) \equiv 0$, then $f(z)$ is constant.
+
+<div class=note>
+
+$f^{\prime}(z) \equiv 0$ implies $u_x \equiv u_y \equiv v_x \equiv v_y \equiv 0$. Then $f$ is constant.
+
+</div>
+
 - If $f(z)$ is holomorphic, $\overline{f(z)}$ is holomorphic, then $f(z)$ is constant.
 
 <div class=note>
 
 C-R equation on $f$ implies $u_x=v_y, u_y=-v_x$. C-R equation on $\overline{f}$ implies $u_x=-v_y, u_y = v_x$.
-
-$$ u_x \equiv u_y \equiv v_x \equiv v_y \equiv 0. $$
 
 </div>
 
@@ -241,6 +255,25 @@ $u(x,y) \equiv 0$ implies $u_x \equiv u_y \equiv 0$. Then C-R equation implies $
 </div>
 
 ---
+
+## Inverse Function Theorem for Holomorphic Functions
+
+- **Inverse Function Theorem**: $f: U \rightarrow V$ holomorphic, $f^{\prime} \neq 0$ in $U$. There exists $g:V \rightarrow U$ such that
+$$ f \circ g(v) = v, \quad g \circ f(u) = u, \quad \forall u \in U, \forall v \in V. $$
+
+<div class=note>
+
+Consider $f \circ g(v) = v$, then take derivative of $\overline{v}$ on both sides
+$$ f_u g_{\overline{v}} + f_{\overline{u}}g_{\overline{v}} = v_{\overline{v}} = 0. $$
+Since $f$ is holomorphic, $f_u \neq 0$, $f_{\overline{u}} = 0$. Then $g_{\overline{v}} = 0$. Similarly, take derivative of $v$ on both sides
+$$ f_u g_v + f_{\overline{u}}g_v = v_v = 1. $$
+We get $g_v = 1/f_u$, since $f_u \neq 0$, then $g_v$ exists. Then $g$ is also holomorphic.
+
+</div>
+
+
+---
+
 
 # Multivalued Function
 

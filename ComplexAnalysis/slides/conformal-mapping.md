@@ -76,7 +76,7 @@ $$ \operatorname{arg}[w^{\prime}_1(t_0)] - \operatorname{arg}[w^{\prime}_2(t_0)]
 - **Local Scale Factor**: If $f$ is differentiable at $z_0$, then the *scale factor at $z_0$* is
 $$ \lim \limits _{z \rightarrow z_0} \frac{|f(z) - f(z_0)|}{|z - z_0|} = |f^{\prime}(z_0)|. $$
 - **Conformal Mapping**: If $f$ is angle-preserving and has unchanged scale factor (for each direction) at $z_0$, then it is *conformal at $z_0$*
-- **Condition for Conformal Mapping**: If $f$ is holomorphic, then $f$ is conformal at $z_0$ iff $f^{\prime}(z_0) \neq 0$.
+- **Condition for Conformal Mapping**: $f$ is holomorphic, then $f$ is conformal at $z_0$ iff $f^{\prime}(z_0) = |J_f(z_0)| \neq 0$.
 
 <div class=note>
 
