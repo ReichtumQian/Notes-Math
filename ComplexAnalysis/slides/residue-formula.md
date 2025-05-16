@@ -87,7 +87,8 @@ $$ \sum_{n=0}^{\infty} a_n(z-z_0)^n \text{ is analytic part} \quad
 </div>
 
 - **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) = a_0$.
-- **Pole Singularity of Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) \rightarrow \infty$ and $(z-z_0)^mf(z_0) = a_{-m}$.
+- **Pole Singularity Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, $f(z_0) \rightarrow \infty$, $(z-z_0)^mf(z_0) = a_{-m}$.
+- **Isolated Singularity**: $z_0$ is a pole, $f$ is holomorphic in a punctured neighborhood.
 - **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
 - **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
 
@@ -220,6 +221,21 @@ where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
 ---
 
 # Argument Principle and Applications
+
+---
+
+## Winding Number
+
+- **Winding Number**: Given $\gamma: [a, b] \rightarrow \mathbb{C}$, and $c \in \mathbb{C}$ not on $\gamma$. Define $\theta(t) = \operatorname{arg}(\gamma(t) - c)$ and $\Delta (\gamma, c) = \theta(b) - \theta(a)$. The *winding number* is $w(\gamma, c) = \frac{\Delta(\gamma, c)}{2 \pi} \in \mathbb{Z}$.
+
+<div class=note>
+
+If $\gamma$ is closed, then the winding number is an integer.
+
+</div>
+
+- **Integration Representation**: $\gamma: [a, b] \rightarrow \mathbb{C}$ closed, $c \not \in \gamma$, then
+$$ w(\gamma, c) = \frac{1}{2\pi i} \int_{\gamma} \frac{\mathrm{d} \zeta}{\zeta - c}. $$
 
 ---
 
