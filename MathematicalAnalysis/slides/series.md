@@ -97,6 +97,21 @@ Motivation: Continuous functions on closed sets are uniformly continuous.
 
 </div>
 
+- **Weiestrass Test**: If $|f(x) - f_n(x)| \leq a_n$ for all $x$, $\lim \limits _{n \rightarrow \infty} a_n = 0$ is positive-term, then $f_n \rightrightarrows f$
+- **Closure under Operations**: $kf_n$, $f_n+g_n$, $f_ng_n$ (if bounded), $1/f_n$ (if no roots).
+- **Uniform Boundedness**: $\exists M > 0$, $\forall n > 0$, $|f_n(x)| \leq M$ for all $x$.
+- **Boundedness of Limit Function**: If $f_n \rightarrow f$ pointwisely. Then $f_n \rightrightarrows f$, $f_n$ bounded > $f_n$ uniformly bounded > $f$ bounded.
+
+---
+
+## Practice on Concept of Uniform Convergence
+
+- If $f$ has continuous derivative on $(0, 1)$, $f_n(x) = n[f(x+\frac{1}{n}) - f(x)]$. Prove that $f_n(x)$ is uniformly convergent on any closed subset of $(0, 1)$.
+
+<div class=note>
+
+</div>
+
 ---
 
 ## Properties of Limit Function: Continuity

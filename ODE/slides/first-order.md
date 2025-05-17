@@ -201,14 +201,31 @@ $$ (x^2z)^{\prime} = x^2 \Rightarrow z = \frac{1}{3}x + \frac{c}{x^2}. $$
 ## Solving First-Order Implicit ODE
 
 - **Parametric Method**: $F(x,y,y^{\prime}) = 0$, consider $x=x(s,t), y=y(s,t), y^{\prime}=p(s,t)$.
-$$ \mathrm{d}y(s,t) = p(s,t) \mathrm{d} x(s,t). $$
+$$ \mathrm{d}y(s,t) = p(s,t) \mathrm{d} x(s,t) \Rightarrow s = s(t) \Rightarrow x=x(s(t),t), y=y(s(t),t).$$
+- $y = f(x, y^{\prime})$ Case: $x(y^{\prime})^2 - 2 yy^{\prime} + 9x = 0$
 
+<div class=note>
+
+(1) $y = f(x, p) = \frac{xp}{2} + \frac{9x}{2p}$. $\mathrm{d} y = p\mathrm{d} x$ implies $f_x\mathrm{d} x + f_p\mathrm{d} p = p\mathrm{d} x$, then
+$$ \left( \frac{1}{2} - \frac{9}{2p^2} \right) \left( p - x \frac{\mathrm{d} p}{\mathrm{d} x} \right) = 0 \Rightarrow p = \pm 3, p = Cx $$
+(2) The solution is $y = \pm 3x$ or $y = \frac{9}{2C} + \frac{C}{2}x^2$. (here $y = \pm 3x$ are singular solution, they are tangent with other solutions).
+
+</div>
+
+- $x = f(y,y^{\prime})$ Case: $(y^{\prime})^3 - 4xyy^{\prime} + 8y^2 = 0$.
+
+<div class=note>
+
+$x = \frac{p^2}{4y} + \frac{2y}{p}$. $\mathrm{d} y = p\mathrm{d} x$ implies $(p^3 - 4y^2) \left( \frac{\mathrm{d} p}{p} - \frac{\mathrm{d} y}{2y} \right) = 0$. Then $p = (2y)^{\frac{2}{3}}$ or $p = C \sqrt{y}$.
+
+</div>
 
 ---
 
 ## Concept of Singular Solution
 
-- **Singular Solution**: $y = \varphi(x)$ is a solution, but is not included in the general solution.
+- **Singular Solution**: $y = \varphi(x)$ is a solution, but is not included in general solution.
+- **Properties**: $\Gamma = \{(x,y):y = \varphi(x)\}$, for any point $M \in \Gamma$, there exists another solution that is tangent with $\varphi(x)$ at $M$ (called envelope).
 - **P-Discriminant Method**: If $\varphi(x)$ is a singular solution of $F(x,y,y^{\prime}) = 0$. Denote $p = \varphi^{\prime}(x)$
 $$ F(x,y,p) = 0, \quad F_p (x, y, p) = 0. $$
 - **Example**: $x(y^{\prime})^2 - 2yy^{\prime} + 9x = 0$, the singular solution is $y = \pm 3x$.
@@ -219,6 +236,4 @@ $$ F(x,y,p) = 0, \quad F_p (x, y, p) = 0. $$
 (2) $y = 3x$, $p = 3$. $F = 9x-18x+9x=0$, $F_p = 6x-6x=0$. $y=-3x$, $p = -3$ is similar.
 
 </div>
-
-- **Example**: $y = (y^{\prime})^2 - xy^{\prime} + \frac{1}{2}x^2$, the singular solution is $y = \frac{x^2}{4}$.
 
