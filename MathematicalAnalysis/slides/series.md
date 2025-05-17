@@ -87,7 +87,49 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 
 ## Uniform Convergence of Function Sequence
 
-- **Uniform Convergence**: 
+- **Uniform Convergence**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall n > N$, $|f_n(x) - f(x)| < \epsilon$ holds for all $x \in D$.
+- **Cauchy Criterion**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall m,m+p > N$, $|f_{m+p}(x)-f_{m}(x)| < \epsilon$ holds for $x \in D$
+- **Compact Convergence**: $f_n \rightrightarrows f$ on any closed/compact subset of $D$.
+
+<div class=note>
+
+Motivation: Continuous functions on closed sets are uniformly continuous.
+
+</div>
+
+---
+
+## Properties of Limit Function: Continuity
+
+- **Local Continuity**: $f_n \rightrightarrows f$ on $(a, b)$, $\lim \limits _{x \rightarrow x_0}f_n(x) = a_n$, then $\lim \limits _{x \rightarrow x_0}f(x) = \lim \limits _{n \rightarrow \infty} a_n$. 
+
+<div class=note>
+
+Note: The result can also be written as $\lim \limits _{n \rightarrow \infty} \lim \limits _{x \rightarrow x_0} f_n(x) = \lim \limits _{x \rightarrow x_0} \lim \limits _{n \rightarrow \infty} f_n(x)$.
+(1) Existence of $\lim \limits _{n \rightarrow \infty} a_n$: By $f_n \rightrightarrows f$, then $\forall \epsilon > 0$, $\exists N > 0$, $\forall m,n > N$, $|f_n(x) - f_m(x)| < \epsilon$. Take $x \rightarrow x_0$, then $|a_n - a_m| < \epsilon$, which means $A = \lim \limits _{n \rightarrow \infty} a_n$ exists (Cauchy's criterion).
+(2) $\lim \limits _{x \rightarrow x_0}f(x) = A$: $|f(x) - A| \leq |f(x) - f_n(x)| + |f_n(x) - a_n| + |a_n - A| < 3\epsilon$.
+
+</div>
+
+- **Global Continuity**: $f_n$ are continuous on $(a, b)$, $f_n \rightrightarrows f$ on any closed subset, then $f$ is continuous. ($f_n \rightrightarrows f$ on the entire $(a, b)$ is stronger)
+
+</div>
+
+- **Uniform Continuity**: $f_n$ uniformly continuous, $f_n \rightrightarrows f$, then $f$ is uniformly continuous.
+
+<div class=note>
+
+Consider $|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |f_n(x_2) - f(x_2)| < 3 \epsilon$.
+
+</div>
+
+---
+
+## Properties of Limit Function: Integrability
+
+---
+
+## Properties of Limit Function: Differentiability
 
 
 ---
