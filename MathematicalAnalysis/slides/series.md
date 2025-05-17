@@ -96,5 +96,58 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 
 ---
 
+## Convergence Behavior of Power Series
+
+- **Abel's Theorem**: (1) $\sum a_nx_0^n$ converges, for $|x| < |x_0|$, $\sum a_nx^n$ converges absolutely. (2) $\sum a_nx_0^n$ diverges, for $|x| > |x_0|$, $\sum a_nx^n$ diverges.
+- **Radius of Convergence**: $|x| < R$, $\sum a_nx^n$ converges absolutely; $|x| > R$, $\sum a_nx^n$ diverges.
+- **Cauchy-Hadamard Test**: $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \sqrt[n]{|a_n|}$.
+- **Ratio Test**: $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}$.
+- Find the Convergence Region: (1) $\sin x$ and $\cos x$, (2) $e^x$, (3) $\ln (1+x)$, (4) $\frac{1}{1-x}$.
+
+<div class=note>
+
+(1) $\sin x = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{(2n+1)!}$, $\frac{1}{R} = \sqrt[n]{\frac{1}{(2n+1)!}} \rightarrow 0$, then $R = \infty$. So is $\cos x$.
+(2) $e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!}$, $\frac{1}{R} = \sqrt[n]{\frac{1}{n!}} \rightarrow 0$. Then $R = \infty$.
+(3) $\ln x = \sum_{n=1}^{\infty} (-1)^{n-1} \frac{x^n}{n}$, $\frac{1}{R} = \sqrt[n]{\frac{1}{n}} \rightarrow 1$. Then $R = 1$. The convergence region is $(-1,1]$.
+(4) $\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n$, $\frac{1}{R} = \sqrt[n]{1} = 1$. The convergence region is $(-1,1)$.
+
+</div>
+
+---
+
+## Sum Function of Power Series
+
+
+
+
+---
+
+## Power Series Expansion
+
+- **Expansion of Rational Functions**: $f(x) = \frac{x^2}{x^2 - 3x + 1}$
+
+<div class=note>
+
+(1) Decompose: $\frac{x^2}{x^2-3x+1} = 1 + \frac{4}{x-2} - \frac{1}{x-1}$ (Method of Undetermined Coefficients)
+(2) $\frac{1}{x-2} = -\frac{1}{2} \cdot \frac{1}{1 - \frac{x}{2}} = - \frac{1}{2} \sum\limits_{n=0}^{\infty} \left( \frac{x}{2} \right)^n$ and $\frac{1}{x-1} = - \frac{1}{1-x} = - \sum\limits_{n = 0}^{\infty} x^n$.
+
+</div>
+
+- **Take Integration**: $f(x) = \frac{1}{(1+x)^2}$.
+
+<div class=note>
+
+Consider $\displaystyle F(x) = \int_0^x \frac{1}{(1+t)^2}\mathrm{d} t$. Then $F(x) = -\frac{1}{1+x} + 1 = 1 - \sum_{n=0}^{\infty} (-x)^n$. $f(x) = F^{\prime}(x)$.
+
+</div>
+
+- **Take Derivative**: (1) $f(x) = \arctan x$, (2) $f(x) = \arctan \frac{1-kx}{1+kx}$.
+
+<div class=note>
+
+(1) $f^{\prime}(x) = \frac{1}{1+x^2} = \sum_{n=0}^{\infty}(-1)^nx^{2n}$. Then $f = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}$.
+
+</div>
+
 
 
