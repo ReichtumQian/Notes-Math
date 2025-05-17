@@ -92,7 +92,7 @@ $$ y = c_1 \cos(2x) + c_2 \sin(2x). $$
 
 </div>
 
-- Find solution of $y^{\prime\prime} + 4y = \cos x - \sin 2x$.
+- Solve $y^{\prime\prime} + 4y = \cos x - \sin 2x$.
 
 <div class=note>
 
@@ -103,11 +103,13 @@ The general solution of homogenous equation is $y = c_1 \cos 2x + c_2 \sin 2x$.
 
 </div>
 
+- Solve $y^{(3)} + y^{\prime\prime} = 3e^t + 4t^2$.
+
 ---
 
 ## Applications of Undetermined Coefficients
 
-- Find solution of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$.
+- Solve $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$.
 
 <div class=note>
 
@@ -124,6 +126,23 @@ We look for particular solutions of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x
 ---
 
 # Reduction of Order
+
+---
+
+## No Explicit $y$ Case
+
+<br>
+
+- **No Explicit $y$**: $y^{\prime\prime} = f(x,y^{\prime})$, consider $p = y^{\prime}$, then $p^{\prime} = f(x,p)$.
+- Solve $y^{\prime 2} - y y^{\prime\prime} = 0$.
+
+<div class=note>
+
+(1) $p = y^{\prime}$, then $p^2 - ypp_y = 0$, $p(p-yp_y) = 0$. Then $p = 0$ or $p - y p_y = 0$.
+(2) When $p = 0$, then $y \equiv 0$.
+(3) When $p = yp_y$, then $p = C_1y$ and $y = C_2 e^{C_1x}$.
+
+</div>
 
 ---
 
@@ -144,4 +163,16 @@ $$ z^{\prime} = - \frac{2}{y}z + 1 \Rightarrow (y^2z)^{\prime} = y^2 \Rightarrow
 (4) Solve $y^{\prime} = \frac{3}{y}$, $y^2 = 6x + 1$ so $y = \sqrt{6x + 1}$.
 
 </div>
+
+---
+
+# Some Special Higher-Order ODEs (Ignored)
+
+---
+
+## Euler Equation
+
+- **Euler Equation**: $a_nx^n y^{(n)} + \cdots + a_1x y^{\prime} + a_0y = f(x)$.
+
+
 

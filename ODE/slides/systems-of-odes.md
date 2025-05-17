@@ -41,6 +41,73 @@ Speaker: Yixiao Qian
 
 ---
 
+# Solution Structure of Systems of ODEs
+
+---
+
+## Linear Independence of Solutions
+
+- **Linear Independence**: If $c_1\mathbf{x}_1(t) + \cdots + c_n\mathbf{x}_n(t) = 0$ for all $t$, then $c_1=c_2=\cdots=c_n=0$.
+- **Wronsky Determinant**: $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ are solutions of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$, then they linearly independent iff
+$$
+W(t) =
+\begin{vmatrix}
+  x_{11}(t) & x_{12}(t) & \cdots & x_{1n}(t)\\
+  x_{21}(t) & x_{22}(t) & \cdots & x_{2n}(t)\\
+  \vdots & \vdots & \ddots & \vdots \\
+  x_{n1}(t) & x_{n2}(t) & \cdots & x_{nn}(t)
+\end{vmatrix} \neq 0 , \quad \forall t.
+$$
+- **Liouville Formula**: $W(t) = W(t_0) e^{\int_{t_0}^t \operatorname{tr} A(s) \mathrm{d} s}$. Then $W(t) \neq 0$ ($\forall t$) iff $W(t_0) \neq 0$.
+
+<div class=note>
+
+Note that $\mathbf{x}_1 = (1,0,0)^T$, $\mathbf{x}_2=(t,0,0)^T$, $\mathbf{x}_3=(t^2,0,0)^T$ are linearly independent, but $W(t) \equiv 0$. Because they are not solutions of $\mathbf{x}^{\prime}=A\mathbf{x}$.
+
+</div>
+
+---
+
+## Solution Structure of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$
+
+<br>
+
+- **Fundamental Solution System**: Arbitrary $n$ linear independent solutions $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$.
+- **Fundamental Solution Matrix**: $\Phi(t) := [\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)]$.
+
+<div class=note>
+
+Note that fundamental solution matrix is not unique. Given two $\Phi(t)$ and $\Psi(t)$, then there exists an invertible matrix $C$ such that $\Phi = \Psi C$.
+
+</div>
+
+- **Linear Independence**: $\mathbf{x}_1(t),\cdots,\mathbf{x}_n(t)$ are linearly independent iff $|\Phi(t)| \neq 0$ for all $t$.
+- **General Solution**: $\mathbf{x}(t) = \Phi(t)C = c_1\mathbf{x}_1(t) + \cdots + c_n\mathbf{x}_n(t)$.
+
+---
+
+## Solution Structure of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t) + \mathbf{b}(t)$
+
+- **Solution Structure**: $\mathbf{x}^{\ast} + c_1\mathbf{x}_1(t) + \cdots + c_n\mathbf{x}_n(t)$, where $\mathbf{x}^{\ast}$ is a particular solution, $\mathbf{x}_i(t)$ are fundamental solution system of $\mathbf{x}^{\prime}(t) = A(t)\mathbf{x}(t)$.
+- **Variation of Parameters**: $\mathbf{x}(t) = \Phi(t)C(t)$, where $C(t)$ follows $C^{\prime}(t) = \Phi^{-1}(t)\mathbf{b}(t)$ and $C(t_0) = \Phi^{-1}(t_0)\mathbf{x}(t_0)$.
+- Solve the following ODEs
+$$
+\mathbf{x}^{\prime} =
+\begin{bmatrix}
+  1 & 1\\
+  0 & 1
+\end{bmatrix}
+\mathbf{x} +
+\begin{bmatrix}
+  e^{-t}\\
+  0
+\end{bmatrix}, \quad \mathbf{x}(t_0) =
+\begin{bmatrix}
+  -1\\1
+\end{bmatrix}
+$$
+
+
 ---
 
 # Solving Constant-Coefficients Systems of ODEs
