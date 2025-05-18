@@ -69,6 +69,7 @@ $$ y^{\prime} = f(x,y), \quad y(x_0) = y_0. $$
 - **Equicontinuous**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x_1, x_2$, $|x_1 - x_2| < \delta$, $|f_n(x_1) - f_n(x_2)| < \epsilon$ for all $n > 0$.
 - **Uniform Boundedness**: $\exists M > 0$, $\forall x \in I$, $|f_n(x)| \leq M$ for all $n > 0$.
 - **Ascoli-Arzela Theorem**: $\{f_n\}$ are equicontinuous and uniformly bounded, then there exist $f_{n_j} \rightrightarrows f$, $f$ is continuous.
+- **Properties of Euler Polygonal Curve**: If $f$ is bounded, then Euler polygonal curves are equicontinuous and uniformly bounded.
 
 <div class=note>
 
@@ -96,7 +97,7 @@ Why $\frac{b}{M}$? Assume $y^{\prime} \equiv M$, then the solution reaches the u
 
 ---
 
-## Picard Sequences
+## Existence: Picard Sequences
 
 - **Integral Equation**: $y(x)$ follows $\displaystyle \frac{\mathrm{d} y}{\mathrm{d} x} = f(x,y)$ with $y(x_0) = y_0$ iff
 $$ y(x) = y_0 + \int_{x_0}^x f(t,y(t))\mathrm{d} t $$
@@ -106,7 +107,18 @@ $$ |f(x,y_1) - f(x,y_2)| \leq L |y_1 - y_2|, \quad \forall (x,y_1),(x,y_2) \in R
 
 ---
 
-## Properties of Picard Sequences
+## Uniqueness: Gronwall Inequality
+
+- **Gronwall Inequality**: $\alpha(x) \geq 0$, $u(x) \geq 0$ are continuous on $[x_0, x_1]$, $C \geq 0$, $K \geq 0$. If $\displaystyle u(x) \leq C + \int_{x_0}^x [\alpha(s)u(s) + K]\mathrm{d} s$, then
+$$ u(x) \leq [C + K(x-x_0)]e^{\int_{x_0}^x \alpha(s)\mathrm{d} s}. $$
+
+<div class=note>
+
+In condition, $u(x)$ are on both sides, but the result represents $u(x)$ by known conditions.
+
+</div>
+
+- **Osgood Condition**: $f$ is continuous in $R$, $|f(x,y_1) - f(x,y_2)| \leq F(|y_1 - y_2|)$, where $F(r) > 0$ when $r > 0$ and continuous, ${\displaystyle \int_0^{r_1}\frac{\mathrm{d} r}{F(r)}} = \infty$ for some $r_1$. Then IVP has unique solution.
 
 ---
 
@@ -119,6 +131,12 @@ If $f(x,y)$ is Lipschitz continuous with respect to $y$ in $R = [x_0-a,x_0+a] \t
 $$ \frac{\mathrm{d} y}{\mathrm{d} x} = f(x,y), \quad x \in (x_0-h, x_0+h), \quad \varphi(x_0) = y_0, $$
 
 where $h = \min \left( a, \frac{b}{M} \right)$, $M = \max_{(x,y) \in R} |f(x,y)|$.
+
+</div>
+
+<div class=note>
+
+Muller counterexample is non-Lipschitz continuous but has unique solution.
 
 </div>
 
@@ -142,3 +160,27 @@ Assume $\frac{\mathrm{d} y}{\mathrm{d} x} = 2x + \sqrt{\max(0, y)}$ with $y(x_0)
 (3) $F(x,y) = 2x + \sqrt{\max(0, y)}$. When $y > 0$, $F = 2x + \sqrt{y}$, when $y \leq 0$, $F = 2x$. Consider $y > 0$, $F^{\prime}_y = \frac{1}{2\sqrt{y}}$, when $y \rightarrow 0$, $F^{\prime}_y \rightarrow \infty$, then it does not satisfy Lipschitz condition.
 
 </div>
+
+---
+
+# Extension of Solution
+
+---
+
+## Extension of Solution
+
+- **Forward/Backward Solution**: Forward solution is the solution to the right, backward to the left.
+- **Maximal Interval**: $(x_0, +\infty)$ if $y \not \rightarrow \infty$. $(x_0, x_1)$ if $\lim \limits _{x \rightarrow x_1}y(x) = \infty$.
+- **Extension of Solution**: $G \subset \mathbb{R}^2$ is open, $f$ is continuous in $G$. Then the solution of $y^{\prime} = f(x,y)$ can extend from $(x_0, y_0) \in G$ to $\partial G$.
+- **Unique Extension of Solution**: $f$ is continous on $R$, and $|f(x,y_1) - f(x,y_2)| \leq L|y_1 - y_2|$ holds for all $x \in [a, b]$ (Uniformly Lip Continuous). Then the maximal interval is $(a, b)$.
+- Find the maximal interval of $y^{\prime} = \sin \frac{y}{x}$.
+
+<div class=note>
+
+For any $A > 0$, $f$ is uniformly Lipschwtz continuous on $(A, +\infty)$. Then the solution exists on $(0, +\infty)$.
+
+</div>
+
+
+
+
