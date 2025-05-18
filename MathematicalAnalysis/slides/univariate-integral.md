@@ -135,6 +135,9 @@ $$ \left| \int_{t_1}^{t_2} f(x)\mathrm{d} x \right| \leq \int_{t_1}^{t_2} |f(x)|
 
 ## Properties of Convergent Improper Integrals
 
+- If ${\displaystyle \int_a^{+\infty}f(x)\mathrm{d} x}$ exists and $\lim \limits _{x \rightarrow \infty}f(x) = A$. Then $A = 0$.
+
+
 
 ---
 
