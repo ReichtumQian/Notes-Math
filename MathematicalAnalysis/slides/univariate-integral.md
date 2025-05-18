@@ -156,3 +156,12 @@ $$ \left| \int_{t_1}^{t_2} f(x)\mathrm{d} x \right| \leq \int_{t_1}^{t_2} |f(x)|
 
 ## Several Sepecial Improper Integrals
 
+
+
+
+
+
+
+
+
+
