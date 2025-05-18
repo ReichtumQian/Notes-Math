@@ -41,14 +41,14 @@ Speaker: Yixiao Qian
 
 <br>
 
-- Taylor Expansion and Laurent Expansion
-- Concept of Residue
+- Taylor Expansion and Zeros
+- Laurent Expansion and Singularties
 - Residue Formula and Its Applications
 - Argument Principle and Applications
 
 ---
 
-# Taylor Expansion and Laurent Expansion
+# Taylor Expansion and Zeros
 
 ---
 
@@ -63,6 +63,24 @@ $$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
 
 ---
 
+## Zeros and Uniqueness Theorem
+
+- **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
+- **Uniqueness Theorem**: $f$ holomorphic, has zeros $z_1,z_2,\cdots$, if $\lim \limits _{n \rightarrow \infty}z_n = w \in \mathbb{C}$, then $f \equiv 0$.
+
+<div class=note>
+
+The uniqueness theorem indicates that $f \not\equiv 0$ iff all the zeros of $f$ are isolated.
+
+(1) $f(w) = f(\lim \limits _{n \rightarrow \infty} z_n) = \lim \limits _{n \rightarrow \infty} f(z_0) = 0$.
+(2) Since $f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(w)}{n!}(z-w)^n$ and $f(z_i) = 0$ for all $z_i$, $f^{(n)}(w) \equiv 0$ for all $n \geq 0$.
+
+</div>
+
+- **Corollary**: $f, g$ are holomorphic, $f = g$ on $z_1,z_2,\cdots$, if $\lim \limits _{n \rightarrow \infty} z_n = w \in \mathbb{C}$, then $f \equiv g$.
+
+---
+
 ## Expand Functions to Taylor Series
 
 - Expand $f(z) = \frac{1}{z-2} + e^{-z}$ at the origin, and find the convergence radius.
@@ -70,39 +88,6 @@ $$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
 <div class=note>
 
 (1) $\frac{1}{z-2} = - \frac{1}{2} \cdot \frac{1}{1-\frac{z}{2}} = - \frac{1}{2} \sum\limits_{n = 0}^{\infty} \left( \frac{z}{2} \right)^n$. (2) $e^{-z} = \sum\limits_{n = 0}^{\infty} \frac{(-1)^nz^n}{n!}$ (3) Convergence radius is $2$.
-
-</div>
-
----
-
-## Laurent Expansion, Singularities and Zeros
-
-- **Laurent Expansion**: $z_0 \in \mathbb{C}$ (it can be a singularity of $f$), $f$ is holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.
-
-<div class=note>
-
-$$ \sum_{n=0}^{\infty} a_n(z-z_0)^n \text{ is analytic part} \quad
-\sum_{n=-\infty}^{-1}a_n(z-z_0)^n \text{ is principal part}.$$
-
-</div>
-
-- **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) = a_0$.
-- **Pole Singularity Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, $f(z_0) \rightarrow \infty$, $(z-z_0)^mf(z_0) = a_{-m}$.
-- **Isolated Singularity**: $z_0$ is a pole, $f$ is holomorphic in a punctured neighborhood.
-- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
-- **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
-
----
-
-## Expand Functions to Laurent Series
-
-- Expand $f(z) = \frac{1}{(z-1)^2}$ in $1 < |z| < +\infty$.
-
-<div class=note>
-
-It is equivalent to expand $f(z) = \frac{1}{z^2(1-\frac{1}{z})^2}$ in $|\frac{1}{z}| < 1$. We know when $|x| < 1$,
-$$ \frac{1}{(1+x)^2} = \sum\limits_{n = 0}^{\infty} (-1)^{n} (n+1) x^n. $$
-Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} = \sum\limits_{n = 0}^{\infty} (n+1)\frac{1}{z^{n+2}}$.
 
 </div>
 
@@ -123,7 +108,57 @@ $f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(
 
 ---
 
-# Concept of Residue
+# Laurent Expansion and Singularties
+
+---
+
+## Laurent Expansion and Singularities
+
+- **Laurent Expansion**: $z_0 \in \mathbb{C}$ (maybe a singularity of $f$), $f$ holomorphic in $r < |z-z_0| < R$, it is uniquely represented as $f(z) = \sum_{n=-\infty}^{+\infty} a_n(z-z_0)^n$.
+  - $\sum_{n=0}^{\infty} a_n(z-z_0)^n$ is analytic part, $\sum_{n=-\infty}^{-1}a_n(z-z_0)^n$ is principal part.
+- **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) = a_0$.
+- **Pole Singularity Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, $f(z_0) \rightarrow \infty$, $(z-z_0)^mf(z_0) = a_{-m}$.
+- **Isolated Singularity**: $z_0$ is a pole, $f$ is holomorphic in a punctured neighborhood.
+- **Riemann's Removable Singularity Theorem**: $f$ is holomorphic and bounded in a punctured neighborhood of $z_0$, then $z_0$ is a removable singularity, $f$ can extend on $z_0$.
+- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
+- **Singularity of $\infty$**: $\infty$ is removable/zero/pole iff $0$ is removable/pole/zero of $f$.
+- **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, which have no limit points.
+
+---
+
+## Expand Functions to Laurent Series
+
+- Expand $f(z) = \frac{1}{(z-1)^2}$ in $1 < |z| < +\infty$.
+
+<div class=note>
+
+It is equivalent to expand $f(z) = \frac{1}{z^2(1-\frac{1}{z})^2}$ in $|\frac{1}{z}| < 1$. We know when $|x| < 1$,
+$$ \frac{1}{(1+x)^2} = \sum\limits_{n = 0}^{\infty} (-1)^{n} (n+1) x^n. $$
+Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} = \sum\limits_{n = 0}^{\infty} (n+1)\frac{1}{z^{n+2}}$.
+
+</div>
+
+---
+
+## Practice on Poles
+
+- Prove that if $f$ is entire, $\infty$ is a pole of $f$, then $f$ is a polynomial.
+
+<div class=note>
+
+(1) $\infty$ is pole implies $\forall M > 0$, $\exists R > 0$, $|z| \geq R$, $|f(z)| \geq M$.
+(2) By uniqueness theorem, $f \not\equiv 0$ implies $f$ has finite zeros $z_1,\cdots,z_n$ with multiplicity $m_1,\cdots,m_n$ in $|z| < R$.
+(3) Define $g(z) = \frac{(z-z_1)^{m_1} \cdots (z-z_n)^{m_n}}{f(z)}$, it is holomorphic in $\mathbb{C}$ (entire).
+(4) Since $\lim \limits _{z \rightarrow \infty}f(z) = \infty$, $\exists C > 0$ such that $|g(z)| \leq C(1+|z|^d)$ for $z \in \mathbb{C}$, $d = m_1 + \cdots + m_n$.
+(5) By generalized Liouville's theorem, $g$ is a polynomial with order $\rho \leq d$. Since $g$ has no roots, then $g$ is constant.
+
+</div>
+
+
+
+---
+
+# Residue Formula and Its Applications
 
 ---
 
@@ -161,10 +196,6 @@ $z = \infty$: $-1$.
 
 ---
 
-# The Residue Formula
-
----
-
 ## The Residue Formula
 
 <br>
@@ -181,10 +212,6 @@ $$ \int_C f(z) \mathrm{d} z = 2 \pi i \sum\limits_{k = 1}^n \operatorname{res}_{
 - ${\displaystyle \frac{1}{2\pi i}\int_C \frac{e^z}{z(1-z)^3}\mathrm{d} z}$ where $C$ is a closed contour does not pass through $z = 0$ and $z = 1$.
 - ${\displaystyle \int_{|z| = 1} \frac{\tan \pi z}{z^3}\mathrm{d} z}$.
 - ${\displaystyle \int_{|z| = \frac{5}{2}} \frac{1}{(z-3)(z^5 - 1)}\mathrm{d} z}$.
-
----
-
-# Applications of the Residue Formula
 
 ---
 
@@ -226,24 +253,39 @@ where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
 
 ## Winding Number
 
-- **Winding Number**: Given $\gamma: [a, b] \rightarrow \mathbb{C}$, and $c \in \mathbb{C}$ not on $\gamma$. Define $\theta(t) = \operatorname{arg}(\gamma(t) - c)$ and $\Delta (\gamma, c) = \theta(b) - \theta(a)$. The *winding number* is $w(\gamma, c) = \frac{\Delta(\gamma, c)}{2 \pi} \in \mathbb{Z}$.
+- **Winding Number**: Given closed $\gamma: [a, b] \rightarrow \mathbb{C}$, and $c \in \mathbb{C}$ not on $\gamma$. $\theta(t) := \operatorname{arg}(\gamma(t) - c)$ and $\Delta (\gamma, c) := \theta(b) - \theta(a)$. The *winding number* is $w(\gamma, c) = \frac{\Delta(\gamma, c)}{2 \pi} \in \mathbb{Z}$
 
 <div class=note>
 
-If $\gamma$ is closed, then the winding number is an integer.
+Note that $\gamma$ is closed, and the winding number is an integer.
 
 </div>
 
 - **Integration Representation**: $\gamma: [a, b] \rightarrow \mathbb{C}$ closed, $c \not \in \gamma$, then
 $$ w(\gamma, c) = \frac{1}{2\pi i} \int_{\gamma} \frac{\mathrm{d} \zeta}{\zeta - c}. $$
 
+<div class=note>
+
+(1) The curve $\gamma(t) = c + \rho(t) e^{i \theta(t)}$ where $t \in [a, b]$.
+(2) Then $\displaystyle \int_{\gamma} \frac{\mathrm{d} \zeta}{\zeta - c} = \int_a^b \frac{\mathrm{d} (\rho(t) e^{i \theta(t)})}{\rho(t) e^{i \theta(t)}} = \int_a^b \left( \frac{\rho^{\prime}(t)}{\rho(t)} + i\theta^{\prime}(t) \right)\mathrm{d}t = \ln \frac{\rho(b)}{\rho(a)} + i(\theta(b) - \theta(a))$.
+(3) When $\gamma$ is closed, $\rho(a) = \rho(b)$, so $\displaystyle \int_{\gamma} \frac{\mathrm{d} \zeta}{\zeta - c} = 2\pi i w(\gamma, c)$.
+
+</div>
+
 ---
 
 ## Argument Principle and Its Generalizations
 
-- **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, which have no limit points.
 - **Argument Principle**: $f$ meromorphic, $C$ closed contour. $f$ has no poles and never vanishes on $C$. $N_z$ the number of zeros of $f$ inside $C$, $N_p$ the poles (counted with multiplicities).
-$$ \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z = N_z - N_p $$
+$$ w(f(C(t)), 0) = \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z = N_z - N_p $$
+
+<div class=note>
+
+Here $C(t)$ ($t \in [a, b]$) is closed, $f(C(t))$ is also closed. And 
+$$ w(f(C), 0) = \frac{1}{2\pi i} \int_{f(C)} \frac{\mathrm{d} \zeta}{\zeta} = \frac{1}{2\pi i} \int_C \frac{f^{\prime}(z)}{f(z)}\mathrm{d} z. $$
+
+</div>
+
 - **Rouche's Theorem**: $f, g$ holomorphic, $C$ closed contour, $|f| > |g|$ for all $z \in C$. Then $N_z(f) = N_z(f+g)$ inside $C$.
 - **Open Mapping Theorem**: $f$ holomorphic and non-constant, then $f$ is open.
 
