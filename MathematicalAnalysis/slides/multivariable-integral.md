@@ -85,4 +85,15 @@ $$ F^{\prime}(x) = 2x \int_0^x f^{\prime}(0)t + o(t^2)\mathrm{d} t = f^{\prime}(
 
 </div>
 
+---
+
+
+
+
+
+
+
+
+
+
 

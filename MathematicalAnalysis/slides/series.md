@@ -81,7 +81,7 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 
 ---
 
-# Function Sequences and Series
+# Function Sequences
 
 ---
 
@@ -94,6 +94,7 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 <div class=note>
 
 Motivation: Continuous functions on closed sets are uniformly continuous.
+Results: Implies all the results (continuity, integrability, differetiability) on open set.
 
 </div>
 
@@ -126,7 +127,7 @@ Note: The result can also be written as $\lim \limits _{n \rightarrow \infty} \l
 
 </div>
 
-- **Global Continuity**: $f_n$ are continuous on $(a, b)$, $f_n \rightrightarrows f$ on any closed subset, then $f$ is continuous. ($f_n \rightrightarrows f$ on the entire $(a, b)$ is stronger)
+- **Global Continuity**: $f_n \rightrightarrows f$ on any closed subset, $f_n$ continuous, then $f$ is continuous. ($f_n \rightrightarrows f$ on the entire $(a, b)$ is stronger)
 
 </div>
 
@@ -142,10 +143,65 @@ Consider $|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |
 
 ## Properties of Limit Function: Integrability
 
+- **Term-by-Term Integration**: $f_n \rightrightarrows f$ on $[a, b]$, $f_n$ integrable on $[a, b]$. Then $f(x)$ integrable
+$$ \int_a^b f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_a^b f_n(x)\mathrm{d} x. $$
+
+<div class=note>
+
+(1) Integrability: $\forall \epsilon >0$, $\exists N > 0$, $\forall n > N$, $|f(x) - f_n(x)| < \epsilon$. Then
+$$
+\begin{align}
+  |f(x_1) - f(x_2)| &\leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |f_n(x_2) - f(x_2)|\\
+                    &\leq \epsilon + \omega_i^{f_n} + \epsilon = \epsilon^{\prime}.
+\end{align}
+$$
+(2) Value of Integral: $\displaystyle \left| \int_a^b f_n(x)\mathrm{d} x - \int_a^b f(x)\mathrm{d} x \right| \leq \int_a^b |f_n(x) - f(x)|\mathrm{d} x < \epsilon$.
+
+</div>
+
+- **Corollary**: If $f_n(x) \rightrightarrows f$, $f_n$ are integrable, then $f$ is integrable and for any integrable $g(x)$
+$$ \int_{x_0}^x f_n(t)g(t)\mathrm{d} t \rightrightarrows \int_{x_0}^x f(t)g(t)\mathrm{d} t. $$
+
 ---
 
 ## Properties of Limit Function: Differentiability
 
+- **Term-by-Term Differentiation**: $f_n^{\prime}$ are continuous, $f_n^{\prime} \rightrightarrows g$, there exists $x_0$ that $f_n(x_0)$ converges. Then $f_n(x) \rightrightarrows f$, and
+$$ f^{\prime}(x) = \lim \limits _{n \rightarrow \infty} f_n^{\prime}(x). $$
+
+<div class=note>
+
+We know $\displaystyle f_n(x) = f_n(x_0) + \int_{x_0}^x f_n^{\prime}(t)\mathrm{d} t$ and $\displaystyle \int_{x_0}^x f_n^{\prime}(t)\mathrm{d} t \rightrightarrows \int_{x_0}^x g(t)\mathrm{d} t$. Then
+$$ f(x) = \lim \limits _{n \rightarrow \infty} f_n(x_0) + \int_{x_0}^x g(t)\mathrm{d} t \Rightarrow f^{\prime}(x) = g(x). $$
+
+</div>
+
+---
+
+# Function Series
+
+---
+
+## Uniform Convergence of Function Series
+
+- **Uniform Convergence**: $\sum_{n=1}^{\infty}u_n(x) \rightrightarrows S(x)$ iff $S_n(x) = \sum\limits_{k=1}^n u_n \rightrightarrows S(x)$.
+- **Definition**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall n > N$, $|S(x) - \sum\limits_{k=1}^n u_k(x)| = |\sum\limits_{k=n+1}^{\infty}u_k(x)| < \epsilon$ for all $x \in D$.
+- **Cauchy's Criterion**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall n > m > N$, $|\sum\limits_{k=m+1}^n u_k(x)| < \epsilon$ for all $x \in D$.
+- **Uniform Convergence of Each Term**: If $\sum\limits_{n=1}^{\infty}u_n(x)$ converges uniformly, then $u_n \rightrightarrows 0$.
+- **M-Test**: If $\sum\limits_{n=1}^{\infty}M_n$ converges, $|u_n(x)| \leq M_n$ for all $x$. Then $\sum\limits_{n=1}^{\infty}u_n(x)$ converges uniformly.
+- **Dirichlet Test**: If $\sum_{k=1}^nu_k(x)$ is uniformly bounded; $v_k(x) \rightrightarrows 0$, is monotone with respect to $n$ when fixing $x$.
+- **Abel Test**: If $\sum_{n=0}^{\infty}u_n(x)$ converges uniformly; $v_n(x)$ is uniformly bounded and monotone with respect to $n$ when fixing $x$.
+
+---
+
+## Properties of Limit Function
+
+- **Continuity**: $\sum u_n(x) \rightrightarrows S(x)$ on $[a, b]$, $u_n$ continuous, then $S(x)$ continuous on $[a,b]$
+$$ \sum (\lim \limits _{x \rightarrow x_0} u_n(x)) = \lim \limits _{x \rightarrow x_0}(\sum u_n(x)). $$
+- **Integrability**: $\sum u_n(x) \rightrightarrows S(x)$ on $[a, b]$, $u_n(x)$ continuous, then
+$$ \sum \int_a^b u_n(x)\mathrm{d} x = \int_a^b \sum u_n(x)\mathrm{d} x. $$
+- **Differentiability**: $u^{\prime}_n$ continuous, $\sum u_n(x_0)$ converges, $u^{\prime}_n(x) \rightrightarrows g(x)$. Then
+$$ \sum u^{\prime}_n(x) = (\sum u_n(x))^{\prime}. $$
 
 ---
 
@@ -153,12 +209,10 @@ Consider $|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |
 
 ---
 
-## Convergence Behavior of Power Series
+## Radius of Convergence
 
-- **Abel's Theorem**: (1) $\sum a_nx_0^n$ converges, for $|x| < |x_0|$, $\sum a_nx^n$ converges absolutely. (2) $\sum a_nx_0^n$ diverges, for $|x| > |x_0|$, $\sum a_nx^n$ diverges.
 - **Radius of Convergence**: $|x| < R$, $\sum a_nx^n$ converges absolutely; $|x| > R$, $\sum a_nx^n$ diverges.
-- **Cauchy-Hadamard Test**: $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \sqrt[n]{|a_n|}$.
-- **Ratio Test**: $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}$.
+- **Cauchy-Hadamard Test and Ratio Test**: $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \sqrt[n]{|a_n|}$, $\frac{1}{R} = \lim \limits _{n \rightarrow \infty} \frac{|a_{n+1}|}{|a_n|}$.
 - Find the Convergence Region: (1) $\sin x$ and $\cos x$, (2) $e^x$, (3) $\ln (1+x)$, (4) $\frac{1}{1-x}$.
 
 <div class=note>
@@ -169,6 +223,39 @@ Consider $|f(x_1) - f(x_2)| \leq |f(x_1) - f_n(x_1)| + |f_n(x_1) - f_n(x_2)| + |
 (4) $\frac{1}{1-x} = \sum_{n=0}^{\infty} x^n$, $\frac{1}{R} = \sqrt[n]{1} = 1$. The convergence region is $(-1,1)$.
 
 </div>
+
+---
+
+## Uniform Convergence of Power Series
+
+- **Closed Interval**: $\sum a_nx^n$ uniformly converges in any $[a, b] \subset (x_0-R, x_0+R)$
+
+<div class=note>
+
+(1) Define $c = \max \{|a|, |b|\}$, $c \in (-R, R)$. Then $\forall x \in [a, b]$, $|a_nx^n| \leq |a_nc^n|$.
+(2) Since $\sum a_nc^n$ converges, then $\sum a_nx^n$ is uniformly convergent. (M-Test)
+
+</div>
+
+- **Generalized Abel Theorem**: If $\sum a_n c^n$ and $\sum a_nd^n$ converges, then $\sum a_nx^n$ uniformly converges in $[c, d]$.
+- **Corollary**: If $\sum a_n R^n$ converges, then for any $a \in (-R, R)$, $\sum a_nx^n$ uniformly converges in $[a, R]$.
+
+---
+
+## Practice on Uniform Convergence of Power Series
+
+- $f(x) = \sum_{n=1}^{\infty} \frac{x^n}{n^2 \ln(n+1)}$. Prove (1) $f \in C[0,1]$, $f^{\prime} \in C(-1,1)$; (2) $f^{\prime}_+(-1)$ exists; (3) $f^{\prime}_-(1)$ does not exist.
+
+<div class=note>
+
+(1) $f(1) = \sum \frac{1}{n^2 \ln (n+1)}$ converges, $\sum \frac{x^n}{n^2 \ln (n+1)}$ uniformly converges in $[0, 1]$. So $f \in C[0, 1]$.
+(2) $f^{\prime}(x) = \sum \frac{x^{n-1}}{n \ln (n+1)}$, $\sum \frac{x^{n-1}}{n \ln (n+1)}$ uniformly converges in closed subset of $(0, 1)$, then $f^{\prime}(x) \in C(-1, 1)$.
+(3) $\sum \frac{(-1)^{n-1}}{n \ln (n+1)}$ converges, then $f_+^{\prime}(-1)$ exists. $\sum \frac{1}{n \ln(n+1)}$ diverges, so $f_-^{\prime}(1)$ does not exist.
+
+</div>
+
+
+
 
 ---
 
