@@ -47,6 +47,51 @@ Speaker: Yixiao Qian
 
 ---
 
+# Euler's Polygonal Method
+
+---
+
+## Geometric Meaning of ODE
+
+- **Geometric Meaning**: $y^{\prime} = f(x,y)$, then the tangent direction at $(x, y)$ is $f(x,y)$.
+- Draw the direction/slope field of $y^{\prime} = x^2 + y^2$.
+
+![center](assets/image.png)
+
+---
+
+## Euler's Polygonal Method
+
+Here we consider the IVP
+$$ y^{\prime} = f(x,y), \quad y(x_0) = y_0. $$
+
+- **Euler's Forward Method**: $x_k = x_{k-1} + h$, and $y_{k+1} = y_k + f(x_k, y_k)h$.
+- **Equicontinuous**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x_1, x_2$, $|x_1 - x_2| < \delta$, $|f_n(x_1) - f_n(x_2)| < \epsilon$ for all $n > 0$.
+- **Uniform Boundedness**: $\exists M > 0$, $\forall x \in I$, $|f_n(x)| \leq M$ for all $n > 0$.
+- **Ascoli-Arzela Theorem**: $\{f_n\}$ are equicontinuous and uniformly bounded, then there exist $f_{n_j} \rightrightarrows f$, $f$ is continuous.
+
+<div class=note>
+
+Since $f_{n_j}$ converges rather than $f_n$, then the Euler sequence may have multiple limits.
+
+</div>
+
+---
+
+## Peano's Existence Theorem
+
+- **Peano Existence Theorem**: $f$ is continous in $R: \{(x,y): |x-x_0| < a, |y-y_0| < b\}$. Then IVP has solution when $|x-x_0| \leq \alpha$, where $\alpha = \min \{a, \frac{b}{M}\}$, $M = \max_R |f|$.
+
+<div class=note>
+
+Why $\frac{b}{M}$? Assume $y^{\prime} \equiv M$, then the solution reaches the upper bound of $R$ when $\alpha = \frac{b}{M}$.
+
+</div>
+
+
+---
+
+
 # Picard Existence and Uniqueness Theorem
 
 ---
