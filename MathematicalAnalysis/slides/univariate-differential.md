@@ -50,7 +50,8 @@ Speaker: Yixiao Qian
 - **Differentiability and Derivative**: 
 - **Derivative of Implicit Functions**: Differentiate both sides of an equation.
 - **Derivative of Inverse Functions**: $\frac{\mathrm{d} y}{\mathrm{d} x} = \left( \frac{\mathrm{d} x}{\mathrm{d} y} \right)^{-1}$.
-- **Derivative of Power-Exponential Functions**
+- **Derivative of Power-Exponential Functions**: $y(x) = u(x)^{v(x)}$, $\ln y(x) = v(x) \ln u(x)$.
+- **Higher-Order Derivatives**: $[f(x)g(x)]^{(n)} = \sum_{k=0}^n \binom{n}{k} f^{(n-k)}(x)g^{(k)}(x)$.
 
 ---
 
@@ -98,8 +99,64 @@ $$ \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} = \frac{\mathrm{d} y^{\prime}}{\mathrm{
 
 - **Fermat's Theorem**: $x_0$ is extreme, then $f^{\prime}(x_0) = 0$.
 - **Rolle**: $f(a) = f(b)$, then $\exists \xi \in (a, b)$ such that $f^{\prime}(\xi) = 0$.
+- **Generalized Rolle**: If $\lim \limits _{x \rightarrow \infty} f(x) = f(0)$, $\exists \xi \in (0, +\infty)$, $f^{\prime}(\xi) = 0$.
+
+<div class=note>
+
+(1) $F(x) := f(x) - f(0)$, $\lim \limits _{x \rightarrow \infty}F(x) = 0$, $\forall \epsilon > 0$, $\exists X > 0$, $\forall x > X$, $|F(x)| < \epsilon$.
+(2) $M:=\sup F$, $m := \inf F$, if $M = m$, $f$ is constant, $f^{\prime} \equiv 0$.
+(3) If $M \neq m$, assume $M > 0$, take $\epsilon < M$, then $\exists x_0 \in [0, X]$, $f(x_0) = M$, then $f^{\prime}(x_0) = 0$.
+
+</div>
+
 - **Lagrange**: $\exists \xi \in (a, b)$ such that $\displaystyle f^{\prime}(\xi) = \frac{f(b)-f(a)}{b-a}$.
 - **Cauchy**: $g(a) \neq g(b)$, $\exists \xi \in (a, b)$ such that $\displaystyle \frac{f^{\prime}(\xi)}{g^{\prime}(\xi)} = \frac{f(b)-f(a)}{g(b)-g(a)}$.
+- **Auxiliary Function**: $\left( f e^{\int g \mathrm{d} x} \right)^{\prime} = [f^{\prime} + fg]e^{\int g \mathrm{d} x}$ for $f^{\prime}(\xi) + f(\xi)g(\xi)$.
+
+---
+
+## Applications of Rolles's Mean-Value Theorem
+
+- If $0 \leq f(x) \leq xe^{-x}$, then $\exists \xi \in (0, +\infty)$, $f^{\prime}(\xi) = e^{-\xi}(1- \xi)$.
+
+<div class=note>
+
+$F(x) := f(x) - xe^{-x}$, $F(0) = 0$, $\lim \limits _{x \rightarrow +\infty}F(x) = 0$. The result follows generalized Rolle.
+
+</div>
+
+- $f$ is differenitable, $f(a) < 0$, $f(b) < 0$, $\exists c \in (a,b)$, $f(c) > 0$. Prove $\exists \xi \in (a, b)$, $f(\xi) + f^{\prime}(\xi) = 0$.
+
+<div class=note>
+
+(1) $F(x) := e^x f(x)$, $F(a) < 0$, $F(b) < 0$, $F(c) > 0$. $\exists x_1, x_2$ that $F(x_1) = F(x_2) = 0$.
+(2) By Rolle, $\exists \xi \in (x_1, x_2)$, $F^{\prime}(\xi) = e^{\xi}[f(\xi) + f^{\prime}(\xi)] = 0$.
+
+</div>
+
+
+---
+
+## Applications of Lagrange's Mean-Value Theorem
+
+- $f$ differenitable, prove $\exists \xi \in (a, b)$, $f(\xi) + \xi f^{\prime}(\xi) = \frac{bf(b) - af(a)}{b-a}$.
+
+<div class=note>
+
+Consider $F(x) = xf(x)$.
+
+</div>
+
+- $f$ differenitable, $f(b) \neq f(a)$, if $f$ is non-linear, $\exists \xi, \eta \in (a, b)$, $f^{\prime}(\xi) < \frac{f(b) - f(a)}{b-a} < f^{\prime}(\eta)$.
+
+<div class=note>
+
+Only prove lhs, assume it does not hold, then $\forall x \in (a, b)$, $f^{\prime}(x) \geq \frac{f(b) - f(a)}{b-a}$. Then
+$$ F(x) = f(x) - \frac{f(b) - f(a)}{b-a}x \Rightarrow F^{\prime}(x) \geq 0, F(a) = F(b) = 0, $$
+which implies $F^{\prime}(x) \equiv 0$. This contradicts the condition.
+
+</div>
+
 
 ---
 
@@ -134,4 +191,22 @@ where the sum of the second term and the third term is zero.
 ---
 
 ## Integrals of Convex Functions
+
+- $\varphi(x)$ is convex on $[0, 1]$, prove ${\displaystyle \varphi(\frac{1}{2}) \leq \int_0^1 \varphi(x)\mathrm{d} x \leq \frac{\varphi(0) + \varphi(1)}{2}}$.
+
+<div class=note>
+
+(1) $x = x \cdot 1 + (1-x) \cdot 0$, then ${\displaystyle \int_0^1 \varphi(x)\mathrm{d} x \leq \int_0^1 (1-x)\varphi(0) + x \varphi(1)\mathrm{d} x = \frac{\varphi(0) + \varphi(1)}{2}}$.
+(2) Let $x = 1-t$, then ${\displaystyle \int_0^1 \varphi(x)\mathrm{d} x = \int_0^1 \varphi(1-x)\mathrm{d} x}$ and
+$$ \int_0^1 \varphi(x)\mathrm{d} x = \int_0^1 \frac{1}{2}\varphi(x) + \frac{1}{2}\varphi(1-x)\mathrm{d} x \geq \int_0^1 \varphi \left( \frac{x}{2} + \frac{1 - x}{2} \right)\mathrm{d} x = \varphi \left( \frac{1}{2} \right). $$
+
+</div>
+
+- $\varphi$ is convex on $[a, b]$, prove ${\displaystyle \varphi(\frac{a+b}{2}) \leq \frac{1}{b-a} \int_a^b \varphi(x)\mathrm{d} x \leq \frac{\varphi(a) + \varphi(b)}{2}}$.
+
+<div class=note>
+
+Change variable $x = \lambda a + (1 - \lambda)b$.
+
+</div>
 
