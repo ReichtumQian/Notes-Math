@@ -47,6 +47,20 @@ Speaker: Yixiao Qian
 
 ## Commonly Used Indefinite Integrals
 
+$$
+\begin{align}
+    &\int \sec x \, \mathrm{d}x = \ln|\sec x + \tan x| + c 
+    && \int \sec x \tan x \, \mathrm{d}x = \sec x + c \\
+    &\int \sec^2 x \, \mathrm{d}x = \tan x + c 
+    && \int \csc^2 x \, \mathrm{d}x = -\cot x + c \\
+    &\int \frac{1}{x^2 + a^2} \, \mathrm{d}x = \frac{1}{a} \arctan \frac{x}{a} + c 
+    && \int \frac{1}{x^2 - a^2} \, \mathrm{d}x = \frac{1}{2a} \ln \left| \frac{x-a}{x+a} \right| + c \\
+    &\int \frac{1}{\sqrt{x^2 + a^2}} \, \mathrm{d}x = \ln \left| x + \sqrt{x^2 + a^2} \right| + c 
+    && \int \frac{1}{\sqrt{x^2 - a^2}} \, \mathrm{d}x = \ln \left| x + \sqrt{x^2 - a^2} \right| + c \\
+    &\int \frac{1}{\sqrt{a^2 - x^2}} \, \mathrm{d}x = \arcsin \frac{x}{a} + c 
+    && \int \ln x \, \mathrm{d}x = x \ln x - x + c
+\end{align}
+$$
 
 ---
 
@@ -59,6 +73,11 @@ Speaker: Yixiao Qian
 Hint: Assume $\frac{x}{(x+1)(x^2+2)} = \frac{A}{x+1} + \frac{Bx + C}{x^2 + 2}$. Then $A = -\frac{1}{3}$, $B = \frac{1}{3}$, $C = \frac{2}{3}$.
 
 </div>
+
+- Calculate ${\displaystyle \int \frac{\mathrm{d} x}{ax^2 + b}}$. 
+- Calculate ${\displaystyle \int \frac{\mathrm{d} x}{(ax^2 + b)^2}}$. (Hint: ${\displaystyle - \int \frac{1}{2ax} \mathrm{d} \frac{1}{ax^2 + b}}$ and integrate-by-part.)
+- Calculate ${\displaystyle \int \frac{\mathrm{d} x}{ax^2 + bx + c}}$. (Hint: ${\displaystyle \frac{1}{a} \int \frac{\mathrm{d} x}{(x+\frac{b}{2a})^2 + \frac{c}{a} - \frac{b^2}{4a^2}}}$ and become ${\displaystyle \int \frac{\mathrm{d} x}{ax^2 + b}}$.)
+- Calculate ${\displaystyle \int \frac{x}{ax^2 + bx + c}\mathrm{d} x}$. (Hint: ${\displaystyle \frac{1}{2a} \int \frac{2ax + b}{ax^2 + bx + c} - \frac{b}{ax^2 + bx + c}\mathrm{d} x}$)
 
 ---
 
@@ -90,6 +109,25 @@ $$ \int \sec^3 x \mathrm{d} x = \sec x \tan x - \int \sec^3 x \mathrm{d} x + \in
 ---
 
 ## Indefinite Integrals of Squared Functions
+
+---
+
+# Definite Integrals
+
+---
+
+## Key Points of Definite Integrals
+
+- **Condition for Integrability**
+- **Closure under Arithmetic Operations**
+- **Closure under Composition**
+- **Newton-Leibniz Formula**
+
+---
+
+## Mean-Value Theorem for Integrals
+
+- If $f$ is strictly increasing, prove ${\displaystyle \int_a^b xf(x)\mathrm{d} x > \frac{a+b}{2} \int_a^b f(x)\mathrm{d} x}$.
 
 ---
 
