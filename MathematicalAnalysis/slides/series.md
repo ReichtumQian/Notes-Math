@@ -57,7 +57,7 @@ Speaker: Yixiao Qian
 
 - **Convergence**: $S_n = \sum_{k=1}^n u_k$ is parital-sum, $S_n$ converges.
 - **Necessary Condition**: $\lim \limits _{n \rightarrow \infty} u_n = 0$. (Since $\lim \limits _{n \rightarrow \infty} u_n = \lim \limits _{n \rightarrow \infty} S_n - \lim \limits _{n \rightarrow \infty} S_{n-1} = 0$)
-- **Cauchy Criterion**: $\forall \epsilon > 0, \exists N > 0, N < m < m+p$, $|u_{m+1} + \cdots + u_{m+p}| < \epsilon$.
+- **Cauchy Criterion**: $\forall \epsilon > 0, \exists N > 0, N < n < n+p$, $|u_{n+1} + \cdots + u_{n+p}| < \epsilon$.
 
 ---
 
@@ -77,7 +77,71 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 
 ---
 
+## Applications of Comparison Test
+
+$$
+(1) \sum\limits_{n=1}^{\infty} \frac{1}{\sqrt{n^2 + 1}}, \quad
+(2) \sum\limits_{n = 1}^{\infty} 2^n \sin \frac{\pi}{3^n}, \quad
+(3) \sum\limits_{n = 1}^{\infty} (\sqrt[n]{2} - 1)
+$$
+
+<div class=note>
+
+(1) $\frac{1}{n}$ diverges; (2) $\frac{2^n}{3^n} \pi$ converges; (3) $2^{\frac{1}{n}} - 1 \sim \frac{1}{n} \ln 2$ diverges.
+
+</div>
+
+$$
+(1) \sum\limits_{n = 1}^{\infty} \frac{1}{3^{\ln n}}, \quad
+(2) \sum\limits_{n = 2}^{\infty} \frac{1}{(\ln n)^{\ln n}}, \quad
+(3) \sum\limits_{n = 1}^{\infty} \frac{1}{n^{2n \sin \frac{1}{n}}}, \quad
+(4) \sum\limits_{n = 1}^{\infty} \frac{\ln(n+1)}{e^n}.
+$$
+
+<div class=note>
+
+(1) $\frac{1}{n^{\ln 3}}$ converges; (2) $\frac{1}{n^{\ln(\ln n)}} < \frac{1}{n^2}$ converges; (3) $2 n \sin \frac{1}{n} \sim 2$ converges;
+(4) $\ln(n+1) < n^{\epsilon}$, $e^n > n^{\infty}$, converges. (More strictly, $n^2 \frac{\ln(n+1)}{e^n} \rightarrow 0$).
+
+</div>
+
+
+---
+
 ## Arbitrary-Term Series
+
+<br>
+
+- **Absolute\&Conditional Convergence**: $\sum\limits_{n = 1}^{\infty} |a_n|$ converges (absolute), else (conditional).
+- **Leibniz Test**: $a_n$ decreases to $0$, then $\sum\limits_{n = 1}^{\infty} (-1)^{n-1}a_n$ converges.
+- **Dirichlet Test**: (1) $\sum\limits_{k=1}^n a_k$ bounded; (2) $b_n$ decreases to $0$.
+- **Abel Test**: (1) $\sum\limits_{n = 1}^{\infty}a_n$ converges; (2) $b_n$ monotone and bounded.
+
+---
+
+## Examples of Arbitrary-Term Series
+
+$$
+(1) \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n^{p+\frac{1}{n}}}, \quad
+(2) \sum\limits_{n = 1}^{\infty} \frac{(-1)^n}{n^p \ln^q n}, \quad
+(3) \sum\limits_{n = 1}^{\infty} \sin(n \pi + \frac{1}{n^p}).
+$$
+
+<div class=note>
+
+(1) $p > 1$ converges absolutely. $1 \leq p > 0$, $f(x):=x^{p+\frac{1}{x}}$, then $f^{\prime}(x) > 0$ when $x$ is sufficiently large, so converges conditionally. $p \leq 0$, $a_n \not \rightarrow 0$, diverges.
+(2) 
+
+</div>
+
+$$
+\sum\limits_{n = 1}^{\infty} \frac{\cos nx}{n^p}, \quad \sum\limits_{n = 1}^{\infty} \frac{\sin nx}{n^p}, \quad \text{where } x \neq k \pi.
+$$
+
+<div class=note>
+
+</div>
+
 
 ---
 
@@ -89,12 +153,12 @@ $\sum_{n=1}^{\infty} \frac{1}{n^p}$ converges when $p > 1$, diverges when $p \le
 
 - **Uniform Convergence**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall n > N$, $|f_n(x) - f(x)| < \epsilon$ holds for all $x \in D$.
 - **Cauchy Criterion**: $\forall \epsilon > 0$, $\exists N > 0$, $\forall m,m+p > N$, $|f_{m+p}(x)-f_{m}(x)| < \epsilon$ holds for $x \in D$
+- **Criterion for Non-Uniform Convergence**: $\exists \{x_n\}$, $f_n(x_n) - f(x_n) \not \rightarrow 0$.
 - **Compact Convergence**: $f_n \rightrightarrows f$ on any closed/compact subset of $D$.
 
 <div class=note>
 
-Motivation: Continuous functions on closed sets are uniformly continuous.
-Results: Implies all the results (continuity, integrability, differetiability) on open set.
+Compact convergence implies all results (continuity, integrability, etc) on open set.
 
 </div>
 
@@ -105,13 +169,28 @@ Results: Implies all the results (continuity, integrability, differetiability) o
 
 ---
 
-## Practice on Concept of Uniform Convergence
+## Determine if A Function Converges Uniformly
 
-- If $f$ has continuous derivative on $(0, 1)$, $f_n(x) = n[f(x+\frac{1}{n}) - f(x)]$. Prove that $f_n(x)$ is uniformly convergent on any closed subset of $(0, 1)$.
+<br>
+
+$$
+(1) \sin \frac{x}{n}, \quad
+(2) n \sin \frac{x}{n}, \quad
+(3) \frac{x}{1+n^2x^2}, \quad
+(4) \frac{nx}{1+n^2x^2}.
+$$
 
 <div class=note>
 
-</div>
+(1) $f = 0$; Take $x_n = n$, $f_n(x_n) = \sin 1 \neq f(x_n)$, so not uniformly convergent; But it converges uniformly on any closed subset.
+(2) $f = x$; Take $x_n = n$, not uniformly convergent.
+(3) $f = 0$; $|f_n - f| \leq \frac{1}{2n} \rightarrow 0$, then uniformly convergent.
+(4) $f = 0$; Take $x = \frac{1}{n}$, $f_n(x_n) = \frac{1}{2} \neq f(x_n)$, not uniformly convergent.
+
+
+---
+
+## Uniform Convergence of Derivatives and Integrals
 
 ---
 
