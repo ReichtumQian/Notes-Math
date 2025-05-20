@@ -132,30 +132,50 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 
 ---
 
-## A Commonly Used Integral
+## Some Commonly Used Integrals
 
 - If $p > 0$, then ${\displaystyle \int_0^{+\infty} e^{-px} \frac{\sin bx - \sin ax}{x} \mathrm{d} x = \arctan \frac{b}{p} - \arctan \frac{a}{p}}$.
 
 - **Dirichlet Integral**: ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x = \frac{\pi}{2}}$.
 
+- **Normal Distribution Integral**: ${\displaystyle \int_0^{+\infty} e^{-x^2}\mathrm{d} x = \frac{\sqrt{\pi}}{2}}$.
 
 
 ---
 
 # Multiple Integrals
 
+---
+
+## Double Integral
+
+- **Iterated Integral**
+- **Change of Vairable**:
+- **Polar Coordinate Transformation**
 
 ---
 
-# Line Integrals
+## Triple Integral
+
+- **Projection Method**
+- **Cross-Section Method**
+- **Change of Variable**
+- **Cylindrical Coordinate Transformation**
+- **Spherical Coordinate Transformation**
 
 ---
 
-## Key Points of Line Integrals
+# Line Integrals and Surface Integrals
 
 ---
 
-# Surface Integrals
+## Line Integrals
+
+- **With Respect to Arc Length**: ${\displaystyle \int_{\Gamma} f(x,y,z)\mathrm{d} s = \int_a^b f(x(t),y(t),z(t))\sqrt{x^{\prime 2} + y^{\prime 2} + z^{\prime 2}}\mathrm{d} t}$
+- **Of a Vector Field**: $\displaystyle \int_{\Gamma} P \mathrm{d} x + Q\mathrm{d} y + R \mathrm{d} z = \int_a^b [Px^{\prime}(t) + Qy^{\prime}(t) + Rz^{\prime}(t)]\mathrm{d} t$.
+- **Green's Theorem**: ${\displaystyle \oint_{\partial \Omega} P \mathrm{d} x + Q\mathrm{d} y = \iint_{\Omega} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\mathrm{d} x \mathrm{d} y}$.
+- **Application of Green's Theorem**: Calculate ${\displaystyle \oint_L \frac{x\mathrm{d} y - y\mathrm{d} x}{ax^2 + by^2}}$ where $a, b > 0$, $L$ doesn't pass through the origin, but enclose it.
+
 
 ---
 
@@ -173,7 +193,7 @@ $$
 
 ---
 
-## Surface of a Vector Field
+## Surface Integral of a Vector Field
 
 - **Surface of a Vector Field Formula**: Define $A = |\frac{\partial(y,z)}{\partial(u,v)}|$, $B = |\frac{\partial(z,x)}{\partial(u,v)}|$, $C = |\frac{\partial(x,y)}{\partial(u,v)}|$,
 $$
