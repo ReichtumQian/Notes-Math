@@ -190,7 +190,32 @@ $$
 
 ---
 
-## Uniform Convergence of Derivatives and Integrals
+## Uniform Convergence of Derivative
+
+- $f^{\prime}$ is continuous, $a_n \nearrow +\infty$ is positive. Prove $f_n = a_n \left[ f(x + \frac{1}{a_n}) - f(x) \right] \rightrightarrows f^{\prime}(x)$ on $[a, b]$
+
+<div class=note>
+
+(1) By Lagrange mean-value theorem, $\exists \xi_n < \frac{1}{a_n}$ such that $f_n(x) = f^{\prime}(x + \xi_n)$.
+(2) $f^{\prime} \in C[a, b]$ and uniformly continous. $\forall \epsilon > 0$, $\exists \delta > 0$, $|x_1 - x_2| < \delta$, $|f^{\prime}(x_1) - f^{\prime}(x_2)| < \epsilon$.
+(3) Since $a_n \nearrow \infty$, $\exists N > 0$, $\forall n > N$, $\xi_n < \frac{1}{a_n} < \delta$, then
+$$|f_n(x) - f^{\prime}(x)| = |f^{\prime}(x + \xi_n) - f^{\prime}(x)| < \epsilon.$$
+
+</div>
+
+- **Common Example**: $n \left[ f(x+\frac{1}{n}) - f(x) \right] \rightrightarrows f^{\prime}(x)$.
+
+<div class=note>
+
+This formula indicates that ${\displaystyle \lim \limits _{n \rightarrow \infty} \frac{f(x + \frac{1}{n}) - f(x)}{1/n} = f^{\prime}(x)}$ is uniform.
+
+</div>
+
+---
+
+## Uniform Convergence of Integral
+
+- $f$ is continuous, $f_n(x) = \frac{1}{n} \sum\limits_{k = 1}^n f \left( x + \frac{k}{n} \right)$, $\displaystyle F(x) = \int_0^1 f(x+t)\mathrm{d} t$. Prove that $f_n \rightrightarrows F$ on any closed interval $[a, b]$.
 
 ---
 

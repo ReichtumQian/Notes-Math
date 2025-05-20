@@ -59,8 +59,16 @@ $$
 = f(\beta(t), t)\beta^{\prime}(t) - f(\alpha(t), t) \alpha^{\prime}(t)
 + \int_{\alpha(t)}^{\beta(t)}f_t(x, t)\mathrm{d} x.
 $$
+$$
+\int_{t_1}^{t_2} \mathrm{d} t \int_{x_1(t)}^{x_2(t)} f(x,t)\mathrm{d} x = \int_{x_1}^{x_2} \mathrm{d} x \int_{t_1(x)}^{t_2(x)} f(x,t)\mathrm{d} t.
+$$
 
-- **Example**: Given $\displaystyle F(x) = \int_0^x (x^2 - t^2)f(t)\mathrm{d} t$, find $F^{\prime}(x)$.
+
+---
+
+## Practice on Properties of Proper Parametric Integrals
+
+- Given $\displaystyle F(x) = \int_0^x (x^2 - t^2)f(t)\mathrm{d} t$, find $F^{\prime}(x)$.
 
 <div class=note>
 
@@ -70,6 +78,16 @@ F^{\prime}(x) = [(x^2 - x^2)f(x) \cdot 1] - [(x^2 - 0)f(0)\cdot 0] + \int_0^x 2x
 $$
 
 </div>
+
+- Calculate ${\displaystyle \int_0^1 \frac{x^b - x^a}{\ln x}\mathrm{d} x}$ where $0 < a < b$.
+
+<div class=note>
+
+(1) ${\displaystyle \int _a^b x^y \mathrm{d} y = \frac{x^y}{\ln x} \bigg|^b _a = \frac{x^b - x^a}{\ln x}}$.
+(2) ${\displaystyle I = \int_0^1 \mathrm{d} x \int_a^b x^y \mathrm{d} y = \int_a^b \mathrm{d} y \int_0^1 x^y \mathrm{d} x = \ln \frac{1+b}{1+a}}$.
+
+</div>
+
 
 ---
 
@@ -90,22 +108,36 @@ $$ F^{\prime}(x) = 2x \int_0^x f^{\prime}(0)t + o(t^2)\mathrm{d} t = f^{\prime}(
 ## Improper Parametric Integrals
 
 - **Improper Parametric Integral**: $\displaystyle \Phi(t) = \int_c^{+\infty} f(x,t)\mathrm{d} x$.
-- **Uniform Convergence**: $\forall \epsilon > 0$, $\exists M > 0$, $\forall A > M$,
+- **Uniform Convergence Statement**: $\forall \epsilon > 0$, $\exists M > 0$, $\forall A > M$,
 $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathrm{d}x \right| = \left| \int_A^{+\infty} f(x,t)\mathrm{d} x \right| < \epsilon, \quad t \in I.$$
 - **Cauchy Criterion**: $\forall \epsilon > 0$, $\exists M > 0$, $\forall A_1, A_2 > M$, $\displaystyle \left| \int_{A_1}^{A_2}f(x,t)\mathrm{d} x \right| < \epsilon$ for all $t \in I$.
 - **M-Test**: $|f(x,t)| \leq g(x)$, $\displaystyle \int_c^{+\infty}g(x)\mathrm{d} x$ exists implies ${\displaystyle \int_c^{+\infty}f(x,t)\mathrm{d} x}$ uniformly converges.
-- **Dirichlet Test**:
-- **Abel Test**:
+- **Dirichlet Test**: (1) ${\displaystyle \int_c ^N f(x,t) \mathrm{d} x}$ uniformly bounded to $t$; (2) $g(x,t) \rightrightarrows 0$ decreasingly when $x \rightarrow \infty$ with respect to $t$.
+- **Abel Test**: (1) ${\displaystyle \int_c^{+\infty} f(x,t)\mathrm{d} x}$ converges uniformly; (2) $g(x,t)$ uniformly bounded to $t$.
 
 ---
 
-## Apply Definition to Prove Uniform Convergence
+## Determine Uniform Convergence
 
-- Prove that ${\displaystyle \int_0^{+\infty} \frac{\sin xy}{y}\mathrm{d} y}$ uniformly converges on $[\delta, +\infty)$, but it does not uniformly converge on $(0, +\infty)$.
+- ${\displaystyle \int_0^{+\infty} \frac{\sin xy}{y}\mathrm{d} y}$ uniformly converges on $[\delta, +\infty)$, but not on $(0, +\infty)$.
 
 <div class=note>
 
 </div>
+
+- ${\displaystyle \int_1^{+\infty} \frac{\sin x}{1+xe^y}\mathrm{d} x}$ on $[0, +\infty)$.
+
+- ${\displaystyle \int_0^{+\infty} e^{-xy} \frac{\sin x}{x}\mathrm{d} x}$ on $[0, +\infty)$.
+
+
+---
+
+## A Commonly Used Integral
+
+- If $p > 0$, then ${\displaystyle \int_0^{+\infty} e^{-px} \frac{\sin bx - \sin ax}{x} \mathrm{d} x = \arctan \frac{b}{p} - \arctan \frac{a}{p}}$.
+
+- **Dirichlet Integral**: ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x = \frac{\pi}{2}}$.
+
 
 
 ---
