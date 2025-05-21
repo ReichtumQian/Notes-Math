@@ -1,0 +1,22 @@
+{
+    "root": {
+        "data": {
+            "id": "da1hfvvedeo0",
+            "created": 1747794498016,
+            "text": "Real Analysis"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "da1hg1jmbtk0",
+                    "created": 1747794510364,
+                    "text": "Sets"
+                },
+                "children": []
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}

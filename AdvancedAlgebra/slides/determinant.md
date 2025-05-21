@@ -33,4 +33,4 @@ img[alt~="center"] {
 
 # Polynomial
 
-S
+Speaker: Yixiao Qian
