@@ -58,7 +58,7 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
-For any $a \in \mathbb{R}$, $\lim \limits _{n \rightarrow \infty} r_n = a$, then $\{f > a\} = \cap_{n=1}^{\infty} \{f > r_n\}$.
+For any $a \in \mathbb{R}$, $\lim \limits _{n \rightarrow \infty} r_n = a$, $r_n < a$, then $\{f > a\} = \cap_{n=1}^{\infty} \{f > r_n\}$.
 </div>
 
 - **Limit form**: If $\{f > a + \frac{1}{n}\}$ is measurable ($n \neq 0$), then $\{f > a\}$, $\{f \geq a\}$ are measurable.
@@ -161,28 +161,13 @@ By Lusin, there exists $f_n$ such that $m(\{f \neq f_n\}) < \frac{1}{n}$, then $
 
 ---
 
-## Applications of Approximation by Continuous Functions
-
-- If $\{f_k\}$ are real-valued ($f_k(x) \neq \infty$) measurable functions on $[a, b]$, prove that there exists a positive sequence $\{a_k\}$ such that $a_kf_k \xrightarrow{a.e.} 0$.
-
-<div class=note>
-
-(1) Since $f$ is real-valued, there exists $t_k$ such that $m(\{|f_k(x)| > t_k\}) < \frac{1}{2^k}$. Take $a_k = \frac{1}{kt_k}$.
-(2) Denote $E_k = \{|f_k(x)| > t_k\}$, then $\sum_k m(E_k) = 1 < \infty$. Then almost every $x \in [a, b]$ only belongs to finite $E_k$ (Borel-Cantelli), and there exists $K(x)$, such that
-$$ k \geq K(x), x \not \in E_k \Rightarrow |a_kf_k(x)| \leq \frac{1}{k} \Rightarrow a_kf_k \xrightarrow{a.e.} 0.$$
-
-</div>
-
-
----
-
 # Convergence Results in Measure Theory
 
 ---
 
 ## Pointwise Convergence and Uniform Convergence
 
-- **Pointwise to Uniform (Egoroff)**: $f, f_n$ finite a.e. and measurable, $m(D) < \infty$. Then $f_n \xrightarrow{a.e.} f$ implies $f_n \rightrightarrows f$ almost on a closed subset $F$.
+- **Pointwise to Uniform (Egoroff)**: $f, f_n$ finite a.e. and measurable, $m(D) < \infty$. Then $f_n \xrightarrow{a.e.} f$ implies almost $f_n \rightrightarrows f$ (written $f_n \xrightarrow{a.u.} f$) on a closed subset $F$.
 $$ \forall \epsilon > 0, \exists F \subset D, m(D - F) < \epsilon, \quad f_n(x) \rightrightarrows f(x), x \in F. $$
 
 <div class=note>
@@ -191,12 +176,13 @@ What does $m(D) < \infty$ stand for? If not, we can't find a $F \subset D$ such 
 
 </div>
 
-- **Uniform to Pointwise**: $f_n$ measurable, $m(D)$ is arbitrary. Then $f_n$ almost uniformly converges to $f$ implies $f_n \xrightarrow{a.e.} f$.
+- **Uniform to Pointwise**: $f_n$ measurable, $m(D)$ is arbitrary. Then $f_n \xrightarrow{a.u.} f$ implies $f_n \xrightarrow{a.e.} f$.
 
 <div class=note>
 
 (1) $\forall \delta > 0$, $\exists E_{\delta} \subset E$, $m(E - E_{\delta}) < \delta$ where $f_n \rightrightarrows f$.
-(2) Define $E_0 = \{f_n \not \rightrightarrows f\}$, $E_0 \subset E - E_{\delta}$ for any $\delta > 0$. Then $m(E_0) \leq m(E - E_{\delta}) < \delta$, $m(E_0) = 0$ and $f_n \xrightarrow{a.e.} f$.
+(2) Define $E_0 = \{f_n \not \rightarrow f\}$, $E_0 \subset E - E_{\delta}$ for any $\delta > 0$. Then $m(E_0) \leq m(E - E_{\delta}) < \delta$, $m(E_0) = 0$ and $f_n \xrightarrow{a.e.} f$.
+Note: If $E_0 = \{f_n \not \rightrightarrows f\}$, does $m(E_0) = 0$ hold? No! Don't discuss uniform convergence pointwisely! The set $E_0 := \{x: f_n(x) \not \rightrightarrows f\}$ is not well-defined.
 
 </div>
 
@@ -206,18 +192,24 @@ What does $m(D) < \infty$ stand for? If not, we can't find a $F \subset D$ such 
 
 - **Convergence in Measure**: $f, f_n$ measurable and finite a.e.
 $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0. $$
-- **Measure to Pointwise (Riesz)**: $f, f_n$ measurable and finite a.e. Then
-$$ f_n \xrightarrow{m} f \quad \Rightarrow \quad  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f. $$
-- **Pointwise to Measure (Lebesgue)**: $f_n,f$ measurable and finite a.e. $m(D) < \infty$. Then
-$$ f_n \xrightarrow{a.e.} f \quad \Rightarrow \quad f_n \xrightarrow{m} f. $$
+- **Uniform to Measure**: If $f_n \xrightarrow{a.u.} f$, then $f_n \xrightarrow{m} f$.
 
 <div class=note>
 
-(1) By Egoroff, $\forall \epsilon > 0$, $\exists E \subset D$, $m(D - E) < \epsilon$, $f_n \rightrightarrows f$ on $E$. That is
-$$ \forall \delta > 0, \exists N > 0, \forall n > N, \quad |f_n(x) - f(x)| < \delta, \quad x \in E. $$
-(2) Then $m(\{|f_n-f| > \delta\}) \leq m(D - E) < \epsilon$ for $n > N$. Taking $\epsilon \rightarrow 0$ gives the result.
+(1) $\exists E \subset D$, $m(D-E) < \epsilon$ such that $\forall \delta > 0$, $\exists N > 0$, $\forall n > N$, $|f_n(x) - f(x)| < \delta$ for $x \in E$.
+(2) $m(\{|f_n-f| > \delta\}) \leq m(D - E) < \epsilon$ for $n > N$. Taking $\epsilon \rightarrow 0$ gives the result.
 
 </div>
+
+- **Measure to Pointwise (Riesz)**: $f_n \xrightarrow{m} f \Rightarrow  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f$.
+- **Pointwise to Measure (Lebesgue)**: $m(D) < \infty$, then $f_n \xrightarrow{a.e.} f \Rightarrow f_n \xrightarrow{m} f$.
+
+<div class=note>
+
+$f_n \xrightarrow{a.e.} f$ implies $f_n \xrightarrow{a.u.} f$, which implies $f_n \xrightarrow{m} f$.
+
+</div>
+
 
 ---
 

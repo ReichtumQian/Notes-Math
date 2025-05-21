@@ -244,6 +244,31 @@
                         ]
                     }
                 ]
+            },
+            {
+                "data": {
+                    "id": "da1mct3m15c0",
+                    "created": 1747808362439,
+                    "text": "Measurable Function"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "da1qqgoveuw0",
+                            "created": 1747820716965,
+                            "text": "Definition"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "da1mcxzc5ww0",
+                    "created": 1747808373065,
+                    "text": "Lebesgue Integral"
+                },
+                "children": []
             }
         ]
     },
