@@ -98,16 +98,14 @@ Since distance is non-zero, then we can find disjoint open sets $S_1, S_2$ such 
 
 ## Limit of Lebesgue Outer Measure
 
-<br>
-
 - If $\{E_n\}$ is monotonically increasing, then $m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)$.
 
 <div class=note>
 
-If $\lim \limits _{n \rightarrow \infty} m^{\ast}(E_n) = \infty$, then conclusion holds. Take open set $G_n \supset E_n$, $m(G_n) < m^{\ast}(E_n) + \epsilon$.
-$$ E_n \subset \cap_{s=n}^{\infty} G_s := P_n \Rightarrow m(P_n) < m^{\ast}(E_n) + \epsilon. $$
-$P_n$ is also monotonically increasing, then
-$$ m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = m^{\ast}(\cup_{n=1}^{\infty}E_n) \leq m(\cup_{n=1}^{\infty}P_n)= \lim \limits _{n \rightarrow \infty} m(P_n) \leq \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)+\epsilon. $$
+(1) If $\lim \limits _{n \rightarrow \infty} m^{\ast}(E_n) = \infty$, then conclusion holds. So we only consider $m^{\ast}(E_n) \not \rightarrow \infty$.
+(2) Take open set $G_n \supset E_n$, $m(G_n) < m^{\ast}(E_n) + \epsilon$. But $\lim \limits _{n \rightarrow \infty} G_n$ may not exist, so take $P_n = \cap_{k=n}^{\infty}G_k$, $P_n \nearrow$ and $E_n \subset P_n \subset G_n$. Then
+$$ m^{\ast}(\cup_{n=1}^{\infty}E_n) \leq m(\cup_{n=1}^{\infty}P_n) = \lim \limits _{n \rightarrow \infty} m(P_n) \leq \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n) + \epsilon. $$
+(3) $\lim \limits _{n \rightarrow \infty} E_n = \cup_{n=1}^{\infty}E_n$, $m^{\ast}(\cup_{n=1}^{\infty}E_n) \geq m^{\ast}(E_n)$, so $m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) \geq \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)$.
 
 </div>
 
@@ -156,10 +154,17 @@ $$ m^{\ast}(A) \geq m^{\ast}(x - \epsilon, x + \epsilon) = 2\epsilon > 0. $$
 
 </div>
 
-
 ---
 
 ## Limit of Lebesgue Measure
+
+- $E_n \nearrow$ (or $m(E_n) < \infty$ and $E_n \searrow$), then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$
+
+<div class=note>
+
+Let $D_1 = E_1$, $D_n = E_n - E_{n-1}$ for $n \geq 2$. So $m(\lim E_n) = m(\cup D_n) = \sum m(D_n) = \lim m(E_n)$.
+
+</div>
 
 - $E_n$ are measurable, $m(\liminf\limits_{n \rightarrow \infty} E_n) \leq \liminf\limits_{n \rightarrow \infty} m(E_n)$.
 
@@ -176,13 +181,7 @@ $m(\liminf\limits_{n\rightarrow \infty} E_n) = m(\cup_{n=1}^{\infty}\cap_{k=n}^{
 $m(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}E_k)=\lim \limits _{n \rightarrow \infty} m(\cup_{k=n}^{\infty}E_k)$ and $m(\cup_{k=n}^{\infty}E_k) \geq m(E_n)$.
 </div>
 
-- If $m(\cup_{k=1}^{\infty}E_k) < \infty$ and $\lim \limits _{n \rightarrow \infty} E_n$ exists, then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$.
-
-<div class=note>
-
-By two previous statements.
-
-</div>
+- **Conclusion**: If $m(\cup_{k=1}^{\infty}E_k) < \infty$ and $\lim \limits _{n \rightarrow \infty} E_n$ exists, then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$.
 
 ---
 
@@ -206,11 +205,6 @@ By two previous statements.
 (2) Since $m(I - \cap_{k=1}^n E_k) = 1 - m(\cap_{k=1}^n E_k)$. Then $m(\cap_{k=1}^nE_k) > 1 - n + (n-1) = 0$.
 
 </div>
-
-
----
-
-# A Non-Measurable Set Example
 
 ---
 

@@ -136,10 +136,17 @@ $$
 
 ---
 
-## Key Points of Set Sequence Limits
+## Concept of Set Sequence Limits
 
 - **Upper Limit**: $\limsup \limits_{n \rightarrow \infty} A_n := \cap _{n = 1}^{\infty} \cup _{k = n} ^{\infty} A_k$, which means $\forall n > 0, \exists k \geq n, x \in A_k$.
 - **Lower Limit**: $\liminf \limits_{n \rightarrow \infty} A_n := \cup _{n = 1}^{\infty} \cap _{k = n}^{\infty}A_k$, which means $\exists n > 0, \forall k \geq n, x \in A_k$.
+
+<div class=note>
+
+Note the inner parts $B_n := \cup_{k=n}^{\infty} A_k$ is decreasing, $B_n := \cap_{k=n}^{\infty}A_k$ is increasing.
+
+</div>
+
 - **Limit**: If $\limsup A_n = \liminf A_n$, then $A_n$ have a limit.
 - **Monotone Case**: Monotone set sequence has limit, 
 $$

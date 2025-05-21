@@ -138,7 +138,15 @@
                                 "data": {
                                     "id": "da1j92gv3y00",
                                     "created": 1747799606045,
-                                    "text": "Sub-Addictivity"
+                                    "text": "Sub-Additivity"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1l8fv5ajs0",
+                                    "created": 1747805199063,
+                                    "text": "Continuity"
                                 },
                                 "children": []
                             },
@@ -146,7 +154,7 @@
                                 "data": {
                                     "id": "da1j992yz6o0",
                                     "created": 1747799620443,
-                                    "text": "Addictivity"
+                                    "text": "Additivity"
                                 },
                                 "children": [
                                     {
@@ -183,7 +191,57 @@
                             "created": 1747799736509,
                             "text": "Lebesgue Measure"
                         },
-                        "children": []
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "da1lc2hca6w0",
+                                    "created": 1747805483386,
+                                    "text": "Definition"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1lcy5mtnk0",
+                                    "created": 1747805552336,
+                                    "text": "Sub-Additivity & Additivity"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1lf4djkxk0",
+                                    "created": 1747805722603,
+                                    "text": "Zero-Measure Cases"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1lg3iu9o80",
+                                    "created": 1747805799111,
+                                    "text": "Limit of Lebesgue Measure"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "da1lgdvw4s00",
+                                            "created": 1747805821668,
+                                            "text": "Lower Limit"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "da1lg94mcqw0",
+                                    "created": 1747805811311,
+                                    "text": "Operations on Measurable Sets"
+                                },
+                                "children": []
+                            }
+                        ]
                     }
                 ]
             }
