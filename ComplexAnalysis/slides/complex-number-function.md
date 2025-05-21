@@ -72,6 +72,13 @@ $|z_1+z_2|^2 = (x_1+x_2)^2 + (y_1+y_2)^2$, $|z_1 - z_2|^2=(x_1-x_2)^2 + (y_1-y_2
 - **Polar Form of Complex Number**: $z = r e^{i\theta}$, where $r = |z|$ and $e^{i\theta} = \cos \theta + i \sin \theta$.
 - **Argument**: The *argument* of $z = re^{i\theta}$ is $\theta$, denoted as $\operatorname{arg}(z)$.
 - **Solution of $z^n = re^{i\theta}$**: $z_k = \sqrt[n]{r} e^{\frac{2k\pi + \theta}{n}i}$ for $k = 0,1,\cdots,n-1$.
+
+<div class=note>
+
+$z^n = r e^{i\theta + 2k\pi}$, then $z = \sqrt[n]{r} e^{\frac{2k\pi + \theta}{n} i}$ where $k = 0,1,\cdots,n-1$.
+
+</div>
+
 - Find the roots of $(1 + z)^5 = (1 - z)^5$.
 
 <div class=note>
@@ -142,11 +149,12 @@ $$
 <div class=note>
 
 Why above derivatives: $f(x,y) = f(z, \overline{z})$, with $x(z, \overline{z}) = \frac{1}{2}(z + \overline{z})$ and $y(z, \overline{z}) = \frac{1}{2}(z - \overline{z})$,
-
 $$
 f_z = f_x x_z + f_y y_z = \frac{1}{2}(f_x + \frac{1}{i}f_y), \quad
 f_{\overline{z}} = f_x x_{\overline{z}} + f_y y_{\overline{z}} = \frac{1}{2}(f_x - \frac{1}{i}f_y).
 $$
+
+How to Remember: $z = x + iy$, $z^{\prime}_z = \frac{1}{2}(1 + 1) = 1$; $\overline{z} = x - iy$, $\overline{z}_{\overline{z}}^{\prime} = \frac{1}{2}(1+1) = 1$.
 
 </div>
 
@@ -250,7 +258,7 @@ $u(x,y) \equiv 0$ implies $u_x \equiv u_y \equiv 0$. Then C-R equation implies $
 <div class=note>
 
 (1) By C-R equation: $v_y = -6xy$ and $v_x = 3x^2 - 3y^2$. Then $v = -3xy^2 + x^3 + c$.
-(2) Since $f(i) = 1+i$, then
+(2) Since $f(i) = 1+i$, $u(i) = 1$, $v(i) = c$. Then $f(i) = u + iv$ implies $c = 1$.
 
 </div>
 
