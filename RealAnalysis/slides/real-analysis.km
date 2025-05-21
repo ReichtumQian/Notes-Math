@@ -12,11 +12,184 @@
                     "created": 1747794510364,
                     "text": "Sets"
                 },
-                "children": []
+                "children": [
+                    {
+                        "data": {
+                            "id": "da1hh76niqo0",
+                            "created": 1747794601005,
+                            "text": "Five Set Operations",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "da1hhb7jk3c0",
+                                    "created": 1747794609766,
+                                    "text": "Distributive Law"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1hi0s6is00",
+                                    "created": 1747794665434,
+                                    "text": "De Morgan's Law"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1higqla4o0",
+                                    "created": 1747794700166,
+                                    "text": "Difference between Unions"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1hjfmamn40",
+                                    "created": 1747794776094,
+                                    "text": "Union of Differences"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "da1hwzvia9s0",
+                            "created": 1747795838920,
+                            "text": "Set Statements",
+                            "expandState": "expand"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "da1hrzwya9k0",
+                                    "created": 1747795447187,
+                                    "text": "Set Statement of Inequalities"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1hsyrqrhk0",
+                                    "created": 1747795523059,
+                                    "text": "Set Statement of Supremum and Infimum"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "da1hx552wy00",
+                            "created": 1747795850383,
+                            "text": "Set Limit"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "da1hx8z7lls0",
+                                    "created": 1747795858735,
+                                    "text": "Upper Limit, Lower Limit, Limit"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1hzh5dnx40",
+                                    "created": 1747796033251,
+                                    "text": "Limit of Monotone Set Sequences"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "da1j00twclk0",
+                    "created": 1747798897202,
+                    "text": "Lebesgue Measure",
+                    "layout_mind_offset": {
+                        "x": 485,
+                        "y": 313
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "da1j5dv7bu00",
+                            "created": 1747799317400,
+                            "text": "Outer Measure"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "da1j91kbrm00",
+                                    "created": 1747799604078,
+                                    "text": "Definition"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1j92gv3y00",
+                                    "created": 1747799606045,
+                                    "text": "Sub-Addictivity"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "da1j992yz6o0",
+                                    "created": 1747799620443,
+                                    "text": "Addictivity"
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "da1ja5lbaq80",
+                                            "created": 1747799691209,
+                                            "text": "From Disjoint Open Sets"
+                                        },
+                                        "children": []
+                                    },
+                                    {
+                                        "data": {
+                                            "id": "da1ja8gxr2w0",
+                                            "created": 1747799697475,
+                                            "text": "Non-Zero Distance"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "da1jbhcufu00",
+                                    "created": 1747799795182,
+                                    "text": "Limit"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "da1jaqei0a80",
+                            "created": 1747799736509,
+                            "text": "Lebesgue Measure"
+                        },
+                        "children": []
+                    }
+                ]
             }
         ]
     },
-    "template": "default",
+    "template": "right",
     "theme": "fresh-blue",
     "version": "1.4.43"
 }

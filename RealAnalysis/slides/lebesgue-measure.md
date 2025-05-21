@@ -52,12 +52,14 @@ Speaker: Yixiao Qian
 
 ---
 
-## Key Points of Lebesgue Outer Measure
+## Concept and Properties of Lebesgue Outer Measure
 
-- **Definition**: $m^{\ast}(E) = \inf_{\{I_n\}} \left\{ \sum \ell(I_n) \right\}$.
+- **Definition**: $m^{\ast}(E) = \inf_{\{I_n\}} \left\{ \sum \ell(I_n) \right\}$ where $E \subset \cup_n I_n$.
 - **Countable Sub-Additivity**: $m^{\ast}(\cup E_n) \leq \sum m^{\ast}(E_n)$.
 
 <div class=note>
+
+Why? Because the open intervals covering $\cup E_n$ maybe more compact than seperately.
 
 $$m^*\left(\bigcup_n E_n\right) \leq \sum_n \sum_k \ell(I_k^{(n)}) < \sum_n \left[m^*(E_n) + \frac{\epsilon}{2^n}\right] = \sum_n m^*(E_n) + \epsilon.$$
 </div>

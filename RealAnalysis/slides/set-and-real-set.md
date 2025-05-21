@@ -73,17 +73,33 @@ $\forall x \in \text{rhs}$, $x \in A$, $x \not\in \cap_{n=1}^{\infty}A_n$. Then 
 
 ---
 
-## Operations on Countable Sets
-
-<br>
+## Set Statement of Inequalities
 
 - $\{f > g\} = \cup_{n=1}^{\infty}\{f > g + \frac{1}{n}\}$
+
+<div class=note>
+
+$\Rightarrow$: $f> g$ indicates there exists $n > 0$, $f > g + \frac{1}{n}$.
+$\Leftarrow$: $f > g + \frac{1}{n} > g$.
+
+</div>
+
 - $\{f \geq g\} = \cap_{n=1}^{\infty} \{f > g - \frac{1}{n}\}$
 
+<div class=note>
+
+$\Rightarrow$: $f \geq g > g - \frac{1}{n}$.
+$\Leftarrow$: For all $n \geq 1$, $g < f + \frac{1}{n}$, take $n \rightarrow \infty$, then $g \leq f$.
+
+Note that
+(1) If $a_n > b_n$, $\lim \limits _{n \rightarrow \infty} a_n = a$, $\lim \limits _{n \rightarrow \infty} b_n = b$, then $a \geq b$.
+(2) If $a_n < c$, $\lim \limits _{n \rightarrow \infty} a_n = a$, then $a \leq c$.
+
+</div>
 
 ---
 
-## Supremum and Infimum
+## Set Statement of Supremum and Infimum
 
 <div class=trick>
 
@@ -145,16 +161,12 @@ has a limit but is not monotone.
 
 - Let $A_{2n-1} = (0, \frac{1}{n})$, $A_{2n} = (0, n)$. Find $\limsup A_n$ and $\liminf A_n$.
 
-<div class=note>
-
-</div>
-
 - Let $A_n = \{\frac{m}{n}: m \in \mathbb{Z}\}$. Prove that $\limsup A_n = \mathbb{Q}$ and $\liminf A_n = \mathbb{Z}$.
 
 
 ---
 
-## Limit of Monotone Set Sequences
+## Limit of Set of Function Limit
 
 - $f_n(x) \leq f_{n+1}(x)$ for all $x \in E$. Prove that the limit of $A_n = \{x : f_n(x) > c\}$ exists and
 $$ \lim \limits _{n \rightarrow \infty} A_n = \{x : \lim \limits _{n \rightarrow \infty} f_n(x) > c\}. $$
