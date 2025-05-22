@@ -298,11 +298,15 @@ We get $g_v = 1/f_u$, since $f_u \neq 0$, then $g_v$ exists. Then $g$ is also ho
 
 ---
 
-## Multi-Valuedness of $\sqrt[n]{z}$
+## Some Commonly Used Multi-Valued Functions
+
+- $e^z$: $e^z$ is not a multi-valued function.
+- $\ln z$: If $z = re^{i\theta}$, then $\ln z = r + i(\theta + 2k\pi)$ where $k \in \mathbb{Z}$.
+- $\sqrt{z}$:
+- $z^{\mu} = z^{a + ib}$: If $z^{\mu}$
 
 
 ---
 
-## Multi-Valuedness of $\ln z$
 
 
