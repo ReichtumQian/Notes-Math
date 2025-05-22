@@ -42,7 +42,8 @@ Speaker: Yixiao Qian
 <br>
 
 - Taylor Expansion and Zeros
-- Laurent Expansion and Singularties
+- Laurent Expansion and Singularities
+- Laurent Expansion at $z = \infty$
 
 ---
 
@@ -63,6 +64,8 @@ $$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
 
 ## Zeros and Uniqueness Theorem
 
+<br>
+
 - **Zeros of Order $m$**: $f(z) = \sum_{n=m}^{+\infty} a_n(z-z_0)^n$.
 - **Uniqueness Theorem**: $f$ holomorphic, has zeros $z_1,z_2,\cdots$, if $\lim \limits _{n \rightarrow \infty}z_n = w \in \mathbb{C}$, then $f \equiv 0$.
 
@@ -80,6 +83,8 @@ The uniqueness theorem indicates that $f \not\equiv 0$ iff all the zeros of $f$ 
 ---
 
 ## Expand Functions to Taylor Series
+
+<br>
 
 - Expand $f(z) = \frac{1}{z-2} + e^{-z}$ at the origin, and find the convergence radius.
 
@@ -106,7 +111,7 @@ $f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(
 
 ---
 
-# Laurent Expansion and Singularties
+# Laurent Expansion and Singularities
 
 ---
 
@@ -119,7 +124,6 @@ $f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(
 - **Isolated Singularity**: $z_0$ is a pole, $f$ is holomorphic in a punctured neighborhood.
 - **Riemann's Removable Singularity Theorem**: $f$ is holomorphic and bounded in a punctured neighborhood of $z_0$, then $z_0$ is a removable singularity, $f$ can extend on $z_0$.
 - **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
-- **Singularity of $\infty$**: $\infty$ is removable/zero/pole iff $0$ is removable/pole/zero of $f$.
 - **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, which have no limit points.
 
 ---
@@ -138,23 +142,7 @@ Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} =
 
 ---
 
-## Practice on Poles
-
-- Prove that if $f$ is entire, $\infty$ is a pole of $f$, then $f$ is a polynomial.
-
-<div class=note>
-
-(1) $\infty$ is pole implies $\forall M > 0$, $\exists R > 0$, $|z| \geq R$, $|f(z)| \geq M$.
-(2) By uniqueness theorem, $f \not\equiv 0$ implies $f$ has finite zeros $z_1,\cdots,z_n$ with multiplicity $m_1,\cdots,m_n$ in $|z| < R$.
-(3) Define $g(z) = \frac{(z-z_1)^{m_1} \cdots (z-z_n)^{m_n}}{f(z)}$, it is holomorphic in $\mathbb{C}$ (entire).
-(4) Since $\lim \limits _{z \rightarrow \infty}f(z) = \infty$, $\exists C > 0$ such that $|g(z)| \leq C(1+|z|^d)$ for $z \in \mathbb{C}$, $d = m_1 + \cdots + m_n$.
-(5) By generalized Liouville's theorem, $g$ is a polynomial with order $\rho \leq d$. Since $g$ has no roots, then $g$ is constant.
-
-</div>
-
----
-
-# Laurent Expansion at $z = \infty$
+# Laurent Expansion and Singularities at $z = \infty$
 
 ---
 

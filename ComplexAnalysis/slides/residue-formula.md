@@ -66,11 +66,16 @@ $$ \operatorname{res}_{z_0} f = - \sum\limits_{k=1}^n \operatorname{res}_{z_k} f
 
 <div class=note>
 
+$z = 0$ is a $4$-order pole. $\varphi(z) = z^4 f(z) = \frac{e^z - 1}{z} = \sum\limits_{n=1}^{\infty} \frac{z^{n-1}}{n!}$. So $\varphi^{(3)}(0) = \frac{1}{4}$, then $\operatorname{res}_{z=0}f = \frac{1}{24}$.
+
 </div>
 
 - $f(z) = \frac{1}{\sin \frac{1}{z}}$ at its poles.
 
 <div class=note>
+
+(1) Poles: $\sin \frac{1}{z} = 0$, i.e., $z = \frac{1}{k\pi}$. Since $\sin z \sim z$, so they are $1$-order poles.
+(2) $\varphi(z) = \frac{z - \frac{1}{k\pi}}{\sin \frac{1}{z}}$, and apply L'Hospital, $\operatorname{res}_{z = 1/k\pi} f = \lim \limits _{z \rightarrow 1/k\pi} \varphi(z) = \frac{z^2}{-\cos \frac{1}{z}} = \frac{(-1)^{k+1}}{k^2\pi^2}$.
 
 </div>
 
@@ -78,8 +83,7 @@ $$ \operatorname{res}_{z_0} f = - \sum\limits_{k=1}^n \operatorname{res}_{z_k} f
 
 <div class=note>
 
-$z = 1$: $1$.
-$z = \infty$: $-1$.
+(1) $\operatorname{res}_{z = 1}f = 1$. (2) $\operatorname{res}_{z=\infty} f = -1$.
 </div>
 
 ---
@@ -236,5 +240,4 @@ In conclusion, $F$ has $8 - 1 = 7$ roots in $1 < |z| < 2$.
 
 </div>
 
----
 
