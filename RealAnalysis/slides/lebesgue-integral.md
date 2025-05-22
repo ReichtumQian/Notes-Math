@@ -59,6 +59,7 @@ Speaker: Yixiao Qian
 - **Integral of Non-Negative Measurable Function**: $\displaystyle \int_D f \mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d}x$.
 - **Integral of Measurable Function**: ${\displaystyle \int_D f \mathrm{d} x = \int_D f_+ \mathrm{d} x - \int_D f_- \mathrm{d} x}$, where
 $$ f_+ := \max\{0, f(x)\}, \quad f_-(x) := \max\{0, -f(x)\}. $$
+- **Integrability**: $f$ is integrable (written $f \in L(E)$) if ${\displaystyle \int_E f \mathrm{d} x < \infty}$.
 
 ---
 
@@ -174,7 +175,7 @@ When $|x| < \delta$, ${\displaystyle \left| \frac{f(x)}{x} - A \right| < \epsilo
 ## Key Results of Lebesgue Integral
 
 - **Absolute Continuity**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\exists A$, $m(A) < \delta$, ${\displaystyle \left| \int_A f \mathrm{d} x \right| < \epsilon}$.
-- **Levi's Monotone Convergence Theorem**: $f, f_n$ are non-negative measurable, $f_n(x) \xrightarrow{a.e.} f(x)$ non-decreasingly for any $x \in D$, then ${\displaystyle \int_D f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x}$.
+- **Levi's Monotone Convergence Theorem** (MCT): $f, f_n$ are non-negative measurable, $f_n(x) \xrightarrow{a.e.} f(x)$ non-decreasingly for any $x \in D$, then ${\displaystyle \int_D f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x}$.
 - **Fatou's Theorem**: $f_n$ are non-negative measurable, then ${\displaystyle \int_D \liminf_{n \rightarrow \infty} f_n\mathrm{d} x \leq \liminf_{n \rightarrow \infty} \int_D f_n\mathrm{d} x}$
 
 <div class=note>
@@ -190,6 +191,14 @@ $$ \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x = \int_D f \mathr
 ## Applications of Absolute Continuity
 
 - Let $E$ be a measurable set, $f \in L(E)$, $e_n := \{|f| \geq n\}$. Prove that $\lim \limits _{n \rightarrow \infty} n \cdot m(e_n) = 0$.
+
+<div class=note>
+
+(1) $f$ is finite a.e., then $m(e_n) \rightarrow 0$. That is, $\forall \epsilon > 0$, $\exists N > 0$, $\forall n > N$, $m(e_n) < \delta$.
+(2) By absolute continuity, for $\forall \epsilon > 0$, $\exists \delta > 0$, if $m(e_n) < \delta$, ${\displaystyle \int_{e_n} f \mathrm{d} x} < \epsilon$. Then
+$$\epsilon > \int_{e_n} f \mathrm{d} x \geq n \cdot m(e_n). $$
+
+</div>
 
 ---
 
@@ -243,18 +252,6 @@ $$ \liminf \int_E g_k \mathrm{d} x - \limsup \int_E f_k \mathrm{d} x \geq \int_E
 </div>
 
 ---
-
-## Applications of Fatou's Theorem
-
-- $f_n$ are measurable, $f_n \rightarrow f$ a.e., prove that there exists $K > 0$ such that ${\displaystyle \int_E |f_n|\mathrm{d} x \leq K}$.
-
-<div class=note>
-
-$|f_n| \rightarrow |f|$ a.e., 
-</div>
-
----
-
 
 ## Use LDCT to Calculate Integral Limits
 
