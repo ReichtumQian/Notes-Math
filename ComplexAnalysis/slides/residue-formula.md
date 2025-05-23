@@ -79,11 +79,11 @@ $z = 0$ is a $4$-order pole. $\varphi(z) = z^4 f(z) = \frac{e^z - 1}{z} = \sum\l
 
 </div>
 
-- $f(z) = \frac{1}{e^{z-1}}$ at $z = 1$ and $z = \infty$.
+- $f(z) = \frac{1}{e^{z} - 1}$ at $z = 0$ and $z = \infty$.
 
 <div class=note>
 
-(1) $\operatorname{res}_{z = 1}f = 1$. (2) $\operatorname{res}_{z=\infty} f = -1$.
+(1) $z = 0$ is a $1$-order pole, $\operatorname{res}_{z = 0}f = 1$. (2) $z = \infty$ is an essential singularity, $\operatorname{res}_{z=\infty} f = -1$.
 </div>
 
 ---
@@ -94,17 +94,30 @@ $z = 0$ is a $4$-order pole. $\varphi(z) = z^4 f(z) = \frac{e^z - 1}{z} = \sum\l
 
 - **Residue Formula**: Only one pole, then
 $$ \int_C f(z)\mathrm{d} z = 2 \pi i \operatorname{res}_{z_0} f$$
-- **Cauchy Residue Formula**: Poles $z_1,\cdots,z_n$, then
+- **Cauchy Residue Formula**: Isolated poles $z_1,\cdots,z_n$, then
 $$ \int_C f(z) \mathrm{d} z = 2 \pi i \sum\limits_{k = 1}^n \operatorname{res}_{z_k} f.$$
 
 ---
 
 ## Calculate Integrals using Residue Formula
 
-- ${\displaystyle \frac{1}{2\pi i}\int_C \frac{e^z}{z(1-z)^3}\mathrm{d} z}$ where $C$ is a closed contour does not pass through $z = 0$ and $z = 1$.
+- ${\displaystyle \int_{|z| = 2} \frac{e^z}{z(1-z)^3}\mathrm{d} z}$.
+
+<div class=note>
+
+$\operatorname{res}_{z=0}f = 1$, $\operatorname{res}_{z=1} f = - \frac{e}{2}$. Then $I = 2\pi i(1 - \frac{e}{2})$.
+
+</div>
+
 - ${\displaystyle \int_{|z| = 1} \frac{\tan \pi z}{z^3}\mathrm{d} z}$.
-- ${\displaystyle \int_{|z| = \frac{5}{2}} \frac{1}{(z-3)(z^5 - 1)}\mathrm{d} z}$.
-- ${\displaystyle I = \int_{|z| = 1} \frac{(z + \frac{1}{z})^{2n}}{z}\mathrm{d} z}$ and prove that ${\displaystyle J = \int_0^{2\pi} (\cos \theta)^{2n} \mathrm{d}\theta = 2\pi \cdot \frac{(2n-1)!!}{(2n)!!}}$.
+
+<div class=note>
+
+(1) $f(z) = \frac{\sin \pi z}{z^3 \cos \pi z}$, poles are $z = 0$ (order $2$), $z = \pm \frac{1}{2}$ (order $1$).
+(2) When $z = 0$, $f(z) = \frac{\sin \pi z}{z^3} = \sum_{n=0}^{\infty} (-1)^n \frac{z^{2n-2}}{(2n+1)!}$, so $\operatorname{res}_{z = 0} f = 0$.
+(3) $z = \pm \frac{1}{2}$, $f(z) = \frac{\pm 1}{z^3 \cos \pi z}$, $\varphi(z) = \frac{\pm (z \mp \frac{1}{2})}{z^3\cos \pi z}$. Apply L'Hospital $\operatorname{res}_{z=\frac{1}{2}} f = - \frac{8}{\pi}$, $\operatorname{res}_{z=-\frac{1}{2}}f = \frac{8}{\pi}$.
+
+</div>
 
 ---
 
@@ -119,9 +132,18 @@ $$ \int_0^{2\pi} R(\cos \theta, \sin \theta)\mathrm{d} \theta = \int_{|z| = 1} R
 
 <div class=note>
 
+(1) $\cos \theta = (z + z^{-1})/2$, so $\displaystyle I = \frac{1}{i} \int_{|z| = 1} \frac{2}{z^2 + 2az + 1}\mathrm{d} z$. Poles are $\alpha = - a + \sqrt{a^2 - 1}$, $\beta = -a - \sqrt{a^2 - 1}$. But $\beta$ lies outside $|z| = 1$, so we only consider $\alpha$.
+(2) $\varphi(z) = \frac{2}{z - \beta}$, so $\operatorname{res}_{z = \alpha} f = \frac{2}{\alpha - \beta}$, then $I = \frac{2\pi}{\sqrt{a^2 - 1}}$.
+
 </div>
 
 - ${\displaystyle \int_0^{2\pi} \sin^{2n}x \mathrm{d} x}$ where $n \in \mathbb{N}$.
+
+<div class=note>
+
+$\displaystyle I = \frac{1}{4^n i} \int_{|z| = 1} \frac{(z^2 - 1)^{2n}}{z^{2n+1}}\mathrm{d} z$, where ${\displaystyle (z^2 - 1)^{2n} = \binom{2n}{k}(-1)^{2n-k}z^{2k}}$, $\displaystyle \operatorname{res}_{z=0}f = \binom{2n}{n} (-1)^n$.
+
+</div>
 
 ---
 
