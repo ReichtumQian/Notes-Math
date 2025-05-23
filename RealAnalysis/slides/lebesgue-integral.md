@@ -286,6 +286,29 @@ $$ \int_0^{+\infty} f \mathrm{d} x = \int_0^1 1 \mathrm{d} x + \int_1^{+\infty} 
 
 </div>
 
+---
+
+## Use LDCT to Calculate Integral Limits
+
+- Calculate ${\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^{\infty} \frac{\sin(x/n)}{x(1+x)}\mathrm{d} x}$.
+
+<div class=note>
+
+(1) When $x \in [0, 1]$, $f_n(x) \leq \frac{x/n}{x(1+x)} = \frac{1}{1+x} := g(x)$. $g(x)$ is bounded so $g \in L([0, 1])$.
+(2) When $x > 1$, $f_n(x) \leq \frac{1}{x(1+x)} := h(x)$. $h(x) \sim \frac{1}{x^2}$ when $x \rightarrow \infty$, so $h \in L([1, +\infty))$.
+(3) $f_n \xrightarrow{a.e.} 0$. So by LDCT the limit is $0$.
+
+</div>
+
+- Calculate ${\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{nx e^{-nx}}{1+n^2x^2}\mathrm{d} x}$.
+
+<div class=note>
+
+(1) $\displaystyle f_n = \frac{nx e^{-nx}}{1+n^2x^2} \leq \frac{nx e^{-nx}}{2nx} = \frac{e^{-nx}}{2} \leq \frac{1}{2}$.
+(2) $f_n \xrightarrow{a.e.} 0$, so by LDCT the limit is $0$.
+
+</div>
+
 
 ---
 
