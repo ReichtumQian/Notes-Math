@@ -154,7 +154,37 @@ $$
 
 - **Definition**: $a_{ij} \in \mathbb{R}$ and $A^T = A$.
 - **Eigenvalues and Eigenvectors**: (1) $\lambda_i \in \mathbb{R}$; (2) $\xi_i$ belonging to different $\lambda_i$ are orthogonal.
-- **Orthogonal Similarity**: 
+
+<div class=note>
+
+(1) From $A\xi = \lambda \xi$, $\overline{\xi}^TA\xi = \lambda \cdot \overline{\xi}^T\xi$; From $\overline{\xi}^TA = \overline{\xi}^T\lambda$, $\overline{\xi}^T A \xi = \overline{\lambda} \cdot \overline{\xi}^T \xi$. Then $\lambda = \overline{\lambda}$.
+(2) $\lambda_1\xi_1^T\xi_2 = (A\xi_1)^T \xi_2 = \xi_1^T(A\xi_2) = \lambda_2 \xi_1^T \xi_2$. Then $\xi_1^T\xi_2 = 0$ since $\lambda_1 \neq \lambda_2$.
+
+</div>
+
+- **Orthogonal Similarity**: There exists an orthogonal matrix $P$ such that $P^TAP = \Lambda$.
+
+<div class=note>
+
+(1) Prove by induction. If result holds for $n-1$, take $\lambda$ and $\xi_1$, expand $\xi_1$ to an orthogonal standard basis $\xi_1,\cdots,\xi_n$, and take $Q = (\xi_1,\cdots,\xi_n)$.
+
+$$
+AQ = Q \left(
+  \begin{array}{cc}
+    \lambda&\beta^T\\
+    0&A_{n-1}
+  \end{array}
+\right) \Rightarrow Q^T AQ = \left(
+  \begin{array}{cc}
+    \lambda&\beta^T \\
+            0&A_{n-1}
+  \end{array}
+\right).
+$$
+
+(2) By symmetry, $\beta = \mathbf{0}$. There exists $P_1$ that $P_1^TA_{n-1}P_1$ is diagonal. Take $P = Q \operatorname{diag}\{1, P_1\}$.
+
+</div>
 
 ---
 
