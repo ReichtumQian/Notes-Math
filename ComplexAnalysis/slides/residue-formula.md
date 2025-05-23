@@ -151,12 +151,19 @@ $\displaystyle I = \frac{1}{4^n i} \int_{|z| = 1} \frac{(z^2 - 1)^{2n}}{z^{2n+1}
 
 <div class=trick>
 
-Let $f(z) = \frac{P(z)}{Q(z)}$, where $(P(z), Q(z)) = 1$, $\operatorname{deg}(Q) \geq \operatorname{deg}(P) + 2$, $Q$ has no roots on $\mathbb{R}$, then
-$$ \int_{-\infty}^{+\infty} f(x)\mathrm{d} x = 2 \pi i \sum \operatorname{res}_{z=a_k} f(z), $$
-where $a_k$ are residues of $f(z)$ satisfying $\operatorname{Im}(a_k) > 0$.
+(1) Construct a semicircle $C_R = Re^{i\theta}$ where $0 \leq \theta \leq \pi$.
+(2) If $f(z) \sim \frac{1}{R^p}$ ($p \geq 2$) on $C_R$, then ${\displaystyle \left| \int_{C_R}f\mathrm{d} z \right| \leq \pi R \cdot \max_{C_R}|f| \sim \frac{1}{R} \rightarrow 0}$.
+
 </div>
 
 - ${\displaystyle \int_0^{+\infty} \frac{x^2}{(x^2 + 1)(x^2 + 4)}\mathrm{d}x}$
+
+<div class=note>
+
+(1) $\displaystyle I = \frac{1}{2} \int_{-\infty}^{+\infty} f(x)\mathrm{d} x$. Define $\displaystyle I_1 = \int_{-\infty}^{+\infty}f(z)\mathrm{d} z$, $\displaystyle I_2 = \int_{C_R} f(z)\mathrm{d} z$. $|I_2| \rightarrow 0$.
+(2) $I_1 + I_2 = 2\pi i \operatorname{res}_{z=i} f + 2\pi i \operatorname{res}_{z=2i}f = 2\pi i(-\frac{1}{6i} + \frac{1}{3i}) = \frac{\pi}{3}$. Then $I = \frac{1}{2}I_1 = \frac{\pi}{6}$.
+
+</div>
 
 - ${\displaystyle \int_{-\infty}^{+\infty} \frac{x^2}{(x^2 + a^2)^2}\mathrm{d} x}$
 
