@@ -92,13 +92,34 @@ $G = \cup_{k=1}^{\infty}(a_k, b_k)$, $f^{-1}(G) = \cup_{k=1}^{\infty}\{x: a_k < 
 
 </div>
 
-- **Closure under Operations**: $\pm$, $\times$, $/$, $\sup$, $\inf$, $\limsup$, $\liminf$.
+- **Closure under Operations**: $\pm$, $\times$, $/$.
 - **Closure under Composition**: $f$ is continuous, $g$ is finite measurable, $f(g)$ is measurable.
 
 <div class=note>
 
 Since continuity, $G := f^{-1}(a, +\infty)$ is an open set in $\mathbb{R}$. $G = \cup_{k=1}^{\infty}(a_k,b_k)$, $g^{-1}(a_k,b_k)$ is measurable, then $g^{-1}(G)$ is measurable, and
 $$ \{f(g(x)) > a\} = \{g(x) \in G\} = g^{-1}(G) \cap E \quad \text{is measurable.} $$
+</div>
+
+---
+
+## Limit of Measurable Functions
+
+- **Limit Function is Measurable**: $\sup_n$, $\inf_n$, $\limsup_n$, $\liminf_n$.
+
+<div class=note>
+
+(1) $\sup_n$: $\{\sup_{n \geq 1} f_n > \alpha\} = \cup_{n=1}^{\infty} \{f_n > \alpha\}$. So $\sup_n f_n$ is measurable.
+(2) $\limsup_n$: $\limsup_{n \rightarrow \infty} f_n(x) = \inf_{n \geq 1} \sup_{k \geq n} f_k(x)$, so $\limsup_n f_n$ is measurable.
+
+</div>
+
+- If $f_n \xrightarrow{a.e.} f$, $f_n$ are measurable. Prove that $f$ is measurable.
+
+<div class=note>
+
+$f(x) = \lim \limits _{n \rightarrow \infty} f_n(x) = \limsup\limits_{n \rightarrow \infty}f_n(x)$. So $f$ is measurable.
+
 </div>
 
 ---

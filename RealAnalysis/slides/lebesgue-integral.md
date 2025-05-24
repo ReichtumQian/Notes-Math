@@ -177,14 +177,9 @@ When $|x| < \delta$, ${\displaystyle \left| \frac{f(x)}{x} - A \right| < \epsilo
 - **Absolute Continuity**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\exists A$, $m(A) < \delta$, ${\displaystyle \left| \int_A f \mathrm{d} x \right| < \epsilon}$.
 - **Levi's Monotone Convergence Theorem** (MCT): $f, f_n$ are non-negative measurable, $f_n(x) \xrightarrow{a.e.} f(x)$ non-decreasingly for any $x \in D$, then ${\displaystyle \int_D f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x}$.
 - **Fatou's Theorem**: $f_n$ are non-negative measurable, then ${\displaystyle \int_D \liminf_{n \rightarrow \infty} f_n\mathrm{d} x \leq \liminf_{n \rightarrow \infty} \int_D f_n\mathrm{d} x}$
-
-<div class=note>
-
-If $f_n \rightarrow f$ a.e., then $\displaystyle \int_D f \mathrm{d} x \leq \liminf_{n \rightarrow \infty} \int_D f_n\mathrm{d} x.$
-</div>
-
 - **LDCT**: $f$ and $f_n$ are measurable, $f_n \xrightarrow{a.e.} f$, $\exists g \in L(D)$, $|f_n| \leq g$ a.e., then $f,f_n \in L(D)$ and
 $$ \lim \limits _{n \rightarrow \infty} \int_D f_n\mathrm{d} x = \int_D f \mathrm{d} x. $$
+- **Counterexample**: $f_n = \frac{1}{x}\chi_{[\frac{1}{n}, 1]}$, $f_n \xrightarrow{a.e.} f = \frac{1}{x}$. Then $f_n \in L([0, 1])$ but $f \not \in L([0,1])$.
 
 ---
 
@@ -309,6 +304,18 @@ $$ \int_0^{+\infty} f \mathrm{d} x = \int_0^1 1 \mathrm{d} x + \int_1^{+\infty} 
 
 </div>
 
+---
+
+## Use LDCT to Calculate Integral Limits
+
+- Calculate $\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{nx^n}{1 + x^n}\mathrm{d} x$.
+
+<div class=note>
+
+(1) Let $y = x^n$, then $\displaystyle I = \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{y^{1/n}}{1 + y}\mathrm{d} y$. Denote $\displaystyle f_n(y) = \frac{y^{1/n}}{1 + y}$, $\displaystyle f(y) = \frac{1}{1+y}$.
+(2) $\displaystyle |f_n(y)| \leq \frac{1}{1+y}$, so $\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 f_n(y) \mathrm{d} y = \int_0^1 f(y)\mathrm{d} y = \ln 2$.
+
+</div>
 
 ---
 
