@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Derivatives and Differentials
 
 ---
@@ -115,7 +111,7 @@ $$ \frac{\mathrm{d}^2 y}{\mathrm{d} x^2} = \frac{\mathrm{d} y^{\prime}}{\mathrm{
 
 ---
 
-## Applications of Rolles's Mean-Value Theorem
+## Applications of Rolle's Mean-Value Theorem
 
 - If $0 \leq f(x) \leq xe^{-x}$, then $\exists \xi \in (0, +\infty)$, $f^{\prime}(\xi) = e^{-\xi}(1- \xi)$.
 
@@ -143,7 +139,7 @@ $F(x) := f(x) - xe^{-x}$, $F(0) = 0$, $\lim \limits _{x \rightarrow +\infty}F(x)
 
 <div class=note>
 
-Consider $F(x) = xf(x)$.
+Note this example is not $f^{\prime} + fg$. Consider $F(x) = xf(x)$.
 
 </div>
 
@@ -165,6 +161,13 @@ which implies $F^{\prime}(x) \equiv 0$. This contradicts the condition.
 If $a < b$, $ab > 0$, $f \in C[a, b]$, differenitable on $(a, b)$, prove that $\exists \xi \in (a, b)$ such that
 $$ \frac{af(b) - bf(a)}{a-b} = f(\xi) - \xi f^{\prime}(\xi). $$
 
+<div class=note>
+
+It is equivalent to prove that ${\displaystyle \frac{f(b)/b - f(a)/a}{1/b - 1/a} = f(\xi) - \xi f^{\prime}(\xi)}$. Define $g(x) = \frac{f(x)}{x}$ and $h(x) = \frac{1}{x}$. Then
+
+$$ \frac{g(b) - g(a)}{h(b) - h(a)} = \frac{g^{\prime}(\xi)}{h^{\prime}(\xi)} = f(\xi) - \xi f^{\prime}(\xi). $$
+
+</div>
 
 ---
 
