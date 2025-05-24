@@ -209,7 +209,7 @@ $$ \int_0^1 \varphi(x)\mathrm{d} x = \int_0^1 \frac{1}{2}\varphi(x) + \frac{1}{2
 
 <div class=note>
 
-Change variable $x = \lambda a + (1 - \lambda)b$.
+Change variable $x = \lambda a + (1 - \lambda)b$. Apply the previous result.
 
 </div>
 

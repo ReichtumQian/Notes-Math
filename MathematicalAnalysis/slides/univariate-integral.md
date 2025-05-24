@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Indefinite Integrals
 
 ---
@@ -81,12 +77,6 @@ Hint: Assume $\frac{x}{(x+1)(x^2+2)} = \frac{A}{x+1} + \frac{Bx + C}{x^2 + 2}$. 
 
 ---
 
-## Indefinite Integrals of $\ln x$ and $e^x$
-
-- Calculate ${\displaystyle \int \ln(1 + \sqrt{x}) \mathrm{d} x}$.
-
----
-
 ## Indefinite Integrals of Trigonometric Functions
 
 - Calculate the following integrals
@@ -118,6 +108,12 @@ $$
 (5) \int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d} x.
 $$
 
+<div class=note>
+
+(1) Let $x = a \tan t$, then ${\displaystyle \int \frac{1}{x^2 + a^2}\mathrm{d}x = \int \frac{1}{a^2 \sec^2 t} \cdot a \sec^2 t \mathrm{d} t = \frac{t}{a}}$. So $I = \frac{1}{a} \arctan \frac{x}{a}$.
+
+</div>
+
 
 ---
 
@@ -138,16 +134,40 @@ $$
 
 ## Key Points of Definite Integrals
 
-- **Condition for Integrability**
-- **Closure under Arithmetic Operations**
-- **Closure under Composition**
-- **Newton-Leibniz Formula**
+- **Condition for Integrability**: $\sum_i \omega_i \Delta x_i < \epsilon$.
+- **Property**: If $f$ is integrable, then $f$ is bounded.
+- **Closure under Arithmetic Operations**: $kf(x)$, $f(x) \pm g(x)$, $f(x)g(x)$.
+
+<div class=note>
+
+Assume $|f| \leq M$ and $|g| \leq N$, $\omega_i^{fg} \Delta x_i \leq M \omega_i^g \Delta x_i + N \omega_i^f \Delta x_i$.
+
+</div>
+
+- **Closure under Composition**: $f$ continuous, $\varphi$ integrable, then $f(\varphi(x))$ integrable.
+- **Newton-Leibniz Formula**: ${\displaystyle \int_a^b f(x)\mathrm{d} x = F(b) - F(a)}$.
+- **Mean-Value Theorem**: If $g(x)$ does not change sign, ${\displaystyle \int_a^b f(x)g(x)\mathrm{d} x = f(\xi) \int_a^b g(x)\mathrm{d} x}$.
 
 ---
 
-## Mean-Value Theorem for Integrals
+## Applications of Mean-Value Theorem
 
 - If $f$ is strictly increasing, prove ${\displaystyle \int_a^b xf(x)\mathrm{d} x > \frac{a+b}{2} \int_a^b f(x)\mathrm{d} x}$.
+
+<div class=note>
+
+(1) $\displaystyle \int_a^b (x - \frac{a+b}{2}) f(x)\mathrm{d} x = \int_a^{\frac{a+b}{2}}(x-\frac{a+b}{2})f(x)\mathrm{d}x + \int_{\frac{a+b}{2}}^b (x - \frac{a+b}{2})f(x)\mathrm{d} x$.
+(2) In first term take $t = \frac{a+b}{2} - t$, and second term $t = x - \frac{a+b}{2}$. Then
+$$ I = \int_0^{\frac{b-a}{2}} t \left[ f(\frac{a+b}{2} + t) - f(\frac{a+b}{2} - t) \right] \mathrm{d} t > 0 $$
+
+
+
+</div>
+
+---
+
+## Wallis Formula
+
 
 ---
 
