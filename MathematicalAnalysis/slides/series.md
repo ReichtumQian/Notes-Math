@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Numerical Series
-- Function Sequences and Series
-- Power Series
-
----
-
 # Numerical Series
 
 ---

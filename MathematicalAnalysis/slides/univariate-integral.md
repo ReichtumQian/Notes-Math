@@ -215,21 +215,45 @@ $$ \left| \int_{t_1}^{t_2} f(x)\mathrm{d} x \right| \leq \int_{t_1}^{t_2} |f(x)|
 
 - If ${\displaystyle \int_a^{+\infty}f(x)\mathrm{d} x}$ exists and $\lim \limits _{x \rightarrow \infty}f(x) = A$. Then $A = 0$.
 
+<div class=note>
+
+If $A > 0$, $\exists X > 0$, $\forall x > X$, $f(x) > \frac{A}{2}$. Then $\displaystyle \int_X^{+\infty} f(x)\mathrm{d} x > \int_X^{+\infty}\frac{A}{2} \mathrm{d}x \neq 0$.
+
+</div>
+
+- If $f \in C[a, +\infty)$, ${\displaystyle \int_a^{+\infty} f(x)\mathrm{d} x}$ exists. $\lim \limits _{x \rightarrow +\infty}f(x)$ may not exist. (Example: ${\displaystyle \int_1^{+\infty} \sin x^2 \mathrm{d}x}$.)
+- If $f$ is uniformly continuous on $[a, +\infty)$, ${\displaystyle \int_a^{+\infty}f(x)\mathrm{d} x}$ exists, prove that $\lim \limits _{x \rightarrow +\infty} f(x) = 0$.
+
+<div class=note>
+
+(1) Assume $\lim \limits _{x \rightarrow +\infty}f(x) \neq 0$, then $\exists \epsilon >0$, $\forall X > 0$, $\exists x_0 > X$, $|f(x_0)| > \epsilon$.
+(2) By uniform continuity, $\exists \delta > 0$, $\forall x \in [x_0, x_0+\delta]$, $|f(x) - f(x_0)| < \frac{\epsilon}{2}$. Then $|f(x)| \geq \frac{\epsilon}{2}$.
+(3) $\displaystyle |\int_{x_0}^{x_0+\delta} f(x)\mathrm{d} x| = \int_{x_0}^{x_0+\delta}|f(x)|\mathrm{d} x \geq \frac{\epsilon\delta}{2}$, this contradicts Cauchy's criterion.
+
+</div>
 
 
 ---
 
 ## Tests for Convergence
 
-- **Compare Test**:
-- **Dirichlet Test**:
-- **Abel Test**:
+- **Compare Test**: (1) ${\displaystyle \int_0^{+\infty} \frac{x}{1-e^x}\mathrm{d} x}$; (2) ${\displaystyle \int_0^{+\infty} \frac{\ln x}{e^x}}$; (3) ${\displaystyle \int_3^{+\infty} \frac{\mathrm{d} x}{x^p (\ln x)^q (\ln \ln x)^r}}$.
 
----
+<div class=note>
 
-## Improper Integrals involving $e^x$ and $\ln x$
+(1) When $x = 0$ the limit is $1$; When $x \rightarrow \infty$, $f(x) \sim \frac{x}{x^{+\infty}}$, so it converges.
+(2) When $x = 0$, $|\frac{\ln x}{e^x}| \leq |x^{-\epsilon}|$, so converges. When $x \rightarrow \infty$, $e^x \sim x^{+\infty}$, so converges.
 
-<div class=trick>
+</div>
+
+- **Dirichlet Test**: (1) ${\displaystyle \int_a^x f(t)\mathrm{d} t}$ is bounded; (2) $g(x)$ decreases to $0$.
+- **Abel Test**: (1) ${\displaystyle \int_a^{+\infty}f(t)\mathrm{d} t}$ converges; (2) $g(x)$ monotone and bounded.
+- Discuss convergence behavior: (1) ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x^p}}$; (2) ${\displaystyle \int_0^{+\infty} \sin x^2 \mathrm{d} x}$.
+
+<div class=note>
+
+(1) $x = 0$: $\frac{\sin x}{x^p} \sim \frac{1}{x^{p-1}}$, so $p < 2$. $x \rightarrow \infty$: $\int_1^x \sin t\mathrm{d} t$ bounded, $\frac{1}{x^p} \rightarrow 0$ for $p > 0$.
+(2) Take $x = \sqrt{t}$, then $I = \int_0^{+\infty} \frac{\sin t}{2 \sqrt{t}}\mathrm{d} t$. Then $f \sim t^{\frac{1}{2}}$ when $x = 0$, by Dirichlet when $x \rightarrow \infty$.
 
 </div>
 
