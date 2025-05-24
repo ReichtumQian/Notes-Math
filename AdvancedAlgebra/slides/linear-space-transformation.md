@@ -37,13 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-- Concept of Linear Space
-- Operations on Linear Spaces
-
----
-
 # Concept of Linear Space
 
 ---
@@ -266,9 +259,52 @@ $\exists \beta \in V$, $\mathcal{A}\beta = \alpha$, then $\mathcal{A} \alpha = \
 
 ---
 
+## Key Points of Eigenvalues and Eigenvectors
+
+- **Definition**: $\mathcal{A}\xi = \lambda \xi$.
+- **Eigenspace**: $V_{\lambda} := \{\xi: \mathcal{A}\xi = \lambda \xi\}$, $V_{\lambda}$ is a subspace of $V$.
+- **Characteristic Polynomial**: $f(\lambda) = |\lambda I - A|$.
+- **Linear Independence of Eigenvectors**: Eigenvectors belonging to different eigenvalues are linearly independent.
+
+<div class=note>
+
+Prove by induction, assume that $\xi_1, \cdots, \xi_{k-1}$ are linearly independent.
+(1) Suppose $c_1\xi_1 + \cdots + c_k\xi_k = 0$, applying $\mathcal{A}$ yields $c_1\lambda_1\xi_1 + \cdots + c_k\lambda_k \xi_k = 0$.
+(2) Multiplying by $\lambda_k$ yields $c_1\lambda_k \xi_1 + \cdots + c_{k-1}\lambda_k \xi_{k-1} = 0$.
+(3) Substract two equations, $c_1(\lambda_1 - \lambda_k)\xi_1 + \cdots + c_{k-1}(\lambda_{k-1} - \lambda_k)\xi_{k-1} = 0$. So $c_i = 0$.
+
+</div>
+
 
 ---
 
+## Similarity Diagonalization
+
+
+---
+
+## Practice on Eigenvalues and Eigenvectors
+
+- Find (1) eigenvalues; (2) eigenvectors; (3) if $A$ is diagonalizable.
+
+$$
+\begin{bmatrix}
+1 & 2 & 0 \\
+0 & 3 & 1 \\
+0 & 0 & 3
+\end{bmatrix}
+$$
+
+<div class=note>
+
+(1) $\lambda_1 = 1$, $\lambda_2 = \lambda_3 = 3$.
+(2) $\mathbf{v} = k(1, 0, 0)^T$ for $\lambda = 1$; $\mathbf{v} = k(1, 1, 0)^T$ for $\lambda = 3$.
+(3) No. Because algebraic multiplicity does not equal to geometric multiplicity.
+
+</div>
+
+
+---
 
 # Minimal Polynomial
 
