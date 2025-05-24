@@ -102,6 +102,15 @@ $$ \lim \limits _{n \rightarrow \infty} \sqrt[n]{a_n} = \lim \limits _{n \righta
 
 </div>
 
+- Find the limits: (1) $\lim \limits _{n \rightarrow \infty} \sqrt[n]{n!}$, (2) $\lim \limits _{n \rightarrow \infty} \frac{\sqrt[n]{n(n+1)\cdots (2n-1)}}{n}$.
+
+<div class=note>
+
+(1) Denote $a_n = n!$, then $\frac{a_n}{a_{n-1}} = n \rightarrow \infty$, so the limit does not exist.
+(2) Denote $a_n = \frac{n(n+1)\cdots (2n-1)}{n^n}$, then $\frac{a_n}{a_{n-1}} = \frac{2(2n-1)(n-1)^{n-1}}{n^n} = (4 - \frac{2}{n}) \cdot (1-\frac{1}{n})^{n \cdot \frac{n-1}{n}} \rightarrow \frac{4}{e}$.
+
+</div>
+
 ---
 
 ## Use Definition of Definite Integral
@@ -116,6 +125,19 @@ ${\displaystyle I = \sum_{k=1}^n \frac{1}{n} \cdot \frac{1}{\sqrt{1 + (\frac{k}{
 
 - Calculate ${\displaystyle I = \lim \limits _{n \rightarrow \infty} \left( \frac{\sin \frac{\pi}{n}}{n + \frac{1}{n}} + \frac{\sin \frac{2}{n}\pi}{n + \frac{2}{n}} + \cdots + \frac{\sin \pi}{n + 1} \right)}$
 
+<div class=note>
+
+(1) $\frac{\sin \frac{i}{n}\pi}{n+1} \leq \frac{\sin \frac{i}{n}\pi}{n + \frac{i}{n}} \leq \frac{\sin \frac{i}{n}\pi}{n}$. (2) rhs is $\displaystyle \int_0^1 \sin \pi x \mathrm{d} x = \frac{2}{\pi}$ (3) lhs $\sum \frac{\sin \frac{i}{n}\pi}{n} = \frac{n}{n+1} \cdot \frac{1}{n} \sum \sin \frac{i}{n}\pi$.
+
+</div>
+
+- Calculate ${\displaystyle \lim \limits _{n \rightarrow \infty} \left( \frac{1}{n^2 + n + 1} + \frac{2}{n^2 + n + 2} + \cdots + \frac{n}{n^2 + n + n}\right)}$.
+
+<div class=note>
+
+(1) $\frac{k}{n^2 + 2n} \leq \frac{k}{n^2 + n + k} \leq \frac{k}{n^2 + n}$. (2) $\sum \frac{k}{n^2 + 2n} = \frac{n}{n+2} \cdot \frac{1}{n}\sum \frac{k}{n} \rightarrow \frac{1}{2}$. (3) rhs is similar.
+
+</div>
 
 
 ---
