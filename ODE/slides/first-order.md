@@ -68,7 +68,7 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
-(1) Take $u(y) = x(y)y$, differentiating $y$, $\frac{\mathrm{d} u}{\mathrm{d} y} = \frac{\mathrm{d} x}{\mathrm{d}y}y + x$. Then $\mathrm{d} y = \frac{\mathrm{d} u - y\mathrm{d} x}{x}$ and $y = \frac{u}{x}$.
+(1) Take $u = xy$, by total differential formula $\mathrm{d}u = x\mathrm{d} y + y\mathrm{d}x$. Then $\mathrm{d} y = \frac{\mathrm{d} u - y\mathrm{d} x}{x}$ and $y = \frac{u}{x}$.
 (2) $(u + \sqrt{1-u^2})\mathrm{d} x + x\mathrm{d} u - u\mathrm{d} x = 0$ or $\frac{\mathrm{d} u}{\mathrm{d} x} = - \frac{\sqrt{1-u^2}}{x}$. Solution $\arcsin(u) = - \ln |x| + c$.
 (3) The general solution is $\arcsin (xy) + \ln |x| = c$.
 
@@ -84,7 +84,7 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
-Let $y = ux$, then $\frac{\mathrm{d} u}{u(\ln u - 1)} = \frac{\mathrm{d} x}{x}$. Then $u = e^{1\pm 2x}$ and $y = x e^{1 \pm 2x}$.
+Let $x = uy$, then $\frac{\mathrm{d} u}{u(\ln u + 1)} = \frac{\mathrm{d} x}{x}$. Then $u = e^{-1-2x}$ and $y = x e^{1 + 2x}$.
 </div>
 
 - Solve $x y^{\prime} + y = 2 \sqrt{xy}$.
@@ -96,7 +96,7 @@ Note: $\frac{\mathrm{d} u}{2 \sqrt{u} - 2u} = \frac{1}{x}\mathrm{d} x$, the left
 
 <div class=note>
 
-Consider $(xy)^{\prime} = 2 \sqrt{xy}$ and $u(x) = x \cdot y(x)$. Then $u = (x+c)^2$ or $0$, and $y=\frac{(x+c)^2}{x}$ or $0$.
+Equivalent form $(xy)^{\prime} = 2 \sqrt{xy}$, take $u = xy$. so $u = (x+c)^2$ or $0$, $y=\frac{(x+c)^2}{x}$ or $0$.
 </div>
 
 ---
