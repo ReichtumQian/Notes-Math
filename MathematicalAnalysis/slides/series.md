@@ -119,8 +119,9 @@ $$
 
 <div class=note>
 
-(1) $p > 1$ converges absolutely. $1 \leq p > 0$, $f(x):=x^{p+\frac{1}{x}}$, then $f^{\prime}(x) > 0$ when $x$ is sufficiently large, so converges conditionally. $p \leq 0$, $a_n \not \rightarrow 0$, diverges.
+(1) $p > 1$ converges absolutely. $1 \geq p > 0$, $f(x):=x^{p+\frac{1}{x}}$, then $f^{\prime}(x) > 0$ when $x$ is sufficiently large, so converges conditionally. $p \leq 0$, $a_n \not \rightarrow 0$, diverges.
 (2) 
+(3) $\sin (n\pi + \frac{1}{n^p}) = (-1)^n \sin (\frac{1}{n^p})$. When $p > 1$, absolutely converges; When $1 \geq p > 0$, conditionaly converges; When $p \leq 0$, diverges.
 
 </div>
 
@@ -129,6 +130,8 @@ $$
 $$
 
 <div class=note>
+
+$\sum_{k=1}^n \cos kx$ and $\sum_{k=1}^n \sin kx$ are bounded. $\frac{1}{n^p} \rightarrow 0$. By Dirichlet test, they are convergent.
 
 </div>
 
