@@ -159,9 +159,116 @@ Take $\alpha \in V_1 \cap V_2$, $\alpha = k_1\epsilon_1 + \cdots + k_s\epsilon_2
 
 ---
 
-## Linear Mapping and Linear Transformation
+# Linear Mapping and Linear Transformation
 
 ---
+
+## Concept of Linear Mapping
+
+<br>
+
+- **Linear Mapping**: $\varphi(\alpha + \beta) = \varphi(\alpha) + \varphi(\beta)$, $\varphi(c \alpha) = c \varphi(\alpha)$.
+- **Matrix of Linear Mapping**: $(\mathcal{A}(\epsilon_1), \cdots, \mathcal{A}(\epsilon_n)) = (\epsilon_1,\cdots,\epsilon_n)A$.
+- **Coordinate After Transformation**: $\alpha = (\epsilon_1,\cdots,\epsilon_n)x$, then $\mathcal{A}\alpha = (\epsilon_1,\cdots,\epsilon_n)Ax$.
+- **Kernel and Image**: $\operatorname{Ker}(\varphi) = \{\alpha: \varphi(\alpha) = 0\}$, $\operatorname{Im}(\varphi) = \{\varphi(\alpha)\}$.
+- **Representation of Kernel and Image**: $\operatorname{Ker}(\mathcal{A})$ is the solution space of $Ax = 0$. $\operatorname{Im}(\mathcal{A})$ is the column space of $A$.
+
+---
+
+## Dimension Theorem for Kernel and Image
+
+- $\varphi: U \rightarrow V$, then $\operatorname{dim} \operatorname{Ker}(\varphi) + \operatorname{dim} \operatorname{Im}(\varphi) = \operatorname{dim} U$.
+
+<div class=note>
+
+(1) Assume $\operatorname{Ker}(\varphi) = \operatorname{span}(\alpha_1,\cdots,\alpha_r)$ and $U = \operatorname{span}(\alpha_1,\cdots,\alpha_n)$. Then
+$$
+\operatorname{Im}(\varphi) = \operatorname{span}(\varphi(\alpha_1),\cdots,\varphi(\alpha_n))
+= \operatorname{span}(\varphi(\alpha_{r+1}),\cdots,\varphi(\alpha_n)).
+$$
+(2) If $k_{r+1}\varphi(\alpha_{r+1}) + \cdots + k_n \varphi(\alpha_n) = 0$, then $\varphi(k_{r+1}\alpha_{r+1} + \cdots + k_n\alpha_n) = 0$. Therefore
+$$ k_{r+1}\alpha_{r+1} + \cdots + k_n \alpha_n \in \operatorname{Ker}(\varphi) \Rightarrow k_{r+1} = \cdots = k_n = 0. $$
+
+</div>
+
+- $\mathcal{A}: V \rightarrow V$, $W$ is a subspace of $V$, then $\operatorname{dim} \mathcal{A}W + \operatorname{dim} (\operatorname{Ker}\mathcal{A} \cap W) = \operatorname{dim}W$.
+
+<div class=note>
+
+$\operatorname{Ker} \mathcal{A} \cap W = \operatorname{span}(\alpha_1,\cdots,\alpha_r)$, $W = \operatorname{span}(\alpha_1,\cdots,\alpha_n)$. Prove $\mathcal{A}W = \operatorname{span}(\mathcal{A}\alpha_{r+1},\cdots,\mathcal{A}\alpha_n)$ has dimension $n-r$.
+
+</div>
+
+---
+
+## Application of Dimension Theorem
+
+- $\sigma: V \rightarrow V$, $V$ is a finite-dimension linear space. $\sigma$ is injective iff $\sigma$ is surjective.
+
+<div class=note>
+
+(1) $\sigma$ is injective iff $\operatorname{Ker}(\sigma) = \{0\}$ (Otherwise $\sigma(\alpha) = \sigma(\alpha + \beta)$ for $\beta \in \operatorname{Ker}(\sigma)$).
+(2) By dimension theorem, $\operatorname{Ker}(\sigma) = \{0\}$ iff $\operatorname{Im}(\sigma) = \operatorname{dim}(V)$, which means $\sigma$ is surjective.
+
+</div>
+
+---
+
+## Kernel and Image of Idempotent Linear Transformation
+
+<br>
+
+- **Image of Idempotent Transformation**: For $\alpha \in \operatorname{Im}(\mathcal{A})$, $\mathcal{A}\alpha = \alpha$.
+
+<div class=note>
+
+$\exists \beta \in V$, $\mathcal{A}\beta = \alpha$, then $\mathcal{A} \alpha = \mathcal{A}^2 \beta = \mathcal{A}\beta = \alpha$.
+
+</div>
+
+- **Idempotent Space Decomposition**: $\mathcal{A}$ idempotent, then $V = \operatorname{Ker}(\mathcal{A}) \oplus \operatorname{Im}(\mathcal{A})$.
+
+<div class=note>
+
+(1) $\alpha = \alpha - \mathcal{A}\alpha + \mathcal{A}\alpha$, where $\alpha - \mathcal{A}\alpha \in \operatorname{Ker}(\mathcal{A})$ and $\mathcal{A}\alpha \in \operatorname{Im}(\mathcal{A})$.
+(2) For $\alpha \in \operatorname{Im}(\mathcal{A}) \cap \operatorname{Ker}(\mathcal{A})$, so $\alpha = \mathcal{A}\alpha = 0$.
+
+</div>
+
+
+---
+
+## Practice on Kernel and Image of Idempotent Linear Transformation
+
+- $\mathcal{A},\mathcal{B}$ idempotent, $\operatorname{Im}(\mathcal{A}) = \operatorname{Im}(\mathcal{B})$ iff $\mathcal{A}\mathcal{B} = \mathcal{B}$ and $\mathcal{B}\mathcal{A} = \mathcal{A}$.
+
+<div class=note>
+
+(1) $\forall \alpha \in V$, $\exists \beta \in V$, $\mathcal{B}\alpha = \mathcal{A}\beta$. Then $\mathcal{A}(\mathcal{B}\alpha) = \mathcal{A} (\mathcal{A}\beta) = \mathcal{A} \beta = \mathcal{B} \alpha \Rightarrow \mathcal{A} \mathcal{B} = \mathcal{B}$.
+(2) $\forall \gamma \in \operatorname{Im}(\mathcal{A})$, $\mathcal{B} \mathcal{A} \gamma = \mathcal{A} \gamma = \gamma \Rightarrow \mathcal{B} \gamma = \gamma$.
+
+</div>
+
+- $\mathcal{A}, \mathcal{B}$ idempotent, $\operatorname{Ker}(\mathcal{A}) = \operatorname{Ker}(\mathcal{B})$ iff $\mathcal{A}\mathcal{B} = \mathcal{A}$ and $\mathcal{B}\mathcal{A} = \mathcal{B}$.
+
+<div class=note>
+
+</div>
+
+---
+
+## Similarity
+
+
+---
+
+# Eigenvalues and Eigenvectors
+
+---
+
+
+---
+
 
 # Minimal Polynomial
 
