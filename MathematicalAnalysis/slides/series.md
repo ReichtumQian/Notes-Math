@@ -164,8 +164,6 @@ Compact convergence implies all results (continuity, integrability, etc) on open
 
 ## Determine if A Function Converges Uniformly
 
-<br>
-
 $$
 (1) \sin \frac{x}{n}, \quad
 (2) n \sin \frac{x}{n}, \quad
@@ -180,6 +178,16 @@ $$
 (3) $f = 0$; $|f_n - f| \leq \frac{1}{2n} \rightarrow 0$, then uniformly convergent.
 (4) $f = 0$; Take $x = \frac{1}{n}$, $f_n(x_n) = \frac{1}{2} \neq f(x_n)$, not uniformly convergent.
 
+</div>
+
+- If $f \in C[a, b]$, $f_0(x) = f(x)$, $\displaystyle f_{n+1}(x) = \int_a^x f_n(t)\mathrm{d} t$, prove $f_n(x)$ is uniformly convergent.
+
+<div class=note>
+
+(1) $|f(x)| \leq M$, so $\displaystyle |f_1(x)| \leq \int_a^x |f_0(t)|\mathrm{d} t \leq M(x-a)$; $\displaystyle |f_2(x)| \leq \int_a^x |f_1(t)|\mathrm{d} t \leq \frac{(x-a)^2}{2}M$.
+(2) Similarly, $\displaystyle |f_n(x)| \leq \int_a^x |f_{n-1}(t)|\mathrm{d} t \leq \frac{(x-a)^n}{n!}M \leq \frac{(b - a)^n}{n!}M \rightarrow 0$.
+
+</div>
 
 ---
 
@@ -209,6 +217,15 @@ This formula indicates that ${\displaystyle \lim \limits _{n \rightarrow \infty}
 ## Uniform Convergence of Integral
 
 - $f$ is continuous, $f_n(x) = \frac{1}{n} \sum\limits_{k = 1}^n f \left( x + \frac{k}{n} \right)$, $\displaystyle F(x) = \int_0^1 f(x+t)\mathrm{d} t$. Prove that $f_n \rightrightarrows F$ on any closed interval $[a, b]$.
+
+<div class=note>
+
+(1) Write $\displaystyle F(x) = \sum_{k=1}^n \int_{\frac{k-1}{n}}^{\frac{k}{n}} f(x+t)\mathrm{d} t$, then
+$$|f_n(x) - F(x)| \leq \sum_{k=1}^n \int_{\frac{k-1}{n}}^{\frac{k}{n}} \left| f(x + \frac{k}{n}) - f(x+t) \right|\mathrm{d} t.$$
+(2) $f$ is uniformly continuous on $[a, b]$. $\forall \epsilon > 0$, $\exists \delta > 0$, $|x_1 - x_2| < \delta$, $|f(x_1) - f(x_2)| < \epsilon$.
+(3) Take $\frac{1}{n} < \delta$, then $|f(x+\frac{k}{n}) - f(x+t)| < \epsilon$, and $|f_n(x) - F(x)| < \epsilon$.
+
+</div>
 
 ---
 
