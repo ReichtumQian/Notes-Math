@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Sequence Limit
 
 ---
@@ -105,6 +101,22 @@ $$ \lim \limits _{n \rightarrow \infty} \frac{a_n}{n} = \lim \limits _{n \righta
 $$ \lim \limits _{n \rightarrow \infty} \sqrt[n]{a_n} = \lim \limits _{n \rightarrow \infty} \sqrt[n]{a_1 \cdot \frac{a_2}{a_1} \cdots \frac{a_n}{a_{n-1}}}. $$
 
 </div>
+
+---
+
+## Use Definition of Definite Integral
+
+- Calculate ${\displaystyle I = \lim \limits _{n \rightarrow \infty}  \left( \frac{1}{\sqrt{n^2 + 1^2}} + \frac{1}{\sqrt{n^2 + 2^2}} + \cdots + \frac{1}{\sqrt{n^2 + n^2}} \right)}$
+
+<div class=note>
+
+${\displaystyle I = \sum_{k=1}^n \frac{1}{n} \cdot \frac{1}{\sqrt{1 + (\frac{k}{n})^2}} = \int_0^1 \frac{1}{\sqrt{1 + x^2}}\mathrm{d} x = \ln(x + \sqrt{x^2 + 1}) \bigg|^1_0 = \ln(1 + \sqrt{2})}$.
+
+</div>
+
+- Calculate ${\displaystyle I = \lim \limits _{n \rightarrow \infty} \left( \frac{\sin \frac{\pi}{n}}{n + \frac{1}{n}} + \frac{\sin \frac{2}{n}\pi}{n + \frac{2}{n}} + \cdots + \frac{\sin \pi}{n + 1} \right)}$
+
+
 
 ---
 

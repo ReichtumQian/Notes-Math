@@ -108,7 +108,27 @@ $$ \int \sec^3 x \mathrm{d} x = \sec x \tan x - \int \sec^3 x \mathrm{d} x + \in
 
 ---
 
+## Applications of Integrals of Trigonometric Functions
+
+$$
+(1) \int \frac{1}{x^2 + a^2}\mathrm{d} x,
+(2) \int \frac{1}{x^2 - a^2}\mathrm{d} x,
+(3) \int \frac{1}{\sqrt{x^2 + a^2}}\mathrm{d} x,
+(4) \int \frac{1}{\sqrt{x^2 - a^2}}\mathrm{d} x, 
+(5) \int \frac{1}{\sqrt{a^2 - x^2}}\mathrm{d} x.
+$$
+
+
+---
+
 ## Indefinite Integrals of Squared Functions
+
+$$
+(1) \int \sqrt{a^2 - x^2}\mathrm{d} x, \quad
+(2) \int \sqrt{x^2 + a^2}\mathrm{d} x, \quad
+(3) \int \sqrt{x^2 - a^2}\mathrm{d} x.
+$$
+
 
 ---
 
