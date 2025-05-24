@@ -223,7 +223,7 @@ This formula indicates that ${\displaystyle \lim \limits _{n \rightarrow \infty}
 (1) Write $\displaystyle F(x) = \sum_{k=1}^n \int_{\frac{k-1}{n}}^{\frac{k}{n}} f(x+t)\mathrm{d} t$, then
 $$|f_n(x) - F(x)| \leq \sum_{k=1}^n \int_{\frac{k-1}{n}}^{\frac{k}{n}} \left| f(x + \frac{k}{n}) - f(x+t) \right|\mathrm{d} t.$$
 (2) $f$ is uniformly continuous on $[a, b]$. $\forall \epsilon > 0$, $\exists \delta > 0$, $|x_1 - x_2| < \delta$, $|f(x_1) - f(x_2)| < \epsilon$.
-(3) Take $\frac{1}{n} < \delta$, then $|f(x+\frac{k}{n}) - f(x+t)| < \epsilon$, and $|f_n(x) - F(x)| < \epsilon$.
+(3) Take $\frac{1}{n} < \delta$, then $|f(x+\frac{k}{n}) - f(x+t)| < \epsilon$ for $t \in (\frac{k-1}{n}, \frac{k}{n})$, and $|f_n(x) - F(x)| < \epsilon$.
 
 </div>
 
