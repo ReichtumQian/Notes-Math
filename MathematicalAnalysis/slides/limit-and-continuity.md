@@ -152,6 +152,13 @@ ${\displaystyle I = \sum_{k=1}^n \frac{1}{n} \cdot \frac{1}{\sqrt{1 + (\frac{k}{
 - **Uniqueness of Function Limit**
 - **Closure under Arithmetic Operations**: 
 - **Heine-Cantor Theorem**
+- Prove $\lim \limits _{x \rightarrow 0} \sin \frac{1}{x}$ does not exist.
+
+<div class=note>
+
+Take $a_n = \frac{1}{2n\pi}$ and $b_n = \frac{1}{2n\pi + \frac{\pi}{2}}$. $\lim \limits _{n \rightarrow \infty} (a_n - b_n) = 0$ but $f(a_n) - f(b_n) \not \rightarrow 0$.
+
+</div>
 
 ---
 
@@ -170,7 +177,7 @@ e^x = \sum\limits_{n = 0 }^{\infty}\frac{x^n}{n!}& \ln(1 + x) = \sum\limits_{n =
 \end{array}
 $$
 
-Note when $x \rightarrow \infty$: $\frac{1}{1+x} = \frac{1}{x} \cdot \frac{1}{1+1/x} = \sum\limits_{n = 1}^{\infty} (-1)^{n-1} \frac{1}{x^n}$.
+Note when $x \rightarrow \infty$: $\frac{1}{1+x} = \frac{1}{x} \cdot \frac{1}{1+1/x} = \sum\limits_{n = 1}^{\infty} (-1)^{n-1} \frac{1}{x^n}$. (From complex analysis we know the convergent radius is $1$)
 </div>
 
 
@@ -180,9 +187,9 @@ Note when $x \rightarrow \infty$: $\frac{1}{1+x} = \frac{1}{x} \cdot \frac{1}{1+
 
 ---
 
-## Key Points of Continuity
+## Concept and Applications of Continuity
 
-- **Definition of Continuity**
+- **Continuity**: $\lim \limits _{x \rightarrow x_0}f(x) = f(x_0)$.
 - **Intermediate-Value Theorem**: $f \in C[a, b]$, $a \leq x_1 < x_2 \leq b$, $f$ takes any value between $f(x_1)$ and $f(x_2)$.
 - $f, g \in C[0, 1]$, $\max f = \max g$, prove $f(\xi) = g(\xi)$.
 
@@ -217,13 +224,61 @@ $F(x) := f(x + \frac{1}{n}) - f(x)$. $F(0) + F(\frac{1}{n}) + \cdots + F(\frac{n
 
 ## Concept and Properties of Uniform Continuity
 
-- **Definition**
+<br>
+
+- **Uniform Continuity**: $\forall \epsilon > 0$, $\exists \delta > 0$, $\forall x_1, x_2$, $|x_1 - x_2| < \delta$, $|f(x_1) - f(x_2)| < \epsilon$.
 - **Sequence Perspective**: $f$ is uniformly continuous iff for any $x_n, y_n$, $\lim \limits _{n \rightarrow \infty} (x_n - y_n) = 0$, $\lim \limits _{n \rightarrow \infty} [f(x_n) - f(y_n)] = 0$.
 - Prove followings are not uniformly continuous: (1)$x^2$ on $(0,+\infty)$; (2) $\frac{1}{x}$ on $(0, 1)$.
 
 <div class=note>
 
 (1) Take $x_n = \sqrt{n}$, $y_n = \sqrt{n+1}$; (2) Take $x_n = \frac{1}{n}$, $y_n = \frac{1}{n+1}$.
+
+</div>
+
+
+---
+
+## Cantor Theorem and Its Generalizations
+
+- **Cantor Theorem**: If $f \in C[a, b]$, then it is uniformly continous on $[a, b]$.
+- **On Open Intervals**: $f \in C(a,b)$, $f$ is uniformly continuous iff $\lim \limits _{x \rightarrow a^+}f$ and $\lim \limits _{x \rightarrow b^-}f$ exists.
+
+<div class=note>
+
+$\Leftarrow$ by adding two endpoints. $\Rightarrow$ when $x_1,x_2 \in (a, a+\delta)$, we have $|f(x_1) - f(x_2)| < \epsilon$.
+
+</div>
+
+- **On Infinite Intervals**: $f \in C[a, +\infty)$, $\lim \limits _{x \rightarrow +\infty}f(x) = A$, then it is uniformly continous.
+
+<div class=note>
+
+(1) By Cauchy's criterion, $\forall x_1, x_2 > M$, $|f(x_1) - f(x_2)| < \epsilon$.
+(2) By Cantor, $\forall x_1, x_2 \in [a, M+\delta]$, $|f(x_1) - f(x_2)| < \epsilon$.
+
+
+</div>
+
+- Determine uniform continuity: (1) $\frac{1}{x}$ on $(0, 1)$; (2) $\sqrt{x}$ on $(0, 1)$; (3) $\frac{1}{x}$ on $[1, +\infty)$.
+
+<div class=note>
+
+(1) No, because $\frac{1}{x} \rightarrow \infty$ when $x \rightarrow 0$. (2) Yes, because limits exist. (3) Yes, $\lim \limits _{x \rightarrow \infty}\frac{1}{x} = 0$.
+
+</div>
+
+---
+
+## Lipschitz Continuity
+
+- **Lipschitz Continuity**:
+- **Implies Uniform Continuity**: If $f$ is Lip continuous, then $f$ is uniformly continuous.
+- **Bounded Derivative**: $f^{\prime}$ is bounded, then $f$ is Lip continuous.
+
+<div class=note>
+
+Unbounded derivative does not mean $f$ is not uniformly continuous. E.g., $f = \sqrt{x}$ on $(0,1)$. $f^{\prime} = \frac{1}{2 \sqrt{x}} \rightarrow \infty$ when $x \rightarrow 0^+$.
 
 </div>
 
@@ -235,21 +290,4 @@ $F(x) := f(x + \frac{1}{n}) - f(x)$. $F(0) + F(\frac{1}{n}) + \cdots + F(\frac{n
 (2) $f^{\prime} = \frac{1}{2 \sqrt{x}}$. $f \in C[0, 1]$, so $f$ is uniformly continuous on $[0, 1]$. When $x > 1$, $|f^{\prime}| \leq \frac{1}{2}$, so $f$ is Lip continuous, which implies uniform continuity.
 
 </div>
-
----
-
-## Cantor Theorem and Its Generalizations
-
-- **Cantor Theorem**:
-- **On Open Intervals**
-- **On Infinite Intervals**
-
----
-
-## Lipschitz Continuity
-
-- **Lipschitz Continuity**:
-- **Implies Uniform Continuity**: If $f$ is Lip continuous, then $f$ is uniformly continuous.
-- **Bounded Derivative**: $f^{\prime}$ is bounded, then $f$ is Lip continuous.
-
 
