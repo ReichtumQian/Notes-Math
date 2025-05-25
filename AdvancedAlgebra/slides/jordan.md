@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Existence of Jordan Canonical Form
-- Properties of Jordan Canonical Form
-- $\lambda$ Matrices
-
----
-
 # Existence of Jordan Canonical Form
 
 ---
@@ -231,4 +221,33 @@ $$
 
 ## Calculation of Jordan Canonical Forms
 
+- Given $A$, find Jordan canonical form $J$, and transition matrix $P$ such that $P^{-1}AP = J$:
+
+$$
+A =
+\begin{bmatrix}
+  2 & 3 & 2\\
+  1 & 8 & 2\\
+  -2 & -14 & -3
+\end{bmatrix}.
+$$
+
+<div class=note>
+
+(1) Smith Normal Form: $\lambda I - A \rightarrow
+\begin{bmatrix}
+  1 & 0 & 0\\
+  0 & \lambda - 1 & 0\\
+  0 & 0 & (\lambda - 3)^2
+\end{bmatrix}$.
+(2) The Jordan canonical form: $J =
+\begin{bmatrix}
+  1 &   & \\
+    & 3 & 1\\
+    &   & 3
+\end{bmatrix}$.
+(3) For $\lambda_1 = 1$, $v_1 = k(-2,0,1)^T$. For $\lambda_2 = 3$, $v_2 = (1,-1,2)^T$, $v_3 = (1,0,0)^T$.
+(4) So $P = [v_1, v_2, v_3]$.
+
+</div>
 
