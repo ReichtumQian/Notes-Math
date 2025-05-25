@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Set Operations
-- Set Limits
-- Topology on $\mathbb{R}^n$
-
----
-
 # Set Operations
 
 ---

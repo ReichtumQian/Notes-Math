@@ -139,6 +139,26 @@ ${\displaystyle I = \sum_{k=1}^n \frac{1}{n} \cdot \frac{1}{\sqrt{1 + (\frac{k}{
 
 </div>
 
+---
+
+## Applications of Monotone Convergence Theorem
+
+- $a_1 = \sqrt{c}$, $a_{n+1} = \sqrt{a_n + c}$. Prove $a_n$ converges and find $\lim \limits _{n \rightarrow \infty} a_n$.
+
+<div class=note>
+
+$a_2 = \sqrt{c + \sqrt{c}} > a_1$. If $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n + c} > \sqrt{a_{n-1}+c} = a_n$.
+
+</div>
+
+- $a_1 = 1$, $a_{n+1} = \sqrt{2a_n}$. Prove $a_n$ converges and find $\lim \limits _{n \rightarrow \infty} a_n$.
+
+<div class=note>
+
+(1) $a_n < 2$, then $a_{n+1} = \sqrt{2a_n} < 2$. (2) $\frac{a_{n+1}}{a_n} = \sqrt{\frac{2}{a_n}} < 1$.
+
+</div>
+
 
 ---
 

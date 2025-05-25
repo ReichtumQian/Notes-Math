@@ -37,17 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Lebesgue Outer Measure
-- Lebesgue Measure
-- A Non-Mesurable Set Example
-- Approximation by Open and Closed Sets
-
----
-
 # Lebesgue Outer Measure
 
 ---
@@ -233,11 +222,18 @@ $m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ where $n \in \mathbb{Z}$. For each
 
 <div class=note>
 
-(1) There exists an open set $G$ such that $G \supset E$ and $m(G - E) < \frac{1 - \alpha}{\alpha} m(E)$. Then
-$$ m(G) = m(G-E) + m(E) < \frac{1}{\alpha} m(E) \Rightarrow \alpha m(G) < m(E). $$
-(2) Since $G \subset \mathbb{R}$, then $G = \cup_n (a_n, b_n)$ where $(a_i, b_i)$ are disjoint. Then
-$$ m(E) = m(E \cap G) = m(\cup_n (E \cap (a_n, b_n))) = \sum_n m(E \cap (a_n, b_n)),  $$
-Since $m(E) > \alpha m(G) = \alpha \sum_n m(a_n, b_n)$. This means there must there exists $i$ such that $m(E \cap (a_i, b_i)) > \alpha m(a_i, b_i)$.
+(1) Assume for all open intervals $I$, $m(I \cap E) \leq \alpha \cdot m(I)$.
+(2) There exists $G = \cup_n I_n$ such that $E \subset G$ and $m(G - E) < \epsilon$. Then $m(G) < m(E) + \epsilon$.
+(3) Then $m(E) = m(E \cap G) = m(E \cap (\cup_n I_n)) = \sum_n m(E \cap I_n) \leq \alpha m(G) < \alpha m(E) + \alpha \epsilon$.
 
 </div>
+
+- $E$ measurable, $\exists \alpha \in (\frac{1}{2}, 1)$, for all $I \subset \mathbb{R}$ $m(E \cap I) \leq \alpha m(I)$. Prove $m(E) = 0$.
+
+<div class=note>
+
+Almost the same as the previous one.
+
+</div>
+
 
