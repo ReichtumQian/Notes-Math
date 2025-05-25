@@ -313,6 +313,8 @@ $$
 ## Key Points
 
 - **Hamilton-Cayley Theorem**: $f(\lambda) = |\lambda I - A|$ is an annihilating polynomial of $A$.
+- **Minimal Polynomial**: $m(\lambda)$ and $f(\lambda)$ has same roots (except the multiplicity).
+- **Diagonalization**: $A$ is diagonalizable iff $m_A(\lambda)$ splits into linear factors.
 
 
 ---

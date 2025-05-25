@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Bilinear Functions
-- Concept and Canonical Form of Quadratic Forms
-- Positive Definite Quadratic Forms
-
----
-
 # Concept and Canonical Form of Quadratic Forms
 
 ---

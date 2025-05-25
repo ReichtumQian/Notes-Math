@@ -37,15 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Residue Formula and Its Applications
-- Argument Principle and Applications
-
----
-
 # Residue Formula and Its Applications
 
 ---

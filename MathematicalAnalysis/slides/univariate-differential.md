@@ -121,12 +121,21 @@ $F(x) := f(x) - xe^{-x}$, $F(0) = 0$, $\lim \limits _{x \rightarrow +\infty}F(x)
 
 </div>
 
-- $f$ is differenitable, $f(a) < 0$, $f(b) < 0$, $\exists c \in (a,b)$, $f(c) > 0$. Prove $\exists \xi \in (a, b)$, $f(\xi) + f^{\prime}(\xi) = 0$.
+- $f^{\prime}$ exists, $f(a) < 0$, $f(b) < 0$, $\exists c \in (a,b)$, $f(c) > 0$. Prove $\exists \xi \in (a, b)$, $f(\xi) + f^{\prime}(\xi) = 0$.
 
 <div class=note>
 
 (1) $F(x) := e^x f(x)$, $F(a) < 0$, $F(b) < 0$, $F(c) > 0$. $\exists x_1, x_2$ that $F(x_1) = F(x_2) = 0$.
 (2) By Rolle, $\exists \xi \in (x_1, x_2)$, $F^{\prime}(\xi) = e^{\xi}[f(\xi) + f^{\prime}(\xi)] = 0$.
+
+</div>
+
+- $f^{\prime\prime}$ exists, $f(a)=f(b)=0$. Prove $\exists \xi \in (a, b)$, $f^{\prime\prime}(\xi) = \frac{4}{(b-a)^2}f(\frac{a+b}{2})$.
+
+<div class=note>
+
+(1) Let $g(x) = f(x) - \frac{4f(c)}{(b-a)^2}(x-a)(b-x)$, where $c = \frac{a+b}{2}$.
+(2) $g(a) = g(b) = g(c) = 0$, apply Rolle's mean-value theorem twice.
 
 </div>
 
