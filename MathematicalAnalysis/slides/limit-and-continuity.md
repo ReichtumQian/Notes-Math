@@ -215,6 +215,22 @@ $F(x) := f(x + \frac{1}{n}) - f(x)$. $F(0) + F(\frac{1}{n}) + \cdots + F(\frac{n
 
 </div>
 
+---
+
+## Practice on Continuous Function
+
+- $f: \mathbb{R} \rightarrow \mathbb{R}$. If (1) $\forall x, y \in \mathbb{R}$, $f(x+y) = f(x) + f(y)$. (2) $f$ is continuous at $x_0$. Prove there exists $a \in \mathbb{R}$ such that $f = ax$.
+
+<div class=note>
+
+(1) $f(x+y) = f(x) + f(y)$: $f(0) = 0$, $-f(x) = f(-x)$, $f(nx) = nf(x)$, $f(\frac{m}{n}x) = \frac{m}{n}f(x)$.
+(2) For $q \in \mathbb{Q}$, $f(q) = qf(1)$. So we take $a = f(1)$.
+(3) $f$ continuous at $0$: Take $\{q_n\} \subset \mathbb{Q}$, $q_n \rightarrow 0$. Then $f(q_n) = f(x_0 + q_n) - f(x_0) \rightarrow 0 = f(0)$.
+(4) $f \in C(\mathbb{R})$: For $q_n \rightarrow 0$, $f(x+q_n) = f(x) + f(q_n) \rightarrow f(x)$.
+(5) For $q_n \rightarrow x$, $f(x) = \lim \limits _{n \rightarrow \infty} f(q_n) = \lim \limits _{n \rightarrow \infty} aq_n = ax$.
+
+</div>
+
 
 ---
 
