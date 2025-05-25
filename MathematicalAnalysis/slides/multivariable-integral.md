@@ -119,7 +119,8 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 
 <div class=note>
 
-(1) Let $u = xy$, $\mathrm{d} u = x \mathrm{d} y$ (since $x \in \mathbb{R}$). $\displaystyle I = \int_0^{+\infty} \frac{\sin u}{u}\mathrm{d} u$
+(1) ${\displaystyle \left| \int_{\delta}^A \sin (xy) \mathrm{d} y\right| = \left|\frac{\cos(ax) - \cos(Ax)}{x}\right| \leq \frac{2}{\delta}}$ is uniformly bounded. $\displaystyle \frac{1}{y} \rightrightarrows 0$. By Dirichlet.
+(2) ${\displaystyle \sup_{x \in (0, +\infty)} \left| \int_A^{+\infty} \frac{\sin xy}{y}\mathrm{d} y \right| = \sup_{x \in (0, +\infty) }\left| \int_{Ax}^{+\infty} \frac{\sin u}{u}\mathrm{d} u \right| \geq \left| \int_0^{+\infty} \frac{\sin u}{u}\mathrm{d} u \right| = \frac{\pi}{2}}$.
 
 </div>
 
