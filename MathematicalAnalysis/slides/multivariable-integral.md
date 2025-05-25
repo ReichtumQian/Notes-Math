@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Parametric Integrals
 
 ---
@@ -123,12 +119,30 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 
 <div class=note>
 
+(1) Let $u = xy$, $\mathrm{d} u = x \mathrm{d} y$ (since $x \in \mathbb{R}$). $\displaystyle I = \int_0^{+\infty} \frac{\sin u}{u}\mathrm{d} u$
+
 </div>
 
 - ${\displaystyle \int_1^{+\infty} \frac{\sin x}{1+xe^y}\mathrm{d} x}$ on $[0, +\infty)$.
 
+<div class=note>
+
+(1) $\displaystyle \left| \int_1^N \sin x \mathrm{d} x \right|$ is uniformly bounded. (2) $\displaystyle \frac{1}{1+xe^y} \leq \frac{1}{1+x} \rightarrow 0$. By Dirichlet test.
+
+</div>
+
+---
+
+## Determine Uniform Convergence
+
 - ${\displaystyle \int_0^{+\infty} e^{-xy} \frac{\sin x}{x}\mathrm{d} x}$ on $[0, +\infty)$.
 
+<div class=note>
+
+(1) ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x}$ is uniformly convergent with respect to $y$.
+(2) $e^{-xy}$ decreases to $x$, and $0 < e^{-xy} < 1$ is uniformly bounded.
+
+</div>
 
 ---
 

@@ -45,7 +45,7 @@ Speaker: Yixiao Qian
 
 <br>
 
-- **Convergence**: $S_n = \sum_{k=1}^n u_k$ is parital-sum, $S_n$ converges.
+- **Convergence**: $S_n = \sum_{k=1}^n u_k$ is partial-sum, $S_n$ converges.
 - **Necessary Condition**: $\lim \limits _{n \rightarrow \infty} u_n = 0$. (Since $\lim \limits _{n \rightarrow \infty} u_n = \lim \limits _{n \rightarrow \infty} S_n - \lim \limits _{n \rightarrow \infty} S_{n-1} = 0$)
 - **Cauchy Criterion**: $\forall \epsilon > 0, \exists N > 0, N < n < n+p$, $|u_{n+1} + \cdots + u_{n+p}| < \epsilon$.
 
@@ -166,17 +166,15 @@ Compact convergence implies all results (continuity, integrability, etc) on open
 
 $$
 (1) \sin \frac{x}{n}, \quad
-(2) n \sin \frac{x}{n}, \quad
-(3) \frac{x}{1+n^2x^2}, \quad
-(4) \frac{nx}{1+n^2x^2}.
+(2) \frac{x}{1+n^2x^2}, \quad
+(3) \frac{nx}{1+n^2x^2}.
 $$
 
 <div class=note>
 
 (1) $f = 0$; Take $x_n = n$, $f_n(x_n) = \sin 1 \neq f(x_n)$, so not uniformly convergent; But it converges uniformly on any closed subset.
-(2) $f = x$; Take $x_n = n$, not uniformly convergent.
-(3) $f = 0$; $|f_n - f| \leq \frac{1}{2n} \rightarrow 0$, then uniformly convergent.
-(4) $f = 0$; Take $x = \frac{1}{n}$, $f_n(x_n) = \frac{1}{2} \neq f(x_n)$, not uniformly convergent.
+(2) $f = 0$; $|f_n - f| \leq \frac{1}{2n} \rightarrow 0$, then uniformly convergent.
+(3) $f = 0$; Take $x = \frac{1}{n}$, $f_n(x_n) = \frac{1}{2} \neq f(x_n)$, not uniformly convergent.
 
 </div>
 
@@ -184,8 +182,9 @@ $$
 
 <div class=note>
 
-(1) $|f(x)| \leq M$, so $\displaystyle |f_1(x)| \leq \int_a^x |f_0(t)|\mathrm{d} t \leq M(x-a)$; $\displaystyle |f_2(x)| \leq \int_a^x |f_1(t)|\mathrm{d} t \leq \frac{(x-a)^2}{2}M$.
-(2) Similarly, $\displaystyle |f_n(x)| \leq \int_a^x |f_{n-1}(t)|\mathrm{d} t \leq \frac{(x-a)^n}{n!}M \leq \frac{(b - a)^n}{n!}M \rightarrow 0$.
+(1) $|f(x)| \leq M$, so $\displaystyle |f_1(x)| \leq \int_a^x |f_0(t)|\mathrm{d} t \leq M(x-a)$;
+(2) $\displaystyle |f_2(x)| \leq \int_a^x |f_1(t)|\mathrm{d} t = M [\frac{1}{2}x^2 - ax + \frac{1}{2}a^2] = \frac{(x-a)^2}{2}M$.
+(3) Similarly, $\displaystyle |f_n(x)| \leq \int_a^x |f_{n-1}(t)|\mathrm{d} t \leq \frac{(x-a)^n}{n!}M \leq \frac{(b - a)^n}{n!}M \rightarrow 0$.
 
 </div>
 
