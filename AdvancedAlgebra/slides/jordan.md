@@ -88,12 +88,27 @@ $$ V = G_{\lambda_1} \oplus G_{\lambda_2} \oplus \cdots \oplus G_{\lambda_s}. $$
 
 ## Cyclic Invariant Subspaces Decomposition
 
-<br>
-
 - **Cyclic Invariant Property**: $\mathcal{A}_i:=(\mathcal{A} - \lambda_i \mathcal{I})|_{G_{\lambda_i}}$ is nilpotent, with $\mathcal{A}_i^{\ell_i} = \mathcal{O}$.
 - **Cyclic Invariant Space Decomposition**: There exists $v_1,\cdots,v_m \in G_{\lambda_i}$ such that
 $$ G_{\lambda_i} = \operatorname{span}(v_1, \mathcal{A}_i v_1, \cdots, \mathcal{A}_i^{n_1-1}v_1) \oplus \cdots \oplus \operatorname{span}(v_m, \mathcal{A}_iv_m, \cdots, \mathcal{A}^{n_m - 1}_i v_m). $$
-- **Jordan Blocks/Chains**:
+- **Jordan Blocks/Chains**: For the Jordan block $J_i$ for $I_k := \operatorname{span}(v_k,\mathcal{A}_iv_k,\cdots,\mathcal{A}_i^{n_k-1}v_k)$
+
+$$
+\mathcal{A} (\mathcal{A}_i^{n_k-1}v_k, \mathcal{A}_i^{n_k-2}v_k, \cdots, v_k) =
+(\mathcal{A}_i^{n_k-1}v_k, \mathcal{A}_i^{n_k-2}v_k, \cdots, v_k)
+\begin{bmatrix}
+\lambda_i & 1 && 0 \\
+& \lambda_i & \ddots & \\
+&& \ddots & 1 \\
+0 && & \lambda_i
+\end{bmatrix}
+$$
+
+<div class=note>
+
+How to find the basis: Suppose $\mathcal{A}(\epsilon_1,\cdots,\epsilon_n) = (\epsilon_1,\cdots,\epsilon_n)J_i$. (1) $\epsilon_1 = \mathcal{A}_i^{n_k-1} v_k$ is eigenvector; (2) $\epsilon_r = \mathcal{A}_i^{n_k - r} v_k$ for $r \geq 2$ satisfies $(\mathcal{A} - \lambda_i \mathcal{I})\epsilon_r = \epsilon_{r-1}$.
+
+</div>
 
 
 ---
@@ -123,4 +138,97 @@ Consider $J(\lambda) = \lambda I + N$, then $J(\lambda)^n = (\lambda I + N)^n = 
 $$ J(\lambda)^n = \sum\limits_{i=0}^{\min(n, k)} \binom{n}{i} \lambda^{n-i} N^i. $$
 
 </div>
+
+---
+
+# $\lambda$-Matrices
+
+---
+
+## Key Points of $\lambda$-Matrices
+
+- **Determinant Divisor**: If all $k$-minors are $0$, then $0$; Otherwise, monic common divisor.
+- **Invariant Factor**: $d_1(\lambda) = D_1(\lambda)$, $d_i(\lambda) = D_i(\lambda) / D_{i-1}(\lambda)$ for $i \geq 2$.
+- **Elementary Divisor**: Factorize all the invariant factors.
+- **Smith Normal Form**: $\lambda I - A$ always equivalent to $D = \operatorname{diag}\{1,\cdots,1,d_1(\lambda),\cdots,d_m(\lambda)\}$.
+- **Calculation of Normal Form**: Perform each step based on following operations
+
+<div class=note>
+
+(1) Move the entry with the lowest degree to the corner;
+(2) Consider the $i$-th row and column, if there exists $a_{ij}(\lambda)$ such that $a_{ii}(\lambda)$ does not divide $a_{ij}(\lambda)$, perform $a_{ij}(\lambda) = q(\lambda)a_{ii}(\lambda) + r(\lambda)$ and interchange the $i$-th and $j$-th column.
+(3) Consider the remaining entries, if there exists $a_{kl}(\lambda)$ such that $a_{ii}$ does not divide $a_{kl}(\lambda)$, then add the $i$-th column by the $l$-th column, repeat the second step.
+
+</div>
+
+---
+
+## Calculate Smith Normal Form
+
+- Find the Smith normal form of $\lambda I - A$:
+$$
+A =
+\begin{bmatrix}
+-1 & 1 & 3\\
+3 & 0 & -4\\
+-2 & 1 & 4
+\end{bmatrix}
+$$
+
+<div class=note>
+
+$$
+\begin{align}
+  \lambda I - A
+  &=
+  \begin{bmatrix}
+    \lambda + 1 & -1 & -3\\
+    -3 & \lambda & 4\\
+    2 & -1 & \lambda - 4
+  \end{bmatrix}
+  \rightarrow 
+  \begin{bmatrix}
+    - 1 & \lambda + 1 & -3\\
+    \lambda & -3 & 4\\
+    - 1 & 2 & \lambda - 4
+  \end{bmatrix}
+  \rightarrow
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & \lambda^2+\lambda-3 & 4-3\lambda\\
+    0 & 1-\lambda & \lambda -1
+  \end{bmatrix}\\
+  &\rightarrow
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1-\lambda & \lambda-1\\
+    0 & \lambda^2 + \lambda - 3 & 4 - 3\lambda
+  \end{bmatrix}
+    \rightarrow
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & \lambda-1 & 0\\
+    0 & -1 & (\lambda-1)^2
+  \end{bmatrix}
+    \rightarrow
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & -(\lambda - 1)^2\\
+    0 & \lambda-1 & 0
+  \end{bmatrix}\\
+  &\rightarrow
+  \begin{bmatrix}
+    1 & 0 & 0\\
+    0 & 1 & 0\\
+    0 & 0 & (\lambda-1)^3
+  \end{bmatrix}
+\end{align}
+$$
+
+</div>
+
+---
+
+## Calculation of Jordan Canonical Forms
+
 
