@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Concept of Measurable Function
-- Approximation by Simple and Continuous Functions
-- Convergence Results in Measure Theory
-
----
-
 # Concept of Measurable Function
 
 ---

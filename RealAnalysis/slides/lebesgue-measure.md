@@ -48,7 +48,7 @@ Speaker: Yixiao Qian
 
 <div class=note>
 
-Why? Because the open intervals covering $\cup E_n$ maybe more compact than seperately.
+Why? Because the open intervals covering $\cup E_n$ maybe more compact than separately.
 
 $$m^*\left(\bigcup_n E_n\right) \leq \sum_n \sum_k \ell(I_k^{(n)}) < \sum_n \left[m^*(E_n) + \frac{\epsilon}{2^n}\right] = \sum_n m^*(E_n) + \epsilon.$$
 </div>
@@ -106,13 +106,13 @@ $$ m^{\ast}(\cup_{n=1}^{\infty}E_n) \leq m(\cup_{n=1}^{\infty}P_n) = \lim \limit
 
 ## Key Points of Lebesgue Measure
 
-<br>
-
 - **Measurable Set**: For any $A \subset \mathbb{R}$, $m^{\ast}(A) \geq m^{\ast}(A \cap E) + m^{\ast}(A \cap E^c)$.
 - **Countable Sub-Additivity**: $A_n$ are arbitrary, then $m(\cup_n A_n) \leq \sum_n m(A_n)$.
 - **Countable Additivity**: $A_n$ are pairwise-disjoint, then $m(\cup_n A_n) = \sum_n m(A_n)$.
 - **Corollary**: If $E \subset F$, then $m(F - E) = m(F) - m(E)$.
 - **Closure under Operations**: $A^c$, $\cup$, $\cap$, $\limsup$, $\liminf$.
+- Let $E = \mathbb{Q} \cap [0, 1]$, prove $m(E) = 0$. ($E = \{q_1,q_2,\cdots\}$, $m(E) \leq \sum_n m(\{q_n\}) = 0$)
+- Find an open set $G$ that contains all irrational numbers in $[0,1]$, $m(G) < 1$
 
 ---
 
@@ -208,7 +208,7 @@ $m(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}E_k)=\lim \limits _{n \rightarrow \inft
 <div class=note>
 
 $m(E) < \infty$: Take open intervals $I_n$, $E \subset \cup I_n$, $m(E) > \sum \ell(I_n) - \epsilon$. Take $G = \cup I_n$.
-$m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ where $n \in \mathbb{Z}$. For each $E_n$ take $G_n = \cup_k I_n^{(k)}$, where $E_n \subset \cup_k I_n^{(k)}$ and $m(G_n - E_n) < \frac{\epsilon}{2^n}$. Take $G = \cup_n G_n$.
+$m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ satisfying $E_n \subset \cup_k I_n^{(k)}$. Take $G_n = \cup_k I_n^{(k)}$, then $m(G_n - E_n) < \frac{\epsilon}{2^n}$. Take $G = \cup_n G_n$.
 </div>
 
 - **Closed Sets**: There exists a closed set $F \subset E$ such that $m(E - F) < \epsilon$.

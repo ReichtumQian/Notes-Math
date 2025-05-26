@@ -98,7 +98,7 @@ $\eta = \inf S$: (1) $\forall x \in S$, $x \geq \eta$; (2) $\forall \epsilon > 0
 
 </div>
 
-- $\{x: \inf_n \{f_n(x)\} < c\} = \cup _{n = 1}^{\infty} \{x: f_n(x) < c\}$
+- $\{x: \inf_n \{f_n(x)\} < c\} = \cup _{n = 1}^{\infty} \{x: f_n(x) < c\}$ (Application: Prove $\lim \limits _{n \rightarrow \infty} f_n$ is measurable)
 
 <div class=note>
 
