@@ -160,11 +160,18 @@ $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 <div class=note>
 
+(1) Let $R = |z|$, then by Cauchy's inequality, $|f^{(n)}(0)| \leq \frac{n! M R^{1/2}}{R^n} \rightarrow 0$ for all $n \geq 1$.
+(2) Since $f$ is entire, $f = \sum_{n=0}^{+\infty}a_nz^n$ converges in $\mathbb{C}$. Then $f(z) \equiv a_0$.
+
 </div>
 
 - If $f$ is entire, $\operatorname{Re}(f)$ has upper bound $M$ on $\mathbb{C}$. Prove $f$ is constant.
 
 <div class=note>
+
+(1) Define $g(z) = e^{f(z)}$, then $|g(z)| = e^{\operatorname{Re}(f(z))} \leq e^M$.
+(2) By Liouville's theorem, $g(z) \equiv C$.
+(3) Since $e^{f(z)} \equiv C$ and $f$ is entire, we have $f^{\prime}(z) \equiv 0$, so $f(z)$ is constant.
 
 </div>
 
