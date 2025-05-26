@@ -37,7 +37,7 @@ Speaker: Yixiao Qian
 
 ---
 
-# Residue Formula and Its Applications
+# Concept and Calculation of Residue
 
 ---
 
@@ -48,6 +48,7 @@ Speaker: Yixiao Qian
 $$ \operatorname{res}_{z_0} f = \lim \limits _{z \rightarrow z_0} \frac{\varphi^{(m-1)}(z)}{(m-1)!}.$$
 - **Representation at $z_0 = \infty$**: If $z_1,\cdots,z_n$ are finite singularities
 $$ \operatorname{res}_{z_0} f = - \sum\limits_{k=1}^n \operatorname{res}_{z_k} f.$$
+- **Three Ways**: (1) Laurent expansion; (2) Previous formula; (3) $\frac{P(z)}{Q(z)}$ speicial formula.
 
 ---
 
@@ -79,6 +80,33 @@ $z = 0$ is a $4$-order pole. $\varphi(z) = z^4 f(z) = \frac{e^z - 1}{z} = \sum\l
 
 ---
 
+## Residue of Rational Function
+
+- If $f(z) = \frac{P(z)}{Q(z)}$, $z_0$ is a $1$-order zero of $Q(z)$, $P(z_0) \neq 0$. Then
+$$ \operatorname{res}_{z=z_0}f = \frac{P(z_0)}{Q^{\prime}(z_0)}. $$
+
+<div class=note>
+
+$Q(z) = (z-z_0)g(z)$, then $Q^{\prime}(z) = g(z) + (z-z_0)g^{\prime}(z)$. So $Q^{\prime}(z_0) = g(z_0)$ and
+$$\operatorname{res}_{z=z_0}f = \lim \limits _{z \rightarrow z_0} \frac{P(z_0)}{g(z_0)} = \lim \limits _{z \rightarrow z_0} \frac{P(z_0)}{Q^{\prime}(z_0)}$$
+
+</div>
+
+- Calculate residues of $f(z) = \frac{z^2}{z^4 + 1}$.
+
+<div class=note>
+
+(1) Poles are $z_k = e^{(\frac{\pi}{4} + \frac{k\pi}{2})i}$. (2) Residue at $z_k$ is $\frac{z_k^2}{4z_k^3} = \frac{1}{4z_k}$.
+
+</div>
+
+
+---
+
+# Residue Formula
+
+---
+
 ## The Residue Formula
 
 <br>
@@ -90,7 +118,7 @@ $$ \int_C f(z) \mathrm{d} z = 2 \pi i \sum\limits_{k = 1}^n \operatorname{res}_{
 
 ---
 
-## Calculate Integrals using Residue Formula
+## Calculation of Contour Integrals
 
 - ${\displaystyle \int_{|z| = 2} \frac{e^z}{z(1-z)^3}\mathrm{d} z}$.
 
@@ -156,7 +184,13 @@ $\displaystyle I = \frac{1}{4^n i} \int_{|z| = 1} \frac{(z^2 - 1)^{2n}}{z^{2n+1}
 
 </div>
 
-- ${\displaystyle \int_{-\infty}^{+\infty} \frac{x^2}{(x^2 + a^2)^2}\mathrm{d} x}$
+- ${\displaystyle \int_{0}^{+\infty} \frac{x^2}{x^4 + 1}\mathrm{d} x}$
+
+<div class=note>
+
+(1) Poles $z_1 = e^{\frac{\pi}{4}i}$ and $z_2 = e^{\frac{3\pi}{4}i}$. (2) Residue: $\frac{z_k^2}{4z_k^3}=\frac{1}{4z_k}$. (3) Integral: $\frac{\sqrt{2}}{4}\pi$.
+
+</div>
 
 ---
 

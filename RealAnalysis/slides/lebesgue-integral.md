@@ -37,17 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-# Table of Contents
-
-<br>
-
-- Concept of Lebesgue Integral
-- Properties of Lebesgue Integral
-- Riemann Integral and Lebesgue Integral
-- Multiple Integrals and Iterated Integrals
-
----
-
 # Concept of Lebesgue Integral
 
 ---

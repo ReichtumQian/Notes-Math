@@ -37,15 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Complex Integrals
-- Cauchy's Theorem and Its Generalizations
-
----
-
 # Complex Integrals
 
 ---
@@ -125,6 +116,58 @@ $$ \left| \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}\mathrm{d} \zeta \right| \leq
 </div>
 
 ---
+
+## Applications of Cauchy's Theorem
+
+- $f$ holomorphic, $f^{(n)}(0) = n!$, what is ${\displaystyle \int_{|z| = 1} \frac{f(z)}{z^4}\mathrm{d} z}$.
+
+<div class=note>
+
+${\displaystyle \int_{|z| = 1} \frac{f(z)}{z^4} \mathrm{d} z = \frac{2\pi i}{6} \cdot f^{(3)}(0)} = 2 \pi i$.
+
+</div>
+
+---
+
+# Liouville's Theorem and Its Applications
+
+---
+
+## Liouville's Theorem
+
+- **Liouville's Theorem**: If $f$ is entire and bounded, then it is constant.
+
+<div class=note>
+
+Cauchy's inequality implies $|f^{\prime}(z_0)| \leq \frac{B}{R}$ for any $z_0$ and $R$, where $B$ is a bound. Let $R \rightarrow \infty$ gives the result.
+
+</div>
+
+- **Fundamental Theorem for Algebra**: $P(z) = a_nz^n + \cdots + a_0$ ($n \geq 1$) has $n$ roots in $\mathbb{C}$, and
+$$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
+
+<div class=note>
+
+(1) If $P(z)$ has no roots, then $\frac{1}{P(z)}$ is entire and bounded. By Liouville's theorem, $P(z)$ is constant, which contradicts the condition.
+(2) Then $P(z)$ must have a root $z_1$, and $P(z) = (z-z_1)Q(z)$. By induction, we can get the conclusion.
+</div>
+
+---
+
+## Applications of Liouville's Theorem
+
+- If $f$ is entire, $\exists M > 0$, $|f(z)| \leq M \cdot |z|^{1/2}$ holds for all $z \in \mathbb{C}$. Prove that $f$ is constant.
+
+<div class=note>
+
+</div>
+
+- If $f$ is entire, $\operatorname{Re}(f)$ has upper bound $M$ on $\mathbb{C}$. Prove $f$ is constant.
+
+<div class=note>
+
+</div>
+
 
 
 

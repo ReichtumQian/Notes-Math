@@ -280,33 +280,6 @@ We get $g_v = 1/f_u$, since $f_u \neq 0$, then $g_v$ exists. Then $g$ is also ho
 </div>
 
 
----
-
-
-# Multivalued Function
-
----
-
-## Concept of Multivalued Function
-
-- **Multi-valued Function**: For each $z$, $f(z)$ has multiple values.
-- **Univalent Function**: $f$ is holomorphic and injective.
-- **Univalence Region**: Region $D$ that a function $f$ is univalent.
-- **Branch**: Restricting $f$ to a domain such that it is single-valued.
-- **Branch Point**: A point where branches of $f$ switches as $f$ continued along a closed loop encircling the point.
-
-
----
-
-## Some Commonly Used Multi-Valued Functions
-
-- $e^z$: $e^z$ is not a multi-valued function.
-- $\ln z$: If $z = re^{i\theta}$, then $\ln z = r + i(\theta + 2k\pi)$ where $k \in \mathbb{Z}$.
-- $\sqrt{z}$:
-- $z^{\mu} = z^{a + ib}$: If $z^{\mu}$
-
-
----
 
 
 
