@@ -178,6 +178,21 @@ $$
 
 </div>
 
+- Determine if $f_n = x^n \ln x$ is uniformly convergent on $(0, 1]$.
+
+<div class=note>
+
+(1) Limit function is $f = 0$; Define $g_n(x) = |f_n| = - x^n \ln x$.
+(2) Find Extreme: $g_n^{\prime}(x) = x^{n-1}(-n\ln x - 1)$, $\max_{x \in (0, 1)} g_n(x) = g_n(e^{- \frac{1}{n}}) = \frac{1}{ne}$.
+(3) Apply M-Test: $|f_n(x)| \leq \frac{1}{ne} \rightarrow 0$, so $f_n \rightrightarrows 0$.
+
+</div>
+
+
+---
+
+## Uniform Convergence of Picard Sequence
+
 - If $f \in C[a, b]$, $f_0(x) = f(x)$, $\displaystyle f_{n+1}(x) = \int_a^x f_n(t)\mathrm{d} t$, prove $f_n(x)$ is uniformly convergent.
 
 <div class=note>
@@ -187,6 +202,7 @@ $$
 (3) Similarly, $\displaystyle |f_n(x)| \leq \int_a^x |f_{n-1}(t)|\mathrm{d} t \leq \frac{(x-a)^n}{n!}M \leq \frac{(b - a)^n}{n!}M \rightarrow 0$.
 
 </div>
+
 
 ---
 
