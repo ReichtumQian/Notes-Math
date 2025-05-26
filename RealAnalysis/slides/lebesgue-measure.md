@@ -112,7 +112,6 @@ $$ m^{\ast}(\cup_{n=1}^{\infty}E_n) \leq m(\cup_{n=1}^{\infty}P_n) = \lim \limit
 - **Corollary**: If $E \subset F$, then $m(F - E) = m(F) - m(E)$.
 - **Closure under Operations**: $A^c$, $\cup$, $\cap$, $\limsup$, $\liminf$.
 - Let $E = \mathbb{Q} \cap [0, 1]$, prove $m(E) = 0$. ($E = \{q_1,q_2,\cdots\}$, $m(E) \leq \sum_n m(\{q_n\}) = 0$)
-- Find an open set $G$ that contains all irrational numbers in $[0,1]$, $m(G) < 1$
 
 ---
 

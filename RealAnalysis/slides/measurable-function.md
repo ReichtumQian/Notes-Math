@@ -61,7 +61,7 @@ $$
 
 </div>
 
-- **Right Continuity of $m(\{f > a\})$)**: $\lim \limits _{n \rightarrow \infty} m(\{f > a + \frac{1}{n}\}) = m(\{f > a\})$.
+- **Right Continuity of $m(\{f > a\})$**: $\lim \limits _{n \rightarrow \infty} m(\{f > a + \frac{1}{n}\}) = m(\{f > a\})$.
 
 <div class=note>
 
@@ -73,8 +73,7 @@ Note: if $\lim \limits _{n \rightarrow \infty} E_n$ exists and finite-measure, t
 ## Properties of Measurable Functions
 
 
-- **Boundedness**: $f$ is almost bounded; $\{f_n\}$ are almost uniformly bounded.
-- **Preimage of Measurable Functions**: For any open set $G$ or closed set $F$, $f^{-1}(G)$ and $f^{-1}(F)$ are measurable.
+- **Preimage of Measurable Functions**: For any open set $G$ or closed set $F$, $f^{-1}(G)$ and $f^{-1}(F)$ are measurable. (Application: Prove $f\circ g$ is measurable.)
 
 <div class=note>
 
@@ -203,6 +202,15 @@ Note: If $E_0 = \{f_n \not \rightrightarrows f\}$, does $m(E_0) = 0$ hold? No! D
 
 - **Convergence in Measure**: $f, f_n$ measurable and finite a.e.
 $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \delta\}) = 0. $$
+- **Measure to Pointwise (Riesz)**: $f_n \xrightarrow{m} f \Rightarrow  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f$.
+- **Pointwise to Measure (Lebesgue)**: $m(D) < \infty$, then $f_n \xrightarrow{a.e.} f \Rightarrow f_n \xrightarrow{m} f$.
+
+<div class=note>
+
+$f_n \xrightarrow{a.e.} f$ implies $f_n \xrightarrow{a.u.} f$, which implies $f_n \xrightarrow{m} f$ (See next statement).
+
+</div>
+
 - **Uniform to Measure**: If $f_n \xrightarrow{a.u.} f$, then $f_n \xrightarrow{m} f$.
 
 <div class=note>
@@ -211,16 +219,6 @@ $$ \forall \delta > 0, \lim \limits _{n \rightarrow \infty} m(\{|f_n - f| \geq \
 (2) $m(\{|f_n-f| > \delta\}) \leq m(D - E) < \epsilon$ for $n > N$. Taking $\epsilon \rightarrow 0$ gives the result.
 
 </div>
-
-- **Measure to Pointwise (Riesz)**: $f_n \xrightarrow{m} f \Rightarrow  \exists \{f_{n_k}\}, f_{n_k} \xrightarrow{a.e.} f$.
-- **Pointwise to Measure (Lebesgue)**: $m(D) < \infty$, then $f_n \xrightarrow{a.e.} f \Rightarrow f_n \xrightarrow{m} f$.
-
-<div class=note>
-
-$f_n \xrightarrow{a.e.} f$ implies $f_n \xrightarrow{a.u.} f$, which implies $f_n \xrightarrow{m} f$.
-
-</div>
-
 
 ---
 
@@ -247,7 +245,7 @@ Define $f \equiv 1$ for $x \in [0, +\infty)$.
 <div class=note>
 
 (1) $\Rightarrow$: By Riesz theorem. (2) $\Leftarrow$: Assume $f_n \not \xrightarrow{m} f$, then
-$$ \exists \epsilon > 0, \exists \delta > 0, \forall N > 0, \exists n > N, \quad m(\{|f_n - f| > \delta\}) > \epsilon. $$
+$$ \exists \epsilon > 0, \forall \delta > 0, \forall N > 0, \exists n > N, \quad m(\{|f_n - f| > \delta\}) > \epsilon. $$
 There exists $\{f_{n_i}\}$ such that $m(\{|f_{n_i} - f| > \delta\}) > \epsilon$, which contradicts $f_{n_{ij}} \xrightarrow{a.e.} f$.
 </div>
 
