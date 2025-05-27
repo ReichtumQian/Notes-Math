@@ -37,17 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Separable Equations and Generalizations
-- Exact Equations
-- First-Order Linear ODEs
-- First-Order Implicit ODE and Singular Solution
-
----
-
 # Separable Equations and Its Generalizations
 
 ---

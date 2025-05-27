@@ -43,10 +43,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Euler's Polygonal Method
 
 ---
@@ -104,6 +100,20 @@ $$ y(x) = y_0 + \int_{x_0}^x f(t,y(t))\mathrm{d} t $$
 - **Picard Sequence**: $\varphi_0(x) = y_0$ and $\displaystyle \varphi_n(x) = y_0 + \int_{x_0}^x f(t, \varphi_{n-1}(t))\mathrm{d} t$ for $n \geq 1$.
 - **Lipschitz Continuous**: $f(x,y)$ is *Lipschitz continuous with respect to $y$* if
 $$ |f(x,y_1) - f(x,y_2)| \leq L |y_1 - y_2|, \quad \forall (x,y_1),(x,y_2) \in R.$$
+
+---
+
+## Calculation of Picard Sequence
+
+- Given $\frac{\mathrm{d} y}{\mathrm{d} x} = x+y$, $y(0) = 1$. Write $y_0(x)$, $y_1(x)$, $y_2(x)$, and determine if they are convergent.
+
+<div class=note>
+
+(1) $y_0(x) = 1$, $\displaystyle y_1(x) = y(0) + \int_0^x f(t, y_0(t))\mathrm{d} t = \frac{1}{2}x^2 + x + 1$, $y_2(x) = \frac{1}{6}x^3 + x^2 + x + 1$.
+(2) $f^{\prime}_y(x,y)$ is bounded, so the Picard sequence converges.
+
+</div>
+
 
 ---
 

@@ -37,14 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
-# Solution Structure
-
----
-
 # Solve Constant-Coefficients Higher-Order Linear ODEs
 
 ---
@@ -107,7 +99,29 @@ The general solution of homogenous equation is $y = c_1 \cos 2x + c_2 \sin 2x$.
 
 ---
 
-## Applications of Undetermined Coefficients
+# Euler-Cauchy Equation
+
+---
+
+## Euler-Cauchy Equation
+
+- **Euler-Cauchy Equation**: $x^ny^{(n)} + a_{n-1}x^{n-1}y^{(n-1)} + \cdots + a_1xy^{\prime} + a_0y = 0$.
+
+<div class=note>
+
+Assume $y = x^r$, get $f(r) = 0$, find the roots $r_1, r_2, \cdots, r_n$.
+- For real root $r$: include $Cx^r$;
+- For multiple roots $r$: include $(C_1 + C_2 \ln x + C_3 (\ln x)^2 + \cdots)x^r$.
+- For $r = \alpha \pm i \beta$: include $x^{\alpha}[C_1 \cos (\beta \ln x) + C_2 \sin (\beta \ln x)]$.
+
+
+</div>
+
+- **Non-Homogenous Case**: Apply method of undetermined coefficients.
+
+---
+
+## Examples of Euler-Cauchy Equation
 
 - Solve $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$.
 
@@ -123,6 +137,14 @@ We look for particular solutions of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x
 
 </div>
 
+- Solve $x^2 y^{\prime\prime} - 2x y^{\prime} + 2y = x^3$.
+
+<div class=note>
+
+$y = C_1 x + C_2 x^2 + \frac{1}{2}x^3$.
+
+</div>
+
 ---
 
 # Reduction of Order
@@ -131,9 +153,14 @@ We look for particular solutions of $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x
 
 ## No Explicit $y$ Case
 
-<br>
-
 - **No Explicit $y$**: $y^{\prime\prime} = f(x,y^{\prime})$, consider $p = y^{\prime}$, then $p^{\prime} = f(x,p)$.
+
+<div class=note>
+
+Consider $p = p(y)$, then $y^{\prime\prime} = p^{\prime}_x(y) = y^{\prime}p^{\prime} = pp_y$.
+
+</div
+
 - Solve $y^{\prime 2} - y y^{\prime\prime} = 0$.
 
 <div class=note>
@@ -163,16 +190,6 @@ $$ z^{\prime} = - \frac{2}{y}z + 1 \Rightarrow (y^2z)^{\prime} = y^2 \Rightarrow
 (4) Solve $y^{\prime} = \frac{3}{y}$, $y^2 = 6x + 1$ so $y = \sqrt{6x + 1}$.
 
 </div>
-
----
-
-# Some Special Higher-Order ODEs (Ignored)
-
----
-
-## Euler Equation
-
-- **Euler Equation**: $a_nx^n y^{(n)} + \cdots + a_1x y^{\prime} + a_0y = f(x)$.
 
 
 
