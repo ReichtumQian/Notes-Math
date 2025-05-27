@@ -246,6 +246,9 @@ $\exists \beta \in V$, $\mathcal{A}\beta = \alpha$, then $\mathcal{A} \alpha = \
 
 <div class=note>
 
+(1) $V = \operatorname{Im}(\mathcal{A}) \oplus \operatorname{Ker}(\mathcal{A})$, then $\alpha = \alpha_1 + \alpha_2$.
+(2) $\mathcal{B}\alpha = \mathcal{B}\alpha_1$, $\mathcal{B}\mathcal{A}\alpha = \mathcal{B}\alpha_1$.
+
 </div>
 
 ---

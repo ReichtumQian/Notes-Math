@@ -60,7 +60,32 @@ $$
 
 ---
 
-## Practice on Canonical Form of Quadratic Forms
+## Application of Elementary Transformation Method
+
+- Find the canonical form of $2x_1x_2 + 2x_1x_3 - 6x_2x_3$.
+
+<div class=note>
+
+$$
+P =
+\begin{bmatrix}
+  1 & - \frac{1}{2} & 3\\
+  1 & \frac{1}{2} & -1\\
+  0 & 0 & 1
+\end{bmatrix}, \quad
+P^TAP = 
+\begin{bmatrix}
+  2 & & \\
+    & - \frac{1}{2} & \\
+   & & 6
+\end{bmatrix}
+$$
+
+</div>
+
+---
+
+## Application of Orthogonal Transformation Method
 
 - $f = 5x_1^2 + 5x_2^2 + 3x_3^2 - 2x_1x_2 + 6x_1x_3 - 6x_2x_3$. Find an orthogonal transformation $x = Ty$ and corresponding canonical form.
 
@@ -71,6 +96,17 @@ $$
 (3) Normalized Eigenvectors: $v_1 = \frac{1}{\sqrt{6}}(-1,1,2)^T$, $v_2 = \frac{1}{\sqrt{2}}(1,1,0)^T$, $v_3 = \frac{1}{\sqrt{3}}(1,-1,1)$.
 
 </div>
+
+- If $\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_n$, then $\max_{x \in \mathbb{R}^n} \frac{x^TAx}{x^Tx} = \lambda_1, \quad \min_{x \in \mathbb{R}^n} \frac{x^TAx}{x^Tx} = \lambda_n$.
+
+<div class=note>
+
+(1) $\lambda_1 I - A$ is positive semi-definite, $x^T(\lambda_1 I - A)x \geq 0$, so $\lambda_1 \geq \frac{x^TAx}{x^Tx}$.
+(2) There exists an unit vector $x_0 \in \mathbb{R}^n$ such that $Ax_0 = \lambda_1 x_0$, so $x_0^TAx_0 = \lambda_1 x_0^Tx_0 = \lambda_1$.
+
+</div>
+
+- Corollary: If $\lambda(A) > a$, $\lambda(B) > b$, then $\lambda(A+B) > a+b$.
 
 ---
 
