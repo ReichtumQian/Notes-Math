@@ -37,15 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Trigonometric Functions
-- Inequalities
-
----
-
 # Trigonometric Functions
 
 ---

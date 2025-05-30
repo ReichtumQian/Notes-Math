@@ -125,4 +125,96 @@ $$ G(s) = \frac{1}{ms^2 + ds + k}. $$
 
 </div>
 
+---
+
+## Stability of Linear System
+
+- **Stability**: The system is *stable* if $e^{At} \rightarrow 0$.
+
+<div class=note>
+
+${\displaystyle x(t) = e^{At}x(0) + \int_0^t e^{A(t - \sigma)}B u(\sigma)\mathrm{d} \sigma}$. It means if $u = 0$, no matter how $x(0)$ be, $x(t) \rightarrow 0$.
+
+</div>
+
+- **Condition**: $\operatorname{Re}(\lambda_k) < 0$, or $\sigma(A) \subset \mathbb{C}_-$.
+
+<div class=note>
+
+Consider $A = H^{-1}JH$, then $e^{At} = H^{-1}e^{Jt}H$. Expand $e^{Jt}$, and each entry is like $e^{\lambda_i t}$.
+
+</div>
+
+- **Marginally Stable**: $\operatorname{Re}(\lambda_k) \leq 0$.
+
+---
+
+## Routh Test
+
+- **Idea**: Determine if the system is stable without computing the eigenvalues.
+- **Polynomial Stability**: If roots are in $\mathbb{C}_-$. If its coefficients are real, then they are positive. (and versa vice if $n = 2$)
+- **Routh Test**: The polynomial is stable iff all entries of the first column are positive.
+
+$$
+\begin{bmatrix}
+  1 & a_{n-2} & a_{n-4} & a_{n-6} & \cdots \\
+  a_{n-1} & a_{n-3} & a_{n-5} & a_{n-7} & \cdots
+\end{bmatrix}
+$$
+
+- **Calculation of $b$**: If $a_n$ is over, then substitute it with $0$.
+- Derive the formula for $p(s) = s^3 + a_2s^2 + a_1 s + a_0$.
+
+<div class=note>
+
+$b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. So it is stable 
+
+</div>
+
+- If $A$ is unstable and all entries in first column are non-zero, then the number of unstable eigenvalues of $A$ is equal to the number of sign changes in the first column.
+
+---
+
+## Stable Transfer Function
+
+- **Stable Transfer Function**: Analytic and bounded on $\mathbb{C}_+$.
+- A rational function is stable iff it is proper and all poles are in $\mathbb{C}_-$.
+- Determine if $\frac{(s^2 - 1)e^{-7s}}{(s^2 + 2s + 5)(-s-3)}$ is stable.
+
+<div class=note>
+
+Yes, because $e^{-7s}$ is stable, $\frac{s^2 - 1}{(s^2 + 2s + 5)(-s-3)}$ is also stable.
+
+</div>
+
+
+---
+
+## Stable System and Stable Transfer Function
+
+
+- **Relation with Stable System**: If the system is stable, then its transfer function is stable. (Versa vice if the system is minimal)
+
+<div class=note>
+
+$\lim \limits _{s \rightarrow \infty}G(s) = D$ and $\operatorname{Re}(\lambda_k) < 0$ implies its poles are in $\mathbb{C}_-$.
+
+</div>
+
+- Example: $A =
+\begin{bmatrix}
+  -3 & 0 \\ 5 & 2
+\end{bmatrix}
+$, $B =
+\begin{bmatrix}
+  3 \\ 11
+\end{bmatrix}
+$, $C =
+\begin{bmatrix}
+  8 & 0
+\end{bmatrix}
+$, $D = 0$. Find minimal system and transfer function, and their stability.
+- **Energy**: $\|u\|^2 = \int_0^{\infty} |u(t)|^2 \mathrm{d} t$.
+- If the input $u$ has finite energy, $G$ is stable, then $y$ has finite energy.
+
 
