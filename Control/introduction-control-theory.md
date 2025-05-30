@@ -66,8 +66,6 @@ $$ (u_1(t) + u_2(t), x_1(0) + x_2(0)) \rightarrow (x_1(t)+x_2(t), y_1(t)+y_2(t))
 ## Transfer Function and Its Applications
 
 - **Transfer Function**: $G(s) = C(sI - A)^{-1} B + D$, which is a proper rational function.
-  - **Proper**: $G(\infty) = D$ is finite. If $G(\infty) = 0$ then it is strictly proper.
-  - **Rational**: Each entry in $G$ is ratio of two polynomials.
 
 <div class=note>
 
@@ -88,39 +86,31 @@ $$
 
 ---
 
-## Structure of Transfer Function
+## Properties of Transfer Function
 
-- $(sI - A)^{-1} = \frac{1}{|sI - A|}(s I - A)^\ast$, where $|sI - A|$ is the characteristic polynomial of $A$, each entry of $(sI - A)^\ast$ is of the order either $n - 1$ (on the diagonal) or $n - 2$ (not on the diagonal).
-- The transfer polynomial is strictly proper.
-- $\lim \limits _{s \rightarrow \infty} G(s) = D$.
-- Poles of $G$ are subset of $\sigma(A)$ (eigenvalues of $A$).
-- **Minimal System**: No systems of lower order has the same transfer function.
-- Example: $A =
-\begin{bmatrix}
-  3 & 0\\
-  2 & -5
-\end{bmatrix}
-$, $B =
-\begin{bmatrix}
-  0 \\ 2
-\end{bmatrix}
-$, $C =
-\begin{bmatrix}
-  7 & 0
-\end{bmatrix}
-$, $D = 0$.
+<div class=trick>
 
-<div class=note>
-
-Only take the first dimension keeps the transfer function.
+The formula of transfer function is
+$$G(s) = C(sI - A)^{-1}B + D$$
 
 </div>
 
-- The probability of minimal system is $1$.
+- **Rational**: Each entry in $G$ is of the form $\frac{p(x)}{g(x)}$, $\operatorname{deg}(p) = n-1$ and $\operatorname{deg}(g) = n$.
+
+<div class=note>
+
+(1) $(sI - A)^{-1} = \frac{1}{|sI - A|}(s I - A)^\ast$, $|sI - A|$ is the characteristic polynomial, its degree is $n$.
+(2) Entries of $(sI - A)^\ast$ are either $n - 1$-order (diagonal) or $n - 2$-order (not diagonal).
+
+</div>
+
+- **(Strictly) Proper**: $G(\infty) = D$ (finite). If $D = 0$, then $G(\infty) = 0$, and it is strictly proper.
+- **Poles**: Poles of $G$ are subset of $\sigma(A)$ (eigenvalues of $A$).
+- **Minimal System**: No systems of lower order has the same transfer function. A linear system is minimal iff its poles are exactly $\sigma(A)$. (The posibility of minimal system is $1$)
 
 ---
 
-## Famous Transfer Function
+## Several Famous Transfer Function
 
 - **LPF**: $G(s) = \frac{1}{1 + \tau s}$ for $\tau > 0$.
 - **HPF**: $G(s) = \frac{\tau s}{1 + \tau s}$.
@@ -134,4 +124,5 @@ The transfer function is
 $$ G(s) = \frac{1}{ms^2 + ds + k}. $$
 
 </div>
+
 
