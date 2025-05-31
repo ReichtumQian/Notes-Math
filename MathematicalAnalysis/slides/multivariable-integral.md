@@ -141,7 +141,7 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 <div class=note>
 
 (1) ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x}$ is uniformly convergent with respect to $y$.
-(2) $e^{-xy}$ decreases to $x$, and $0 < e^{-xy} < 1$ is uniformly bounded.
+(2) $e^{-xy}$ decreases with respect to $x$, and $0 < e^{-xy} < 1$ is uniformly bounded.
 
 </div>
 
@@ -154,6 +154,12 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 - **Dirichlet Integral**: ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x = \frac{\pi}{2}}$.
 
 - **Normal Distribution Integral**: ${\displaystyle \int_0^{+\infty} e^{-x^2}\mathrm{d} x = \frac{\sqrt{\pi}}{2}}$.
+
+<div class=note>
+
+$\displaystyle I^2 = \iint_{[0, +\infty)^2} e^{-(x^2+y^2)}\mathrm{d} x \mathrm{d} y = \int_0^{\frac{\pi}{2}}\mathrm{d} \theta \int_0^{\infty} e^{-r^2}r \mathrm{d} r \mathrm{d} \theta = \frac{\pi}{4}$.
+
+</div>
 
 
 ---

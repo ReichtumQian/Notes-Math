@@ -397,11 +397,11 @@ $$ \sum u^{\prime}_n(x) = (\sum u_n(x))^{\prime}. $$
 
 ## Power Series Expansion
 
-- **Expansion of Rational Functions**: $f(x) = \frac{x^2}{x^2 - 3x + 1}$
+- **Expansion of Rational Functions**: $f(x) = \frac{x^2}{x^2 - 3x + 2}$
 
 <div class=note>
 
-(1) Decompose: $\frac{x^2}{x^2-3x+1} = 1 + \frac{4}{x-2} - \frac{1}{x-1}$ (Method of Undetermined Coefficients)
+(1) Decompose: $\frac{x^2}{x^2-3x+2} = 1 + \frac{4}{x-2} - \frac{1}{x-1}$ (Method of Undetermined Coefficients)
 (2) $\frac{1}{x-2} = -\frac{1}{2} \cdot \frac{1}{1 - \frac{x}{2}} = - \frac{1}{2} \sum\limits_{n=0}^{\infty} \left( \frac{x}{2} \right)^n$ and $\frac{1}{x-1} = - \frac{1}{1-x} = - \sum\limits_{n = 0}^{\infty} x^n$.
 
 </div>
@@ -418,7 +418,7 @@ Consider $\displaystyle F(x) = \int_0^x \frac{1}{(1+t)^2}\mathrm{d} t$. Then $F(
 
 <div class=note>
 
-(1) $f^{\prime}(x) = \frac{1}{1+x^2} = \sum_{n=0}^{\infty}(-1)^nx^{2n}$. Then $f = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}$.
+(1) $f^{\prime}(x) = \frac{1}{1+x^2} = \sum_{n=0}^{\infty}(-1)^nx^{2n}$. Then $f = \sum_{n=0}^{\infty} (-1)^n \frac{x^{2n+1}}{2n+1}$. (2) $f = \arctan 1 - \arctan kx$.
 
 </div>
 

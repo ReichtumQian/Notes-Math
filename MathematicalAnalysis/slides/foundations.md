@@ -44,6 +44,7 @@ Speaker: Yixiao Qian
 ## Commonly Used Formulas
 
 - **Sum-Difference Formulas**: $\sin (\alpha \pm \beta)$, $\cos(\alpha \pm \beta)$, $\tan (\alpha \pm \beta)$.
+- Prove that $\arctan A - \arctan B = \frac{A - B}{1 + AB}$. (Hint: Consider $\tan (\arctan A - \arctan B)$.)
 - **Universal Formulas**: $\sin \alpha$, $\cos \alpha$, $\tan \alpha$.
 - **Double Angle Formulas**: $\sin 2\alpha$, $\cos 2\alpha$, $\tan 2\alpha$.
 - **Half Angle Formulas**: $\sin \frac{\alpha}{2}$, $\cos \frac{\alpha}{2}$, $\tan \frac{\alpha}{2}$.

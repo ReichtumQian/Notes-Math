@@ -37,9 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
 
 
 
