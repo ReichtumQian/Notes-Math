@@ -237,7 +237,7 @@ $$
 \iint_S f(x,y,z)\mathrm{d}S = \iint_D f(x,y,z(x,y)) \sqrt{1 + z_x^2 + z_y^2}\mathrm{d} x \mathrm{d} y.
 $$
 $$
-\iint_S f(x,y,z)\mathrm{d}S = \iint_D f(x(u,v),y(u,v),z(uv)) \sqrt{EG-F^2}\mathrm{d} u \mathrm{d} v.
+\iint_S f(x,y,z)\mathrm{d}S = \iint_D f(x(u,v),y(u,v),z(u,v)) \sqrt{EG-F^2}\mathrm{d} u \mathrm{d} v.
 $$
 
 ---
@@ -256,7 +256,13 @@ $$
 $$
 \iint  _{S_+}P\mathrm{d}y \mathrm{d}z + Q \mathrm{d}z \mathrm{d}x + R \mathrm{d}x \mathrm{d}y = \iiint_V (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z})\mathrm{d}x \mathrm{d}y \mathrm{d}z
 $$
+- **Application**: Calculate ${\displaystyle I = \iint_S \frac{x\mathrm{d}y\mathrm{d}z + y\mathrm{d}z\mathrm{d} x + z\mathrm{d}x \mathrm{d} y}{(ax^2+by^2+cz^2)^{\frac{3}{2}}}}$, where $S$ does not pass origin.
 
+<div class=note>
+
+Remove $ax^2+by^2+cz^2 \leq \epsilon^2$. The answer is $\displaystyle I = \frac{4\pi}{\sqrt{abc}}$.
+
+</div>
 
 
 
