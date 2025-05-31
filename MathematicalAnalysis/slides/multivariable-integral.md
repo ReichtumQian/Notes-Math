@@ -176,19 +176,34 @@ $\displaystyle I^2 = \iint_{[0, +\infty)^2} e^{-(x^2+y^2)}\mathrm{d} x \mathrm{d
 
 ## Double Integral
 
-- **Iterated Integral**
-- **Change of Vairable**:
-- **Polar Coordinate Transformation**
+<br>
+
+- **Iterated**: ${\displaystyle \iint_Df(x,y)\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_c^df(x,y)\mathrm{d}y}$, ${\displaystyle \iint_Df(x,y)\mathrm{d}x\mathrm{d}y=\int_a^b\mathrm{d}x\int_{f_1(x)}^{f_2(x)}f(x,y)\mathrm{d}y}$
+- **Change of Vairable**: ${\displaystyle \iint_Rf(x,y)\mathrm{d}x\mathrm{d}y=\iint_\Omega f(x(u,v),y(u,v))\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\mathrm{d}u\mathrm{d}v}$, where $|\cdot|$ is absolute value.
+- **Polar Coordinate Transformation**: ${\displaystyle \iint_R f(x, y)\mathrm{d} x \mathrm{d} y = \iint_{\Omega}f(r \cos \theta, r \sin \theta) r \mathrm{d} r \mathrm{d} \theta}$.
 
 ---
 
 ## Triple Integral
 
-- **Projection Method**
-- **Cross-Section Method**
-- **Change of Variable**
-- **Cylindrical Coordinate Transformation**
-- **Spherical Coordinate Transformation**
+- **Projection Method**: ${\displaystyle \iiint _V f(x,y,z) \mathrm{d}V = \iint _D \mathrm{d}x \mathrm{d}y \int _{z_1(x,y)}^{z_2(x,y)}f(x,y,z)\mathrm{d}z}$.
+- **Cross-Section Method**: ${\displaystyle \iiint _Vf(x,y,z) \mathrm{d}V = \int ^b_a \mathrm{d}z \iint _{D_z}f(x,y,z)\mathrm{d}x\mathrm{d}y}$.
+- **Change of Variable**: ${\displaystyle \iiint _V f(x,y,z) \mathrm{d}x\mathrm{d}y\mathrm{d}z = \iiint_{V^{\prime}}f(x,y,z)\left|\frac{\partial (x,y,z)}{\partial(u,v,w)}\right|\mathrm{d}u\mathrm{d}v\mathrm{d}w}$.
+- **Cylindrical Transformation**: $x = r\cos \theta$, $y = r\sin \theta$, then $J(u,v,w) = r$.
+
+<div class=note>
+
+The general order of integration is $\mathrm{d}z, \mathrm{d} r, \mathrm{d} \theta$.
+
+</div>
+
+- **Spherical Transformation**: $x = r\sin \varphi\cos \theta$, $y = r\sin \varphi\sin \theta$, $z = r \cos \varphi$, and $J(u,v,w) = r^2 \sin \varphi$.
+
+<div class=note>
+
+The general order of integration is $\mathrm{d}r, \mathrm{d} \varphi, \mathrm{d} \theta$.
+
+</div>
 
 ---
 
@@ -202,6 +217,13 @@ $\displaystyle I^2 = \iint_{[0, +\infty)^2} e^{-(x^2+y^2)}\mathrm{d} x \mathrm{d
 - **Of a Vector Field**: $\displaystyle \int_{\Gamma} P \mathrm{d} x + Q\mathrm{d} y + R \mathrm{d} z = \int_a^b [Px^{\prime}(t) + Qy^{\prime}(t) + Rz^{\prime}(t)]\mathrm{d} t$.
 - **Green's Theorem**: ${\displaystyle \oint_{\partial \Omega} P \mathrm{d} x + Q\mathrm{d} y = \iint_{\Omega} \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)\mathrm{d} x \mathrm{d} y}$.
 - **Application of Green's Theorem**: Calculate ${\displaystyle \oint_L \frac{x\mathrm{d} y - y\mathrm{d} x}{ax^2 + by^2}}$ where $a, b > 0$, $L$ doesn't pass through the origin, but enclose it.
+
+<div class=note>
+
+(1) Consider the region enclosed by $L_1: ax^2 + by^2 = r^2$ removed. $Q_x - P_y = 0$. So ${\displaystyle I - I_1 = 0}$. Here $I_1 = \displaystyle \int_{L_1} \frac{x\mathrm{d} y - y\mathrm{d} x}{ax^2+by^2}$ with positive orintation (counterpositive).
+(2) $\displaystyle I = I_1 = \frac{1}{r^2} \int_{L_1} x\mathrm{d} y - y\mathrm{d} x$. Apply Green's formula again, we get $I = \frac{2\pi}{\sqrt{ab}}$.
+
+</div>
 
 
 ---
