@@ -155,7 +155,7 @@ $a_2 = \sqrt{c + \sqrt{c}} > a_1$. If $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n
 
 <div class=note>
 
-(1) $a_n < 2$, then $a_{n+1} = \sqrt{2a_n} < 2$. (2) $\frac{a_{n+1}}{a_n} = \sqrt{\frac{2}{a_n}} < 1$.
+(1) $a_n < 2$, then $a_{n+1} = \sqrt{2a_n} < 2$. (2) $\frac{a_{n+1}}{a_n} = \sqrt{\frac{2}{a_n}} < 1$ or $a_{n+1} = \sqrt{2a_n} > \sqrt{2a_{n-1}} = a_n$.
 
 </div>
 
@@ -248,6 +248,15 @@ $F(x) := f(x + \frac{1}{n}) - f(x)$. $F(0) + F(\frac{1}{n}) + \cdots + F(\frac{n
 (3) $f$ continuous at $0$: Take $\{q_n\} \subset \mathbb{Q}$, $q_n \rightarrow 0$. Then $f(q_n) = f(x_0 + q_n) - f(x_0) \rightarrow 0 = f(0)$.
 (4) $f \in C(\mathbb{R})$: For $q_n \rightarrow 0$, $f(x+q_n) = f(x) + f(q_n) \rightarrow f(x)$.
 (5) For $q_n \rightarrow x$, $f(x) = \lim \limits _{n \rightarrow \infty} f(q_n) = \lim \limits _{n \rightarrow \infty} aq_n = ax$.
+
+</div>
+
+- $f$ is continuous at $x = 0$ and $x = 1$. $f(x^2) = f(x)$ for all $x$. Prove $f$ is constant.
+
+<div class=note>
+
+(1) For $|x| < 1$: $f(x) = f(x^2) = \cdots = f(x^{2n}) \rightarrow f(0)$. Furthermore, $f(1) = \lim \limits _{x \rightarrow 1^-}f(x) = f(0)$.
+(2) For $|x| > 1$: Suppose $x > 0$, then $f(x) = f(\sqrt{x}) = \cdots = f(\sqrt[2n]{x}) \rightarrow f(1)$.
 
 </div>
 
