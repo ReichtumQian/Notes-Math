@@ -237,8 +237,8 @@ $\exists \beta \in V$, $\mathcal{A}\beta = \alpha$, then $\mathcal{A} \alpha = \
 
 <div class=note>
 
-(1) $\forall \alpha \in V$, $\exists \beta \in V$, $\mathcal{B}\alpha = \mathcal{A}\beta$. Then $\mathcal{A}(\mathcal{B}\alpha) = \mathcal{A} (\mathcal{A}\beta) = \mathcal{A} \beta = \mathcal{B} \alpha \Rightarrow \mathcal{A} \mathcal{B} = \mathcal{B}$.
-(2) $\forall \gamma \in \operatorname{Im}(\mathcal{A})$, $\mathcal{B} \mathcal{A} \gamma = \mathcal{A} \gamma = \gamma \Rightarrow \mathcal{B} \gamma = \gamma$.
+(1) $\forall \alpha \in V$, $\mathcal{B}\alpha \in \operatorname{Im}(\mathcal{A})$, so $\mathcal{A}\mathcal{B}\alpha = \mathcal{B}\alpha$.
+(2) $\forall \gamma \in \operatorname{Im}(\mathcal{A})$, $\mathcal{B}\gamma = \mathcal{B} (\mathcal{A} \gamma) = \mathcal{A} \gamma = \gamma$, so $\gamma \in \operatorname{Im}(\mathcal{B})$.
 
 </div>
 
@@ -246,8 +246,8 @@ $\exists \beta \in V$, $\mathcal{A}\beta = \alpha$, then $\mathcal{A} \alpha = \
 
 <div class=note>
 
-(1) $V = \operatorname{Im}(\mathcal{A}) \oplus \operatorname{Ker}(\mathcal{A})$, then $\alpha = \alpha_1 + \alpha_2$.
-(2) $\mathcal{B}\alpha = \mathcal{B}\alpha_1$, $\mathcal{B}\mathcal{A}\alpha = \mathcal{B}\alpha_1$.
+(1) $\forall \alpha = \alpha_1+\alpha_2 \in V$, where $\alpha_1 \in \operatorname{Im}(\mathcal{A})$, $\alpha_2 \in \operatorname{Ker}(\mathcal{A})$. $\mathcal{B}\alpha = \mathcal{B}\alpha_1 = \mathcal{B}\mathcal{A}\alpha_1 = \mathcal{B}\mathcal{A}\alpha$.
+(2) $\forall \alpha \in \operatorname{Ker}(\mathcal{A})$, $\mathcal{B}\alpha = \mathcal{B}\mathcal{A}\alpha = 0$, so $\operatorname{Ker}(\mathcal{A}) \subset \operatorname{Ker}(\mathcal{B})$. Similarly, $\operatorname{Ker}(\mathcal{B}) \subset \operatorname{Ker}(\mathcal{A})$.
 
 </div>
 
