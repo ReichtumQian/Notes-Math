@@ -151,8 +151,14 @@ $$\displaystyle \left| \int_c^{+\infty}f(x,t)\mathrm{d} x - \int_c^Af(x,t)\mathr
 
 - If $p > 0$, then ${\displaystyle \int_0^{+\infty} e^{-px} \frac{\sin bx - \sin ax}{x} \mathrm{d} x = \arctan \frac{b}{p} - \arctan \frac{a}{p}}$.
 
-- **Dirichlet Integral**: ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x = \frac{\pi}{2}}$.
+<div class=note>
 
+(1) $\displaystyle I = \int_0^{+\infty} \mathrm{d}x \int_a^b e^{-px} \cos xy\mathrm{d} y = \int_a^b\mathrm{d} y \int_0^{+\infty} e^{-px} \cos xy \mathrm{d} x$ by Fubini theorem.
+(2) Integrate-by-part twice, ${\displaystyle \frac{y^2+p^2}{p^2}\int_0^{+\infty} e^{-px}\cos xy \mathrm{d} y = \frac{1}{p}}$ and $\displaystyle I = \arctan \frac{b}{p} - \arctan \frac{a}{p}$.
+
+</div>
+
+- **Corollary (Dirichlet Integral)**: ${\displaystyle \int_0^{+\infty} \frac{\sin x}{x} \mathrm{d} x = \frac{\pi}{2}}$.
 - **Normal Distribution Integral**: ${\displaystyle \int_0^{+\infty} e^{-x^2}\mathrm{d} x = \frac{\sqrt{\pi}}{2}}$.
 
 <div class=note>
