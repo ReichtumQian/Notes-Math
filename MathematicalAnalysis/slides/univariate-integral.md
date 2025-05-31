@@ -168,6 +168,16 @@ $$ I = \int_0^{\frac{b-a}{2}} t \left[ f(\frac{a+b}{2} + t) - f(\frac{a+b}{2} - 
 
 ## Wallis Formula
 
+- **$[0, \frac{\pi}{2}]$**: $\displaystyle I(m,n) = \int_0^{\frac{\pi}{2}} \sin^m x \cos^n x\mathrm{d} x$, then
+$$ I(m,n) =
+\begin{cases}
+  \frac{(m-1)!!(n-1)!!}{(m+n)!!} \frac{\pi}{2} & \text{if m,n are even;}\\
+  \frac{(m-1)!!(n-1)!!}{(m+n)!!} & \text{otherwise.}
+\end{cases}$$
+- **$[0,\pi]$**: $\displaystyle J(m,n) = \int_0^{\pi} \sin^m x \cos^n x\mathrm{d} x$. If $n$ is even $J(m,n) = 2I(m,n)$, and $0$ otherwise.
+- **$[0,2\pi]$**: $\displaystyle K(m,n) = \int_0^{2\pi} \sin^m x \cos^n x\mathrm{d} x$. If $n,m$ are even $K(m,n) = 4I(m,n)$, and $0$ otherwise.
+
+
 
 ---
 
