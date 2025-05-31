@@ -146,6 +146,21 @@ $$
 
 ---
 
+## Inverse Matrix and Its Properties
+
+- **Diagonal Dominant**: If $|a_{ii}| > \sum_{j\neq i}|a_{ij}|$, then $|A| \neq 0$.
+- **Corollary**: There exists $t \in \mathbb{R}$ such that $tI + A$ is invertible.
+
+---
+
+## Adjugate Matrix
+
+- **Minor and Cofactor**
+- **Adjugate Matrix**
+- **Relation with Inverse**:
+
+---
+
 # Several Special Matrices
 
 ---
