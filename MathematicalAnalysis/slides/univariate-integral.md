@@ -175,7 +175,7 @@ $$ I(m,n) =
   \frac{(m-1)!!(n-1)!!}{(m+n)!!} & \text{otherwise.}
 \end{cases}$$
 - **$[0,\pi]$**: $\displaystyle J(m,n) = \int_0^{\pi} \sin^m x \cos^n x\mathrm{d} x$. If $n$ is even $J(m,n) = 2I(m,n)$, and $0$ otherwise.
-- **$[0,2\pi]$**: $\displaystyle K(m,n) = \int_0^{2\pi} \sin^m x \cos^n x\mathrm{d} x$. If $n,m$ are even $K(m,n) = 4I(m,n)$, and $0$ otherwise.
+- **$[0,2\pi]$**: $\displaystyle K(m,n) = \int_0^{2\pi} \sin^m x \cos^n x\mathrm{d} x$. If $n,m$ are even $K(m,n) = 4I(m,n)$, and $0$ else.
 
 
 
@@ -216,7 +216,7 @@ $$ \left| \int_{t_1}^{t_2} f(x)\mathrm{d} x \right| \leq \int_{t_1}^{t_2} |f(x)|
 </div>
 
 - **Behavior of $\displaystyle \int_1^{+\infty} \frac{\mathrm{d} x}{x^p}$**: Converges when $p > 1$, diverges when $p \leq 1$.
-- **Behavior of ${\displaystyle \int_0^1 \frac{\mathrm{d} x}{x^p}}$**: Converges when $p < 1$, diverges when $p \geq 1$.
+- **Behavior of ${\displaystyle \int_0^1 \frac{\mathrm{d} x}{x^p}}$**: Converges when $p < 1$ (includes $p < 0$), diverges when $p \geq 1$.
 
 
 ---
@@ -266,11 +266,6 @@ If $A > 0$, $\exists X > 0$, $\forall x > X$, $f(x) > \frac{A}{2}$. Then $\displ
 (2) Take $x = \sqrt{t}$, then $I = \int_0^{+\infty} \frac{\sin t}{2 \sqrt{t}}\mathrm{d} t$. Then $f \sim t^{\frac{1}{2}}$ when $x = 0$, by Dirichlet when $x \rightarrow \infty$.
 
 </div>
-
----
-
-## Several Sepecial Improper Integrals
-
 
 
 
