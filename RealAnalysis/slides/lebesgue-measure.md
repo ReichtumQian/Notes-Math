@@ -189,8 +189,9 @@ $m(\cap_{n=1}^{\infty}\cup_{k=n}^{\infty}E_k)=\lim \limits _{n \rightarrow \inft
 
 <div class=note>
 
-(1) $I = [0, 1]$, then $m(I - \cap_{k=1}^n E_k) = m(\cup_{k=1}^n (I - E_k)) \leq \sum\limits_{k = 1}^n m(I-E_k) = n - \sum\limits_{k = 1}^n m(E_k)$
-(2) Since $m(I - \cap_{k=1}^n E_k) = 1 - m(\cap_{k=1}^n E_k)$. Then $m(\cap_{k=1}^nE_k) > 1 - n + (n-1) = 0$.
+(1) On the one hand, $m\left(\cup_{k=1}^n ([0,1] - E_k)\right) = m([0,1] - \cap_{k=1}^n E_k) = 1 - m(\cap_{k=1}^nE_k)$.
+(2) On the other hand, $m(\cup_{k=1}^n([0,1] - E_k)) \leq n - \sum_{k=1}^n m(E_k) < 1$.
+(3) Thus $m(\cap_{k=1}^n E_k) > 0$.
 
 </div>
 
