@@ -245,8 +245,8 @@ Define $f \equiv 1$ for $x \in [0, +\infty)$.
 <div class=note>
 
 (1) $\Rightarrow$: By Riesz theorem. (2) $\Leftarrow$: Assume $f_n \not \xrightarrow{m} f$, then
-$$ \exists \epsilon > 0, \forall \delta > 0, \forall N > 0, \exists n > N, \quad m(\{|f_n - f| > \delta\}) > \epsilon. $$
-There exists $\{f_{n_i}\}$ such that $m(\{|f_{n_i} - f| > \delta\}) > \epsilon$, which contradicts $f_{n_{ij}} \xrightarrow{a.e.} f$.
+$$ \exists \delta > 0, \exists \epsilon > 0,  \forall N > 0, \exists n > N, \quad m(\{|f_n - f| > \delta\}) > \epsilon. $$
+We can find $\{f_{n_i}\}$ such that $m(\{|f_{n_i} - f| > \delta\}) > \epsilon$ for all $n_i$, which contradicts $f_{n_{ij}} \xrightarrow{a.e.} f$.
 </div>
 
 - **Counterexample**: Why inverse of Riesz theorem is wrong?
