@@ -37,6 +37,10 @@ Speaker: Yixiao Qian
 
 ---
 
+# Concept of Linear System
+
+---
+
 ## Linear Time-Invariant System
 
 - **Linear Time-Invariant System (LTI)**: State $x(t) \in \mathbb{C}^n$, Input $u(t) \in \mathbb{C}^m$, Output $y(t) \in \mathbb{C}^p$.
@@ -75,7 +79,7 @@ Then $\hat{x}(s) = (s I - A)^{-1}x(0) + (sI - A)^{-1}B\hat{u}(s)$. Substituting 
 
 </div>
 
-- **Conclusion**
+- **Conclusion**: Transfer function maps $\hat{u}(s)$ to $\hat{y}(s)$.
 
 $$
 \begin{cases}
@@ -124,6 +128,10 @@ The transfer function is
 $$ G(s) = \frac{1}{ms^2 + ds + k}. $$
 
 </div>
+
+---
+
+# Stability of Linear System
 
 ---
 
@@ -178,7 +186,7 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 ## Stable Transfer Function
 
 - **Stable Transfer Function**: Analytic and bounded on $\mathbb{C}_+$.
-- A rational function is stable iff it is proper and all poles are in $\mathbb{C}_-$.
+- **Rational Function Case**: Iff it is proper and all poles are in $\mathbb{C}_-$.
 - Determine if $\frac{(s^2 - 1)e^{-7s}}{(s^2 + 2s + 5)(-s-3)}$ is stable.
 
 <div class=note>
@@ -186,12 +194,6 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 Yes, because $e^{-7s}$ is stable, $\frac{s^2 - 1}{(s^2 + 2s + 5)(-s-3)}$ is also stable.
 
 </div>
-
-
----
-
-## Stable System and Stable Transfer Function
-
 
 - **Relation with Stable System**: If the system is stable, then its transfer function is stable. (Versa vice if the system is minimal)
 
@@ -214,6 +216,12 @@ $, $C =
   8 & 0
 \end{bmatrix}
 $, $D = 0$. Find minimal system and transfer function, and their stability.
+
+
+---
+
+## Energy of Linear Systems
+
 - **Energy**: $\|u\|^2 = \int_0^{\infty} |u(t)|^2 \mathrm{d} t$.
 - If the input $u$ has finite energy, $G$ is stable, then $y$ has finite energy.
 
