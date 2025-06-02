@@ -171,7 +171,7 @@ $$ P(z) = a_n(z-z_1)(z-z_2)\cdots (z-z_n). $$
 
 (1) Define $g(z) = e^{f(z)}$, then $|g(z)| = e^{\operatorname{Re}(f(z))} \leq e^M$.
 (2) By Liouville's theorem, $g(z) \equiv C$.
-(3) Since $e^{f(z)} \equiv C$ and $f$ is entire, we have $f^{\prime}(z) \equiv 0$, so $f(z)$ is constant.
+(3) Since $e^{f(z)} \equiv C$ and $f$ is entire. Taking derivative we know $f^{\prime}(z) e^{f(z)} \equiv 0$, so $f^{\prime}(z) \equiv 0$ since $e^{f(z)} \equiv C$.
 
 </div>
 

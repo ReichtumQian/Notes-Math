@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Complex Numbers
-- Holomorphic Function
-- Multivalued Function
-
----
-
 # Complex Numbers
 
 ---

@@ -37,16 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
-<br>
-
-- Taylor Expansion and Zeros
-- Laurent Expansion and Singularities
-- Laurent Expansion at $z = \infty$
-
----
-
 # Taylor Expansion and Zeros
 
 ---
@@ -73,8 +63,9 @@ $$ R_{z_0} = \sup \{R: f \text{ is holomorphic in } |z - z_0| < R\}. $$
 
 The uniqueness theorem indicates that $f \not\equiv 0$ iff all the zeros of $f$ are isolated.
 
-(1) $f(w) = f(\lim \limits _{n \rightarrow \infty} z_n) = \lim \limits _{n \rightarrow \infty} f(z_0) = 0$.
-(2) Since $f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(w)}{n!}(z-w)^n$ and $f(z_i) = 0$ for all $z_i$, $f^{(n)}(w) \equiv 0$ for all $n \geq 0$.
+(1) $f(w) = f(\lim \limits _{n \rightarrow \infty} z_n) = \lim \limits _{n \rightarrow \infty} f(z_n) = 0$. And $f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(w)}{n!}(z-w)^n$.
+(2) Since $\lim \limits _{n \rightarrow \infty}z_n = w$, we know $\forall r > 0$, $\exists N > 0$, $\forall n > N$, $|z_n - w| < r$.
+(3) If $f^{(m)}(w) \neq 0$, then $g(z) := \frac{f(z)}{(z-w)^m}$ satisfies $g(w) \neq 0$. There exists $r_0 > 0$ such that $g(z) \not\equiv 0$ in $D_{r_0}(w)$. But $f(z_n) = 0$ for $n > N$, which contradicts the condition.
 
 </div>
 
@@ -130,13 +121,22 @@ $f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(
 
 ## Expand Functions to Laurent Series
 
+- Expand $f(z) = \frac{\sin z}{z - \pi}$ on (1) $0 < |z-\pi| < \infty$; (2) $0 < |z| < \pi$.
+
+<div class=note>
+
+(1) $f(z) = -\frac{\sin(z - \pi)}{z-\pi} = \sum_{n=0}^{\infty} (-1)^{n+1}\frac{(z-\pi)^{2n}}{(2n+1)!}$. (Laurent Expansion Centered at Singularity)
+(2) $f(z) = \frac{1}{z-\pi} \cdot \sin z = -\frac{1}{\pi} \cdot \frac{1}{1 - \frac{z}{\pi}} \cdot \sin z = \frac{1}{\pi} \cdot (\sum_{n=0}^{\infty} \frac{z^n}{\pi^n})(\sum_{n=0}^{\infty} (-1)^n \frac{z^{2n+1}}{(2n+1)!})$. (Taylor)
+
+</div>
+
 - Expand $f(z) = \frac{1}{(z-1)^2}$ in $1 < |z| < +\infty$.
 
 <div class=note>
 
 It is equivalent to expand $f(z) = \frac{1}{z^2(1-\frac{1}{z})^2}$ in $|\frac{1}{z}| < 1$. We know when $|x| < 1$,
 $$ \frac{1}{(1+x)^2} = \sum\limits_{n = 0}^{\infty} (-1)^{n} (n+1) x^n. $$
-Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} = \sum\limits_{n = 0}^{\infty} (n+1)\frac{1}{z^{n+2}}$.
+Then $f(z) = \frac{1}{z^2} \cdot \sum\limits_{n=0}^{\infty}(n+1) \frac{1}{z^n} = \sum\limits_{n = 0}^{\infty} (n+1)\frac{1}{z^{n+2}}$. (Laurent not Centered at Singularity)
 
 </div>
 
