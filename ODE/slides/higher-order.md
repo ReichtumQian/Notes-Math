@@ -97,6 +97,12 @@ The general solution of homogenous equation is $y = c_1 \cos 2x + c_2 \sin 2x$.
 
 - Solve $y^{(3)} + y^{\prime\prime} = 3e^t + 4t^2$.
 
+<div class=note>
+
+(1) For $4t^2$, consider $y = t^2(At^2+Bt+C)$.
+
+</div>
+
 ---
 
 # Euler-Cauchy Equation

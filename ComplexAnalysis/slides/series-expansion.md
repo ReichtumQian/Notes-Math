@@ -113,8 +113,14 @@ $f(z) = \frac{f^3}{f^2} = (z-z_0)^m \frac{\varphi(z)}{\psi(z)}$, where $\varphi(
 - **Removable Singularity**: $f(z) = \sum_{n=0}^{+\infty} a_n(z-z_0)^n$, then $f(z_0) = a_0$.
 - **Pole Singularity Order $m$**: $f(z) = \sum_{n=-m}^{+\infty} a_n(z-z_0)^n$, $f(z_0) \rightarrow \infty$, $(z-z_0)^mf(z_0) = a_{-m}$.
 - **Isolated Singularity**: $z_0$ is a pole, $f$ is holomorphic in a punctured neighborhood.
-- **Riemann's Removable Singularity Theorem**: $f$ is holomorphic and bounded in a punctured neighborhood of $z_0$, then $z_0$ is a removable singularity, $f$ can extend on $z_0$.
-- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, then $\forall m, (z - z_0)^mf(z_0) \rightarrow \infty$.
+- **Essential Singularity**: $f(z) = \sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, $\lim \limits _{z \rightarrow z_0}f(z)$ does not exist.
+
+<div class=note>
+
+Great Picard's Theorem: $f(z)$ takes on all possible complex values on any punctured neighborhood of the essential singularity $z_0$.
+
+</div>
+
 - **Meromorphic**: $f$ is holomorphic except poles at $\{z_0,z_1,\cdots\}$, which have no limit points.
 
 ---

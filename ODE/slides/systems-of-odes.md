@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Solution Structure of Systems of ODEs
 
 ---
