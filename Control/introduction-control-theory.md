@@ -195,11 +195,11 @@ Yes, because $e^{-7s}$ is stable, $\frac{s^2 - 1}{(s^2 + 2s + 5)(-s-3)}$ is also
 
 </div>
 
-- **Relation with Stable System**: If the system is stable, then its transfer function is stable. (Versa vice if the system is minimal)
+- **Relation with Stable System**: Stable system implies stable transfer function . (Versa vice when system is minimal)
 
 <div class=note>
 
-$\lim \limits _{s \rightarrow \infty}G(s) = D$ and $\operatorname{Re}(\lambda_k) < 0$ implies its poles are in $\mathbb{C}_-$.
+(1) $G(s)$ is proper; (2) Poles of $G(s)$ are eigenvalues of $A$, which are in $\mathbb{C}_-$.
 
 </div>
 
@@ -222,7 +222,7 @@ $, $D = 0$. Find minimal system and transfer function, and their stability.
 
 ## Energy of Linear Systems
 
-- **Energy**: $\|u\|^2 = \int_0^{\infty} |u(t)|^2 \mathrm{d} t$.
+- **Energy**: $\displaystyle \|u\|^2 = \int_0^{\infty} |u(t)|^2 \mathrm{d} t$.
 - If the input $u$ has finite energy, $G$ is stable, then $y$ has finite energy.
 
 
