@@ -63,6 +63,23 @@ Speaker: Yixiao Qian
 
 ## Quick Review of System of ODEs
 
+- **Solution of $\mathbf{x}^{\prime}(t) = A\mathbf{x}(t)$**: For each eigenvalue $\lambda$ of $A$, the corresponding solutions:
+
+$$
+e^{\lambda t} \mathbf{v}_k, \quad
+e^{\lambda t} \left( \mathbf{v}_{k-1} + t\mathbf{v}_k \right), \quad \cdots, \quad
+e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right),
+$$
+
+where $\mathbf{v}_k$ is the solution of $(A - \lambda I)\mathbf{v} = 0$, $\mathbf{v}_0,\cdots,\mathbf{v}_{k-1}$ are solutions of $(A - \lambda I)\mathbf{v}_j = \mathbf{v}_{j+1}$.
+
+- Solve Imhomogeneous ODEs:
+$$
+\begin{cases}
+  x^{\prime} = x + y\\
+  y^{\prime} = -x + 3y + e^{2t}
+\end{cases}, \quad x(0) = 1, y(0) = -1.
+$$
 
 ---
 

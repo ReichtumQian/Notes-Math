@@ -145,8 +145,8 @@ $$ \mathbf{x}^{\prime} = A\mathbf{x}(t). $$
 - **Fundamental Solution System**: For each eigenvalue $\lambda$ of $A$, the corresponding solutions:
 
 $$
-e^{\lambda t} \mathbf{v}_0, \quad
-e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 \right), \quad \cdots, \quad
+e^{\lambda t} \mathbf{v}_k, \quad
+e^{\lambda t} \left( \mathbf{v}_{k-1} + t\mathbf{v}_k \right), \quad \cdots, \quad
 e^{\lambda t} \left( \mathbf{v}_0 + t\mathbf{v}_1 + \cdots + \frac{t^k}{k!}\mathbf{v}_k \right),
 $$
 
@@ -168,11 +168,11 @@ $$
 <div class=note>
 
 (1) $\lambda_1 = -1$ with multiplicity $2$, $\lambda_2 = 2$ with multiplicity $1$.
-(2) For $\lambda_1 = -1$, $(\lambda_1 I - A)\mathbf{v}_1 = 0$, then $\mathbf{v}_1 = (0,1,1)^T$. $(\lambda_1 I - A)\mathbf{v}_2 = \mathbf{v}_1$, then $\mathbf{v}_1 = (1,0,0)^T$.
+(2) For $\lambda_1 = -1$, $(\lambda_1 I - A)\mathbf{v}_2 = 0$, then $\mathbf{v}_2 = (0,1,1)^T$. $(\lambda_1 I - A)\mathbf{v}_1 = \mathbf{v}_2$, then $\mathbf{v}_1 = (1,0,0)^T$.
 (3) For $\lambda_2 = 2$, $(\lambda_2 I - A)\mathbf{v} = 0$, then $\mathbf{v} = (1,1,0)$.
 (4) The fundamental solution system is
-$$ e^{-t}(0,1,1)^T, \quad e^{-t}t (1,0,0)^T, \quad e^{2t}(1,1,0)^T. $$
-(5) $\mathbf{x} = (c_2 t e^{-t} + c_3 e^{2t}, c_1e^{-t} + c_2e^{2t}, c_1e^{-t})$. Then $c_1 = c_2 = 1$, $c_3 = 0$.
+$$ e^{-t}(0,1,1)^T, \quad e^{-t} (1,t,t)^T, \quad e^{2t}(1,1,0)^T. $$
+(5) $\mathbf{x} = (c_2 e^{-t} + c_3 e^{2t}, c_1e^{-t} + c_2te^{-t} + c_3e^{2t}, c_1e^{-t} + c_2te^{-t})$. Then $c_1 = c_2 = 1$, $c_3 = 0$.
 
 </div>
 
@@ -190,7 +190,38 @@ $$
 
 <div class=note>
 
+(1) Homogeneous Case: $\lambda_1 = \lambda_2 = 2$. $\mathbf{v}_1 = (1,1)^T$ (eigenvector), $\mathbf{v}_0 = (1,0)^T$. So
+$$ \mathbf{x} = c_1 e^{2t}
+\begin{pmatrix}
+  1\\ 1
+\end{pmatrix} + c_2 e^{2t}
+\begin{pmatrix}
+  t+1\\ t
+\end{pmatrix}
+$$
+(2) It is too hard, so you can transfer it into higher-order ODE.
+
 </div>
 
+---
 
+## Transfer to Higher-Order ODE
+
+
+- Solve ODEs
+$$
+\begin{cases}
+  x^{\prime} = x + y\\
+  y^{\prime} = -x + 3y + e^{2t}
+\end{cases}, \quad x(0) = 1, y(0) = -1.
+$$
+
+<div class=note>
+
+(1) From the first equation, $y = x^{\prime} - x$. So $x^{\prime \prime} - x^{\prime} = -x + 3x^{\prime} - 3x +e^{2t}$, which is
+$$ x^{\prime\prime} - 4x^{\prime} + 4x = e^{2t}. $$
+(2) General solutions are $c_1e^{2t} + c_2 te^{2t}$.
+(3) Assume $x = At^2 e^{2t}$, substituting into the equation yileds $A = \frac{1}{2}$.
+
+</div>
 

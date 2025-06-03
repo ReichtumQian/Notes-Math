@@ -31,7 +31,7 @@ img[alt~="center"] {
 }
 </style>
 
-# Introduction to Control Theory
+# Concept and Stability of Linear Systems
 
 Speaker: Yixiao Qian
 
