@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
-
----
-
 # Local Conformal Mappings
 
 ---
@@ -119,4 +115,20 @@ This contradicts the injectivity.
 
 </div>
 
+---
+
+# The Schwarz Lemma
+
+---
+
+## The Schwarz Lemma
+
+<div class=trick>
+
+Let $f: \mathbb{D} \rightarrow \mathbb{D}$ be holomorphic with $f(0) = 0$. Then
+- $|f(z)| \leq |z|$ for all $z \in \mathbb{D}$;
+- If $|f(z_0)| = |z_0|$ for $z_0 \neq 0$, then $f$ is a rotation;
+- $|f^{\prime}(0)| \leq 1$.
+
+</div>
 

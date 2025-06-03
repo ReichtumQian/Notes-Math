@@ -218,6 +218,20 @@ $m(E) = \infty$: Take $E_n = E \cap [n, n+1)$ satisfying $E_n \subset \cup_k I_n
 
 ## Applications of Approximation Results
 
+- If for any $\epsilon > 0$, there exists open set $G \supset E$ such that $m^{\ast}(G - E) < \epsilon$. Prove that $E$ is measurable.
+
+<div class=note>
+
+(1) For each $n$, $\exists G_n \supset E$ such that $m^{\ast}(G_n - E) < \frac{1}{n}$.
+(2) Let $G = \cap_n G_n$, $m^{\ast}(G - E) \leq m^{\ast}(G_n - E) < \frac{1}{n}$, so $m^{\ast}(G - E) = 0$.
+(3) $E = G - (G-E)$, so $E$ is measurable.
+
+</div>
+
+---
+
+## Applications of Approximation Results
+
 - $E \subset \mathbb{R}$, $m(E) > 0$, $0 < \alpha < 1$. Prove there exists an open interval $I$, $m(I \cap E) > \alpha \cdot m(I)$.
 
 <div class=note>
