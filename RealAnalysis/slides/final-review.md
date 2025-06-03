@@ -36,5 +36,27 @@ Speaker: Yixiao Qian
 
 ---
 
+## Quick Review of Lebesgue Measure
+
+
+---
+
+## Quick Review of Measurable Function
+
+---
+
+## Quick Review of Lebesgue Integral
+
+---
+
+## Quick Review of Leibniz Formula
+
+- **Basic Concepts**: Monotonic, BV, AC.
+- **Monotonic Function**: $f^\prime$ exists a.e., and it is L-integrable.
+- **BV Function**: BV can be expressed as sum of monotonic functions. (so $f^{\prime}$ exists a.e., integrable)
+- **AC Function**: AC is BV. (so $f^{\prime}$ exists a.e., integrable)
+- **Newton-Leibniz**: If $F$ is AC, then ${\displaystyle F(x) = F(a) + \int_a^x F^{\prime}(t)\mathrm{d} t}$.
+
+
 
 

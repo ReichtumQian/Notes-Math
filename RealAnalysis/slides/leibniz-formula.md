@@ -37,12 +37,26 @@ Speaker: Yixiao Qian
 
 ---
 
-## Table of Contents
+## Motivation
 
-<br>
+- **Classic FTC**: ${\displaystyle F(x) = F(a) + \int_a^x F^{\prime}(x)\mathrm{d} x}$ holds when $F^{\prime}(x)$ exists, R-integrable.
 
-- Special Functions in Lebesgue Theory
-- Leibniz Formula for Lebesgue Integral
+<div class=note>
+
+For some functions: (1) $F^{\prime}(x)$ may not globally exist; (2) $F^{\prime}(x)$ may not R-integrable.
+
+</div>
+
+- **Monotonic Function**: $F^{\prime}(x)$ exists a.e., and L-integrable, ${\displaystyle \int_a^b|F^{\prime}(x)| \leq |F(b) - F(a)|}$.
+- **BV Function**: Extended from monotonic function, $F^{\prime}(x)$ exists a.e., and $L$-integrable, but FTC may not hold.
+
+<div class=note>
+
+Being BV function is a basic requirement of FTC. The properties of BV function are derived from monotonic functions.
+
+</div>
+
+- **AC Function**: The final result, FTC holds iff $F(x)$ is AC.
 
 ---
 
@@ -54,6 +68,14 @@ Speaker: Yixiao Qian
 
 - **Monotonic Function**: For any $x < y$, $f(x) \leq f(y)$ (or $f(x) \geq f(y)$).
 - **Almost-Everywhere Differentiable**: If $f$ is monotonic, then $f$ is differentiable a.e.
+- **Integrability**: If $f$ is monotonic, then $f^{\prime}$ is L-integrable.
+- **FTC for Monotonic Function**: If $f$ is a monotonic function, ${\displaystyle \int_a^b f^{\prime}(x)\mathrm{d} x \leq f(b) - f(a)}$.
+
+<div class=note>
+
+The two results are proven by Vitali theorem, so we ignore the proof here.
+
+</div>
 
 ---
 
