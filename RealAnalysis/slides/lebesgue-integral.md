@@ -301,6 +301,8 @@ $$ \int_0^{+\infty} f \mathrm{d} x = \int_0^1 1 \mathrm{d} x + \int_1^{+\infty} 
 
 <div class=note>
 
+Note $f_n \rightarrow 0$ for $x \in [0,1)$ and $f_n \rightarrow \infty$ for $x = 1$, so it is hard to find a control function.
+
 (1) Let $y = x^n$, then $\displaystyle I = \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{y^{1/n}}{1 + y}\mathrm{d} y$. Denote $\displaystyle f_n(y) = \frac{y^{1/n}}{1 + y}$, $\displaystyle f(y) = \frac{1}{1+y}$.
 (2) $\displaystyle |f_n(y)| \leq \frac{1}{1+y}$, so $\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 f_n(y) \mathrm{d} y = \int_0^1 f(y)\mathrm{d} y = \ln 2$.
 

@@ -47,6 +47,14 @@ Speaker: Yixiao Qian
 
 ## Quick Review of Lebesgue Integral
 
+- **Property**: $f$ is L-integrable, then $f$ is finite a.e. (not versa vice: e.g., $\frac{1}{x}$ on $(0,1)$.)
+- **Counterexample**: $f_n = \frac{1}{x}\chi_{[\frac{1}{n}, 1]} \xrightarrow{a.e.} f = \frac{1}{x}$, $f$ not integrable on $[0,1]$.
+- $f_n$ are non-negative and measurable, $f_n \xrightarrow{m} f$, then ${\displaystyle \int_E f \mathrm{d} x\leq \liminf_{n \rightarrow \infty} \int_E f_n \mathrm{d} x}$.
+- $f_k, g_k$ are measurable, $|f_k| \leq g_k$, $f_k \rightarrow f$ a.e., $g_k \rightarrow g$ a.e., ${\displaystyle \int_E g_k \mathrm{d} x \rightarrow \int_E g \mathrm{d} x}$, then
+$$ \int_E f_k \mathrm{d} x \rightarrow \int_E f \mathrm{d} x. $$
+- $f \in L(E)$, prove that ${\displaystyle \lim \limits _{k \rightarrow \infty} k \cdot m(\{|f| > k\}) = 0}$.
+- Calculate: $\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{nx^n}{1 + x^n}\mathrm{d} x$
+
 ---
 
 ## Quick Review of Leibniz Formula
