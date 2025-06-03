@@ -38,10 +38,28 @@ Speaker: Yixiao Qian
 
 ## Quick Review of Lebesgue Measure
 
+- **Disjoint Open Sets**: $E_n$ from disjoint open sets $S_n$, then $m^{\ast}(\cup E_n) = \sum m^{\ast}(E_n)$.
+- If $\{E_n\}$ is monotonically increasing, then $m^{\ast}(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m^{\ast}(E_n)$.
+- $E_n \nearrow$ (or $m(E_n) < \infty$ and $E_n \searrow$), then $m(\lim \limits _{n \rightarrow \infty} E_n) = \lim \limits _{n \rightarrow \infty} m(E_n)$
+- $E_n$ are measurable, $m(\liminf\limits_{n \rightarrow \infty} E_n) \leq \liminf\limits_{n \rightarrow \infty} m(E_n)$.
+- $E_n$ are measurable, $m(\cup_{k=k_0}^{\infty}E_k) < \infty$ for some $k_0$, then $m(\limsup\limits_{n \rightarrow \infty}E_n) \geq \limsup\limits_{n \rightarrow \infty} m(E_n)$.
+- If $\{E_k\}_{1\leq k \leq n}$ ($E_k \subset [0,1]$) are measurable , $\sum_{k=1}^n m(E_k) > n-1$. Prove $m(\cap_{k=1}^n E_k) > 0$.
+- If for any $\epsilon > 0$, there exists open set $G \supset E$ such that $m^{\ast}(G - E) < \epsilon$. Prove that $E$ is measurable.
+- $E \subset \mathbb{R}$, $m(E) > 0$, $0 < \alpha < 1$. Prove there exists an open interval $I$, $m(I \cap E) > \alpha \cdot m(I)$.
+
 
 ---
 
 ## Quick Review of Measurable Function
+
+- **Closure under Composition**: $f$ is continuous, $g$ is finite measurable, $f(g)$ is measurable.
+- If $f_n \xrightarrow{a.e.} f$, $f_n$ are measurable. Prove that $f$ is measurable.
+- **Convergent Set of Measurable Functions**: $f_n(x)$ are measurable on measurable set $D$, prove that the set that $f_n(x)$ is point-wise convergent is measurable.
+- **By Continuous Function Sequences**: $f$ finite a.e. and measurable on $[a, b]$. Then there exists $g_n \in C([a,b])$, $g_n \xrightarrow{a.e.} f$.
+- **Uniform to Pointwise**: $f_n$ measurable, $m(D)$ is arbitrary. Then $f_n \xrightarrow{a.u.} f$ implies $f_n \xrightarrow{a.e.} f$.
+- **Uniform to Measure**: If $f_n \xrightarrow{a.u.} f$, then $f_n \xrightarrow{m} f$.
+- **Generalized Riesz**: $f_n, f$ measurable and finite a.e. $m(D) < \infty$. Then $f_n \xrightarrow{m} f$ iff $\forall \{f_{n_i}\} \subset \{f_n\}$, there exists $\{f_{n_{ij}}\} \subset \{f_{n_i}\}$, $f_{n_{ij}} \xrightarrow{a.e.} f$.
+- **Multiplication**: $f_n \xrightarrow{m} f$ and $g_k \xrightarrow{m} g$, $m(D) < \infty$ then $f_n g_n \xrightarrow{m} fg$.
 
 ---
 
