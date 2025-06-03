@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-# Solving First-Order ODE
-
----
-
 ## Quick Review of First-Order ODE
 
 - **Separable Equation**: $(xy + \sqrt{1-x^2y^2})\mathrm{d} x + x^2 \mathrm{d} y = 0$
@@ -55,9 +51,13 @@ Speaker: Yixiao Qian
 
 ## Quick Review of Higher-Order ODE
 
-- **Method of Characteristic Equation**: Distinct/Repeated Real Roots; (Repeated) Complex Conjugate Roots.
-- **Method of Undetermined Coefficients**: (1) $y^{\prime\prime} + 4y = \cos x - \sin 2x$; (2) $y^{(3)} + y^{\prime\prime} = 3e^t + 4t^2$.
+- **Characteristic Equation**: Distinct/Repeated Real Roots; Complex Conjugate Roots.
+- **Undetermined Coefficients**: (1) $y^{\prime\prime} + 4y = \cos x - \sin 2x$; (2) $y^{(3)} + y^{\prime\prime} = 3e^t + 4t^2$.
 - **Euler Equation**: $x^2y^{\prime\prime} + 4xy^{\prime} + 3y = x$.
+
+<div class=note>
+
+</div>
 
 ---
 
@@ -80,6 +80,12 @@ $$
   y^{\prime} = -x + 3y + e^{2t}
 \end{cases}, \quad x(0) = 1, y(0) = -1.
 $$
+
+<div class=note>
+
+Transform into higher-order ODE.
+
+</div>
 
 ---
 
