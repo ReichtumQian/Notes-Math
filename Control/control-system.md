@@ -39,30 +39,18 @@ Speaker: Yixiao Qian
 
 ## Concept of Control System
 
-- **Plant**: The object to be controlled.
-- **Controller**
-- **Reference/Demand**: Like the designed velocity.
-
-
----
-
-## Classification of Signals
-
-- **Physiccal Signal**:
-- **Analog**: Values are continuous
-- **Digital**: Finite number of possible values (due to noise or uncertainty)
+- **Components**: **Plant** (object to be controlled), **Controller**, **Reference/Demand**.
+- **Signal**: **Physiccal Signal**, **Analog** (continuous-valued), **Digital** (discrete-valued).
 - **Continuous/Discrete-Time**: Function defined on $[0, +\infty)$ or $\{0,1,2,\cdots\}$.
-- **Sampling**: Generate discrete-time signal from continuous-time signal.
 
 ---
 
 ## Standard Feedback Connection
 
 - Here $d$ is noise, $r$ is reference, $y$ is output of the plant, $e$ is input of the controller.
+- **Input and Output**: $x = [d, r]$, $y = [u,e]$. (The output can actually be any, you choose.)
 ![center w:700](assets/image.png)
 
-- **Input and Output**: $x = [d, r]$, $y = [u,e]$. (The output can actually be any, you choose.)
-- **Aim**: (1) Stable System; (2) Small Tracking Error.
 - **Transfer Function**: $
 \begin{bmatrix}
   \hat{u}\\ \hat{e}
@@ -94,8 +82,7 @@ Hereafter, we denote $S = (1+PC)^{-1}$ as the sensitivity and $PC$ the loop gain
 
 ## Stability of Standard Feedback Connection
 
-- **Transfer Function along the Circuit**: $d$ to $u$ is $S$; $d$ to $y$ is $SP$; $r$ to $y$.
-- **Condition**: The feedback connection is stable iff (1) The sensitivity $S = (1+PC)^{-1}$ is stable; (2) There is no unstable pole-zero cancellation in $PC$ (loop gain).
+- **Stability Condition**: Iff (1) $S$ is stable; (2) No unstable pole-zero cancellation in $PC$.
 - **Stable Pole-Zero Cancallation**: The pole/zero cancelled is in $\mathbb{C}_-$ (not include $\operatorname{Re}z = 0$)
 
 <div class=note>
@@ -109,8 +96,7 @@ $$ P(s) = \frac{s}{(s+1)(s-2)}, \quad C(s) =   $$
 
 ## Example: Control of a First Order System
 
-- $e = \frac{1}{1+PC}$, to make the error smaller, we can enlarge $C$.
-- The gain of controller usually change based on frequency rather than constant (proportional controller).
+- **Proportional Control**: $C(s) = K$ (Constant Gain).
 
 ![center w:600](assets/image-3.png)
 
