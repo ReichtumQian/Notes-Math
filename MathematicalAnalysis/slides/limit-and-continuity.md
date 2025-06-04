@@ -147,7 +147,8 @@ ${\displaystyle I = \sum_{k=1}^n \frac{1}{n} \cdot \frac{1}{\sqrt{1 + (\frac{k}{
 
 <div class=note>
 
-$a_2 = \sqrt{c + \sqrt{c}} > a_1$. If $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n + c} > \sqrt{a_{n-1}+c} = a_n$.
+(1) Monotone: $a_2 = \sqrt{c + \sqrt{c}} > a_1$. If $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n + c} > \sqrt{a_{n-1}+c} = a_n$.
+(2) Bounded: Let $A$ that $A = \sqrt{A + c}$. If $a_{n-1} < A$, then $a_n = \sqrt{a_{n-1} + c} < \sqrt{A + c} < A$.
 
 </div>
 
@@ -169,6 +170,7 @@ $a_2 = \sqrt{c + \sqrt{c}} > a_1$. If $a_n > a_{n-1}$, then $a_{n+1} = \sqrt{a_n
 ## Concept and Properties of Function Limit
 
 - **Definition of Function Limit**
+- **Cauchy Convergence Criterion**
 - **Uniqueness of Function Limit**
 - **Closure under Arithmetic Operations**: 
 - **Heine-Cantor Theorem**
