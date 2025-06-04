@@ -84,8 +84,20 @@ Note when $x \rightarrow \infty$: $\frac{1}{1+x} = \frac{1}{x} \cdot \frac{1}{1+
 
 ## Quick Review of Univariate Integral Calculus
 
+- **Commonly Used Integrations**: ${\displaystyle \int \frac{1}{x^2 \pm a^2}\mathrm{d} x}$
+- **Rational Function**: ${\displaystyle \int \frac{\mathrm{d} x}{(ax^2 + b)^2}}$
+- If $f$ is strictly increasing, prove ${\displaystyle \int_a^b xf(x)\mathrm{d} x > \frac{a+b}{2} \int_a^b f(x)\mathrm{d} x}$.
 
+---
 
+## Quick Review of Series
 
-
+- Determine if $f_n = x^n \ln x$ is uniformly convergent on $(0, 1]$.
+- If $f \in C[a, b]$, $f_0(x) = f(x)$, $\displaystyle f_{n+1}(x) = \int_a^x f_n(t)\mathrm{d} t$, prove $f_n(x)$ is uniformly convergent.
+- $f^{\prime}$ is continuous, $a_n \nearrow +\infty$ is positive. Prove $f_n = a_n \left[ f(x + \frac{1}{a_n}) - f(x) \right] \rightrightarrows f^{\prime}(x)$ on $[a, b]$
+- **Local Continuity**: $f_n \rightrightarrows f$ on $(a, b)$, $\lim \limits _{x \rightarrow x_0}f_n(x) = a_n$, then $\lim \limits _{x \rightarrow x_0}f(x) = \lim \limits _{n \rightarrow \infty} a_n$. 
+- **Uniform Continuity**: $f_n$ uniformly continuous, $f_n \rightrightarrows f$, then $f$ is uniformly continuous.
+- **Term-by-Term Integration**: $f_n \rightrightarrows f$ on $[a, b]$, $f_n$ integrable on $[a, b]$. Then $f(x)$ integrable
+$$ \int_a^b f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_a^b f_n(x)\mathrm{d} x. $$
+- **Expansion**: $f(x) = \arctan \frac{1-kx}{1+kx}$.
 
