@@ -37,10 +37,6 @@ Speaker: Yixiao Qian
 
 ---
 
-# Concept of Linear System
-
----
-
 ## Linear Time-Invariant System
 
 - **Linear Time-Invariant System (LTI)**: State $x(t) \in \mathbb{C}^n$, Input $u(t) \in \mathbb{C}^m$, Output $y(t) \in \mathbb{C}^p$.
@@ -50,52 +46,31 @@ $$
 - **Linear**: $(u_1(t), x_1(0)) \rightarrow (x_1(t), y_1(t))$, $(u_2(t), x_2(0)) \rightarrow (x_2(t), y_2(t))$
 $$ (u_1(t) + u_2(t), x_1(0) + x_2(0)) \rightarrow (x_1(t)+x_2(t), y_1(t)+y_2(t)). $$
 - **Time-Invariant**: The output of $(u(t), x(0))$ is same as that of $(u(t + \tau), x(\tau))$ after $t = \tau$.
-- **Single-Input Single-Output (SISO)**: $m = p = 1$.
-- **Multiple-Input Single-Output (MISO)**: $m > 1$, $p = 1$.
-- **Order of $\Sigma$**: $n$ is order of $\Sigma$, which can be infinity.
-
----
-
-## Laplace Transormations
-
-- **Laplace Transformation**: $\displaystyle \hat{u}(s) = \mathcal{L} \{u(t)\} = \int_0^{+\infty} e^{-st}u(t)\mathrm{d} t$.
-- **Linearity**: $\mathcal{L}\{a u(t) + bv(t)\} = a \hat{u}(s) + b \hat{v}(s)$.
-- **Differentiation in Time**: $\mathcal{L} \{u^{\prime}(t)\} = s\hat{u}(s) - u(0)$.
-- **Integration in Time**: $\displaystyle \mathcal{L}\{\int_0^t f(\tau)\mathrm{d} \tau\} = \frac{\hat{u}(s)}{s}$.
-- **Convolution Product**: $\displaystyle (u \ast v) (t) = \int_0^t u(t - \sigma) v(\sigma)\mathrm{d} \sigma$.
-- **Convolution Theorem**: $\mathcal{L}\{u \ast v\} = \hat{u}(s)\hat{v}(s)$.
-
----
-
-## Transfer Function and Its Applications
-
-- **Transfer Function**: $G(s) = C(sI - A)^{-1} B + D$, which is a proper rational function.
+- **SISO and MISO**: SISO means $m = p = 1$, MISO means $m > 1$, $p = 1$.
+- **Stability**: If $e^{At} \rightarrow 0$. The equivalent condition is $\operatorname{Re}(\lambda_k) < 0$.
 
 <div class=note>
 
-Apply Laplace transformation to $\dot{x} = Ax + Bu$, then
-$$ s \hat{x}(s) - x(0) = A\hat{x}(s) + B\hat{u}(s). $$
-Then $\hat{x}(s) = (s I - A)^{-1}x(0) + (sI - A)^{-1}B\hat{u}(s)$. Substituting it into $\hat{y}(s) = C\hat{x}(s) + D\hat{u}(s)$ and take $x(0) = 0$, we get $\hat{y}(s) = [C(sI - A)^{-1}B + D]\hat{u}(s)$.
+Consider $A = H^{-1}JH$, then $e^{At} = H^{-1}e^{Jt}H$. Expand $e^{Jt}$, and each entry is like $e^{\lambda_i t}$.
 
 </div>
 
-- **Conclusion**: Transfer function maps $\hat{u}(s)$ to $\hat{y}(s)$.
 
-$$
-\begin{cases}
-  \hat{y}(s) = G(s) \hat{u}(s) & \text{if } x(0) = 0;\\
-  \hat{y}(s) = G(s)\hat{u}(s) + C(sI - A)^{-1}x(0) & \text{Otherwise}
-\end{cases}
-$$
+
 
 ---
 
-## Properties of Transfer Function
+## Transfer Function of Linear System
 
-<div class=trick>
 
-The formula of transfer function is
-$$G(s) = C(sI - A)^{-1}B + D$$
+- **Transfer Function**: Maps the input $\hat{u}(s)$ to the output $\hat{y}(s)$.
+- **Transfer Function of Linear System**: $G(s) = C(sI - A)^{-1} B + D$, 
+
+<div class=note>
+
+(1) Apply Laplace transformation to $\dot{x} = Ax + Bu$, then $s \hat{x}(s) - x(0) = A\hat{x}(s) + B\hat{u}(s)$.
+(2) $\hat{x}(s) = (s I - A)^{-1}x(0) + (sI - A)^{-1}B\hat{u}(s)$.
+(3) Substituting into $\hat{y}(s) = C\hat{x}(s) + D\hat{u}(s)$, take $x(0) = 0$: $\hat{y}(s) = [C(sI - A)^{-1}B + D]\hat{u}(s)$.
 
 </div>
 
@@ -110,50 +85,36 @@ $$G(s) = C(sI - A)^{-1}B + D$$
 
 - **(Strictly) Proper**: $G(\infty) = D$ (finite). If $D = 0$, then $G(\infty) = 0$, and it is strictly proper.
 - **Poles**: Poles of $G$ are subset of $\sigma(A)$ (eigenvalues of $A$).
-- **Minimal System**: No systems of lower order has the same transfer function. A linear system is minimal iff its poles are exactly $\sigma(A)$. (The posibility of minimal system is $1$)
 
 ---
 
-## Several Famous Transfer Function
+## Stability of Transfer Function
 
-- **LPF**: $G(s) = \frac{1}{1 + \tau s}$ for $\tau > 0$.
-- **HPF**: $G(s) = \frac{\tau s}{1 + \tau s}$.
-- **Example**: Spring. $mq_{tt} = k(-q) + d(-q_t)+u$, where $q$ is the position.
-
-<div class=note>
-
-Apply the Laplace transformation to solve it.
-$$ ms^2 \hat{q}(s) - m sq(0) - m\dot{q}(0) + ds\hat{q}(s) - dq(0) + k\hat{q}(s) = \hat{u}(s). $$
-The transfer function is
-$$ G(s) = \frac{1}{ms^2 + ds + k}. $$
-
-</div>
-
----
-
-# Stability of Linear System
-
----
-
-## Stability of Linear System
-
-- **Stability**: The system is *stable* if $e^{At} \rightarrow 0$.
+- **Stability**: Analytic and bounded on $\mathbb{C}_+$. (Rational function: proper, all poles are in $\mathbb{C}_-$)
+- **Minimal System**: No systems of lower order has the same transfer function. A linear system is minimal iff its poles are exactly $\sigma(A)$.
+- **Relation with Stable System**: Stable system implies stable transfer function. (Vice versa when system is minimal)
 
 <div class=note>
 
-${\displaystyle x(t) = e^{At}x(0) + \int_0^t e^{A(t - \sigma)}B u(\sigma)\mathrm{d} \sigma}$. It means if $u = 0$, no matter how $x(0)$ be, $x(t) \rightarrow 0$.
+(1) $G(s)$ is proper; (2) Poles of $G(s)$ are eigenvalues of $A$, which are in $\mathbb{C}_-$.
 
 </div>
 
-- **Condition**: $\operatorname{Re}(\lambda_k) < 0$, or $\sigma(A) \subset \mathbb{C}_-$.
+- Determine if $\frac{(s^2 - 1)e^{-7s}}{(s^2 + 2s + 5)(-s-3)}$ is stable. (Yes, $e^{-7s}$ is stable, $\frac{s^2 - 1}{(s^2 + 2s + 5)(-s-3)}$ is also stable)
+- $A =
+\begin{bmatrix}
+  -3 & 0 \\ 5 & 2
+\end{bmatrix}
+$, $B =
+\begin{bmatrix}
+  3 \\ 11
+\end{bmatrix}
+$, $C =
+\begin{bmatrix}
+  8 & 0
+\end{bmatrix}
+$, $D = 0$. Find minimal system, transfer function, stability.
 
-<div class=note>
-
-Consider $A = H^{-1}JH$, then $e^{At} = H^{-1}e^{Jt}H$. Expand $e^{Jt}$, and each entry is like $e^{\lambda_i t}$.
-
-</div>
-
-- **Marginally Stable**: $\operatorname{Re}(\lambda_k) \leq 0$.
 
 ---
 
@@ -180,43 +141,6 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 </div>
 
 - If $A$ is unstable and all entries in first column are non-zero, then the number of unstable eigenvalues of $A$ is equal to the number of sign changes in the first column.
-
----
-
-## Stable Transfer Function
-
-- **Stable Transfer Function**: Analytic and bounded on $\mathbb{C}_+$.
-- **Rational Function Case**: Iff it is proper and all poles are in $\mathbb{C}_-$.
-- Determine if $\frac{(s^2 - 1)e^{-7s}}{(s^2 + 2s + 5)(-s-3)}$ is stable.
-
-<div class=note>
-
-Yes, because $e^{-7s}$ is stable, $\frac{s^2 - 1}{(s^2 + 2s + 5)(-s-3)}$ is also stable.
-
-</div>
-
-- **Relation with Stable System**: Stable system implies stable transfer function . (Versa vice when system is minimal)
-
-<div class=note>
-
-(1) $G(s)$ is proper; (2) Poles of $G(s)$ are eigenvalues of $A$, which are in $\mathbb{C}_-$.
-
-</div>
-
-- Example: $A =
-\begin{bmatrix}
-  -3 & 0 \\ 5 & 2
-\end{bmatrix}
-$, $B =
-\begin{bmatrix}
-  3 \\ 11
-\end{bmatrix}
-$, $C =
-\begin{bmatrix}
-  8 & 0
-\end{bmatrix}
-$, $D = 0$. Find minimal system and transfer function, and their stability.
-
 
 ---
 
