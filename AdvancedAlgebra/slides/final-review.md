@@ -60,6 +60,9 @@ Ignored.
 
 ## Quick Review of System of Linear Equations
 
+- **Rank of $A^TA$**: $r(A) = r(A^TA)$.
+- **Existence of Solution of Normal Equation**: The solution of $A^TAx = A^Tb$ exists.
+
 ---
 
 ## Quick Review of Linear Space and Transformation
@@ -73,15 +76,53 @@ $$ \operatorname{dim}V_1 + \operatorname{dim}V_2 = \operatorname{dim}(V_1 + V_2)
 - $\mathcal{A},\mathcal{B}$ idempotent, $\operatorname{Im}(\mathcal{A}) = \operatorname{Im}(\mathcal{B})$ iff $\mathcal{A}\mathcal{B} = \mathcal{B}$ and $\mathcal{B}\mathcal{A} = \mathcal{A}$.
 - $\mathcal{A}, \mathcal{B}$ idempotent, $\operatorname{Ker}(\mathcal{A}) = \operatorname{Ker}(\mathcal{B})$ iff $\mathcal{A}\mathcal{B} = \mathcal{A}$ and $\mathcal{B}\mathcal{A} = \mathcal{B}$.
 - Prove that $A^{-1}$ and $A^{\ast}$ can be represented as polynomials of $A$.
-
+- Find (1) eigenvalues; (2) eigenvectors; (3) if $A$ is diagonalizable. $
+A = \begin{bmatrix}
+1 & 2 & 0 \\
+0 & 3 & 1 \\
+0 & 0 & 3
+\end{bmatrix}
+$
 
 ---
 
 ## Quick Review of Jordan Form
 
+- **Kernel Space Decomposition**: Let $f(x) = f_1(x)f_2(x)$ where $(f_1(x), f_2(x)) = 1$, then
+$$ \operatorname{Ker}(f(\mathcal{A})) = \operatorname{Ker}(f_1(\mathcal{A})) \oplus \operatorname{Ker}(f_2(\mathcal{A})). $$
+- **Jordan Matrix for $\lambda$**: $J(\lambda) = \operatorname{diag}(J_1(\lambda), \cdots, J_m(\lambda))$, where $m$ is the geometric multiplicity of $\lambda$, $J_i$ is a $n_i \times n_i$ matrix.
+- Find the Smith normal form of $\lambda I - A$:
+$$
+A =
+\begin{bmatrix}
+-1 & 1 & 3\\
+3 & 0 & -4\\
+-2 & 1 & 4
+\end{bmatrix}
+$$
+- Given $A$, find Jordan canonical form $J$, and transition matrix $P$ such that $P^{-1}AP = J$:
+
+$$
+A =
+\begin{bmatrix}
+  2 & 3 & 2\\
+  1 & 8 & 2\\
+  -2 & -14 & -3
+\end{bmatrix}.
+$$
 
 
 ---
 
 ## Quick Review of Quadratic Form
+
+- **Existence of Canonical Form**
+- **Elementary Transformation Method**: What if the diagonal elements are zero.
+- Find the canonical form of $2x_1x_2 + 2x_1x_3 - 6x_2x_3$.
+- $f = 5x_1^2 + 5x_2^2 + 3x_3^2 - 2x_1x_2 + 6x_1x_3 - 6x_2x_3$. Find an orthogonal transformation $x = Ty$ and corresponding canonical form.
+- If $\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_n$, then $\max_{x \in \mathbb{R}^n} \frac{x^TAx}{x^Tx} = \lambda_1, \quad \min_{x \in \mathbb{R}^n} \frac{x^TAx}{x^Tx} = \lambda_n$.
+- Determine if $f = \sum\limits_{i = 1}^n x_i^2 + \sum\limits_{1 \leq i < j \leq n}x_ix_j$ is positive definite.
+- **Both Positive Definite**: $A, B$ positive definite, $\exists P$, $P^TAP, P^TBP$ are diagonal.
+- **One Positive Definite**: $A$ positive definite, $B$ real symmetric, $P^TAP$, $P^TBP$ are diagonal.
+
 

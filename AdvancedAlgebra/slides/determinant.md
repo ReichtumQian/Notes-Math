@@ -59,4 +59,10 @@ Why $\sum_{k=1}^n a_{ik}A_{jk} = 0$: Define a new matrix $B$ by replacing the $j
 
 </div>
 
+---
+
+## Several Special Determinants
+
+- Calculate the characteristic polynomial of all-one matrix. (by adding an additional column/row)
+
 
