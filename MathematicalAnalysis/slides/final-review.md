@@ -101,3 +101,15 @@ Note when $x \rightarrow \infty$: $\frac{1}{1+x} = \frac{1}{x} \cdot \frac{1}{1+
 $$ \int_a^b f(x)\mathrm{d} x = \lim \limits _{n \rightarrow \infty} \int_a^b f_n(x)\mathrm{d} x. $$
 - **Expansion**: $f(x) = \arctan \frac{1-kx}{1+kx}$.
 
+---
+
+## Quick Review of Multivariable Integral
+
+- Calculate ${\displaystyle \int_0^1 \frac{x^b - x^a}{\ln x}\mathrm{d} x}$ where $0 < a < b$.
+- ${\displaystyle \int_0^{+\infty} \frac{\sin xy}{y}\mathrm{d} y}$ uniformly converges on $[\delta, +\infty)$, but not on $(0, +\infty)$.
+- ${\displaystyle \int_1^{+\infty} \frac{\sin x}{1+xe^y}\mathrm{d} x}$ on $[0, +\infty)$, ${\displaystyle \int_0^{+\infty} e^{-xy} \frac{\sin x}{x}\mathrm{d} x}$ on $[0, +\infty)$.
+- If $p > 0$, then ${\displaystyle \int_0^{+\infty} e^{-px} \frac{\sin bx - \sin ax}{x} \mathrm{d} x = \arctan \frac{b}{p} - \arctan \frac{a}{p}}$.
+- **Normal Distribution Integral**: ${\displaystyle \int_0^{+\infty} e^{-x^2}\mathrm{d} x = \frac{\sqrt{\pi}}{2}}$.
+- **Green's Theorem**: Calculate ${\displaystyle \oint_L \frac{x\mathrm{d} y - y\mathrm{d} x}{ax^2 + by^2}}$ where $a, b > 0$, $L$ doesn't pass through the origin, but enclose it.
+- **Gauss's Theorem**: Calculate ${\displaystyle I = \iint_S \frac{x\mathrm{d}y\mathrm{d}z + y\mathrm{d}z\mathrm{d} x + z\mathrm{d}x \mathrm{d} y}{(ax^2+by^2+cz^2)^{\frac{3}{2}}}}$, where $S$ does not pass origin.
+
