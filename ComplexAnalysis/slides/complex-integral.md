@@ -45,20 +45,13 @@ Speaker: Yixiao Qian
 
 - **Integral of Parametrized Curve**: $\gamma: [a, b] \rightarrow \mathbb{C}$, then ${\displaystyle \int_{\gamma} f(z)\mathrm{d} z = \int_a^b f(z(t))z^{\prime}(t)\mathrm{d} t}$.
 - **Newton-Leibniz Formula**: ${\displaystyle \int_{\gamma}f(z)\mathrm{d}z = F(w_2) - F(w_1)}$, $F$ is primitive of $f$, $\gamma$ begins at $w_1$ and ends at $w_2$.
-- Calculate ${\displaystyle \int_C |z| \mathrm{d} z}$ where $C: 0 \rightarrow 1 + i$.
+- ${\displaystyle \int_{\partial \Omega} \frac{\overline{z}}{z^2 + 1}\mathrm{d}z}$, where $\partial \Omega$ consists of $L_1: -1 \rightarrow 1$ and $L_2$ upper semicircle $|z| = 1$.
 
 <div class=note>
 
-$C$ is $z = t + it$ where $t \in [0, 1]$, $\mathrm{d} z = (1+i)\mathrm{d}t$. ${\displaystyle \int_C |z| \mathrm{d} z = \int_0^1 \sqrt{2}t (1+i)\mathrm{d} t = \frac{\sqrt{2}}{2}(1 + i)}$.
+(1) $I_1$: $z = t$ for $t \in [-1,1]$. ${\displaystyle \int_{-1}^1 \frac{t}{t^2+1}\mathrm{d} t} = 0$ since it is an odd function.
+(2) $I_2$: $z = e^{i\theta}$ for $\theta \in [0, \pi]$. Change $\mathrm{d}z = ie^{i\theta}\mathrm{d} \theta$, we get ${\displaystyle \int_{L_2} \frac{\overline{z}}{z^2+1}\mathrm{d} z = i\int_0^{\pi} \frac{1}{2}\mathrm{d} \theta = \frac{\pi}{2}i}$.
 
-</div>
-
-- Calculate $\displaystyle \int_0^{2\pi a}2z^2 + 8z + 1 \mathrm{d} z$, where $x = a(\theta - \sin \theta)$ and $y = a(1-\cos \theta)$.
-
-
-<div class=note>
-
-$$ I = \frac{2}{3} z^3 + 4z^2 + z \bigg|^{2\pi a}_0 = \frac{16}{3} \pi^3 a^3 + 16 \pi^2 a^2 + 2 \pi a. $$
 </div>
 
 ---

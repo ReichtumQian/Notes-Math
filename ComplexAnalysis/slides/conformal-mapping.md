@@ -37,7 +37,7 @@ Speaker: Yixiao Qian
 
 ---
 
-# Local Conformal Mappings
+# Conformal Mappings
 
 ---
 
@@ -82,10 +82,6 @@ The scale factor is $|f^{\prime}(z_0)| \neq 0$ (Same for each direction). Angle-
 
 ---
 
-# Univalent Mappings (Global Conformal Mappings)
-
----
-
 ## Univalent Mapping (Global Conformal Mapping)
 
 - **Univalent Mapping**: $f$ is holomorphic and injective ($z_1 \neq z_2$, $f(z_1) \neq f(z_2)$).
@@ -103,17 +99,41 @@ This contradicts the injectivity.
 
 ---
 
-## Applications of Univalent Mapping
+# The Mobius Transformation
 
-- Prove that except linear functions, there does not exist any entire function $f$ such that the inverse $f^{-1}$ is also entire.
+---
+
+## The Mobius Transformation
+
+- **Mobius Transformation**: $f(z) = \frac{az + b}{cz + d}$ where $ad - bc \neq 0$.
+- **Conformal**: Mobius transformation is globally conformal.
+- **Triple Transitivity**: Given three source points $z_1,z_2,z_3$ and targets $w_1,w_2,w_3$, there exists a unique $f:z_i \rightarrow w_i$.
+- **Cross-Ratio**: Given $z_1,z_2,z_3,z_4$, the cross-ratio is
+$$ (z_1,z_2;z_3,z_4):= \frac{(z_1 - z_3)(z_2-z_4)}{(z_1-z_4)(z_2-z_3)}. $$
+
+- **Cross-Ratio Invariance**: $f$ is Mobius, $w_i = f(z_i)$, then $(z,z_1;z_2,z_3) = (w,w_1;w_2,w_3)$.
 
 <div class=note>
 
-(1) Since $f$ and $f^{-1}$ are entire, then $f$ is bijective (surjective since $f^{-1}$ defined on every points in $\mathbb{C}$, injective since the existence of $f^{-1}$).
-(2) $f$ is univalent, then $f^{\prime}(z) \neq 0$ for any $z \in \mathbb{C}$.
-(3) Assume $f^{\prime}(z)$ is not constant, then 
+Each $z_i$ can be $\infty$.
 
 </div>
+
+---
+
+## Applications of Mobius Transformation
+
+- Given $z_1 = 0$, $z_2 = 1$, $z_3 = \infty$; $w_1 = 1$, $w_2 = i$, $w_3 = -1$. Find $f$.
+
+<div class=note>
+
+(1) By cross-ratio invariance: ${\displaystyle \frac{(w-w_2)(w_1-w_3)}{(w - w_3)(w_1 - w_2)} = \frac{(z-z_2)(z_1-z_3)}{(z-z_3)(z_1-z_2)}}$.
+(2) Since $z_3 = \infty$, then ${\displaystyle \frac{(z-z_2)(z_1-z_3)}{(z-z_3)(z_1-z_2)} = \frac{z-z_2}{z_1-z_2}}$
+(3) By calculation, we get $w = \frac{(i-1)z + (1+i)}{(1-i)z + (1+i)}$.
+
+</div>
+
+- Let $\Omega$ be upper semi-disk, $\varphi(z) = i \frac{1-z}{1+z}$. If $D = \varphi(\Omega)$, what is the shape of $D$?
 
 ---
 
