@@ -100,8 +100,14 @@ $$ P(s) = \frac{s}{(s+1)(s-2)}, \quad C(s) =   $$
 
 ![center w:600](assets/image-3.png)
 
+---
 
+## Step Response of First Order System
 
+- **Step Response**: $y_{\text{step}} = \frac{kK}{1+kK} (1 - e^{- \frac{t}{\tau}})$, $\tau = \frac{T}{1+kK}$. (What is $y$ if $r$ jumps from $0$ to $1$)
+- **Error**: $e_{\text{step}}(\infty) = \frac{1}{1+kK}$ (so $y$ constantly has this error compared to $r$).
+
+![center w:700](assets/image-4.png)
 
 
 
