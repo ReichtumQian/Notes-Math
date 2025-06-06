@@ -137,20 +137,32 @@ In this example, we ignore the controller and only consider the plant (a water h
 
 ## First Order System with Controller
 
-- **Step Response**: $y_{\text{step}} = \frac{kK}{1+kK} (1 - e^{- \frac{t}{\tau}})$, $\tau = \frac{T}{1+kK}$. (What is $y$ if $r$ jumps from $0$ to $1$)
+- **Stability**: The first order system is stable.
 
 <div class=note>
 
-(1) Sensitivity: $S(s) = (1 + \frac{kK}{1+Ts})^{-1} = \frac{1+Ts}{1 + kK + Ts}$.
-(2) Transfer function from $r$ to $y$: $G(s) = 1 - S(s) = \frac{kK}{1+Ts+kK}$.
-(3) The Laplace transformation of step jump is $\frac{1}{s}$. The output is $G(s)\frac{1}{s} = \frac{kK}{Ts^2 + as + kKs}$.
-(4) Calculate the inverse Laplace: $y(t) = \frac{kK}{1+kK}$
+(1) Sensitivity: $S(s) = (1 + \frac{kK}{1+Ts})^{-1} = \frac{1+Ts}{1 + kK + Ts}$. (Stable due to analytic and bounded)
+(2) Zero-Pole Cancallation: $P$ and $C$ do not cancel anything.
 
 </div>
 
-- **Error**: $e_{\text{step}}(\infty) = \frac{1}{1+kK}$ (so $y$ constantly has this error compared to $r$).
+- **Step Response**: $\hat{y} = (1 - S)\hat{r} = \frac{kK}{1 + kK + Ts}\hat{r}$. The DC gain is $\frac{kK}{1+kK}$. So $y \rightarrow \frac{kK}{1+kK}r$.
 
-![center w:500](assets/image-4.png)
+<div class=note>
+
+The exact expression is $y(t) = \frac{kK}{1+kK}(1 - e^{- \frac{t}{\tau}})$ where $\tau = \frac{T}{1+kK}$. So the tangent line intersects upper bound at $t = \tau$.
+
+</div>
+
+
+![center w:450](assets/image-4.png)
+
+---
+
+## Larger $K$ or Smaller $K$?
+
+- **Larger $K$**: The error $r - y$ is smaller; The temperature goes up more quickly.
+- **Smaller $K$**: $v(0) = Kr$ is smaller, which means the power requirement is smaller.
 
 ---
 
