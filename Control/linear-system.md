@@ -47,6 +47,7 @@ $$
 $$ (u_1(t) + u_2(t), x_1(0) + x_2(0)) \rightarrow (x_1(t)+x_2(t), y_1(t)+y_2(t)). $$
 - **Time-Invariant**: The output of $(u(t), x(0))$ is same as that of $(u(t + \tau), x(\tau))$ after $t = \tau$.
 - **SISO and MISO**: SISO means $m = p = 1$, MISO means $m > 1$, $p = 1$.
+- **Order**: The dimension of the state $n$ is the order of the system.
 - **Stability**: If $e^{At} \rightarrow 0$. The equivalent condition is $\operatorname{Re}(\lambda_k) < 0$.
 
 <div class=note>
@@ -63,7 +64,7 @@ Consider $A = H^{-1}JH$, then $e^{At} = H^{-1}e^{Jt}H$. Expand $e^{Jt}$, and eac
 ## Transfer Function of Linear System
 
 
-- **Transfer Function**: Maps the input $\hat{u}(s)$ to the output $\hat{y}(s)$.
+- **Transfer Function**: $G(s) = \frac{\hat{y}(s)}{\hat{u}(s)}$, where $\hat{u}(s)$ and $\hat{y}(s)$ are Laplace transformation of $u,y$.
 - **Transfer Function of Linear System**: $G(s) = C(sI - A)^{-1} B + D$, 
 
 <div class=note>

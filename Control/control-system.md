@@ -47,36 +47,31 @@ Speaker: Yixiao Qian
 
 ## Standard Feedback Connection
 
-- Here $d$ is noise, $r$ is reference, $y$ is output of the plant, $e$ is input of the controller.
+- $d(t)$ is noise, $r(t)$ is reference, $y(t)$ is output of the plant, $e(t)$ is input of the controller.
 - **Input and Output**: $x = [d, r]$, $y = [u,e]$. (The output can actually be any, you choose.)
-![center w:700](assets/image.png)
 
-- **Transfer Function**: $
-\begin{bmatrix}
-  \hat{u}\\ \hat{e}
-\end{bmatrix} =
+![center w:500](assets/image.png)
+
+<div class=note>
+
+$d(t),r(t),y(t),e(t)$ are time-signals. $P(s)$ and $C(s)$ are transfer functions of P and C. 
+
+</div>
+
+- **Transfer Func**: $
+G(s) =
 \begin{bmatrix}
   1 & -C\\
   P & 1
 \end{bmatrix}^{-1}
-\begin{bmatrix}
-  \hat{d} \\ \hat{r}
-\end{bmatrix}
  =
  \begin{bmatrix}
    (1+CP)^{-1} & C(1+PC)^{-1}\\
    -P(1+CP)^{-1} & (1+PC)^{-1}
- \end{bmatrix}
- \begin{bmatrix}
-   \hat{d}\\ \hat{r}
- \end{bmatrix}
- $.
+ \end{bmatrix}$. $G(0)$ is *DC gain*.
+- **Loop Gain**: Remove $d$ and $r$, input $x$, output $P(s)C(s)x$
+- **Sensitivity**: $e=r-y$ and $y=PCe$, then $S := \frac{e}{r} = (1+PC)^{-1}$.
 
-<div class=note>
-
-Hereafter, we denote $S = (1+PC)^{-1}$ as the sensitivity and $PC$ the loop gain.
-
-</div>
 
 ---
 
@@ -94,9 +89,14 @@ $$ P(s) = \frac{s}{(s+1)(s-2)}, \quad C(s) =   $$
 
 ---
 
+# Control of a First Order System
+
+---
+
 ## Example: Control of a First Order System
 
-- **Proportional Control**: $C(s) = K$ (Constant Gain).
+- **Plant**: The transfer function is $\frac{k}{1+Ts}$, where $T$ is time constant, $k$ is gain.
+- **Proportional Control**: The transfer function $C(s) = K$ (Constant Gain).
 
 ![center w:600](assets/image-3.png)
 
