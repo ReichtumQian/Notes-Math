@@ -47,3 +47,19 @@ Speaker: Yixiao Qian
 - **Convolution Product**: $\displaystyle (u \ast v) (t) = \int_0^t u(t - \sigma) v(\sigma)\mathrm{d} \sigma$.
 - **Convolution Theorem**: $\mathcal{L}\{u \ast v\} = \hat{u}(s)\hat{v}(s)$.
 
+---
+
+## Final Value Theorem
+
+- **Final Value Theorem**: $\lim \limits _{t \rightarrow \infty}u(t) = \lim \limits _{s \rightarrow 0} s\hat{u}(s)$.
+
+<div class=note>
+
+(1) Since $\mathcal{L}u^{\prime}(t) = s\hat{u}(s) - u(0)$, take limit $s \rightarrow 0$ on both sides.
+(2) LHS: $\displaystyle \lim \limits _{s \rightarrow 0} \int_0^{+\infty}e^{-st}u^{\prime}(t)\mathrm{d} t = \int_0^{+\infty}u^{\prime}(t)\mathrm{d} t = u(\infty) - u(0)$.
+(3) RHS: $\lim \limits _{s \rightarrow 0}s\hat{u}(s) - u(0)$.
+(4) Comparing LHS and RHS yields the conclusion.
+
+</div>
+
+

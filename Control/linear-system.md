@@ -31,9 +31,13 @@ img[alt~="center"] {
 }
 </style>
 
-# Concept and Stability of Linear Systems
+# Linear Systems
 
 Speaker: Yixiao Qian
+
+---
+
+# Concept and Stability of Linear Systems
 
 ---
 
@@ -122,7 +126,7 @@ $, $D = 0$. Find minimal system, transfer function, stability.
 ## Routh Test
 
 - **Idea**: Determine if the system is stable without computing the eigenvalues.
-- **Polynomial Stability**: If roots are in $\mathbb{C}_-$. If its coefficients are real, then they are positive. (and versa vice if $n = 2$)
+- **Polynomial Stability**: If roots are in $\mathbb{C}_-$. If its coefficients are real, then they are positive. (and vice versa if $n = 2$)
 - **Routh Test**: The polynomial is stable iff all entries of the first column are positive.
 
 $$
@@ -150,4 +154,9 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 - **Energy**: $\displaystyle \|u\|^2 = \int_0^{\infty} |u(t)|^2 \mathrm{d} t$.
 - If the input $u$ has finite energy, $G$ is stable, then $y$ has finite energy.
 
+---
+
+# Bode Plot and Nyquist Plot
+
+---
 
