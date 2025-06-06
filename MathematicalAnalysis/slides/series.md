@@ -95,6 +95,18 @@ $$
 
 </div>
 
+---
+
+## Application of Inequalities
+
+- $\sum a_n$ is positive-term, is convergent. Prove $\sum \frac{\sqrt{a_n}}{n}$ converges.
+
+<div class=note>
+
+Apply Cauchy-Schwarz inequality $\sum \frac{\sqrt{a_n}}{n} \leq \left( \sum a_n \right)^{1/2} \left( \sum \frac{1}{n^2} \right)^{1/2}$.
+
+</div>
+
 
 ---
 

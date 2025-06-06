@@ -72,6 +72,8 @@ Speaker: Yixiao Qian
 $$ \int_E f_k \mathrm{d} x \rightarrow \int_E f \mathrm{d} x. $$
 - $f \in L(E)$, prove that ${\displaystyle \lim \limits _{k \rightarrow \infty} k \cdot m(\{|f| > k\}) = 0}$.
 - Calculate: $\displaystyle \lim \limits _{n \rightarrow \infty} \int_0^1 \frac{nx^n}{1 + x^n}\mathrm{d} x$
+- Suppose $E \subset \mathbb{R}^n$ is measurable, $f:E \rightarrow \mathbb{R}$ is non-negative and measurable, prove that
+$$ \int_E f \mathrm{d} x = \int_0^{\infty} m(\{x \in E: f(x) > t\}) \mathrm{d} t. $$
 
 ---
 
