@@ -357,17 +357,17 @@ $$
 
 ## Applications of Tonelli and Fubini Theorems
 
-- $E$ is measurable, $f:E \rightarrow \mathbb{R}$ is non-negative and measurable. $G(f)$ is defined as $\{(x,y) \in \mathbb{R}^2: x \in E, y = f(x)\}$. Prove that $G(f)$ is measurable and $m(G(f)) = 0$.
+- Suppose $E \subset \mathbb{R}^n$ is measurable, $f:E \rightarrow \mathbb{R}$ is non-negative and measurable, prove that
+$$ \int_E f \mathrm{d} x = \int_0^{\infty} m(\{x \in E: f(x) > t\}) \mathrm{d} t. $$
 
 <div class=note>
 
-(1) Define $F:\mathbb{R}^2 \rightarrow \mathbb{R}$ that $F(x,y) = y - f(x)$. It is measurable on $E \times \mathbb{R}$ and we have $G(f) = F^{-1}(0) \cap (E \times \mathbb{R})$, which means $G(f)$ is measurable.
-(2) For any $x \in E$, $G_x := \{y: (x,y) \in G(f)\}$ is single-point set $\{f(x)\}$.
-(3) By Tonelli theorem,
-$$ m(G(f)) = \int_{E} m(G_x) \mathrm{d} x = \int_E 0 \mathrm{d} x = 0.$$
+(1) Consider the region: $x \in E$, $t \in (0, f(x))$. Then we apply Fubini theorem.
+(2) $t$ first, $x$ second: ${\displaystyle \int _E \left( \int_0^{f(x)}\mathrm{d}t \right) \mathrm{d} x = \int_E f(x)\mathrm{d} x}$.
+(3) $x$ first, $t$ second: ${\displaystyle \int_0^{+\infty} \left( \int_D \mathrm{d} x \right) \mathrm{d} t}$ where $x \in D$ satisfies $f(x) > t$. So
+$$\int_D\mathrm{d} x = m(\{x \in E: f(x) > t\}).$$
 
 </div>
-
 
 
 
