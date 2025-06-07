@@ -216,7 +216,7 @@ Physical Explaination: To obtain $e_{ss} = 0$, we need $\lim \limits _{t \righta
 
 ---
 
-# PI Controller and PD Controller
+# PI Controller
 
 ---
 
@@ -248,22 +248,58 @@ For $\zeta = 1$, the step response $y_{\text{step}} = 1 - (1 + \omega_n t)e^{-\o
 
 ![center](assets/image-11.png)
 
+---
 
+# PR Controller
+
+---
+
+## PR Controller
+
+Here we consider the $r(t)$ and $d(t)$ of the form $r(t) = R \cos(\omega_0 t + \psi)$.
+
+- **PR Controller**: $C(s) = K_p + \frac{K_rs}{s^2 + \omega_0^2}$.
+
+<div class=note>
+
+If there is another frequency, then add an additional term of $\frac{\tilde{K}_r s}{s^2 + \omega_1^2}$.
+
+</div>
+
+- **Property**: If $K_p > 0$, $K_r > 0$, then $\operatorname{Re} C(s) \geq 0$ for $s \in \mathbb{C}_+$ (Positive Transfer Function).
+
+---
+
+# PD Controller
 
 ---
 
 ## PD Controller
 
-- $C(s) = K_p + K_ds$.
-- Since it is not proper, we use approximations $C(s) = K_p + \frac{K_ds}{1 + Ts}$.
-- $s = i\omega$, when $\omega < < \frac{1}{T}$, then $Ts \sim 0$.
-- We can use PD controller to stablize the controller.
+- **PD Controller**: $C(s) = K_p + K_ds$. It is not proper, we use $C(s) = K_p + \frac{K_ds}{1 + Ts}$ sometimes.
+
+<div class=note>
+
+Since $s = i\omega$, $Ts \sim 0$ when $\omega < < \frac{1}{T}$.
+
+</div>
+
+- **Aim**: Sometimes we fail to use PI to stablize the system, but PD can somehow do it.
+- **Special Case**: If $P$ can be factorized as follows, then $\dot{y} + py = mq$ (by Laplace).
+
+![center](assets/image-13.png)
 
 ---
 
-## System Approximation
+## Example: Apply PD Controller to Stablize Systems
 
-- $P(s) = \frac{k}{s^2 + a_1s + a_0} + Q(s)$, where $Q(s)$ is usually very small in the frequency range.
+- **Transfer Function from $r$ to $y$**: $G(s) = \frac{kK_ds + kK_p}{s^2+(a_1+kK_d)s+(a_0+kK_p)}$.
+
+![center](assets/image-12.png)
+
+---
+
+
 
 
 
