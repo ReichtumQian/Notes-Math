@@ -174,34 +174,85 @@ The exact expression is $y(t) = \frac{kK}{1+kK}(1 - e^{- \frac{t}{\tau}})$ where
 
 ---
 
-# PI Controller
+# Eliminating the Steady-State Error
 
 ---
 
 ## Steady-State Error
 
-- **Steady-State Error**: $e_{ss}$ means $e \rightarrow 0$ if $d$ and $r$ stays unchanged for an amount of time.
-- $e_{ss} = S(0) r_{ss} - S(0)P(0)d_{ss}$, $S = \frac{1}{1+PC}$. To make $e_{ss} \rightarrow 0$, we should let $S(0) = 0$, $C(0) = \infty$. (This works only if $P(0) \neq 0$).
+- **Steady-State Error**: The error $e$ converges to $e_{ss}$ if $d \equiv d_{ss}$ and $r \equiv r_{ss}$ stay unchanged.
+- **Zero Limit**: If $S(0) = 0$, then $e_{ss} \rightarrow 0$ for any $r_{ss}$ and $d_{ss}$, .
+
+<div class=note>
+
+We have $\hat{e} = S\hat{r} - PS\hat{d}$, and by final value theorem:
+$$ e_{ss} = \lim \limits _{s \rightarrow 0} s\hat{e}(s) = \lim \limits _{s \rightarrow 0}S(s)s\hat{r}(s) - \lim \limits _{s \rightarrow 0}P(s)S(s)s\hat{d}(s) = S(0)r_{ss} - P(0)S(0)d_{ss}. $$
+
+</div>
+
+- **Conditions**: (1) $e_{ss} = 0$ then $C$ has a pole $s = 0$; (2) If $P(0) = 0$, then $e_{ss} \neq 0$.
+
+<div class=note>
+
+(1) $S = \frac{1}{1+PC}$, $S(0) = 0$ then $C(0) = \infty$. (2) $P(0) = 0$ and $C(0) = \infty$, then there is a pole-zero cancellation at $s = 0$.
+
+</div>
+
+---
+
+## Example Circuit
+
+- **Components**: Input $u$ (valtage), output $y$ (valtage). Transfer function $P(s) = \frac{RCs}{1+RCs}$.
+- **Stability**: $P(0) = 0$, so the system is not stable.
+
+<div class=note>
+
+Physical Explaination: To obtain $e_{ss} = 0$, we need $\lim \limits _{t \rightarrow \infty}y(t) = r$. And $u$ has to go infinity.
+
+</div>
+
+![center](assets/image-8.png)
+
+
+---
+
+# PI Controller and PD Controller
 
 ---
 
 ## PI Controller
 
-- $C(s) = K_p + \frac{K_i}{s}$: Commonly used, and $K_p$ can $K_i$ can be adjusted.
-- Water Heater Example: $S(s) = \frac{Ts^2 + s}{Ts^2 + s + kK_i}$, the numerator is stable, no pole-zero cancellation, so it is stable. $S(0) = 0$, so $e_{ss} \rightarrow 0$.
-- Transfer Function: $G(s) = \frac{kK_i}{Ts^2 + s + kK_i}$, or wirtten
+- **PI Controller**: $C(s) = K_p + \frac{K_i}{s}$, here $K_p$ can $K_i$ can be adjusted.
+- **Water Heater Example**: For $P(s) = \frac{k}{1+Ts}$ and $C(s) = \frac{K_i}{s}$. Then $S(s) = \frac{Ts^2 + s}{Ts^2 + s + kK_i}$, the numerator is stable, no pole-zero cancellation, so it is stable. $S(0) = 0$, so $e_{ss} \rightarrow 0$.
+- **Transfer Function from $r$ to $y$**: $G(s) = 1 - S(s) = \frac{kK_i}{Ts^2 + s + kK_i}$, or wirtten
 $$ G(s) = \frac{\omega_n^2}{s^2 + 2\zeta \omega_ns + \omega_n^2}, \quad \omega_n^2 = \frac{kK_i}{T}, \zeta = \frac{1}{2 \sqrt{kK_iT}}. $$
 
 The poles are symmetric with respect to the real axis, satisfying $\omega_n = |p|$ and $\zeta = \cos \varphi$.
 
+![center](assets/image-9.png)
 
 ---
 
-# PD Controller
+## Stability of PI Controller
+
+- **Step Response**: Consider $y_{\text{step}}$ for $G(s)$, when $\zeta \leq 1$. In this example, $y_{\text{step}} \rightarrow 1$.
+- **Overshoot**: The error between the peak $1 + \sigma$ and the limit $1$, $\sigma = e^{- \frac{\zeta \pi}{\sqrt{1 - \zeta^2}}}$.
+
+![center w:600](assets/image-10.png)
 
 ---
 
-## Concept of PD Controller
+## Eliminating the Overshoot
+
+For $\zeta = 1$, the step response $y_{\text{step}} = 1 - (1 + \omega_n t)e^{-\omega_n t}$. There is no overshoot, but the response become slower (rises slower at the beginning).
+
+![center](assets/image-11.png)
+
+
+
+---
+
+## PD Controller
 
 - $C(s) = K_p + K_ds$.
 - Since it is not proper, we use approximations $C(s) = K_p + \frac{K_ds}{1 + Ts}$.

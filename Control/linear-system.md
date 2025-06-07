@@ -223,7 +223,7 @@ Since the inside is $G(\mathbb{C}_+)$, if it does not encircle $-1$, then it is 
 
 ## Apply Nyquist Plot to Determine Stability
 
-![center w:300](assets/image-7.png)
+- $G(s) = \frac{1000}{s^2 + 2s + 1000}$, $S(s) = $
 
 
 
