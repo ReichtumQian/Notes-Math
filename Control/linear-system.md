@@ -175,7 +175,7 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 
 ---
 
-## An Example of Bode Plot
+## Examples of Bode Plot
 
 - Example: $G(s) = 5 \cdot \frac{s+1}{s+100} = \frac{1}{20} \cdot \frac{1 + s}{1 + \frac{s}{100}}$.
 
@@ -195,8 +195,35 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 
 ## Nyquist Plot
 
+- **Nyquist Plot**: The curve of $G(i\omega)$ for $\omega \in (-\infty, +\infty)$.
+- **Intuitive Idea**: The inside of the Nyquist plot is $G(\mathbb{C}_+)$, the outside $G(\mathbb{C}_-)$.
+- **Nyquist Stability Criterion**: $S = (1+G)^{-1}$ (with stable $G$) is stable iff the Nyquist plot of $G$ does not encircle or hit $-1$.
+
+<div class=note>
+
+Since the inside is $G(\mathbb{C}_+)$, if it does not encircle $-1$, then it is analytic and bounded.
+
+</div>
+
+- **Winding Number**: Take a ray, hit counterclockwisely $+1$, hit clockwisely $-1$.
+- **Inside and Outside**: If the winding number is $0$, then it is outside. Otherwise, it is inside.
+- **General Nyquist Criterion**: $G$ proper rational function, $n$ the winding number of $-1$, $p$ the number of poles of $G$ in $\mathbb{C}_+$. Then $S = (1+G)^{-1}$ has $p-n$ poles in $\mathbb{C}_+$, which is stable iff $p = n$.
 
 
+---
+
+## Examples of Nyquist Plot
+
+- Plot the Nyquist plot of $G(s) = \frac{1}{s+7}$. That is plot $G(i\omega) = \frac{1}{i\omega + 7}$.
+
+
+![center w:500](assets/98409a6f0aaec8561cd01898ff15cfd3.jpg)
+
+---
+
+## Apply Nyquist Plot to Determine Stability
+
+![center w:300](assets/image-7.png)
 
 
 
