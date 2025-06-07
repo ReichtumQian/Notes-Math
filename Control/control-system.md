@@ -135,7 +135,7 @@ In this example, we ignore the controller and only consider the plant (a water h
 
 ---
 
-## First Order System with Controller
+## First Order System with Constant Controller
 
 - **Stability**: The first order system is stable.
 
@@ -163,6 +163,14 @@ The exact expression is $y(t) = \frac{kK}{1+kK}(1 - e^{- \frac{t}{\tau}})$ where
 
 - **Larger $K$**: The error $r - y$ is smaller; The temperature goes up more quickly.
 - **Smaller $K$**: $v(0) = Kr$ is smaller, which means the power requirement is smaller.
+
+---
+
+## First Order System with Non-Constant Controller
+
+- **Aim**: We want the error to be small under certain frequency.
+- **How**: $\hat{e}(i\omega) = S(i\omega)\hat{r}(i\omega)$, then we want $S(i\omega) = \frac{1}{1+PC}$ to be smaller (make $C$ larger).
+
 
 ---
 

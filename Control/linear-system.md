@@ -160,3 +160,45 @@ $b_1 = \frac{-1}{a_2}(a_0 - a_1a_2)$ and $c_1 = \frac{-1}{b_1}(-a_0b_1) = a_0$. 
 
 ---
 
+## Bode Plot
+
+- **Gain and Phase Shift**: Given $G(s)$, *gain* is $A_{\omega} = |G(i\omega)|$, *phase shift* is $\varphi_{\omega} = \operatorname{arg} G(i\omega)$.
+- **Decibel (dB)**: Just an unit, does not contain any physical meaning.
+- **Bode Plot**: The $y$-axis is $20 \log_{10} A_{\omega}$ or $\varphi_{\omega}$, the $x$-axis is $\omega$ decibel.
+
+<div class=note>
+
+1. Factorize $G(s) = F_1(s) \cdots F_N(s)$, where $F_i(0)$ has gain $1$
+2. $\log |G(i\omega)| = \log |F_1(i\omega)| + \cdots + \log |F_N(i\omega)|$, $\operatorname{arg} G(i\omega) = \operatorname{arg} F_1(i\omega) + \cdots + \operatorname{arg} F_N(i\omega)$.
+
+</div>
+
+---
+
+## An Example of Bode Plot
+
+- Example: $G(s) = 5 \cdot \frac{s+1}{s+100} = \frac{1}{20} \cdot \frac{1 + s}{1 + \frac{s}{100}}$.
+
+<div class=note>
+
+(1) Numerator: When $|s| < 1$, $|s+1| \sim 1$; when $|s| > 1$, $|s+1| \sim |s|$.
+(2) Denomerator: When $|s| < 100$, $|1 + \frac{s}{100}| \sim 1$; when $|s| > 100$, $|1+\frac{s}{100}| \sim \frac{s}{100}$.
+(3) $A_{\omega}(s) \approx \frac{1}{20}$ when $|s| < 1$; $A_{\omega}(s) \approx \frac{1}{20}s$ when $|s| \in (1,100)$; $A_{\omega}(s) \approx 5$ when $|s| > 100$.
+
+</div>
+
+![center w:600](assets/3fa53ba8d265579d488c037e8664a815.jpg)
+
+- Example: $G(s) = \frac{1}{s}$. $|G(i\omega)| = |\frac{1}{\omega}|$, the line intersects the $x$-axis at $x = 1$.
+
+---
+
+## Nyquist Plot
+
+
+
+
+
+
+
+
